@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Fractals | MT4508: Dynamical Systems (Revision Notes)</title>
+  <meta name="description" content="MT4508 Dynamical Systems Lecture Notes – Revision Version" />
+  <meta name="generator" content="bookdown 0.25.3 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Fractals | MT4508: Dynamical Systems (Revision Notes)" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="MT4508 Dynamical Systems Lecture Notes – Revision Version" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Fractals | MT4508: Dynamical Systems (Revision Notes)" />
+  
+  <meta name="twitter:description" content="MT4508 Dynamical Systems Lecture Notes – Revision Version" />
+  
+
+<meta name="author" content="F. Olukoya" />
+
+
+<meta name="date" content="2022-04-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Higherdimstability.html"/>
+<link rel="next" href="chaoshigherdim.html"/>
+<script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="book_assets/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="book_assets/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<span class="math inline"> 
+     \(\DeclareMathOperator{\Arg}{Arg}\)
+     \(\newcommand{\C}{\mathbb{C}}\)
+     \(\newcommand{\R}{\mathbb{R}}\)
+     \(\newcommand{\N}{\mathbb{N}}\)
+     \(\newcommand{\Z}{\mathbb{Z}}\)
+     \(\newcommand{\e}{\mathrm{e}}\)
+     \(\newcommand{\half}{{\textstyle\frac{1}{2}}}\)
+     \(\newcommand{\modulus}[1]{\mathopen{|}#1\mathclose{|}}\)
+     \(\newcommand{\res}{\operatorname{res}}\)
+     \(\newcommand{\set}[2]{\{\,#1\mid#2\,\}}\)
+
+     \(\newcommand{\AND}{\qquad \text{and} \qquad}\)
+
+     \(\renewcommand{\epsilon}{\varepsilon}\)
+     \(\renewcommand{\Re}{\operatorname{Re}}\)
+     \(\renewcommand{\Im}{\operatorname{Im}}\)
+     \(\renewcommand{\leq}{\leqslant}\)
+     \(\renewcommand{\geq}{\geqslant}\)
+     \(\renewcommand{\d}{\mathrm{d}}\)
+     \(\renewcommand{\vec}[1]{{\boldsymbol{#1}}}\) 
+     \(\renewcommand{\v}[1]{\vec{#1}}\)
+
+     \(\newcommand{\cev}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}\)
+     \(\newcommand{\spc}{\vspace{\baselineskip}}\)
+     \(\newcommand{\pder}[2]{\dfrac{\partial #1}{\partial#2}}\)
+     \(\newcommand{\jacob}{{\mathbf{D}}\vec{f}}\)
+     \( \newcommand{\jacobr}{\mathbf{D}\vec{R}} \)
+     \(\newcommand{\stab}[1]{\mathcal{S}(#1)}\)
+     \(\newcommand{\unstab}[1]{\mathcal{U}(#1)}\)
+     \(\newcommand{\CC}{\mathfrak{C}}\)
+     \(\newcommand{\bdim}{\mathop{\mathrm{boxdim}}}\)
+     \( \newcommand{\cdim}{\mathop{\mathrm{cordim}}} \)
+     \( \newcommand{\der}[2]{\dfrac{\d #1}{\d #2}} \)
+     \(\newcommand{\dern}[3]{\dfrac{\d^{#3} #1}{\d #2 ^{#3}}} \)
+</span>
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.st-andrews.ac.uk/mathematics-statistics/"><img src="standard-vertical-black.png" width="180"></a>
+
+<li class="divider"></li>
+<li><a href="index.html#Module-hand-book">Module Handbook<span></span></a>
+<ul>
+<li><a href="index.html#structure">Structure<span></span></a>
+<ul>
+<li><a href="index.html#prerequisites">Prerequisites<span></span></a></li>
+<li><a href="index.html#lecture-notes-and-bibliography">Lecture notes and bibliography<span></span></a></li>
+</ul></li>
+<li><a href="index.html#logistics">Logistics<span></span></a>
+<ul>
+<li><a href="index.html#lectures">Lectures<span></span></a></li>
+<li><a href="index.html#lecturers">Lecturers<span></span></a></li>
+<li><a href="index.html#tutorials">Tutorials<span></span></a></li>
+<li><a href="index.html#moodle">Moodle<span></span></a></li>
+<li><a href="index.html#scheduling">Scheduling<span></span></a></li>
+</ul></li>
+<li><a href="index.html#assessment">Assessment<span></span></a>
+<ul>
+<li><a href="index.html#rule">90% Rule<span></span></a></li>
+</ul></li>
+<li><a href="index.html#student-support">Student Support<span></span></a></li>
+<li><a href="index.html#acknowledgements">Acknowledgements<span></span></a></li>
+</ul></li>
+<li class="part"><span><b>I Discrete time dynamical systems<span></span></b></span></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#introtodynsys"><i class="fa fa-check"></i><b>1.1</b> What is a “Dynamical System”?<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#one-dimensional-1d-maps"><i class="fa fa-check"></i><b>1.1.1</b> One-dimensional (1D) maps<span></span></a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#Orbits-and-fixed-points"><i class="fa fa-check"></i><b>1.1.2</b> Orbits and fixed points<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#cobwebs"><i class="fa fa-check"></i><b>1.2</b> Cobweb Plots<span></span></a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#cobwebsconstruction"><i class="fa fa-check"></i><b>1.2.1</b> Constructing cobweb plots<span></span></a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#stability-of-fixed-points"><i class="fa fa-check"></i><b>1.2.2</b> Stability of fixed points<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#sheet1"><i class="fa fa-check"></i><b>1.3</b> Problem Sheet 1<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="periodicpoints.html"><a href="periodicpoints.html"><i class="fa fa-check"></i><b>2</b> Periodic points and stability<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="periodicpoints.html"><a href="periodicpoints.html#stabilityperiodic"><i class="fa fa-check"></i><b>2.1</b> Stability of periodic points<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="periodicpoints.html"><a href="periodicpoints.html#logisticfamily"><i class="fa fa-check"></i><b>2.2</b> The family of logistic maps<span></span></a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="periodicpoints.html"><a href="periodicpoints.html#initial-conditions-chaos"><i class="fa fa-check"></i><b>2.2.1</b> Initial conditions and Chaos<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="periodicpoints.html"><a href="periodicpoints.html#higher-dimensional-maps"><i class="fa fa-check"></i><b>2.3</b> Higher-dimensional maps<span></span></a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="periodicpoints.html"><a href="periodicpoints.html#sinks-sources-and-saddles"><i class="fa fa-check"></i><b>2.3.1</b> Sinks, sources and saddles<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="periodicpoints.html"><a href="periodicpoints.html#sheet2"><i class="fa fa-check"></i><b>2.4</b> Problem Sheet 2<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html"><i class="fa fa-check"></i><b>3</b> Higher-dimensional dynamics<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#example"><i class="fa fa-check"></i><b>3.1</b> Example<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#stable-and-unstable-manifolds"><i class="fa fa-check"></i><b>3.1.1</b> Stable and Unstable Manifolds<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#stabilityofmanifolds"><i class="fa fa-check"></i><b>3.2</b> Stability of manifolds associated with a saddle<span></span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#recapinversemaps"><i class="fa fa-check"></i><b>3.2.1</b> Inverse Maps – a reminder<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#how-do-we-characterise-the-stable-and-unstable-manifolds-of-a-saddle"><i class="fa fa-check"></i><b>3.2.2</b> How do we characterise the stable and unstable manifolds of a saddle?<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#sheet3"><i class="fa fa-check"></i><b>3.3</b> Problem Sheet 3<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Higherdimstability.html"><a href="Higherdimstability.html"><i class="fa fa-check"></i><b>4</b> Higher-dimensional stability<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#nonlinear-examples"><i class="fa fa-check"></i><b>4.1</b> Non-linear examples<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#chaos1dim"><i class="fa fa-check"></i><b>4.1.1</b> Chaos in 1-dimensional maps<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="Higherdimstability.html"><a href="Higherdimstability.html#chaoticorbits"><i class="fa fa-check"></i><b>4.2</b> Chaotic Orbits<span></span></a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#fractals"><i class="fa fa-check"></i><b>4.2.1</b> Fractals<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="Higherdimstability.html"><a href="Higherdimstability.html#fractalsanddeterministicsystems"><i class="fa fa-check"></i><b>4.3</b> Fractals and deterministic dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#fractslfromdetsys"><i class="fa fa-check"></i><b>4.3.1</b> Fractals from deterministic dynamical systems<span></span></a></li>
+<li class="chapter" data-level="4.3.2" data-path="Higherdimstability.html"><a href="Higherdimstability.html#Fractal-basin-boundaries"><i class="fa fa-check"></i><b>4.3.2</b> Fractal basin boundaries<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="Higherdimstability.html"><a href="Higherdimstability.html#sheet4"><i class="fa fa-check"></i><b>4.4</b> Problem Sheet 4<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Fractals.html"><a href="Fractals.html"><i class="fa fa-check"></i><b>5</b> Fractals<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Fractals.html"><a href="Fractals.html#complexmapsandJuliasets"><i class="fa fa-check"></i><b>5.1</b> Complex maps and Julia sets<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="Fractals.html"><a href="Fractals.html#fractaldim"><i class="fa fa-check"></i><b>5.1.1</b> Fractal dimension<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="Fractals.html"><a href="Fractals.html#fractaldimcont"><i class="fa fa-check"></i><b>5.2</b> Fractal dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="Fractals.html"><a href="Fractals.html#correlationdim"><i class="fa fa-check"></i><b>5.2.1</b> Correlation dimension<span></span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="Fractals.html"><a href="Fractals.html#chaosndim"><i class="fa fa-check"></i><b>5.2.2</b> Chaos in higher-dimensions<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="Fractals.html"><a href="Fractals.html#sheet5"><i class="fa fa-check"></i><b>5.3</b> Problem Sheet 5<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html"><i class="fa fa-check"></i><b>6</b> Chaos in Higher Dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#chaoticorbitsndim"><i class="fa fa-check"></i><b>6.1</b> Chaotic Orbits in higher dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#horeshoemap"><i class="fa fa-check"></i><b>6.1.1</b> The horeshoe map<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#Chaotic-attaractors"><i class="fa fa-check"></i><b>6.2</b> Chaotic attractors<span></span></a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#Forward-limit-set"><i class="fa fa-check"></i><b>6.2.1</b> Forward Limit Set<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#continuous-time-dynamical-systems-section"><i class="fa fa-check"></i><b>6.3</b> Continuous-time dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#equilibria"><i class="fa fa-check"></i><b>6.3.1</b> Equilibria<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#sheet6"><i class="fa fa-check"></i><b>6.4</b> Problem Sheet 6<span></span></a></li>
+</ul></li>
+<li class="part"><span><b>II Continuous time dynamical systems<span></span></b></span></li>
+<li class="chapter" data-level="7" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html"><i class="fa fa-check"></i><b>7</b> Equilibria and stability in continuous time dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html#Equilibria"><i class="fa fa-check"></i><b>7.1</b> Equilibria<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html#Lyapunov-functions-I"><i class="fa fa-check"></i><b>7.2</b> Lyapunov Functions I<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html#sheet7"><i class="fa fa-check"></i><b>7.3</b> Problem Sheet 7<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html"><i class="fa fa-check"></i><b>8</b> Lyapunov Functions<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#Lyapunov-functions-II"><i class="fa fa-check"></i><b>8.1</b> Lyapunov Functions II<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#Equilibria-and-lyapunov-functions"><i class="fa fa-check"></i><b>8.2</b> Equilibira and Lyapunov functions<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#periodic-orbits-and-limit-sets"><i class="fa fa-check"></i><b>8.3</b> Periodic orbits and limit sets<span></span></a></li>
+<li class="chapter" data-level="8.4" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#sheet8"><i class="fa fa-check"></i><b>8.4</b> Problem Sheet 8<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html"><i class="fa fa-check"></i><b>9</b> Limit sets in 2-dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#limit-sets-of-cycles"><i class="fa fa-check"></i><b>9.1</b> Limit cycles<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#planardynamics"><i class="fa fa-check"></i><b>9.2</b> Planar dynamics of continuous time dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#properties-of-the-lorenz-dynamical-system"><i class="fa fa-check"></i><b>9.2.1</b> Properties of the Lorenz dynamical system<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#sheet9"><i class="fa fa-check"></i><b>9.3</b> Problem Sheet 9<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html"><i class="fa fa-check"></i><b>10</b> Lorenz chaos and bifurcation<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#Properties-of-Lorenz-SystemII"><i class="fa fa-check"></i><b>10.1</b> Properties of the Lorenz dynamical system II<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#Lyapunov-exponent-flows"><i class="fa fa-check"></i><b>10.1.1</b> Lyapunov Exponents in Flows<span></span></a></li>
+<li class="chapter" data-level="10.1.2" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#bifurcation"><i class="fa fa-check"></i><b>10.1.2</b> Bifurcation (Chapter 11 of <span class="citation">(<span>Alligood, Sauer, and Yorke 2000</span>)</span>)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#bifurcation-cont"><i class="fa fa-check"></i><b>10.2</b> Bifurcation<span></span></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#saddle-node-bifurcation"><i class="fa fa-check"></i><b>10.2.1</b> Saddle-node bifurcation<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#more-birfurcations"><i class="fa fa-check"></i><b>10.3</b> More types of Bifurcations<span></span></a>
+<ul>
+<li><a href="Loren-chaos-and-bifurcation.html#trans-bifurcations">Transcritical bifurcations<span></span></a></li>
+<li><a href="Loren-chaos-and-bifurcation.html#pitch-fork-bifurcation">Pitch-fork bifurcation<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#sheet10"><i class="fa fa-check"></i><b>10.4</b> Problem Sheet 10<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="revision.html"><a href="revision.html"><i class="fa fa-check"></i><b>11</b> Revision Guide<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="revision.html"><a href="revision.html#General-advice"><i class="fa fa-check"></i><b>11.1</b> General advice<span></span></a></li>
+<li class="chapter" data-level="11.2" data-path="revision.html"><a href="revision.html#what-to-learn"><i class="fa fa-check"></i><b>11.2</b> What to Learn<span></span></a>
+<ul>
+<li><a href="revision.html#maps">Maps<span></span></a></li>
+<li><a href="revision.html#continuous-time-dynamical-systems-1">Continuous time dynamical systems<span></span></a></li>
+</ul></li>
+</ul></li>
+<li><a href="references.html#references">References<span></span></a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MT4508: Dynamical Systems (Revision Notes)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Fractals" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Fractals<a href="Fractals.html#Fractals" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Covers Chapter 4 from Section 4.5 to Definition 5.1 of Chapter 5 <span class="citation">(<a href="#ref-ASY" role="doc-biblioref">Alligood, Sauer, and Yorke 2000</a>)</span>.</p>
+<!-- write down chapter of book covered and add that figures are from ASY -->
+<hr />
+<div id="complexmapsandJuliasets" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Complex maps and Julia sets<a href="Fractals.html#complexmapsandJuliasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As another example of how fractals might arise from dynamical systems, consider a complex map <span class="math inline">\(P_{c}: \C \to \C\)</span> defined by <span class="math inline">\(P_{c}(z) = z^2 + c\)</span> for a constant <span class="math inline">\(c \in \C\)</span>. This defines a complex discrete dynamical system:</p>
+<p><span class="math display">\[z_{n+1} = z_n^2 + c.\]</span></p>
+<p>We can also think of this as a map on <span class="math inline">\(\R^2\)</span> as <span class="math inline">\(\v{f}(x,y)= (x^2 -y^2 + a, 2xy + b)\)</span> where <span class="math inline">\(c = a + ib \in \C\)</span> and so as a discrete dynamical system on <span class="math inline">\(\R^2\)</span>.</p>
+<p>For <span class="math inline">\(c = 0\)</span>, <span class="math inline">\(P_{0} = z^2\)</span> and we have a fixed point at <span class="math inline">\(0\)</span> which is in fact an attracting fixed point. All points <span class="math inline">\(z \in \C\)</span> with <span class="math inline">\(|z|&lt;1\)</span> are attracted to <span class="math inline">\(0\)</span> under iterations of the map <span class="math inline">\(P_{0}\)</span>. Therefore the interior of the unit disk is the basin of attraction of <span class="math inline">\(0\)</span>.</p>
+<p>Notice that points on the boundary <span class="math inline">\(S = \{ z \in \C : |z| = 1 \}\)</span> of the unit disk are mapped under <span class="math inline">\(P_{0}\)</span> to other points on the unit disk. While the set <span class="math inline">\(K = \{ z \in \C : |z|&gt;1 \}\)</span> of points outside the closed unit disk map to infinity under iterations of <span class="math inline">\(P_{0}\)</span>. Therefore <span class="math inline">\(S\)</span> forms the boundary between the basin of <span class="math inline">\(0\)</span> and the basin of infinity.</p>
+<p>The dynamics differ if we change the value of <span class="math inline">\(c\)</span>, indeed <span class="math inline">\(0\)</span> is no longer a fixed point once <span class="math inline">\(c\)</span> is non-zero. However the orbit of <span class="math inline">\(0\)</span> play an important role in the dynamics of <span class="math inline">\(P_{c}\)</span>. Therefore one might wonder for which values of <span class="math inline">\(c\)</span> does the orbit with initial point <span class="math inline">\(0\)</span> not diverge to infinity? The set of points <span class="math inline">\(c \in \Z\)</span> for which the orbit of <span class="math inline">\(0\)</span> is bounded is called the <em>Mandelbrot set</em> (after the mathematician <a href="https:mathshistory.st-andrews.ac.uk/Biographies/Mandelbrot">Benoit Mandelbrot</a>) and is denoted <span class="math inline">\(M\)</span> . That is,</p>
+<p><span class="math display">\[ M = \{ c \in \C: \exists M \in \R, |P_{c}^{n}(0)|&lt; M \forall n \in \N \}.\]</span></p>
+<!-- include Mandelbrot figure -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Mandelbrot"></span>
+<img src="MT4508RevisionNotes_files/figure-html/Mandelbrot-3.png" alt="A picture of the Mandelbrot set." width="100%" />
+<p class="caption">
+Figure 5.1: A picture of the Mandelbrot set.
+</p>
+</div>
+<p>For a fixed <span class="math inline">\(c \in \C\)</span>, the boundary between orbits which diverge to infinity under <span class="math inline">\(P_{c}\)</span> and orbits which are bounded is an important set. It is the <em>Julia set of <span class="math inline">\(P_{c}(z)\)</span></em> (after the mathematician <a href="https:mathshistory.st-andrews.ac.uk/Biographies/Julia">Gaston Maurice Julia</a>). The Julia sets are good examples of fractal sets.</p>
+<p>Figure <a href="Fractals.html#fig:JuliaSets">5.2</a> shows examples of Julia sets for values of <span class="math inline">\(\C\)</span> inside the Mandelbrot set.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:JuliaSets"></span>
+<img src="MT4508RevisionNotes_files/figure-html/JuliaSets-5.png" alt="Julia sets for values of $c$ in the Mandelbrot set" width="90%" />
+<p class="caption">
+Figure 5.2: Julia sets for values of <span class="math inline">\(c\)</span> in the Mandelbrot set
+</p>
+</div>
+<div id="fractaldim" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Fractal dimension<a href="Fractals.html#fractaldim" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we constructed the middle third Cantor set, we observed that although the resulting set <span class="math inline">\(\CC\)</span> contained infinitely many points it had zero length. But perhaps we were using the wrong measure. A <em>fractal dimension</em> is a way of measuring the complexity of a fractal set. Of course we expect such a measure to generalise the normal notion of “dimension” that we are used to. That is we expect a fractal dimension to give the value 1 for the dimension of an interval, 2 for a square 3 for a cube and so on.</p>
+<p>There are many different ways to measure the dimension of a fractal set and in some instances they coincide. We only introduce a couple in this module. The first is the <em>box counting</em> dimension.</p>
+<p>Let us first consider the definition of the box-countingdimension for standard subsets of <span class="math inline">\(\R\)</span> and <span class="math inline">\(\R^2\)</span> before generalising to subsets of <span class="math inline">\(\R^n\)</span>.</p>
+<p>Consider the unit interval <span class="math inline">\([0,1]\)</span>. Given <span class="math inline">\(\epsilon &gt;0\)</span>, what is the minimum number intervals of size <span class="math inline">\(\epsilon\)</span> that we need to cover <span class="math inline">\([0,1]\)</span>? That is we want a minimal collection <span class="math inline">\(X\)</span> of intervals <span class="math inline">\(U=[a,b]\)</span> such that <span class="math inline">\(|a-b| = \epsilon\)</span> and <span class="math inline">\(\bigcup_{U \in X} U \supseteq [0,1]\)</span>? Clearly we need <span class="math inline">\(1/\epsilon\)</span> intervals of size <span class="math inline">\(\epsilon\)</span>. If we had instead considered the interval <span class="math inline">\([0, 42]\)</span>, then the minimal number of intervals of size has size <span class="math inline">\(42/\epsilon\)</span>. In particular the number of intervals is <em>linear</em> in <span class="math inline">\(1/\epsilon\)</span> (i.e of the form <span class="math inline">\(c 1/\epsilon\)</span> for a constant <span class="math inline">\(c\)</span> depending on the length of the interval) representing in some sense the <span class="math inline">\(1\)</span>-dimensionality of the interval.</p>
+<p>What about a square <span class="math inline">\(D\)</span> in <span class="math inline">\(\R^2?\)</span> Given <span class="math inline">\(\epsilon &gt;0\)</span>, what is the minimum number of squares of size <span class="math inline">\(\epsilon^2\)</span> that we need to cover the square <span class="math inline">\(D\)</span>? We find in this case that we need <span class="math inline">\(c(1/\epsilon^2)\)</span> squares of size <span class="math inline">\(\epsilon^2\)</span> for a constant <span class="math inline">\(c\)</span> depending on the area of the square. In particular the number of squares is <em>quadratic</em> in the <span class="math inline">\(1/\epsilon\)</span> representing the two dimensionality of the square.</p>
+<!-- include image of Hernon attractor with overlayed grid -->
+<p>In the general case, given a cube <span class="math inline">\(D \in \R^{d}\)</span> and writing <span class="math inline">\(N(\epsilon)\)</span> for the minimum number of <em>boxes</em> of side length <span class="math inline">\(\epsilon\)</span> in <span class="math inline">\(\R^{d}\)</span> required to cover the <span class="math inline">\(D\)</span>. We find <span class="math inline">\(N(\epsilon) = c(1/\epsilon^{d})\)</span> where <span class="math inline">\(c\)</span> is a constant depending on the size of the cube <span class="math inline">\(D\)</span>. Thus the exponent give the dimension. We can rearrange this expression by taking logarithms to obtain an equation for the exponent in terms of <span class="math inline">\(N(\epsilon)\)</span> and <span class="math inline">\(c\)</span>.</p>
+<p><span class="math display">\[ d =  \dfrac{\ln(N(\epsilon)) - \ln(c)}{\ln(1/\epsilon^{d})}.\]</span></p>
+<p>If <span class="math inline">\(c\)</span> roughly constant for all small <span class="math inline">\(\epsilon\)</span>, then the contribution of <span class="math inline">\(\ln(c)\)</span> is negligible. Thus we have the following definition.</p>
+<div class="definition">
+<p><span id="def:boxcountingdim" class="definition"><strong>Definition 5.1  (Box-counting dimension) </strong></span>A bounded set <span class="math inline">\(S \subseteq \R^{n}\)</span> has <em>box-countingdimension</em></p>
+<p><span class="math display">\[ \bdim(s) = \lim_{\epsilon \to 0} \dfrac{\ln N(\epsilon)}{\ln(1/\epsilon)} \]</span></p>
+<p>when the limit exists.</p>
+</div>
+<p>See Figure <a href="Fractals.html#fig:Hernonorbitboxcount">5.3</a> for an illustration of applying this in practice.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Hernonorbitboxcount"></span>
+<img src="MT4508RevisionNotes_files/figure-html/Hernonorbitboxcount-7.png" alt="Boxcounting dimension for an orbit of the Hènon map" width="100%" />
+<p class="caption">
+Figure 5.3: Boxcounting dimension for an orbit of the Hènon map
+</p>
+</div>
+<div class="example">
+<p><span id="exm:boxdimCantor" class="example"><strong>Example 5.1  </strong></span>Let us compute the box-counting dimension of the middle-third Cantor set <span class="math inline">\(\CC\)</span>. Now we expect a number between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span> since <span class="math inline">\(\CC\)</span> is a subset of <span class="math inline">\(\R\)</span>.</p>
+<p>Essentially the minimal length boxes are given to us by the construction of the middle third Cantor set (Subsection <a href="Higherdimstability.html#fractals">4.2.1</a>). Taking <span class="math inline">\(\epsilon = (1/3)^{n}\)</span>, from the construction of the middle third Cantor set we deduce that <span class="math inline">\(N(\epsilon) = 2^n\)</span> (at the <span class="math inline">\(n\)</span><sup>th</sup> step of the construction, we have <span class="math inline">\(2^n\)</span> intervals of size <span class="math inline">\(1/3^{n}\)</span>).</p>
+<p>Therefore</p>
+<p><span class="math display">\[\bdim(\CC) = \lim_{\epsilon\to 0} \dfrac{\ln N(\epsilon)}{\ln(1/\epsilon)}  = \lim_{n \to \infty} \dfrac{\ln2^{n}}{\ln 3^n} = \ln 2/\ln 3.\]</span></p>
+</div>
+</div>
+</div>
+<div id="fractaldimcont" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Fractal dimensions<a href="Fractals.html#fractaldimcont" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="correlationdim" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Correlation dimension<a href="Fractals.html#correlationdim" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another notion of dimension of a fractal set is the so called <em>correlation dimension</em>. As opposed to the box-counting dimension which applies to any bounded subset of <span class="math inline">\(\R^{n}\)</span> the correlation dimension is <strong>only defined</strong> for the orbit of a dynamical system.</p>
+<div class="definition">
+<p><span id="def:correlationdimension" class="definition"><strong>Definition 5.2  (Correlation dimension) </strong></span>Let <span class="math inline">\(S= (\v{v}_{0}, \v{v}_{1}, \ldots )\)</span> be an orbit of a map <span class="math inline">\(\v{f}: \R^{n} \to \R^{n}\)</span>. Let <span class="math inline">\(r \in \R\)</span> be a positive number and set <span class="math inline">\(S_{N} = (\v{v}_{0}, \v{v}_{1}, \ldots, \v{v}_{n})\)</span> to be the first <span class="math inline">\(N\)</span> points in the orbit.</p>
+<p>The <em>correlation function</em> <span class="math inline">\(C(r)\)</span> is defined as:</p>
+<p><span class="math display">\[ C(r) = \lim_{N \to \infty} \dfrac{|\{ (i,j) : i \ne j, 0 \le i,j \le N, |\v{v}_i - \v{v}_{j}| &lt;r    \} |}{N^2}. \]</span></p>
+<p>The <em>correlation dimension</em> of the orbit <span class="math inline">\(S\)</span> is defined as</p>
+<p><span class="math display">\[ \cdim(S) = \lim_{r \to 0} \dfrac{\ln C(r)}{\ln r} \]</span></p>
+<p>when the limit exists.</p>
+</div>
+<div class="palegreenbox">
+<div class="center">
+<p><strong>Note</strong></p>
+</div>
+<p>For an orbit which is <em>not</em> asymptotically periodic:</p>
+<ul>
+<li>when <span class="math inline">\(r\)</span> tends to <span class="math inline">\(0\)</span> the correlation function tends to <span class="math inline">\(0\)</span> (since the size of the numerator tends to <span class="math inline">\(0\)</span>);</li>
+<li>when <span class="math inline">\(r\)</span> approaches infinity then <span class="math inline">\(C(r)\)</span> tends to <span class="math inline">\(1\)</span> since the size of the numerator approaches <span class="math inline">\(N^2.\)</span></li>
+</ul>
+<p>If for small <span class="math inline">\(r\)</span> the correlation function is <span class="math inline">\(C(r)\)</span> is of the order <span class="math inline">\(r^{d}\)</span>, that is <span class="math inline">\(C(r) \simeq r^{d}\)</span> then <span class="math inline">\(d\)</span> is the correlation dimension of <span class="math inline">\(S\)</span>.</p>
+</div>
+<p>Let us compare the box-counting and correlation dimensions of the Hènon attractor from Figure <a href="Fractals.html#fig:Hernonorbitboxcount">5.3</a>.</p>
+<p>Recall that the box-counting dimension of a set <span class="math inline">\(S\)</span> is defined as <span class="math inline">\(\lim_{\epsilon \to 0} \frac{\ln N(\epsilon)}{\ln(1/\epsilon)}\)</span>. Choose box-sizes of the from <span class="math inline">\(\epsilon = 2^{-2}, 2^{-3}, \ldots\)</span>. Plotting <span class="math inline">\(\log_{2} N(\epsilon)\)</span> against <span class="math inline">\(\log_{2}(1/\epsilon)\)</span>, the box-counting dimension of <span class="math inline">\(S\)</span> can be estimated as the slope of the resulting graph. The result is approximately <span class="math inline">\(1.27\)</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:boxcountestimate"></span>
+<img src="MT4508RevisionNotes_files/figure-html/boxcountestimate-1.png" alt="Box-counting dimension of the Hènon attractor" width="90%" />
+<p class="caption">
+Figure 5.4: Box-counting dimension of the Hènon attractor
+</p>
+</div>
+<p>For the correlation dimension we can take a similar approach. We plot <span class="math inline">\(\log_{2}(C(r))\)</span> against <span class="math inline">\(\log_2(r)\)</span> where we consider the first <span class="math inline">\(1000\)</span> points of the orbit. We take values of <span class="math inline">\(r = 2^{-2}, 2^{-3}, \ldots\)</span>. The correlation dimension is then the slope of the resulting graph as <span class="math inline">\(r\)</span> tends to <span class="math inline">\(0\)</span>. The result is approximately <span class="math inline">\(1.23\)</span></p>
+<!-- figure -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:correlationestimate"></span>
+<img src="MT4508RevisionNotes_files/figure-html/correlationestimate-3.png" alt="Correlation dimension of the Hènon attractor" width="95%" />
+<p class="caption">
+Figure 5.5: Correlation dimension of the Hènon attractor
+</p>
+</div>
+</div>
+<div id="chaosndim" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Chaos in higher-dimensions<a href="Fractals.html#chaosndim" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In Subsection <a href="Higherdimstability.html#chaos1dim">4.1.1</a> we gave a precise definition of what is meant by a chaotic orbit for a bounded orbit of a one-dimensional map. We were able to say exactly what is meant by non-periodicity (not asymptotically periodic) and we characterised sensitivity to initial conditions in terms of the Lyapunov exponent of the orbit. We now generalise this to higher-dimensional maps. As we have seen (<a href="periodicpoints.html#higher-dimensional-maps">2.3</a>) a new dynamic emerges in dimensions greater than <span class="math inline">\(1\)</span> — saddle fixed/saddle periodic points — these have have expansion/stretching in some directions and contraction in others. The expansion and compression factors are determined by the eigenvalues of the Jacobian of the map at the fixed point. The Lyapunov number for higher-dimensional maps ought to give the stretching/attracting factor on orbits near the repelling/attracting directions of the saddle point. The Lyapunov number should quantify the stretching/shrinking per iteration of the map on orbits originating near the saddle point.</p>
+<div class="definition">
+<p><span id="def:lyapunovexponentndim" class="definition"><strong>Definition 5.3  (Lyapunov exponent) </strong></span>Let <span class="math inline">\(\v{f}\)</span> be a smooth map defined on a subset of <span class="math inline">\(\R^{n}\)</span> and let <span class="math inline">\(J_{m} = \jacob^{m}(\v{v}_{0})\)</span> (that is <span class="math inline">\(J_{m}\)</span> is the Jacobian of <span class="math inline">\(\v{f}^{m}\)</span> at <span class="math inline">\(v_0\)</span>). The matrix <span class="math inline">\(J_m\)</span> induces a linear map on <span class="math inline">\(\R^{n}\)</span> and maps the <span class="math inline">\(n\)</span>-dimensional unit sphere to an ellipsoid (recall that our maps are invertible). Let <span class="math inline">\(r_{k}^{m}\)</span> be the length of the <span class="math inline">\(k\)</span><sup>th</sup> longest orthogonal axis of the ellipsoid (that <span class="math inline">\(J_m\)</span> maps the unit sphere to). Then <span class="math inline">\(r^{m}_{k}\)</span> measures the contraction and expansion near the orbit of <span class="math inline">\(\v{v}_{0}\)</span> during the first <span class="math inline">\(n\)</span> iterations of <span class="math inline">\(\v{f}\)</span>. The <span class="math inline">\(k\)</span><sup>th</sup> <em>Lyapunov number</em> of <span class="math inline">\(\v{v}_{0}\)</span> is defined as</p>
+<p><span class="math display">\[ L_{k} = \lim_{m \to \infty} (r_{k}^{m})^{1/m}\]</span> when the limit exists.</p>
+<p>The <span class="math inline">\(k\)</span><sup>th</sup> <em>Lyapunov exponent</em> of <span class="math inline">\(\v{v}_{0}\)</span> is <span class="math inline">\(h_{k} = \ln L_{k}\)</span>.</p>
+</div>
+<p>Notice that by choice of the <span class="math inline">\(r_{k}\)</span>’s it follows that <span class="math inline">\(L_{1} \ge L_2 \ge \ldots \ge L_{n}\)</span> and <span class="math inline">\(h_{1} \ge h_2 \ge \ldots \ge h_{n}\)</span>.</p>
+<p>Now we have the ingredients required to define chaotic orbits in higher dimensions.</p>
+</div>
+</div>
+<div id="sheet5" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Problem Sheet 5<a href="Fractals.html#sheet5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>For week 6.</em></p>
+<hr />
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 5.1
+</div>
+<div class="panel-body">
+<p>Consider the map <span class="math inline">\(\v{f}: \R^2 \to \R^2\)</span> defined by
+<span class="math display">\[
+\v{f}(x,y) = (1-ax^2 + y, bx).
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Verify that a period-<span class="math inline">\(2\)</span> orbit of <span class="math inline">\(\v{f}(x,y)\)</span> is given by</p>
+<p><span class="math display">\[ \v{p}_{0} = (x_{+}, y_{+}), \quad \v{p}_{1} = (x_{-}, y_{-})\]</span>
+where
+<span class="math display">\[\begin{align}
+     x_{+} &amp;= \frac{1}{2a} \left[ 1 - b + \sqrt{4a - 3(1-b)^2} \right] \\
+     y_{+} &amp;= \frac{b}{2a} \left[ 1 - b - \sqrt{4a - 3(1-b)^2} \right] \\
+     x_{-} &amp;= \frac{1}{2a} \left[ 1 - b - \sqrt{4a - 3(1-b)^2} \right] \\
+     y_{-} &amp;= \frac{b}{2a} \left[ 1 - b + \sqrt{4a - 3(1-b)^2} \right]
+\end{align}\]</span>
+where <span class="math inline">\(a&gt; 3(1-b)^2/4\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(b=0\)</span>. Show that the period <span class="math inline">\(2\)</span>-orbit is stable for <span class="math inline">\(3/4 &lt; a &lt; 5/4\)</span> and unstable for <span class="math inline">\(a&gt;5/4\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<button id="displayTextunnamed-chunk-37" onclick="javascript:toggle(&#39;unnamed-chunk-37&#39;);">
+Show Solution 5.1
+</button>
+<div id="toggleTextunnamed-chunk-37" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 5.1
+</div>
+<div class="panel-body">
+<ol style="list-style-type: lower-alpha">
+<li><p>This is a verify question so we need only check that <span class="math inline">\(\v{f}(\v{p}_{i}) = \v{p}_{i+1}\)</span> for <span class="math inline">\(i \in \{0,1\}\)</span> indices taken mod 2. We have
+<span class="math display">\[\begin{align*}
+   \v{f}(\v{p}_{0}) &amp;= \left(1 - \frac{1}{4a}\left[(1-b)^2 + 2(1-b) \sqrt{4a-3(1-b)^2} \right. \right. \\ &amp; \left. \left. + 4a - 3(1-b)^2 \right] \right. \\
+   &amp; \left. + \frac{b}{2a} \left[ 1 - b - \sqrt{4a - 3(1-b)^2} \right], y_{-}  \right) \\
+   &amp;= \left(\frac{(1-b)^2}{2a} - \frac{1-b}{2a}\sqrt{4a - 3 (1-b)^2} \right. \\ &amp; \left. + \frac{b}{2a}\left[ 1 - b - \sqrt{4a - 3 (1-b)^2} \right], y_{-} \right) \\
+   {} &amp;= \left(\frac{(1-b)^2}{2a} - \frac{\sqrt{4a - 3 (1-b)^2}}{2a} + \frac{b(1-b)}{2a}, y_{-} \right) \\
+   {} &amp;=  (x_{-}, y_{-})
+\end{align*}\]</span>
+and</p>
+<p><span class="math display">\[\begin{align*}
+     \v{f}(\v{p}_{1}) &amp;= \left(1 - \frac{1}{4a}\left[(1-b)^2 \right. \right. \\ &amp; \left. \left. - 2(1-b) \sqrt{4a-3(1-b)^2} + 4a - 3(1-b)^2 \right] \right. \\
+     &amp;\left.+ \frac{b}{2a} \left[ 1 - b + \sqrt{4a - 3(1-b)^2} \right], y_{+}  \right) \\
+     &amp;= \left(\frac{(1-b)^2}{2a} + \frac{1-b}{2a}\sqrt{4a - 3 (1-b)^2} \right. \\ &amp; \left. + \frac{b}{2a}\left[ 1 - b + \sqrt{4a - 3 (1-b)^2} \right], y_{+} \right) \\
+     &amp; = \left(\frac{(1-b)^2}{2a} + \frac{\sqrt{4a - 3 (1-b)^2}}{2a} + \frac{b(1-b)}{2a}, y_{-} \right) \\
+     &amp;=  (x_{+}, y_{+})
+\end{align*}\]</span>
+as required.</p></li>
+<li><p>We compute
+<span class="math display">\[
+     \jacob{(x_{+}, y_{+})} = \begin{pmatrix} -2ax_{+} &amp; 1 \\ 0 &amp; 0 \end{pmatrix}
+\]</span>
+and
+<span class="math display">\[
+     \jacob{(x_{-}, y_{-})} = \begin{pmatrix} -2ax_{-} &amp; 1 \\ 0 &amp; 0 \end{pmatrix}.
+\]</span>
+Therefore
+<span class="math display">\[
+     \jacob{(x_{+}, y_{+})}\jacob{(x_{-}, y_{-})}  = \begin{pmatrix} -4a^2x_{+}x_{-} &amp; -2ax_{+} \\ 0 &amp; 0 \end{pmatrix}.
+\]</span>
+The eigenvalues are given by <span class="math inline">\(\lambda_1 = 0\)</span> and <span class="math inline">\(\lambda_2 = 4 a^2 x_{+}x_{-}\)</span>. Substituting for <span class="math inline">\(x_{+}\)</span> and <span class="math inline">\(x_{-}\)</span> we have <span class="math inline">\(\lambda_{2} = 4 - 4a\)</span>. When <span class="math inline">\(3/4 &lt; a&lt;5/4\)</span> then <span class="math inline">\(|4-4a| &lt; 1\)</span> and the period-2 orbit is stable. When <span class="math inline">\(a&gt; 5/4\)</span> the period-<span class="math inline">\(2\)</span> orbit is unstable.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 5.2
+</div>
+<div class="panel-body">
+<p>A map <span class="math inline">\(f\)</span> of the unit interval is defined as follows
+<span class="math display">\[
+f(x) = 10x \mod 1 = \begin{cases}
+                        10x, &amp; 0 \le x &lt; \frac{1}{10} \\
+                        10x -1, &amp; \frac{1}{10} \le x &lt; \frac{2}{10} \\
+                        10x -2, &amp; \frac{2}{10} \le x &lt; \frac{3}{10} \\
+                        \quad \vdots &amp; \quad \quad \quad \vdots \\
+                        10x -9, &amp; \frac{9}{10} \le x &lt; 1 \\
+                        0, &amp; x =1
+                    \end{cases}
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Sketch the map and the straight line <span class="math inline">\(y=x\)</span>. On the basis of your skecth, how many fixed points do you expect this map to have?</p></li>
+<li><p>State the definition of the Lyapunov number and Lyapunov exponent for one-dimensional maps.</p></li>
+<li><p>Calculate the Lyapunov number and Lyapunov exponent for all orbits of the map <span class="math inline">\(f(x)\)</span> that avoid<br />
+<span class="math display">\[x_i = \frac{1}{10},\frac{2}{10},\frac{3}{10},\frac{4}{10},\frac{5}{10},\frac{6}{10},\frac{7}{10},\frac{8}{10}, \text{ and } \frac{9}{10}.
+\]</span>
+Can this map have any stable fixed points or periodic points?</p></li>
+<li><p>State the definition of chaotic orbits for one-dimensional maps.</p></li>
+<li><p>Briefly explain why you expect the map <span class="math inline">\(f(x)\)</span> defined above to have chaotic orbits.</p>
+<p>[Hint: It might help to use the decimal representation of numbers in the interval <span class="math inline">\([0,1]\)</span>.]</p></li>
+</ol>
+</div>
+</div>
+<button id="displayTextunnamed-chunk-39" onclick="javascript:toggle(&#39;unnamed-chunk-39&#39;);">
+Show Solution 5.2
+</button>
+<div id="toggleTextunnamed-chunk-39" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 5.2
+</div>
+<div class="panel-body">
+
+<ol style="list-style-type: lower-alpha">
+<li><p>The sketch is shown in Figure <a href="Fractals.html#fig:tenmapprob">5.6</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tenmapprob"></span>
+<img src="MT4508RevisionNotes_files/figure-html/tenmapprob-13.png" alt="Sketch of the times ten map" width="95%" />
+<p class="caption">
+Figure 5.6: Sketch of the times ten map
+</p>
+</div>
+<p>Based on the graph we expect <span class="math inline">\(f\)</span> to have 10 fixed points.</p></li>
+<li><p>See Definition 4.1 in the lecture notes.</p></li>
+<li><p>The derivative of <span class="math inline">\(f\)</span> at any point that is not of the form <span class="math inline">\(a/10\)</span> for <span class="math inline">\(0 \le a &lt; 10\)</span>, is exactly 10. Therefore the Lyapunov number of any orbit avoiding the point at which the derivative of <span class="math inline">\(f\)</span> is not defined is exactly <span class="math inline">\(10\)</span>. The Lyapunov exponent of such an orbit is therefore <span class="math inline">\(\ln(10)&gt;0\)</span>. The map <span class="math inline">\(f\)</span> does not have stable fixed or periodic orbits. Notice that a fixed or periodic point cannot pass through a non-differentiable point of <span class="math inline">\(f\)</span>. The derivative of <span class="math inline">\(f^{k}\)</span> at all points at which <span class="math inline">\(f\)</span> is differentiable is <span class="math inline">\(10^{k} &gt; 1\)</span>.</p></li>
+<li><p>See Definition 4.3 in the lecture notes.</p></li>
+<li><p>An orbit is asymptotically periodic if and only if it is eventually periodic. For suppose <span class="math inline">\(x\)</span> is asymptotically periodic to a period-k point <span class="math inline">\(y\)</span>. Since <span class="math inline">\(y\)</span> is an unstable periodic point (indeed an unstable fixed point of <span class="math inline">\(f^{k}\)</span>) for every <span class="math inline">\(\epsilon &gt;0\)</span>, for any point <span class="math inline">\(u \ne y \in N(\epsilon, y)\)</span> there is a <span class="math inline">\(j \in \N\)</span> with <span class="math inline">\(|f^{jk}(u) - y| &gt; \epsilon\)</span>. Let <span class="math inline">\(\epsilon &gt;0\)</span>, since <span class="math inline">\(x\)</span> is asymptotically periodic, there is an <span class="math inline">\(m \in \N\)</span> such that for all <span class="math inline">\(n \ge m\)</span>, <span class="math inline">\(|f^{nk}(x) - f^{nk}(y)| &lt; \epsilon\)</span>. If <span class="math inline">\(f^{nk}(x) \ne \epsilon\)</span>, then there is a <span class="math inline">\(j \ge n\)</span> such that <span class="math inline">\(|f^{jk}(x) - f^{jk}(y)| &gt; \epsilon\)</span> which would be a contradiction. Therefore <span class="math inline">\(x\)</span> must be eventually periodic. In particular, any irrational number will have a non-asymptotically periodic decimal orbit as its decimal expansion is not eventually periodic. Therefore <span class="math inline">\(f\)</span> has infinitely many chaotic orbits by c.</p>
+</div>
+</div>
+</div></li>
+</ol>
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 5.3
+</div>
+<div class="panel-body">
+<p>A one-dimensional map on the real numbers is defined by
+<span class="math display">\[
+    f(x) = rx(1-x), \quad 0 \le r &lt; \infty.
+\]</span>
+Let <span class="math inline">\(r&gt; 2+ \sqrt{5}\)</span>. For any orbit of <span class="math inline">\(f(x)\)</span> that remains in <span class="math inline">\([0,1]\)</span> find a lower bound for <span class="math inline">\(|f&#39;(x)|\)</span>. Hence show that the Lyapunov exponents of such orbits is greater than <span class="math inline">\(0\)</span> if it exists. When would such an orbit be chaotic?</p>
+</div>
+</div>
+<button id="displayTextunnamed-chunk-41" onclick="javascript:toggle(&#39;unnamed-chunk-41&#39;);">
+Show Solution 5.3
+</button>
+<div id="toggleTextunnamed-chunk-41" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 5.3
+</div>
+<div class="panel-body">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:logmapprob"></span>
+<img src="MT4508RevisionNotes_files/figure-html/logmapprob-15.png" alt="Sketch of the logistic map" width="95%" />
+<p class="caption">
+Figure 5.7: Sketch of the logistic map
+</p>
+</div>
+<p>Let <span class="math inline">\(x_{-} \in [0,1]\)</span> be the leftmost point of intersection of the line <span class="math inline">\(y=1\)</span> with the curve <span class="math inline">\(y = f(x)\)</span> and let <span class="math inline">\(x_+ \in [0,1]\)</span> be the rightmost point of intersection. If a point has an orbit that remains in <span class="math inline">\([0,1]\)</span> then certainly the point lies in the union <span class="math inline">\([0, x_-] \sqcup [x_+, 1].\)</span></p>
+<p>The points <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> can be found by solving <span class="math inline">\(rx - rx^2 = 1.\)</span> This gives <span class="math inline">\(x_{-} = \frac{1}{2} - \sqrt{\frac{r-4}{4r}}\)</span> and <span class="math inline">\(x_{+} =\frac{1}{2} + \sqrt{\frac{r-4}{4r}}\)</span>. Now <span class="math inline">\(f&#39;(x) = r - 2rx\)</span> is a straight line with a negative gradient. In the interval <span class="math inline">\([0, x_{-}]\)</span> we therefore conclude that <span class="math inline">\(f&#39;(x) = r- 2rx \ge f&#39;(x_{-}) &gt; 1\)</span> since <span class="math inline">\(r &gt; 2+ \sqrt{5}\)</span>. In the interval <span class="math inline">\((x_{+}, 1]\)</span> the minimum value of <span class="math inline">\(|f&#39;(x)|\)</span> occurs when <span class="math inline">\(x = x_{+}\)</span> and <span class="math inline">\(|f&#39;(x_{+})| &gt;1\)</span> . Set <span class="math inline">\(l := \min\{ |f&#39;(x_{-})|, |f&#39;(x_{+})| \}\)</span>.</p>
+<p>The Lyapunov number of an orbit <span class="math inline">\((x_1,x_2, \ldots )\)</span> which remains in <span class="math inline">\([0,1]\)</span> is given by</p>
+<p><span class="math display">\[ \lim_{n \to \infty} (|f&#39;(x_1)| |f&#39;(x_2)| \ldots |f&#39;(x_n)| )^{\frac{1}{n}}  \ge \lim_{n \to \infty} \left( l^{n} \right)^{1/n} = l &gt; 1.\]</span></p>
+<p>In particular the Lyapunov exponent of such an orbit is greater than <span class="math inline">\(1\)</span> (if it exists).</p>
+<p>By Definition 4.3, an orbit which remains in <span class="math inline">\([0,1]\)</span> under iterations of <span class="math inline">\(f\)</span> is chaotic precisely when it is not asymptotically periodic.</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ASY" class="csl-entry">
+Alligood, K. T., T. D. Sauer, and J. A. Yorke. 2000. <em>Chaos: An Introduction to Dynamical Sytems</em>. Textbooks in Mathematical Sciences. Springer New York.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Higherdimstability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chaoshigherdim.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MT4508RevisionNotes.pdf"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

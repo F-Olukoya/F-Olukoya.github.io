@@ -1,0 +1,4617 @@
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.7.10)  12 JUL 2022 12:00
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**MT4508RevisionNotes.tex
+(./MT4508RevisionNotes.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-07-04> (./krantz.cls
+Document Class: krantz 2005/09/16 v1.4f Standard LaTeX document class
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\trimheight=\dimen138
+\trimwidth=\dimen139
+\normaltextheight=\dimen140
+\tempa=\dimen141
+\tempdimen=\dimen142
+\htrim=\dimen143
+\vtrimtop=\dimen144
+\vtrimbot=\dimen145
+\ul@box=\box51
+\ur@box=\box52
+\ll@box=\box53
+\lr@box=\box54
+\@cipboxa=\box55
+\@cipboxb=\box56
+\@ciprulewidth=\dimen146
+\c@part=\count181
+\c@chapter=\count182
+\c@section=\count183
+\c@subsection=\count184
+\c@subsubsection=\count185
+\c@paragraph=\count186
+\c@subparagraph=\count187
+\secwd=\dimen147
+\subsecwd=\dimen148
+\subsubsecwd=\dimen149
+\c@figure=\count188
+\c@table=\count189
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\c@numauthors=\count190
+\section@toc@skip=\skip49
+\SectionTOCWidth=\skip50
+\subsection@toc@skip=\skip51
+\SubSectionTOCWidth=\skip52
+\subsubsection@toc@skip=\skip53
+\SubSubSectionTOCWidth=\skip54
+\paragraph@toc@skip=\skip55
+\ParagraphTOCWidth=\skip56
+\subparagraph@toc@skip=\skip57
+\@AUonebox=\box57
+\@AUtwobox=\box58
+\@AUthreebox=\box59
+\@AUfourbox=\box60
+\@AUaffonebox=\box61
+\@AUafftwobox=\box62
+\@AUaffthreebox=\box63
+\@AUafffourbox=\box64
+\@finalAUboxfromone=\box65
+\@finalAUboxfromtwo=\box66
+\@finalAUboxfromthree=\box67
+\@finalAUboxfromfour=\box68
+\c@chaptocdepth=\count191
+\bibindent=\dimen150
+\tempbox=\box69
+\nomenwidth=\dimen151
+\@tablebox=\box70
+\@tabletitlebox=\box71
+\@tablewidth=\dimen152
+\@tabletitlewidth=\dimen153
+\max@tablewidth=\dimen154
+\tempbox=\box72
+\tempdimen=\dimen155
+\tempbox=\box73
+\notewidth=\dimen156
+\wherebox=\box74
+\wherewidth=\dimen157
+\listtextleftmargin=\skip58
+\listtextleftmarginii=\skip59
+\listtextleftmarginiii=\skip60
+\listtextrightmargin=\skip61
+\listlabelleftskip=\skip62
+\listlabelleftskipii=\skip63
+\listlabelleftskipiii=\skip64
+\abovelistskipi=\skip65
+\belowlistskipi=\skip66
+\abovelistskipii=\skip67
+\belowlistskipii=\skip68
+\abovelistskipiii=\skip69
+\belowlistskipiii=\skip70
+\labelsepi=\skip71
+\labelsepii=\skip72
+\labelsepiii=\skip73
+\itemsepi=\skip74
+\itemsepii=\skip75
+\itemsepiii=\skip76
+\enumdimwd=\dimen158
+\enumdim=\dimen159
+\concolwidth=\dimen160
+\stempbox=\box75
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip77
+
+For additional information on amsmath, use the `?' option.
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen161
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen162
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count192
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count193
+\leftroot@=\count194
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count195
+\DOTSCASE@=\count196
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box76
+\strutbox@=\box77
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen163
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count197
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count198
+\dotsspace@=\muskip16
+\c@parentequation=\count199
+\dspbrk@lvl=\count266
+\tag@help=\toks17
+\row@=\count267
+\column@=\count268
+\maxfields@=\count269
+\andhelp@=\toks18
+\eqnshift@=\dimen164
+\alignsep@=\dimen165
+\tagshift@=\dimen166
+\tagwidth@=\dimen167
+\totwidth@=\dimen168
+\lineht@=\dimen169
+\@envbody=\toks19
+\multlinegap=\skip78
+\multlinetaggap=\skip79
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-07-04 L3 programming layer (loader) 
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2022-07-01 L3 backend support: XeTeX
+\g__graphics_track_int=\count270
+\l__pdf_internal_box=\box78
+\g__pdf_backend_object_int=\count271
+\g__pdf_backend_annotation_int=\count272
+\g__pdf_backend_link_int=\count273
+))
+Package: unicode-math 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLaTeX
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.
+sty
+Package: unicode-math-xetex 2020/01/31 v0.8q Unicode maths in XeLaTeX and LuaLa
+TeX
+ (/home/shayo/texlive/2022/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2022-06-22 L3 Experimental document command parser
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2022-06-22 LaTeX2e option processing using LaTeX3 keys
+) (/home/shayo/texlive/2022/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count274
+\l__fontspec_language_int=\count275
+\l__fontspec_strnum_int=\count276
+\l__fontspec_tmp_int=\count277
+\l__fontspec_tmpa_int=\count278
+\l__fontspec_tmpb_int=\count279
+\l__fontspec_tmpc_int=\count280
+\l__fontspec_em_int=\count281
+\l__fontspec_emdef_int=\count282
+\l__fontspec_strong_int=\count283
+\l__fontspec_strongdef_int=\count284
+\l__fontspec_tmpa_dim=\dimen170
+\l__fontspec_tmpb_dim=\dimen171
+\l__fontspec_tmpc_dim=\dimen172
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+))
+\g__um_fam_int=\count285
+\g__um_fonts_used_int=\count286
+\l__um_primecount_int=\count287
+\g__um_primekern_muskip=\muskip17
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/unicode-math/unicode-math-table.
+tex))) (/home/shayo/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2022/06/23 v3.0f Micro-typographical refinements (RS)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count288
+)
+\MT@toks=\toks22
+\MT@tempbox=\box79
+\MT@count=\count289
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1045.
+LaTeX Info: Redefining \leftprotrusion on input line 1046.
+LaTeX Info: Redefining \rightprotrusion on input line 1056.
+LaTeX Info: Redefining \textls on input line 1234.
+\MT@outer@kern=\dimen173
+LaTeX Info: Redefining \textmicrotypecontext on input line 1858.
+\MT@listname@count=\count290
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/microtype/microtype-xetex.def
+File: microtype-xetex.def 2022/06/23 v3.0f Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 236.
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2022/06/23 v3.0f microtype main configuration file (RS)
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 227.
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/04/16 v5.0m Graphics/color driver for xetex
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2022/06/12 v2.14 Predefined colors according to SVG 1.1 (UK)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/xcolor/x11nam.def
+File: x11nam.def 2022/06/12 v2.14 Predefined colors according to Unix/X11 (UK)
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/home/shayo/texlive/2022/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.
+sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count291
+)
+\@linkdim=\dimen174
+\Hy@linkcounter=\count292
+\Hy@pagecounter=\count293
+ (/home/shayo/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count294
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `final' set `true' on input line 4045.
+Package hyperref Info: Option `unicode' set `true' on input line 4045.
+Package hyperref Info: Hyper figures OFF on input line 4162.
+Package hyperref Info: Link nesting OFF on input line 4167.
+Package hyperref Info: Hyper index ON on input line 4170.
+Package hyperref Info: Plain pages OFF on input line 4177.
+Package hyperref Info: Backreferencing OFF on input line 4182.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4408.
+\c@Hy@tempcnt=\count295
+LaTeX Info: Redefining \url on input line 4746.
+\XeTeXLinkMargin=\dimen175
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count296
+\Field@Width=\dimen176
+\Fld@charsize=\dimen177
+Package hyperref Info: Hyper figures OFF on input line 6024.
+Package hyperref Info: Link nesting OFF on input line 6029.
+Package hyperref Info: Hyper index ON on input line 6032.
+Package hyperref Info: backreferencing OFF on input line 6039.
+Package hyperref Info: Link coloring OFF on input line 6044.
+Package hyperref Info: Link coloring with OCG OFF on input line 6049.
+Package hyperref Info: PDF/A mode OFF on input line 6054.
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count297
+\c@Item=\count298
+\c@Hfootnote=\count299
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2022-06-20 v7.00s Hyperref driver for XeTeX
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box80
+\c@Hy@AnnotLevel=\count300
+\HyField@AnnotCount=\count301
+\Fld@listcount=\count302
+\c@bookmark@seq@number=\count303
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.st
+y
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+ (/home/shayo/texlive/2022/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/uniquecounter/uniquecounter.st
+y
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip80
+) (/home/shayo/texlive/2022/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
+File: bkm-dvipdfm.def 2020-11-06 v1.29 bookmark driver for dvipdfm (HO)
+\BKM@id=\count304
+))
+Package hyperref Info: Option `colorlinks' set `true' on input line 49.
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2022/06/06 4.5 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count305
+\FV@InFile=\read2
+\FV@TabBox=\box81
+\c@FancyVerbLine=\count306
+\FV@StepNumber=\count307
+\FV@OutFile=\write3
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip81
+\fb@frw=\dimen178
+\fb@frh=\dimen179
+\FrameRule=\dimen180
+\FrameSep=\dimen181
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip82
+\LTright=\skip83
+\LTpre=\skip84
+\LTpost=\skip85
+\LTchunksize=\count308
+\LTcapwidth=\dimen182
+\LT@head=\box82
+\LT@firsthead=\box83
+\LT@foot=\box84
+\LT@lastfoot=\box85
+\LT@gbox=\box86
+\LT@cols=\count309
+\LT@rows=\count310
+\c@LT@tables=\count311
+\c@LT@chunks=\count312
+\LT@p@ftn=\toks23
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen183
+\lightrulewidth=\dimen184
+\cmidrulewidth=\dimen185
+\belowrulesep=\dimen186
+\belowbottomsep=\dimen187
+\aboverulesep=\dimen188
+\abovetopsep=\dimen189
+\cmidrulesep=\dimen190
+\cmidrulekern=\dimen191
+\defaultaddspace=\dimen192
+\@cmidla=\count313
+\@cmidlb=\count314
+\@aboverulesep=\dimen193
+\@belowrulesep=\dimen194
+\@thisruleclass=\count315
+\@lastruleclass=\count316
+\@thisrulewidth=\dimen195
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen196
+\ar@mcellbox=\box87
+\extrarowheight=\dimen197
+\NC@list=\toks24
+\extratabsurround=\skip86
+\backup@length=\skip87
+\ar@cellbox=\box88
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count317
+\calc@Bcount=\count318
+\calc@Adimen=\dimen198
+\calc@Bdimen=\dimen199
+\calc@Askip=\skip88
+\calc@Bskip=\skip89
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count319
+\calc@Cskip=\skip90
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/footnotehyper/footnotehyper.sty
+Package: footnotehyper 2021/08/13 v1.1e hyperref aware footnote.sty (JFB)
+\FNH@notes=\box89
+\FNH@width=\dimen256
+\FNH@toks=\toks25
+) (/home/shayo/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+)
+\Gin@req@height=\dimen257
+\Gin@req@width=\dimen258
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
+\thm@preskip=\skip91
+\thm@postskip=\skip92
+\thm@headsep=\skip93
+\dth@everypar=\toks31
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.t
+ex
+\pgfutil@everybye=\toks32
+\pgfutil@tempdima=\dimen259
+\pgfutil@tempdimb=\dimen260
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-l
+ists.tex))
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.de
+f
+\pgfutil@abb=\box90
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+))
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.te
+x
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks33
+\pgfkeys@temptoks=\toks34
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.
+code.tex
+\pgfkeys@tmptoks=\toks35
+))
+\pgf@x=\dimen261
+\pgf@y=\dimen262
+\pgf@xa=\dimen263
+\pgf@ya=\dimen264
+\pgf@xb=\dimen265
+\pgf@yb=\dimen266
+\pgf@xc=\dimen267
+\pgf@yc=\dimen268
+\pgf@xd=\dimen269
+\pgf@yd=\dimen270
+\w@pgf@writea=\write4
+\r@pgf@reada=\read3
+\c@pgf@counta=\count320
+\c@pgf@countb=\count321
+\c@pgf@countc=\count322
+\c@pgf@countd=\count323
+\t@pgf@toka=\toks36
+\t@pgf@tokb=\toks37
+\t@pgf@tokc=\toks38
+\pgf@sys@id@count=\count324
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-xetex.def
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.d
+ef
+File: pgfsys-xetex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfm
+x.def
+File: pgfsys-dvipdfmx.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-
+pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)
+\pgfsys@objnum=\count325
+)))
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath
+.code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count326
+\pgfsyssoftpath@bigbuffer@items=\count327
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol
+.code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.te
+x
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+ (/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.te
+x
+\pgfmath@dimen=\dimen271
+\pgfmath@count=\count328
+\pgfmath@box=\box91
+\pgfmath@toks=\toks39
+\pgfmath@stack@operand=\toks40
+\pgfmath@stack@operation=\toks41
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code
+.tex
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basi
+c.code.tex)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trig
+onometric.code.tex)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rand
+om.code.tex)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comp
+arison.code.tex)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base
+.code.tex)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.roun
+d.code.tex)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc
+.code.tex)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.inte
+gerarithmetics.code.tex)))
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count329
+)) (/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.c
+ode.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen272
+\pgf@picmaxx=\dimen273
+\pgf@picminy=\dimen274
+\pgf@picmaxy=\dimen275
+\pgf@pathminx=\dimen276
+\pgf@pathmaxx=\dimen277
+\pgf@pathminy=\dimen278
+\pgf@pathmaxy=\dimen279
+\pgf@xx=\dimen280
+\pgf@xy=\dimen281
+\pgf@yx=\dimen282
+\pgf@yy=\dimen283
+\pgf@zx=\dimen284
+\pgf@zy=\dimen285
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathcons
+truct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen286
+\pgf@path@lasty=\dimen287
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusag
+e.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen288
+\pgf@shorten@start@additional=\dimen289
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.c
+ode.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box92
+\pgf@hbox=\box93
+\pgf@layerbox@main=\box94
+\pgf@picture@serial@count=\count330
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphics
+tate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen290
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransfor
+mations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen291
+\pgf@pt@y=\dimen292
+\pgf@pt@temp=\dimen293
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.co
+de.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.
+code.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproc
+essing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.c
+ode.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen294
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.co
+de.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen295
+\pgf@sys@shading@range@num=\count331
+\pgf@shadingcount=\count332
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.co
+de.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal
+.code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box95
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.c
+ode.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspar
+ency.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns
+.code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code
+.tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.co
+de.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box96
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code
+.tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-versio
+n-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen296
+\pgf@nodesepend=\dimen297
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-versio
+n-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+)) (/home/shayo/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen298
+\pgffor@skip=\dimen299
+\pgffor@stack=\toks42
+\pgffor@toks=\toks43
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.co
+de.tex
+Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotha
+ndlers.code.tex
+File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@plot@mark@count=\count333
+\pgfplotmarksize=\dimen300
+)
+\tikz@lastx=\dimen301
+\tikz@lasty=\dimen302
+\tikz@lastxsaved=\dimen303
+\tikz@lastysaved=\dimen304
+\tikz@lastmovetox=\dimen305
+\tikz@lastmovetoy=\dimen306
+\tikzleveldistance=\dimen307
+\tikzsiblingdistance=\dimen308
+\tikz@figbox=\box97
+\tikz@figbox@bg=\box98
+\tikz@tempbox=\box99
+\tikz@tempbox@bg=\box100
+\tikztreelevel=\count334
+\tikznumberofchildren=\count335
+\tikznumberofcurrentchild=\count336
+\tikz@fig@count=\count337
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.co
+de.tex
+File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfmatrixcurrentrow=\count338
+\pgfmatrixcurrentcolumn=\count339
+\pgf@matrix@numberofcolumns=\count340
+)
+\tikz@expandcount=\count341
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librari
+es/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librari
+es/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows
+.code.tex
+File: pgflibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\arrowsize=\dimen309
+)) (/home/shayo/texlive/2022/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count342
+\float@exts=\toks44
+\float@box=\box101
+\@float@everytoks=\toks45
+\@floatcapt=\box102
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
+)
+\@indexfile=\write5
+\openout5 = `MT4508RevisionNotes.idx'.
+
+
+Writing index file MT4508RevisionNotes.idx
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2022/06/24 version 5.1.1 text color boxes
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks46
+\verbatim@line=\toks47
+\verbatim@in@stream=\read4
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box103
+\tcb@upperbox=\box104
+\tcb@lowerbox=\box105
+\tcb@phantombox=\box106
+\c@tcbbreakpart=\count343
+\c@tcblayer=\count344
+\c@tcolorbox@number=\count345
+\tcb@temp=\box107
+\tcb@temp=\box108
+\tcb@temp=\box109
+\tcb@temp=\box110
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '5.1.1'
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/oberdiek/pdfcol.sty
+Package: pdfcol 2019/12/29 v1.6 Handle new color stacks for pdfTeX (HO)
+Package pdfcol Info: Interface disabled because of missing PDF mode of pdfTeX.
+)
+Package pdfcol Info: pdfTeX's color stacks are not available.
+\tcb@testbox=\box111
+\tcb@totalupperbox=\box112
+\tcb@totallowerbox=\box113
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
+\caption@tempdima=\dimen310
+\captionmargin=\dimen311
+\caption@leftmargin=\dimen312
+\caption@rightmargin=\dimen313
+\caption@width=\dimen314
+\caption@indent=\dimen315
+\caption@parindent=\dimen316
+\caption@hangindent=\dimen317
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionski
+p \sbox \@tempboxa {#1: #2}\ifdim \wd \@tempboxa >\hsize {\FigCapFont #1} #2\pa
+r \else \global \@minipagefalse {\FigCapFont #1} #2\par \fi \vskip \belowcaptio
+nskip  on input line 1176.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count346
+\c@continuedfloat=\count347
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2022-06-22 v3.1.4 A comprehensive (SI) units package
+\l__siunitx_angle_tmp_dim=\dimen318
+\l__siunitx_angle_marker_box=\box114
+\l__siunitx_angle_unit_box=\box115
+\l__siunitx_compound_count_int=\count348
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
+ (CN)
+)
+\l__siunitx_number_exponent_fixed_int=\count349
+\l__siunitx_number_min_decimal_int=\count350
+\l__siunitx_number_min_integer_int=\count351
+\l__siunitx_number_round_precision_int=\count352
+\l__siunitx_number_group_first_int=\count353
+\l__siunitx_number_group_size_int=\count354
+\l__siunitx_number_group_minimum_int=\count355
+\l__siunitx_table_tmp_box=\box116
+\l__siunitx_table_tmp_dim=\dimen319
+\l__siunitx_table_column_width_dim=\dimen320
+\l__siunitx_table_integer_box=\box117
+\l__siunitx_table_decimal_box=\box118
+\l__siunitx_table_before_box=\box119
+\l__siunitx_table_after_box=\box120
+\l__siunitx_table_before_dim=\dimen321
+\l__siunitx_table_carry_dim=\dimen322
+\l__siunitx_unit_tmp_int=\count356
+\l__siunitx_unit_position_int=\count357
+\l__siunitx_unit_total_int=\count358
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box121
+\UL@hyphenbox=\box122
+\UL@skip=\skip94
+\UL@hook=\toks48
+\UL@height=\dimen323
+\UL@pe=\count359
+\UL@pixel=\dimen324
+\ULC@box=\box123
+Package: ulem 2019/11/18
+\ULdepth=\dimen325
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks49
+\minrowclearance=\skip95
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip96
+\multirow@cntb=\count360
+\multirow@dima=\skip97
+\bigstrutjot=\dimen326
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/tools/hhline.sty
+Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen327
+\TX@old@table=\dimen328
+\TX@old@col=\dimen329
+\TX@target=\dimen330
+\TX@delta=\dimen331
+\TX@cols=\count361
+\TX@ftn=\toks50
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/threeparttable/threeparttable.st
+y
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box124
+) (/home/shayo/texlive/2022/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen332
+\WF@size=\dimen333
+\c@WF@wrappedlines=\count362
+\WF@box=\box125
+\WF@everypar=\toks51
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/home/shayo/texlive/2022/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks52
+\XKV@tempa@toks=\toks53
+)
+\XKV@depth=\count363
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box126
+)
+\tc@llx=\dimen334
+\tc@lly=\dimen335
+\tc@urx=\dimen336
+\tc@ury=\dimen337
+Package trimclip Info: Using driver 'tc-xetex.def'.
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/adjustbox/tc-xetex.def
+File: tc-xetex.def 2019/01/04 v2.2 Clipping driver for xetex
+))
+\adjbox@Width=\dimen338
+\adjbox@Height=\dimen339
+\adjbox@Depth=\dimen340
+\adjbox@Totalheight=\dimen341
+\adjbox@pwidth=\dimen342
+\adjbox@pheight=\dimen343
+\adjbox@pdepth=\dimen344
+\adjbox@ptotalheight=\dimen345
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count364
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box127
+\sift@deathcycles=\count365
+\@vwid@loff=\dimen346
+\@vwid@roff=\dimen347
+))
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip98
+\bibsep=\skip99
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count366
+)
+\c@theorem=\count367
+\c@lemma=\count368
+\c@corollary=\count369
+\c@proposition=\count370
+\c@conjecture=\count371
+\c@definition=\count372
+\c@example=\count373
+\c@exercise=\count374
+\c@hypothesis=\count375
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 377.
+
+(./MT4508RevisionNotes.aux)
+\openout1 = `MT4508RevisionNotes.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 377.
+LaTeX Font Info:    ... okay on input line 377.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 377.
+LaTeX Font Info:    ... okay on input line 377.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 377.
+LaTeX Font Info:    ... okay on input line 377.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 377.
+LaTeX Font Info:    ... okay on input line 377.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 377.
+LaTeX Font Info:    ... okay on input line 377.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 377.
+LaTeX Font Info:    ... okay on input line 377.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 377.
+LaTeX Font Info:    ... okay on input line 377.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 377.
+LaTeX Font Info:    ... okay on input line 377.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 377.
+LaTeX Font Info:    ... okay on input line 377.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 377.
+LaTeX Font Info:    ... okay on input line 377.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 377.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 377.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 377.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 377.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 377.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 377.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 377.
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,BoldFont={latinmodern-math.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[1.030159915882193]"[latinmodern-math.otf]/OT:scrip
+t=math;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.030159915882193]"[latinmodern-math.otf]/OT:scrip
+t=math;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
+(Font)              scaled to size 10.30167pt on input line 377.
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=6-8.5,Font=latinmode
+rn-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-math.otf,Style=MathScri
+ptScript}},BoldFont={latinmodern-math.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <8.5->s*[1.030159915882193]"[latinmodern-math.otf]/OT:sc
+ript=math;language=dflt;"<6-8.5>s*[1.030159915882193]"[latinmodern-math.otf]/OT
+:script=math;language=dflt;+ssty=0;"<-6>s*[1.030159915882193]"[latinmodern-math
+.otf]/OT:script=math;language=dflt;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.030159915882193]"[latinmodern-math.otf]/OT:scrip
+t=math;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 10.30167pt on input line 377.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 377.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
+ line 377.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 377.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
+t line 377.
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030262931873781.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030262931873781.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030262931873781.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030262931873781.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030262931873781.
+
+
+Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=6-8.5,Font=latinmode
+rn-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-math.otf,Style=MathScri
+ptScript}},BoldFont={latinmodern-math.otf},ScaleAgain=1.0001,FontAdjustment={\f
+ontdimen
+(fontspec)             8\font =6.97423pt\relax \fontdimen 9\font
+(fontspec)             =4.05885pt\relax \fontdimen 10\font =4.57394pt\relax
+(fontspec)             \fontdimen 11\font =7.06694pt\relax \fontdimen 12\font
+(fontspec)             =3.55408pt\relax \fontdimen 13\font =3.7395pt\relax
+(fontspec)             \fontdimen 14\font =3.7395pt\relax \fontdimen 15\font
+(fontspec)             =2.97719pt\relax \fontdimen 16\font =2.54451pt\relax
+(fontspec)             \fontdimen 17\font =2.54451pt\relax \fontdimen 18\font
+(fontspec)             =2.57542pt\relax \fontdimen 19\font =2.06033pt\relax
+(fontspec)             \fontdimen 22\font =2.57542pt\relax \fontdimen 20\font
+(fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax }].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <8.5->s*[1.030262931873781]"[latinmodern-math.otf]/OT:sc
+ript=math;language=dflt;"<6-8.5>s*[1.030262931873781]"[latinmodern-math.otf]/OT
+:script=math;language=dflt;+ssty=0;"<-6>s*[1.030262931873781]"[latinmodern-math
+.otf]/OT:script=math;language=dflt;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 8\font =6.97423pt\relax \fontdimen 9\font
+(fontspec)             =4.05885pt\relax \fontdimen 10\font =4.57394pt\relax
+(fontspec)             \fontdimen 11\font =7.06694pt\relax \fontdimen 12\font
+(fontspec)             =3.55408pt\relax \fontdimen 13\font =3.7395pt\relax
+(fontspec)             \fontdimen 14\font =3.7395pt\relax \fontdimen 15\font
+(fontspec)             =2.97719pt\relax \fontdimen 16\font =2.54451pt\relax
+(fontspec)             \fontdimen 17\font =2.54451pt\relax \fontdimen 18\font
+(fontspec)             =2.57542pt\relax \fontdimen 19\font =2.06033pt\relax
+(fontspec)             \fontdimen 22\font =2.57542pt\relax \fontdimen 20\font
+(fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.030262931873781]"[latinmodern-math.otf]/OT:scrip
+t=math;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 8\font =6.97423pt\relax \fontdimen 9\font
+(fontspec)             =4.05885pt\relax \fontdimen 10\font =4.57394pt\relax
+(fontspec)             \fontdimen 11\font =7.06694pt\relax \fontdimen 12\font
+(fontspec)             =3.55408pt\relax \fontdimen 13\font =3.7395pt\relax
+(fontspec)             \fontdimen 14\font =3.7395pt\relax \fontdimen 15\font
+(fontspec)             =2.97719pt\relax \fontdimen 16\font =2.54451pt\relax
+(fontspec)             \fontdimen 17\font =2.54451pt\relax \fontdimen 18\font
+(fontspec)             =2.57542pt\relax \fontdimen 19\font =2.06033pt\relax
+(fontspec)             \fontdimen 22\font =2.57542pt\relax \fontdimen 20\font
+(fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
+
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 377.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
+t line 377.
+LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 377.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
+t line 377.
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030056899890605.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030056899890605.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030056899890605.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030056899890605.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030159915882193.
+
+
+Package fontspec Info: latinmodern-math scale = 1.030056899890605.
+
+
+Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
+(fontspec)             'latinmodern-math.otf' with options
+(fontspec)             [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Sm
+allCapsFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=6-8.5,Font=latinmode
+rn-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-math.otf,Style=MathScri
+ptScript}},BoldFont={latinmodern-math.otf},ScaleAgain=0.9999,FontAdjustment={\f
+ontdimen
+(fontspec)             8\font =0.41206pt\relax \fontdimen 9\font
+(fontspec)             =2.06033pt\relax \fontdimen 10\font =1.72038pt\relax
+(fontspec)             \fontdimen 11\font =1.14348pt\relax \fontdimen 12\font
+(fontspec)             =6.181pt\relax \fontdimen 13\font =0pt\relax }].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <8.5->s*[1.030056899890605]"[latinmodern-math.otf]/OT:sc
+ript=math;language=dflt;"<6-8.5>s*[1.030056899890605]"[latinmodern-math.otf]/OT
+:script=math;language=dflt;+ssty=0;"<-6>s*[1.030056899890605]"[latinmodern-math
+.otf]/OT:script=math;language=dflt;+ssty=1;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 8\font =0.41206pt\relax \fontdimen 9\font
+(fontspec)             =2.06033pt\relax \fontdimen 10\font =1.72038pt\relax
+(fontspec)             \fontdimen 11\font =1.14348pt\relax \fontdimen 12\font
+(fontspec)             =6.181pt\relax \fontdimen 13\font =0pt\relax 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->s*[1.030056899890605]"[latinmodern-math.otf]/OT:scrip
+t=math;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             and font adjustment code:
+(fontspec)             \fontdimen 8\font =0.41206pt\relax \fontdimen 9\font
+(fontspec)             =2.06033pt\relax \fontdimen 10\font =1.72038pt\relax
+(fontspec)             \fontdimen 11\font =1.14348pt\relax \fontdimen 12\font
+(fontspec)             =6.181pt\relax \fontdimen 13\font =0pt\relax 
+
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `normal' on input line 3
+77.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
+t line 377.
+LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
+(Font)              `largesymbols' in the math version `bold' on input line 377
+.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
+t line 377.
+LaTeX Info: Redefining \microtypecontext on input line 377.
+Package microtype Info: Applying patch `item' on input line 377.
+Package microtype Info: Applying patch `toc' on input line 377.
+Package microtype Info: Applying patch `eqnum' on input line 377.
+Package microtype Info: Applying patch `footnote' on input line 377.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package hyperref Info: Link coloring ON on input line 377.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-
+dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 377.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 379.
+File: standard-vertical-black.png Graphic file (type bmp)
+<standard-vertical-black.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[1
+
+
+]
+Underfull \vbox (badness 10000) detected at line 383
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 383
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 383
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 383
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 383
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 383
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 383
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 383
+[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 383
+[]
+ []
+
+(./MT4508RevisionNotes.toc
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.21117pt on input line 5.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.15083pt on input line 5.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
+.
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.30258pt on input line 5.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.2118pt on input line 5.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.15129pt on input line 5.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 10.3006pt on input line 5.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.21042pt on input line 5.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.1503pt on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[1
+
+] [2])
+\tf@toc=\write6
+\openout6 = `MT4508RevisionNotes.toc'.
+
+ [3]
+Underfull \vbox (badness 10000) detected at line 386
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 386
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 386
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 386
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 386
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 386
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 386
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 386
+[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 386
+[]
+ []
+
+
+Package hyperref Warning: bookmark level for unknown fm defaults to 0.
+
+
+Underfull \hbox (badness 10000) detected at line 401
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 401
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 403
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 403
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 405
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 405
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 407
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 407
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 409
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 409
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 411
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 411
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 413
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 413
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 415
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 415
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[4
+
+
+]
+Underfull \hbox (badness 10000) detected at line 417
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 417
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 419
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 419
+[][][]
+ []
+
+[5] [6] [7]
+Underfull \vbox (badness 10000) detected at line 845
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 845
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 845
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 845
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 845
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 845
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 845
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 845
+[]
+ []
+
+[8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[9
+
+]
+Underfull \vbox (badness 10000) detected at line 848
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 848
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 848
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 848
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 848
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 848
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 848
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 848
+[]
+ []
+
+Chapter 1.
+
+Underfull \hbox (badness 10000) detected at line 868
+ [][]
+ []
+
+
+(/home/shayo/texlive/2022/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cf
+g
+File: mt-LatinModernRoman.cfg 2021/02/21 v1.1 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+Underfull \hbox (badness 10000) detected at line 872
+ [][]
+ []
+
+File: Ex1.jpg Graphic file (type bmp)
+<Ex1.jpg>
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[10
+
+
+] [11] [12]
+File: MT4508RevisionNotes_files/figure-html/plots-1.png Graphic file (type bmp)
+
+<MT4508RevisionNotes_files/figure-html/plots-1.png>
+ [13] [14]
+Underfull \hbox (badness 10000) detected at line 1040
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1040
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1042
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1042
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1044
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1044
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1046
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1046
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1048
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1048
+[][][]
+ []
+
+
+Underfull \hbox (badness 3746) in paragraph at lines 1048--1049
+[]\TU/lmss/m/n/10 Repeat steps 2-4 with $[][][][][][][] [][][][][][][][][]$ in 
+place of
+ []
+
+File: MT4508RevisionNotes_files/figure-html/cobweblogistic2-1.png Graphic file 
+(type bmp)
+<MT4508RevisionNotes_files/figure-html/cobweblogistic2-1.png>
+[15]
+File: MT4508RevisionNotes_files/figure-html/cobwebcomp-3.png Graphic file (type
+ bmp)
+<MT4508RevisionNotes_files/figure-html/cobwebcomp-3.png>
+ [16]
+File: MT4508RevisionNotes_files/figure-html/cobwebcompparameter-5.png Graphic f
+ile (type bmp)
+<MT4508RevisionNotes_files/figure-html/cobwebcompparameter-5.png>
+
+Overfull \hbox (33.65424pt too wide) in paragraph at lines 1091--1092
+ [][][][] 
+ []
+
+[17] [18]
+Underfull \hbox (badness 10000) detected at line 1127
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1129
+ [][]
+ []
+
+[19]
+Underfull \hbox (badness 10000) detected at line 1173
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1173
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1175
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1175
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1177
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1177
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1207
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1207
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1218
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1218
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1222
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1222
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1224
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1224
+[][][]
+ []
+
+[20] [21]
+Underfull \vbox (badness 10000) detected at line 1232
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1232
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1232
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1232
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1232
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1232
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1232
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1232
+[]
+ []
+
+Chapter 2.
+File: MT4508RevisionNotes_files/figure-html/logisticbiggerthan3-7.png Graphic f
+ile (type bmp)
+<MT4508RevisionNotes_files/figure-html/logisticbiggerthan3-7.png>
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[22
+
+
+] [23] [24]
+File: MT4508RevisionNotes_files/figure-html/logisticperiod2-9.png Graphic file 
+(type bmp)
+<MT4508RevisionNotes_files/figure-html/logisticperiod2-9.png>
+ [25] [26]
+Underfull \hbox (badness 10000) detected at line 1396
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1398
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1400
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1402
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1404
+ [][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/bifurcdiagramlog-11.png Graphic fil
+e (type bmp)
+<MT4508RevisionNotes_files/figure-html/bifurcdiagramlog-11.png>
+[27]
+File: MT4508RevisionNotes_files/figure-html/bifurcdiagramlog3-14.png Graphic fi
+le (type bmp)
+<MT4508RevisionNotes_files/figure-html/bifurcdiagramlog3-14.png>
+ [28] [29]
+Underfull \hbox (badness 10000) detected at line 1468
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1468
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1470
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1470
+[][][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/logmap4-1.png Graphic file (type bm
+p)
+<MT4508RevisionNotes_files/figure-html/logmap4-1.png>
+[30] [31]
+File: 3.png Graphic file (type bmp)
+<3.png>
+ [32] [33] [34]
+Underfull \hbox (badness 10000) detected at line 1596
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1598
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1600
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1616
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1618
+ [][]
+ []
+
+[35]
+Underfull \hbox (badness 10000) detected at line 1643
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1643
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1646
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1646
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1648
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1648
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1650
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1650
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1665
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1665
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1667
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1667
+[][][]
+ []
+
+[36] [37]
+Underfull \vbox (badness 10000) detected at line 1684
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1684
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1684
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1684
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1684
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1684
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1684
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1684
+[]
+ []
+
+Chapter 3.
+LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <10> not available
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 1722
+.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[38
+
+
+]
+File: MT4508RevisionNotes_files/figure-html/birufcationofhenon-1.png Graphic fi
+le (type bmp)
+<MT4508RevisionNotes_files/figure-html/birufcationofhenon-1.png>
+ [39] [40]
+File: MT4508RevisionNotes_files/figure-html/saddleillustration-1.png Graphic fi
+le (type bmp)
+<MT4508RevisionNotes_files/figure-html/saddleillustration-1.png>
+ [41] [42] [43]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 8.24133pt on input line 1898.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 6.181pt on input line 1898.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.24207pt on input line 1898.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 6.18155pt on input line 1898.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 8.24048pt on input line 1898.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.18036pt on input line 1898.
+
+Underfull \hbox (badness 10000) detected at line 1910
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1910
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1912
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1912
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1915
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1915
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1926
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1926
+[][][]
+ []
+
+[44] [45]
+File: MT4508RevisionNotes_files/figure-html/saddle-1.png Graphic file (type bmp
+)
+<MT4508RevisionNotes_files/figure-html/saddle-1.png>
+ [46]
+File: MT4508RevisionNotes_files/figure-html/unnamed-chunk-19-1.png Graphic file
+ (type bmp)
+<MT4508RevisionNotes_files/figure-html/unnamed-chunk-19-1.png>
+
+Underfull \hbox (badness 10000) detected at line 2017
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2017
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2022
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2022
+[][][]
+ []
+
+[47] [48] [49]
+Underfull \vbox (badness 10000) detected at line 2069
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2069
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2069
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2069
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2069
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2069
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2069
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2069
+[]
+ []
+
+Chapter 4.
+File: MT4508RevisionNotes_files/figure-html/henonsquare1-8.png Graphic file (ty
+pe bmp)
+<MT4508RevisionNotes_files/figure-html/henonsquare1-8.png>
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[50
+
+
+]
+File: MT4508RevisionNotes_files/figure-html/henonsquare2-10.png Graphic file (t
+ype bmp)
+<MT4508RevisionNotes_files/figure-html/henonsquare2-10.png>
+File: MT4508RevisionNotes_files/figure-html/Henonsquarevarying-12.png Graphic f
+ile (type bmp)
+<MT4508RevisionNotes_files/figure-html/Henonsquarevarying-12.png>
+ [51]
+Underfull \hbox (badness 10000) detected at line 2138
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2138
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2140
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2140
+[][][]
+ []
+
+[52] [53]
+Underfull \hbox (badness 10000) detected at line 2205
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2207
+ [][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/doublingmap-14.png Graphic file (ty
+pe bmp)
+<MT4508RevisionNotes_files/figure-html/doublingmap-14.png>
+[54] [55]
+File: MT4508RevisionNotes_files/figure-html/doublingmapcobweb-16.png Graphic fi
+le (type bmp)
+<MT4508RevisionNotes_files/figure-html/doublingmapcobweb-16.png>
+ [56]
+File: Cantorconstruction.png Graphic file (type bmp)
+<Cantorconstruction.png>
+ [57]
+File: sierpinskitriangle.png Graphic file (type bmp)
+<sierpinskitriangle.png>
+File: MT4508RevisionNotes_files/figure-html/tentlogcomp-1.png Graphic file (typ
+e bmp)
+<MT4508RevisionNotes_files/figure-html/tentlogcomp-1.png>
+ [58]
+Underfull \hbox (badness 1248) in paragraph at lines 2342--2344
+[]\TU/lmss/m/n/10 Both maps have a period two orbit: $[][][][][] [][][][]$ for 
+the tent map and
+ []
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 2346--2348
+[]\TU/lmss/m/n/10 Their period $[]$ orbits are also sources: $[][][][][][][][][
+][][][][][][][][][] [] []$ and
+ []
+
+File: MT4508RevisionNotes_files/figure-html/tentlogescapingorbits-3.png Graphic
+ file (type bmp)
+<MT4508RevisionNotes_files/figure-html/tentlogescapingorbits-3.png>
+[59] [60]
+File: MT4508RevisionNotes_files/figure-html/Hernonorbitzoom-5.png Graphic file 
+(type bmp)
+<MT4508RevisionNotes_files/figure-html/Hernonorbitzoom-5.png>
+File: MT4508RevisionNotes_files/figure-html/henonsquareorgininal-7.png Graphic 
+file (type bmp)
+<MT4508RevisionNotes_files/figure-html/henonsquareorgininal-7.png>
+ [61]
+File: MT4508RevisionNotes_files/figure-html/henonsquarezoom-9.png Graphic file 
+(type bmp)
+<MT4508RevisionNotes_files/figure-html/henonsquarezoom-9.png>
+File: fractalconstruction.png Graphic file (type bmp)
+<fractalconstruction.png>
+ [62]
+Underfull \hbox (badness 10000) detected at line 2442
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2442
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2448
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2448
+[][][]
+ []
+
+
+Underfull \hbox (badness 2359) in paragraph at lines 2451--2454
+\TU/lmss/m/n/10 for $[][][][] [][]$ and $[][][][] [][]$. The inverse map is giv
+en by
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2454
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2454
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2459
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2459
+[][][]
+ []
+
+[63]
+Underfull \hbox (badness 10000) detected at line 2486
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2486
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2488
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2488
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2490
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2490
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2510
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2510
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2512
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2512
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2514
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2514
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2516
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2516
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2523
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2523
+[][][]
+ []
+
+[64] [65]
+Underfull \vbox (badness 10000) detected at line 2531
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2531
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2531
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2531
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2531
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2531
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2531
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2531
+[]
+ []
+
+Chapter 5.
+File: MT4508RevisionNotes_files/figure-html/Mandelbrot-3.png Graphic file (type
+ bmp)
+<MT4508RevisionNotes_files/figure-html/Mandelbrot-3.png>
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[66
+
+
+]
+File: MT4508RevisionNotes_files/figure-html/JuliaSets-5.png Graphic file (type 
+bmp)
+<MT4508RevisionNotes_files/figure-html/JuliaSets-5.png>
+ [67] [68]
+File: MT4508RevisionNotes_files/figure-html/Hernonorbitboxcount-7.png Graphic f
+ile (type bmp)
+<MT4508RevisionNotes_files/figure-html/Hernonorbitboxcount-7.png>
+ [69] [70]
+File: MT4508RevisionNotes_files/figure-html/boxcountestimate-1.png Graphic file
+ (type bmp)
+<MT4508RevisionNotes_files/figure-html/boxcountestimate-1.png>
+ [71]
+File: MT4508RevisionNotes_files/figure-html/correlationestimate-3.png Graphic f
+ile (type bmp)
+<MT4508RevisionNotes_files/figure-html/correlationestimate-3.png>
+ [72] [73]
+Underfull \hbox (badness 10000) detected at line 2725
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2725
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2737
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2737
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2761
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2761
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2763
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2763
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2765
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2765
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2765--2766
+
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2770
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2770
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2772
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2772
+[][][]
+ []
+
+[74] [75] [76]
+Underfull \vbox (badness 10000) detected at line 2794
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2794
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2794
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2794
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2794
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2794
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 2794
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 2794
+[]
+ []
+
+Chapter 6.
+
+Underfull \hbox (badness 10000) detected at line 2812
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2814
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2816
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2844
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2844
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2846
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2846
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[77
+
+
+]
+Underfull \hbox (badness 10000) detected at line 2849
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2849
+[][][]
+ []
+
+File: horseshoe_schematic_1.png Graphic file (type bmp)
+<horseshoe_schematic_1.png>
+File: horseshoe_schematic_2.png Graphic file (type bmp)
+<horseshoe_schematic_2.png>
+File: horseshoe_schematic_3.png Graphic file (type bmp)
+<horseshoe_schematic_3.png>
+[78]
+File: horseshoe_schematic_4.png Graphic file (type bmp)
+<horseshoe_schematic_4.png>
+File: horseshoe_schematic_5.png Graphic file (type bmp)
+<horseshoe_schematic_5.png>
+ [79]
+Overfull \vbox (91.12158pt too high) has occurred while \output is active []
+
+
+[80]
+File: MT4508RevisionNotes_files/figure-html/Henonattractingbasin-1.png Graphic 
+file (type bmp)
+<MT4508RevisionNotes_files/figure-html/Henonattractingbasin-1.png>
+File: Ikeda_basin.png Graphic file (type bmp)
+<Ikeda_basin.png>
+ [81]
+Underfull \hbox (badness 10000) detected at line 2989
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2989
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2991
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 2991
+[][][]
+ []
+
+[82]
+File: MT4508RevisionNotes_files/figure-html/Ikedachaoticattractor-1.png Graphic
+ file (type bmp)
+<MT4508RevisionNotes_files/figure-html/Ikedachaoticattractor-1.png>
+
+Overfull \hbox (33.66388pt too wide) in paragraph at lines 3003--3004
+ [][][][] 
+ []
+
+[83] [84] [85] [86]
+File: MT4508RevisionNotes_files/figure-html/Flowoflinearode-3.png Graphic file 
+(type bmp)
+<MT4508RevisionNotes_files/figure-html/Flowoflinearode-3.png>
+ [87]
+Underfull \hbox (badness 10000) detected at line 3189
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3189
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3191
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3191
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3195
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3195
+[][][]
+ []
+
+[88] [89]
+Underfull \vbox (badness 10000) detected at line 3227
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3227
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3227
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3227
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3227
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3227
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3227
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3227
+[]
+ []
+
+[90]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (336.25pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[91
+
+]
+Underfull \vbox (badness 10000) detected at line 3230
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3230
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3230
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3230
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3230
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3230
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3230
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3230
+[]
+ []
+
+Chapter 7.
+
+Underfull \hbox (badness 10000) detected at line 3249
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3251
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[92
+
+
+] [93] [94]
+File: MT4508RevisionNotes_files/figure-html/ball-in-potential-well-1.png Graphi
+c file (type bmp)
+<MT4508RevisionNotes_files/figure-html/ball-in-potential-well-1.png>
+ [95] [96]
+Underfull \hbox (badness 10000) detected at line 3430
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3430
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3432
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3432
+[][][]
+ []
+
+
+Underfull \hbox (badness 3428) in paragraph at lines 3432--3433
+[]\TU/lmss/m/n/10 By plotting phase plane trajectories. That is at each point
+ []
+
+File: MT4508RevisionNotes_files/figure-html/potential-1.png Graphic file (type 
+bmp)
+<MT4508RevisionNotes_files/figure-html/potential-1.png>
+[97] [98]
+Underfull \hbox (badness 10000) detected at line 3475
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3475
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3477
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3477
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3504
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3504
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3506
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3506
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3508
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3508
+[][][]
+ []
+
+[99] [100]
+Underfull \vbox (badness 10000) detected at line 3516
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3516
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3516
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3516
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3516
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3516
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3516
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3516
+[]
+ []
+
+Chapter 8.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[101
+
+
+]
+File: MT4508RevisionNotes_files/figure-html/periodicorbit-7.png Graphic file (t
+ype bmp)
+<MT4508RevisionNotes_files/figure-html/periodicorbit-7.png>
+File: MT4508RevisionNotes_files/figure-html/higherenergy-9.png Graphic file (ty
+pe bmp)
+<MT4508RevisionNotes_files/figure-html/higherenergy-9.png>
+ [102] [103]
+Underfull \hbox (badness 10000) detected at line 3618
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3620
+ [][]
+ []
+
+[104] [105]
+Underfull \hbox (badness 10000) detected at line 3696
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3698
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3700
+ [][]
+ []
+
+[106] [107] [108]
+File: MT4508RevisionNotes_files/figure-html/sprialsolutioncurves-1.png Graphic 
+file (type bmp)
+<MT4508RevisionNotes_files/figure-html/sprialsolutioncurves-1.png>
+ [109]
+File: MT4508RevisionNotes_files/figure-html/non-monotonic-13.png Graphic file (
+type bmp)
+<MT4508RevisionNotes_files/figure-html/non-monotonic-13.png>
+ [110]
+File: MT4508RevisionNotes_files/figure-html/monotonic-curve-15.png Graphic file
+ (type bmp)
+<MT4508RevisionNotes_files/figure-html/monotonic-curve-15.png>
+ [111] [112]
+Underfull \hbox (badness 10000) detected at line 3922
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3922
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3924
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3924
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3926
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 3926
+[][][]
+ []
+
+[113] [114]
+Underfull \vbox (badness 10000) detected at line 3939
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3939
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3939
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3939
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3939
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3939
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 3939
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 3939
+[]
+ []
+
+Chapter 9.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[115
+
+
+]
+Underfull \hbox (badness 2608) in paragraph at lines 4005--4005
+[]\TU/lmss/m/n/10 This can be seen by noting that $[] [] [] [] []$ and
+ []
+
+[116]
+File: MT4508RevisionNotes_files/figure-html/inspirallingtoorigin-19.png Graphic
+ file (type bmp)
+<MT4508RevisionNotes_files/figure-html/inspirallingtoorigin-19.png>
+ [117]
+File: MT4508RevisionNotes_files/figure-html/spirallingtocycle-21.png Graphic fi
+le (type bmp)
+<MT4508RevisionNotes_files/figure-html/spirallingtocycle-21.png>
+ [118]
+Underfull \hbox (badness 10000) detected at line 4093
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4093
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4095
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4095
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4097
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4097
+[][][]
+ []
+
+[119]
+File: MT4508RevisionNotes_files/figure-html/Lorenzschematic-1.png Graphic file 
+(type bmp)
+<MT4508RevisionNotes_files/figure-html/Lorenzschematic-1.png>
+ [120]
+File: MT4508RevisionNotes_files/figure-html/open-system-1.png Graphic file (typ
+e bmp)
+<MT4508RevisionNotes_files/figure-html/open-system-1.png>
+ [121]
+File: MT4508RevisionNotes_files/figure-html/lorenzchaos-23.png Graphic file (ty
+pe bmp)
+<MT4508RevisionNotes_files/figure-html/lorenzchaos-23.png>
+ [122]
+Underfull \hbox (badness 10000) detected at line 4231
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4231
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4235
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4235
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4241
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4241
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4249
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4249
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4256
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4256
+[][][]
+ []
+
+[123] [124]
+Overfull \vbox (93.44273pt too high) has occurred while \output is active []
+
+
+[125] [126]
+Underfull \vbox (badness 10000) detected at line 4286
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4286
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4286
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4286
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4286
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4286
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4286
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4286
+[]
+ []
+
+Chapter 10.
+
+LaTeX Warning: Command \^ invalid in math mode on input line 4329.
+
+Missing character: There is no ̂ ("302) in font lmmi10!
+
+LaTeX Warning: Command \^ invalid in math mode on input line 4329.
+
+Missing character: There is no ̂ ("302) in font lmmi10!
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[127
+
+
+] [128]
+Underfull \hbox (badness 10000) detected at line 4388
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4391
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4394
+ [][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/lorenzchaosII-25.png Graphic file (
+type bmp)
+<MT4508RevisionNotes_files/figure-html/lorenzchaosII-25.png>
+[129]
+Underfull \hbox (badness 10000) detected at line 4488
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4488
+[][][]
+ []
+
+[130]
+Underfull \hbox (badness 10000) detected at line 4490
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4490
+[][][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/mapplot-27.png Graphic file (type b
+mp)
+<MT4508RevisionNotes_files/figure-html/mapplot-27.png>
+File: MT4508RevisionNotes_files/figure-html/bifurcation-plot-29.png Graphic fil
+e (type bmp)
+<MT4508RevisionNotes_files/figure-html/bifurcation-plot-29.png>
+[131]
+File: MT4508RevisionNotes_files/figure-html/map-squared-plot-31.png Graphic fil
+e (type bmp)
+<MT4508RevisionNotes_files/figure-html/map-squared-plot-31.png>
+ [132]
+File: MT4508RevisionNotes_files/figure-html/bifurcation-period-2-plot-33.png Gr
+aphic file (type bmp)
+<MT4508RevisionNotes_files/figure-html/bifurcation-period-2-plot-33.png>
+ [133] [134]
+File: MT4508RevisionNotes_files/figure-html/map-plot2-1.png Graphic file (type 
+bmp)
+<MT4508RevisionNotes_files/figure-html/map-plot2-1.png>
+File: MT4508RevisionNotes_files/figure-html/bifurc-plot2-1.png Graphic file (ty
+pe bmp)
+<MT4508RevisionNotes_files/figure-html/bifurc-plot2-1.png>
+ [135]
+File: MT4508RevisionNotes_files/figure-html/cube-map-plot-35.png Graphic file (
+type bmp)
+<MT4508RevisionNotes_files/figure-html/cube-map-plot-35.png>
+ [136]
+File: MT4508RevisionNotes_files/figure-html/bifurcation-pitcfork-plot-37.png Gr
+aphic file (type bmp)
+<MT4508RevisionNotes_files/figure-html/bifurcation-pitcfork-plot-37.png>
+ [137]
+File: MT4508RevisionNotes_files/figure-html/bifurcation-pitcfork-reverse-plot-3
+9.png Graphic file (type bmp)
+<MT4508RevisionNotes_files/figure-html/bifurcation-pitcfork-reverse-plot-39.png
+>
+ [138]
+Underfull \hbox (badness 10000) detected at line 4749
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4749
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4754
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4754
+[][][]
+ []
+
+[139]
+Underfull \hbox (badness 10000) detected at line 4774
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4774
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4776
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4776
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4778
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 4778
+[][][]
+ []
+
+[140] [141]
+Underfull \vbox (badness 10000) detected at line 4786
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4786
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4786
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4786
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4786
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4786
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4786
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4786
+[]
+ []
+
+Chapter 11.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[142
+
+
+]
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 4878.
+
+LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <14.4> not available
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 4878
+.
+ [143] [144]
+Underfull \vbox (badness 10000) detected at line 4889
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4889
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4889
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4889
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4889
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4889
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 4889
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 4889
+[]
+ []
+
+Appendix A.
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 4903.
+
+LaTeX Warning: Reference `codesol1' on page 145 undefined on input line 4967.
+
+
+Package tcolorbox Warning: Discard zero height first box part due to break prob
+lems (possible loss of zero height content) on input line 4968.
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[145
+
+
+]
+
+Package tcolorbox Warning: Using nobreak failed. Try to enlarge `lines before b
+reak' or set page breaks manually on input line 4968.
+
+[146]
+File: MT4508RevisionNotes_files/figure-html/Rplots-4.png Graphic file (type bmp
+)
+<MT4508RevisionNotes_files/figure-html/Rplots-4.png>
+
+
+LaTeX Warning: Reference `codesol2' on page 147 undefined on input line 5023.
+
+
+Package tcolorbox Warning: Discard zero height first box part due to break prob
+lems (possible loss of zero height content) on input line 5024.
+
+[147] [148]
+
+LaTeX Warning: Reference `codesol3' on page 149 undefined on input line 5078.
+
+
+Package tcolorbox Warning: Discard zero height first box part due to break prob
+lems (possible loss of zero height content) on input line 5079.
+
+[149]
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 5079.
+
+[150]
+
+LaTeX Warning: Reference `codesol4' on page 151 undefined on input line 5130.
+
+
+Package tcolorbox Warning: Discard zero height first box part due to break prob
+lems (possible loss of zero height content) on input line 5131.
+
+[151] [152]
+
+LaTeX Warning: Reference `codesol5' on page 153 undefined on input line 5183.
+
+
+Package tcolorbox Warning: Discard zero height first box part due to break prob
+lems (possible loss of zero height content) on input line 5184.
+
+[153] [154] [155]
+Underfull \vbox (badness 10000) detected at line 5187
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 5187
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5187
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 5187
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5187
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 5187
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 5187
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 5187
+[]
+ []
+
+Appendix B.
+
+Underfull \hbox (badness 10000) detected at line 5195
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5195
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5201
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5201
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5211
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5211
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol1' on page 156 undefined on input line 5218.
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[156
+
+
+]
+
+LaTeX Warning: Reference `sol2' on page 157 undefined on input line 5255.
+
+[157]
+Underfull \hbox (badness 10000) detected at line 5264
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5264
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5266
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5266
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5281
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5281
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5283
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5283
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol3' on page 158 undefined on input line 5294.
+
+[158]
+Underfull \hbox (badness 10000) detected at line 5303
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5303
+[][][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/f-1.png Graphic file (type bmp)
+<MT4508RevisionNotes_files/figure-html/f-1.png>
+
+Underfull \hbox (badness 10000) detected at line 5320
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5320
+[][][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/fweb-3.png Graphic file (type bmp)
+<MT4508RevisionNotes_files/figure-html/fweb-3.png>
+
+Underfull \hbox (badness 10000) detected at line 5337
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5337
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5339
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5339
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol4' on page 159 undefined on input line 5348.
+
+[159] [160]
+Underfull \hbox (badness 10000) detected at line 5357
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5357
+[][][]
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 5357--5358
+[]\TU/lmss/m/n/10 This is a verify question so we meed only check that
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5363
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5363
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol5' on page 161 undefined on input line 5371.
+
+
+LaTeX Warning: Reference `sol6' on page 161 undefined on input line 5403.
+
+[161
+
+]
+Underfull \hbox (badness 10000) detected at line 5412
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5412
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5423
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5423
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol7' on page 162 undefined on input line 5447.
+
+[162]
+
+LaTeX Warning: Reference `sol8' on page 163 undefined on input line 5492.
+
+[163]
+
+LaTeX Warning: Reference `sol9' on page 164 undefined on input line 5524.
+
+[164]
+
+LaTeX Warning: Reference `sol10' on page 165 undefined on input line 5561.
+
+[165]
+
+LaTeX Warning: Reference `sol11' on page 166 undefined on input line 5590.
+
+[166]
+Underfull \hbox (badness 10000) detected at line 5598
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5598
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5607
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5607
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5612
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5612
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5619
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5619
+[][][]
+ []
+
+
+Underfull \hbox (badness 6268) in paragraph at lines 5623--5625
+\TU/lmss/m/n/10 Consider the $[]$-coordinate $[][][][]$ of $[][][][][] [][]$. I
+f
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5661--5663
+
+ []
+
+
+LaTeX Warning: Reference `sol12' on page 167 undefined on input line 5673.
+
+[167] [168] [169]
+Underfull \hbox (badness 10000) detected at line 5681
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5681
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5691
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5691
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5697
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5697
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol13' on page 170 undefined on input line 5721.
+
+[170] [171]
+Underfull \hbox (badness 10000) detected at line 5730
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5730
+[][][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/tentmapprob-1.png Graphic file (typ
+e bmp)
+<MT4508RevisionNotes_files/figure-html/tentmapprob-1.png>
+
+Underfull \hbox (badness 10000) detected at line 5746
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5746
+[][][]
+ []
+
+
+Underfull \hbox (badness 5711) in paragraph at lines 5749--5752
+\TU/lmss/m/n/10 The Lyapunov exponent $[][][][][]$ is then computed as
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5752
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5752
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5756
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5756
+[][][]
+ []
+
+
+Underfull \hbox (badness 4621) in paragraph at lines 5766--5767
+\TU/lmss/m/n/10 is a subinterval of $[]$ (since $[] [] []$ and
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5774
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5774
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol14' on page 172 undefined on input line 5779.
+
+[172
+
+] [173]
+Underfull \hbox (badness 10000) detected at line 5787
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5787
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5806
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5806
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol15' on page 174 undefined on input line 5823.
+
+[174]
+Underfull \hbox (badness 10000) detected at line 5831
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5831
+[][][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/tenmapprob-13.png Graphic file (typ
+e bmp)
+<MT4508RevisionNotes_files/figure-html/tenmapprob-13.png>
+
+Underfull \hbox (badness 10000) detected at line 5844
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5844
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5846
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5846
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5848
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5848
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5850
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5850
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol16' on page 175 undefined on input line 5855.
+
+[175] [176]
+File: MT4508RevisionNotes_files/figure-html/logmapprob-15.png Graphic file (typ
+e bmp)
+<MT4508RevisionNotes_files/figure-html/logmapprob-15.png>
+
+
+LaTeX Warning: Reference `sol17' on page 177 undefined on input line 5883.
+
+[177]
+
+LaTeX Warning: Reference `sol18' on page 178 undefined on input line 5897.
+
+
+Underfull \hbox (badness 10000) detected at line 5905
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5905
+[][][]
+ []
+
+File: baker_sketch.png Graphic file (type bmp)
+<baker_sketch.png>
+
+Underfull \hbox (badness 10000) detected at line 5919
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5919
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5932
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5932
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol19' on page 178 undefined on input line 5937.
+
+[178] [179] [180]
+
+LaTeX Warning: Reference `sol20' on page 181 undefined on input line 5950.
+
+
+Underfull \hbox (badness 10000) detected at line 5959
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5959
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5966
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 5966
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol21' on page 181 undefined on input line 5977.
+
+[181]
+
+LaTeX Warning: Reference `sol22' on page 182 undefined on input line 5998.
+
+
+Underfull \hbox (badness 10000) detected at line 6006
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6006
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6023--6025
+
+ []
+
+File: MT4508RevisionNotes_files/figure-html/spiralsketchprob-5.png Graphic file
+ (type bmp)
+<MT4508RevisionNotes_files/figure-html/spiralsketchprob-5.png>
+
+Underfull \hbox (badness 10000) detected at line 6035
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6035
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6035--6037
+[]\TU/lmss/m/n/10 The flow of the system is given by $[][][][][] [][] []
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6043
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6043
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol23' on page 182 undefined on input line 6059.
+
+[182] [183] [184]
+
+LaTeX Warning: Reference `sol24' on page 185 undefined on input line 6105.
+
+[185]
+Underfull \hbox (badness 10000) detected at line 6113
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6113
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6114--6116
+
+ []
+
+File: MT4508RevisionNotes_files/figure-html/SH8bifurc-17.png Graphic file (type
+ bmp)
+<MT4508RevisionNotes_files/figure-html/SH8bifurc-17.png>
+
+Underfull \hbox (badness 10000) detected at line 6124
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6124
+[][][]
+ []
+
+
+Underfull \hbox (badness 5533) in paragraph at lines 6135--6138
+\TU/lmss/m/n/10 holds. When $[] [] []$, $[][][][] [] [][] [] []$ and so
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6138
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6138
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol25' on page 186 undefined on input line 6147.
+
+[186] [187]
+Underfull \hbox (badness 10000) detected at line 6155
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6155
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6164
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6164
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6189
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6189
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6201
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6201
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6206
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6206
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol26' on page 188 undefined on input line 6223.
+
+[188] [189]
+
+LaTeX Warning: Reference `sol27' on page 190 undefined on input line 6239.
+
+[190]
+Underfull \hbox (badness 10000) detected at line 6247
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6247
+[][][]
+ []
+
+
+Overfull \hbox (22.89769pt too wide) detected at line 6263
+[][][][][][] [][][] [][][] [] [] []
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6271
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6271
+[][][]
+ []
+
+
+LaTeX Warning: Reference `sol28' on page 191 undefined on input line 6292.
+
+[191]
+Underfull \hbox (badness 10000) detected at line 6301
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6301
+[][][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/SH10transcrit-41.png Graphic file (
+type bmp)
+<MT4508RevisionNotes_files/figure-html/SH10transcrit-41.png>
+
+Underfull \hbox (badness 10000) detected at line 6318
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6318
+[][][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/SH10pitchfork-43.png Graphic file (
+type bmp)
+<MT4508RevisionNotes_files/figure-html/SH10pitchfork-43.png>
+File: MT4508RevisionNotes_files/figure-html/SH10pitchfork3-45.png Graphic file 
+(type bmp)
+<MT4508RevisionNotes_files/figure-html/SH10pitchfork3-45.png>
+File: MT4508RevisionNotes_files/figure-html/SH10pitchfork2-47.png Graphic file 
+(type bmp)
+<MT4508RevisionNotes_files/figure-html/SH10pitchfork2-47.png>
+
+Underfull \hbox (badness 10000) detected at line 6353
+ [][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 6353
+[][][]
+ []
+
+File: MT4508RevisionNotes_files/figure-html/SH10pitchsaddle-49.png Graphic file
+ (type bmp)
+<MT4508RevisionNotes_files/figure-html/SH10pitchsaddle-49.png>
+
+LaTeX Warning: Reference `sol29' on page 192 undefined on input line 6367.
+
+[192] [193] [194] (./MT4508RevisionNotes.bbl [195]
+Underfull \vbox (badness 10000) detected at line 1
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1
+[]
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1
+ []
+
+
+Overfull \hbox (336.25pt too wide) detected at line 1
+[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 1
+[]
+ []
+
+)
+No file MT4508RevisionNotes.ind.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+ [][][][] 
+ []
+
+[196
+
+
+] (./MT4508RevisionNotes.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 41715 strings out of 475866
+ 922529 string characters out of 5801649
+ 1312379 words of memory out of 5000000
+ 62058 multiletter control sequences out of 15000+600000
+ 475023 words of font info for 97 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 86i,17n,121p,1327b,1255s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on MT4508RevisionNotes.pdf (197 pages).

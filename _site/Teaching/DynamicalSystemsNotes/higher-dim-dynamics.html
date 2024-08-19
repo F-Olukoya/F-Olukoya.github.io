@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Higher-dimensional dynamics | MT4508: Dynamical Systems (Revision Notes)</title>
+  <meta name="description" content="MT4508 Dynamical Systems Lecture Notes – Revision Version" />
+  <meta name="generator" content="bookdown 0.25.3 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Higher-dimensional dynamics | MT4508: Dynamical Systems (Revision Notes)" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="MT4508 Dynamical Systems Lecture Notes – Revision Version" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Higher-dimensional dynamics | MT4508: Dynamical Systems (Revision Notes)" />
+  
+  <meta name="twitter:description" content="MT4508 Dynamical Systems Lecture Notes – Revision Version" />
+  
+
+<meta name="author" content="F. Olukoya" />
+
+
+<meta name="date" content="2022-04-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="periodicpoints.html"/>
+<link rel="next" href="Higherdimstability.html"/>
+<script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="book_assets/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="book_assets/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<span class="math inline"> 
+     \(\DeclareMathOperator{\Arg}{Arg}\)
+     \(\newcommand{\C}{\mathbb{C}}\)
+     \(\newcommand{\R}{\mathbb{R}}\)
+     \(\newcommand{\N}{\mathbb{N}}\)
+     \(\newcommand{\Z}{\mathbb{Z}}\)
+     \(\newcommand{\e}{\mathrm{e}}\)
+     \(\newcommand{\half}{{\textstyle\frac{1}{2}}}\)
+     \(\newcommand{\modulus}[1]{\mathopen{|}#1\mathclose{|}}\)
+     \(\newcommand{\res}{\operatorname{res}}\)
+     \(\newcommand{\set}[2]{\{\,#1\mid#2\,\}}\)
+
+     \(\newcommand{\AND}{\qquad \text{and} \qquad}\)
+
+     \(\renewcommand{\epsilon}{\varepsilon}\)
+     \(\renewcommand{\Re}{\operatorname{Re}}\)
+     \(\renewcommand{\Im}{\operatorname{Im}}\)
+     \(\renewcommand{\leq}{\leqslant}\)
+     \(\renewcommand{\geq}{\geqslant}\)
+     \(\renewcommand{\d}{\mathrm{d}}\)
+     \(\renewcommand{\vec}[1]{{\boldsymbol{#1}}}\) 
+     \(\renewcommand{\v}[1]{\vec{#1}}\)
+
+     \(\newcommand{\cev}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}\)
+     \(\newcommand{\spc}{\vspace{\baselineskip}}\)
+     \(\newcommand{\pder}[2]{\dfrac{\partial #1}{\partial#2}}\)
+     \(\newcommand{\jacob}{{\mathbf{D}}\vec{f}}\)
+     \( \newcommand{\jacobr}{\mathbf{D}\vec{R}} \)
+     \(\newcommand{\stab}[1]{\mathcal{S}(#1)}\)
+     \(\newcommand{\unstab}[1]{\mathcal{U}(#1)}\)
+     \(\newcommand{\CC}{\mathfrak{C}}\)
+     \(\newcommand{\bdim}{\mathop{\mathrm{boxdim}}}\)
+     \( \newcommand{\cdim}{\mathop{\mathrm{cordim}}} \)
+     \( \newcommand{\der}[2]{\dfrac{\d #1}{\d #2}} \)
+     \(\newcommand{\dern}[3]{\dfrac{\d^{#3} #1}{\d #2 ^{#3}}} \)
+</span>
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.st-andrews.ac.uk/mathematics-statistics/"><img src="standard-vertical-black.png" width="180"></a>
+
+<li class="divider"></li>
+<li><a href="index.html#Module-hand-book">Module Handbook<span></span></a>
+<ul>
+<li><a href="index.html#structure">Structure<span></span></a>
+<ul>
+<li><a href="index.html#prerequisites">Prerequisites<span></span></a></li>
+<li><a href="index.html#lecture-notes-and-bibliography">Lecture notes and bibliography<span></span></a></li>
+</ul></li>
+<li><a href="index.html#logistics">Logistics<span></span></a>
+<ul>
+<li><a href="index.html#lectures">Lectures<span></span></a></li>
+<li><a href="index.html#lecturers">Lecturers<span></span></a></li>
+<li><a href="index.html#tutorials">Tutorials<span></span></a></li>
+<li><a href="index.html#moodle">Moodle<span></span></a></li>
+<li><a href="index.html#scheduling">Scheduling<span></span></a></li>
+</ul></li>
+<li><a href="index.html#assessment">Assessment<span></span></a>
+<ul>
+<li><a href="index.html#rule">90% Rule<span></span></a></li>
+</ul></li>
+<li><a href="index.html#student-support">Student Support<span></span></a></li>
+<li><a href="index.html#acknowledgements">Acknowledgements<span></span></a></li>
+</ul></li>
+<li class="part"><span><b>I Discrete time dynamical systems<span></span></b></span></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#introtodynsys"><i class="fa fa-check"></i><b>1.1</b> What is a “Dynamical System”?<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#one-dimensional-1d-maps"><i class="fa fa-check"></i><b>1.1.1</b> One-dimensional (1D) maps<span></span></a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#Orbits-and-fixed-points"><i class="fa fa-check"></i><b>1.1.2</b> Orbits and fixed points<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#cobwebs"><i class="fa fa-check"></i><b>1.2</b> Cobweb Plots<span></span></a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#cobwebsconstruction"><i class="fa fa-check"></i><b>1.2.1</b> Constructing cobweb plots<span></span></a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#stability-of-fixed-points"><i class="fa fa-check"></i><b>1.2.2</b> Stability of fixed points<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#sheet1"><i class="fa fa-check"></i><b>1.3</b> Problem Sheet 1<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="periodicpoints.html"><a href="periodicpoints.html"><i class="fa fa-check"></i><b>2</b> Periodic points and stability<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="periodicpoints.html"><a href="periodicpoints.html#stabilityperiodic"><i class="fa fa-check"></i><b>2.1</b> Stability of periodic points<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="periodicpoints.html"><a href="periodicpoints.html#logisticfamily"><i class="fa fa-check"></i><b>2.2</b> The family of logistic maps<span></span></a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="periodicpoints.html"><a href="periodicpoints.html#initial-conditions-chaos"><i class="fa fa-check"></i><b>2.2.1</b> Initial conditions and Chaos<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="periodicpoints.html"><a href="periodicpoints.html#higher-dimensional-maps"><i class="fa fa-check"></i><b>2.3</b> Higher-dimensional maps<span></span></a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="periodicpoints.html"><a href="periodicpoints.html#sinks-sources-and-saddles"><i class="fa fa-check"></i><b>2.3.1</b> Sinks, sources and saddles<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="periodicpoints.html"><a href="periodicpoints.html#sheet2"><i class="fa fa-check"></i><b>2.4</b> Problem Sheet 2<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html"><i class="fa fa-check"></i><b>3</b> Higher-dimensional dynamics<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#example"><i class="fa fa-check"></i><b>3.1</b> Example<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#stable-and-unstable-manifolds"><i class="fa fa-check"></i><b>3.1.1</b> Stable and Unstable Manifolds<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#stabilityofmanifolds"><i class="fa fa-check"></i><b>3.2</b> Stability of manifolds associated with a saddle<span></span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#recapinversemaps"><i class="fa fa-check"></i><b>3.2.1</b> Inverse Maps – a reminder<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#how-do-we-characterise-the-stable-and-unstable-manifolds-of-a-saddle"><i class="fa fa-check"></i><b>3.2.2</b> How do we characterise the stable and unstable manifolds of a saddle?<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#sheet3"><i class="fa fa-check"></i><b>3.3</b> Problem Sheet 3<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Higherdimstability.html"><a href="Higherdimstability.html"><i class="fa fa-check"></i><b>4</b> Higher-dimensional stability<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#nonlinear-examples"><i class="fa fa-check"></i><b>4.1</b> Non-linear examples<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#chaos1dim"><i class="fa fa-check"></i><b>4.1.1</b> Chaos in 1-dimensional maps<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="Higherdimstability.html"><a href="Higherdimstability.html#chaoticorbits"><i class="fa fa-check"></i><b>4.2</b> Chaotic Orbits<span></span></a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#fractals"><i class="fa fa-check"></i><b>4.2.1</b> Fractals<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="Higherdimstability.html"><a href="Higherdimstability.html#fractalsanddeterministicsystems"><i class="fa fa-check"></i><b>4.3</b> Fractals and deterministic dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#fractslfromdetsys"><i class="fa fa-check"></i><b>4.3.1</b> Fractals from deterministic dynamical systems<span></span></a></li>
+<li class="chapter" data-level="4.3.2" data-path="Higherdimstability.html"><a href="Higherdimstability.html#Fractal-basin-boundaries"><i class="fa fa-check"></i><b>4.3.2</b> Fractal basin boundaries<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="Higherdimstability.html"><a href="Higherdimstability.html#sheet4"><i class="fa fa-check"></i><b>4.4</b> Problem Sheet 4<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Fractals.html"><a href="Fractals.html"><i class="fa fa-check"></i><b>5</b> Fractals<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Fractals.html"><a href="Fractals.html#complexmapsandJuliasets"><i class="fa fa-check"></i><b>5.1</b> Complex maps and Julia sets<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="Fractals.html"><a href="Fractals.html#fractaldim"><i class="fa fa-check"></i><b>5.1.1</b> Fractal dimension<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="Fractals.html"><a href="Fractals.html#fractaldimcont"><i class="fa fa-check"></i><b>5.2</b> Fractal dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="Fractals.html"><a href="Fractals.html#correlationdim"><i class="fa fa-check"></i><b>5.2.1</b> Correlation dimension<span></span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="Fractals.html"><a href="Fractals.html#chaosndim"><i class="fa fa-check"></i><b>5.2.2</b> Chaos in higher-dimensions<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="Fractals.html"><a href="Fractals.html#sheet5"><i class="fa fa-check"></i><b>5.3</b> Problem Sheet 5<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html"><i class="fa fa-check"></i><b>6</b> Chaos in Higher Dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#chaoticorbitsndim"><i class="fa fa-check"></i><b>6.1</b> Chaotic Orbits in higher dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#horeshoemap"><i class="fa fa-check"></i><b>6.1.1</b> The horeshoe map<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#Chaotic-attaractors"><i class="fa fa-check"></i><b>6.2</b> Chaotic attractors<span></span></a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#Forward-limit-set"><i class="fa fa-check"></i><b>6.2.1</b> Forward Limit Set<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#continuous-time-dynamical-systems-section"><i class="fa fa-check"></i><b>6.3</b> Continuous-time dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#equilibria"><i class="fa fa-check"></i><b>6.3.1</b> Equilibria<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#sheet6"><i class="fa fa-check"></i><b>6.4</b> Problem Sheet 6<span></span></a></li>
+</ul></li>
+<li class="part"><span><b>II Continuous time dynamical systems<span></span></b></span></li>
+<li class="chapter" data-level="7" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html"><i class="fa fa-check"></i><b>7</b> Equilibria and stability in continuous time dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html#Equilibria"><i class="fa fa-check"></i><b>7.1</b> Equilibria<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html#Lyapunov-functions-I"><i class="fa fa-check"></i><b>7.2</b> Lyapunov Functions I<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html#sheet7"><i class="fa fa-check"></i><b>7.3</b> Problem Sheet 7<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html"><i class="fa fa-check"></i><b>8</b> Lyapunov Functions<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#Lyapunov-functions-II"><i class="fa fa-check"></i><b>8.1</b> Lyapunov Functions II<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#Equilibria-and-lyapunov-functions"><i class="fa fa-check"></i><b>8.2</b> Equilibira and Lyapunov functions<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#periodic-orbits-and-limit-sets"><i class="fa fa-check"></i><b>8.3</b> Periodic orbits and limit sets<span></span></a></li>
+<li class="chapter" data-level="8.4" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#sheet8"><i class="fa fa-check"></i><b>8.4</b> Problem Sheet 8<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html"><i class="fa fa-check"></i><b>9</b> Limit sets in 2-dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#limit-sets-of-cycles"><i class="fa fa-check"></i><b>9.1</b> Limit cycles<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#planardynamics"><i class="fa fa-check"></i><b>9.2</b> Planar dynamics of continuous time dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#properties-of-the-lorenz-dynamical-system"><i class="fa fa-check"></i><b>9.2.1</b> Properties of the Lorenz dynamical system<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#sheet9"><i class="fa fa-check"></i><b>9.3</b> Problem Sheet 9<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html"><i class="fa fa-check"></i><b>10</b> Lorenz chaos and bifurcation<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#Properties-of-Lorenz-SystemII"><i class="fa fa-check"></i><b>10.1</b> Properties of the Lorenz dynamical system II<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#Lyapunov-exponent-flows"><i class="fa fa-check"></i><b>10.1.1</b> Lyapunov Exponents in Flows<span></span></a></li>
+<li class="chapter" data-level="10.1.2" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#bifurcation"><i class="fa fa-check"></i><b>10.1.2</b> Bifurcation (Chapter 11 of <span class="citation">(<span>Alligood, Sauer, and Yorke 2000</span>)</span>)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#bifurcation-cont"><i class="fa fa-check"></i><b>10.2</b> Bifurcation<span></span></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#saddle-node-bifurcation"><i class="fa fa-check"></i><b>10.2.1</b> Saddle-node bifurcation<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#more-birfurcations"><i class="fa fa-check"></i><b>10.3</b> More types of Bifurcations<span></span></a>
+<ul>
+<li><a href="Loren-chaos-and-bifurcation.html#trans-bifurcations">Transcritical bifurcations<span></span></a></li>
+<li><a href="Loren-chaos-and-bifurcation.html#pitch-fork-bifurcation">Pitch-fork bifurcation<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#sheet10"><i class="fa fa-check"></i><b>10.4</b> Problem Sheet 10<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="revision.html"><a href="revision.html"><i class="fa fa-check"></i><b>11</b> Revision Guide<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="revision.html"><a href="revision.html#General-advice"><i class="fa fa-check"></i><b>11.1</b> General advice<span></span></a></li>
+<li class="chapter" data-level="11.2" data-path="revision.html"><a href="revision.html#what-to-learn"><i class="fa fa-check"></i><b>11.2</b> What to Learn<span></span></a>
+<ul>
+<li><a href="revision.html#maps">Maps<span></span></a></li>
+<li><a href="revision.html#continuous-time-dynamical-systems-1">Continuous time dynamical systems<span></span></a></li>
+</ul></li>
+</ul></li>
+<li><a href="references.html#references">References<span></span></a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MT4508: Dynamical Systems (Revision Notes)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="higher-dim-dynamics" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Higher-dimensional dynamics<a href="higher-dim-dynamics.html#higher-dim-dynamics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Covers Chapter 2 Section 2.5 Example 2.13 to Section 2.6 Example 2.20 of Chapter 2 <span class="citation">(<a href="#ref-ASY" role="doc-biblioref">Alligood, Sauer, and Yorke 2000</a>)</span>.</p>
+<hr />
+<div id="example" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Example<a href="higher-dim-dynamics.html#example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let us apply Theorem <a href="periodicpoints.html#thm:stabilityhigherdim">2.1</a> to an example we encountered earlier on: the Hènon map.</p>
+<div class="example">
+<p><span id="exm:Henonmap2" class="example"><strong>Example 3.1  (The Hènon map II) </strong></span><br></p>
+<p>The Hènon map is the map <span class="math inline">\(\vec{f}_{a,b}(x,y) = (a - x^2 + by, x)\)</span>. For this example we take <span class="math inline">\(a=0\)</span> and <span class="math inline">\(b = 0.4\)</span> to get:</p>
+<p><span class="math display">\[\vec{f}(x,y) = \vec{f}_{0,0.4}(x,y)= (-x^2 + by, x).\]</span></p>
+<p>We compute the fixed points by solving the equation <span class="math display">\[ \vec{f}(x,y) = (x,y). \]</span></p>
+<p>From the second coordinates we find that <span class="math inline">\(x= y\)</span>; the first coordinate then gives <span class="math inline">\(x^2 - bx + x = 0\)</span>.</p>
+<p>Solving this gives two solutions, <span class="math inline">\(x = y = 0\)</span> and <span class="math inline">\(x = y = b-1\)</span>.</p>
+<p>To investigate the stability of the fixed point we need to compute the Jacobian of <span class="math inline">\(\vec{f}\)</span> at each of the two fixed points and compute the eigenvalues of the resulting two matrices. We write <span class="math inline">\(\vec{f} = (f_1(x,y), f_2(x,y))\)</span> where <span class="math inline">\(f_1(x,y) = -x^2 + by\)</span> and <span class="math inline">\(f_2(x,y) = x\)</span>.</p>
+<p>Thus,</p>
+<p><span class="math display">\[
+  \jacob{(x,y)} = \begin{pmatrix}
+                            \pder{f_1}{x} &amp; \pder{f_1}{y} \\
+                            \pder{f_2}{x} &amp; \pder{f_2}{y}
+                         \end{pmatrix}  = \begin{pmatrix}
+                            -2x &amp; b \\
+                            1 &amp;  0
+                         \end{pmatrix}
+\]</span></p>
+<p><strong><em>For <span class="math inline">\(x = y= 0\)</span></em>:</strong></p>
+<p>We have
+<span class="math display">\[\jacob{(0,0)} = \begin{pmatrix}
+                            0 &amp; b \\
+                            1 &amp;  0
+                         \end{pmatrix} \]</span></p>
+<p>We find the eigenvalues by solving the characteristic equation: <span class="math inline">\(\det(\lambda I - \jacob{(0,0)}) = 0\)</span>. This gives:</p>
+<p><span class="math display">\[
+\begin{vmatrix}
+  \lambda &amp; -b \\
+  -1 &amp; \lambda
+\end{vmatrix} = \lambda^2 - b = 0
+\]</span></p>
+<p>This has solutions <span class="math inline">\(\lambda = \pm \sqrt{b}\)</span>. Clearly the magnitude of the eigenvalues, <span class="math inline">\(\sqrt{0.4}\)</span>, is strictly less than <span class="math inline">\(1\)</span> and so we conclude that <span class="math inline">\((0,0)\)</span> is a sink.</p>
+<p><strong><em>For <span class="math inline">\(x = y = b-1\)</span></em>:</strong></p>
+<p>We have
+<span class="math display">\[\jacob{(-3/5,-3/5)}=\begin{pmatrix}
+                            2(1-b) &amp; -b \\
+                            -1 &amp;  0
+                         \end{pmatrix} \]</span></p>
+<p>We solve the characteristic equation as before.</p>
+<p><span class="math display">\[
+\det(\lambda I - \jacob{(b-1,b-1)}) =  \begin{vmatrix}
+  \lambda + 2(b-1) &amp; b \\
+  1 &amp; \lambda
+\end{vmatrix} = \lambda^2 + 2(b-1) \lambda - b = 0.
+\]</span></p>
+<p>This gives <span class="math display">\[\lambda = (1-b) \pm \sqrt{(b-1)^2 + b} = (1-b) \pm \sqrt{ b^2 - b + 1}.\]</span></p>
+<p>For <span class="math inline">\(b = 0.4\)</span>, we get eigenvalues <span class="math inline">\(\lambda_1 = (3 + \sqrt{19})/5\)</span> and <span class="math inline">\(\lambda_2 = (3- \sqrt{19})/5\)</span>. Thus by Theorem <a href="periodicpoints.html#thm:stabilityhigherdim">2.1</a> <span class="math inline">\((-0.6, -0.6)\)</span> is a saddle point.</p>
+</div>
+<p>To get an idea of the dynamics of the Hènon map, we plot below a bifurcation diagram where we keep <span class="math inline">\(b\)</span> fixed at <span class="math inline">\(0.4\)</span> and allow <span class="math inline">\(a\)</span> to vary between <span class="math inline">\(0\)</span> and <span class="math inline">\(1.25\)</span>. On the <span class="math inline">\(y\)</span> axis we plot only the <span class="math inline">\(x\)</span> values after sufficiently many iterates have been obtained. Feel free to experiment with the code.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:birufcationofhenon"></span>
+<img src="MT4508RevisionNotes_files/figure-html/birufcationofhenon-1.png" alt="Bifurcation diagram of Hènon's map" width="100%" />
+<p class="caption">
+Figure 3.1: Bifurcation diagram of Hènon’s map
+</p>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+Code Challenge
+</div>
+<div class="panel-body">
+The code for the plot is shown below. Do experiment with the code by changing the parameter range and initial value. Are you able to write a more efficient code? How about randomising the initial x values?
+</div>
+</div>
+<button id="displayTextunnamed-chunk-18" onclick="javascript:toggle(&#39;unnamed-chunk-18&#39;);">
+Show code
+</button>
+<div id="toggleTextunnamed-chunk-18" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+code
+</div>
+<div class="panel-body">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="higher-dim-dynamics.html#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="higher-dim-dynamics.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb6-3"><a href="higher-dim-dynamics.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.pyplot <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb6-4"><a href="higher-dim-dynamics.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#define a function for the RHS of the Hènon map</span></span>
+<span id="cb6-5"><a href="higher-dim-dynamics.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hern_map(a,b,x,y):</span>
+<span id="cb6-6"><a href="higher-dim-dynamics.html#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (a<span class="op">-</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">*</span>y, x) </span>
+<span id="cb6-7"><a href="higher-dim-dynamics.html#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="higher-dim-dynamics.html#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bifurc(f, x0, y0, r, b0, N, M):</span>
+<span id="cb6-9"><a href="higher-dim-dynamics.html#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#f is the map,</span></span>
+<span id="cb6-10"><a href="higher-dim-dynamics.html#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">#r is the range from which to begin incrementing a</span></span>
+<span id="cb6-11"><a href="higher-dim-dynamics.html#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">#(x0,y0) is the coordinate of initial point</span></span>
+<span id="cb6-12"><a href="higher-dim-dynamics.html#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">#b0 is the fixed value of b </span></span>
+<span id="cb6-13"><a href="higher-dim-dynamics.html#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">#N the number of iterations and</span></span>
+<span id="cb6-14"><a href="higher-dim-dynamics.html#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># M the number of iterations to plot</span></span>
+<span id="cb6-15"><a href="higher-dim-dynamics.html#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">#incrementing a values between r and 1.25</span></span>
+<span id="cb6-16"><a href="higher-dim-dynamics.html#cb6-16" aria-hidden="true" tabindex="-1"></a>    a<span class="op">=</span> np.linspace(r,<span class="fl">1.25</span>,N) </span>
+<span id="cb6-17"><a href="higher-dim-dynamics.html#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">#initiating x and y values</span></span>
+<span id="cb6-18"><a href="higher-dim-dynamics.html#cb6-18" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span> x0<span class="op">*</span>np.ones(N) </span>
+<span id="cb6-19"><a href="higher-dim-dynamics.html#cb6-19" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span> y0<span class="op">*</span>np.ones(N) </span>
+<span id="cb6-20"><a href="higher-dim-dynamics.html#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># fixed b </span></span>
+<span id="cb6-21"><a href="higher-dim-dynamics.html#cb6-21" aria-hidden="true" tabindex="-1"></a>    b<span class="op">=</span> b0<span class="op">*</span>np.ones(N)</span>
+<span id="cb6-22"><a href="higher-dim-dynamics.html#cb6-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># iterating the Henon map on the initial values  </span></span>
+<span id="cb6-23"><a href="higher-dim-dynamics.html#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N):  </span>
+<span id="cb6-24"><a href="higher-dim-dynamics.html#cb6-24" aria-hidden="true" tabindex="-1"></a>      x,y<span class="op">=</span>hern_map(a,b,x,y)</span>
+<span id="cb6-25"><a href="higher-dim-dynamics.html#cb6-25" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> i <span class="op">&gt;=</span> (N <span class="op">-</span> M):</span>
+<span id="cb6-26"><a href="higher-dim-dynamics.html#cb6-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># plotting the last M orbits; </span></span>
+<span id="cb6-27"><a href="higher-dim-dynamics.html#cb6-27" aria-hidden="true" tabindex="-1"></a>        <span class="co">#green pixels with transparency .25</span></span>
+<span id="cb6-28"><a href="higher-dim-dynamics.html#cb6-28" aria-hidden="true" tabindex="-1"></a>        plot(a,x, <span class="st">&#39;g,&#39;</span>, alpha<span class="op">=</span><span class="fl">.25</span>) </span>
+<span id="cb6-29"><a href="higher-dim-dynamics.html#cb6-29" aria-hidden="true" tabindex="-1"></a>    axes().set_xlim(r,<span class="fl">1.25</span>) <span class="co"># setting x axis limit </span></span>
+<span id="cb6-30"><a href="higher-dim-dynamics.html#cb6-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># title of plot </span></span>
+<span id="cb6-31"><a href="higher-dim-dynamics.html#cb6-31" aria-hidden="true" tabindex="-1"></a>    title(<span class="st">&#39;Birfucation diagram of the Hènon map&#39;</span>)</span>
+<span id="cb6-32"><a href="higher-dim-dynamics.html#cb6-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># label of axes  </span></span>
+<span id="cb6-33"><a href="higher-dim-dynamics.html#cb6-33" aria-hidden="true" tabindex="-1"></a>    xlabel(<span class="st">&#39;a&#39;</span>)                                </span>
+<span id="cb6-34"><a href="higher-dim-dynamics.html#cb6-34" aria-hidden="true" tabindex="-1"></a>    ylabel(<span class="st">&#39;x&#39;</span>)</span>
+<span id="cb6-35"><a href="higher-dim-dynamics.html#cb6-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># rescaling plot if necessary                                </span></span>
+<span id="cb6-36"><a href="higher-dim-dynamics.html#cb6-36" aria-hidden="true" tabindex="-1"></a>    figure_size<span class="op">=</span>gcf().get_size_inches() </span>
+<span id="cb6-37"><a href="higher-dim-dynamics.html#cb6-37" aria-hidden="true" tabindex="-1"></a>    factor<span class="op">=</span> <span class="fl">0.65</span></span>
+<span id="cb6-38"><a href="higher-dim-dynamics.html#cb6-38" aria-hidden="true" tabindex="-1"></a>    gcf().set_size_inches(factor <span class="op">*</span> figure_size)</span>
+<span id="cb6-39"><a href="higher-dim-dynamics.html#cb6-39" aria-hidden="true" tabindex="-1"></a>    show()</span>
+<span id="cb6-40"><a href="higher-dim-dynamics.html#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="higher-dim-dynamics.html#cb6-41" aria-hidden="true" tabindex="-1"></a>bifurc(hern_map,<span class="fl">0.1</span>,<span class="fl">0.0</span>,<span class="dv">0</span>,<span class="fl">0.4</span>,<span class="dv">1500</span>,<span class="dv">300</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>We make some observations on the bifurcation diagram <a href="higher-dim-dynamics.html#fig:birufcationofhenon">3.1</a>.</p>
+<ul>
+<li>The bifurcation diagram shows <em>striking similarities</em> with the bifurcation diagram of the logistic map (Figure <a href="periodicpoints.html#fig:bifurcdiagramlog">2.3</a>).</li>
+<li>At a=0.27, a <em>period-doubling</em> bifurcation occurs: the fixed point loses stability and a period 2 orbit (which is a sink) emerges.</li>
+<li>The period <span class="math inline">\(2\)</span> orbit becomes unstable at 0.85, at which point a period <span class="math inline">\(4\)</span> orbit, an attracting orbit, emerges and so on.</li>
+<li>In general, for <span class="math inline">\(b=0.4\)</span> and <span class="math inline">\(a&gt; 0.85\)</span>, the attractors of the Hènon map become more complex.</li>
+</ul>
+<div id="stable-and-unstable-manifolds" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Stable and Unstable Manifolds<a href="higher-dim-dynamics.html#stable-and-unstable-manifolds" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In order to explore the dynamics of dynamical systems corresponding to higher dimensional maps, we require some more terminology – the notion of a <em>manifold</em>.</p>
+<p>Loosely speaking an <em><span class="math inline">\(n\)</span>-dimensional manifold</em> is a set of point whose geometry/topology “locally resembles” <span class="math inline">\(\R^{n}\)</span>. That is a small segment of the manifold looks like a small segment of <span class="math inline">\(\R^{n}\)</span>. For instance a <span class="math inline">\(1\)</span>-dimensional manifold “locally resembles” a curve.</p>
+<p>Examples of one dimensional manifolds are a circle “o” or the disjoint union of two circles. The letters “A” and “X” are not manifolds, for instance, a small neighbourhood at the centre of “X” where different line segments meet does not resemble a line segment. The letter <span class="math inline">\(S\)</span> is not a manifold as zooming in near either of its end points, we resemble a half line instead of a line. If we remove the two end points of <span class="math inline">\(S\)</span>, then it becomes a manifold.The letter <span class="math inline">\(S\)</span> with its end points is a so-called <em>manifold with boundary</em>.</p>
+<p>Examples of 2-dimensional manifolds are spheres, tori since locally they look like a <em>plane</em>. Note that the unions of two manifolds is again a manifold.</p>
+<p>Let us now apply these definitions to dynamics of higher-dimensional maps. Recall that a fixed/periodic point of a map <span class="math inline">\(f\)</span> is called a saddle/periodic saddle point if it has at least one attracting direction and one repelling direction. We can consider the set of all points which are attracted to the saddle point under iterations of the map, and likewise the set of all points which are repelled from the saddle under iterations of the map. These are respectively termed the <em>stable manifold</em> and <em>unstable manifold</em> of the saddle point <span class="math inline">\(p.\)</span> The terminology is not accidental and we shall later see why stable and unstable manifolds of a fixed point are indeed manifolds.</p>
+<p>For the moment let us illustrate a saddle point with an example.</p>
+<div class="example">
+<p><span id="exm:repellingandattractingsaddle" class="example"><strong>Example 3.2  (Movement towards and away from a saddle point) </strong></span><br></p>
+<p>Consider the map <span class="math inline">\(\vec{f}: \R^2 \to \R^2\)</span> given by <span class="math inline">\((x,y) \mapsto (2x, y/2)\)</span>. This map has one fixed point at <span class="math inline">\(x = y = 0\)</span>.</p>
+<p>The Jacobian matrix of <span class="math inline">\(\vec{f}\)</span> at the point <span class="math inline">\((0,0)\)</span> is the matrix</p>
+<p><span class="math display">\[\begin{pmatrix}
+  2 &amp; 0 \\
+  0 &amp; 1/2
+\end{pmatrix} \]</span></p>
+<p>which has eigenvalues <span class="math inline">\((2, 1/2)\)</span> (eigenvectors corresponding to the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> axis respectively). Thus we see that along the <span class="math inline">\(x\)</span> axis we have movement away from the saddle point at the origin and along the <span class="math inline">\(y\)</span> axis we have movement towards the origin.</p>
+<p><img src="MT4508RevisionNotes_files/figure-html/saddleillustration-1.png" width="50%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="stabilityofmanifolds" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Stability of manifolds associated with a saddle<a href="higher-dim-dynamics.html#stabilityofmanifolds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this module most higher dimensional maps we consider will be <em>one-to-one/injective</em>. This property means that for most functions we consider, their <em>inverses</em> exist.</p>
+<div class="definition">
+<p><span id="def:onetoone" class="definition"><strong>Definition 3.1  </strong></span>Let <span class="math inline">\(\vec{f}\)</span> be a map on a subset of <span class="math inline">\(\R^{n}\)</span>. Then <span class="math inline">\(\vec{f}\)</span> is called <em>one-to-one/injective</em> if for <span class="math inline">\(\vec{v}_1, \vec{v}_2\)</span> in the domain of <span class="math inline">\(\vec{f}\)</span></p>
+<p><span class="math display">\[ \vec{f}(\vec{v}_1) = \vec{f}(\vec{v}_2) \implies \vec{v}_1 = \vec{v}_2.\]</span></p>
+<p>That is, <span class="math inline">\(\vec{f}\)</span> is injective if and only if <em>distinct points</em> in its domain have <em>distinct</em> images.</p>
+</div>
+<p>The one-to-one property means that we can “reverse” the map in order to find the inverse of <span class="math inline">\(\vec{f}\)</span>. That is if <span class="math inline">\(\vec{f}(\vec{v}_1) = \vec{v}_2\)</span>, then <span class="math inline">\(\vec{f}^{-1}(\v{v}_2) = \v{v}_1\)</span>. Being one-to-one guarantees that there is no ambiguity in this definition; there is one and only one element in the domain of <span class="math inline">\(\vec{f}\)</span> whose image under <span class="math inline">\(\vec{f}\)</span> is <span class="math inline">\(\vec{v}_2\)</span>.</p>
+<p>Let us now formally define stable and unstable manifolds of a saddle fixed/periodic point.</p>
+<div class="definition">
+<p><span id="def:stableunstablemanifolds" class="definition"><strong>Definition 3.2  (Stable and unstable manifolds) </strong></span>Let <span class="math inline">\(\vec{f}\)</span> be a (smooth) one-to-one map on a subset of <span class="math inline">\(\R^{n}\)</span> and let <span class="math inline">\(\vec{p}\)</span> be a saddle fixed or saddle periodic point of <span class="math inline">\(\vec{f}\)</span>.</p>
+<p>The <em>stable manifold</em> of <span class="math inline">\(\vec{p}\)</span> denoted <span class="math inline">\(\stab{\vec{p}}\)</span> is the set of points <span class="math inline">\(\vec{v}\)</span> in the domain of <span class="math inline">\(\vec{p}\)</span> such that</p>
+<p><span class="math display">\[ \lim_{k \to \infty} |\vec{f}^{k}(\vec{v}) - \vec{f}^{k}(\vec{p})| = 0. \]</span></p>
+<p>The <em>unstable manifold</em> of <span class="math inline">\(\vec{p}\)</span> denoted <span class="math inline">\(\unstab{\vec{p}}\)</span> is the set of points <span class="math inline">\(\vec{v}\)</span> in the domain of <span class="math inline">\(\vec{p}\)</span> such that</p>
+<p><span class="math display">\[ \lim_{k \to \infty} |\vec{f}^{-k}(\vec{v}) - \vec{f}^{-k}(\vec{p})| = 0. \]</span></p>
+</div>
+<p>Notice that the unstable manifold of <span class="math inline">\(\vec{p}\)</span> is simply the stable manifold of <span class="math inline">\(\vec{p}\)</span> under the inverse map. Also observe that <span class="math inline">\(\stab{\v{P}}\)</span> and <span class="math inline">\(\unstab{\v{p}}\)</span> both contain <span class="math inline">\(\v{p}\)</span>.</p>
+<div id="recapinversemaps" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Inverse Maps – a reminder<a href="higher-dim-dynamics.html#recapinversemaps" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As discussed earlier on, for a one-to-one map <span class="math inline">\(\vec{f}\)</span> on a subset of <span class="math inline">\(\R^{n}\)</span> its inverse map <span class="math inline">\(\vec{f}^{-1}\)</span> exists. In particular such a map <span class="math inline">\(\vec{f}\)</span> is called <em>invertible</em>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 3.3  </strong></span><br></p>
+<p>Consider the map <span class="math inline">\(\vec{f}_{1}: \R^2 \to \R^2\)</span> by <span class="math inline">\((x,y) \mapsto (x^2, y^2)\)</span>. This is not a one-to-one map on <span class="math inline">\(\R^2\)</span>, for instance <span class="math inline">\(\vec{f}_1(-1, -1) = \vec{f}_1(1, -1) = \vec{f}_1(-1,1)\)</span> and so on. If, however, we restrict the domain to the set <span class="math inline">\(\R^{2+}\)</span> of pairs of positive real numbers, then <span class="math inline">\(\vec{f}\)</span> is indeed one-to-one (no two distinct positive real numbers square to the same value). The inverse of <span class="math inline">\(\vec{f}_{1}\)</span> as a map on <span class="math inline">\(\R^{2+}\)</span> is simply <span class="math inline">\(\vec{f}_1^{-1}(x,y) = (\sqrt{x}, \sqrt{y})\)</span>.</p>
+<p>The map <span class="math inline">\(\vec{f}_{2}: \R^2 \to \R^2\)</span> by <span class="math inline">\((x,y) \mapsto (x^3, y^3)\)</span> is a one-to-one map. Now two distinct real numbers cube to the same value. The inverse map of <span class="math inline">\(\vec{f}_{2}\)</span> is given by taking cube roots. That is <span class="math inline">\(\vec{f}_2^{-1}(x,y) = (\sqrt[3]{x}, \sqrt[3]{y})\)</span>.</p>
+</div>
+<p>How do we compute the inverse map in general? In general we make use of the one-to-one property as follows. Suppose <span class="math inline">\(\vec{f}^{-1}(\vec{v}_1) = \v{v}_2\)</span>, then <span class="math inline">\(\vec{f}(\vec{v}_2) = \v{v}_1\)</span>. We then solve the latter equation to obtain the coordinates of <span class="math inline">\(\v{v}_2\)</span> in terms of the coordinates of <span class="math inline">\(\v{v}_{1}\)</span>. Let us illustrate this with an example.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Example 3.4  </strong></span><br></p>
+<p>Let <span class="math inline">\(\vec{f}= (x+2y, x^3)\)</span> be a map on <span class="math inline">\(\R^2\)</span>. Let <span class="math inline">\((x_1, y_1)\)</span> be such that <span class="math inline">\(f(x_1, y_1) = (x, y)\)</span> (note that <span class="math inline">\(\v{f}^{-1}(x,y) = (x_1, y_1)\)</span> necessarily as <span class="math inline">\(\v{f}\)</span> is one-to=one). Then</p>
+<p><span class="math display">\[\begin{align*}
+&amp;x = x_1 + 2y_1\\
+&amp;y = x_1^3
+\end{align*}\]</span></p>
+<p>Thus we get</p>
+<p><span class="math display">\[\begin{align*}
+&amp;x_1 = y^{1/3}\\
+&amp;y_1 = (x - x_1)/2 = (x -y^{1/3})/2
+\end{align*}\]</span></p>
+<p>Therefore <span class="math inline">\(\v{f}^{-1}(x,y) = (x_1,y_1) = (y^{1/3}, (x- y^{1/3})/2)\)</span>. The reader can verify that <span class="math inline">\(\v{f}(\v{f}^{-1}(x,y)) = (x,y)\)</span>.</p>
+</div>
+</div>
+<div id="how-do-we-characterise-the-stable-and-unstable-manifolds-of-a-saddle" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> How do we characterise the stable and unstable manifolds of a saddle?<a href="higher-dim-dynamics.html#how-do-we-characterise-the-stable-and-unstable-manifolds-of-a-saddle" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Identifying the stable and unstable manifolds of a saddle fixed point using Definition <a href="higher-dim-dynamics.html#def:stableunstablemanifolds">3.2</a>, in general, is quite tricky especially when we have no nice closed form expression for <span class="math inline">\(\v{f}^{k}(\v{x})\)</span> and <span class="math inline">\(\v{f}^{-k}(\v{x})\)</span>. However, Definition <a href="periodicpoints.html#def:classificationoffixedpoints">2.7</a> gives us a clue. The stable manifold must be tangent, at the saddle point, to the line that passes through the saddle in the direction of the eigenvector corresponding to the (contracting) eigenvalue which is strictly less than <span class="math inline">\(1\)</span>; the unstable manifold must be tangent at the saddle point to the line that passes through the saddle in the direction of the (expanding) eigenvector corresponding to the eigenvalue which is strictly larger than <span class="math inline">\(1\)</span>. This together with the fact that that stable and unstable manifolds of saddles are indeed manifolds can be enough. For example if we know that the stable and unstable manifolds must be <span class="math inline">\(1\)</span>-dimensional manifolds, then all we need to do is find a curve which contains the saddle, is tangent to the relevant line and satisfies the relevant condition in Definition <a href="higher-dim-dynamics.html#def:stableunstablemanifolds">3.2</a>. In general though, we will need to estimate the manifolds of the saddle via some computational means.</p>
+<p>If we restrict simply to the plane, then with the aid of the Stable Manifold Theorem<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, we can say quite a bit.</p>
+<div class="palegreenbox">
+<div class="center">
+<p><strong>Plane Maps</strong></p>
+</div>
+<p>For a map <span class="math inline">\(\v{f}\)</span> of the plane, as a consequence of the Stable Manifold Theorem, stable and unstable manifolds of a saddle fixed point <span class="math inline">\(\v{p}\)</span> <em>are always one-dimensional manifolds i.e. either straight lines or curves</em>. Therefore, in the plane, in order to identify the stable and unstable manifold of a saddle we need to find a one-dimensional manifold <span class="math inline">\(C\)</span> satisfying the following conditions:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(C\)</span> passes though the saddle,</li>
+<li><span class="math inline">\(C\)</span> is <em>invariant</em> under <span class="math inline">\(\v{f}\)</span> and <span class="math inline">\(\v{f}^{-1}\)</span>, that is
+<span class="math display">\[C = \v{f}(C) = \v{f}^{-1}(C),\]</span></li>
+<li><span class="math inline">\(C\)</span> is tangent at the saddle either
+<ol style="list-style-type: lower-roman">
+<li>to the line through the saddle in the direction of the contracting eigenvector (if <span class="math inline">\(C\)</span> is the stable manifold), or,</li>
+<li>to the line through the saddle in the direction of the expanding eigenvector (if <span class="math inline">\(C\)</span> is the unstable manifold),</li>
+</ol></li>
+<li>For all <span class="math inline">\(\v{v} \in C\)</span> either
+<span class="math display">\[\lim_{k \to \infty} |\v{f}^{k}(\v{v}) - \v{f^{k}}(\v{p})| = 0\]</span> (if <span class="math inline">\(C\)</span> is the stable manifold) or
+<span class="math display">\[\lim_{k \to \infty} |\v{f}^{-k}(\v{v}) - \v{f^{-k}}(\v{p})| = 0\]</span>
+(when <span class="math inline">\(C\)</span> is the unstable manifold.)</li>
+</ol>
+</div>
+<p>For <em>linear maps</em> (only linear terms in the definition of the map; alternatively the usual definition of linear maps from MT2501/MT3501), Definition <a href="periodicpoints.html#def:classificationoffixedpoints">2.7</a> gives the whole answer in <span class="math inline">\(n\)</span>-dimensions and not only in the plane.</p>
+<div class="palegreenbox">
+<div class="center">
+<p><strong>Linear Maps</strong></p>
+</div>
+<p>For a linear map, in 2-dimensions the eigenvector corresponding to the contracting eigenvalue determine the stable manifold — <em>the line through the saddle point in the direction of the eigenvector</em>; the eigenvector corresponding to the expanding eigenvalue determines the unstable manifold — <em>the line through the fixed point in the direction of the eigenvector</em>. In higher-dimensions the stable manifold is determined by the subspace spanned by the contracting eigenvectors (we translate so that the origin is moved to the saddle fixed point) and the unstable manifold is determined by the subspace spanned by the contracting eigenvectors (translate such that the origin is moved to the fixed point).</p>
+</div>
+<p>Let us do some examples to illustrate this.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 3.5  </strong></span><br></p>
+<p>Consider the linear map <span class="math inline">\(\v{f}(x,y) = (2x, y/2)\)</span> from Example <a href="higher-dim-dynamics.html#exm:repellingandattractingsaddle">3.2</a>. We showed that <span class="math inline">\((0,0)\)</span> is a saddle point of <span class="math inline">\(\v{f}\)</span>. In particular, we showed that the Jacobian of <span class="math inline">\(\v{f}\)</span> at <span class="math inline">\((0,0)\)</span> has eigenvalues <span class="math inline">\(2, 1/2\)</span> with corresponding eigenvectors <span class="math inline">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 0 \\ 1 \end{pmatrix}\)</span>. We concluded that points lying on the <span class="math inline">\(x\)</span>-axis move away from the origin under iterations of the map <span class="math inline">\(\v{f}\)</span> while points lying on the <span class="math inline">\(y\)</span>-axis move towards the orgin under applications of the map <span class="math inline">\(\v{f}\)</span>. From this it follows that the <span class="math inline">\(x\)</span>-axis is the unstable manifold/<em>outgoing direction</em> of the saddle point <span class="math inline">\((0,0)\)</span> and the <span class="math inline">\(y\)</span>-axis is the stable manifold/<em>incoming direction</em> of <span class="math inline">\((0,0)\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 3.6  </strong></span><br>
+Let us again consider a linear map <span class="math inline">\(\v{f}(x,y) = (-2x + 5y/2, -5x + 11y/2)\)</span>. The fixed points of <span class="math inline">\(\v{f}\)</span> are found by solving <span class="math inline">\(\v{f}(x,y) = (x,y)\)</span> which gives <span class="math inline">\((0,0)\)</span> as the unique fixed point. The Jacobian of <span class="math inline">\(\v{f}\)</span> is simply the matrix of coefficients of <span class="math inline">\(\v{f}\)</span> since <span class="math inline">\(\v{f}\)</span> is a linear map. That is</p>
+<p><span class="math display">\[
+\jacob{(0,0)} = \begin{pmatrix}
+                  -2 &amp; 5/2 \\
+                  -5 &amp;  11/2
+                \end{pmatrix}
+\]</span></p>
+<p>We find the eigenvalues in the usual way to be <span class="math inline">\(0.5\)</span> and <span class="math inline">\(3\)</span>. The eigenvector corresponding to eigenvalue <span class="math inline">\(\lambda \in \{0.5, 3\}\)</span> can then be found by solving the equation <span class="math inline">\((A- \lambda I) \vec{v} = \vec{0}\)</span> where <span class="math inline">\(A = \jacob{(0,0)}\)</span>. This gives eigenvectors <span class="math inline">\(\begin{pmatrix}1 \\ 1 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 1 \\ 2 \end{pmatrix}\)</span>.</p>
+<p>Thus, we see that points on the line <span class="math inline">\(y = x\)</span> corresponding to the first eigenvalue move closer to the origin under iterations of the map <span class="math inline">\(\v{f}\)</span> since such vectors are scaled by a factor of <span class="math inline">\(0.5\)</span>. Points on the line <span class="math inline">\(y = 2x\)</span> (that is the set of points <span class="math inline">\(\left\{t \begin{pmatrix} 1 \\ 2 \end{pmatrix} : t \in \R \right\}\)</span>) move away from the orgin under applications of <span class="math inline">\(f\)</span> as they are scaled by a factor of <span class="math inline">\(3\)</span>.</p>
+<p>Therefore the line <span class="math inline">\(y=x\)</span> is the stable manifold of the saddle <span class="math inline">\((0,0)\)</span> and the line <span class="math inline">\(y=2x\)</span> is the unstable manifold of the saddle <span class="math inline">\((0,0)\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:saddle"></span>
+<img src="MT4508RevisionNotes_files/figure-html/saddle-1.png" alt="Stable and unstable manifolds of a regular saddle" width="50%" />
+<p class="caption">
+Figure 3.2: Stable and unstable manifolds of a regular saddle
+</p>
+</div>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-6" class="example"><strong>Example 3.7  </strong></span><br></p>
+<p>We consider again a linear map <span class="math inline">\(\v{f}(x,y) = (2x+5y, -0.5y)\)</span>. This has a fixed point at <span class="math inline">\((0,0)\)</span>. Once more we compute the eigenvalues and eigenvectors of the Jacobian of <span class="math inline">\(\v{f}\)</span> at the fixed points (just the matrix of coefficients for a linear map) using the usual methods of linear algebra. We get eigenvalues <span class="math inline">\(2, -0.5\)</span> and corresponding eigenvectors <span class="math inline">\(\begin{pmatrix} 1 \\ 0 \end{pmatrix}\)</span> and <span class="math inline">\(\begin{pmatrix} 2 \\ -1 \end{pmatrix}\)</span>.</p>
+<p>We see that the line <span class="math inline">\(y = -x/2\)</span> in the direction of the vector <span class="math inline">\((2, -1)\)</span> is the stable manifold of the saddle <span class="math inline">\((0,0)\)</span> — points on this line move towards the origin under iterations of <span class="math inline">\(\v{f}\)</span>. The <span class="math inline">\(x\)</span>-axis (the line <span class="math inline">\(y=0\)</span>) is the unstable saddle points on this line move away from the origin under iterations of the map.</p>
+<p>Notice the new interesting behaviour that occurs on the stable manifold of <span class="math inline">\((0,0)\)</span>. On each iteration of the map, a point on the saddle flips from one side of the origin to another. Generally this behaviour occurs happens for all fixed points for which the Jacobian has negative eigenvalues.</p>
+<p>A saddle with at least one negative eigenvalue is sometimes called a <em>flip saddle</em>.</p>
+<!-- include graphics using tikz? -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<img src="MT4508RevisionNotes_files/figure-html/unnamed-chunk-19-1.png" alt="Stable and unstable manifold of a flip saddle" width="50%" />
+<p class="caption">
+Figure 3.3: Stable and unstable manifold of a flip saddle
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="sheet3" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Problem Sheet 3<a href="higher-dim-dynamics.html#sheet3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>For week 4.</em></p>
+<hr />
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 3.1
+</div>
+<div class="panel-body">
+
+<p>The Hènon map is defined by
+<span class="math display">\[\v{f}(x,y) = (a-x^2 + by,x)\]</span>
+with real parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Show that the two fixed points of the Hènon map are given by
+<span class="math display">\[\v{p}_{+} = (x_{+}, x_{+}), \quad p_{-} = (x_{-}, x_{-})\]</span>
+with
+<span class="math display">\[ x_{\pm} = \frac{1}{2} \left(b - 1 \pm \sqrt{(b-1)^2 + 4a} \right), \quad (b-1)^2 + 4a \ge 0.\]</span></li>
+<li>Investigate the stability of these fixed points for <span class="math inline">\(b=1\)</span> and <span class="math inline">\(a &gt; 0\)</span> and classify them as sinks, sources or saddles.
+</div>
+</div></li>
+</ol>
+<button id="displayTextunnamed-chunk-21" onclick="javascript:toggle(&#39;unnamed-chunk-21&#39;);">
+Show Solution 3.1
+</button>
+<div id="toggleTextunnamed-chunk-21" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 3.1
+</div>
+<div class="panel-body">
+<ol style="list-style-type: lower-alpha">
+<li>This is a “show” question so we cannot simply check that <span class="math inline">\(\v{p}_{\pm}\)</span> are fixed points of <span class="math inline">\(\v{f}\)</span>, we need to demonstrate it. We solve the equations:
+<span class="math display" id="eq:two" id="eq:one">\[\begin{align}
+x &amp;= a- x^2 + by \tag{3.1} \\
+y &amp;= x \tag{3.2}
+\end{align}\]</span>
+Substituting <a href="higher-dim-dynamics.html#eq:two">(3.2)</a> in to <a href="higher-dim-dynamics.html#eq:one">(3.1)</a> we have:
+<span class="math display">\[ x^2 + (1-b)x - a = 0.\]</span>
+This can now be solved using the quadratic formula:
+<span class="math display">\[ x _{\pm} = \frac{1}{2} \left(b-1 \pm \sqrt{ (b-1)^2 + 4a} \right)\]</span>
+as required.</li>
+<li>We use Theorem 2.1 to classify the fixed points of the map. The Jacobian <span class="math inline">\(\jacob(x,y)\)</span> of <span class="math inline">\(\v{f}(x,y)\)</span> is given by:
+<span class="math display">\[\begin{pmatrix}
+  -2x &amp; 1 \\
+  b &amp; 0
+\end{pmatrix}
+\]</span>
+At the points <span class="math inline">\((x_{\pm}, x_{\pm})\)</span> we have:
+<span class="math display">\[A_{\pm} = \jacobr(x_{\pm}, x_{\pm}) =\begin{pmatrix} - \left(b-1 \pm \sqrt{(b-1)^2 + 4a}\right) &amp; 1 \\b &amp; 0 \end{pmatrix}.\]</span>
+Eigenvalues are found by solving <span class="math inline">\(\det(\lambda I - A_{\pm}) = 0\)</span>. Recalling that <span class="math inline">\(b=1\)</span>, we have:
+<span class="math display">\[ \lambda ( \lambda + \pm 2\sqrt{a} ) - 1 = \lambda^2 \pm 2\lambda \sqrt{a} - 1 = 0.\]</span>
+For the fixed point <span class="math inline">\(\sqrt{a}\)</span>:
+<span class="math display">\[\lambda^2 + 2\lambda \sqrt{a} - 1\]</span>
+has eigenvalues
+<span class="math display">\[\lambda_{\pm} = -\sqrt{a} \pm \sqrt{a + 1}.\]</span>
+Notice that as <span class="math inline">\(a&gt; 0\)</span>, <span class="math inline">\(|-(\sqrt{a} +\sqrt{a + 1})| &gt; 1\)</span>.
+On the other hand, <span class="math inline">\(- (\sqrt{a} - \sqrt{a+1})\)</span>, can be written, multiplying top and bottom by <span class="math inline">\(\sqrt{a} + \sqrt{a+1}\)</span> as <span class="math inline">\(1/(\sqrt{a} + \sqrt{a+1}) &lt;1\)</span> for <span class="math inline">\(a&gt;0\)</span>. Therefore, the point <span class="math inline">\((\sqrt{a}, \sqrt{a})\)</span> is a saddle point when <span class="math inline">\(a&gt;0\)</span>.</li>
+</ol>
+<p>The eigenvalue <span class="math inline">\(-\sqrt{a}\)</span> is similarly dealt with. In this the eigenvalues are given by <span class="math inline">\(\lambda^2 + 2\lambda \sqrt{a} - 1\)</span>. This gives eigenvalues <span class="math inline">\(\lambda_{\pm} = -\sqrt{a} \pm \sqrt{a +1}\)</span>. Now <span class="math inline">\(|\lambda_{+}| = |\sqrt{a} - \sqrt{a+1}| &lt;1\)</span> (<span class="math inline">\(a&gt;0\)</span>) as before; <span class="math inline">\(|\lambda_{-}| = |\sqrt{a} + \sqrt{a+1}| &gt; 1\)</span>. Therefore the fixed point at <span class="math inline">\(-\sqrt{a}\)</span> is also a saddle point.</p>
+<p>Note that When <span class="math inline">\(a =0\)</span>, both fixed points coincide at <span class="math inline">\((0,0)\)</span> which is unstable.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 3.2
+</div>
+<div class="panel-body">
+Let
+<span class="math display">\[\v{f}(x,y,z) = (x^2y, y^2, xz + y)\]</span>
+be a map on <span class="math inline">\(\R^3\)</span>. Find the fixed points of <span class="math inline">\(\v{f}\)</span> and investigate their stability.
+</div>
+</div>
+<button id="displayTextunnamed-chunk-23" onclick="javascript:toggle(&#39;unnamed-chunk-23&#39;);">
+Show Solution 3.2
+</button>
+<div id="toggleTextunnamed-chunk-23" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 3.2
+</div>
+<div class="panel-body">
+<p>The fixed points of <span class="math inline">\(f\)</span> are found by solving the system of equations
+<span class="math display" id="eq:3" id="eq:2" id="eq:1">\[\begin{align}
+x^2y &amp;= x  \tag{3.3} \\
+y^2 &amp;= y \tag{3.4}\\
+xz + y &amp;= z \tag{3.5}
+\end{align}\]</span></p>
+<p>From Equation <a href="higher-dim-dynamics.html#eq:2">(3.4)</a> we find that <span class="math inline">\(y = 1\)</span> or <span class="math inline">\(y=0\)</span>. If <span class="math inline">\(y=0\)</span>, then <span class="math inline">\(x\)</span> and <span class="math inline">\(z\)</span> are both also equal to <span class="math inline">\(0\)</span>. If <span class="math inline">\(y=1\)</span>, then <span class="math inline">\(x\)</span> is equal to <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>. If <span class="math inline">\(x =0\)</span>, <span class="math inline">\(z = 1\)</span>. If <span class="math inline">\(x = 1\)</span>, then there is no solution to Equation <a href="higher-dim-dynamics.html#eq:3">(3.5)</a>. Therefore the fixed points are <span class="math inline">\((0,0,0)\)</span> and <span class="math inline">\((0,1,1)\)</span>.</p>
+<p>We compute <span class="math inline">\(\jacob(x,y,z)\)</span> in order to investigate the stability of the fixed points. We have
+<span class="math display">\[
+\jacob(x,y,z) = \begin{pmatrix}
+          2xy &amp; x^2 &amp; 0 \\
+          0 &amp; 2y &amp; 0 \\
+          z &amp;  1 &amp; x
+        \end{pmatrix}.
+\]</span>
+At <span class="math inline">\((0,0,0)\)</span>
+<span class="math display">\[
+A=\jacob(0,0,0) = \begin{pmatrix}
+          0 &amp; 0 &amp; 0 \\
+          0 &amp; 0 &amp; 0 \\
+          0 &amp;  1 &amp; 0
+        \end{pmatrix}.
+\]</span></p>
+<p>The eigenvalues of <span class="math inline">\(A\)</span> are the roots of the polynomial <span class="math inline">\(\det(\lambda I -A) = x^3\)</span>. Therefore <span class="math inline">\(0\)</span> is the sole eigenvalue of <span class="math inline">\(A\)</span> and the point <span class="math inline">\((0,0,0)\)</span> is a sink.</p>
+<p>At the point <span class="math inline">\((0,1,1)\)</span> we have:
+<span class="math display">\[
+B=\jacob(x,y,z) = \begin{pmatrix}
+          0 &amp; 0 &amp; 0 \\
+          0 &amp; 2 &amp; 0 \\
+          1 &amp;  1 &amp; 0
+        \end{pmatrix}.
+\]</span>
+The eigenvalues of <span class="math inline">\(B\)</span> are the roots of <span class="math inline">\(\det(\lambda I - B) = (x)^2 (x-2)\)</span>. This gives two eigenvalues <span class="math inline">\(2\)</span> and <span class="math inline">\(0\)</span>. Therefore the point <span class="math inline">\((0,1,1)\)</span> is a saddle point.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 3.3
+</div>
+<div class="panel-body">
+Determine the fixed points of the map
+<span class="math display">\[\v{f}(x,y) = (x+y,y+a\sin(bx)),\]</span>
+where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are real and positive and investigate the stability of the fixed points.
+</div>
+</div>
+<button id="displayTextunnamed-chunk-25" onclick="javascript:toggle(&#39;unnamed-chunk-25&#39;);">
+Show Solution 3.3
+</button>
+<div id="toggleTextunnamed-chunk-25" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 3.3
+</div>
+<div class="panel-body">
+<p>The fixed point of <span class="math inline">\(\v{f}\)</span> are found by solving
+<span class="math display">\[\begin{align}
+x+y &amp;= x \\
+y+a \sin(bx) &amp;= y \\
+\end{align}\]</span>
+This has solutions <span class="math inline">\(y= 0\)</span> and <span class="math inline">\(x = n\pi/b\)</span> for <span class="math inline">\(n \in \Z\)</span>.</p>
+<p>The matrix <span class="math inline">\(\jacob(x,y)\)</span> is
+<span class="math display">\[
+\begin{pmatrix}
+  1 &amp; 1 \\
+  ab\cos(bx) &amp; 1
+\end{pmatrix}.
+\]</span>
+At <span class="math inline">\((n\pi/n,0)\)</span> we have
+<span class="math display">\[
+A_n=\jacob(n\pi/b,0) = \begin{pmatrix}
+          1 &amp; 1 \\
+          ab (-1)^n &amp; 1
+        \end{pmatrix}.
+\]</span>
+The eigenvalues are the roots of <span class="math inline">\((\lambda-1)^2 - ab(-1)^n\)</span>, which are <span class="math inline">\(\lambda_{\pm n} =1\pm \sqrt{ab}\)</span> when <span class="math inline">\(n\)</span> is even and <span class="math inline">\(\lambda_{\pm n} = 1 \pm i \sqrt{ab}\)</span> when <span class="math inline">\(n\)</span> is odd. For <span class="math inline">\(n\)</span> even, <span class="math inline">\(|\lambda_{+n}| = |1 + \sqrt{ab}|&gt;1\)</span>. Therefore for <span class="math inline">\(n\)</span> even, <span class="math inline">\((n\pi/b, 0)\)</span> is unstable. It is a saddle when <span class="math inline">\(ab &lt; 4\)</span>.</p>
+For <span class="math inline">\(n\)</span> odd, <span class="math inline">\(|\lambda_{\pm n}| = |\sqrt{1 + ab}| &gt;1\)</span> and so <span class="math inline">\((n\pi/b,0)\)</span> is a source/unstable point when <span class="math inline">\(n\)</span> is odd.
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 3.4
+</div>
+<div class="panel-body">
+Consider the Hènon map
+<span class="math display">\[\v{f}(x,y) = (a-x^2 + by,x)\]</span>
+for <span class="math inline">\(a&gt;0\)</span> and <span class="math inline">\(b = 1- \sqrt{a}\)</span>. Verify that <span class="math inline">\(\{(\sqrt{a},0),(0,\sqrt{a})\}\)</span> is a period <span class="math inline">\(2\)</span>-orbit of the Hènon map. Determine the stability of the period-2 orbit.
+</div>
+</div>
+<button id="displayTextunnamed-chunk-27" onclick="javascript:toggle(&#39;unnamed-chunk-27&#39;);">
+Show Solution 3.4
+</button>
+<div id="toggleTextunnamed-chunk-27" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 3.4
+</div>
+<div class="panel-body">
+<p>We show that <span class="math inline">\(\v{f}(\sqrt{a},0) = (0,\sqrt{a})\)</span> and <span class="math inline">\(\v{f}(0,\sqrt{a}) = (\sqrt{a},0)\)</span>. We have
+<span class="math display">\[\begin{align*}
+\v{f}(\sqrt{a},0)&amp;= (a- a, \sqrt{a}) = (0, \sqrt{a}) \\
+\v{f}(0,\sqrt{a})&amp;= (a + (1- \sqrt{a})\sqrt{a},0) = (\sqrt{a},0)
+\end{align*}\]</span>
+as required.
+The Jacobian of matrix of <span class="math inline">\(\v{f}\)</span> is given by
+<span class="math display">\[
+\begin{pmatrix}
+-2x  &amp; 1- \sqrt{a} \\
+1 &amp; 0
+\end{pmatrix}.
+\]</span></p>
+<p>Using the chain rule for higher dimensional maps, the Jacobian of <span class="math inline">\(\v{f}^2\)</span> at the period <span class="math inline">\(2\)</span> point is given by
+<span class="math display">\[\begin{align*}
+A=\jacob(0,\sqrt{a}) \cdot \jacob(\sqrt{a},0) &amp;= \begin{pmatrix}
+                        0  &amp; 1- \sqrt{a} \\
+                        1 &amp; 0
+                         \end{pmatrix}\begin{pmatrix}
+                        -2\sqrt{a}  &amp; 1- \sqrt{a} \\
+                        1 &amp; 0
+                         \end{pmatrix} \\ &amp;= \begin{pmatrix}
+                        1- \sqrt{a}  &amp; 0  \\
+                        -2\sqrt{a} &amp; 1- \sqrt{a}
+                         \end{pmatrix}.
+\end{align*}\]</span></p>
+<p>The eigenvalues of this matrix are the roots of <span class="math inline">\(\det{\lambda I - A} = (\lambda -1 + \sqrt{a})^2\)</span>. There is only one root, <span class="math inline">\(\lambda =1 - \sqrt{a}\)</span>. The absolute value of <span class="math inline">\(\lambda\)</span> is strictly less than one precisely when <span class="math inline">\(0&lt; a &lt; 4\)</span>. The period <span class="math inline">\(2\)</span> point is stable in this range and unstable for <span class="math inline">\(a&gt;4\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 3.5
+</div>
+<div class="panel-body">
+Find the fixed points of the map
+<span class="math display">\[\v{f}(x,y) = \left(\frac{4}{\pi}\tan^{-1}(x), \frac{y}{2}\right)\]</span>
+where <span class="math inline">\(\tan^{-1}(x): \R \to (-\pi/2, \pi/2)\)</span> is the inverse tangent function. Determine the stability of the fixed points.
+</div>
+</div>
+<button id="displayTextunnamed-chunk-29" onclick="javascript:toggle(&#39;unnamed-chunk-29&#39;);">
+Show Solution 3.5
+</button>
+<div id="toggleTextunnamed-chunk-29" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 3.5
+</div>
+<div class="panel-body">
+<p>The fixed points are found by solving:</p>
+<p><span class="math display">\[\begin{align*}
+&amp;\frac{4}{\pi}\tan^{-1}(x) = x \\
+&amp;\frac{y}{2} = y
+\end{align*}\]</span>
+The second equation gives <span class="math inline">\(y = 0\)</span>.
+For the first let us rewrite the equation as <span class="math inline">\(x = \tan \frac{\pi x}{4}\)</span>. Now by definition of <span class="math inline">\(\tan^{-1}\)</span>, <span class="math inline">\(x\)</span> must be between <span class="math inline">\(-2\)</span> and <span class="math inline">\(2\)</span>. Clearly <span class="math inline">\(x = 0\)</span> is a solution. For non-zero solutions, it suffices to consider the interval <span class="math inline">\((0,2)\)</span>; since <span class="math inline">\(x\)</span> and <span class="math inline">\(\tan\)</span> are both odd, if <span class="math inline">\(\tan (a\pi/4 ) = a\)</span> then <span class="math inline">\(\tan(- a\pi/4 ) = -a\)</span>. Notice that for <span class="math inline">\(x\)</span> between <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span>, <span class="math inline">\(\tan\frac{\pi x}{4} &gt;x\)</span> (indeed it has slope bigger than 1 in this interval). Notice also that <span class="math inline">\(x \ge \tan \frac{\pi x}{4}\)</span> in the interval <span class="math inline">\((0,1)\)</span>. Indeed the function <span class="math inline">\(x-\tan (\pi x/4)\)</span> has only one turning point in the interval <span class="math inline">\((0,1)\)</span>. Therefore as <span class="math inline">\(x - \tan\frac{\pi x}{4} = 0\)</span> when <span class="math inline">\(x =1\)</span>, we conclude that <span class="math inline">\(x=1\)</span> is the only non-zero solution to <span class="math inline">\(x - \tan\frac{\pi x}{4} = 0\)</span> in the interval <span class="math inline">\((0,1)\)</span>. We conclude that the solutions to <span class="math inline">\(x = \tan \frac{\pi x}{4}\)</span> for <span class="math inline">\(x \in (-2,2)\)</span> are <span class="math inline">\(0\)</span> and <span class="math inline">\(\pm 1\)</span>.</p>
+<p>The Jacobian of <span class="math inline">\(\v{f}\)</span> is given by</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+\frac{4}{\pi(1+ x^2)} &amp; 0 \\
+0 &amp; 1/2
+\end{pmatrix}
+\]</span></p>
+<p>This is a diagonal matrix and so its eigenvalue are given by its diagonal entries. In particular we have <span class="math inline">\(\frac{4}{\pi(1 +x^2)}\)</span> and <span class="math inline">\(1/2\)</span>. Therefore we see that the point <span class="math inline">\((0,0)\)</span> is a saddle point while the points <span class="math inline">\((\pm 1, 0)\)</span> are both sinks.</p>
+<p>Notice that the stable manifold of <span class="math inline">\((0,0)\)</span> is the <span class="math inline">\(y\)</span>-axis (which is tangent to the <span class="math inline">\(y\)</span>-axis — the line through the origin the direction of the eigenvector <span class="math inline">\((0,1)\)</span>) and the unstable manifold lies along the <span class="math inline">\(x\)</span>-axis, it is the open interval <span class="math inline">\((-1, 1)\)</span>.</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ASY" class="csl-entry">
+Alligood, K. T., T. D. Sauer, and J. A. Yorke. 2000. <em>Chaos: An Introduction to Dynamical Sytems</em>. Textbooks in Mathematical Sciences. Springer New York.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>We unfortunately do not cover the Stable Manifold Theorem in this module however a proof can be found in Chapter 10 of <span class="citation">(<a href="#ref-ASY" role="doc-biblioref">Alligood, Sauer, and Yorke 2000</a>)</span>.<a href="higher-dim-dynamics.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="periodicpoints.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Higherdimstability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MT4508RevisionNotes.pdf"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

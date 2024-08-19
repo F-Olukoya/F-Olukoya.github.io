@@ -1,0 +1,46 @@
+project:
+  type: website
+  resources:
+    - "curriculumvitae.pdf"
+website:
+  back-to-top-navigation: true
+  title: "Shayo Olukoya"
+  page-footer:
+    center: "© Copyright 2024, Feyishayo Olukoya."
+    right: |
+      ![](logo.jpg){width=15%}
+    left:
+      - text: "Acknowledgements"
+        file: acknowledgements.qmd
+  favicon: logo.jpg
+  open-graph: true
+  navbar:
+    logo: logo.jpg
+    search: true
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Research"
+        file: research.qmd
+      - text: "Teaching"
+        file: teaching.qmd
+      # - text: "Personal"
+      #   file: personal.qmd
+      - text: "Outreach"
+        file: outreach.qmd
+    right:
+      - icon: youtube
+        href: http://www.youtube.com/@shayoolukoya8900
+        aria-label: YouTube
+
+
+format:
+  html:
+    embed-resources: true
+    link-external-newwindow: true
+    lightbox: true
+    search: true
+    theme:
+      light: [minty,quote.scss]
+      dark: [darkly,quotedarkly.scss]
+

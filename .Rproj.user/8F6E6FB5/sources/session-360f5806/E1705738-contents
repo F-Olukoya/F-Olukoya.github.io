@@ -1,0 +1,40 @@
+---
+title: Outreach
+format: 
+  html:
+    lightbox: true
+    page-layout: full
+    grid: 
+      margin-width: 500px
+---
+
+::: {.column-margin}
+
+
+::: {.quote-container}
+
+::: {.stylized-quote}
+
+"You never really understand a person until you consider things from his point of view. Until you climb inside of his skin and walk around in it"
+
+::: {.quote-attribution}
+-- Harper Lee, _To Kill a Mockingbird_
+
+:::
+
+:::
+
+:::
+
+:::
+
+
+I am keen to promote mathematics amongst underrepresented groups in STEM. I have an incipient [YouTube channel](https://www.youtube.com/@shayoolukoya8900/videos) where I discuss various mathematics (and related) topics emphasising, where possible, a non-western point of view. I hope also to include more personal content about my own mathematics journey
+
+I am happy to speak about this to high school and primary school students. If you would like to get in touch, then please do send me an email at {{<var email.personal>}}.
+
+## Activities
+
+I, together with a colleague at St Andrews, recently sponsored, a summer project as part of a scheme to help undergraduate students further enhance their graduate attributes. The students were tasked with producing resources to help a willing sceptic learn more about why the mathematics curriculum needs to be decolonised, and what they can do about it
+
+The students did a fantastic job on this and [here](https://decolonisingmaths.wordpress.com/) is a link to their final output. 

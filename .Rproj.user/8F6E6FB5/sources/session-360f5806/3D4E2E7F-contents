@@ -1,0 +1,428 @@
+/*-- scss:defaults --*/
+
+$theme: "minty" !default;
+
+//
+// Color system
+//
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #f7f7f9 !default;
+$gray-300: #eceeef !default;
+$gray-400: #ced4da !default;
+$gray-500: #aaa !default;
+$gray-600: #888 !default;
+$gray-700: #5a5a5a !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #ff7851 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffce67 !default;
+$green:   #56cc9d !default;
+$teal:    #20c997 !default;
+$cyan:    #6cc3d5 !default;
+
+$primary:       #78c2ad !default;
+$secondary:     #f3969a !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$min-contrast-ratio:   1.45 !default;
+
+// Body
+
+$body-color:                $gray-700 !default;
+$color-contrast-dark:       $body-color !default; // Prefer $body-color over $black inside color-contrast()
+
+// Components
+
+$border-radius:               .4rem !default;
+$border-radius-lg:            .6rem !default;
+$border-radius-sm:            .3rem !default;
+
+// Fonts
+
+// stylelint-disable-next-line value-keyword-case
+$headings-font-family:        Montserrat, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$headings-color:              $gray-700 !default;
+
+// Tables
+
+$table-border-color:          rgba(0, 0, 0, .05) !default;
+
+$table-bg-scale:              0 !default;
+
+// Dropdowns
+
+$dropdown-link-hover-color:         $white !default;
+$dropdown-link-hover-bg:            $secondary !default;
+
+// Navbar
+
+$navbar-dark-color:                 rgba($white, .6) !default;
+$navbar-dark-hover-color:           $white !default;
+$navbar-light-color:                rgba($black, .3) !default;
+$navbar-light-hover-color:          $gray-700 !default;
+$navbar-light-active-color:         $gray-700 !default;
+$navbar-light-disabled-color:       rgba($black, .1) !default;
+
+// Pagination
+
+$pagination-color:                  $white !default;
+$pagination-bg:                     $primary !default;
+$pagination-border-color:           $primary !default;
+$pagination-hover-color:            $white !default;
+$pagination-hover-bg:               $secondary !default;
+$pagination-hover-border-color:     $pagination-hover-bg !default;
+$pagination-active-bg:              $secondary !default;
+$pagination-active-border-color:    $pagination-active-bg !default;
+$pagination-disabled-color:         $white !default;
+$pagination-disabled-bg:            #cce8e0 !default;
+$pagination-disabled-border-color:  $pagination-disabled-bg !default;
+
+// Alerts
+
+$alert-color-scale:                 0% !default;
+$alert-bg-scale:                    0 !default;
+
+// Breadcrumbs
+
+$breadcrumb-padding-y:              .375rem !default;
+$breadcrumb-padding-x:              .75rem !default;
+$breadcrumb-bg:                     $primary !default;
+$breadcrumb-divider-color:          $white !default;
+$breadcrumb-active-color:           $breadcrumb-divider-color !default;
+$breadcrumb-border-radius:          .25rem !default;
+
+
+
+/*-- scss:rules --*/
+
+
+// Variables
+
+$web-font-path: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" !default;
+@if $web-font-path {
+  @import url($web-font-path);
+}
+
+
+// Navbar
+
+.navbar {
+  font-family: $headings-font-family;
+}
+
+.bg-dark {
+  background-color: $secondary !important;
+}
+
+.border-dark {
+  border-color: $secondary !important;
+}
+
+// Buttons
+
+.btn {
+  font-family: $headings-font-family;
+}
+
+// Forms
+
+legend {
+  font-family: $headings-font-family;
+}
+
+// Navs
+
+.dropdown-menu {
+  font-family: $font-family-sans-serif;
+}
+
+.breadcrumb {
+  a {
+    color: $navbar-dark-color;
+  }
+
+  a:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+// Indicators
+
+.alert {
+  a,
+  .alert-link {
+    color: $white;
+  }
+
+  &-light {
+
+    &,
+    a:not(.btn),
+    .alert-link {
+      color: $body-color;
+    }
+  }
+}
+
+.badge {
+  color: $white;
+
+  &.bg-light {
+    color: $gray-700;
+  }
+}
+
+// Containers
+
+.card,
+.list-group-item {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+}
+
+// my own rules
+
+.parent{
+    position:relative;
+    width:200px;
+    height:200px;
+    padding-bottom:5px;
+    opacity:1;
+}
+
+.inner{
+    position:absolute;
+    width:200px;
+    height:200px;
+    bottom:90px;
+    right:20px;
+    top:0px;
+    opacity:0;
+}
+
+button {
+    background-color: #007dc5;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.panel{
+	margin-bottom:20px;
+	background-color:#fff;
+	border:1px solid transparent;
+	border-radius:4px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);
+	box-shadow:0 1px 1px rgba(0,0,0,.05)
+}
+
+.panel-body{
+	padding:15px
+}
+
+.panel-default{
+	border-color:#ddd
+}
+
+.panel-heading{padding:10px 15px;
+  border-bottom:1px solid transparent;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px
+}
+
+.panel-default > .panel-heading {
+    background-image: none;
+    background-color: #00539b;
+    color: white;
+    border-color: #00539b;
+}
+
+.panel-default > .panel-heading1 {
+    background-image: none;
+    background-color: #006962;
+    color: white;
+    border-color: #006962;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: #b2b2b2
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #808080;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #007870;
+}
+
+
+/* Create colour scheme for definition */
+div.theorem.definition {
+  padding: 1em;
+  background: white;
+  color: black;
+  border: 2px solid #006962;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Create colour scheme for algorithm */
+div.theorem.algorithm {
+  padding: 1em;
+  background: white;
+  color: black;
+  border: 2px solid #006962;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Create colour scheme for examples */
+div.theorem.example {
+  padding: 1em;
+  background: white;
+  color: black;
+  border: 2px solid #00539b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Create colour scheme for theorems */
+
+div.theorem {
+  padding: 1em;
+  background: #EEEEFF;
+  color: black;
+  border: 2px solid #00539b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+}
+
+/* Create colour scheme for lemma */
+
+div.theorem.lemma{
+  padding: 1em;
+  background: #EEEEFF;
+  color: black;
+  border: 2px solid #00539b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+}
+
+/* Create colour scheme for proposition*/
+
+div.theorem.proposition{
+  padding: 1em;
+  background: #EEEEFF;
+  color: black;
+  border: 2px solid #00539b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+}
+
+/* Create colour scheme for corollary*/
+
+div.theorem.corollary{
+  padding: 1em;
+  background: #EEEEFF;
+  color: black;
+  border: 2px solid #00539b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+}
+
+/* Create colour scheme for PROOFS */
+div.proof {
+  padding: 1em;
+  background: white;
+  color: black;
+  border: 2px solid #00539b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* Create colour scheme for boxes */
+
+.bluebox {
+  padding: 1em;
+  background: white;
+  color: black;
+  border: 2px solid #00539b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+.greenbox {
+  padding: 1em;
+  background: white;
+  color: black;
+  border: 2px solid #006962;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.palebluebox {
+  padding: 1em;
+  background: #EEEEFF;
+  color: black;
+  border: 2px solid #00539b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.palegreenbox {
+  padding: 1em;
+  background: #EEFFFE;
+  color: black;
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.footer {
+    width: 800px; // Don't change
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+
+}
+
