@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Groups and Numbers – MAT-20025: Abstract Algebra</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./09-Week9.html" rel="next">
+<link href="./07-Week7.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+-->
+
+
+</head><body class="nav-sidebar docked"><div style="display:none">
+
+\(\newcommand{\D}{\displaystyle}\)
+\(\newcommand{\maps}{\rightarrow}\)
+\(\newcommand{\imp}{\Rightarrow}\)
+\(\newcommand{\limp}{\Leftarrow}\)
+\(\newcommand{\ifif}{\Leftrightarrow}\)
+\(\newcommand{\x}{\times}\)
+\(\newcommand{\where}{\; | \;}\)
+\(\newcommand{\sd}{\triangle}\)
+\(\newcommand{\id}{\operatorname{id}}\)
+
+
+
+\(\newcommand{\Hbb}{\mathbb{H}}\)
+\(\newcommand{\N}{\mathbb{N}}\)
+\(\newcommand{\Z}{\mathbb{Z}}\)
+\(\newcommand{\Q}{\mathbb{Q}}\)
+\(\newcommand{\R}{\mathbb{R}}\)
+\(\newcommand{\Sbb}{\mathbb{S}}\)
+\(\newcommand{\rn}{\mathbb{R}^n}\)
+\(\newcommand{\rwz}{\mathbb{R} \backslash \{0\}}\)
+\(\newcommand{\cwz}{\mathbb{C} \backslash \{0\}}\)
+\(\newcommand{\C}{\mathbb{C}}\)
+\(\newcommand{\cx}{C^{\times}}\)
+\(\newcommand{\E}{\mathbb{E}}\)
+\(\newcommand{\e}{\mathrm{e}}\)
+\(\newcommand{\Odd}{\mathbb{O}}\)
+\(\newcommand{\rnn}{\mathbb{R}_{n \times n}}\)
+\(\newcommand{\F}{\mathcal{F}}\)
+\(\newcommand{\setminus}{\backslash}\)
+
+
+\(\newcommand{\rez}{Re(z)}\)
+\(\newcommand{\imz}{Im(z)}\)
+
+
+
+\(\newcommand{\modu}{\, \operatorname{(mod} \,}\)
+\(\newcommand{\nequiv}{\not\equiv}\)
+\(\newcommand{\divides}{\, | \,}\)
+\(\newcommand{\ndivides}{\, \nmid \,}\)
+\(\newcommand{\nrel}{\not \hspace{-1mm}R}\)
+\(\newcommand{\greatcd}{\text{gcd} \,}\)
+\(\newcommand{\lowcm}{\text{lcm} \,}\)
+\(\newcommand{\euler}{a^{\phi(n)}}\)
+\(\newcommand{\QR}{\mathbb{Q}(\sqrt 2)}\)
+
+
+\(\renewcommand{\vec}[1]{\mathbf{#1}}\)
+\(\newcommand{\vecu}{\mathbf{u}}\)
+\(\newcommand{\vecv}{\mathbf{v}}\)
+\(\newcommand{\vecw}{\mathbf{w}}\)
+\(\newcommand{\vecx}{\mathbf{x}}\)
+\(\newcommand{\vecX}{\mathbf{X}}\)
+\(\newcommand{\vecy}{\mathbf{y}}\)
+\(\newcommand{\vecY}{\mathbf{Y}}\)
+\(\newcommand{\vecz}{\mathbf{z}}\)
+\(\newcommand{\veca}{\mathbf{a}}\)
+\(\newcommand{\vecb}{\mathbf{b}}\)
+\(\newcommand{\vecc}{\mathbf{c}}\)
+\(\newcommand{\vecd}{\mathbf{d}}\)
+\(\newcommand{\vece}{\mathbf{e}}\)
+\(\newcommand{\vecf}{\mathbf{f}}\)
+\(\newcommand{\vecg}{\mathbf{g}}\)
+\(\newcommand{\vecn}{\mathbf{n}}\)
+\(\newcommand{\vecp}{\mathbf{p}}\)
+\(\newcommand{\vecs}{\mathbf{s}}\)
+\(\newcommand{\vect}{\mathbf{t}}\)
+\(\newcommand{\veczero}{\mathbf{0}}\)
+\(\newcommand{\diag}{\operatorname{diag}\,}\)
+\(\newcommand{\spn}{\operatorname{span}\,}\)
+\(\newcommand{\gen}[1]{\left\langle #1 \right\rangle}\)
+\(\newcommand{\span}{\operatorname{span}\,}\)
+\(\newcommand{\dimn}{\operatorname{dim}\,}\)
+\(\newcommand{\row}{\operatorname{row}\,}\)
+\(\newcommand{\col}{\operatorname{col}\,}\)
+\(\newcommand{\nul}{\operatorname{nullity}\,}\)
+\(\newcommand{\rank}{\operatorname{rank}\,}\)
+\(\newcommand{\im}{\text{im}\,}\)
+\(\newcommand{\Tr}{\operatorname{trace}\,}\)
+\(\newcommand{\vecseq}{(\vecx_1, \ldots, \vecx_k)}\)
+
+\(\newcommand{\go}{(G, \circ)}\)
+\(\newcommand{\gx}{(G, \times)}\)
+\(\newcommand{\gstar}{(G, *)}\)
+\(\newcommand{\ho}{(H, \circ)}\)
+\(\newcommand{\hx}{(H, \times)}\)
+\(\newcommand{\hstar}{(H, *)}\)
+\(\newcommand{\gp}{G^{\prime}}\)
+\(\newcommand{\ghat}{\widehat{G}}\)
+\(\newcommand{\cyca}{\langle a \rangle}\)
+\(\newcommand{\krn}{\text{ker}\,}\)
+\(\newcommand{\aut}{\text{Aut}\,}\)
+\(\newcommand{\orb}{\operatorname{orb}\,}\)
+\(\newcommand{\stab}{\operatorname{stab}\,}\)
+\(\newcommand{\fix}{\operatorname{fix}\,}\)
+\(\newcommand{\lcm}{\operatorname{lcm}}\)
+\(\newcommand{\kbar}{\overline{K}}\)
+\(\newcommand{\zbar}{\overline{z}}\)
+\(\newcommand{\wbar}{\overline{w}}\)
+\(\newcommand{\ap}{a^{\prime}}\)
+\(\newcommand{\bp}{b^{\prime}}\)
+\(\newcommand{\ep}{e^{\prime}}\)
+\(\newcommand{\hp}{h^{\prime}}\)
+\(\newcommand{\xp}{x^{\prime}}\)
+\(\newcommand{\yp}{y^{\prime}}\)
+\(\newcommand{\ainv}{a^{-1}}\)
+\(\newcommand{\binv}{b^{-1}}\)
+\(\newcommand{\finv}{f^{-1}}\)
+\(\newcommand{\ginv}{g^{-1}}\)
+\(\newcommand{\hinv}{h^{-1}}\)
+\(\newcommand{\xinv}{x^{-1}}\)
+\(\newcommand{\yinv}{y^{-1}}\)
+\(\newcommand{\zn}{\Z_n}\)
+\(\newcommand{\zp}{\Z_p}\)
+\(\newcommand{\znx}{\Z_n^{\times}}\)
+\(\newcommand{\zpx}{\Z_p^{\times}}\)
+\(\newcommand{\norm}{\triangleleft \,}\)
+
+
+\(\newcommand{\chr}{\operatorname{char} \,}\)
+\(\newcommand{\ideal}{\unlhd}\)
+\(\newcommand{\zring}{\{0_R\}}\)
+
+
+
+\(\newcommand{\epr}{E^{\prime}}\)
+\(\newcommand{\vpr}{V^{\prime}}\)
+\(\newcommand{\turan}{Tur\'{a}n}\)
+\(\newcommand{\gcomp}{\overline G}\)
+\(\newcommand{\pruf}{Pr\"{u}fer}\)
+\(\newcommand{\chvat}{Chv\'{a}tal's}\)
+\(\newcommand{\konig}{K\"{o}nig}\)
+
+
+</div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-intro.html">Groups and applications</a></li><li class="breadcrumb-item"><a href="./08-Week8.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups and Numbers</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">MAT-20025: Abstract Algebra</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="./MAT-20025--Abstract-Algebra.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Groups and applications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pre-requisites</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-Week2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Symmetry, Congruences, Matrices, and Roots of Unity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-Week3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Group Theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-Week4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cosets and Lagrange’s Theorem</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-Week5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Isomorphisms and Homomorphisms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-Week6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Permutation Groups</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-Week7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Structure of Finite Abelian Groups</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-Week8.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups and Numbers</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Other algebraic structures</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-Week9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rings and Fields</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<div class="parent">
+<a href="https://www.keele.ac.uk/scm/"><img src="KeeleUni-RGB_MonoBlue.png" width="180"></a>
+<div class="inner">
+<a href="https://www.keele.ac.uk/scm/"><img src="KeeleUni-1949-RGB_MonoWhite.png" width="180"></a>
+</div>
+</div>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-BasicConcepts" id="toc-sec-BasicConcepts" class="nav-link active" data-scroll-target="#sec-BasicConcepts"><span class="header-section-number">8.1</span> Basic Concepts</a></li>
+  <li><a href="#sec-ReducedResidueSystem" id="toc-sec-ReducedResidueSystem" class="nav-link" data-scroll-target="#sec-ReducedResidueSystem"><span class="header-section-number">8.2</span> Reduced Residue System</a></li>
+  <li><a href="#sec-ApplicationstoNumberTheory" id="toc-sec-ApplicationstoNumberTheory" class="nav-link" data-scroll-target="#sec-ApplicationstoNumberTheory"><span class="header-section-number">8.3</span> Applications to Number Theory</a></li>
+  <li><a href="#sheet8" id="toc-sheet8" class="nav-link" data-scroll-target="#sheet8"><span class="header-section-number">8.4</span> Problem Sheet 8</a></li>
+  </ul>
+</nav>
+    <div class="quarto-margin-footer"><div class="margin-footer-item">
+<br><br><br>
+<div class="parent">
+<a href="https://www.math.brown.edu/tbanchof/Beyond3d/chapter5/section03.html"><img src="front.jpg" width="180"></a>
+<div class="inner">
+<a href="https://www.math.brown.edu/tbanchof/Beyond3d/chapter5/section03.html"><img src="frontDark.jpg" width="180"></a>
+</div>
+</div>
+</div></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-intro.html">Groups and applications</a></li><li class="breadcrumb-item"><a href="./08-Week8.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups and Numbers</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-GroupsandNumbers" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups and Numbers</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The aim of this chapter is to look at the relationship between group theory and number theory. We begin by revisiting some basic ideas that we met in first-year Algebra before considering what happens when we examine the set <span class="math inline">\(\zn\)</span> under multiplication rather than addition. This leads to a consideration of what we call the Reduced Residue System. We then use the results of that analysis to shed light on some problems in number theory.</p>
+<section id="sec-BasicConcepts" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="sec-BasicConcepts"><span class="header-section-number">8.1</span> Basic Concepts</h2>
+<p>We first state, as a reminder, some results from Algebra that we shall be using in this chapter (though the proofs are omitted and will not be required).</p>
+<ol type="a">
+<li><p>Let <span class="math inline">\(d, n \in \Z\)</span>, then <span class="math inline">\(d\)</span> divides <span class="math inline">\(n\)</span> if and only if <span class="math inline">\(n\)</span> is an integer multiple of <span class="math inline">\(d\)</span>, that is, <span class="math inline">\(d \divides n\)</span> if and only if <span class="math inline">\(\exists \, q \in \Z\)</span> such that <span class="math inline">\(n=qd\)</span>.</p></li>
+<li><p>If <span class="math inline">\(d \divides m\)</span> and <span class="math inline">\(d \divides n\)</span>, then <span class="math inline">\(\forall \, a, b \in \Z\)</span>, we have that <span class="math inline">\(d \divides (am+bn)\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(d, n \in \Z, \, d&gt;0\)</span>. Then <span class="math inline">\(\exists\)</span> unique <span class="math inline">\(q, r \in \Z\)</span> such that <span class="math inline">\(n=qd+r, \, 0\leq r&lt;d\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(a=qb+r\)</span>, where <span class="math inline">\(a, b, q, r\)</span> are all integers. Then <span class="math inline">\(d\)</span> is a common divisor of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> if and only if <span class="math inline">\(d\)</span> is a common divisor of <span class="math inline">\(b\)</span> and <span class="math inline">\(r\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(a=qb+r\)</span>, where <span class="math inline">\(a, b, q, r\)</span> are all integers. Then <span class="math inline">\(\greatcd (a, b)= \greatcd (b, r)\)</span>. This is known as <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Euclid/">Euclid</a>’s algorithm.</p></li>
+<li><p>Let <span class="math inline">\(a, b, m\)</span> be integers, <span class="math inline">\(m&gt;0\)</span>. Then <span class="math inline">\(a\)</span> is <em>congruent</em> to <span class="math inline">\(b\)</span> <em>modulo</em> <span class="math inline">\(m\)</span> if and only if <span class="math inline">\(m \divides (b-a)\)</span>. We denote this <span class="math inline">\(a \equiv b \modu m)\)</span>.</p></li>
+<li><p>If <span class="math inline">\(a \equiv \ap \modu m)\)</span> and <span class="math inline">\(b \equiv \bp \modu m)\)</span>, then</p>
+<ol type="i">
+<li><span class="math inline">\(a+b \equiv \ap + \bp \modu m)\)</span>,</li>
+<li><span class="math inline">\(ab \equiv \ap \bp \modu m)\)</span>.</li>
+</ol></li>
+</ol>
+<p>This last property means that the result obtained from doing the arithmetic first and then reducing modulo <span class="math inline">\(m\)</span> is the same as the result obtained by reducing all of the numbers modulo <span class="math inline">\(m\)</span> first and then doing the arithmetic.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.1</strong></span> &nbsp;</p>
+<div class="cell" data-gaplength="7">
+<p>Consider: <span class="math display">\[14 \times 7 \pmod{6} = 98 \pmod{6} \equiv 2 \pmod{6}.\]</span> However <span class="math inline">\(14 \equiv 2 \pmod{6}\)</span> and <span class="math inline">\(7 \equiv 1 \pmod{6}\)</span>, therefore <span class="math display">\[14 \times 7 \equiv 2 \times 1 \pmod{6} \equiv 2 \pmod{6}.\]</span></p>
+</div>
+</div>
+<p>Euclid’s algorithm does two things of interest; it finds <span class="math inline">\(\greatcd (a, b)\)</span> and it enables us to express this greatest common divisor in the form <span class="math inline">\((ma+nb)\)</span> where <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> are integers.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.2</strong></span> Find <span class="math inline">\(\greatcd (207, 567)\)</span> and then find integers <span class="math inline">\(s\)</span> and <span class="math inline">\(t\)</span> such that <span class="math display">\[\greatcd (207, 567) = 207s+567t.\]</span></p>
+<div class="cell" data-gaplength="15">
+<p>Set <span class="math inline">\(a = 567\)</span> and <span class="math inline">\(b=207\)</span>, then:</p>
+<p><span class="math display">\[\begin{array}{r|l}
+    a = 567 &amp;  \\
+    \underline{\phantom{blahhhhh}2b=414} &amp; b = 207  \\
+    {a- 2b =153} &amp; \underline{a - 2b = 153\phantom{mm}}  \\
+    \underline{\phantom{h}-2a + 6b = 108} &amp; -a + 3b = 54  \\
+    3a - 8b = 45 &amp; \underline{3a - 8b = 45\phantom{mm}}  \\
+    &amp; -4a + 11b = 9  
+\end{array}\]</span></p>
+<p>Thus the greatest common divisor if 207 and 567 is 9; <span class="math inline">\(s=11\)</span> and <span class="math inline">\(t = -4\)</span>.</p>
+</div>
+</div>
+<p>An important property of <span class="math inline">\(\greatcd (a, b)\)</span> is that it is the smallest positive integer which can be expressed in the form <span class="math inline">\(ma+nb\)</span>; this result is a corollary to the following theorem.</p>
+<div id="thm-8.1" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.1</strong></span> Let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be non-zero integers. Then, <span class="math display">\[\{ma+nb \where m, n \in \Z\} = \{k \times \greatcd (a, b) \where k \in \Z \}.\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(S = \{ma+nb \where m, n \in \Z\}\)</span> and <span class="math inline">\(T = \{k \times \greatcd (a, b) \where k \in \Z \}.\)</span></p>
+<div class="cell" data-gaplength="10">
+<p>Let <span class="math inline">\(d = \gcd(a,b)\)</span>.</p>
+<p>We first show that <span class="math inline">\(T \subseteq S\)</span>. We can find <span class="math inline">\(u,v \in \Z\)</span> such that <span class="math inline">\(d = ua + vb\)</span>. Thus for any <span class="math inline">\(k \in \Z\)</span>, <span class="math inline">\(kd = (ku)a + (kv)b  \in S\)</span>.</p>
+<p>Let <span class="math inline">\(m,n \in \Z\)</span>. Since <span class="math inline">\(d\)</span> divides both <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, there are <span class="math inline">\(\alpha, \beta \in \Z\)</span> such that <span class="math inline">\(a = d \alpha\)</span> and <span class="math inline">\(b = d \beta\)</span>. It follows that <span class="math display">\[ma + nb = (m\alpha) d + (n\beta) b = (m\alpha + n \beta)d \in T.\]</span> Therefore <span class="math inline">\(S \subseteq T\)</span>.</p>
+<p>We conclude that <span class="math inline">\(S =T\)</span>.</p>
+</div>
+</div>
+<div id="cor-" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 8.1</strong></span> Let <span class="math inline">\(a, b \in \Z\)</span>, <span class="math inline">\(S = \{ma+nb \where m, n \in \Z\}\)</span>. Then <span class="math inline">\(\greatcd (a, b)\)</span> is the smallest positive integer in <span class="math inline">\(S\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<div class="cell" data-gaplength="10">
+<p>Let <span class="math inline">\(d = \gcd(a,b)\)</span>. By <a href="#thm-8.1" class="quarto-xref">Theorem&nbsp;<span>8.1</span></a> <span class="math inline">\(S = \{kd: k \in \Z\}\)</span>. Clearly <span class="math inline">\(d\)</span> is the smallest positive integer in <span class="math inline">\(\{kd: k \in \Z\}\)</span> and so <span class="math inline">\(d\)</span> is the smallest positive integer in <span class="math inline">\(S\)</span>.</p>
+</div>
+</div>
+<p>We have already been using the following concept, but we repeat the formal definition.</p>
+<div id="def-RelativelyPrime" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8.1 (Relatively Prime)</strong></span> Two integers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are <em>relatively prime</em> if and only if <span class="math inline">\(\greatcd (a, b) = 1\)</span>.</p>
+</div>
+<p>Pairs of integers which are relatively prime include (7, 11), (8, 9), (12, 55), (-14, 65). Pairs of numbers which are not relatively prime include (6, 6), (15, 126), (-4, 18). When asked to prove something about relatively prime numbers we often use the following fact.</p>
+<div id="cor-" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 8.2</strong></span> Two integers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are relatively prime if and only if there exist integers <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> such that <span class="math inline">\(ma+nb=1\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<div class="cell" data-gaplength="10">
+<p>If <span class="math inline">\(\gcd(a,b) = 1\)</span>, then we can find integers <span class="math inline">\(m,n \in \Z\)</span> such that <span class="math inline">\(ma + nb =1\)</span>.</p>
+<p>On the other hand, <span class="math inline">\(d = \gcd(a,b)\)</span> is the smallest positive integer in the set <span class="math inline">\(S=\{ma +nb : m,n \in \Z\}\)</span>. If <span class="math inline">\(1 \in S\)</span>, then it is clear that <span class="math inline">\(d = 1\)</span>.</p>
+</div>
+</div>
+<div id="cor-8.3" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 8.3</strong></span> If <span class="math inline">\(d \divides ab\)</span> and <span class="math inline">\(d\)</span> and <span class="math inline">\(a\)</span> are relatively prime, then <span class="math inline">\(d \divides b\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<div class="cell" data-gaplength="7">
+<p>We can find <span class="math inline">\(m,n \in \Z\)</span> such that <span class="math inline">\(1 = md + na\)</span>. It follows that <span class="math display">\[b = b(md + na) = bmd + bna.\]</span> Since <span class="math inline">\(d|ab\)</span> and <span class="math inline">\(d|d\)</span> we conclude that <span class="math inline">\(d| (bmd + abn)\)</span>. Therefore <span class="math inline">\(d|b\)</span> as required.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.3</strong></span> The numbers <span class="math inline">\(7\)</span> and <span class="math inline">\(5\)</span> are relatively prime hence if <span class="math inline">\(7\)</span> divides <span class="math inline">\(5n\)</span> for <span class="math inline">\(n \in \Z\)</span>, then <span class="math inline">\(7|n\)</span>.</p>
+<p>Now consider <span class="math inline">\(6\)</span> and <span class="math inline">\(15\)</span>. We have <span class="math inline">\(\greatcd(6,15) = 3\)</span> and so <span class="math inline">\(6\)</span> and <span class="math inline">\(15\)</span> are not relatively prime. Observe that <span class="math inline">\(6|30\)</span> but <span class="math inline">\(6\)</span> divides neither <span class="math inline">\(2\)</span> nor <span class="math inline">\(15\)</span>.</p>
+</div>
+<p>Of fundamental importance in number theory is the class of numbers called prime numbers.</p>
+<div id="def-PrimeNumber" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8.2 (Prime Number)</strong></span> A positive integer <span class="math inline">\(p\)</span> is <em>prime</em> if and only if <span class="math inline">\(p&gt;1\)</span> and the only positive divisors of <span class="math inline">\(p\)</span> are <span class="math inline">\(p\)</span> and 1.</p>
+</div>
+<p>We refer to any positive integer that is not prime as <em>composite</em>. It is worth noting that if <span class="math inline">\(p\)</span> is prime and <span class="math inline">\(a\)</span> is any integer then the statement ‘<span class="math inline">\(p\)</span> does not divide <span class="math inline">\(a\)</span>’ is equivalent to saying that <span class="math inline">\(p\)</span> and <span class="math inline">\(a\)</span> are relatively prime (that is, <span class="math inline">\(\gcd (p, a)=1\)</span>). This is not the case if <span class="math inline">\(p\)</span> is not prime, for example 10 does not divide 18 but 10 and 18 are not relatively prime. The importance of the class of primes is a consequence of the following theorem which we state without proof.</p>
+<div id="thm-FundamentalTheoremofArithmetic" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.2 (Fundamental Theorem of Arithmetic)</strong></span> Let <span class="math inline">\(n\)</span> be a natural number. If <span class="math inline">\(n \geq 2\)</span> then <span class="math inline">\(n\)</span> is uniquely expressible as a product of primes (except for reordering).</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><em>Omitted.</em></p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.4</strong></span> Some examples</p>
+<ul>
+<li><span class="math inline">\(42= 2 \times3 \times 7\)</span></li>
+<li><span class="math inline">\(64 = 2^6\)</span></li>
+<li><span class="math inline">\(100 = 2^2 \times 5^2\)</span></li>
+<li><span class="math inline">\(101\)</span> is prime.</li>
+</ul>
+</div>
+<p>The uniqueness property of a prime decomposition may seem obvious, but it depends on the number system. Of course who would have to first make precise what the definition of a ‘prime’ is in the new number system. Consider the following example.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.5</strong></span> Consider the even integers <span class="math inline">\(2\Z\)</span>. What are the primes? We consider a positive integer <span class="math inline">\(m \in 2\Z\)</span> prime if it is a not composite. Using this definition, the primes in <span class="math inline">\(2\Z\)</span> are <span class="math display">\[\{2(2k+1): k \ge 0\} = \{2,6,10,14 \ldots \}.\]</span></p>
+<p>It is clear that any element of <span class="math inline">\(2\Z\)</span> can be factorised as a product of primes. Indeed any element of <span class="math inline">\(2\Z\)</span> which is not prime is of the form <span class="math inline">\(2^i m\)</span> for some <span class="math inline">\(m \in \{2(2k+1): k \ge 0\} = \{2,6,10,14 \ldots \}.\)</span></p>
+<p>Do we have unique factorisation into primes? Take the number <span class="math inline">\(36\)</span>. This can be factorised either as <span class="math inline">\(2 \times 18\)</span> (both of which are prime with our definition) or as <span class="math inline">\(6 \times 6\)</span>. Therefore we do not have unique factorisation.</p>
+<p>Perhaps we have the wrong definition. What if we stick with <a href="#def-PrimeNumber" class="quarto-xref">Definition&nbsp;<span>8.2</span></a> unchanged. With this definition of prime, the only element of <span class="math inline">\(2\Z\)</span> that is prime is <span class="math inline">\(2\)</span>. In this case we do not always have a factorisation into primes! Indeed any even integer that is not a power of <span class="math inline">\(2\)</span> cannot be factorised as a product of primes in <span class="math inline">\(2\Z\)</span>.</p>
+</div>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.3</strong></span> Let <span class="math inline">\(a, b, m \in \Z\)</span>. Then <span class="math inline">\(\greatcd (a, m) = 1\)</span> and <span class="math inline">\(\greatcd (b, m) = 1\)</span> if and only if <span class="math inline">\(\greatcd (ab, m) = 1\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<div class="cell" data-gaplength="15">
+<p>Suppose <span class="math inline">\(\gcd(a,m) = \gcd(b,m) = 1\)</span>. There are numbers <span class="math inline">\(u,v,s,t \in \Z\)</span> such that <span class="math inline">\(ua + vm= sb + tm =1\)</span>. it now follows that <span class="math inline">\((ua +vm)(sb + tm) =1\)</span>. Expanding: <span class="math display">\[(ua +vm)(sb+tm) = (as)ab + m(atu + bsv + mtv) = 1.\]</span> It follows that <span class="math inline">\(1\)</span> is the smallest positive integer in <span class="math inline">\(\{j(ab) + km : j,k \in \Z\}\)</span>. Therefore <span class="math inline">\(\gcd(ab,m) = 1\)</span> as required.</p>
+<p>On the other hand suppose that <span class="math inline">\(\gcd(ab,m) = 1\)</span>. Then <span class="math inline">\(1\)</span> is the smallest positive integer in <span class="math inline">\(\{j(ab) + km : j,k \in \Z\}\)</span>. However, <span class="math inline">\(\{j(ab) + km : j,k \in \Z\} \subseteq \{j'a + k'm : j',k' \in \Z\}\)</span> and <span class="math inline">\(\{j(ab) + km : j,k \in \Z\} \subseteq \{j'b + k'm : j',k' \in \Z\}\)</span> . Therefore <span class="math inline">\(1\)</span> is the smallest positive integer in each of <span class="math inline">\(\{j'a + k'm : j',k' \in \Z\}\)</span> and <span class="math inline">\(\{j'b + k'm : j',k' \in \Z\}\)</span>. Therefore <span class="math inline">\(\gcd(a,m) = \gcd(b,m) = 1\)</span> as required.</p>
+</div>
+</div>
+</section>
+<section id="sec-ReducedResidueSystem" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="sec-ReducedResidueSystem"><span class="header-section-number">8.2</span> Reduced Residue System</h2>
+<p>In the Algebra module we explored the idea of congruence modulo some positive integer <span class="math inline">\(n\)</span>. It is worth reminding ourselves of the definition:</p>
+<div id="def-Congruence" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8.3 (Congruence)</strong></span> Let <span class="math inline">\(n \in \N\)</span> and let <span class="math inline">\(a,b \in \Z\)</span>. We say <em><span class="math inline">\(a\)</span> is congruent to <span class="math inline">\(b\)</span> modulo <span class="math inline">\(n\)</span></em>, and write <span class="math inline">\(a \equiv b \pmod{n}\)</span>, to mean that <span class="math inline">\(n \divides (a-b)\)</span>.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.6</strong></span> &nbsp;</p>
+<div class="cell" data-gaplength="5">
+<ul>
+<li><span class="math inline">\(15 \equiv 1 \pmod{7}\)</span> since <span class="math inline">\(7| (15-1)\)</span>;</li>
+<li>For any integer <span class="math inline">\(x\)</span> and any positive integer <span class="math inline">\(n\)</span>, <span class="math inline">\(x \equiv x \pmod{n}\)</span> as <span class="math inline">\(n | (x-x)\)</span>.</li>
+</ul>
+</div>
+</div>
+<p>It should be clear that for some given <span class="math inline">\(n\)</span> there will be an infinite number of integers congruent to some fixed <span class="math inline">\(a\)</span> modulo <span class="math inline">\(n\)</span> and that we can group those integers together in a set. This is best illustrated by example.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.7</strong></span> &nbsp;</p>
+<div class="cell" data-gaplength="11">
+<p>Let <span class="math inline">\(a = 2\)</span> and <span class="math inline">\(n=5\)</span>. Then:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+2 &amp;\equiv &amp; 2 \pmod{5} \\
+7 &amp;\equiv &amp; 2 \pmod{5} \\
+12 &amp;\equiv &amp; 2 \pmod{5} \\
+-3 &amp;\equiv &amp; 2 \pmod{5}.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<p>This leads to the following definition.</p>
+<div id="def-ResidueClass" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8.4 (Residue Class)</strong></span> Let <span class="math inline">\(a, n\)</span> be integers, <span class="math inline">\(n\)</span> positive. The <em>residue class</em> of <span class="math inline">\(a\)</span> modulo <span class="math inline">\(n\)</span> is denoted and defined by <span class="math display">\[[a]_n = \{ m \where m \in \Z, m \equiv a \modu n) \} = \{a+kn \where k \in \Z \}.\]</span></p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.8</strong></span> &nbsp;</p>
+<div class="cell" data-gaplength="7">
+<p><span class="math display">\[\begin{eqnarray*}
+[1]_{5} &amp;=&amp; \{\ldots, -14,-9,-4,1,6,11,\ldots\} \\
+{[3]}_{7} &amp;=&amp; \{\ldots, -11,-4,3,10,17,\ldots \} \\
+{[0]}_{4} &amp;=&amp; \{\ldots, -12,-8,-4,0,4,8,\ldots\}.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aside
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell" data-gaplength="15">
+<p>Consider <span class="math inline">\(H = \{ 5k : k \in \Z\}\)</span>. This is a subgroup of <span class="math inline">\((\Z,+)\)</span>. Notice that the left coset of <span class="math inline">\(H\)</span> containing <span class="math inline">\(1\)</span> is precisely the left coset</p>
+<p><span class="math display">\[1H= \{ 1 + h : h \in H\} = \{ 5k + 1 : k \in \Z \} = \{\ldots, -14,-9,-4,1,6,11,\ldots\}  = [1]_{5}.\]</span> So the left coset of <span class="math inline">\(H\)</span> containing <span class="math inline">\(1\)</span> is the residue class of <span class="math inline">\(1\)</span> modulo <span class="math inline">\(5\)</span>. Notice that <span class="math inline">\(H\)</span> is precisely <span class="math inline">\([0]_{5}\)</span>.</p>
+<p>This is not a coincidence.</p>
+<p>Let <span class="math inline">\(n\)</span> be a positive integer. Then <span class="math inline">\(H = \{ nk : k \in \Z \}\)</span> is a subgroup of <span class="math inline">\((\Z,+)\)</span>. For any integer <span class="math inline">\(a \in \Z\)</span>, the left coset <span class="math inline">\(aH\)</span> of <span class="math inline">\(H\)</span> containing <span class="math inline">\(a\)</span> is precisely <span class="math display">\[\{a + h \in h \in H\} = \{ a + nk : k \in \Z \} = [a]_{n}.\]</span> Clearly <span class="math inline">\(H = [0]_{n}\)</span>.</p>
+</div>
+</div>
+</div>
+<p>Notice that grouping together in sets the integers that are congruent to each other modulo some given <span class="math inline">\(n\)</span> results in a partitioning of the integers such that each integer appears in exactly one of the residue classes. This partitioning of <span class="math inline">\(\Z\)</span> is a direct consequence of the fact that congruence modulo <span class="math inline">\(n\)</span> is what is known as an equivalence relation on a set (more of this in third-year Group Theory).</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.9</strong></span> &nbsp;</p>
+<div class="cell" data-gaplength="11">
+<p>We take <span class="math inline">\(n = 5\)</span>. Then:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+[0]_{5} &amp;=&amp; \{\ldots, -10, -5, 0, 5, 10, \ldots\} \\
+{[1]}_{5} &amp;=&amp; \{\ldots, -9, -4, 1, 6, 11, \ldots\} \\
+{[2]}_{5} &amp;=&amp; \{\ldots, -8, -3, 2, 7, 12, \ldots\} \\
+{[3]}_{5} &amp;=&amp; \{\ldots, -7, -2, 3, 8, 13, \ldots\} \\
+{[4]}_{5} &amp;=&amp; \{\ldots, -6, -1, 4, 9, 14, \ldots\}.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 8.1</strong></span> Every integer is in exactly one of the residue classes <span class="math inline">\([0]_n, [1]_n, \ldots ,[n-1]_n\)</span> for a given positive integer <span class="math inline">\(n\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<div class="cell" data-gaplength="7">
+<p>We note that for <span class="math inline">\(i\)</span> between <span class="math inline">\(0\)</span> and <span class="math inline">\(n-1\)</span> and <span class="math inline">\(a \in \Z\)</span>, <span class="math inline">\(a \in [i]_{n}\)</span> precisely when <span class="math inline">\(a\)</span> has remainder <span class="math inline">\(i\)</span> when divided by <span class="math inline">\(n\)</span>. Therefore every integer belongs to one of the residue classes <span class="math inline">\([0]_n, [1]_n, \ldots ,[n-1]_n\)</span>.</p>
+</div>
+</div>
+<p>Recall that when we first introduced the concept of <span class="math inline">\(\Z_n\)</span>, we defined this to be the set <span class="math inline">\(\{0, 1, 2, \ldots , n-1 \}\)</span>. Strictly speaking, we should have defined <span class="math inline">\(\Z_n\)</span> as <span class="math display">\[\Z_n = \{[0]_n, [1]_n, [2]_n, \ldots , [n-1]_n \},\]</span> though for practical purposes we tend to use the former representation.</p>
+<div id="def-" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8.5</strong></span> Let <span class="math inline">\(A, B \in \Z_n\)</span> (so <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are residue classes, not numbers). Choose <span class="math inline">\(a \in A\)</span> and <span class="math inline">\(b \in B\)</span>. Then</p>
+<ol type="i">
+<li><span class="math inline">\(A+B = [a+b]_n\)</span> or, equivalently, <span class="math inline">\([a]_n + [b]_n = [a+b]_n\)</span>,</li>
+<li><span class="math inline">\(A \times B = [ab]_n\)</span> or, equivalently, <span class="math inline">\([a]_n[b]_n = [ab]_n\)</span>.</li>
+</ol>
+</div>
+<p>Note that this is a set with two binary operations defined on it. This forms the triple <span class="math inline">\((\Z_n, +, \times)\)</span> and such a structure is called a ring, provided that certain axioms are satisfied. We shall see more of this in the final chapter.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.10</strong></span> &nbsp;</p>
+<div class="cell" data-gaplength="7">
+<p>Take <span class="math inline">\(n = 5\)</span>. Then <span class="math inline">\(\Z_{5} = \{[0]_{5}, [1]_{5}, [2]_{5}, [3]_{5},[4]_{5}\}\)</span>. We compute</p>
+<ol type="i">
+<li><span class="math inline">\([1]_{5} + 2_{5} = [1 + 2]_{5} = [3]_{5}\)</span>;</li>
+<li><span class="math inline">\([3]_{5}[4]_{5} = [3\times 4]_{5} =  [2]_{5}\)</span>.</li>
+</ol>
+</div>
+</div>
+<p>It is important to check that these operations are well defined. That is, if we were to choose different members of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, say <span class="math inline">\(\ap\)</span> and <span class="math inline">\(\bp\)</span> instead of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> respectively, does <span class="math inline">\([\ap + \bp]_n = [\ap]_n + [\bp]_n\)</span> and does <span class="math inline">\([\ap \bp]_n = [\ap]_n[\bp]_n\)</span>? The fact that the answer is in the affirmative follows from statement (g) in the introductory section to this chapter.</p>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 8.2</strong></span> <span class="math inline">\((\zn, +)\)</span> is an abelian group.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<div class="cell" data-gaplength="3">
+<p>This is clear from the definition of <span class="math inline">\(+\)</span> on <span class="math inline">\(\zn\)</span>.</p>
+</div>
+</div>
+<p>Suppose that we now change the binary operation on <span class="math inline">\(\zn\)</span> from addition modulo <span class="math inline">\(n\)</span> to multiplication modulo <span class="math inline">\(n\)</span>. Let us take <span class="math inline">\(\Z_5\)</span> as an example and construct the operation table (in all of the following examples we shall, for convenience, write <span class="math inline">\(a\)</span> in place of <span class="math inline">\([a]_n\)</span>).</p>
+<div class="cell" data-gaplength="10">
+<p><span class="math display">\[\begin{array}{c|ccccc}
+\otimes_5&amp;0&amp;1&amp;2&amp;3&amp;4\\
+\hline
+0&amp;0&amp;1&amp;2&amp;3&amp;4\\
+1&amp;0&amp;1&amp;2&amp;3&amp;4\\
+2&amp;0&amp;2&amp;4&amp;1&amp;3\\
+3&amp;0&amp;3&amp;1&amp;4&amp;2\\
+4&amp;0&amp;4&amp;3&amp;2&amp;1
+\end{array}\]</span></p>
+</div>
+<p>As we can see, <span class="math inline">\((\Z_5, \times)\)</span> cannot be a group as the element 0 has no inverse; recall that under multiplication the identity element is 1 and in the table above it is clear that there does not exist an element of <span class="math inline">\(\Z_5\)</span>, <span class="math inline">\(a\)</span> say, such that <span class="math inline">\(0 \times a = a \times 0 = 1\)</span>. So what if we remove 0 from the set and consider <span class="math inline">\((\Z_5 \backslash \{0\}, \times)\)</span>? It should be clear, from an examination of the table above, that this results in the following group (check the axioms):</p>
+<p><span class="math display">\[\begin{array}{c|cccc}
+\otimes_5&amp;1&amp;2&amp;3&amp;4\\
+\hline
+1&amp;1&amp;2&amp;3&amp;4\\
+2&amp;2&amp;4&amp;1&amp;3\\
+3&amp;3&amp;1&amp;4&amp;2\\
+4&amp;4&amp;3&amp;2&amp;1
+\end{array}\]</span></p>
+<p>The obvious question to ask at this point is whether or not this process works for all <span class="math inline">\(n \in \N\)</span>. Consider <span class="math inline">\((\Z_8 \backslash \{0\}, \times)\)</span>:</p>
+<div class="cell" data-gaplength="15">
+<p><span class="math display">\[\begin{array}{c|ccccccc}
+\otimes_8&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7\\
+\hline
+1&amp;1&amp;2&amp;3&amp;4&amp;5&amp;6&amp;7 \\
+2&amp;2&amp;4&amp;6&amp;0&amp;2&amp;4&amp;6 \\
+3&amp;3&amp;6&amp;1&amp;4&amp;7&amp;2&amp;5 \\
+4&amp;4&amp;0&amp;4&amp;0&amp;4&amp;0&amp;4 \\
+5&amp;5&amp;2&amp;7&amp;4&amp;1&amp;6&amp;3 \\
+6&amp;6&amp;4&amp;2&amp;0&amp;6&amp;4&amp;2 \\
+7&amp;7&amp;6&amp;5&amp;4&amp;3&amp;2&amp;1
+\end{array}\]</span></p>
+</div>
+<p>Clearly this does not form a group for two reasons. First, the set is not closed under <span class="math inline">\(\otimes_8\)</span> and, second, not all elements have an inverse in the set (1, 3, 5, and 7 have inverses in the set, but 2, 4, and 6 do not). Notice, also, that it is the non-invertible elements that cause the system to be not closed. So, what if we were to remove the elements that have no inverse in the set? <span class="math display">\[\begin{array}{c|cccc}
+\otimes_8&amp;1&amp;3&amp;5&amp;7\\
+\hline
+1&amp;1&amp;3&amp;5&amp;7\\
+3&amp;3&amp;1&amp;7&amp;5\\
+5&amp;5&amp;7&amp;1&amp;3\\
+7&amp;7&amp;5&amp;3&amp;1
+\end{array}\]</span> This system now forms a group. But what is the relationship between the elements of <span class="math inline">\(\zn\)</span> that have no inverse and <span class="math inline">\(n\)</span> itself? On the face of the above example, it looks like we simply remove the even numbers from the set. However, if we consider <span class="math inline">\((\Z_{12}\backslash \{0\}, \times)\)</span>, in order for that to be a group we need to remove the elements 2, 3, 4, 6, 8, 9, and 10. So how do we identify the invertible elements in <span class="math inline">\(\zn\)</span>? The answer comes from the following definition:</p>
+<div id="def-ReducedResidueSystem" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8.6 (Reduced Residue System)</strong></span> The <em>reduced residue system</em> modulo <span class="math inline">\(n\)</span> is denoted and defined by <span class="math display">\[\znx = \{ \, [a]_n \in \zn \where \exists \, [b]_n \in \zn \, \text{s.t.} \, [a]_n[b]_n = [1]_n \, \}.\]</span></p>
+</div>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.4</strong></span> For any positive integer <span class="math inline">\(n\)</span>, <span class="math inline">\(\znx\)</span> is an abelian group.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<div class="cell" data-gaplength="30">
+<p>If <span class="math inline">\(\znx\)</span> is a group then it must be an abelian group since the product is commutative. We therefore verify that <span class="math inline">\(\znx\)</span> forms a group under multiplication.</p>
+<dl>
+<dt>Closure:</dt>
+<dd>
+Let <span class="math inline">\([a]_{n},[b]_{n} \in \znx\)</span>. Then there are elements <span class="math inline">\([a']_{n},[b']_{n} \in \zn\)</span> such that <span class="math inline">\([a]_{n}[a']_{n} = [1]_[n] = [b]_{n}[b']_{n}\)</span>. Now consider <span class="math inline">\([ab]_{n}\)</span>. Observe <span class="math display">\[[ab]_{n}[a'b']_{n} = [(ab)(a'b')]_{n} = [1]_{n}\]</span> since <span class="math inline">\(ab \equiv 1 \pmod{n}\)</span> and <span class="math inline">\(a'b' \equiv 1 \pmod{n}\)</span>.
+</dd>
+<dt>Assoociativity:</dt>
+<dd>
+Let <span class="math inline">\([a]_n,[b]_n,[c]_{n} \in \znx\)</span>. Then, <span class="math display">\[\begin{eqnarray*}
+([a]_n[b]_{n})[c]_{n} &amp;=&amp; [ab]_{n}[c]_n \\
+&amp;=&amp; [(ab)c]_{n} \\
+&amp;=&amp; [a(bc)]_{n}\\
+&amp;=&amp;[a]_{n}[bc]_{n}\\
+&amp;=&amp; [a]_{n}([b]_{n}[c]_n).
+\end{eqnarray*}\]</span>
+</dd>
+<dt>Identity:</dt>
+<dd>
+It is clear that <span class="math inline">\([1]_n \in \znx\)</span> is the identity element.
+</dd>
+<dt>Inverses:</dt>
+<dd>
+Let <span class="math inline">\([a]_n \in \znx\)</span>. By definition, there is an element <span class="math inline">\([a']_{n} \in \zn\)</span> such that <span class="math inline">\([a]_{n}[a']_{n} = [1]_n\)</span>. Notice that <span class="math inline">\([a']_{n}[a]_{n} = [1]_{n}\)</span> also. It follows that <span class="math inline">\([a']_{n} \in \znx\)</span> and every element <span class="math inline">\([a]_{n} \in \znx\)</span> has an inverse in <span class="math inline">\(\znx\)</span>.
+</dd>
+</dl>
+</div>
+</div>
+<p>One consequence of the definition is that we can characterise <span class="math inline">\(\znx\)</span> in a different way, namely as the set of all positive integers less than <span class="math inline">\(n\)</span> that are relatively prime to <span class="math inline">\(n\)</span> (from here on in we shall, in general, use a single representative of a residue class to represent the class itself). Note, however, that this is not an alternative definition, just a convenient way of ‘seeing’ <span class="math inline">\(\znx\)</span>. One advantage of this characterisation is that it makes it easy to identify the elements in the set and, hence, to determine the size of the set (more of that later).</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.11</strong></span> The elements of <span class="math inline">\(\Z_{15}^{\times}\)</span> are the positive integers that are relatively prime to 15. <span class="math display">\[\Z_{15}^{\times} = \{1, 2, 4, 7, 8, 11, 13, 14\}\]</span> and the operation table is <span class="math display">\[\begin{array}{c|cccccccc}
+\otimes_{15}&amp;1&amp;2&amp;4&amp;7&amp;8&amp;11&amp;13&amp;14\\
+\hline
+1&amp;1&amp;2&amp;4&amp;7&amp;8&amp;11&amp;13&amp;14\\
+2&amp;2&amp;4&amp;8&amp;14&amp;1&amp;7&amp;11&amp;13\\
+4&amp;4&amp;8&amp;1&amp;13&amp;2&amp;14&amp;7&amp;11\\
+7&amp;7&amp;14&amp;13&amp;4&amp;11&amp;2&amp;1&amp;8\\
+8&amp;8&amp;1&amp;2&amp;11&amp;4&amp;13&amp;14&amp;7\\
+11&amp;11&amp;7&amp;14&amp;2&amp;13&amp;1&amp;8&amp;4\\
+13&amp;13&amp;11&amp;7&amp;1&amp;14&amp;8&amp;4&amp;2\\
+14&amp;14&amp;13&amp;11&amp;8&amp;7&amp;4&amp;2&amp;1
+\end{array}\]</span></p>
+</div>
+<p>What we have discussed above leads to the following corollary.</p>
+<div id="cor-" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 8.4</strong></span> <span class="math inline">\((\zn \backslash \{[0]_n\}, \times)\)</span> is a group if and only if <span class="math inline">\(n\)</span> is prime.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<div class="cell" data-gaplength="17">
+<p><strong><span class="math inline">\(\Rightarrow\)</span></strong>: Suppose <span class="math inline">\((\zn \backslash \{[0]_n\}, \times)\)</span> is a group. Suppose <span class="math inline">\(n = pq\)</span> for some positive integers <span class="math inline">\(p,q \le n\)</span>. If <span class="math inline">\(p,q &lt; n\)</span>, then <span class="math inline">\([p]_n,[q]_{n} \in \zn \backslash \{[0]_{n}\}\)</span> and <span class="math display">\[[p]_{n}[q]_{n} =[pq]_{n}= [n]_{n} = [0]_{n}.\]</span> This is a contradiction since, by assumption, <span class="math inline">\((\zn \backslash \{[0]_n\}, \times)\)</span> is a group and so it is closed under time. It follows that one of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> is equal to <span class="math inline">\(n\)</span> and the other is equal to <span class="math inline">\(1\)</span>. Thus the only divisors of <span class="math inline">\(n\)</span> and <span class="math inline">\(1\)</span> and itself — <span class="math inline">\(n\)</span> is prime.</p>
+<p><strong><span class="math inline">\(\Leftarrow\)</span></strong>: If <span class="math inline">\(n\)</span> is prime then <span class="math inline">\(\znx = \zn \backslash \{[0]_{n}\}\)</span> (by the alternative characterisation above). Therefore, <span class="math inline">\((\zn \backslash \{[0]_n\}, \times)\)</span> is a group since it is precisely <span class="math inline">\((\znx, \times)\)</span>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.12</strong></span> &nbsp;</p>
+<ol type="a">
+<li><p>Write down the elements of <span class="math inline">\(\Z^{\times}_{20}\)</span> and <span class="math inline">\(\Z^{\times}_{24}\)</span>.</p>
+<div class="cell" data-gaplength="7">
+<p>We have <span class="math display">\[\Z^{\times}_{20} = \{1,3,7,9,11,13,17,19\}\]</span> and <span class="math display">\[\Z_{24}^{\times} = \{1,5,7,11,13,17,19,23\}.\]</span></p>
+</div></li>
+<li><p>Classify, according to the Fundamental Theorem of Finite Abelian Groups, all of the abelian groups of order 8.</p>
+<div class="cell" data-gaplength="7">
+<p>We decompose <span class="math inline">\(8 = 2^3\)</span>. This gives isomorphically distinct abelian groups <span class="math display">\[\Z_{4}, \Z_4 \times \Z_2, \Z_2 \times \Z_2 \times \Z_2.\]</span></p>
+</div></li>
+<li><p>The groups in (a) are isomorphic to which of the groups in (b)?</p>
+<div class="cell" data-gaplength="7">
+<p>The group <span class="math inline">\(Z^{\times}_{20}\)</span> has elements of order <span class="math inline">\(4\)</span> and none of order <span class="math inline">\(8\)</span> and so must be isomorphic to <span class="math inline">\(\Z_{4}\times \Z_{2}\)</span>; for <span class="math inline">\(Z^{\times}_{24}\)</span> all of its elements have order <span class="math inline">\(2\)</span> and so it is also isomorphic to <span class="math inline">\(\Z_{2}\times \Z_{2}\times \Z_{2}\)</span>.</p>
+</div></li>
+</ol>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.13</strong></span> &nbsp;</p>
+<ol type="a">
+<li><p>List the elements of <span class="math inline">\(\Z^{\times}_9\)</span>.</p>
+<div class="cell" data-gaplength="7">
+<p><span class="math display">\[\Z_9^{\times} = \{1,2,4,5,7,8,\}.\]</span></p>
+</div></li>
+<li><p>Show that this group is isomorphic to <span class="math inline">\(\Z_6\)</span>.</p>
+<div class="cell" data-gaplength="7">
+<p>We need only show that <span class="math inline">\(\Z_9^{\times}\)</span> is cyclic. Indeed it is generated by <span class="math inline">\(2\)</span>, and also by <span class="math inline">\(5\)</span>.</p>
+</div></li>
+<li><p>Find two distinct isomorphisms between <span class="math inline">\(\Z^{\times}_9\)</span> and <span class="math inline">\(\Z_6\)</span>.</p>
+<div class="cell" data-gaplength="12">
+<p>The two distinct isomorphisms arise from the two different generators:</p>
+<ul>
+<li><span class="math inline">\(\theta_1: \Z_9^{\times} \to \Z_6\)</span> by <span class="math inline">\(\theta_1(2^{i}) = i\)</span> for <span class="math inline">\(0 \le i \le 5\)</span>;</li>
+<li><span class="math inline">\(\theta_2: \Z_9^{\times} \to \Z_6\)</span> by <span class="math inline">\(\theta_2(5^{i}) = i\)</span> for <span class="math inline">\(0 \le i \le 5\)</span>.</li>
+</ul>
+<p>We note that <span class="math inline">\(\theta_1 \ne \theta_2\)</span> since <span class="math inline">\(\theta_1(5) = 5\)</span> and <span class="math inline">\(\theta_2(5) = 1\)</span>.</p>
+</div></li>
+</ol>
+</div>
+</section>
+<section id="sec-ApplicationstoNumberTheory" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="sec-ApplicationstoNumberTheory"><span class="header-section-number">8.3</span> Applications to Number Theory</h2>
+<p>In the last part of this chapter we shall examine how we can use our knowledge of groups to solve problems in number theory and, in particular, we shall be studying three theorems, namely <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Fermat/">Fermat</a>’s Little Theorem (FLT), <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Euler/">Euler</a>’s Theorem, and <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Wilson_John/">Wilson</a>’s Theorem. It is hoped that this very short review of number theoretic problems will not only convince you of the power of the abstract algebra that we have studied to date, but also whet your appetite for the third-year Number Theory and Cryptography module.</p>
+<p>We begin with a statement of Fermat’s Little Theorem.</p>
+<div id="thm-FermatsLittleTheorem" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.5 (Fermat’s Little Theorem)</strong></span> Let <span class="math inline">\(p\)</span> be a prime and let <span class="math inline">\(a\)</span> be any integer such that <span class="math inline">\(p\)</span> does not divide <span class="math inline">\(a\)</span>. Then <span class="math display">\[a^{p-1} \equiv 1 \modu p).\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<div class="cell" data-gaplength="11">
+<p>First we note that if <span class="math inline">\(p\)</span> does not divide <span class="math inline">\(a\)</span>, then <span class="math inline">\([a]_{p} \in \Z_{p}^{\times}\)</span> (<span class="math inline">\(a\)</span> is co-prime to <span class="math inline">\(p\)</span>).</p>
+<p>The result is now a consequence of <a href="04-Week4.html#thm-Lagrange" class="quarto-xref">Theorem&nbsp;<span>4.1</span></a>. We can see this as follows: <span class="math inline">\(|\Z_{p}^{\times}| = p-1\)</span> since <span class="math inline">\(\Z_{p}^{\times}= \Z_{p}\backslash\{[0]_{p}\}\)</span>. Now <a href="04-Week4.html#thm-Lagrange" class="quarto-xref">Theorem&nbsp;<span>4.1</span></a> states that the order of <span class="math inline">\([a]_{p}\)</span> divides <span class="math inline">\(|\Z_{p}^{\times}|\)</span>. It follows that <span class="math inline">\(([a]_{p})^{p-1} = [a^{p-1}]_{p} = [1]_{p}\)</span>. Thus <span class="math inline">\(a^{p-1} \equiv 1 \pmod{p}\)</span>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.14</strong></span> What is the principal remainder on dividing <span class="math inline">\(6^{82}\)</span> by 17?</p>
+<div class="cell" data-gaplength="11">
+<p><strong>Solution:</strong></p>
+<p>Observe that <span class="math inline">\(17\)</span> is prime and so we can make use of Fermat’s Little Theorem to simplify this calculation. Write <span class="math inline">\(82 = (5 \times 16) + 2\)</span>. Then <span class="math inline">\(6^{82} = (6^{16})^{5} \times 6^2\)</span>. By FLT, <span class="math inline">\(6^{16} \equiv 1 \pmod{17}\)</span>. Therefore, <span class="math display">\[(6^{16})^{5} \times 6^2 \equiv 6^2 \pmod{17} \equiv 2 \pmod 17.\]</span></p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.15</strong></span> Show that, for every positive integer <span class="math inline">\(n\)</span>, the number <span class="math inline">\(n^{33}-n\)</span> is divisible by 15.</p>
+<div class="cell" data-gaplength="23">
+<p>First observe that <span class="math inline">\(n^{33}-n = n(n^{32}-1)\)</span>. Next observe that <span class="math inline">\(15| n^33 - n\)</span> if and only if both <span class="math inline">\(5\)</span> and <span class="math inline">\(3\)</span> divide <span class="math inline">\(n^{33} -n\)</span>. Since 5 and 3 are prime we can make use of FLT. We show that both <span class="math inline">\(5\)</span> and <span class="math inline">\(3\)</span> divide <span class="math inline">\(n(n^{32}-1)\)</span>.</p>
+<ul>
+<li><strong><span class="math inline">\(3|(n^{33}-n)\)</span></strong>: If <span class="math inline">\(3\)</span> divides <span class="math inline">\(n\)</span> we are done. If <span class="math inline">\(3\)</span> does not divide <span class="math inline">\(n\)</span>, then <span class="math inline">\(n\)</span> and <span class="math inline">\(3\)</span> are relatively prime. Write <span class="math inline">\(32 = 2\times 16\)</span>. Then <span class="math display">\[n^{32} \equiv (n^2)^{16} \equiv 1 \pmod{3}\]</span> by FLT. Therefore <span class="math inline">\(n^{32} -1 \equiv 0 \pmod{3}\)</span> and <span class="math inline">\(3|(n^32 -1)\)</span>.</li>
+<li><strong><span class="math inline">\(5|(n^{33}-n)\)</span></strong>: If <span class="math inline">\(5\)</span> divides <span class="math inline">\(n\)</span> we are done. If <span class="math inline">\(5\)</span> does not divide <span class="math inline">\(n\)</span>, then <span class="math inline">\(n\)</span> and <span class="math inline">\(5\)</span> are relatively prime. Write <span class="math inline">\(32 = 4\times 8\)</span>. Then <span class="math display">\[n^{32} \equiv (n^4)^{8} \equiv 1 \pmod{5}\]</span> by FLT. Therefore <span class="math inline">\(n^{32} -1 \equiv 0 \pmod{5}\)</span> and <span class="math inline">\(5|(n^32 -1)\)</span>.</li>
+</ul>
+</div>
+</div>
+<p>The obvious question to ask is whether we can generalise the above result to include composite moduli. Consider the conditions that apply for FLT to work; first, we work modulo a prime, second we have that <span class="math inline">\(p\)</span> does not divide <span class="math inline">\(a\)</span>. Recall that if <span class="math inline">\(p\)</span> is prime the statement <span class="math inline">\(p\)</span> does not divide <span class="math inline">\(a\)</span> is equivalent to saying that <span class="math inline">\(p\)</span> and <span class="math inline">\(a\)</span> are relatively prime. So, a naive approach to extending the theorem to composite numbers would be to conjecture as follows:</p>
+<blockquote class="blockquote">
+<p>Let <span class="math inline">\(a\)</span> and <span class="math inline">\(n\)</span> be integers such that <span class="math inline">\(\greatcd (a, n)=1\)</span>. Then <span class="math inline">\(a^{n-1} \equiv 1 \modu n)\)</span>.</p>
+</blockquote>
+<p>Does this work?</p>
+<div class="cell" data-gaplength="7">
+<p>This does not work. A counterexample is as follows: take <span class="math inline">\(n = 4\)</span> and <span class="math inline">\(a=3\)</span>. Then <span class="math inline">\(\gcd(a,n) = \gcd(3,4) =1\)</span>. However <span class="math display">\[3^{3} \equiv 3 \pmod{4}.\]</span></p>
+</div>
+<p>So, is there a way in which we can generalise FLT to cover non-prime moduli? The answer is ‘yes’ and the solution lies in considering the exponent of <span class="math inline">\(a\)</span>; if we are raising <span class="math inline">\(a\)</span> to the power of <span class="math inline">\(p-1\)</span>, where <span class="math inline">\(p\)</span> is prime, that is the same as raising it to the power of the order of <span class="math inline">\(\Z_p^{\times}\)</span> since this group has <span class="math inline">\(p-1\)</span> elements (a fact that was used in our proof of FLT). We consider, then, raising <span class="math inline">\(a\)</span> to the power of the order of <span class="math inline">\(\znx\)</span> where <span class="math inline">\(n \in \N\)</span> and working modulo <span class="math inline">\(n\)</span>.</p>
+<div id="def-EulerTotientFunction" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8.7 (Euler Totient Function)</strong></span> Let <span class="math inline">\(m, n \in \N\)</span>. The <em>Euler totient function</em>, denoted <span class="math inline">\(\phi\)</span>, is the function <span class="math inline">\(\phi : \N \rightarrow \N\)</span> defined by <span class="math display">\[\phi (n) = | \, \{m \in \N \where m \leq n \, \text{and} \, \greatcd (m, n)=1 \} \, |, \;\; \forall \, n \in \N.\]</span></p>
+</div>
+<p>Note that this is, in fact, <span class="math inline">\(| \znx |\)</span>.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.16</strong></span> &nbsp;</p>
+<div class="cell" data-gaplength="5">
+<p><span class="math inline">\(\phi(30) = |\{1,7,11,13,17,19,23,29\}| = 8\)</span>.</p>
+</div>
+</div>
+<p>We can now generalise FLT to include composite moduli as follows:</p>
+<div id="thm-EulersTheorem" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.6 (Euler’s Theorem)</strong></span> Let <span class="math inline">\(n \in \N\)</span> and <span class="math inline">\(a \in \Z\)</span> such that <span class="math inline">\(a\)</span> and <span class="math inline">\(n\)</span> are relatively prime. Then, <span class="math display">\[a^{\phi(n)} \equiv 1 \modu n).\]</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<div class="cell" data-gaplength="17">
+<p>The proof is almost identical to the proof of FLT. The key ingredient is once more Lagrange’s Theorem.</p>
+<p>Let <span class="math inline">\(a \in \Z\)</span> such that <span class="math inline">\(\gcd(a,n) =1\)</span>. Then <span class="math inline">\([a]_{n} \ne [0]_{n}\)</span> and <span class="math inline">\([a]_{n} \in \znx\)</span>. Now as <span class="math inline">\(|\znx| = \phi(n)|\)</span>, we have, by Lagrange’s Theorem that <span class="math display">\[([a]_{n})^{\phi(n)} = [1]_{n}.\]</span> Therefore <span class="math inline">\(a^{\phi(n)} \equiv 1 \pmod{n}\)</span> as required.</p>
+</div>
+</div>
+<p>Hopefully, the success or failure of our chosen attempts to generalise FLT will now make complete sense.</p>
+<div class="cell" data-gaplength="5">
+<p>Let us revisit the <span class="math inline">\(n=4\)</span> and <span class="math inline">\(a =3\)</span> example. Notice that <span class="math inline">\(\phi(4) = 2\)</span> and <span class="math inline">\(3^2 \equiv 1 \pmod{4}\)</span>.</p>
+</div>
+<p>This function, together with Euler’s Theorem, prove to be extremely useful tools in solving number-theoretic problems.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.17</strong></span> Find the unit digit of <span class="math inline">\(3^{101}\)</span>.</p>
+<div class="cell" data-gaplength="11">
+<p>Notice that if <span class="math inline">\(d \in \{0,1,\ldots, 9\}\)</span> is the unit digit of <span class="math inline">\(3^{101}\)</span>, then <span class="math inline">\(3^{101} \equiv d \pmod{10}\)</span> since there is a <span class="math inline">\(q \in \Z\)</span> such that <span class="math inline">\(3^{101} = 10q + d\)</span>. We use Euler’s Theorem to compute <span class="math inline">\(d\)</span>. Note that <span class="math inline">\(\phi(10) =|\{1,3,7,9\}| =  4\)</span> and <span class="math inline">\(101 = 4 \times 25 + 1\)</span>. It follows that <span class="math display">\[3^{101} = (3^{4})^{25} \times 3) \equiv 1 \times 3 \pmod{10}.\]</span> The last digit of <span class="math inline">\(3^{101}\)</span> is therefore <span class="math inline">\(3\)</span>.</p>
+</div>
+</div>
+<p>The function <span class="math inline">\(\phi : \N \rightarrow \N\)</span> has some remarkable properties. But, given <span class="math inline">\(n \in \N\)</span>, how do we calculate <span class="math inline">\(\phi (n)\)</span>? If <span class="math inline">\(n\)</span> is large it will be very time consuming to investigate all of the natural numbers less than <span class="math inline">\(n\)</span> to establish which are relatively prime to <span class="math inline">\(n\)</span>. We might hope for a formula to allow us to calculate <span class="math inline">\(\phi (n)\)</span> for any <span class="math inline">\(n \in \N\)</span>, but where do we start in trying to find such a formula? The following table lists <span class="math inline">\(\phi (n)\)</span> for <span class="math inline">\(1 \leq n \leq 30\)</span>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">n</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\phi(n)\)</span></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">8</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 5%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">n</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">29</td>
+<td style="text-align: center;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\phi(n)\)</span></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">8</td>
+</tr>
+</tbody>
+</table>
+<p>There does not appear to be a pattern, except that <span class="math inline">\(\phi (n)\)</span> appears to always be even for <span class="math inline">\(n&gt;2\)</span>… to find out more you need to sign up for third-year Number Theory and Cryptography!</p>
+<p>Notice the very close link between FLT and Euler’s Theorem.</p>
+<div class="cell" data-gaplength="7">
+<p>FLT is a corollary of Euler’s Theorem: if <span class="math inline">\(p\)</span> is prime, <span class="math inline">\(\phi(p) = p-1\)</span> and so for <span class="math inline">\(a \in \Z\)</span> relatively prime to <span class="math inline">\(p\)</span>, <span class="math inline">\(a^{\phi(p)} = a^{p-1} \equiv 1 \pmod{p}\)</span>.</p>
+</div>
+<p>It is worth noting that Euler’s totient function and Euler’s Theorem are central to a cryptosystem called RSA, an algorithm for public-key cryptography, developed in 1977, that relies on the prime factorisation of extremely large integers and which is used for, inter alia, encrypting credit card data during purchases over the internet. Again, more of that in third-year Number Theory and Cryptography.</p>
+<p>We conclude our very brief survey of applications of group theory to number theory with an investigation. Returning to that Friday evening from Chapter 6, having become bored with rearranging your ten Maths text books, and having already deduced that there are 10! possible arrangements of those books on your shelf, your mind turns to modular arithmetic (you really need to get out more…). You decide to investigate the relationship between the number of arrangements of <span class="math inline">\(n \in \N\)</span> books and that number modulo <span class="math inline">\(n\)</span>. You realise that this is trivial since <span class="math inline">\(n! \equiv 0 \modu n)\)</span> for all natural numbers <span class="math inline">\(n\)</span> so, determined to find something more interesting (and still waiting for someone to invite you out), you decide to investigate the relationship between <span class="math inline">\((n-1)!\)</span> and itself modulo <span class="math inline">\(n\)</span>. Some rapid calculations yield the following table:</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((n-1)!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((n-1)!\pmod{n}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">720</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">5040</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">40320</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">362880</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">3628800</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">39916800</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>You think that you are spotting a pattern, but now, so engrossed in it all, you carry on to test your hypothesis further…</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((n-1)!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((n-1)!\pmod{n}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">big</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">very big</td>
+<td style="text-align: center;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">humongous</td>
+<td style="text-align: center;">18</td>
+</tr>
+</tbody>
+</table>
+<p>Satisfied, you postulate that there is a relationship between <span class="math inline">\((n-1)!\)</span> and itself modulo <span class="math inline">\(n\)</span> if <span class="math inline">\(n\)</span> is prime. You have discovered Wilson’s Theorem.</p>
+<div id="thm-WilsonsTheorem" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.7 (Wilson’s Theorem)</strong></span> If <span class="math inline">\(p\)</span> is prime, then <span class="math inline">\((p-1)! \equiv -1 \modu p)\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span></p>
+<div class="cell" data-gaplength="23">
+<p>We begin with the following observation. Let <span class="math inline">\(1 \le x \le p-1\)</span> and suppose that <span class="math inline">\(x\)</span> is its own inverse in <span class="math inline">\(\Z_{p}^{\times}\)</span>. This means that <span class="math inline">\(x^2 \equiv 1 \pmod{p}\)</span>. Rearranging, <span class="math inline">\(x^2 -1 \equiv 0 \pmod{p}\)</span>. Therefore <span class="math inline">\(p|(x^2-1)\)</span>. Using the difference of two squares <span class="math inline">\(p|((x-1)(x+1)\)</span>. Since <span class="math inline">\(p\)</span> is prime either <span class="math inline">\(p|(x-1)\)</span> or <span class="math inline">\(p|(x+1)\)</span>. Thus <span class="math inline">\(x \equiv \pm 1 \pmod{p}\)</span>. Since <span class="math inline">\(1 \le x \le p-1\)</span>, then <span class="math inline">\(x = 1\)</span> or <span class="math inline">\(x =p-1\)</span>. Thus <span class="math inline">\(x \in \Z_{p}^{\times}\backslash\{1,p-1\}\)</span>, the inverse of <span class="math inline">\(x \in \Z_{p}^{\times}\)</span> is not equal to <span class="math inline">\(x\)</span>. For <span class="math inline">\(2 \le x &lt; p-1\)</span> write <span class="math inline">\(x^{-1}\)</span> for the element of <span class="math inline">\(y \in \{2,3,\ldots, p-2\}\)</span> such that <span class="math inline">\(xy \equiv 1 \pmod{p}\)</span>. Thus we can find elements <span class="math inline">\(x_1, x_2 ,\ldots, x_{\left(\frac{p-3}{2}\right)} \in  \{2,3,\ldots, p-2\}\)</span> such that</p>
+<p><span class="math display">\[(p-1)!  = 1\times (x_1 \times x_1^{-1})\times (x_2\times x_2^{-1}) \ldots \left(x_{\left(\frac{p-3}{2}\right)} x_{\left(\frac{p-3}{2}\right)}^{-1}\right) \times (p-1).\]</span></p>
+<p>Working modulo <span class="math inline">\(p\)</span>, we have <span class="math display">\[\begin{eqnarray*}
+(p-1)!  &amp;=&amp; 1\times (2 \times 2^{-1})\times (3\times 3^{-1}) \ldots \left(\left(\frac{p-1}{2}\right) \left(\frac{p-1}{2}\right)^{-1}\right) \times (p-1) \\
+&amp;\equiv&amp; 1\times 1 \times 1 \ldots 1 \times (p-1) \pmod{p} \\
+&amp;\equiv&amp; (p-1) \pmod{p} \\
+&amp;\equiv&amp; -1 \pmod{p}
+\end{eqnarray*}\]</span></p>
+<p>as required.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.18</strong></span> Arrange the integers <span class="math inline">\(2, 3, \ldots , 11\)</span> into pairs <span class="math inline">\((a\times b)\)</span> satisfying <span class="math inline">\(ab \equiv 1 \modu 13)\)</span>.</p>
+<div class="cell" data-gaplength="5">
+<p><strong>Solution:</strong> We have <span class="math display">\[(2\times 7)(3 \times 9)(4 \times 10)(5 \times 8)(6 \times 11).\]</span></p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.19</strong></span> Find the principal remainder when 15! is divided by 17.</p>
+<div class="cell" data-gaplength="11">
+<p>We use Wilson’s Theorem: <span class="math inline">\(16! = 16 \times 15! \equiv -1 \pmod{17}\)</span>. It follows that <span class="math inline">\(15! \equiv (-1) (16)^{-1}\pmod{17}\)</span>. Since <span class="math inline">\(16\)</span> is its own inverse in <span class="math inline">\(\Z_{17}^{\times}\)</span>. It follows that <span class="math inline">\(15! \equiv -16 \pmod{17}\)</span>; <span class="math inline">\(15! \equiv 1 \pmod{17}\)</span>. The principal remainder when <span class="math inline">\(15!\)</span> is divided by 17 is therefore 1.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.20</strong></span> Find the inverses of 10, 9 and 8 in <span class="math inline">\(\Z_{11}^{\times}\)</span> and hence find the remainder when 7! is divided by 11.</p>
+<div class="cell" data-gaplength="15">
+<p>We note that <span class="math inline">\(10 \equiv -1 \pmod{11}\)</span> and so <span class="math inline">\(10\)</span> is its own inverse i <span class="math inline">\(\Z_{11}\)</span>.</p>
+<p>Now <span class="math inline">\(9 \equiv -2 \pmod{11}\)</span>. Therefore <span class="math display">\[9 \times 5 \equiv -10\pmod{11} \equiv 1 \pmod{11}\]</span> and so <span class="math inline">\(9^{-1} = 5\)</span></p>
+<p>Lastly <span class="math inline">\(8 \equiv -3 \pmod{11}\)</span> and so <span class="math display">\[8 \times -4 \equiv 12 \pmod{11} \equiv 1 \pmod{11}.\]</span> It follows that <span class="math inline">\(8^{-1} = 7\)</span>.</p>
+<p>We apply Wilson’s Theorem to compute the remainder of <span class="math inline">\(7!\)</span> when divided by <span class="math inline">\(11\)</span>. We have: <span class="math display">\[10! = 10 \times 9 \times 8 \times 7! \equiv -1 \pmod{11}.\]</span> Therefore <span class="math display">\[7! \equiv -(10^{-1}\times 9^{-1}\times 8^{-1})\pmod{11}.\]</span> Hence <span class="math display">\[7! \equiv 35 \pmod{11}\equiv 2 \pmod{11}.\]</span></p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.21</strong></span> Use Wilson’s Theorem to find the principal remainder on dividing 51! by 61.</p>
+<div class="cell" data-gaplength="20">
+<p>Applying Wilson’s Theorem: <span class="math display">\[51! \equiv -(60 \cdot 59 \cdot \ldots \cdot 52)^{-1}\pmod{61}.\]</span> Now we use the fact that <span class="math display">\[60 \equiv -1 \pmod{61}, 59 \equiv -2\pmod{61}, \ldots, 52 \equiv -9\pmod{61}.\]</span> Therefore <span class="math display">\[60 \cdot 59 \cdot \ldots \cdot 52 \equiv  -(9!) \pmod{61}.\]</span></p>
+<p>Now <span class="math inline">\(9! = 7! \times 72\)</span>. We decompose <span class="math inline">\(7! = 7 \times 60 \times 12\)</span>. Thus <span class="math display">\[7! \equiv - 84 \pmod{61} \equiv 38 \pmod {61}.\]</span> On the other hand <span class="math inline">\(72 \equiv 11 \pmod {61}\)</span>. Therefore <span class="math inline">\(9! \equiv 38 \times 11 \pmod{61} \equiv 52 \pmod{61}\)</span>.</p>
+<p>Now we compute <span class="math inline">\(52^{-1} \in \Z_{61}^{\times}\)</span>. We use the fact that <span class="math inline">\(52 \equiv -9 = -3 \times 3 \pmod{61}\)</span>. Now <span class="math inline">\(3^{-1} \in \Z_{61}^{\times}\)</span> is <span class="math inline">\(-20\)</span>. Therefore <span class="math display">\[(-9)^{-1} = (-3)^{-1}\times 3^{-1} \equiv 20 \times -20 = 27 \pmod{61}.\]</span></p>
+<p>It follows that <span class="math inline">\(51! \equiv 9! \equiv 27 \pmod{61}\)</span>.</p>
+</div>
+</div>
+<p>It is worth noting that the converse of Wilson’s Theorem is also true (it is, in fact, an if and only if statement), that is if <span class="math inline">\((p-1)! \equiv -1 \modu p)\)</span> then <span class="math inline">\(p\)</span> is prime. This is, however, not much use as a primality test!</p>
+</section>
+<section id="sheet8" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="sheet8"><span class="header-section-number">8.4</span> Problem Sheet 8</h2>
+<p><em>Covers Chapter 8.</em></p>
+<hr>
+<div class="cell" title="Question 8.1">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 8.1
+</div>
+<div class="panel-body">
+<ol type="a">
+<li>Use Euclid’s algorithm to find the greatest common divisor of 440 and 189. Then find integers <span class="math inline">\(s\)</span> and <span class="math inline">\(t\)</span> such that <span class="math inline">\(\text{gcd}(440, 189) = 189s + 440t\)</span>.</li>
+<li>Use Euclid’s algorithm to find the greatest common divisor of 1343 and 391. Then find integers <span class="math inline">\(s\)</span> and <span class="math inline">\(t\)</span> such that <span class="math inline">\(\text{gcd}(1343, 391) = 1343s + 391t\)</span>.</li>
+<li>Use Euclid’s algorithm to find the greatest common divisor of 975 and 121. Then find integers <span class="math inline">\(s\)</span> and <span class="math inline">\(t\)</span> such that <span class="math inline">\(\text{gcd}(975, 121) = 121s + 975t\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 8.1">
+<button id="displayTextunnamed-chunk-43" onclick="javascript:toggle('unnamed-chunk-43');">
+Show Solution 8.1
+</button>
+<div id="toggleTextunnamed-chunk-43" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 8.1
+</div>
+<div class="panel-body">
+<p>First recall the general principle: <span class="math display">\[
+\mbox{if} \,\,\, a = qb + r \,\,\,\mbox{then} \,\,\, \mbox{gcd}\,(a,
+b) = \mbox{gcd}\,(b, r).
+\]</span></p>
+<ol type="a">
+<li><p>In what follows we repeat that procedure at each step. <span class="math display">\[\begin{align}
+440 &amp;= 2 \times 189 + 62 \tag{1}\\
+189 &amp;= 3 \times 62 + 3 \tag{2}\\
+62 &amp;= 20 \times 3 + 2 \tag{3}\\
+3 &amp;= 1 \times 2 + 1 \tag{4}\\
+2 &amp;= 2 \times 1 \tag{5}
+\end{align}\]</span> So, gcd <span class="math inline">\((440, 189)=1\)</span>.</p>
+<p>We can now work backwards from the gcd as follows: <span class="math display">\[\begin{eqnarray*}
+1 &amp;=&amp; 3 - (1 \times 2)\\
+&amp;=&amp; 3 - (62 - (20 \times 3)) \hspace{5cm} \text{using} \quad (3)\\
+&amp;=&amp; (21 \times 3) - (1 \times 62)\\
+&amp;=&amp; (21 \times (189 - (3 \times 62))) - (1 \times 62) \hspace{2.5cm} \text{using} \quad (2)\\
+&amp;=&amp; (21 \times 189) - (64 \times 62)\\
+&amp;=&amp; (21 \times 189) - (64 \times (440 - (2 \times 189))) \hspace{2cm} \text{using} \quad (1)\\
+&amp;=&amp; (-64 \times 440) + (149 \times 189).
+\end{eqnarray*}\]</span></p>
+<p>So <span class="math inline">\(s = 149\)</span> and <span class="math inline">\(t = -64\)</span>.</p></li>
+<li><p>We compute <span class="math inline">\(\gcd(1343,391)\)</span>:</p>
+<p><span class="math display">\[\begin{align}
+1343 &amp;= 3 \times 391 + 170 \tag{6}\\
+391 &amp;= 2 \times 170 + 51 \tag{7}\\
+170 &amp;= 3 \times 51 + 17 \tag{8}\\
+51 &amp;= 3 \times 17 \tag{9}
+\end{align}\]</span></p>
+<p>So, gcd <span class="math inline">\((1343, 391)=17\)</span>.</p>
+<p>We can now work backwards from the gcd as follows: <span class="math display">\[\begin{eqnarray*}
+17 &amp;=&amp; 170 - (3 \times 51)\\
+&amp;=&amp; 170 - (3 \times (391 - (2 \times 170))) \hspace{3.1cm} \text{using} \quad (7)\\
+&amp;=&amp; (7 \times 170) - (3 \times 391)\\
+&amp;=&amp; (7 \times (1343 - (3 \times 391))) - (3 \times 391) \hspace{2cm} \text{using} \quad (6)\\
+&amp;=&amp; (7 \times 1343) - (24 \times 391).
+\end{eqnarray*}\]</span></p>
+<p>So <span class="math inline">\(s = 7\)</span> and <span class="math inline">\(t = -24\)</span>.</p></li>
+<li><p>We compute <span class="math inline">\(\gcd(-419,52)\)</span>:</p>
+<p><span class="math display">\[\begin{align}
+975 &amp;= 8 \times 121 + 7 \tag{10}\\
+121 &amp;= 17 \times 7 + 2 \tag{11}\\
+7 &amp;= 3 \times 2 + 1 \tag{12}\\
+2 &amp;= 2 \times 1 \tag{13}
+\end{align}\]</span></p>
+<p>So, gcd <span class="math inline">\((975, 121)=1\)</span>.</p>
+<p>We can now work backwards from the gcd as follows: <span class="math display">\[\begin{eqnarray*}
+1 &amp;=&amp; 7 - (3 \times 2)\\
+&amp;=&amp; 7 - (3 \times (121 - (17 \times 7))) \hspace{4cm} \text{using} \quad (11)\\
+&amp;=&amp; (52 \times 7) - (3 \times 121)\\
+&amp;=&amp; (52 \times (975 - (8 \times 121))) - (3 \times 121) \hspace{2.3cm} \text{using} \quad (10)\\
+&amp;=&amp; (52 \times 975) - (419 \times 121).
+\end{eqnarray*}\]</span></p>
+<p>So <span class="math inline">\(s = -419\)</span> and <span class="math inline">\(t = 52\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 8.2">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 8.2
+</div>
+<div class="panel-body">
+Use your result from Question 8.1 c.&nbsp;to find the inverse of <span class="math inline">\([121]_{975}\)</span> in <span class="math inline">\(\Z^{\times}_{975}\)</span>.
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 8.2">
+<button id="displayTextunnamed-chunk-45" onclick="javascript:toggle('unnamed-chunk-45');">
+Show Solution 8.2
+</button>
+<div id="toggleTextunnamed-chunk-45" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 8.2
+</div>
+<div class="panel-body">
+<p>Note that, by Euclid, gcd<span class="math inline">\((a, b) = ma +nb\)</span> for some <span class="math inline">\(m, n \in \Z\)</span>. So, if gcd<span class="math inline">\((a, b) = 1\)</span> we have that <span class="math inline">\(ma = 1 - nb\)</span> and so <span class="math inline">\(a\)</span> divides <span class="math inline">\(1 - nb\)</span>. It then follows, by definition, that <span class="math inline">\(nb \equiv 1 \modu a)\)</span>. Consequently we must have that <span class="math inline">\([n]_a = [b]_a^{-1}\)</span>.</p>
+<p>We found in 1(c) above that <span class="math inline">\((52 \times 975) - (419 \times 121) = 1\)</span>. Hence <span class="math inline">\([121]^{-1}_{975} = [-419]_{975} = [556]_{975}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 8.3">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 8.3
+</div>
+<div class="panel-body">
+<p>Show that <span class="math inline">\(\Z^{\times}_{12}\)</span> is isomorphic to <span class="math inline">\(\Z_2 \times \Z_2\)</span> and write down an isomorphism between the two groups.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 8.3">
+<button id="displayTextunnamed-chunk-47" onclick="javascript:toggle('unnamed-chunk-47');">
+Show Solution 8.3
+</button>
+<div id="toggleTextunnamed-chunk-47" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 8.3
+</div>
+<div class="panel-body">
+<p><span class="math inline">\(\Z^{\times}_{12} = \{1, 5, 7, 11\}\)</span>, a group of order 4.</p>
+<p>We know that there are only two isomorphically distinct groups of order 4, namely <span class="math inline">\(\Z_4\)</span> and <span class="math inline">\(\Z_2 \times \Z_2\)</span>. We also know that <span class="math inline">\(\Z_4\)</span> is cyclic , whereas <span class="math inline">\(\Z_2 \times \Z_2\)</span> is not. So, in order to show that <span class="math inline">\(\Z^{\times}_{12}\)</span> is isomorphic to <span class="math inline">\(\Z_2 \times \Z_2\)</span>, we simply need to demonstrate that it is not cyclic. The easiest way to do this is to show that <span class="math inline">\(\Z^{\times}_{12}\)</span> does not contain any element of period 4 (if the group is cyclic it must have a generator which must have a period equal to the order of the group). Note that</p>
+<p><span class="math display">\[\begin{eqnarray*}
+5^2 &amp;=&amp; 25 \equiv 1 \modu 12)\\
+7^2 &amp;=&amp; 49 \equiv 1 \modu 12)\\
+11^2 &amp;=&amp; 121 \equiv 1 \modu 12).
+\end{eqnarray*}\]</span></p>
+<p>Hence every element has period 2, except for the identity which has period 1. So <span class="math inline">\(\Z^{\times}_{12}\)</span> is isomorphic to <span class="math inline">\(\Z_2 \times \Z_2\)</span> and not <span class="math inline">\(\Z_4\)</span>.</p>
+<p>As every element of each of those two groups (identity excepted) has period 2, an isomorphism is not difficult to find. For example <span class="math display">\[\theta = \left(\begin{array}{cccc}(0, 0)&amp;(0,1 )&amp;(1, 0)&amp;(1, 1)\\1&amp;5&amp;7&amp;11\end{array} \right).\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 8.4">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 8.4
+</div>
+<div class="panel-body">
+<p>Use Fermat’s Little theorem to find the principal remainder on dividing:</p>
+<ol type="a">
+<li><span class="math inline">\(5^{25}\)</span> by 13;</li>
+<li><span class="math inline">\(17^{44}\)</span> by 7;</li>
+<li><span class="math inline">\(19^{53}\)</span> by 11.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 8.4">
+<button id="displayTextunnamed-chunk-49" onclick="javascript:toggle('unnamed-chunk-49');">
+Show Solution 8.4
+</button>
+<div id="toggleTextunnamed-chunk-49" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 8.4
+</div>
+<div class="panel-body">
+<p>Recall Fermat’s Little Theorem (FLT):</p>
+<p>If <span class="math inline">\(p\)</span> is prime and <span class="math inline">\(a\)</span> is an integer such that <span class="math inline">\(p \nmid a\)</span>, then <span class="math inline">\(a^{p-1} \equiv 1 \modu p)\)</span>.</p>
+<ol type="a">
+<li><p>In the notation of FLT let <span class="math inline">\(p=13\)</span> and <span class="math inline">\(a = 5\)</span>. Now, <span class="math inline">\(13 \nmid 5\)</span>, so by FLT we have that <span class="math inline">\(5^{12} \equiv 1 \modu 13)\)</span>. Then, <span class="math display">\[\begin{eqnarray*}
+5^{25} &amp;=&amp; 5 \times 5^{24}\\
+&amp;=&amp; 5 \times (5^{12})^2\\
+&amp;\equiv&amp; 5 \times 1^2 \modu 13) \hspace{3cm} \mbox{since} \, 5^{12} \equiv 1 \, \modu 13)\\
+&amp;\equiv&amp; 5 \modu 13)
+\end{eqnarray*}\]</span> So, the principal remainder on dividing <span class="math inline">\(5^{25}\)</span> by <span class="math inline">\(13\)</span> is <span class="math inline">\(5\)</span>.</p></li>
+<li><p>In the notation of FLT let <span class="math inline">\(p=7\)</span> and <span class="math inline">\(a = 17\)</span>. Now, <span class="math inline">\(7 \nmid 17\)</span>, so by FLT we have that <span class="math inline">\(17^{6} \equiv 1 \modu 7)\)</span>. Then, <span class="math display">\[\begin{eqnarray*}
+17^{44} &amp;=&amp; 17^2 \times 17^{42}\\
+&amp;=&amp; 17^2 \times (17^{6})^7\\
+&amp;\equiv&amp; 17^2 \times 1^7 \modu 7) \hspace{3cm} \mbox{since} \, 17^{6} \equiv 1 \, \modu 7)\\
+&amp;\equiv&amp; 3^2 \modu 7) \hspace{4cm} \mbox{since} \, 17 \equiv 3 \, \modu 7)\\
+&amp;\equiv&amp; 9 \modu 7)\\
+&amp;\equiv&amp; 2 \modu 7)
+\end{eqnarray*}\]</span> So, the principal remainder on dividing <span class="math inline">\(17^{44}\)</span> by <span class="math inline">\(7\)</span> is <span class="math inline">\(2\)</span>.</p></li>
+<li><p>In the notation of FLT let <span class="math inline">\(p=11\)</span> and <span class="math inline">\(a = 19\)</span>. Now, <span class="math inline">\(11 \nmid 19\)</span>, so by FLT we have that <span class="math inline">\(19^{10} \equiv 1 \modu 11)\)</span>. Then, <span class="math display">\[\begin{eqnarray*}
+19^{53} &amp;=&amp; 19^3 \times 19^{50}\\
+&amp;=&amp; 19^3 \times (19^{10})^5\\
+&amp;\equiv&amp; 19^3 \times 1^5 \modu 11) \hspace{3cm} \mbox{since} \, 19^{10} \equiv 1 \, \modu 11)\\
+&amp;\equiv&amp; 8^3 \modu 11) \hspace{4cm} \mbox{since} \, 19 \equiv 8 \, \modu 11)\\
+&amp;\equiv&amp; (-3)^3 \modu 11) \hspace{3.5cm} \mbox{since} \, 8 \equiv -3 \, \modu 11)\\
+&amp;\equiv&amp; -27 \modu 11)\\
+&amp;\equiv&amp; 6 \modu 11)
+\end{eqnarray*}\]</span> So, the principal remainder on dividing <span class="math inline">\(19^{53}\)</span> by <span class="math inline">\(11\)</span> is <span class="math inline">\(6\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 8.5">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 8.5
+</div>
+<div class="panel-body">
+Show that <span class="math inline">\(2^{11, 213} - 1\)</span> is not divisible by 11.
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 8.5">
+<button id="displayTextunnamed-chunk-51" onclick="javascript:toggle('unnamed-chunk-51');">
+Show Solution 8.5
+</button>
+<div id="toggleTextunnamed-chunk-51" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 8.5
+</div>
+<div class="panel-body">
+<p>We can use Fermat’ Little Theorem to solve this. Recall what the theorem says:</p>
+<blockquote class="blockquote">
+<p>If <span class="math inline">\(p\)</span> is prime, <span class="math inline">\(a \in \Z\)</span> and <span class="math inline">\(p\)</span> does not divide <span class="math inline">\(a\)</span>, then <span class="math inline">\(a^{p-1} \equiv 1 \modu p)\)</span>.</p>
+</blockquote>
+<p>Let <span class="math inline">\(p = 11\)</span> and <span class="math inline">\(a = 2\)</span>. Now 11 does not divide 2, so we can use FLT and <span class="math display">\[2^{11-1} = 2^{10} \equiv 1 \modu 11).\]</span> Now <span class="math display">\[\begin{eqnarray*}
+2^{11,213} - 1 &amp;=&amp; 2^3 (2^{11,210}) - 1\\
+&amp;=&amp; 8 (2^{10})^{1121} - 1\\
+&amp;\equiv&amp;8 (1)^{1121} - 1 \; \modu 11)\\
+&amp;\equiv&amp;8 - 1 \; \modu 11)\\
+&amp;\equiv&amp; 7 \modu 11).
+\end{eqnarray*}\]</span></p>
+<p>So, <span class="math inline">\(2^{11,213} - 1\)</span> leaves principal remainder 7 on division by 11.</p>
+<p>Note that 11,213 is prime and it can be shown that <span class="math inline">\(2^{11,213} - 1\)</span> is prime. Primes of the form <span class="math inline">\(2^p - 1\)</span> are called Mersenne primes. The largest known prime is a Mersenne prime; discovered in 2017 it is <span class="math inline">\(2^{77,232,917} - 1\)</span> and has 23,249,425 digits.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 8.6">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 8.6
+</div>
+<div class="panel-body">
+Find the inverses of 16, 17 and 18 in <span class="math inline">\(\Z^{\times}_{19}\)</span>. Use those results, together with Wilson’s Theorem, to find the remainder when 15! is divided by 19.
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 8.6">
+<button id="displayTextunnamed-chunk-53" onclick="javascript:toggle('unnamed-chunk-53');">
+Show Solution 8.6
+</button>
+<div id="toggleTextunnamed-chunk-53" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 8.6
+</div>
+<div class="panel-body">
+<p><span class="math inline">\(\Z^{\times}_{19} = \{1, 2, 3, \ldots , 16, 17, 18\}\)</span>. We know from the proof of Wilson’s Theorem that in <span class="math inline">\(\Z^{\times}_p\)</span>, where <span class="math inline">\(p\)</span> is prime, the self-inverse elements are 1 and <span class="math inline">\(p-1\)</span>. So, the inverse of 18 in <span class="math inline">\(\Z^{\times}_{19}\)</span> is 18 (which, of course, is equivalent to <span class="math inline">\(-1 \modu 19)\)</span>).</p>
+<p>Now, <span class="math inline">\(17^{-1} = 9\)</span> since <span class="math inline">\(17 \times 9 = 153\)</span> and <span class="math inline">\(153 \equiv 1 \modu 19)\)</span>.</p>
+<p>Similarly, <span class="math inline">\(16^{-1} = 6\)</span>.</p>
+<p>Recall that Wilson’s Theorem states that if <span class="math inline">\(p\)</span> is prime then <span class="math inline">\((p-1)! \equiv -1 \modu p)\)</span>. So, with <span class="math inline">\(p=19\)</span> we have <span class="math inline">\(18! \equiv -1 \modu 19)\)</span>.\\ Now, using the above results, <span class="math display">\[\begin{eqnarray*}
+15! &amp;=&amp; 18! \times 18^{-1} \times 17^{-1} \times 16^{-1}\\
+&amp;\equiv&amp; (-1) \times (-1) \times 9 \times 6 \modu 19)\\
+&amp;\equiv&amp; 54 \modu 19)\\
+&amp;\equiv&amp; 16 \modu 19)
+\end{eqnarray*}\]</span> Hence, the principal remainder is 16.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 8.7">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 8.7
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(p\)</span> be a prime except 2 and 5. Deduce from Fermat’s Little Theorem that there is a multiple of <span class="math inline">\(p\)</span>, all of whose digits in decimal notation are 9’s.</p>
+[Example: <span class="math inline">\(142857\times 7=999999\)</span>.]
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 8.7">
+<button id="displayTextunnamed-chunk-55" onclick="javascript:toggle('unnamed-chunk-55');">
+Show Solution 8.7
+</button>
+<div id="toggleTextunnamed-chunk-55" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 8.7
+</div>
+<div class="panel-body">
+<p>Note that <span class="math inline">\(999 \ldots 9 = 10^k - 1\)</span> for some <span class="math inline">\(k \in \Z\)</span>. So, <span class="math display">\[\begin{eqnarray*}
+np = 999 \ldots 9 &amp;\Leftrightarrow&amp; 10^k - 1 = np\\
+&amp;\Leftrightarrow&amp; 10^k \equiv 1 \,\modu p)
+\end{eqnarray*}\]</span> Now, <span class="math inline">\(p \neq 2\)</span> and <span class="math inline">\(p \neq 5\)</span>, hence <span class="math inline">\(10\)</span> is not a multiple of <span class="math inline">\(p\)</span>, that is <span class="math inline">\(p \, \nmid \,10\)</span>. Hence, by FLT, <span class="math inline">\(10^{p-1} \equiv 1 \,\modu p)\)</span> with <span class="math inline">\(p \neq 2, \, 5\)</span>. Then, with <span class="math inline">\(p=7\)</span>, say, <span class="math inline">\(10^6 \equiv 1 \, \modu 7)\)</span> and so <span class="math inline">\(999,999 = 7n\)</span> for some <span class="math inline">\(n\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 8.8">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 8.8
+</div>
+<div class="panel-body">
+Consider the set of <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Hilbert/">Hilbert</a> Numbers, <span class="math inline">\(\Sbb = \{ n \in \N \, | \, n \equiv 1 \modu 4) \}\)</span>. This is the set of all integers that are of the form <span class="math inline">\(4k + 1\)</span>, where <span class="math inline">\(k \in \N\)</span>. Find the first five ‘primes’ in this set (called Hilbert Primes). What is the smallest number in <span class="math inline">\(\Sbb\)</span> that does not have a unique factorisation in Hilbert Primes?<br>
+
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 8.8">
+<button id="displayTextunnamed-chunk-57" onclick="javascript:toggle('unnamed-chunk-57');">
+Show Solution 8.8
+</button>
+<div id="toggleTextunnamed-chunk-57" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 8.8
+</div>
+<div class="panel-body">
+<p>First, it helps to visualise what numbers are actually in the set. Since we are going to be looking at primes in the set we need only consider members of <span class="math inline">\(\Sbb\)</span> that are positive. So <span class="math display">\[\Sbb = \{1, 5, 9, 13, 17, 21, 25, 29, 33, 37, \ldots \}.\]</span></p>
+<p>We then need a suitable definition of ‘prime’ within the context of this set. If we use our usual definition for primes in <span class="math inline">\(\N\)</span>, we need to be careful that we refer to divisibility <em>within the set</em>. So, we define a Hilbert prime as a member of <span class="math inline">\(\Sbb\)</span> greater than 1 that is divisible only by 1 (which is in <span class="math inline">\(\Sbb\)</span>) and itself. Then, the first five Hilbert primes are 5, 9, 13, 17 and 21. Note that 9 and 21 are both divisible by 3 in <span class="math inline">\(\Z\)</span>, but 3 is not in <span class="math inline">\(\Sbb\)</span>.</p>
+<p>Like the case of <span class="math inline">\(\E\)</span> in the lectures, the unique factorisation principle in <span class="math inline">\(\N\)</span> breaks down in <span class="math inline">\(\Sbb\)</span>. The first number in <span class="math inline">\(\Sbb\)</span> to exhibit multiple prime factorisations is <span class="math display">\[441 = 9 \times 49 = 21 \times 21.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./07-Week7.html" class="pagination-link" aria-label="The Structure of Finite Abelian Groups">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Structure of Finite Abelian Groups</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./09-Week9.html" class="pagination-link" aria-label="Rings and Fields">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rings and Fields</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

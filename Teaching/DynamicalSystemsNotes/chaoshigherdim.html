@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Chaos in Higher Dimensions | MT4508: Dynamical Systems (Revision Notes)</title>
+  <meta name="description" content="MT4508 Dynamical Systems Lecture Notes – Revision Version" />
+  <meta name="generator" content="bookdown 0.25.3 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Chaos in Higher Dimensions | MT4508: Dynamical Systems (Revision Notes)" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="MT4508 Dynamical Systems Lecture Notes – Revision Version" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Chaos in Higher Dimensions | MT4508: Dynamical Systems (Revision Notes)" />
+  
+  <meta name="twitter:description" content="MT4508 Dynamical Systems Lecture Notes – Revision Version" />
+  
+
+<meta name="author" content="F. Olukoya" />
+
+
+<meta name="date" content="2022-04-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Fractals.html"/>
+<link rel="next" href="continuous-time-dynamical-systems.html"/>
+<script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="book_assets/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="book_assets/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<span class="math inline"> 
+     \(\DeclareMathOperator{\Arg}{Arg}\)
+     \(\newcommand{\C}{\mathbb{C}}\)
+     \(\newcommand{\R}{\mathbb{R}}\)
+     \(\newcommand{\N}{\mathbb{N}}\)
+     \(\newcommand{\Z}{\mathbb{Z}}\)
+     \(\newcommand{\e}{\mathrm{e}}\)
+     \(\newcommand{\half}{{\textstyle\frac{1}{2}}}\)
+     \(\newcommand{\modulus}[1]{\mathopen{|}#1\mathclose{|}}\)
+     \(\newcommand{\res}{\operatorname{res}}\)
+     \(\newcommand{\set}[2]{\{\,#1\mid#2\,\}}\)
+
+     \(\newcommand{\AND}{\qquad \text{and} \qquad}\)
+
+     \(\renewcommand{\epsilon}{\varepsilon}\)
+     \(\renewcommand{\Re}{\operatorname{Re}}\)
+     \(\renewcommand{\Im}{\operatorname{Im}}\)
+     \(\renewcommand{\leq}{\leqslant}\)
+     \(\renewcommand{\geq}{\geqslant}\)
+     \(\renewcommand{\d}{\mathrm{d}}\)
+     \(\renewcommand{\vec}[1]{{\boldsymbol{#1}}}\) 
+     \(\renewcommand{\v}[1]{\vec{#1}}\)
+
+     \(\newcommand{\cev}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}\)
+     \(\newcommand{\spc}{\vspace{\baselineskip}}\)
+     \(\newcommand{\pder}[2]{\dfrac{\partial #1}{\partial#2}}\)
+     \(\newcommand{\jacob}{{\mathbf{D}}\vec{f}}\)
+     \( \newcommand{\jacobr}{\mathbf{D}\vec{R}} \)
+     \(\newcommand{\stab}[1]{\mathcal{S}(#1)}\)
+     \(\newcommand{\unstab}[1]{\mathcal{U}(#1)}\)
+     \(\newcommand{\CC}{\mathfrak{C}}\)
+     \(\newcommand{\bdim}{\mathop{\mathrm{boxdim}}}\)
+     \( \newcommand{\cdim}{\mathop{\mathrm{cordim}}} \)
+     \( \newcommand{\der}[2]{\dfrac{\d #1}{\d #2}} \)
+     \(\newcommand{\dern}[3]{\dfrac{\d^{#3} #1}{\d #2 ^{#3}}} \)
+</span>
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.st-andrews.ac.uk/mathematics-statistics/"><img src="standard-vertical-black.png" width="180"></a>
+
+<li class="divider"></li>
+<li><a href="index.html#Module-hand-book">Module Handbook<span></span></a>
+<ul>
+<li><a href="index.html#structure">Structure<span></span></a>
+<ul>
+<li><a href="index.html#prerequisites">Prerequisites<span></span></a></li>
+<li><a href="index.html#lecture-notes-and-bibliography">Lecture notes and bibliography<span></span></a></li>
+</ul></li>
+<li><a href="index.html#logistics">Logistics<span></span></a>
+<ul>
+<li><a href="index.html#lectures">Lectures<span></span></a></li>
+<li><a href="index.html#lecturers">Lecturers<span></span></a></li>
+<li><a href="index.html#tutorials">Tutorials<span></span></a></li>
+<li><a href="index.html#moodle">Moodle<span></span></a></li>
+<li><a href="index.html#scheduling">Scheduling<span></span></a></li>
+</ul></li>
+<li><a href="index.html#assessment">Assessment<span></span></a>
+<ul>
+<li><a href="index.html#rule">90% Rule<span></span></a></li>
+</ul></li>
+<li><a href="index.html#student-support">Student Support<span></span></a></li>
+<li><a href="index.html#acknowledgements">Acknowledgements<span></span></a></li>
+</ul></li>
+<li class="part"><span><b>I Discrete time dynamical systems<span></span></b></span></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#introtodynsys"><i class="fa fa-check"></i><b>1.1</b> What is a “Dynamical System”?<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#one-dimensional-1d-maps"><i class="fa fa-check"></i><b>1.1.1</b> One-dimensional (1D) maps<span></span></a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#Orbits-and-fixed-points"><i class="fa fa-check"></i><b>1.1.2</b> Orbits and fixed points<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#cobwebs"><i class="fa fa-check"></i><b>1.2</b> Cobweb Plots<span></span></a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#cobwebsconstruction"><i class="fa fa-check"></i><b>1.2.1</b> Constructing cobweb plots<span></span></a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#stability-of-fixed-points"><i class="fa fa-check"></i><b>1.2.2</b> Stability of fixed points<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#sheet1"><i class="fa fa-check"></i><b>1.3</b> Problem Sheet 1<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="periodicpoints.html"><a href="periodicpoints.html"><i class="fa fa-check"></i><b>2</b> Periodic points and stability<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="periodicpoints.html"><a href="periodicpoints.html#stabilityperiodic"><i class="fa fa-check"></i><b>2.1</b> Stability of periodic points<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="periodicpoints.html"><a href="periodicpoints.html#logisticfamily"><i class="fa fa-check"></i><b>2.2</b> The family of logistic maps<span></span></a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="periodicpoints.html"><a href="periodicpoints.html#initial-conditions-chaos"><i class="fa fa-check"></i><b>2.2.1</b> Initial conditions and Chaos<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="periodicpoints.html"><a href="periodicpoints.html#higher-dimensional-maps"><i class="fa fa-check"></i><b>2.3</b> Higher-dimensional maps<span></span></a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="periodicpoints.html"><a href="periodicpoints.html#sinks-sources-and-saddles"><i class="fa fa-check"></i><b>2.3.1</b> Sinks, sources and saddles<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="periodicpoints.html"><a href="periodicpoints.html#sheet2"><i class="fa fa-check"></i><b>2.4</b> Problem Sheet 2<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html"><i class="fa fa-check"></i><b>3</b> Higher-dimensional dynamics<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#example"><i class="fa fa-check"></i><b>3.1</b> Example<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#stable-and-unstable-manifolds"><i class="fa fa-check"></i><b>3.1.1</b> Stable and Unstable Manifolds<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#stabilityofmanifolds"><i class="fa fa-check"></i><b>3.2</b> Stability of manifolds associated with a saddle<span></span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#recapinversemaps"><i class="fa fa-check"></i><b>3.2.1</b> Inverse Maps – a reminder<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#how-do-we-characterise-the-stable-and-unstable-manifolds-of-a-saddle"><i class="fa fa-check"></i><b>3.2.2</b> How do we characterise the stable and unstable manifolds of a saddle?<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="higher-dim-dynamics.html"><a href="higher-dim-dynamics.html#sheet3"><i class="fa fa-check"></i><b>3.3</b> Problem Sheet 3<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="Higherdimstability.html"><a href="Higherdimstability.html"><i class="fa fa-check"></i><b>4</b> Higher-dimensional stability<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#nonlinear-examples"><i class="fa fa-check"></i><b>4.1</b> Non-linear examples<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#chaos1dim"><i class="fa fa-check"></i><b>4.1.1</b> Chaos in 1-dimensional maps<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="Higherdimstability.html"><a href="Higherdimstability.html#chaoticorbits"><i class="fa fa-check"></i><b>4.2</b> Chaotic Orbits<span></span></a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#fractals"><i class="fa fa-check"></i><b>4.2.1</b> Fractals<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="Higherdimstability.html"><a href="Higherdimstability.html#fractalsanddeterministicsystems"><i class="fa fa-check"></i><b>4.3</b> Fractals and deterministic dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="Higherdimstability.html"><a href="Higherdimstability.html#fractslfromdetsys"><i class="fa fa-check"></i><b>4.3.1</b> Fractals from deterministic dynamical systems<span></span></a></li>
+<li class="chapter" data-level="4.3.2" data-path="Higherdimstability.html"><a href="Higherdimstability.html#Fractal-basin-boundaries"><i class="fa fa-check"></i><b>4.3.2</b> Fractal basin boundaries<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="Higherdimstability.html"><a href="Higherdimstability.html#sheet4"><i class="fa fa-check"></i><b>4.4</b> Problem Sheet 4<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Fractals.html"><a href="Fractals.html"><i class="fa fa-check"></i><b>5</b> Fractals<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Fractals.html"><a href="Fractals.html#complexmapsandJuliasets"><i class="fa fa-check"></i><b>5.1</b> Complex maps and Julia sets<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="Fractals.html"><a href="Fractals.html#fractaldim"><i class="fa fa-check"></i><b>5.1.1</b> Fractal dimension<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="Fractals.html"><a href="Fractals.html#fractaldimcont"><i class="fa fa-check"></i><b>5.2</b> Fractal dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="Fractals.html"><a href="Fractals.html#correlationdim"><i class="fa fa-check"></i><b>5.2.1</b> Correlation dimension<span></span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="Fractals.html"><a href="Fractals.html#chaosndim"><i class="fa fa-check"></i><b>5.2.2</b> Chaos in higher-dimensions<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="Fractals.html"><a href="Fractals.html#sheet5"><i class="fa fa-check"></i><b>5.3</b> Problem Sheet 5<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html"><i class="fa fa-check"></i><b>6</b> Chaos in Higher Dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#chaoticorbitsndim"><i class="fa fa-check"></i><b>6.1</b> Chaotic Orbits in higher dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#horeshoemap"><i class="fa fa-check"></i><b>6.1.1</b> The horeshoe map<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#Chaotic-attaractors"><i class="fa fa-check"></i><b>6.2</b> Chaotic attractors<span></span></a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#Forward-limit-set"><i class="fa fa-check"></i><b>6.2.1</b> Forward Limit Set<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#continuous-time-dynamical-systems-section"><i class="fa fa-check"></i><b>6.3</b> Continuous-time dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#equilibria"><i class="fa fa-check"></i><b>6.3.1</b> Equilibria<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="chaoshigherdim.html"><a href="chaoshigherdim.html#sheet6"><i class="fa fa-check"></i><b>6.4</b> Problem Sheet 6<span></span></a></li>
+</ul></li>
+<li class="part"><span><b>II Continuous time dynamical systems<span></span></b></span></li>
+<li class="chapter" data-level="7" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html"><i class="fa fa-check"></i><b>7</b> Equilibria and stability in continuous time dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html#Equilibria"><i class="fa fa-check"></i><b>7.1</b> Equilibria<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html#Lyapunov-functions-I"><i class="fa fa-check"></i><b>7.2</b> Lyapunov Functions I<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="continuous-time-dynamical-systems.html"><a href="continuous-time-dynamical-systems.html#sheet7"><i class="fa fa-check"></i><b>7.3</b> Problem Sheet 7<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html"><i class="fa fa-check"></i><b>8</b> Lyapunov Functions<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#Lyapunov-functions-II"><i class="fa fa-check"></i><b>8.1</b> Lyapunov Functions II<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#Equilibria-and-lyapunov-functions"><i class="fa fa-check"></i><b>8.2</b> Equilibira and Lyapunov functions<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#periodic-orbits-and-limit-sets"><i class="fa fa-check"></i><b>8.3</b> Periodic orbits and limit sets<span></span></a></li>
+<li class="chapter" data-level="8.4" data-path="Lyapunov-functions.html"><a href="Lyapunov-functions.html#sheet8"><i class="fa fa-check"></i><b>8.4</b> Problem Sheet 8<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html"><i class="fa fa-check"></i><b>9</b> Limit sets in 2-dimensions<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#limit-sets-of-cycles"><i class="fa fa-check"></i><b>9.1</b> Limit cycles<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#planardynamics"><i class="fa fa-check"></i><b>9.2</b> Planar dynamics of continuous time dynamical systems<span></span></a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#properties-of-the-lorenz-dynamical-system"><i class="fa fa-check"></i><b>9.2.1</b> Properties of the Lorenz dynamical system<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="limit-sets-2d.html"><a href="limit-sets-2d.html#sheet9"><i class="fa fa-check"></i><b>9.3</b> Problem Sheet 9<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html"><i class="fa fa-check"></i><b>10</b> Lorenz chaos and bifurcation<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#Properties-of-Lorenz-SystemII"><i class="fa fa-check"></i><b>10.1</b> Properties of the Lorenz dynamical system II<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#Lyapunov-exponent-flows"><i class="fa fa-check"></i><b>10.1.1</b> Lyapunov Exponents in Flows<span></span></a></li>
+<li class="chapter" data-level="10.1.2" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#bifurcation"><i class="fa fa-check"></i><b>10.1.2</b> Bifurcation (Chapter 11 of <span class="citation">(<span>Alligood, Sauer, and Yorke 2000</span>)</span>)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#bifurcation-cont"><i class="fa fa-check"></i><b>10.2</b> Bifurcation<span></span></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#saddle-node-bifurcation"><i class="fa fa-check"></i><b>10.2.1</b> Saddle-node bifurcation<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#more-birfurcations"><i class="fa fa-check"></i><b>10.3</b> More types of Bifurcations<span></span></a>
+<ul>
+<li><a href="Loren-chaos-and-bifurcation.html#trans-bifurcations">Transcritical bifurcations<span></span></a></li>
+<li><a href="Loren-chaos-and-bifurcation.html#pitch-fork-bifurcation">Pitch-fork bifurcation<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="Loren-chaos-and-bifurcation.html"><a href="Loren-chaos-and-bifurcation.html#sheet10"><i class="fa fa-check"></i><b>10.4</b> Problem Sheet 10<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="revision.html"><a href="revision.html"><i class="fa fa-check"></i><b>11</b> Revision Guide<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="revision.html"><a href="revision.html#General-advice"><i class="fa fa-check"></i><b>11.1</b> General advice<span></span></a></li>
+<li class="chapter" data-level="11.2" data-path="revision.html"><a href="revision.html#what-to-learn"><i class="fa fa-check"></i><b>11.2</b> What to Learn<span></span></a>
+<ul>
+<li><a href="revision.html#maps">Maps<span></span></a></li>
+<li><a href="revision.html#continuous-time-dynamical-systems-1">Continuous time dynamical systems<span></span></a></li>
+</ul></li>
+</ul></li>
+<li><a href="references.html#references">References<span></span></a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MT4508: Dynamical Systems (Revision Notes)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chaoshigherdim" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Chaos in Higher Dimensions<a href="chaoshigherdim.html#chaoshigherdim" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Covers Chapter 5 Sections 5.1 and 5.6; Chapter 6 Sections 6.1 and 6.2; Chapter 7 Section 7.1 <span class="citation">(<a href="#ref-ASY" role="doc-biblioref">Alligood, Sauer, and Yorke 2000</a>)</span>.</p>
+<!-- write down chapter of book covered and add that figures are from ASY -->
+<hr />
+<div id="chaoticorbitsndim" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Chaotic Orbits in higher dimensions<a href="chaoshigherdim.html#chaoticorbitsndim" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="definition">
+<p><span id="def:chaoticorbitndim" class="definition"><strong>Definition 6.1  </strong></span>Let <span class="math inline">\(\v{f}\)</span> be an <span class="math inline">\(n\)</span>-dimensional map <span class="math inline">\(n \ge 1\)</span>. Let <span class="math inline">\((\v{x}_0, \v{x}_1, \ldots)\)</span> be a bounded orbit of <span class="math inline">\(\v{f}\)</span>. The orbit is called <em>chaotic</em> if:</p>
+<ol style="list-style-type: decimal">
+<li>it is not asymptotically periodic;</li>
+<li>no Lyapunov number is exactly one;</li>
+<li><span class="math inline">\(L_1(\v{x}_0)&gt;1\)</span> (alternatively <span class="math inline">\(h_1(\v{x}_{0}) &gt;0\)</span>).</li>
+</ol>
+</div>
+<p>This definition should be compared with Definition <a href="Higherdimstability.html#def:defchaoticorbits">4.3</a>: the first condition is not surprising; while the second 2 characterise sensitivity to initial conditions suitable generalised for higher dimensions.</p>
+<div id="horeshoemap" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> The horeshoe map<a href="chaoshigherdim.html#horeshoemap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let us consider an example with interesting dynamics. There are two key features of the example which follows:</p>
+<ul>
+<li><em>Stretching</em>: nearby points are being pulled further away from one another.</li>
+<li><em>folding</em> distant points are being mixed together</li>
+</ul>
+<p>The aim is to see how chaotic orbits can arise from when stretching and folding are present are present.</p>
+<p>We schematically describe the mapping (See Figure <a href="chaoshigherdim.html#fig:horse-shoe-schematic1">6.1</a>). The process is as follows:</p>
+<ol style="list-style-type: decimal">
+<li>we have a square <span class="math inline">\(W\)</span> with vertices <span class="math inline">\(A,B,C,D\)</span> embedded in the plane <span class="math inline">\(\R^2\)</span>,</li>
+<li>a continuous, injective map <span class="math inline">\(\v{h}: \R^2 \to \R^2\)</span> such that
+<span class="math display">\[\v{h}(A) = A*, \ \v{h}(B) = B*, \ \v{h}(C) = C*, \ \v{h}(D) = D*\]</span></li>
+<li>We assume that <span class="math inline">\(\v{h}\)</span> uniformly contracts distances horizontally and expands distances vertically.</li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:horse-shoe-schematic1"></span>
+<img src="horseshoe_schematic_1.png" alt="Stretching and folding of the horseshoe map" width="60%" />
+<p class="caption">
+Figure 6.1: Stretching and folding of the horseshoe map
+</p>
+</div>
+<div class="palegreenbox">
+<div class="center">
+<p><strong>Stretching and folding in the horseshoe map</strong></p>
+</div>
+<ul>
+<li>The fold (upper annulus) is outside the initial square <span class="math inline">\(W\)</span>.</li>
+<li>The intersection <span class="math inline">\(W \cap \v{h}(W)\)</span> consists if two strips <span class="math inline">\(V_1\)</span> and <span class="math inline">\(V_2\)</span>.</li>
+<li>On the 2<sup>nd</sup> iteration of <span class="math inline">\(\v{h}\)</span>, we apply <span class="math inline">\(\v{h}\)</span> to the horseshoe. This results in a “4-stranded” horseshoe sitting inside the simple “2-stranded” horseshoe.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:horse-shoe-schematic2"></span>
+<img src="horseshoe_schematic_2.png" alt="Two iterations of the horseshoe map" width="50%" />
+<p class="caption">
+Figure 6.2: Two iterations of the horseshoe map
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:horse-shoe-schematic3"></span>
+<img src="horseshoe_schematic_3.png" alt="Four-stranded orange horseshoe inside original yellow horseshoe." width="50%" />
+<p class="caption">
+Figure 6.3: Four-stranded orange horseshoe inside original yellow horseshoe.
+</p>
+</div>
+</div>
+<div class="palegreenbox">
+<div class="center">
+<p><strong>Forward and backward orbits</strong></p>
+</div>
+<p>Let <span class="math inline">\(\v{x}_0\)</span> be a point in the square <span class="math inline">\(W\)</span>. Under <span class="math inline">\(\v{h}\)</span>, <span class="math inline">\(\v{x}_0\)</span> maps to <span class="math inline">\(\v{x}_1\)</span> and <span class="math inline">\(\v{x}_0\)</span> maps under <span class="math inline">\(\v{h}^2\)</span> to a point <span class="math inline">\(\v{x}_2\)</span>. This gives us a forward orbit <span class="math inline">\((\v{x}_0, \v{x}_{1}, \v{x}_{2}, \ldots)\)</span>. Note that the orbits might escape the square at some point, for instance if <span class="math inline">\(\v{x}_{0}\)</span> lies near the bottom of the square then it is stretched out of the square in the first iteration (as <span class="math inline">\(\v{h}\)</span>).</p>
+<p>We can also consider a backward orbit of <span class="math inline">\(\v{x}_0\)</span> as our map <span class="math inline">\(h\)</span> is injective. We think of the point <span class="math inline">\(\v{x}_{-1} \in W\)</span> (if it exists) such that <span class="math inline">\(\v{h}(\v{x}_{-1}) = \v{x}_0\)</span> and a point <span class="math inline">\(\v{x}_{-2}\)</span> (if it exists) such that <span class="math inline">\(\v{h}(\v{x}_{-2}) = \v{x}_{-1}\)</span> and so on. This gives rise to an orbit <span class="math inline">\((\v{x}_0, \v{x}_{-1} \v{x}_{-2} \ldots)\)</span></p>
+</div>
+<div class="palegreenbox">
+<div class="center">
+<p><strong>Forward and backward orbits that always remain in the square</strong></p>
+</div>
+<p>Let us try to characterise the points whose forwards and backwards orbits never escape the square <span class="math inline">\(W\)</span>.</p>
+<p>Let us first think about the points with images inside of the horseshoe. That is points in <span class="math inline">\(W\)</span> with images lying the two vertical strips <span class="math inline">\(V_1\)</span> and <span class="math inline">\(V_2\)</span> (see figure <a href="chaoshigherdim.html#fig:horse-shoe-schematic1">6.1</a>).</p>
+<p>We can figure this out either by unfolding the horseshoe or by applying the inverse of <span class="math inline">\(h\)</span> to the region <span class="math inline">\(h(W) \cap W\)</span>.</p>
+<p>Such a point <span class="math inline">\(x_0\)</span> whose image <span class="math inline">\(\v{h}(\v{x}_0)\)</span> lies in one of the vertical strips must originate from one of the two vertical strips <span class="math inline">\(H_0\)</span> or <span class="math inline">\(H_{1}\)</span> (Figure <a href="chaoshigherdim.html#fig:horse-shoe-schematic4">6.4</a>)</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:horse-shoe-schematic4"></span>
+<img src="horseshoe_schematic_4.png" alt="Unfolding to find pre-images of vertical strips." width="50%" />
+<p class="caption">
+Figure 6.4: Unfolding to find pre-images of vertical strips.
+</p>
+</div>
+<p>Points <span class="math inline">\(\v{x}_0\)</span> in <span class="math inline">\(W\)</span> whose pre-images also lie in <span class="math inline">\(W\)</span> lie on the vertical strips. Therefore point in <span class="math inline">\(W\)</span> with image and pre-image in <span class="math inline">\(W\)</span> lie on the intersection of the horizontal and vertical strips (see Figure <a href="chaoshigherdim.html#fig:horse-shoe-schematic5">6.5</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:horse-shoe-schematic5"></span>
+<img src="horseshoe_schematic_5.png" alt="Points whose image and pre-image lie in the square W." width="30%" />
+<p class="caption">
+Figure 6.5: Points whose image and pre-image lie in the square W.
+</p>
+</div>
+<p>We can see that with successive iterations we obtain a fractal type construction (See Figure <a href="Higherdimstability.html#fig:FractalConstruction">4.13</a> in Subsection <a href="Higherdimstability.html#Fractal-basin-boundaries">4.3.2</a>). The horizontal strips double with each step on the bottom and on the top (symmetrically) and become thinner, similarly for the vertical strips. The points in the intersections of the corresponding horizontal and vertical strips which remain in the limit correspond to the set</p>
+<p><span class="math display">\[ \Lambda = \{ \v{x} \in W : \v{h}^{k}(\v{x}) \in W \forall \  k \in \Z\}. \]</span></p>
+</div>
+</div>
+</div>
+<div id="Chaotic-attaractors" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Chaotic attractors<a href="chaoshigherdim.html#Chaotic-attaractors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Thus far we have seen that the orbits of maps can be attracted to stable fixed points, stable periodic points and saddle fixed and saddle periodic points (along attracting axes). A question one can as is whether or not chaotic orbits can be “attracting”? What do we even mean by “attracting” in the context of chaotic orbits? Roughly speaking, we mean that a significant portion of initial conditions are attracted to the chaotic orbit.</p>
+<p>Consider Figures <a href="chaoshigherdim.html#fig:Henonattractingbasin">6.6</a> and <a href="chaoshigherdim.html#fig:Ikedaattractingbasin">6.7</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Henonattractingbasin"></span>
+<img src="MT4508RevisionNotes_files/figure-html/Henonattractingbasin-1.png" alt="Basin of chaotic attractor of the Hènon map" width="90%" />
+<p class="caption">
+Figure 6.6: Basin of chaotic attractor of the Hènon map
+</p>
+</div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Ikedaattractingbasin"></span>
+<img src="Ikeda_basin.png" alt="Basin of chaotic attractor of the Ikeda map" width="90%" />
+<p class="caption">
+Figure 6.7: Basin of chaotic attractor of the Ikeda map
+</p>
+</div>
+<p>Figure <a href="chaoshigherdim.html#fig:Henonattractingbasin">6.6</a> shows a chaotic orbit (non-periodic with Lyapunov exponent bigger than <span class="math inline">\(0\)</span>) of the Hènon map for <span class="math inline">\(a= 1.4\)</span> and <span class="math inline">\(b =0.3\)</span>. Figure <a href="chaoshigherdim.html#fig:Ikedaattractingbasin">6.7</a> shows a chaotic orbit of the Ikeda map. The Ikeda map is the map <span class="math inline">\(\v{f}: \R^2 \to \R^2\)</span> defined by</p>
+<p><span class="math display">\[ \v{f}(x,y) =  (R + C_2(x \cos \tau - y \sin \tau), C_2(x \sin \tau + y \cos \tau)) \]</span></p>
+<p>where <span class="math inline">\(\tau = C1 - C3/(1 + x^2 + y^2)\)</span> and <span class="math inline">\(R, C_1, C_2,\)</span> and <span class="math inline">\(C_3\)</span> are fixed real valued parameters. In Figure <a href="chaoshigherdim.html#fig:Ikedaattractingbasin">6.7</a> <span class="math inline">\(R=0.9, C_1,C_3= 0.4, 6\)</span>. The grey area containing the black chaotic orbits represent points whose orbits converge to the chaotic orbit. The white region represents points which diverge to infinity or converge to a different attracting orbit.</p>
+<p>These two examples illustrate two key characteristics of a “chaotic attractor”</p>
+<ol style="list-style-type: decimal">
+<li>It contains a contains a chaotic orbit;</li>
+<li>Attracts a set of initial values which has a non-zero area in the plane.</li>
+</ol>
+<div id="Forward-limit-set" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Forward Limit Set<a href="chaoshigherdim.html#Forward-limit-set" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A consequence of the second attribute of a chaotic attractor given above is it is what is a called a <em>forward limit set</em>. We shall say precisely what we mean by this below. For the moment we roughly mean that a chaotic attractor is what is left over after throwing a away a (very) large number of initial points (say 1 million) of the orbit. The attracting nature of the chaotic attractor means we return to the vicinity of set of points that remain again and again.</p>
+<p>Consider Figure <a href="chaoshigherdim.html#fig:Ikedachaoticattractor">6.8</a></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Ikedachaoticattractor"></span>
+<img src="MT4508RevisionNotes_files/figure-html/Ikedachaoticattractor-1.png" alt="Two attractors of the Ikeda map" width="110%" />
+<p class="caption">
+Figure 6.8: Two attractors of the Ikeda map
+</p>
+</div>
+<p>The first subplot shows the first 1000 points of two different orbits of the Ikeda map. The second subplot shows iterates 1,000,001 to 2,000,000 of the same two orbits. We can see that one orbit approaches the chaotic attractor and the other approaches a sink.</p>
+<p>Let us now give a precise definition of the forward limit set.</p>
+<div class="definition">
+<p><span id="def:forward-limit-set" class="definition"><strong>Definition 6.2  (Forward limit set) </strong></span>Let <span class="math inline">\(f\)</span> be a map (1D or ND) and <span class="math inline">\(x_0\)</span> a point in the domain of <span class="math inline">\(f\)</span>. The <em>forward limit set</em> of the orbit <span class="math inline">\(\{ f^{n}(x_0): n \in \N \}\)</span> is the set</p>
+<p><span class="math display">\[ \omega(x_0) = \{x: \forall \ N \in \N \text{ and } \epsilon &gt;0, \exists \ n&gt;N \text{ such that } |f^{n}(x_0) - x |&lt; \epsilon \}\]</span></p>
+</div>
+<p>The forward limit set is sometimes called the <span class="math inline">\(\omega\)</span>-limit set (“omega limit set”).</p>
+<p>Given points <span class="math inline">\(x_0, x_1\)</span> in the domain of a map <span class="math inline">\(f\)</span>, We say that the orbit of <span class="math inline">\(x_1\)</span> is <em>attracted to</em> the forward limit set of <span class="math inline">\(x_0\)</span> if <span class="math inline">\(\omega(x_1)\)</span> is contained in <span class="math inline">\(\omega(x_0)\)</span>.</p>
+<p>For the examples in Figure <a href="chaoshigherdim.html#fig:Ikedachaoticattractor">6.8</a> the <span class="math inline">\(\omega\)</span>-limit set of the second initial condition, the one attracted to the sink, is the sink. Indeed any fixed point is its own forward limit set.</p>
+<p>Let us now formally define we mean by a chaotic attractor.</p>
+<div class="definition">
+<p><span id="def:chaotic-attractor" class="definition"><strong>Definition 6.3  (Chaotic attractor) </strong></span>Let <span class="math inline">\(f\)</span> be a map and <span class="math inline">\(x_0\)</span> a point in the domain of <span class="math inline">\(f\)</span>. Suppose that the orbit of <span class="math inline">\(x_0\)</span> is chaotic. If <span class="math inline">\(x_0\)</span> is in its <span class="math inline">\(\omega\)</span>-limit set <span class="math inline">\(\omega(x_0)\)</span>, then <span class="math inline">\(\omega(x_0)\)</span> is called a <em>chaotic set</em>.</p>
+<p>An <em>attractor</em> is any forward limit set which attracts a set of initial values with a non-zero measure (i.e a measure appropriate to the dimension of the domain of the map: length in <span class="math inline">\(\R\)</span>, area in <span class="math inline">\(\R^2\)</span>, volume in higher dimensions). The set of initial conditions attracted to the attractor is called the <em>basin of attraction of the attractor</em>.</p>
+<p>A <em>chaotic attractor</em> is a chaotic set that is also an attractor.</p>
+</div>
+<p>We conclude our studies of discrete-time dynamical systems. We have characterised key features of the dynamics of discrete dynamical systems in one and higher dimensions and have explored the concept of chaos. We have seen how in the midst of/ out of chaos order can arise.</p>
+</div>
+</div>
+<div id="continuous-time-dynamical-systems-section" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Continuous-time dynamical systems<a href="chaoshigherdim.html#continuous-time-dynamical-systems-section" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As promised, the remainder of the module will be focused on continuous time dynamical systems. Whereas discrete time dynamical systems arose from maps on <span class="math inline">\(\R^{n}\)</span> (for some <span class="math inline">\(n\)</span>), continuous time dynamical systems are defined by <em>differential equations</em>. In this module we only consider Ordinary Differential Equations (ODE’s) as opposed to partial or stochastic differential equations. ODE’s are differential equations whose solutions are functions of one independent variable <span class="math inline">\(t\)</span> (which in this module represents time). Solutions we seek are of the form <span class="math inline">\(x(t)\)</span> where <span class="math inline">\(x\)</span> typically represents a physical quantity that depends on time; <span class="math inline">\(x\)</span> is a dependent variable.</p>
+<p>There are two main types of ODE’s</p>
+<ul>
+<li>Autonomous ODE’s: the independent variable <span class="math inline">\(t\)</span> does not explicitly appear in the ODE e.g.
+<span class="math display">\[ \der{x}{t} = ax\]</span></li>
+<li>Non-autonomous ODE’s: the variable <span class="math inline">\(t\)</span> appears explicitly in the ODE. e.g.
+<span class="math display">\[ \dern{x}{t}{2} = -c \der{x}{t}  - \sin x + \rho \sin t.\]</span></li>
+</ul>
+<p>We only focus on autonomous ODE’s; any non-autonomous dynamical system can be recast as an autonomous one.</p>
+<p>For instance, for the system</p>
+<p><span class="math display">\[ \dern{x}{t}{2} = -c \der{x}{t}  - \sin x + \rho \sin t.\]</span></p>
+<p>we can introduce a new variable <span class="math inline">\(y\)</span> satisfying <span class="math inline">\(\der{y}{t} = 1\)</span>. This gives a 2-dimensional continuous time autonomous system governed by the rules</p>
+<p><span class="math display">\[\begin{align*}
+&amp;\dern{x}{t}{2} = -c \der{x}{t} = \sin x + \rho \sin y \\
+&amp; \der{y}{t} = 1
+\end{align*}\]</span></p>
+<p>Let <span class="math inline">\(\v{x}(t) = ( x_1(t), x_2(t), \ldots, x_{n}(t))\)</span> describe the state of a continuous time dynamical system <span class="math inline">\(\der{\v{x}}{t} = \v{R}(\v{x})\)</span> on <span class="math inline">\(\R^{n}\)</span> where <span class="math inline">\(\v{R}: \R^{n} \to \R^{n}\)</span> is a map. The evolution of the system is governed by the rule
+<span class="math display">\[\der{\v{x}}{t} = \v{R}(\v{x}).\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-8" class="example"><strong>Example 6.1  </strong></span>The ODE <span class="math inline">\(\der{x}{t} = a x (1-x)\)</span> describes dynamical system. As the variable <span class="math inline">\(x\)</span> approaches <span class="math inline">\(1\)</span>, <span class="math inline">\(\der{x}{t}\)</span> approaches <span class="math inline">\(0\)</span> and the population <span class="math inline">\(x\)</span> approaches a steady state. This a 1D-non-linear ODE and gives rise to a 1D continuous time dynamical systemm on <span class="math inline">\(\R\)</span>.</p>
+<p>What about a <span class="math inline">\(2D\)</span> example? Let <span class="math inline">\(\v{R} = (R_x(x,y), R_{y}(x,y))\)</span> be a map on <span class="math inline">\(\R^2\)</span>. The pair of ODES:</p>
+<p><span class="math display">\[\begin{align*}
+&amp;\der{x}{t} =  R_{x}(x,y) := ax + by^2  \\
+&amp;\der{y}{t} = R_{y}(x,y) := cy + dy^2
+\end{align*}\]</span></p>
+<p>Gives rise to a continuous time dynamical system on <span class="math inline">\(\R^2\)</span>.</p>
+</div>
+<p>The technique we applied to recast a non-autonomous ODE as an autonomous one by introducing an extra variable can be repeatedly applied to recast a high-order ODE as a system of first order linear ODE’s.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Example 6.2  </strong></span>Consider the non-linear damped oscillator governed by the rule</p>
+<p><span class="math display" id="eq:damped-oscillator">\[\begin{equation}
+\dern{x}{t}{2} = -c \der{x}{t} - \sin x \tag{6.1}
+\end{equation}\]</span></p>
+<p>A second order ODE. Introduce a new variable <span class="math inline">\(y\)</span> satisfying <span class="math inline">\(y = \der{x}{t}\)</span> so that <span class="math inline">\(\der{y}{t} = \dern{x}{t}{2}\)</span>.
+Then we can rewrite <a href="chaoshigherdim.html#eq:damped-oscillator">(6.1)</a> as the system:</p>
+<p><span class="math display">\[\begin{align*}
+&amp;\der{x}{t} = y \\
+&amp;\der{y}{t} = -cy - \sin x.
+\end{align*}\]</span></p>
+</div>
+<p>To solve a system of linear ODE’s we need to have two conditions satisfied:</p>
+<ul>
+<li>Initial conditions for each variable <span class="math inline">\(x_i\)</span> of the ODE. That is for a system of <span class="math inline">\(n\)</span> linear ODE’s with variables <span class="math inline">\(x_1, x_2, \ldots, x_{n}\)</span> we need initial conditions
+<span class="math display">\[ x_1(0) = x_{1,0}, x_2(0) = x_{2,0}, \ldots, x_n(0) = x_{n,0}\]</span></li>
+<li>For a given set of initial conditions, the ODE must have a <em>unique</em> solution. Moreover, this solution should be continuous (no singularities).</li>
+</ul>
+<p>The set of all solutions of an ODES is called the <em>flow</em> of the ODE. To be more precise</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-10" class="definition"><strong>Definition 6.4  </strong></span>The <em>flow</em> of an autonomous ODE is the function <span class="math inline">\(\v{F}\)</span> of time <span class="math inline">\(t\)</span> and the initial value <span class="math inline">\(\v{x}_0\)</span> which represents the set of solutions. So <span class="math inline">\(\v{F}(t, \v{x}_0)\)</span> (alternatively <span class="math inline">\(\v{F}_{t}(\v{x}_0)\)</span>) is the value at time <span class="math inline">\(t\)</span> of the solution with initial value <span class="math inline">\(\v{x}_0\)</span>.</p>
+</div>
+<p>The reason for the alternative notation is that in some situations we might want to think of the evolution of the dynamical system at a fixed time <span class="math inline">\(t=T\)</span> units later (the time-T-map), the notation <span class="math inline">\(\v{F}_{T}(\v{x}_0)\)</span> makes it apparent that we are fixing <span class="math inline">\(t=T\)</span> and looking at the solution <span class="math inline">\(T\)</span> time units later of the initial condition <span class="math inline">\(\v{x}_0\)</span>. By considering the time <span class="math inline">\(T\)</span>-map we discretise our dynamical system: <span class="math inline">\(\v{x}_{n+1} = \v{F}_{T}(\v{x}_{n})\)</span>. The resulting discrete time dynamical system gives the evolution of the system at time units of <span class="math inline">\(T\)</span>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-11" class="example"><strong>Example 6.3  (Example of a flow) </strong></span>Consider the ODE</p>
+<p><span class="math display">\[ \der{x}{t} = a x \]</span></p>
+<p>for <span class="math inline">\(a\)</span> a real constant. This is a separable ODE and has solutions <span class="math inline">\(x(t) = Ce^{at}\)</span> where <span class="math inline">\(C = x(0)\)</span>.</p>
+<p>Given an initial value <span class="math inline">\(x(0) = x_0\)</span>, the solution of the <em>initial value problem</em></p>
+<p><span class="math display">\[ \der{x}{t} = a x, \ x(0) = x_0 \]</span>
+is <span class="math inline">\(x(t) = x_0 e^{at}\)</span>.</p>
+<p>The flow of the ODE is the function <span class="math inline">\(F(t, x) = x e^{at}\)</span>, for initial condition <span class="math inline">\(x = x_0\)</span>, we have <span class="math inline">\(F(t,x_0) = x_0 e^{at}\)</span>.</p>
+<p>Figure <a href="chaoshigherdim.html#fig:Flowoflinearode">6.9</a> show solutions for various values of <span class="math inline">\(x_0\)</span> in the regimes <span class="math inline">\(a&gt;0\)</span> and <span class="math inline">\(a&lt;0\)</span>.</p>
+<!-- include figure -->
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:Flowoflinearode"></span>
+<img src="MT4508RevisionNotes_files/figure-html/Flowoflinearode-3.png" alt="Flow of linear ODE dx/dt = ax" width="100%" />
+<p class="caption">
+Figure 6.9: Flow of linear ODE dx/dt = ax
+</p>
+</div>
+</div>
+<div id="equilibria" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Equilibria<a href="chaoshigherdim.html#equilibria" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When we considered discrete time dynamical systems we found it useful to study fixed points and their stability. For continuous time dynamical systems, as these are governed by ODE’s, the equivalent of a fixed point is called an <em>equilibrium</em> these are solutions that do not change in time.</p>
+<div class="definition">
+<p><span id="def:equilibrium" class="definition"><strong>Definition 6.5  (Equilibrium) </strong></span>A constant solution of the autonomous differential equation <span class="math inline">\(\der{x}{t} = f(x)\)</span> is called an <em>equilibrium</em> of the equation.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-12" class="example"><strong>Example 6.4  </strong></span>Consider the ODE <span class="math inline">\(\der{x}{t} = a x\)</span>. The solution <span class="math inline">\(x=0\)</span> is an equilibrium of the equation.</p>
+</div>
+<p>In general equilibria of ODE’s <span class="math inline">\(\der{\v{x}}{t} = \v{R}(\v{x})\)</span> are constant solutions.</p>
+</div>
+</div>
+<div id="sheet6" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Problem Sheet 6<a href="chaoshigherdim.html#sheet6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><em>For week 7.</em></p>
+<hr />
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 6.1
+</div>
+<div class="panel-body">
+Let <span class="math inline">\(\mathfrak{C}_{5}\)</span> denote the middle-1/5 Cantor set. This set is defined similarly to the middle-third Cantor set only at each step we remove the middle 5<sup>th</sup> part of the intervals remaining. Determine the box-counting dimension of <span class="math inline">\(\mathfrak{C}_{5}\)</span>.
+</div>
+</div>
+<button id="displayTextunnamed-chunk-43" onclick="javascript:toggle(&#39;unnamed-chunk-43&#39;);">
+Show Solution 6.1
+</button>
+<div id="toggleTextunnamed-chunk-43" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 6.1
+</div>
+<div class="panel-body">
+<p>The argument proceeds very similarly to Example 5.1 in the notes. After step 1 of the construction we have two intervals of length <span class="math inline">\(2/5\)</span>. After step <span class="math inline">\(2\)</span> of the construction we have <span class="math inline">\(4\)</span> intervals of length <span class="math inline">\(4/25\)</span>. After step <span class="math inline">\(3\)</span> we have <span class="math inline">\(8\)</span> intervals of length <span class="math inline">\(8/125\)</span>. Inductively, Suppose after step <span class="math inline">\(n\)</span> of the process we have <span class="math inline">\(2^{n}\)</span> intervals of length <span class="math inline">\((2/5)^{n}\)</span>. Consider an interval of length <span class="math inline">\((2/5)^{n}\)</span>. It’s middle fifth has size <span class="math inline">\(2^{n}/5^{n+1}\)</span>. After deleting this middle fifth the combined length of the two remaining intervals is <span class="math inline">\(2^{n+2}/5^{n+1}\)</span>, and so the two remaining intervals have length <span class="math inline">\(2^{n+1}/5^{n+1}\)</span> each. In particular after step <span class="math inline">\(n+1\)</span>, there are <span class="math inline">\(2^{n+1}\)</span> intervals of length <span class="math inline">\(2^{n+1}/5^{n+1}\)</span>.</p>
+<p>Taking <span class="math inline">\(\epsilon = (2/5)^{n}\)</span>, then we need <span class="math inline">\(N(\epsilon) = 2^{n}\)</span> intervals to cover <span class="math inline">\(\mathfrak{C}_{5}\)</span>. Taking the limit we have
+<span class="math display">\[
+\bdim(\mathfrak{C}_{5}) = \lim_{n \to \infty}\frac{\ln 2^{n}}{\ln(5/2)^{n}} = \lim_{n \to \infty}\frac{\ln(2)}{\ln(5/2)} = \frac{\ln(2)}{\ln(5/2)}.
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 6.2
+</div>
+<div class="panel-body">
+<p>The skinny <a href="https://en.wikipedia.org/wiki/Baker%27s_map">baker’s map</a> is a map from <span class="math inline">\([0,1] \times [0,1]\)</span> to itself defined as follows:
+<span class="math display">\[
+\v{B}(x,y) = \begin{cases} \begin{pmatrix} \frac{1}{3} &amp; 0 \\ 0 &amp; 2\end{pmatrix} \begin{pmatrix} x \\ y\end{pmatrix} &amp; \text{ if } 0 \le y \le \frac{1}{2} \\ \begin{pmatrix} \frac{1}{3} &amp; 0 \\ 0 &amp; 2\end{pmatrix} \begin{pmatrix} x \\ y\end{pmatrix} + \begin{pmatrix} \frac{2}{3} \\ -1\end{pmatrix}   &amp; \text{ if } \frac{1}{2} &lt; y \le 1 \end{cases}
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Sketch the image of the unit square under the action of the map. What image do you expect after two and three iterates? Can you describe the set of points the original unit square is mapped onto if the number of iterations goes to infinity?</p></li>
+<li><p>Calculate the Lyapunov numbers and exponents of orbits of the skinny baker map which never map onto the line <span class="math inline">\(y = 1/2\)</span>.</p>
+<p>[Hint: use the fact that as the skinny baker’s map is a linear map, up to translation, it is equal to the map defined by its Jacobian matrix. You can then use the fact that the expansion/contraction factors <span class="math inline">\(r^{n}_{k}\)</span> are given by the square roots of the eigenvalues of <span class="math inline">\(\jacob^{n} \cdot (\jacob^{n})^{t}\)</span>. Here, for a matrix <span class="math inline">\(A\)</span>, we write <span class="math inline">\(A^{t}\)</span> for the transpose of <span class="math inline">\(A\)</span>.]</p></li>
+<li><p>What can you conclude about the possibility of chaotic orbits?</p></li>
+</ol>
+</div>
+</div>
+<button id="displayTextunnamed-chunk-45" onclick="javascript:toggle(&#39;unnamed-chunk-45&#39;);">
+Show Solution 6.2
+</button>
+<div id="toggleTextunnamed-chunk-45" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 6.2
+</div>
+<div class="panel-body">
+<ol style="list-style-type: lower-alpha">
+<li><p>First we divide the unit square with the line <span class="math inline">\(y = 1/2\)</span>. The bottom half is mapped into the grey-shaded vertical strip (Figure <a href="chaoshigherdim.html#fig:bakersketch">6.10</a>): here we are uniformly stretching vertically by <span class="math inline">\(2\)</span> and uniformly compressing horizontally by <span class="math inline">\(1/3\)</span>. The top-half maps into blue shaded vertical strip. Therefore after one application of the baker map, the middle-third square has been deleted.
+In the second application, the bottom half of the grey shaded strip is compressed by <span class="math inline">\(1/3\)</span> and stretched by <span class="math inline">\(2\)</span>. The top-half is likewise compressed by a <span class="math inline">\(1/3\)</span> and stretched by <span class="math inline">\(2\)</span> and is also shifted to the right by <span class="math inline">\(2/3\)</span>. The bottom half of the blue shaded strip is compressed by a <span class="math inline">\(1/3\)</span> and streched by a 2 into the a vertical strip in the interval <span class="math inline">\((2/9, 1/3)\)</span>. The top half is compressed and stretched into the vertical strip in the interval <span class="math inline">\([8/9,1]\)</span>. After <span class="math inline">\(2\)</span> applications of the baker map, the “middle-third of the middle-thirds” have been deleted.</p>
+<p>The process now repeats. In the limit, the set of points that remain are line segments of length one at each point in the middle third Cantor set i.e. the set <span class="math inline">\(\mathfrak{C}_{3} \times [0,1]\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bakersketch"></span>
+<img src="baker_sketch.png" alt="Sketch of skinny baker's map" width="95%" />
+<p class="caption">
+Figure 6.10: Sketch of skinny baker’s map
+</p>
+</div></li>
+<li><p>The Jacobian matrix <span class="math inline">\(\vec{{\mathrm{D}}B}\)</span> is given by the coefficients of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> since <span class="math inline">\(\v{B}\)</span> is a linear map. We have:
+<span class="math display">\[
+\vec{{\mathrm{D}}B} = \begin{pmatrix} \frac{1}{3} &amp; 0 \\ 0 &amp; 2 \end{pmatrix}.
+\]</span></p>
+<p>This is a diagonal matrix and so equal to its transpose. We therefore compute
+<span class="math display">\[
+\vec{{\mathrm{D}}B}^{k} (\vec{{\mathrm{D}}B}^{t})^{k} = \vec{{\mathrm{D}}B}^{2k} \begin{pmatrix} \frac{1}{3^{2k}} &amp; 0 \\ 0 &amp; 2^{2k} \end{pmatrix}.
+\]</span></p>
+<p>Therefore the eigenvalues of <span class="math inline">\(\vec{{\mathrm{D}}B}^{k} (\vec{{\mathrm{D}}B}^{t})^{k}\)</span> are <span class="math inline">\(1/3^{2k}\)</span> and <span class="math inline">\(2^{2k}\)</span>.
+This means that <span class="math inline">\(r_1^{k} = 2^{k}\)</span> and <span class="math inline">\(r_2^{k} = 1/3^{k}\)</span>. This gives Lyapunov numbers <span class="math inline">\(L_1 = 2\)</span> and <span class="math inline">\(L_2 = 1/3\)</span> and Lyapunov exponent <span class="math inline">\(h_1 = \ln(2)&gt;1\)</span> and <span class="math inline">\(h_2 = \ln(1/3) &lt;0\)</span>.</p></li>
+<li><p>From b. it follows that any non-asymptotically periodic orbit will be chaotic.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 6.3
+</div>
+<div class="panel-body">
+<p>Consider Smale’s Horseshoe map <span class="math inline">\(\v{h}\)</span> (Subsection <a href="chaoshigherdim.html#horeshoemap">6.1.1</a> in the notes). Recall that <span class="math inline">\(\Lambda\)</span> is defined to be the set of points whose forwards and backwards orbits always remain in the square <span class="math inline">\(W\)</span>. We can associate to each point of <span class="math inline">\(\Lambda\)</span> a sequence of <span class="math inline">\(0\)</span>’s and <span class="math inline">\(1\)</span>’s as follows</p>
+<ul>
+<li>The intersection of the image of the unit square with the unit square defines two vertical strips <span class="math inline">\(V_{1}\)</span> and <span class="math inline">\(V_{2}\)</span>.</li>
+<li><span class="math inline">\(\v{h}^{n}(\v{x})\)</span> must be in <span class="math inline">\(V_{1}\)</span> or <span class="math inline">\(V_{2}\)</span> if <span class="math inline">\(\v{x} \in \Lambda\)</span> since <span class="math inline">\(\Lambda\)</span> is a subset of <span class="math inline">\(V_{1} \cup V_{2}\)</span>.</li>
+<li>If <span class="math inline">\(\v{x} \in V_{1}\)</span> the sequence begin with <span class="math inline">\(0\)</span>, otherwise <span class="math inline">\(\v{x} \in V_{2}\)</span> and the sequence begins with <span class="math inline">\(1\)</span>.</li>
+<li>If <span class="math inline">\(\v{h}(\v{x}) \in V_{1}\)</span> the sequence continues with <span class="math inline">\(0\)</span> otherwise <span class="math inline">\(\v{h}(\v{x}) \in V_{2}\)</span> and the sequence continues with <span class="math inline">\(1\)</span>.</li>
+<li>If <span class="math inline">\(\v{h}^{n}(x) \in V_{1}\)</span> then the <span class="math inline">\((n+1)\)</span><sup>st</sup> symbol in the sequence is <span class="math inline">\(0\)</span>, otherwise it is <span class="math inline">\(1\)</span> and so on.</li>
+</ul>
+One application of the horseshoe map can be thought of as shifting our position in the sequence one symbol to the right. Using this analogy show that Smale’s horseshoe map has two fixed points. To what symbols do the fixed points correspond?
+</div>
+</div>
+<button id="displayTextunnamed-chunk-47" onclick="javascript:toggle(&#39;unnamed-chunk-47&#39;);">
+Show Solution 6.3
+</button>
+<div id="toggleTextunnamed-chunk-47" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 6.3
+</div>
+<div class="panel-body">
+<p>Notice that an infinite sequence of zeros and ones corresponding to the forward orbit of a point in <span class="math inline">\(\Lambda\)</span> as described above, actually represents vertical line of points in <span class="math inline">\(V_1\)</span>. In order to describe a point in <span class="math inline">\(\Lambda\)</span> we apply a similar logic to the horizontal strips. This means that each point <span class="math inline">\(x \in \Lambda\)</span> can be represented by a bi-infinite sequence of <span class="math inline">\(0\)</span>’s and <span class="math inline">\(1\)</span>’s as <span class="math inline">\(\ldots a_{-2}a_{-1}a_0\circ a_1 a_2 \ldots\)</span> where <span class="math inline">\(a_i \in \{0,\}\)</span> for all <span class="math inline">\(i \in \Z\)</span> and <span class="math inline">\(\circ\)</span> comes right after the <span class="math inline">\(0\)</span> index (i.e it separates the forward itinerary from the backward).</p>
+<p>Let <span class="math inline">\(x_0 \in \Lambda\)</span> and let <span class="math inline">\(\ldots a_{-2}a_{-1}a_0\circ a_1 a_2 \ldots\)</span> be its symbolic representation. For <span class="math inline">\(k \in \Z\)</span>, the point <span class="math inline">\(f^{k}(x_0)\)</span> has symbolic representation <span class="math inline">\(\ldots a_{k-2}a_{k-1}a_{k}\circ a_{k+1} a_{k+2}\ldots\)</span>. If <span class="math inline">\(x_0\)</span> is a fixed point then the equality
+<span class="math display">\[\ldots a_{k-2}a_{k-1}a_{k}\circ a_{k+1} a_{k+2}\ldots = \ldots a_{-2}a_{-1}a_{0}\circ a_{1} a_{2}\ldots\]</span>
+holds for all <span class="math inline">\(k \in \N\)</span>. In particular <span class="math inline">\(a_i = a_{j}\)</span> for all <span class="math inline">\(j \in \Z\)</span>. Therefore the two fixed points of Smale’s horseshoe map are represented by the infinite sequences <span class="math inline">\(\ldots 000\circ 000 \ldots\)</span> and <span class="math inline">\(\ldots 111\circ 111 \ldots\)</span>.</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-ASY" class="csl-entry">
+Alligood, K. T., T. D. Sauer, and J. A. Yorke. 2000. <em>Chaos: An Introduction to Dynamical Sytems</em>. Textbooks in Mathematical Sciences. Springer New York.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Fractals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="continuous-time-dynamical-systems.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/lunr.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["MT4508RevisionNotes.pdf"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
