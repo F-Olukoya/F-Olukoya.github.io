@@ -1,0 +1,446 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MX4557 Complex Analysis",
+    "section": "",
+    "text": "Module Handbook\nWelcome to MX4557 Complex Analysis. The aim of the module is to further develop understanding of the concepts, techniques, and tools of calculus. Calculus is the mathematical study of variation. This course emphasises differential and integral calculus in one variable, and sequences and series of functions.",
+    "crumbs": [
+      "Module Handbook"
+    ]
+  },
+  {
+    "objectID": "index.html#intended-learning-outcomes-ilos",
+    "href": "index.html#intended-learning-outcomes-ilos",
+    "title": "MX4557 Complex Analysis",
+    "section": "Intended Learning Outcomes (ILO’s)",
+    "text": "Intended Learning Outcomes (ILO’s)\nBy the end of the course, you should be able\n\nto state and illustrate the definitions of the concepts introduced in the course,\nto state the theorems of the course, to explain their significance, and to give examples to indicate the role of the hypotheses,\nto demonstrate knowledge and understanding of proof techniques used in the course,\nto use the methods and results of the course to solve problems at levels similar to those seen in the course.\n\nIn particular, you should:\n\nBe able to perform routine calculations with complex functions.\nUnderstand the concept of analyticity and be familiar with the Cauchy-Riemann equations.\nKnow the necessary background and development of an elementary version of Cauchy’s theorem.\nKnow the important consequences of Cauchy’s theorem: Cauchy’s integral formulae, Liouville’s Theorem and Taylor Series.\nKnow about Laurent Series and the classification of isolated singularities.\nKnow the Cauchy residue theorem and some of its applications.\n\n\n\n\nLecture notes and recommended reading\nA full-set of gapped notes is available on MyAberdeen1. The gaps will be revealed in due course as the term progress.\nMost library books dealing with elementary complex analysis are useful for this course. Possible codes in QML are 515.30-01 (Functions of a Complex Variable), 515-01 (Mathematical Analysis) and 620.001 51 (Engineering Mathematics).\nFor specific recommendations, see the Leganto Reading on MyAberdeen (click Books & Tools). Further references are mentioned in the lecture notes.",
+    "crumbs": [
+      "Module Handbook"
+    ]
+  },
+  {
+    "objectID": "index.html#logistics",
+    "href": "index.html#logistics",
+    "title": "MX4557 Complex Analysis",
+    "section": "Logistics",
+    "text": "Logistics\n\nLectures\nThis course is taught in person in the Fraser Noble Building, FN156.\nLectures take place on Tuesdays 14:00–15:00 and Thursdays 13:00–14:00, weeks 27–34, 38-40, with the first lecture being on January 28, 2024.\n\n\nTutorials\nTutorials are on Fridays 9:00–10:00 in the Fraser Noble Building, FN156, and will start during the second week of lectures with the first tutorial being on February 4, 2024. Students should work through the current problem sheet (Table Table 1 indicates which problem sheet a tutorial covers. ) and attempt as many exercises as possible.\n\n\n\nTimetable\nDetails of all sessions (lectures and tutorials) will be available on your timetable. Please make sure that you have the correct day, time and room for each session. You should check this regularly as there are occasionally changes, particularly in the first couple of weeks of the semester.\nTable 1 displays a detailed schedule for the semester.\n\n\n\nWeekDayChapterMaterial27T1Complex numbers and functionsTh1Complex numbers and functionsF28T2Complex-valued functionsTh2Complex-valued functionsFTutorial 1: Problem Sheet 129T3Topology of the complex planeTh3Topology of the complex plane (Assignment)FTutorial 2: Problem Sheet 230T4Holomorphic functionsTh4Holomorphic functionsFTutorial 3: Problem Sheet 3 (Assignment due)31T5Power seriesTh5Power seriesFTutorial 4: Problem Sheet 432T6Countour integralsTh6Countour integralsFTutorial 5: Problem Sheet 533T7Cauchy's TheoremTh7Cauchy's TheoremFTutorial 6: Problem Sheet 634TApplications of Cauchy's TheoremTh8Applications of Cauchy's Theorem (Assignment)F8Tutorial 7: Problem Sheet 735-37Spring Break (Assignment due)38T9Laurent series and singularitiesTh9Laurent series and singularitiesFTutorial 8: Problem Sheet 839T10Residue TheoremTh10Residue TheoremFTutorial 9: Problem Sheet 940T11Applications to integralsTh11Applications to integralsFTutorial 10: Problem Sheet 1041Exams\n\n\nTable 1: Detailed Schedule\n\n\n\n\n\nAttendance requirements\nYou should attend classes regularly and do the work of the course. If you fail to do this, you may be asked to discuss your reasons with the Course Organiser and possibly be reported to the Registry as an unauthorised withdrawal from the course.\nhttps://www.abdn.ac.uk/students/academic-life/monitoring-and-student-progress.php\n\n\nPrivate Study\nIn addition to lectures and tutorials, you should aim to spend at least six hours a week working on the course. During this time you should\n\nwork through the example sheets,\nstudy your lecture notes and related texts,\nprepare in-course assignments.\n\n\n\nLecturers\nThis semester Dr. Feyisayo (Shayo) Olukoya will be the lecturer on the module. As mentioned above you can reach me by email at feyisayo.olukoya1@abdn.ac.uk; you should also feel free to arrange an in-person meeting my office is FN163 in the Fraser Noble; meeting virtually over teams is also an option.\n\n\nMyAberdeen\nAll resources for the module (lecture notes, problem sheets, solutions e.t.c) will be made available on MyAberdeen at the appropriate time.\nOccasionally, important information will be distributed to your university email account.",
+    "crumbs": [
+      "Module Handbook"
+    ]
+  },
+  {
+    "objectID": "index.html#assessment",
+    "href": "index.html#assessment",
+    "title": "MX4557 Complex Analysis",
+    "section": "Assessment",
+    "text": "Assessment\n\nContinuous Assessment\nThere are two Continuous Assessments and a final exam for this course.\n\nAssignment 1 (15%): Released Thursday 13 February. The deadline is Friday 21 February at 3pm.\nAssignment 2(15%): Released Thursday 20 March. The deadline is Friday 28 March at 3pm.\n\nAssignments will be released on MyAberdeen and you should submit your solutions as a pdf file on MyAberdeen by the due date. Only in exceptional circumstances will work handed in after the due date be accepted for formal assessment.\n\n\nIndividual work\nYour submission for Continuous Assessment must be your own individual work unless stated otherwise. Further information and a reference to the University Code of Conduct on Student Discipline can be found in the Information Booklet.\nYou are encouraged to discuss exercises for this course with other students, for example in small groups. You may shop around for ideas but it is expected that you possess and use your own critical faculties, to write up your own solutions. You must not copy sentences from fellow students. If you do not understand the solution of another student, do not attempt to use it as your own solution.\n\n\nFormative assessment\nAt the end of each chapter in the notes, you will find problem sheets with questions addressing the content covered in that chapter. Although these sheets do not contribute to the continuous assessment component, you are strongly encouraged to attempt them as they are designed to consolidate your understanding and enhance your problem-solving skills. Full solutions are provided and will appear after the sheet or sheets have been covered in example classes.\n\n\nFinal Exam\nThe final exam will be during Exam Week and comprises 70% of the module mark. It is an unseen, closed-book examination. The examination will require you to state definitions, state (and possibly prove) results, and apply these to solving problems. You should be able to state every definition and result in the module unless they are marked in the lecture notes as non-examinable.\n\n\nResits\nResit In the summer there will be a resit examination consisting of a single two-hour exam paper. The CGS mark awarded for the resit will be the maximum of\n\nthe mark obtained by using the resit examination result combined with the carried-forward CA mark as in the original diet and\nthe mark based on the resit examination performance alone.\n\n\n\nCalculators in exams\nCalculators will not be allowed in the main examination or the resit examination.",
+    "crumbs": [
+      "Module Handbook"
+    ]
+  },
+  {
+    "objectID": "index.html#student-support",
+    "href": "index.html#student-support",
+    "title": "MX4557 Complex Analysis",
+    "section": "Student Support",
+    "text": "Student Support\nFor advice on academic and non-academic issue (resonable adjutsments, financial, international, personal or health matters ) please contact Student Services.\nYou can find the University’s education policy for students by following this link. \nIf you have any problems with the course—mathematical or organisational—please contact me, or your class representative, or Mark Grant (who is in charge of undergraduate teaching).",
+    "crumbs": [
+      "Module Handbook"
+    ]
+  },
+  {
+    "objectID": "index.html#report-a-bug",
+    "href": "index.html#report-a-bug",
+    "title": "MX4557 Complex Analysis",
+    "section": "Report a bug",
+    "text": "Report a bug\nIf you encounter any issues with these notes or would like to leave feedback regarding lectures, tutorials, assessments, etc., please feel free to report a bug. I will review submissions periodically, so do share your thoughts.\n\n\n\n\nDowson, H. R. 1979. “Serge Lang, Complex Analysis (Addison-Wesley, 1977), Xi + 321 Pp., £1200.” Proceedings of the Edinburgh Mathematical Society 22 (1): 65–65. https://doi.org/10.1017/S0013091500027838.\n\n\nFreitag, E., and R. Busam. 2009. Complex Analysis. Universitext. Springer Berlin Heidelberg. https://books.google.co.uk/books?id=3xBpS-ZKlgsC.\n\n\nHowie, J. M. 2012. Complex Analysis. Springer Undergraduate Mathematics Series. Springer London. https://books.google.co.uk/books?id=0FZDBAAAQBAJ.\n\n\nJameson, G. J. O. 1987. “H. A. Priestley, Introduction to Complex Analysis (Oxford University Press, 1985), 197 Pp., £8.50.” Proceedings of the Edinburgh Mathematical Society 30 (2): 325–26. https://doi.org/10.1017/S0013091500028406.\n\n\nRemmert, R. 1991. Theory of Complex Functions. Graduate Texts in Mathematics. Springer New York. https://books.google.co.uk/books?id=uP8SF4jf7GEC.\n\n\nThomson, B. S., J. B. Bruckner, and A. M. Bruckner. 2001. Elementary Real Analysis. Prentice-Hall. https://books.google.co.uk/books?id=6l_E9OTFaK0C.",
+    "crumbs": [
+      "Module Handbook"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "MX4557 Complex Analysis",
+    "section": "",
+    "text": "These are based on Ben Martin’s excellent set of notes↩︎",
+    "crumbs": [
+      "Module Handbook"
+    ]
+  },
+  {
+    "objectID": "01-intro.html",
+    "href": "01-intro.html",
+    "title": "1  Geometry of the Complex plane",
+    "section": "",
+    "text": "Questions for further discussion\nThis section is a brief reminder of Sections 3 and 4 of MA1006 Algebra.\nFrom Section 3.8 in MA1006 Algebra we recall:\nOf course, \\(\\C\\) is a one-dimensional vector space over itself. Restricting the scalar multiplication to \\(\\R\\) makes \\(\\C\\) into a vector space over \\(\\R,\\) isomorphic to \\(\\R^2,\\) of dimension two with standard basis \\(1,i\\in\\C.\\)\nTo get around the non-uniqueness of the argument in polar coordinates, we restrict \\(\\th\\) to lie in a half-open interval of length \\(2\\pi.\\) Here is the most common convention.\nThe polar form can be applied to the construction of \\(n\\)th roots.",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Geometry of the Complex plane</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#questions-for-further-discussion",
+    "href": "01-intro.html#questions-for-further-discussion",
+    "title": "1  Geometry of the Complex plane",
+    "section": "",
+    "text": "The complex numbers are obtained by ‘adjoining’ a symbol \\(i\\) with \\(i^2=-1.\\) If instead we would have adjoined a different symbol \\(\\ep\\) with \\(\\ep^2=-1,\\) would the set of elements \\(x+\\ep y\\) still define a field?\nThe real numbers have a total order ‘\\(\\leqslant\\)’. Why doesn’t it make sense to extend this definition to the complex numbers?\nDescribe geometrically the set \\(R_n=\\{1,\\ze_n,\\ldots,(\\ze_n)^{n-1}\\}\\) of \\(n\\)th roots of unity. Find a connection between \\(R_n\\) and the cyclic group \\(C_n=\\{\\ol{0},\\ldots,\\ol{n-1}\\}\\) of integers modulo \\(n\\) from MX3020 Group Theory.",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Geometry of the Complex plane</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#sec-Ch1Exercises",
+    "href": "01-intro.html#sec-Ch1Exercises",
+    "title": "1  Geometry of the Complex plane",
+    "section": "1.1 Exercises",
+    "text": "1.1 Exercises\n\n\n\n\n\n\nNote\n\n\n\nThis problem sheet is intended as a recap and contains more problems than can be discussed during the tutorials.\n\n\n\n\n\nExercise 1.1\n\n\nVerify \\[z = x+iy\\] and \\[i^2 =-1\\] straight from the definition Equation 1.2.\n\n\n\n\n\n\nExercise 1.2\n\n\nHow many real solutions \\(x\\) does \\(x^2+1=0\\) have? Show that the polynomial equation \\(z^2+1=0\\) has exactly two solutions \\(z\\in\\C.\\)\n\n\n\n\n\n\nExercise 1.3\n\n\nGive examples of complex numbers \\(z,w\\neq0\\) such that \\(z^2+w^2=0.\\)\n\n\n\n\n\n\nExercise 1.4\n\n\nSketch the position of the complex numbers \\(i, 1+i, \\frac{3+2i}{4}\\) in the plane.\n\n\n\n\n\n\nExercise 1.5\n\n\nExpress the following complex numbers \\(z\\) in the form \\(x+iy\\) with \\(x,y\\in\\R.\\) \\[(1+i)^{20},\\ (5+3i)(1+2i),\\ (1-i)(2+3i),\\ (1-i)i(1+i),\\ \\frac{2+i}{1-i}\\]\n\n\n\n\n\n\nExercise 1.6\n\n\nExpress the following complex numbers \\(z\\) in the form \\(x+iy\\) with \\(x,y\\in\\R.\\) \\[1/i,\\ \\frac{1}{1+i},\\ \\frac{3+i}{3-i}\n\\]\n\n\n\n\n\n\nExercise 1.7\n\n\nFind the modulus and the conjugate of the following complex numbers. \\[2+i,\\ i,\\ 5-3i,\\ \\frac{1+i}{2+i}\n\\]\n\n\n\n\n\n\nExercise 1.8\n\n\nDescribe the sets \\(A=\\{z\\in\\C\\mid\\Im(z)&gt;0\\},\\) \\(B=\\{z\\in\\C\\mid\\Re(z)\\leqslant1\\},\\) \\(C=\\{z\\in\\C\\mid \\Re((1+i)z)=0\\},\\) and \\(A\\cap B\\) geometrically.\n\n\n\n\n\n\nExercise 1.9\n\n\nDescribe the set \\(D=\\{z\\in\\C \\mid z\\cdot\\overline{z}=1\\}\\) geometrically.\nHint: Write \\(z=re^{i\\th}\\) in polar form.\n\n\n\n\n\n\nExercise 1.10\n\n\nDraw all nine sets described by the following conditions on the complex number \\(z.\\) \\[\\begin{align*}\n|z|&=1,&|z|&&lt;1,&1&lt;&|z|&lt;2,\\\\\n|1+z|&&gt;1,&|2-z|&&lt;2,&3&lt;&|z+i|&lt;4,\\\\\n|z-1|&&lt;|z+1|,&|z|&=|z+1|,&|z-1|&=|z+i|.\n\\end{align*}\\]\n\n\n\n\n\n\nExercise 1.11\n\n\nLet \\(S=\\{x+iy\\in \\C \\mid 0\\leqslant x,y \\leqslant 1\\}\\). Draw \\(S\\) and the sets \\[\\begin{align*}\nA&=\\{2z \\mid z\\in S\\}, &B&=\\{\\ol{z} \\mid z\\in S\\},\\\\\nC&=\\{-z \\mid z\\in S\\}, &D&=\\{z^2 \\mid z\\in S\\}.\n\\end{align*}\\]\n\n\n\n\n\n\nExercise 1.12\n\n\nLet \\(D=\\{z\\in\\C \\mid |z|&lt;1\\}\\) be the unit disk. Draw the sets \\[A=\\{2z \\mid z\\in D\\},\\quad B=\\{z^2 \\mid z\\in D\\},\\quad C=\\{|z| \\mid z\\in D\\}.\\]\n\n\n\n\n\n\nExercise 1.13\n\n\nShow that \\(i=e^{i\\pi/2}\\) and \\(-1=e^{i\\pi}.\\)\n\n\n\n\n\n\nExercise 1.14\n\n\nExpress the following complex numbers \\(z\\) in the form \\(x+iy\\) with \\(x,y\\in\\R.\\) \\[e^{i\\pi/4},\\ e^{i\\pi},\\ e^{i\\frac{2\\pi}{3}}\n\\]\n\n\n\n\n\n\nExercise 1.15\n\n\nWrite each of the following complex numbers in polar form \\(re^{i\\theta}\\) with \\(r&gt;0\\) and \\(-\\pi&lt;\\theta\\leqslant\\pi.\\) \\[i, \\quad -1, \\quad -i, \\quad 1+i, \\quad 1-i, \\quad i-1, \\quad \\frac{1}{2}+i\\frac{\\sqrt{3}}{2}\\] Draw each of these numbers in the complex plane.\n\n\n\n\n\n\nExercise 1.16\n\n\nCalculate \\(i^{2021}\\) and \\((1+i)^{20}.\\)\n\n\n\n\n\n\nExercise 1.17\n\n\nSolve the equation \\((1 - i)^n - 2075 = 2021\\) and find \\(n\\in\\N.\\)\n\n\n\n\n\n\nExercise 1.18\n\n\nProve that for \\(z\\in\\R\\) we have\n\\[\\begin{align*}\n\\cos(z)&=\\frac{e^{iz}+e^{-iz}}{2},\n&\\sin(z)&=\\frac{e^{iz}-e^{-iz}}{2i}.\n\\end{align*}\\]\nUse these equations to extend the definition of the functions \\(\\cos(z), \\sin(z)\\) to complex arguments \\(z\\in\\C.\\) Find \\(z\\in\\C\\) with \\(\\sin(z)=2.\\)\nHint: Put \\(w=e^{iz}\\) and reduce to a quadratic equation.\n\n\n\n\n\n\nExercise 1.19\n\n\nProve the following statements.\n\n\\(\\ol{zw}=\\ol{z}\\cdot\\ol{w}\\) for all \\(z,w\\in\\C\\)\n\\(\\ol{z_1z_2\\cdots z_n} = \\ol{z}_1\\ol{z}_2\\cdots\\ol{z}_n\\) for all \\(z_1, z_2, \\ldots, z_n\\in\\C\\) (use induction)\n\\(\\ol{(z^n)}=(\\ol{z})^n\\) for all \\(z\\in\\C\\)\nLet \\(p(z)=a_nz^n+a_{n-1}z^{n-1}+\\ldots+a_1z+a_0\\) be a polynomial with real coefficients \\(a_0,\\ldots,a_n\\in\\R.\\) Prove that \\(\\ol{p(z)} = p({\\ol{z}}).\\) Deduce that all roots of \\(p(z)\\) occur in complex conjugate pairs.\n\n\n\n\n\n\n\nExercise 1.20\n\n\nShow that \\(|z|=|{-z}|\\) and \\(|\\ol z|=|z|.\\) Prove also that \\(|\\la z|=\\la |z|\\) for all \\(\\la\\geqslant 0.\\)\n\n\n\n\n\n\nExercise 1.21\n\n\nProve that \\(\\Re(z)=\\frac{1}{2}(z+\\bar{z}),\\) \\(\\Im(z)=\\frac{1}{2i}(z-\\bar{z}).\\)\n\n\n\n\n\n\nExercise 1.22\n\n\nProve that \\(\\ol{e^z}=e^{\\ol z}.\\) Deduce that \\(|e^z|=e^{\\Re(z)}.\\)\n\n\n\n\n\n\nExercise 1.23\n\n\nProve that \\(|z+w|^2+|z-w|^2=2|z|^2+2|w|^2.\\)\n\n\n\n\n\n\nExercise 1.24\n\n\nShow that \\(|z+w|^2=|z|^2+2\\Re(z\\ol w)+|w|^2.\\) Use this to determine the conditions on \\(z,w\\) for \\(|z+w|=|z|+|w|\\) to hold.\n\n\n\n\n\n\nExercise 1.25\n\n\nAssuming we know the triangle inequality \\(|z+w|\\leqslant |z|+|w|\\) for all \\(z,w\\in\\C,\\) prove the reverse triangle inequality \\[|z-w|\\geqslant\\bigl||z|-|w|\\bigr|.\\]\n\n\n\n\n\n\nExercise 1.26\n\n\nLet \\(K\\) be a field with \\(\\R\\subset K \\subset\\C.\\) Prove that \\(K=\\R\\) or \\(K=\\C.\\)",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Geometry of the Complex plane</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#further-resources",
+    "href": "01-intro.html#further-resources",
+    "title": "1  Geometry of the Complex plane",
+    "section": "Further resources",
+    "text": "Further resources\n\nFreitag–Busam (Freitag and Busam 2009, chap. 1) for additional exercises and historical background.\nhttps://en.wikipedia.org/wiki/Complex_number for overview and history\nhttps://youtu.be/T647CGsuOVU for some visualization\n\n\n\n\n\nDowson, H. R. 1979. “Serge Lang, Complex Analysis (Addison-Wesley, 1977), Xi + 321 Pp., £1200.” Proceedings of the Edinburgh Mathematical Society 22 (1): 65–65. https://doi.org/10.1017/S0013091500027838.\n\n\nFreitag, E., and R. Busam. 2009. Complex Analysis. Universitext. Springer Berlin Heidelberg. https://books.google.co.uk/books?id=3xBpS-ZKlgsC.\n\n\nHowie, J. M. 2012. Complex Analysis. Springer Undergraduate Mathematics Series. Springer London. https://books.google.co.uk/books?id=0FZDBAAAQBAJ.\n\n\nJameson, G. J. O. 1987. “H. A. Priestley, Introduction to Complex Analysis (Oxford University Press, 1985), 197 Pp., £8.50.” Proceedings of the Edinburgh Mathematical Society 30 (2): 325–26. https://doi.org/10.1017/S0013091500028406.\n\n\nRemmert, R. 1991. Theory of Complex Functions. Graduate Texts in Mathematics. Springer New York. https://books.google.co.uk/books?id=uP8SF4jf7GEC.\n\n\nThomson, B. S., J. B. Bruckner, and A. M. Bruckner. 2001. Elementary Real Analysis. Prentice-Hall. https://books.google.co.uk/books?id=6l_E9OTFaK0C.",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Geometry of the Complex plane</span>"
+    ]
+  },
+  {
+    "objectID": "02-Week2.html",
+    "href": "02-Week2.html",
+    "title": "2  Complex-valued functions",
+    "section": "",
+    "text": "Image grid\nWe have already met several complex functions in the previous section.\nSince the graph \\(\\Ga(f)=\\{(z,w)\\in D\\t\\C\\mid f(z)=w\\}\\) of a complex function is a subset of four-dimensional space, we cannot visualize complex functions as easily as real functions. We will now discuss some alternatives.\nA useful way to picture a complex function is to sketch its values on a grid \\(G.\\) The image grid \\(f(G)\\) is a distorted version of the original grid which can be navigated easily using the grid lines. For example, to determine \\(f(1+2i),\\) take one step in \\(x\\)-direction and two steps in \\(y\\)-direction on the distorted grid. Formally, let \\(G=\\{z=x+iy\\in\\C\\mid x\\in\\Z\\text{ or }y\\in\\Z\\}\\) be the unit grid and define the image grid as (see Figure 2.3)\n\\[f(G)=\\{w=u+iv\\in\\C\\mid\\exists z\\in G: f(z)=w\\}.\\]\nFigure 2.3: The unit grid \\(G\\) and the image grid \\(f(G)\\) for \\(f(z)=\\frac{1+i}{\\sqrt{2}}z\\)\nIn practice, the image grid can often be described by finding a familiar equation that all of its members \\(u+iv\\) satisfy. When this is not possible, a computer will help sketching an approximate image grid.\nThe previous example can be generalized.",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Complex-valued functions</span>"
+    ]
+  },
+  {
+    "objectID": "02-Week2.html#questions-for-further-discussion",
+    "href": "02-Week2.html#questions-for-further-discussion",
+    "title": "2  Complex-valued functions",
+    "section": "Questions for further discussion",
+    "text": "Questions for further discussion\n\nWhat are the functions in Example 2.1 geometrically?\nDoes Equation 2.6 remain valid for all \\(z\\in\\C\\)? What is the correct modification?\nThe two zeros in Figure 2.7 have a slightly different character. What is the difference between the zeros that might account for this?\nIn (ex-Ch2_Fig_Image_Grid_1?) and (ex-Ch2_Ex1z?)} almost all the image gridlines meet at a right angle. The only exception is at \\(f(0)\\) in Example 2.6. Use polar coordinates to explain this behavior of \\(f(z)=z^2\\) at \\(z=0.\\)\nIs it always possible to extend the domain of definition of a complex function? Is this always sensible?\nCan you think of other branches of the logarithm?",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Complex-valued functions</span>"
+    ]
+  },
+  {
+    "objectID": "02-Week2.html#sec-Ch2_Exercises",
+    "href": "02-Week2.html#sec-Ch2_Exercises",
+    "title": "2  Complex-valued functions",
+    "section": "2.1 Exercises",
+    "text": "2.1 Exercises\n\n\n\nExercise 2.1\n\n\nDescribe the image set of the complex function \\(f(z)=\\frac{1+z}{1-z}\\) with domain \\(D=\\C\\setminus\\{1\\}.\\) In other words, determine the set of all \\(w\\in\\C\\) for which \\(w=\\frac{1+z}{1-z}\\) has a solution \\(z\\in D.\\)\n\n\n\n\n\n\nExercise 2.2\n\n\nSketch the following curves \\(z(t)\\) in the complex plane, where \\(t\\) is a real parameter.\n\n\\(z(t)= t(1+i)\\) for \\(0\\leqslant t\\leqslant 1\\)\n\\(z(t)= \\cos(t)+i\\sin(t)\\) for \\(0\\leqslant t\\leqslant \\pi\\)\n\\(z(t)= \\cos(t)-i\\sin(t)\\) for \\(0\\leqslant t \\leqslant \\pi/2\\)\n\\(z(t)=\\frac{1}{1+it}\\) for \\(t\\in\\R\\)\n\n\n\n\n\n\n\nExercise 2.3\n\n\nLet \\(\\log(z)\\) be the principal branch of the logarithm. Compute \\[\\log(2i),  \\log(1+i),  \\log(-3i),  \\log(5).\\]\n\n\n\n\n\n\nExercise 2.4\n\n\nDescribe the following complex functions geometrically. \\[f(z)=3z,  f(z)=iz,  f(z)=\\frac{(1+i)}{\\sqrt{2}}z\\]\n\n\n\n\n\n\nExercise 2.5\n\n\nDetermine a domain of definition for the following complex functions. \\[f(z)=\\frac{1}{z},  f(z)=\\frac{1+z}{z-1},  f(z)=\\frac{z^2-4}{z^2+2z},  f(z)=\\frac{1}{\\exp(z)}.\n\\]\n\n\n\n\n\n\nExercise 2.6\n\n\nDetermine the domain of definition for \\(f(z)=\\frac{1}{\\sin(z)}.\\)\n\n\n\n\n\n\nExercise 2.7\n\n\nFind all solutions to the following equations:\n\n\\(e^z=-1\\),\n\\(\\sin(z)=-i\\)\n\n\n\n\n\n\n\nExercise 2.8\n\n\nProve that the composition \\(f\\circ f'\\) of two Möbius transformations is again a Möbius transformation. If we associate to \\(f, f'\\) the matrices \\[A=\\begin{pmatrix}\na&b\\\\\nc&d\n\\end{pmatrix}, A'=\\begin{pmatrix}\n\\alpha &\\beta\\\\\n\\gamma& \\delta\n\\end{pmatrix} \\in \\M_{2\\times 2}(\\C),\\]\nshow that \\(f\\circ f'\\) is associated to the matrix product \\(AA'.\\)\n\n\n\n\n\n\nExercise 2.9\n\n\nDraw the image grid for \\(\\exp\\colon\\C\\to\\C^\\t.\\)",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Complex-valued functions</span>"
+    ]
+  },
+  {
+    "objectID": "02-Week2.html#further-resources",
+    "href": "02-Week2.html#further-resources",
+    "title": "2  Complex-valued functions",
+    "section": "Further resources",
+    "text": "Further resources\n\nhttps://youtu.be/NtoIXhUgqSk 5 ways to visualize a complex function\nAnimation of Möbius transformations: https://youtu.be/0z1fIsUNhO4 and https://www-users.cse.umn.edu/~arnold/moebius/\n\n\n\n\n\nDowson, H. R. 1979. “Serge Lang, Complex Analysis (Addison-Wesley, 1977), Xi + 321 Pp., £1200.” Proceedings of the Edinburgh Mathematical Society 22 (1): 65–65. https://doi.org/10.1017/S0013091500027838.\n\n\nFreitag, E., and R. Busam. 2009. Complex Analysis. Universitext. Springer Berlin Heidelberg. https://books.google.co.uk/books?id=3xBpS-ZKlgsC.\n\n\nHowie, J. M. 2012. Complex Analysis. Springer Undergraduate Mathematics Series. Springer London. https://books.google.co.uk/books?id=0FZDBAAAQBAJ.\n\n\nJameson, G. J. O. 1987. “H. A. Priestley, Introduction to Complex Analysis (Oxford University Press, 1985), 197 Pp., £8.50.” Proceedings of the Edinburgh Mathematical Society 30 (2): 325–26. https://doi.org/10.1017/S0013091500028406.\n\n\nRemmert, R. 1991. Theory of Complex Functions. Graduate Texts in Mathematics. Springer New York. https://books.google.co.uk/books?id=uP8SF4jf7GEC.\n\n\nThomson, B. S., J. B. Bruckner, and A. M. Bruckner. 2001. Elementary Real Analysis. Prentice-Hall. https://books.google.co.uk/books?id=6l_E9OTFaK0C.",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Complex-valued functions</span>"
+    ]
+  },
+  {
+    "objectID": "03-Week3.html",
+    "href": "03-Week3.html",
+    "title": "3  Topology of the complex plane",
+    "section": "",
+    "text": "Questions for further discussion\nIn this section we explain that most of the facts about limits, series, and continuity carry over from real analysis essentially without change.\nThe modulus of complex numbers defines a distance \\(d(z,w)=|z-w|\\) on the plane (this is the usual Euclidean distance), which determines the following standard terminology for metric spaces.\nThe same argument as in real analysis shows that the limit \\(w\\) is unique and that every convergent sequence is a Cauchy sequence. The converse is also true by the completeness of real numbers.\nThe advantage of Cauchy sequences is that one does not need to know the value of the limit in advance.\nAs in real analysis, the Cauchy criterion implies that every absolutely convergent series is convergent. Absolutely convergent series may be rearranged and orders of summation may be exchanged.\nAlthough \\(\\iy\\notin\\C,\\) it will be convenient to define \\(\\lim_{n\\to\\iy}z_n=\\iy\\) to mean that the sequence \\((z_n)_{n\\in\\N}\\) eventually leaves every disk. Symbolically, \\[\\forall r&gt;0\\;\\exists n_0\\in\\N\\;\\forall n\\geqslant n_0: |z_n|&gt;r.\\]\nWe call \\(\\C\\cup\\{\\iy\\}\\) the extended complex plane.",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Topology of the complex plane</span>"
+    ]
+  },
+  {
+    "objectID": "03-Week3.html#questions-for-further-discussion",
+    "href": "03-Week3.html#questions-for-further-discussion",
+    "title": "3  Topology of the complex plane",
+    "section": "",
+    "text": "Explain the difference between the notions ‘limit of a function’, ‘limit of a sequence’, and ‘limit of a series’.",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Topology of the complex plane</span>"
+    ]
+  },
+  {
+    "objectID": "03-Week3.html#sec-Ch3_exercises",
+    "href": "03-Week3.html#sec-Ch3_exercises",
+    "title": "3  Topology of the complex plane",
+    "section": "3.1 Exercises",
+    "text": "3.1 Exercises\n\n\n\nExercise 3.1\n\n\nRecall the ratio and root test for series of real numbers.\n\n\n\n\n\n\nExercise 3.2\n\n\nFor which \\(z\\in\\C\\) do the following limits exist? \\[\\lim_{n\\to\\iy}n^{1/n}z,\n\\lim_{n\\to\\iy}z^n,\n\\lim_{n\\to\\iy}\\frac{z^n}{n},\n\\lim_{n\\to\\iy}\\frac{z^n}{n!},\n\\lim_{n\\to\\iy}\\frac{z^n}{n^n},\n\\lim_{n\\to\\iy}n!z.\\]\n\n\n\n\n\n\nExercise 3.3\n\n\nShow that every convergent sequence \\((z_n)_{n\\in\\N}\\) of complex numbers is bounded.\n\n\n\n\n\n\nExercise 3.4\n\n\nLet \\(\\sum_{k=0}^\\iy z_k\\) be a convergent series of complex numbers. Show that \\(\\lim_{k\\to\\iy} z_k=0.\\)\n\n\n\n\n\n\nExercise 3.5\n\n\nFor which \\(z\\in\\C\\) do the following series converge? \\[\\sum_{k=0}^\\iy kz^k,\\quad \\sum_{k=0}^\\iy(kz)^k\\]\n\n\n\n\n\n\nExercise 3.6\n\n\nLet \\(f\\colon\\C\\to\\C\\) be a complex function. Show that \\[\\lim_{z\\to\\iy}f(z)=w\\iff\\lim_{z\\to0}f\\left(\\frac{1}{z}\\right)=w.\\]\n\n\n\n\n\n\nExercise 3.7\n\n\nThe Riemann sphere is \\(\\mathbb{S}=\\{(a,b,c)\\in\\R^3\\mid a^2+b^2+c^2=1\\}.\\) Show that the stereographic projection \\[F\\colon\\mathbb{S}\\longra\\C\\cup\\{\\iy\\},\nF(a,b,c)=\n\\begin{cases}\n\\frac{a+ib}{1-c} & \\text{ if }c\\neq 1,\\\\\n\\iy & \\text{ if }c=1.\n\\end{cases}\\]\nis a bijection between the Riemann sphere and the extended complex plane. Find a formula for the inverse function.\n\n\n\n\n\n\n\n\nFigure 3.3: Stereographic projection from the north pole",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Topology of the complex plane</span>"
+    ]
+  },
+  {
+    "objectID": "03-Week3.html#further-resources",
+    "href": "03-Week3.html#further-resources",
+    "title": "3  Topology of the complex plane",
+    "section": "Further resources",
+    "text": "Further resources\n\n\n\n\nDowson, H. R. 1979. “Serge Lang, Complex Analysis (Addison-Wesley, 1977), Xi + 321 Pp., £1200.” Proceedings of the Edinburgh Mathematical Society 22 (1): 65–65. https://doi.org/10.1017/S0013091500027838.\n\n\nFreitag, E., and R. Busam. 2009. Complex Analysis. Universitext. Springer Berlin Heidelberg. https://books.google.co.uk/books?id=3xBpS-ZKlgsC.\n\n\nHowie, J. M. 2012. Complex Analysis. Springer Undergraduate Mathematics Series. Springer London. https://books.google.co.uk/books?id=0FZDBAAAQBAJ.\n\n\nJameson, G. J. O. 1987. “H. A. Priestley, Introduction to Complex Analysis (Oxford University Press, 1985), 197 Pp., £8.50.” Proceedings of the Edinburgh Mathematical Society 30 (2): 325–26. https://doi.org/10.1017/S0013091500028406.\n\n\nRemmert, R. 1991. Theory of Complex Functions. Graduate Texts in Mathematics. Springer New York. https://books.google.co.uk/books?id=uP8SF4jf7GEC.\n\n\nThomson, B. S., J. B. Bruckner, and A. M. Bruckner. 2001. Elementary Real Analysis. Prentice-Hall. https://books.google.co.uk/books?id=6l_E9OTFaK0C.",
+    "crumbs": [
+      "Complex numbers and functions",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Topology of the complex plane</span>"
+    ]
+  },
+  {
+    "objectID": "04-Week4.html",
+    "href": "04-Week4.html",
+    "title": "4  Holomorphic functions",
+    "section": "",
+    "text": "The following definition is a key concept for this course.\n\nDefinition 4.1 A complex function \\(f\\colon U\\to\\C\\) with domain an open set \\(U\\subset \\C\\) is complex differentiable at a point \\(z_0\\in U\\) if the limit\n\\[f'(z_0)=\\frac{\\6f}{\\6z}(z_0)=\\lim_{z\\to z_0} \\frac{f(z)-f(z_0)}{z-z_0} \\tag{4.1}\\]\nexists. We call \\(f\\) holomorphic on \\(U\\) if \\(f\\) is complex differentiable at every \\(z_0\\in U.\\) The set of all holomorphic functions on \\(U\\) is denoted \\(\\cO(U).\\) A function that is holomorphic1 on \\(U=\\C\\) is entire.\n\n\nThis definition is structurally the same as for real functions. For example, \\(f\\) is continuous at \\(z_0\\) since multiplying Equation 4.1 by \\(0=\\lim_{z\\to z_0} (z-z_0)\\) gives \\[0 = \\lim_{z\\to z_0} f(z)-f(z_0)\\implies f(z_0)=\\lim_{z\\to z_0} f(z).\\]\nOther formal proofs carry over as well and show the following.\n\n\nProposition 4.1 Let \\(f, g\\colon U\\to\\C\\) be complex differentiable at \\(z_0.\\) Then:\n\n\\(f+g\\) is complex differentiable at \\(z_0\\) with \\[(f+g)'(z_0)=f'(z_0)+g'(z_0).\\]\n\\(fg\\) is complex differentiable at \\(z_0\\) with\\[(fg)'(z_0)=f'(z_0)g(z_0)+f(z_0)g'(z_0).\\]\nIf \\(g(z_0)\\neq0,\\) then \\(f/g\\) is complex differentiable at \\(z_0\\) with\\[(f/g)'(z_0)=\\frac{f'(z_0)g(z_0)-f(z_0)g'(z_0)}{g(z_0)^2}.\\]\n\n\n\nProof. \n\nExercise, using the algebra of limits.\n\n\n\nExample 4.1  \n\nDirectly from Equation 4.1 we find that the constant function \\(f(z)=c\\) is entire with \\(f'(z)=0.\\) The identity function \\(f(z)=z\\) is entire with \\(f'(z)=1.\\) Proposition 4.1 and induction then imply that all polynomials \\[f(z)=a_nz^n+a_{n-1}z^{n-1}+\\ldots+a_1z+a_0\\]\nare entire with \\[f'(z)=na_nz^{n-1}+(n-1)a_{n-1}z^{n-2}+\\ldots+a_1.\\]\nIt then follows from Proposition 4.1 part c. that rational functions are holomorphic on their domain of definition.\n\n\n\nProposition 4.2 Let \\(f\\colon U\\to\\C,\\) \\(g\\colon V\\to\\C\\) be complex functions with \\(f(U)\\subset V,\\) and \\(U,\\) \\(V\\) open. Suppose that \\(f\\) is complex differentiable at \\(z_0\\in U\\) and that \\(g\\) is complex differentiable at \\(w_0=f(z_0)\\in V.\\)\nThen \\(g\\circ f\\) is complex differentiable at \\(z_0\\) and\\[(g\\circ f)'(z_0)=g'(w_0)f'(z_0). \\tag{4.2}\\]\n\n\nProof. \n\nWe can equivalently rewrite Equation 4.1 as \\[f(z_0+h)=f(z_0)+hf'(z_0)+h\\rho(h),\\qquad\\lim_{h\\to0}\\rho(h)=0, \\tag{4.3}\\] where the function \\(\\rho(h),\\) \\(h\\neq0,\\) is defined by this equation. Similarly, \\[g(w_0+k)=g(w_0)+kg'(w_0)+k\\si(k), \\qquad\\lim_{k\\to0}\\si(k)=0. \\tag{4.4}\\] Then \\[\\begin{align*}\n&\\frac{(g\\circ f)(z_0+h) - (g\\circ f)(z_0)}{h}= \\frac{g\\bigl(w_0+\\overset{\\smash{k=}}{\\overbrace{hf'(z_0)+h\\rho(h)}}\\;\\bigr)-g(w_0)}{h}\\\\\n&=f'(z_0)g'(w_0)+\\bigl[\\rho(h)g'(w_0)+(f'(z_0)+\\rho(h))\\,\\si(hf'(z_0)+h\\rho(h))\\bigr],\n\\end{align*}\\] where the first equality follows from Equation 4.3, the second from Equation 4.4 and the square bracket tends to zero as \\(h\\to0,\\) using the chain rule for limits to see that \\(\\lim_{h\\to0}\\si(hf'(z_0)+h\\rho(h))=\\lim_{k\\to 0}\\si(k)=0.\\)\n\n\n\nOne should view Equation 4.3 as a short Taylor series expansion: near the point \\(z_0\\) the function \\(f\\) is given to zeroth order by a constant \\(f(z_0),\\) with first order correction given by a complex linear function \\(h\\mapsto hf'(z_0),\\) plus a higher order term \\(h\\rho(h)\\) which vanishes infinitesimally (after dividing by \\(h\\)).\nWe next discuss how complex differentiability compares to real differentiability. Regard a complex function as a real multivariable map \\[f=(u,v)\\colon U\\longra\\R^2,\\qquad\\text{$U\\subset\\R^2$ open set.}\\]\nRecall that \\(f\\) is real differentiable at \\(z_0=(x_0,y_0)\\) if there exists a matrix \\(J_f(z_0)\\in \\M_{2\\t 2}(\\R),\\) called the Jacobian, so that Equation 4.3 holds with the complex multiplication \\(hf'(z_0)\\) replaced by the matrix vector multiplication \\(J_f(z_0)h.\\) Real differentiability at \\(z_0\\) implies that the partial derivatives at \\(z_0\\) exist and\n\\[J_f(z_0)=\n\\begin{pmatrix}\n  \\frac{\\6u}{\\6x}(z_0) & \\frac{\\6u}{\\6y}(z_0)\\\\\n  \\frac{\\6v}{\\6x}(z_0) & \\frac{\\6v}{\\6y}(z_0)\n\\end{pmatrix}. \\tag{4.5}\\]\nRecall that the converse requires the additional assumptions that the partial derivatives exist in a neighborhood of \\(z_0\\) and are continuous at \\(z_0.\\)\n\n\nProposition 4.3 For a complex function \\(f=u+iv\\) the following are equivalent:\n\n\\(f\\) is complex differentiable at \\(z_0\\)\n\\(f\\) is real differentiable at \\(z_0\\) and the Cauchy–Riemann equations \\[\\frac{\\6u}{\\6x}(z_0) = \\frac{\\6v}{\\6y}(z_0), \\qquad\n\\frac{\\6u}{\\6y}(z_0) = -\\frac{\\6v}{\\6x}(z_0), \\tag{4.6}\\] hold.\n\nIn this case, \\(f'(z_0)=\\frac{\\6u}{\\6x}+i\\frac{\\6v}{\\6x}.\\)\n\n\nProof. \n\nThe two definitions are identical except that the complex multiplication \\(f'(z_0)h\\) by \\(h\\in\\C\\) is replaced by the matrix vector multiplication \\(J_f(z_0)h\\) by \\(h\\in\\R^2.\\) Our task is to compare these two notions. For this we simply observe that by Proposition 1.2 \\(J_f(z_0)\\) is \\(\\C\\)-linear if and only if Equation 4.6 holds.",
+    "crumbs": [
+      "Differentiation and contour integrals",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Holomorphic functions</span>"
+    ]
+  },
+  {
+    "objectID": "04-Week4.html#questions-for-further-discussion",
+    "href": "04-Week4.html#questions-for-further-discussion",
+    "title": "4  Holomorphic functions",
+    "section": "",
+    "text": "\\(x\\mapsto x^3\\) is a real differentiable bijection whose inverse function is not differentiable at \\(x=0.\\) What about the complex analogue \\(z\\mapsto z^{1/3}\\)?",
+    "crumbs": [
+      "Differentiation and contour integrals",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Holomorphic functions</span>"
+    ]
+  },
+  {
+    "objectID": "04-Week4.html#sec-Ch4_exercises",
+    "href": "04-Week4.html#sec-Ch4_exercises",
+    "title": "4  Holomorphic functions",
+    "section": "4.1 Exercises",
+    "text": "4.1 Exercises\n\n\n\nExercise 4.1\n\n\nWrite the following complex functions in the form \\(f=u+iv\\): \\[f_1(z)=\\sin(z),\\qquad f_2(z)=e^{z^2},\\qquad f_3(z)=\\cosh(z)\\]\n\n\n\n\n\n\nExercise 4.2\n\n\nAt which points \\(z\\in\\C\\) are the following functions complex differentiable? At which points are they real differentiable? \\[\\begin{align*}\nf_1(z)&=z,&f_2(z)&=\\ol{z}, &f_3(z)&=z^3+z,\\\\\nf_4(z)&=\\frac{1}{2iz}, &f_5(z)&=|z|^2, &f_6(z)&=\\frac{|z|^2}{\\ol{z}}\n\\end{align*}\\]\n\n\n\n\n\n\nExercise 4.3\n\n\nLet \\(f\\colon V\\to W\\) be a bijection of open sets \\(V, W\\subset\\C.\\) Assume that \\(f\\) is complex differentiable at \\(z_0\\) and that \\(f^{-1}\\) is complex differentiable at \\(w_0=f(z_0).\\) Show that \\(f'(z_0)\\neq0.\\) (The same result holds for real differentiable maps to show \\(\\det J_f(z_0)\\neq0\\).)\n\n\n\n\n\n\nExercise 4.4\n\n\nLet \\(f\\colon U\\to\\C\\) be a holomorphic function with domain an open set \\(U\\subset\\C.\\) Suppose also that \\(f'(z)\\) is holomorphic. Write \\(f(z)=u(x,y)+iv(x,y),\\) where \\(z=x+iy.\\) As we will see, a consequence of \\(f\\) being holomorphic, is that \\(u\\) and \\(v\\) have continuous second order derivatives. Show that:\n\n\\(|f'(z)|^2=\\Bigl(\\frac{\\6u}{\\6x}\\Bigr)^2+\\Bigl(\\frac{\\6v}{\\6x}\\Bigr)^2=\\Bigl(\\frac{\\6u}{\\6y}\\Bigr)^2+\\Bigl(\\frac{\\6v}{\\6y}\\Bigr)^2\\)\nBoth \\(u,\\) \\(v\\) satisfy the Laplace equation \\(\\Delta(u)=\\Delta(v)=0,\\) where the Laplace operator is defined as \\(\\De=\\frac{\\6^2}{\\6 x^2}+\\frac{\\6^2}{\\6 y^2}.\\)\nFix \\(n\\in\\N.\\) Use b. to find a solution to \\(\\De(u)=0\\) that satisfies \\(u(z)=\\cos(n\\th)\\) for all \\(|z|=1,\\) \\(z=e^{i\\th}\\) on the unit circle.\nDoes the converse to b. hold?\n\n\n\n\n\n\n\nExercise 4.5\n\n\nFind subdomains where \\(\\sin,\\cos,\\sinh,\\cosh,\\tan,\\tanh\\) are injective. Compute the derivative of an inverse using the chain rule. Deduce an explicit formula for the derivative of an inverse.\n\n\n\n\n\n\nExercise 4.6\n\n\nShow that the set \\(\\cO(U)\\) of holomorphic functions on \\(U\\) becomes a ring under the operations of point-wise addition and multiplication: \\[\\begin{align*}\n(f+g)(z)&=f(z)+g(z),\n&(fg)(z)&=f(z)g(z).\n\\end{align*}\\]\n\n\n\n\n\n\nExercise 4.7\n\n\nLet \\(f\\colon\\C\\to\\C\\) be an entire function with image \\(f(\\C)\\subset\\R.\\) Prove that \\(f\\) is constant.\n\n\n\n\n\n\nExercise 4.8\n\n\nLet \\(U\\) be an open set and assume that \\(U\\) is path-connected, meaning that for all \\(z_0, z_1\\in U\\) there exists a continuously differentiable map \\(\\ga\\colon[0,1]\\to U\\) such that \\(\\ga(0)=z_0,\\) \\(\\ga(1)=z_1.\\)\n\nLet \\(f\\colon U\\to\\C\\) be a holomorphic function such that \\(f'(z)=0\\) for all \\(z\\in U.\\) Prove that \\(f(z)\\) is a constant function.\nHint: Consider the real and imaginary parts of \\(f\\circ\\ga.\\)\nShow that the only entire functions \\(f(z)\\) satisfying \\(f'(z)=C f(z)\\) for a constant \\(C\\in\\C\\) are the functions \\(f(z)=De^{Cz},\\) \\(D\\in\\C.\\)\nFind all entire solutions \\(f(z)\\) of \\(f''(z)=f(z).\\)\nHint: Consider \\(g=f+f',\\) \\(h=f-f'\\)\n\n\n\n\n\n\n\n\nDowson, H. R. 1979. “Serge Lang, Complex Analysis (Addison-Wesley, 1977), Xi + 321 Pp., £1200.” Proceedings of the Edinburgh Mathematical Society 22 (1): 65–65. https://doi.org/10.1017/S0013091500027838.\n\n\nFreitag, E., and R. Busam. 2009. Complex Analysis. Universitext. Springer Berlin Heidelberg. https://books.google.co.uk/books?id=3xBpS-ZKlgsC.\n\n\nHowie, J. M. 2012. Complex Analysis. Springer Undergraduate Mathematics Series. Springer London. https://books.google.co.uk/books?id=0FZDBAAAQBAJ.\n\n\nJameson, G. J. O. 1987. “H. A. Priestley, Introduction to Complex Analysis (Oxford University Press, 1985), 197 Pp., £8.50.” Proceedings of the Edinburgh Mathematical Society 30 (2): 325–26. https://doi.org/10.1017/S0013091500028406.\n\n\nRemmert, R. 1991. Theory of Complex Functions. Graduate Texts in Mathematics. Springer New York. https://books.google.co.uk/books?id=uP8SF4jf7GEC.\n\n\nThomson, B. S., J. B. Bruckner, and A. M. Bruckner. 2001. Elementary Real Analysis. Prentice-Hall. https://books.google.co.uk/books?id=6l_E9OTFaK0C.",
+    "crumbs": [
+      "Differentiation and contour integrals",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Holomorphic functions</span>"
+    ]
+  },
+  {
+    "objectID": "04-Week4.html#footnotes",
+    "href": "04-Week4.html#footnotes",
+    "title": "4  Holomorphic functions",
+    "section": "",
+    "text": "From Greek holos ‘whole, complete’ and morphē `form, shape↩︎",
+    "crumbs": [
+      "Differentiation and contour integrals",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Holomorphic functions</span>"
+    ]
+  },
+  {
+    "objectID": "05-Week5.html",
+    "href": "05-Week5.html",
+    "title": "5  Power Series",
+    "section": "",
+    "text": "Questions for further discussion\nRecall the following concept from analysis.\nWhen the radius of convergence is positive, we drop the word ‘formal’ and simply speak of a (convergent) power series.\nThe identity theorem for power series is the following result.",
+    "crumbs": [
+      "Differentiation and contour integrals",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Power Series</span>"
+    ]
+  },
+  {
+    "objectID": "05-Week5.html#questions-for-further-discussion",
+    "href": "05-Week5.html#questions-for-further-discussion",
+    "title": "5  Power Series",
+    "section": "",
+    "text": "Give precise statements of the comparison test, the ratio test and root test. Recall how the ratio test is proven by comparison with the geometric series.\nFind a power series \\(P\\) with \\(D(P)=\\ol{D}_1(0)\\setminus\\{\\pm1,\\pm i\\}.\\)\nExplain why ‘is a bounded sequence’ in Equation 5.8 can be replaced by ‘is a null sequence’.",
+    "crumbs": [
+      "Differentiation and contour integrals",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Power Series</span>"
+    ]
+  },
+  {
+    "objectID": "05-Week5.html#sec-Ch5_exercises",
+    "href": "05-Week5.html#sec-Ch5_exercises",
+    "title": "5  Power Series",
+    "section": "5.1 Exercises",
+    "text": "5.1 Exercises\n\n\n\nExercise 5.1\n\n\nFind the radius of convergence for the following power series centered at the origin.\n\n\\(\\sum_{n=0}^\\iy\\frac{z^n}{n^3}\\),\n\\(\\sum_{n=0}^\\iy z^{3n}\\),\n\\(\\sum_{n=0}^\\iy\\frac{z^n}{n^n}.\\)\n\nHint: Recall the ratio and root tests for series of complex numbers\n\n\n\n\n\n\nExercise 5.2\n\n\nTreating \\(e^z,\\) \\(\\sin(z),\\) \\(\\cos(z)\\) as formal power series with their usual Taylor expansion, find the terms of order \\(\\leq3\\) of the following power series:\n\n\\(e^z\\sin(z)\\),\n\\(\\sin(z)\\cos(z)\\),\n\\(1/\\cos(z)\\)\n\n\n\n\n\n\n\nExercise 5.3\n\n\nLet \\(P=\\sum_{n=0}^\\iy a_n z^n,\\) \\(Q=\\sum_{n=0}^\\iy b_n z^n\\) be power series with positive radii of convergence \\(\\rho_P, \\rho_Q&gt;0.\\) Show that:\n\n\\(P+Q=\\sum_{n=0}^\\iy (a_n+b_n) z^n\\) has radius of convergence \\(\\rho\\geqslant\\min(\\rho_P,\\rho_Q).\\)\n\\(PQ=\\sum_{n=0}^\\iy\\left(\\sum_{i+j=n}a_ib_j\\right)z^n\\) has radius of convergence \\(\\rho\\geqslant\\min(\\rho_P,\\rho_Q).\\)\n\n\n\n\n\n\n\nExercise 5.4\n\n\nFind a solution to the non-linear differential equation \\[f'(z)+f(z)^2=0,\\qquad f(0)=1\\] on a disk centered at \\(z_0=0\\) by making the ansatz \\(f(z)=\\sum_{n=0}^\\iy a_nz^n,\\) inductively determining the coefficients \\(a_n,\\) and finding the radius of convergence.\n\n\n\n\n\n\nExercise 5.5\n\n\nLet \\(P(z)=\\sum_{n=0}^\\iy a_n z^n\\) be a power series centered at \\(z_0=0\\) and assume that the radius of convergence \\(\\rho&gt;0\\) is positive. Suppose that \\(P(z)\\in\\R\\) for all \\(z\\in D_\\rho(0)\\cap\\R.\\) Prove that all coefficients \\(a_n,\\) \\(n\\in\\N,\\) must be real numbers. Deduce that \\(\\ol{P(z)}=P(\\ol{z})\\) for all \\(z\\in D_\\rho(0).\\)\n\n\n\n\n\n\nExercise 5.6\n\n\nProve that the ring of formal power series \\(\\C\\llbracket T\\rrbracket\\) is an integral domain. In other words, show that \\(PQ=0\\implies P=0\\) or \\(Q=0.\\)\n\n\n\n\n\n\nExercise 5.7\n\n\nThe binomial coefficient of a complex number \\(\\al\\neq0\\) and \\(k\\in\\N\\) is defined as \\[\\binom{\\al}{k}=\n\\begin{cases}\n\\frac{\\al(\\al-1)\\cdots(\\al-k+1)}{k!} &\\text{if }k&gt;0,\\\\\n1 &\\text{if } k=0.\n\\end{cases}\\] The is the formal power series \\[B_\\al = \\sum_{k=0}^\\iy \\binom{\\al}{k}T^k.\\]\n\nDetermine the radius of convergence of \\(B_\\al.\\)\nProve that if \\(\\al\\in\\N,\\) then \\(B_\\al(z)=(z+1)^\\al.\\)\nShow the generalized Vandermonde identity for \\(\\al,\\be,\\al+\\be\\in\\C^\\t,\\) \\[\\sum_{k=0}^n\\binom{\\al}{k}\\binom{\\be}{n-k}=\\binom{\\al+\\be}{n}.\\tag{$\\star$}\\]\nProve that for \\(\\al=1/k\\) the complex function \\(B_\\al(z)\\) satisfies \\(B_\\al(z)^k=z+1\\) on its domain. Hence \\(B_\\al(z)\\) is a \\(k\\)-th root of the function \\(z+1.\\)\n\n\n\n\n\n\n\nExercise 5.8\n\n\nFor \\(a&gt;0\\) and \\(z\\in\\C\\) define \\(a^z=\\exp(\\log(a)z).\\) Show that:\n\n\\(a^zb^z=(ab)^z\\) for all \\(a,b&gt;0,\\) \\(z\\in\\C\\)\n\\(a^za^w=a^{z+w}\\) for all \\(a&gt;0,\\) \\(z,w\\in\\C\\)\n\\(|a^z|=a^{\\Re(z)}\\) for all \\(a&gt;0,\\) \\(z\\in\\C\\)\n\nThe is defined as \\[\\ze(z)=\\sum_{n=1}^\\iy\\frac{1}{n^z}\\qquad\\text{for $\\Re(z)&gt;1.$}\\tag{$\\star$}\\]\n\nProve that the series (\\(\\star\\)) converges absolutely for all \\(z\\in\\C\\) with \\(\\Re(z)&gt;1\\) and uniformly on every subset \\(S_\\de=\\{z\\in\\C\\mid\\Re(z)&gt;1+\\de\\}\\) with \\(\\de&gt;0.\\)\n\n\n\n\n\n\n\n\nDowson, H. R. 1979. “Serge Lang, Complex Analysis (Addison-Wesley, 1977), Xi + 321 Pp., £1200.” Proceedings of the Edinburgh Mathematical Society 22 (1): 65–65. https://doi.org/10.1017/S0013091500027838.\n\n\nFreitag, E., and R. Busam. 2009. Complex Analysis. Universitext. Springer Berlin Heidelberg. https://books.google.co.uk/books?id=3xBpS-ZKlgsC.\n\n\nHowie, J. M. 2012. Complex Analysis. Springer Undergraduate Mathematics Series. Springer London. https://books.google.co.uk/books?id=0FZDBAAAQBAJ.\n\n\nJameson, G. J. O. 1987. “H. A. Priestley, Introduction to Complex Analysis (Oxford University Press, 1985), 197 Pp., £8.50.” Proceedings of the Edinburgh Mathematical Society 30 (2): 325–26. https://doi.org/10.1017/S0013091500028406.\n\n\nRemmert, R. 1991. Theory of Complex Functions. Graduate Texts in Mathematics. Springer New York. https://books.google.co.uk/books?id=uP8SF4jf7GEC.\n\n\nThomson, B. S., J. B. Bruckner, and A. M. Bruckner. 2001. Elementary Real Analysis. Prentice-Hall. https://books.google.co.uk/books?id=6l_E9OTFaK0C.",
+    "crumbs": [
+      "Differentiation and contour integrals",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Power Series</span>"
+    ]
+  },
+  {
+    "objectID": "06-Week6.html",
+    "href": "06-Week6.html",
+    "title": "6  Contour integrals",
+    "section": "",
+    "text": "Questions for further discussion\nIn this section, we will generalize the integral \\(\\int_a^b f(x)dx\\) from calculus in two ways. Firstly, we allow \\(f=u+iv\\) to be a complex function. Secondly, we will define the integral over more general curves \\(\\ga\\) than intervals \\([a,b]\\subset\\R.\\)\nFamiliar rules for integrals (linearity, substitution) carry over to complex-valued functions, but the following estimate is more tricky to prove.\nDue to Lemma 6.1(b) we view curves differing only by a parametrization as equivalent. In particular, we may translate and scale the domain \\([a,b].\\)\nFrom Equation 6.7 we obtain:\nIf \\(F\\) is holomorphic with \\(F'=0\\) and \\(U\\) is path-connected, see Definition 8.1(a) below, we recover from Equation 6.8 the familiar fact that \\(F\\) is a constant. Of course, this holds more generally for differentiable functions \\(F.\\)",
+    "crumbs": [
+      "Differentiation and contour integrals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Contour integrals</span>"
+    ]
+  },
+  {
+    "objectID": "06-Week6.html#questions-for-further-discussion",
+    "href": "06-Week6.html#questions-for-further-discussion",
+    "title": "6  Contour integrals",
+    "section": "",
+    "text": "Is there an analogue of Proposition 6.3 where \\(F\\) is only assumed to be real differentiable?\nFind the integral of a power series \\(P=\\sum_{n=0}^\\iy a_nz^n\\) with positive radius of convergence \\(\\rho&gt;0\\) along an arbitrary curve \\(\\ga\\) in \\(D_\\rho(0)\\)?",
+    "crumbs": [
+      "Differentiation and contour integrals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Contour integrals</span>"
+    ]
+  },
+  {
+    "objectID": "06-Week6.html#sec-Ch6_exercises",
+    "href": "06-Week6.html#sec-Ch6_exercises",
+    "title": "6  Contour integrals",
+    "section": "6.1 Exercises",
+    "text": "6.1 Exercises\n\n\n\nExercise 6.1\n\n\nRecall from Example 4.6 that \\(\\log\\colon\\C^-\\to\\C\\) is a holomorphic primitive of \\(1/z\\) on the slit plane \\(\\C^-.\\) Combine Equation 6.9 and Example 6.3 to show that there is no holomorphic primitive of \\(1/z\\) on the punctured plane \\(\\C^\\t.\\)\n\n\n\n\n\n\nExercise 6.1\n\n\nFor the curves \\(\\ga_k,\\) \\(k=1,2,3,4,\\) as in the following sketch\n\n\n\n\n\n\n\n\n\n\nfind piecewise C1 parameterisations \\(\\ga_k\\colon [a,b]\\to\\C,\\)\ncompute the length \\(L(\\ga_k)\\) (\\(\\ga_3\\) may be omitted)\nevaluate \\(\\int_{\\ga_k} z^2dz.\\)\n\n\n\n\n\n\n\nExercise 6.2\n\n\nDefine \\(\\ga_\\ep\\colon [-\\pi+\\ep,\\pi-\\ep]\\to\\C,\\) \\(\\ga_\\ep(t)=e^{it}\\) for \\(0&lt;\\ep&lt;\\pi.\\) Compute \\[\\lim_{\\ep\\to0}\\int_{\\ga_\\ep}z^{1/2}dz,\\] where the square root \\(z^{1/2}=\\exp(\\log(z)/2)\\) is defined as on Sheet 5 using the principal branch of the logarithm.\n(Aside: \\(z^{1/2}\\) is integrable in the sense of measure theory and using the more general integral defined there we can rewrite the above integral as \\(\\int_{\\partial D_1(0)}z^{1/2}dz.\\))\n\n\n\n\n\n\nExercise 6.3\n\n\nLet \\(\\ga\\) be the straight line from \\(z=1\\) to \\(z=i.\\) Let \\(f(z)=1/z^4.\\) Determine the maximum of \\(|f(z)|\\) over all \\(z\\in\\Im(\\ga).\\) Use this to estimate \\[\\left|\\int_\\ga f(z)dz\\right|\\leqslant 4\\sqrt{2}.\\]\nThen compute \\(\\int_\\ga f(z)dz\\) directly and compare this to the estimate.\n\n\n\n\n\n\nExercise 6.4\n\n\nLet \\(f(z)\\colon\\partial D_r(0)\\to\\C\\) be a continuous function. Show that \\[\\overline{\\int_{\\partial D_r(z_0)}f(z)dz}=-r^2\\int_{\\partial D_r(z_0)}\\overline{f(z)}(z-z_0)^{-2}dz.\\]\n\n\n\n\n\n\nExercise 6.5\n\n\nLet \\(D_1, D_2\\subset\\C\\) be closed subsets and \\(f\\colon D_1\\cup D_2\\to\\C\\) be continuous. Suppose that \\(\\int_{\\ga_1} f(z)dz=0\\) for every closed curve \\(\\ga_1\\) in \\(D_1\\) and that \\(\\int_{\\ga_2} f(z)dz=0\\) for every closed curve \\(\\ga_2\\) in \\(D_2.\\) Show that if \\(D_1\\cap D_2\\) is path-connected, then \\(\\int_\\ga f(z)dz=0\\) for every closed curved \\(\\ga\\colon[a,b]\\to D_1\\cup D_2.\\)\nHint: Subdivide \\([a,b]\\) into subintervals \\([t_{k-1},t_k]\\) which map under \\(\\ga\\) entirely to \\(D_1\\) or entirely to \\(D_2.\\)\n\n\n\n\n\n\n\nDowson, H. R. 1979. “Serge Lang, Complex Analysis (Addison-Wesley, 1977), Xi + 321 Pp., £1200.” Proceedings of the Edinburgh Mathematical Society 22 (1): 65–65. https://doi.org/10.1017/S0013091500027838.\n\n\nFreitag, E., and R. Busam. 2009. Complex Analysis. Universitext. Springer Berlin Heidelberg. https://books.google.co.uk/books?id=3xBpS-ZKlgsC.\n\n\nHowie, J. M. 2012. Complex Analysis. Springer Undergraduate Mathematics Series. Springer London. https://books.google.co.uk/books?id=0FZDBAAAQBAJ.\n\n\nJameson, G. J. O. 1987. “H. A. Priestley, Introduction to Complex Analysis (Oxford University Press, 1985), 197 Pp., £8.50.” Proceedings of the Edinburgh Mathematical Society 30 (2): 325–26. https://doi.org/10.1017/S0013091500028406.\n\n\nRemmert, R. 1991. Theory of Complex Functions. Graduate Texts in Mathematics. Springer New York. https://books.google.co.uk/books?id=uP8SF4jf7GEC.\n\n\nThomson, B. S., J. B. Bruckner, and A. M. Bruckner. 2001. Elementary Real Analysis. Prentice-Hall. https://books.google.co.uk/books?id=6l_E9OTFaK0C.",
+    "crumbs": [
+      "Differentiation and contour integrals",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Contour integrals</span>"
+    ]
+  },
+  {
+    "objectID": "07-Week7.html",
+    "href": "07-Week7.html",
+    "title": "7  Cauchy’s theorem",
+    "section": "",
+    "text": "Questions for further discussion\nHow should Figure 7.5 be interpreted? Can you give a formula for the path homotopy (consider cases)?",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Cauchy's theorem</span>"
+    ]
+  },
+  {
+    "objectID": "07-Week7.html#questions-for-further-discussion",
+    "href": "07-Week7.html#questions-for-further-discussion",
+    "title": "7  Cauchy’s theorem",
+    "section": "",
+    "text": "Give a counterexample to Cauchy’s theorem when (i) \\(\\ga\\) is not null-homotopic (ii) \\(f(z)\\) is not holomorphic\nDoes Cauchy’s theorem hold for \\(f(z)=\\ol{z}\\)?",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Cauchy's theorem</span>"
+    ]
+  },
+  {
+    "objectID": "07-Week7.html#sec-Ch7_exercises",
+    "href": "07-Week7.html#sec-Ch7_exercises",
+    "title": "7  Cauchy’s theorem",
+    "section": "7.1 Exercises",
+    "text": "7.1 Exercises\n\n\n\nExercise 7.1\n\n\n\nSketch the curves \\[\\begin{align*}\n\\ga_0\\colon[-1,1]&\\longra\\C,&\\ga_0(t)&=t,\\\\\n\\ga_1\\colon[-1,1]&\\longra\\C,&\\ga_1(t)&=e^{i\\pi\\frac{1-t}{2}}\n\\end{align*}\\] and show that they are path-homotopic. \n\nLet \\(0&lt;r_0&lt;r_1\\) and \\(z_0\\in\\C.\\) Prove that the loops \\(\\partial D_{r_0}(z_0)\\) and \\(\\partial D_{r_1}(z_0)\\) are freely homotopic in the closed annulus \\(\\ol A_{r_0,r_1}(z_0).\\)\n\n\n\n\n\n\n\n\nExercise 7.2\n\n\nLet \\(\\al+i\\be\\in\\C.\\) Determine \\[\\int_a^b e^{(\\al+i\\be)t} dt\\] to compute \\[\\int_a^b e^{\\al t}\\cos(\\be t)dt.\\]\n\n\n\n\n\n\nExercise 7.3\n\n\nLet \\(\\C^-=\\C\\setminus(-\\iy,0]\\) be the slit plane.\n\nShow that any two points in \\(\\C^-\\) may be connected by a path in \\(\\C^-.\\) Hence \\(\\C^-\\) is path-connected.\nShow that every closed curve \\(\\ga\\colon[a,b]\\to\\C^-\\) is null-homotopic in \\(\\C^-\\) by finding a homotopy \\[\\Ga\\colon[0,1]\\t[a,b]\\longra\\C^-,  (s,t)\\longmapsto\\Ga_s(t)\\] satisfying \\(\\Ga_0(t)=\\ga(t)\\) and \\(\\Ga_1(t)=1\\) for all \\(t\\in[a,b].\\) Hence \\(\\C^-\\) is simply-connected.\nProve the analogues of a. and b. for a disk \\(D_r(z_0).\\)\nUse Cauchy’s Theorem to prove that the punctured plane \\(\\C^\\t=\\C\\setminus\\{0\\}\\) is not simply-connected. That is, there exists a closed curve in \\(\\C^\\t\\) that is not null-homotopic in \\(\\C^\\t.\\)\n\n\n\n\n\n\n\nExercise 7.4\n\n\nLet \\(0&lt;b&lt;1.\\)\n\nUsing the geometric series, find the power series expansion \\[\\frac{1}{z-1/b}=\\sum_{n=0}^\\iy a_n(z-b)^n\\] with center \\(z_0=b\\) and determine the radius of convergence \\(\\rho.\\)\nUse a. to show that for all \\(0&lt;r&lt;\\rho\\) \\[\\int_{\\partial D_r(b)}\\frac{dz}{(z-b)(z-1/b)}=\\frac{2\\pi i}{b-1/b}.\\]\nUse c. to compute \\[\\int_0^{2\\pi}\\frac{dt}{1-2b\\cos(t)+b^2}.\\]\n\n\n\n\n\n\n\nExercise 7.5\n\n\nLet \\(\\ga\\colon[0,1]\\to D\\) be a curve in \\(D\\subset\\C\\) and let \\(-\\ga\\colon[0,1]\\to D,\\) \\((-\\ga)(t)=\\ga(1-t)\\) be the opposite curve. Prove that \\(\\ga\\ast(-\\ga)\\) is path-homotopic to a constant loop.\n\n\n\n\n\n\n\nDowson, H. R. 1979. “Serge Lang, Complex Analysis (Addison-Wesley, 1977), Xi + 321 Pp., £1200.” Proceedings of the Edinburgh Mathematical Society 22 (1): 65–65. https://doi.org/10.1017/S0013091500027838.\n\n\nFreitag, E., and R. Busam. 2009. Complex Analysis. Universitext. Springer Berlin Heidelberg. https://books.google.co.uk/books?id=3xBpS-ZKlgsC.\n\n\nHowie, J. M. 2012. Complex Analysis. Springer Undergraduate Mathematics Series. Springer London. https://books.google.co.uk/books?id=0FZDBAAAQBAJ.\n\n\nJameson, G. J. O. 1987. “H. A. Priestley, Introduction to Complex Analysis (Oxford University Press, 1985), 197 Pp., £8.50.” Proceedings of the Edinburgh Mathematical Society 30 (2): 325–26. https://doi.org/10.1017/S0013091500028406.\n\n\nRemmert, R. 1991. Theory of Complex Functions. Graduate Texts in Mathematics. Springer New York. https://books.google.co.uk/books?id=uP8SF4jf7GEC.\n\n\nThomson, B. S., J. B. Bruckner, and A. M. Bruckner. 2001. Elementary Real Analysis. Prentice-Hall. https://books.google.co.uk/books?id=6l_E9OTFaK0C.",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Cauchy's theorem</span>"
+    ]
+  },
+  {
+    "objectID": "08-Week8.html",
+    "href": "08-Week8.html",
+    "title": "8  Applications of Cauchy’s theorem",
+    "section": "",
+    "text": "Questions for further discussion\nHint: consider \\(\\frac{1}{2\\pi i}\\int_\\ga \\frac{1}{z}dz\\) for a loop \\(\\ga\\) in \\(\\C^\\t.\\) +\nIt is a mysterious calculus fact that \\(\\arctan(x)=\\sum_{n=0}^\\iy (-1)^n\\frac{x^{2n+1}}{2n+1}\\) diverges for \\(|x|&gt; 1\\) although \\(\\arctan\\colon\\R\\to\\R\\) is smooth. In terms of the principal logarithm, \\(\\arctan(z)=\\frac{i}{2}\\log\\left(\\frac{i+z}{i-z}\\right).\\) Apply this to give a geometric explanation of the divergence using Theorem 8.2.",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Applications of Cauchy's theorem</span>"
+    ]
+  },
+  {
+    "objectID": "08-Week8.html#questions-for-further-discussion",
+    "href": "08-Week8.html#questions-for-further-discussion",
+    "title": "8  Applications of Cauchy’s theorem",
+    "section": "",
+    "text": "How should \\(\\int_{-i}^{1+i} z^2dz\\) be interpreted? What is the result?\nWhy is \\(\\C^\\t\\) path-connected but not simply connected?",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Applications of Cauchy's theorem</span>"
+    ]
+  },
+  {
+    "objectID": "08-Week8.html#sec-Ch8_exercises",
+    "href": "08-Week8.html#sec-Ch8_exercises",
+    "title": "8  Applications of Cauchy’s theorem",
+    "section": "8.1 Exercises",
+    "text": "8.1 Exercises\n\n\n\nExercise 8.1\n\n\nCompute the following integrals:\n\n\\(\\int_{\\partial D_1(0)}\\frac{\\sin(z)}{z^2}dz,\\)\n\\(\\int_{\\partial D_{1/2}(0)}\\frac{\\cos(z)}{z-1}dz,\\)\n\\(\\int_{\\partial D_2(1)}\\frac{\\sin(\\cos(z))}{z-1}dz.\\)\n\n\n\n\n\n\n\nExercise 8.2\n\n\nLet \\(f\\colon\\C\\to\\C\\) be entire. Suppose there is a constant \\(C&gt;0\\) such that \\(|f(z)|\\leqslant C|z|^d\\) for all \\(z\\in\\C.\\) Prove that \\(f(z)\\) is a polynomial of degree \\(\\leqslant d.\\)\nHint: Generalize the proof of Liouville’s theorem.\n\n\n\n\n\n\nExercise 8.3\n\n\nLet \\(f\\colon U\\to\\C\\) be holomorphic and \\(\\ol D_r(z_0)\\subset U.\\) Show that \\[f(z_0)=\\frac{1}{2\\pi}\\int_0^{2\\pi} f(z_0+re^{i\\varphi})d\\varphi\\]\nand interpret this equation geometrically.\n\n\n\n\n\n\nExercise 8.4\n\n\nLet \\(f\\colon U\\to\\C\\) be holomorphic and \\(\\ol D_r(z_0)\\subset U.\\)\n\nProve that \\(g(x)=f(z_0+re^{ix})\\) is a \\(2\\pi\\)-periodic function \\(\\R\\to\\C.\\)\nShow that the Cauchy integral formula implies an absolutely and uniformly convergent Fourier expansion \\[g(x)=\\sum_{n=0}^\\iy \\ga_ne^{inx},\\qquad\\forall x\\in\\R,\\] with only non-negative Fourier modes. Moreover, show that \\(\\ga_n=\\frac{1}{2\\pi}\\int_0^{2\\pi}g(x)e^{-inx}dx.\\)$\n\nNote. More generally, a bi-infinite Fourier series \\(\\sum_{n=-\\iy}^{\\iy}\\ga_n e^{inx}\\) can be obtained as a superposition \\(g_1(x)+g_2(-x).\\)\n\n\n\n\n\n\nExercise 8.5\n\n\nLet \\(f\\colon U\\to\\C\\) be holomorphic and \\(\\ol D_r(z_0)\\subset U.\\) Using polar coordinates show that for the (surface) integral over the unit disk \\(\\ol D_r(x_0)=\\{(x,y)\\in\\R^2\\mid (x-x_0)^2+(y-y_0)^2\\leqslant r\\}\\) we have \\[f(z_0)=\\frac{1}{\\pi r^2}\\int_{\\ol D_r(z_0)}f(x+iy)dxdy\\]\nand interpret this equation geometrically.\n\n\n\n\n\n\n\nDowson, H. R. 1979. “Serge Lang, Complex Analysis (Addison-Wesley, 1977), Xi + 321 Pp., £1200.” Proceedings of the Edinburgh Mathematical Society 22 (1): 65–65. https://doi.org/10.1017/S0013091500027838.\n\n\nFreitag, E., and R. Busam. 2009. Complex Analysis. Universitext. Springer Berlin Heidelberg. https://books.google.co.uk/books?id=3xBpS-ZKlgsC.\n\n\nHowie, J. M. 2012. Complex Analysis. Springer Undergraduate Mathematics Series. Springer London. https://books.google.co.uk/books?id=0FZDBAAAQBAJ.\n\n\nJameson, G. J. O. 1987. “H. A. Priestley, Introduction to Complex Analysis (Oxford University Press, 1985), 197 Pp., £8.50.” Proceedings of the Edinburgh Mathematical Society 30 (2): 325–26. https://doi.org/10.1017/S0013091500028406.\n\n\nRemmert, R. 1991. Theory of Complex Functions. Graduate Texts in Mathematics. Springer New York. https://books.google.co.uk/books?id=uP8SF4jf7GEC.\n\n\nThomson, B. S., J. B. Bruckner, and A. M. Bruckner. 2001. Elementary Real Analysis. Prentice-Hall. https://books.google.co.uk/books?id=6l_E9OTFaK0C.",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Applications of Cauchy's theorem</span>"
+    ]
+  },
+  {
+    "objectID": "09-Week9.html",
+    "href": "09-Week9.html",
+    "title": "9  Laurent series and singularities",
+    "section": "",
+    "text": "Questions for further discussion\nUsing the inversion\\[i\\colon\\C^\\t\\longra\\C^\\t,  z\\longmapsto w=z^{-1}, \\tag{9.3}\\]\nwe can rewrite Equation 9.2 as \\(P(z)=P_+(z)+P_-(w).\\) Therefore we can treat the principal part as a power series as well, but on a second complex \\(w\\)-plane corresponding to the original complex \\(z\\)-plane via Equation 9.3.\nIf the domain of a bilateral series \\(P\\) with center \\(z_0\\) contains an non-empty open annulus \\(A_{r,R}(z_0)\\subset D(P,z_0),\\) then \\(P\\) is called a (convergent) Laurent series at \\(z_0.\\)\nBy applying Theorem 9.1 to \\(A_{r,R}(z_0)\\) for all \\(0&lt;r&lt;R\\) we obtain a Laurent expansion\n\\[f(z)=\\sum_{n=-\\iy}^\\iy a_n(z-z_0)^n \\tag{9.8}\\]\nthat converges on \\(D^\\t_R(z_0).\\)",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Laurent series and singularities</span>"
+    ]
+  },
+  {
+    "objectID": "09-Week9.html#questions-for-further-discussion",
+    "href": "09-Week9.html#questions-for-further-discussion",
+    "title": "9  Laurent series and singularities",
+    "section": "",
+    "text": "Define the sum of formal Laurent series in the same way as Equation 5.2. Why can’t we use Equation 5.3 to define the product of formal Laurent series?\nIn Definition 9.2, why did we exclude \\(z=z_0\\)?\nFor an isolated singularity, why is \\(U\\cup\\{z_0\\}\\) always an open set?\nDoes the converse of the Riemann removable singularities theorem hold?",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Laurent series and singularities</span>"
+    ]
+  },
+  {
+    "objectID": "09-Week9.html#sec-Ch9_exercises",
+    "href": "09-Week9.html#sec-Ch9_exercises",
+    "title": "9  Laurent series and singularities",
+    "section": "9.1 Exercises",
+    "text": "9.1 Exercises\n\n\n\nExercise 9.1\n\n\nDetermine whether the singularities of the following holomorphic functions \\(f(z)\\) are isolated. If so, compute the residue. When applicable, find also the order of the pole or a holomorphic extension.\n\n\\(\\frac{z+i}{z^2+1}\\),\n\\(\\frac{1-\\cos(z)}{z^2}\\),\n\\(\\frac{1}{\\cos(z)-1}\\),\n\\(e^{1/z}\\)\n\n\n\n\n\n\n\nExercise 9.2\n\n\nDetermine whether the domain \\(D(P)\\) of the following formal bilateral series \\(P\\) is non-empty and, if so, find the radii of convergence. i. \\(\\sum_{n=-\\iy}^\\iy\\frac{z^n}{|n|!}\\),\n\n\\(\\sum_{n=-\\iy}^\\iy z^n\\),\n\\(\\sum_{n=-\\iy}^\\iy \\frac{|n|^{|n|}}{|n|!}z^n.\\)\n\n\n\n\n\n\n\nExercise 9.3",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Laurent series and singularities</span>"
+    ]
+  },
+  {
+    "objectID": "10-Week10.html",
+    "href": "10-Week10.html",
+    "title": "10  Residue theorem",
+    "section": "",
+    "text": "10.1 Exercises\nPick a subdivision \\(a=t_0&lt;t_1&lt;\\cdots&lt;t_n=b\\) such that \\(\\ga|_{[t_{k-1},t_k]}\\) is continuously differentiable. Using branches of the logarithm, we can write \\(\\ga(t)=z_0+r(t)e^{i\\th(t)}\\) for \\(r(t)=|\\ga(t)-z_0|\\) and a continuous function \\(\\th\\colon[a,b]\\to\\R\\) with \\(\\th|_{[t_{k-1},t_k]}\\) continuously differentiable. With this notation, the following holds.\nExercise 10.1\n\n\nDetermine the winding numbers \\(W_{z_0}(\\ga)\\) in the following cases.\n\n\\(\\ga\\colon[0,2\\pi]\\to\\C,\\) \\(\\ga(t)=e^{it},\\) for \\(z_0=0,2.\\)\n\\(\\ga\\colon[2\\pi,10\\pi]\\to\\C,\\) \\(\\ga(t)=\\begin{cases}\n      te^{it} & \\text{if $t\\in[2\\pi, 6\\pi],$}\\\\\n      12\\pi - t & \\text{if $t\\in[6\\pi,10\\pi],$}\n    \\end{cases}\\) for \\(z_0=0, 20.\\)\n\\(\\ga\\colon[0,2\\pi]\\to\\C,\\) \\(\\ga(t)=(2+\\cos(t))e^{2it},\\) for \\(z_0=0,4.\\)\nExercise 10.2\n\n\nUse the residue theorem to compute \\[\\int_{\\partial D_r(0)}\\frac{(z+2)^2}{z(z-1)^2}dz\\]\nfor all \\(0&lt;r\\neq1.\\)\nHint: Consider the cases \\(r&gt;1\\) and \\(r&lt;1\\) separately.\nExercise 10.3\n\n\nApply the residue theorem to the contour \\(\\partial D_1(0)\\) and a suitable holomorphic function \\(f(z)\\) to compute the integral\\[\\int_0^{2\\pi}\\frac{dx}{2+\\cos(x)}.\\]\nExercise 10.4\n\n\nCompute the integral \\[\\int_{0}^{+\\iy}\\frac{\\cos(x)}{\\sqrt{x}}dx\\] by considering \\(f(z)=\\frac{e^{iz}}{\\sqrt{z}}\\) and the following contour \\(\\ga_{r,R}\\) for \\(r\\to 0,\\) \\(R\\to+\\iy.\\)\n\n\n\n\n\n\n\n\n\nHint: Recall that \\(\\int_0^{\\iy}e^{-x^2}dx=\\sqrt{\\pi}/2.\\)\nExercise 10.5\n\n\nCompute the integral \\[\\int_{-\\iy}^{+\\iy}\\frac{dx}{1+x^6}\\]\nby applying the residue theorem to \\(f(z)=\\frac{1}{1+z^6}\\) and the following upper semi-circular contour \\(\\ga_R\\) for \\(R\\to+\\iy.\\)",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Residue theorem</span>"
+    ]
+  },
+  {
+    "objectID": "10-Week10.html#sec-Chap10_Exercises",
+    "href": "10-Week10.html#sec-Chap10_Exercises",
+    "title": "10  Residue theorem",
+    "section": "",
+    "text": "Dowson, H. R. 1979. “Serge Lang, Complex Analysis (Addison-Wesley, 1977), Xi + 321 Pp., £1200.” Proceedings of the Edinburgh Mathematical Society 22 (1): 65–65. https://doi.org/10.1017/S0013091500027838.\n\n\nFreitag, E., and R. Busam. 2009. Complex Analysis. Universitext. Springer Berlin Heidelberg. https://books.google.co.uk/books?id=3xBpS-ZKlgsC.\n\n\nHowie, J. M. 2012. Complex Analysis. Springer Undergraduate Mathematics Series. Springer London. https://books.google.co.uk/books?id=0FZDBAAAQBAJ.\n\n\nJameson, G. J. O. 1987. “H. A. Priestley, Introduction to Complex Analysis (Oxford University Press, 1985), 197 Pp., £8.50.” Proceedings of the Edinburgh Mathematical Society 30 (2): 325–26. https://doi.org/10.1017/S0013091500028406.\n\n\nRemmert, R. 1991. Theory of Complex Functions. Graduate Texts in Mathematics. Springer New York. https://books.google.co.uk/books?id=uP8SF4jf7GEC.\n\n\nThomson, B. S., J. B. Bruckner, and A. M. Bruckner. 2001. Elementary Real Analysis. Prentice-Hall. https://books.google.co.uk/books?id=6l_E9OTFaK0C.",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Residue theorem</span>"
+    ]
+  },
+  {
+    "objectID": "11-Week11.html",
+    "href": "11-Week11.html",
+    "title": "11  Applications to integrals",
+    "section": "",
+    "text": "The residue theorem can be used to compute integrals of functions that do not have an obvious primitive. For this, we first need to find a suitable holomorphic function and contour to which we can apply the residue theorem, which is guesswork. The original integral is often a part of this contour and one shows that the rest of contour integral tends to zero.\nWe give three examples that illustrate the general technique.\n\nExample 11.1  \n\nLet \\(f(z)=\\frac{1}{1+z^4},\\) which is holomorphic except for poles of order one at all points \\(\\ze^{1+2k},\\) \\(k=0,1,2,3,\\) where \\(\\ze=e^{i\\pi/4}.\\) For \\(R&gt;0\\) introduce the semi-circular contour \\(\\eta_R\\colon[0,\\pi]\\to\\C,\\) \\(\\eta_R(t)=Re^{it}\\) and let \\(\\ga_R\\) be the concatenation of \\(\\eta_R\\) with the real interval \\([-R,R],\\) parametrized as in Example 6.1.\n\n\n\n\n\n\n\n\n\nThe residues are \\[\\Res_{\\ze^{1+2k}}(f)=\\frac{-\\ze^{1+2k}}{4}.\\]\nWhen \\(R&gt;1,\\) the only isolated singularities inside the contour are \\(\\ze, \\ze^3,\\) hence \\(W_\\ze(\\ga_R)=W_{\\ze^3}(\\ga_R)=1\\) (more formally, this holds by Example 10.3 and Proposition 10.2) and \\(W_{\\ze^5}(\\ga_R)=W_{\\ze^7}(\\ga_R)=0\\) (more formally, by Cauchy’s Theorem 7.1). By the residue Theorem 10.1, \\[\\int_{\\ga_R}f(z)dz=2\\pi i\\bigl[W_\\ze(\\ga_R)\\Res_\\ze(f)+W_{\\ze^3}(\\ga_R)\\Res_{\\ze^3}(f)\\bigr]=\\frac{\\pi}{\\sqrt{2}}\\]\nThe contour integral decomposes as \\[\\frac{\\pi}{\\sqrt{2}}=\\int_{\\ga_R}f(z)dz=\\int_{\\eta_R}f(z)dz+\\int_{[-R,R]}f(z)dz\\]\nand we have \\[\\int_{-\\iy}^{+\\iy}f(z)dz=\\lim_{R\\to+\\iy}\\int_{[-R,R]}f(z)dz.\\]\nWe claim that \\(\\int_{\\eta_R}f(z)dz\\to0\\) as \\(R\\to+\\iy.\\) We have \\(L(\\eta_R)=\\pi R\\) and \\[|f(z)|=\\frac{1}{|z^4+1|}\\overset{}{\\leqslant}\\frac{1}{R^4-1}\\] where the inequality follows by Equation 1.7.\nHence Equation 6.7 implies \\(\\left|\\int_{\\eta_R}f(z)dz\\right|\\leqslant\\frac{\\pi R}{R^4-1},\\) which indeed tends to zero as \\(R\\to+\\iy.\\) Putting things together, we get \\[\\int_{-\\iy}^{+\\iy}\\frac{dx}{1+x^4}=\\frac{\\pi}{\\sqrt{2}}.\\]\nMore generally, we can use the approach above to compute all integrals \\(\\int_{-\\iy}^{+\\iy}f(z)dz\\) of rational functions \\(f(z)=\\frac{p(z)}{q(z)}\\) with \\(\\deg(q)\\geqslant\\deg(p)+2\\) and \\(q(x)\\neq0\\) for all \\(x\\in\\R.\\)\n\n\nIntegrals made only of trigonometric functions can often be evaluated using the residue theorem and the following method.\n\nExample 11.2  \n\nIf \\(x\\in\\R,\\) then \\(\\cos(x)=\\frac{z+1/z}{2},\\) \\(\\sin(x)=\\frac{z-1/z}{2i}\\) for \\(z=e^{ix}.\\) Using this, we can change variables and use \\(dz=izdx\\) to rewrite \\[\\int_0^{2\\pi}\\frac{\\cos(x)^2}{\\sin(x)+2}dx=\\int_{\\6 D_1(0)}\\frac{(1+z^2)^2}{2z^2(z^2+4iz-1)}dz\\]\nas a contour integral, which is evaluated using the residue theorem. The singularities of \\(f(z)=\\frac{(1+z^2)^2}{2z^2(z^2+4iz-1)}=\\frac{(1+z^2)^2}{2z^2(z-z_+)(z-z_-)}\\) are at \\(z=0\\) (pole of order two) and \\(z_\\pm=-i(2\\pm\\sqrt{3})\\) (poles of order one). Using Proposition 10.1(c), we find that the residues are \\[\\begin{align*}\n\\Res_0(f)&=\\lim_{z\\to0}\\frac{d}{dz}\\frac{(1+z^2)^2}{2(z^2+4iz-1)}=-2i,\\\\\n\\Res_{z_-}(f)&=\\lim_{z\\to z_-}\\frac{(1+z^2)^2}{2z^2(z-z_+)}=\\frac{(1+z_-^2)^2}{2z_-^2(z_--z_+)}=i\\sqrt{3}.\n\\end{align*}\\] Now the residue theorem implies \\[\\int_{\\6 D_1(0)}\\frac{(1+z^2)^2}{2z^2(z^2+4iz-1)}dz=2\\pi i(-2i+i\\sqrt{3})=2\\pi(\\sqrt{3}-2).\\]\nThis example can be generalized to compute integrals over \\([0,2\\pi]\\) of rational algebraic functions of \\(\\sin(x)\\) and \\(\\cos(x).\\)\n\n\nThe following integral was already computed in calculus using polar coordinates in the plane.\n\nExample 11.3  \n\n\\(\\int_{-\\iy}^{+\\iy} e^{-x^2}dx=\\sqrt{\\pi}\\)\nLet \\(a=(1+i)\\sqrt{\\frac{\\pi}{2}}.\\) Then \\(a^2=i\\pi.\\) The function \\(f(z)=\\frac{e^{-z^2}}{1+e^{-2az}}\\) is holomorphic except for poles of order one at all points \\(a\\left(k+\\frac12\\right),\\) \\(k\\in\\Z\\) (simple zeros of the denominator). Using the power series expansion of the exponential, we find \\[\\begin{align*}\n1+e^{-2az}&=1+e^{-2a\\left(z-\\frac{a}{2}\\right)}e^{a^2}=1-e^{-2a\\left(z-\\frac{a}{2}\\right)}\\\\\n&=2a\\left(z-\\frac{a}{2}\\right)-\\frac{1}{2!}4a^2\\left(z-\\frac{a}{2}\\right)^2+\\ldots\n\\end{align*}\\] and this gives the residue \\[\\Res_{a/2}(f) = \\lim_{z\\to a/2}\\frac{e^{-z^2}(z-\\frac{a}{2})}{1+e^{-2az}}=\\frac{e^{-a^2/4}}{2a}=\\frac{-i}{2\\sqrt{\\pi}}.\\]\nFrom \\(a^2=i\\pi\\) it is not hard to check \\[f(z)-f(z+a)=e^{-z^2}.\\]\nHence the integral over \\(z\\in[-\\iy,+\\iy]\\) can be computed using the two horizontal parts of the following contour \\(\\ga_R\\) as \\(R\\to+\\iy.\\)\n\n\n\n\n\n\n\n\n\nThe only singularity inside the contour is \\(a/2,\\) so the residue theorem gives \\[\\int_{\\ga_R} f(z)dz=2\\pi i\\frac{-i}{2\\sqrt{\\pi}}=\\sqrt{\\pi}.\\]\nThe contour integral over \\(\\ga_R\\) splits into four parts. We estimate the vertical parts \\(\\eta_{\\pm R}\\) of the integral as follows. Let \\(z=x+iy\\) with \\(x=\\pm R\\) and \\(y\\in[0,\\sqrt{\\pi/2}].\\) Then \\[|f(z)|\\leqslant\\frac{e^{-\\Re(z^2)}}{1-e^{-\\Re(2 az)}}=\\frac{e^{y^2-x^2}}{1-e^{\\sqrt{2\\pi}(y-x)}}\\leqslant\\frac{e^{\\pi/2-x^2}}{1-e^{-\\sqrt{2\\pi}x}}\\]\ntends to zero as \\(|x|\\to+\\iy,\\) uniformly in \\(y\\in[0,\\sqrt{\\pi/2}].\\) Hence Equation 6.7 implies \\[\\int_{\\eta_{\\pm R}} f(z)dz\\xrightarrow{R\\to\\iy}0\\]\nand we conclude \\[\\begin{align*}\n\\sqrt{\\pi}&=\\int_{\\ga_R} f(z)dz\\\\\n&=\\int_{-R}^{+R} f(z)dz+\\int_{R}^{-R} f(z+a)dz+\\int_{\\eta_{R}} f(z)dz+\\int_{\\eta_{-R}} f(z)dz\\\\\n&\\xrightarrow{R\\to+\\iy}\\int_{-\\iy}^{+\\iy} f(z)dz-\\int_{-\\iy}^{+\\iy} f(z+a)dz=\\int_{-\\iy}^{+\\iy} e^{-x^2}dx.\n\\end{align*}\\]\n\n\n\n\nReferences\n\n\nDowson, H. R. 1979. “Serge Lang, Complex Analysis (Addison-Wesley,\n1977), Xi + 321 Pp., £1200.” Proceedings of the Edinburgh\nMathematical Society 22 (1): 65–65. https://doi.org/10.1017/S0013091500027838.\n\n\nFreitag, E., and R. Busam. 2009. Complex Analysis.\nUniversitext. Springer Berlin Heidelberg. https://books.google.co.uk/books?id=3xBpS-ZKlgsC.\n\n\nHowie, J. M. 2012. Complex Analysis. Springer Undergraduate\nMathematics Series. Springer London. https://books.google.co.uk/books?id=0FZDBAAAQBAJ.\n\n\nJameson, G. J. O. 1987. “H. A. Priestley, Introduction to Complex\nAnalysis (Oxford University Press, 1985), 197 Pp., £8.50.”\nProceedings of the Edinburgh Mathematical Society 30 (2):\n325–26. https://doi.org/10.1017/S0013091500028406.\n\n\nRemmert, R. 1991. Theory of Complex Functions. Graduate Texts\nin Mathematics. Springer New York. https://books.google.co.uk/books?id=uP8SF4jf7GEC.\n\n\nThomson, B. S., J. B. Bruckner, and A. M. Bruckner. 2001. Elementary\nReal Analysis. Prentice-Hall. https://books.google.co.uk/books?id=6l_E9OTFaK0C.",
+    "crumbs": [
+      "Cauchy's theorem and residues",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Applications to integrals</span>"
+    ]
+  }
+]
