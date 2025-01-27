@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MAT-20025: Abstract Algebra - 9&nbsp; Rings and Fields</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./08-Week8.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+-->
+
+
+</head><body class="nav-sidebar docked"><div style="display:none">
+
+\(\newcommand{\D}{\displaystyle}\)
+\(\newcommand{\maps}{\rightarrow}\)
+\(\newcommand{\imp}{\Rightarrow}\)
+\(\newcommand{\limp}{\Leftarrow}\)
+\(\newcommand{\ifif}{\Leftrightarrow}\)
+\(\newcommand{\x}{\times}\)
+\(\newcommand{\where}{\; | \;}\)
+\(\newcommand{\sd}{\triangle}\)
+\(\newcommand{\id}{\operatorname{id}}\)
+
+
+
+\(\newcommand{\Hbb}{\mathbb{H}}\)
+\(\newcommand{\N}{\mathbb{N}}\)
+\(\newcommand{\Z}{\mathbb{Z}}\)
+\(\newcommand{\Q}{\mathbb{Q}}\)
+\(\newcommand{\R}{\mathbb{R}}\)
+\(\newcommand{\Sbb}{\mathbb{S}}\)
+\(\newcommand{\rn}{\mathbb{R}^n}\)
+\(\newcommand{\rwz}{\mathbb{R} \backslash \{0\}}\)
+\(\newcommand{\cwz}{\mathbb{C} \backslash \{0\}}\)
+\(\newcommand{\C}{\mathbb{C}}\)
+\(\newcommand{\cx}{C^{\times}}\)
+\(\newcommand{\E}{\mathbb{E}}\)
+\(\newcommand{\e}{\mathrm{e}}\)
+\(\newcommand{\Odd}{\mathbb{O}}\)
+\(\newcommand{\rnn}{\mathbb{R}_{n \times n}}\)
+\(\newcommand{\F}{\mathcal{F}}\)
+\(\newcommand{\setminus}{\backslash}\)
+
+
+\(\newcommand{\rez}{Re(z)}\)
+\(\newcommand{\imz}{Im(z)}\)
+
+
+
+\(\newcommand{\modu}{\, \operatorname{(mod} \,}\)
+\(\newcommand{\nequiv}{\not\equiv}\)
+\(\newcommand{\divides}{\, | \,}\)
+\(\newcommand{\ndivides}{\, \nmid \,}\)
+\(\newcommand{\nrel}{\not \hspace{-1mm}R}\)
+\(\newcommand{\greatcd}{\text{gcd} \,}\)
+\(\newcommand{\lowcm}{\text{lcm} \,}\)
+\(\newcommand{\euler}{a^{\phi(n)}}\)
+\(\newcommand{\QR}{\mathbb{Q}(\sqrt 2)}\)
+
+
+\(\renewcommand{\vec}[1]{\mathbf{#1}}\)
+\(\newcommand{\vecu}{\mathbf{u}}\)
+\(\newcommand{\vecv}{\mathbf{v}}\)
+\(\newcommand{\vecw}{\mathbf{w}}\)
+\(\newcommand{\vecx}{\mathbf{x}}\)
+\(\newcommand{\vecX}{\mathbf{X}}\)
+\(\newcommand{\vecy}{\mathbf{y}}\)
+\(\newcommand{\vecY}{\mathbf{Y}}\)
+\(\newcommand{\vecz}{\mathbf{z}}\)
+\(\newcommand{\veca}{\mathbf{a}}\)
+\(\newcommand{\vecb}{\mathbf{b}}\)
+\(\newcommand{\vecc}{\mathbf{c}}\)
+\(\newcommand{\vecd}{\mathbf{d}}\)
+\(\newcommand{\vece}{\mathbf{e}}\)
+\(\newcommand{\vecf}{\mathbf{f}}\)
+\(\newcommand{\vecg}{\mathbf{g}}\)
+\(\newcommand{\vecn}{\mathbf{n}}\)
+\(\newcommand{\vecp}{\mathbf{p}}\)
+\(\newcommand{\vecs}{\mathbf{s}}\)
+\(\newcommand{\vect}{\mathbf{t}}\)
+\(\newcommand{\veczero}{\mathbf{0}}\)
+\(\newcommand{\diag}{\operatorname{diag}\,}\)
+\(\newcommand{\spn}{\operatorname{span}\,}\)
+\(\newcommand{\gen}[1]{\left\langle #1 \right\rangle}\)
+\(\newcommand{\span}{\operatorname{span}\,}\)
+\(\newcommand{\dimn}{\operatorname{dim}\,}\)
+\(\newcommand{\row}{\operatorname{row}\,}\)
+\(\newcommand{\col}{\operatorname{col}\,}\)
+\(\newcommand{\nul}{\operatorname{nullity}\,}\)
+\(\newcommand{\rank}{\operatorname{rank}\,}\)
+\(\newcommand{\im}{\text{im}\,}\)
+\(\newcommand{\Tr}{\operatorname{trace}\,}\)
+\(\newcommand{\vecseq}{(\vecx_1, \ldots, \vecx_k)}\)
+
+\(\newcommand{\go}{(G, \circ)}\)
+\(\newcommand{\gx}{(G, \times)}\)
+\(\newcommand{\gstar}{(G, *)}\)
+\(\newcommand{\ho}{(H, \circ)}\)
+\(\newcommand{\hx}{(H, \times)}\)
+\(\newcommand{\hstar}{(H, *)}\)
+\(\newcommand{\gp}{G^{\prime}}\)
+\(\newcommand{\ghat}{\widehat{G}}\)
+\(\newcommand{\cyca}{\langle a \rangle}\)
+\(\newcommand{\krn}{\text{ker}\,}\)
+\(\newcommand{\aut}{\text{Aut}\,}\)
+\(\newcommand{\orb}{\operatorname{orb}\,}\)
+\(\newcommand{\stab}{\operatorname{stab}\,}\)
+\(\newcommand{\fix}{\operatorname{fix}\,}\)
+\(\newcommand{\lcm}{\operatorname{lcm}}\)
+\(\newcommand{\kbar}{\overline{K}}\)
+\(\newcommand{\zbar}{\overline{z}}\)
+\(\newcommand{\wbar}{\overline{w}}\)
+\(\newcommand{\ap}{a^{\prime}}\)
+\(\newcommand{\bp}{b^{\prime}}\)
+\(\newcommand{\ep}{e^{\prime}}\)
+\(\newcommand{\hp}{h^{\prime}}\)
+\(\newcommand{\xp}{x^{\prime}}\)
+\(\newcommand{\yp}{y^{\prime}}\)
+\(\newcommand{\ainv}{a^{-1}}\)
+\(\newcommand{\binv}{b^{-1}}\)
+\(\newcommand{\finv}{f^{-1}}\)
+\(\newcommand{\ginv}{g^{-1}}\)
+\(\newcommand{\hinv}{h^{-1}}\)
+\(\newcommand{\xinv}{x^{-1}}\)
+\(\newcommand{\yinv}{y^{-1}}\)
+\(\newcommand{\zn}{\Z_n}\)
+\(\newcommand{\zp}{\Z_p}\)
+\(\newcommand{\znx}{\Z_n^{\times}}\)
+\(\newcommand{\zpx}{\Z_p^{\times}}\)
+\(\newcommand{\norm}{\triangleleft \,}\)
+
+
+\(\newcommand{\chr}{\operatorname{char} \,}\)
+\(\newcommand{\ideal}{\unlhd}\)
+\(\newcommand{\zring}{\{0_R\}}\)
+
+
+
+\(\newcommand{\epr}{E^{\prime}}\)
+\(\newcommand{\vpr}{V^{\prime}}\)
+\(\newcommand{\turan}{Tur\'{a}n}\)
+\(\newcommand{\gcomp}{\overline G}\)
+\(\newcommand{\pruf}{Pr\"{u}fer}\)
+\(\newcommand{\chvat}{Chv\'{a}tal's}\)
+\(\newcommand{\konig}{K\"{o}nig}\)
+
+
+</div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rings and Fields</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">MAT-20025: Abstract Algebra</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="./MAT-20025--Abstract-Algebra.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle sidebar-tool" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Groups and applications</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pre-requisites</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-Week2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Symmetry, Congruences, Matrices, and Roots of Unity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-Week3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Group Theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-Week4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cosets and Lagrange’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-Week5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Isomorphisms and Homomorphisms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-Week6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Permutation Groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-Week7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Structure of Finite Abelian Groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-Week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups and Numbers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Other algebraic structures</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-Week9.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rings and Fields</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p><a href="https://www.keele.ac.uk/scm/"><img src="KeeleUni-RGB_MonoBlue.png" width="180"></a></p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-Rings" id="toc-sec-Rings" class="nav-link active" data-scroll-target="#sec-Rings"><span class="toc-section-number">9.1</span>  Rings</a>
+  <ul class="collapse">
+  <li><a href="#sec-IdentityElements" id="toc-sec-IdentityElements" class="nav-link" data-scroll-target="#sec-IdentityElements"><span class="toc-section-number">9.1.1</span>  Identity Elements</a></li>
+  <li><a href="#sec-Subrings" id="toc-sec-Subrings" class="nav-link" data-scroll-target="#sec-Subrings"><span class="toc-section-number">9.1.2</span>  Subrings</a></li>
+  <li><a href="#sec-RingHomomorphisms" id="toc-sec-RingHomomorphisms" class="nav-link" data-scroll-target="#sec-RingHomomorphisms"><span class="toc-section-number">9.1.3</span>  Ring Homomorphisms</a></li>
+  </ul></li>
+  <li><a href="#sec-IntegralDomains" id="toc-sec-IntegralDomains" class="nav-link" data-scroll-target="#sec-IntegralDomains"><span class="toc-section-number">9.2</span>  Integral Domains</a></li>
+  <li><a href="#sec-DivisionRings" id="toc-sec-DivisionRings" class="nav-link" data-scroll-target="#sec-DivisionRings"><span class="toc-section-number">9.3</span>  Division Rings</a></li>
+  <li><a href="#sec-Fields" id="toc-sec-Fields" class="nav-link" data-scroll-target="#sec-Fields"><span class="toc-section-number">9.4</span>  Fields</a>
+  <ul class="collapse">
+  <li><a href="#sec-PropertiesofFields" id="toc-sec-PropertiesofFields" class="nav-link" data-scroll-target="#sec-PropertiesofFields"><span class="toc-section-number">9.4.1</span>  Properties of Fields</a></li>
+  <li><a href="#sec-FieldExtensions" id="toc-sec-FieldExtensions" class="nav-link" data-scroll-target="#sec-FieldExtensions"><span class="toc-section-number">9.4.2</span>  Field Extensions</a></li>
+  </ul></li>
+  <li><a href="#sheet9" id="toc-sheet9" class="nav-link" data-scroll-target="#sheet9"><span class="toc-section-number">9.5</span>  Problem Sheet 9</a></li>
+  </ul>
+</nav>
+    <div class="quarto-margin-footer"><div class="margin-footer-item">
+<p><a href="https://www.keele.ac.uk/scm/"><img src="KeeleUni-1949-RGB_MonoWhite.png" width="180"></a></p>
+</div></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-RingsandFields" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rings and Fields</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<p>So far we have restricted our attention to the algebraic structure known as a group. In this final chapter of our introduction to Abstract Algebra we shall consider, albeit very briefly, algebraic structures other than groups, in particular rings, integral domains, and fields. This will give you a flavour of what to expect if you decide to go for the third-year optional module ‘Linear Algebra and Rings’.</p>
+<section id="sec-Rings" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="sec-Rings"><span class="header-section-number">9.1</span> Rings</h2>
+<p>In certain respects rings will probably seem more intuitive than groups since you have been using rings, and closely related structures, in your mathematical studies since primary school. On the other hand, though, the study of rings and fields is more complicated than the study of groups by virtue of the fact that we are now dealing with sets on which we are defining two binary operations, which we generally label addition and multiplication. Although we shall only be taking a cursory glance at these structures we shall be adopting an axiomatic approach, so we begin with a definition.</p>
+<div id="def-Ring" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.1 (Ring) </strong></span>A <em>ring</em> is a triple consisting of a non-empty set <span class="math inline">\(R\)</span> equipped with two binary operations that we denote + and <span class="math inline">\(\times\)</span>, such that the following are satisfied.</p>
+<dl>
+<dt>R1:</dt>
+<dd>
+For all <span class="math inline">\(a, b \in R\)</span>, <span class="math inline">\(a+b \in R\)</span> <em>(closure under +)</em>.
+</dd>
+<dt>R2:</dt>
+<dd>
+For all <span class="math inline">\(a, b, c \in R\)</span>, <span class="math inline">\((a+b)+c=a+(b+c)\)</span> <em>(+ is associative on <span class="math inline">\(R\)</span>)</em>.
+</dd>
+<dt>R3:</dt>
+<dd>
+There exists <span class="math inline">\(0_R\)</span> such that, <span class="math inline">\(\forall \, a \in R, a+0_R=0_R+a=a\)</span> <em>(+ has an identity)</em>.
+</dd>
+<dt>R4:</dt>
+<dd>
+For all <span class="math inline">\(a \in R, \, \exists \, -a \in R\)</span> such that <span class="math inline">\(a+(-a)=(-a)+a=0_R\)</span> <em>(inverses under +)</em>.
+</dd>
+<dt>R5:</dt>
+<dd>
+For all <span class="math inline">\(a, b \in R\)</span>, <span class="math inline">\(a+b=b+a\)</span> <em>(+ is commutative on <span class="math inline">\(R\)</span>)</em>.
+</dd>
+<dt>R6:</dt>
+<dd>
+For all <span class="math inline">\(a, b \in R\)</span>, <span class="math inline">\(ab \in R\)</span> <em>(closure under <span class="math inline">\(\times\)</span>)</em>.
+</dd>
+<dt>R7:</dt>
+<dd>
+For all <span class="math inline">\(a, b, c \in R\)</span>, <span class="math inline">\(((ab)c=a(bc)\)</span> <em>(<span class="math inline">\(\times\)</span> is associative on <span class="math inline">\(R\)</span>)</em>.
+</dd>
+<dt>R8:</dt>
+<dd>
+For all <span class="math inline">\(a, b, c \in R\)</span>, <span class="math inline">\(a(b+c)=ab+ac\)</span> and <span class="math inline">\((a+b)c=ac+bc\)</span> <em>(distributive laws)</em>.
+</dd>
+</dl>
+</div>
+<p>Strictly speaking we should denote a ring as <span class="math inline">\((R, +, \times)\)</span> but, similarly to groups, we shall often simply refer to a ring as <span class="math inline">\(R\)</span>.</p>
+<p>Note that the above definition can be summed up as: <span class="math inline">\((R, +, \times)\)</span> is a ring if and only if <span class="math inline">\((R, +)\)</span> is an abelian group which, along with the binary operation <span class="math inline">\(\times\)</span>, satisfies <strong>R6-R8</strong>.</p>
+<p>Note, also, that whilst the axioms demand that the additive operation is commutative for any ring, there is no such requirement for the multiplicative operation. In the case where the ring <span class="math inline">\(R\)</span> has <span class="math inline">\(ab=ba \; \forall \, a, b \in R\)</span> we say that <span class="math inline">\(R\)</span> is a <em>commutative ring</em>.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9.1 </strong></span>The following are rings:</p>
+<div class="cell" data-gaplength="11" data-hash="09-Week9_cache/html/unnamed-chunk-3_f44597a5d299f9fd722fec4b18bf3388">
+<p><span class="math display">\[\C, \R, \Q, \Z, \Z_{n}, \R_{2\times 2}.\]</span></p>
+<p>The natural numbers do not form a ring as <span class="math inline">\((\N,+)\)</span> is not a group (it is not closed under inverses).</p>
+</div>
+</div>
+<p>The following should be very familiar to everyone.</p>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 9.1 </strong></span>If <span class="math inline">\(R\)</span> is a ring with additive identity <span class="math inline">\(0_R\)</span> then, for any <span class="math inline">\(a, b \in R\)</span>, we have</p>
+<ol type="i">
+<li><span class="math inline">\(0_Ra = a0_R = 0_R\)</span>,</li>
+<li><span class="math inline">\(a(-b) = (-a)b = -(ab)\)</span>,</li>
+<li><span class="math inline">\((-a)(-b) = ab\)</span>.</li>
+</ol>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="17" data-hash="09-Week9_cache/html/unnamed-chunk-4_9964e9e85dcba75f2566723979b05340">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>We take each in turn.</p>
+<ol type="i">
+<li><p>We have <span class="math display">\[0_{R}a = (0_R + 0_R)a = 0_Ra + 0_{R}a.\]</span> By cancellation (<span class="math inline">\((R,+)\)</span> is a group) we deduce that <span class="math inline">\(0_{R}a = 0_{R}\)</span>. A similar argument demonstrates that <span class="math inline">\(a0_{R} = 0_{R}\)</span>.</p></li>
+<li><p>It suffices to show that <span class="math inline">\(ab+ a(-b) = ab + (-a)b = 0_{R}\)</span> since <span class="math inline">\((\R,+)\)</span> is an abelian group and inverses are unique. We have: <span class="math display">\[ ab + a(-b) = a(b + (-b))= a0_R = 0_R\]</span> where the last equality follows from i.. One can similarly show that <span class="math inline">\(ab + (-a)b = 0_{R}\)</span>.</p></li>
+<li><p>We have by ii. that <span class="math inline">\(-(a(-b))= (-a)(-b)\)</span>. Again by ii., <span class="math inline">\(a(-b) = -(ab)\)</span>. Therefore, <span class="math display">\[(-a)(-b) = -(a(-b)) = -(-(ab)) = ab\]</span> using the fact that <span class="math inline">\(-(-(ab)) = ab\)</span> since <span class="math inline">\((\R,+)\)</span> is a group.</p></li>
+</ol>
+</div>
+</div>
+<section id="sec-IdentityElements" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="sec-IdentityElements"><span class="header-section-number">9.1.1</span> Identity Elements</h3>
+<p>An identity element in a ring, <span class="math inline">\(R\)</span>, is a <em>multiplicative identity</em>. Hence, an identity element <span class="math inline">\(1_R \in R\)</span> is such that <span class="math inline">\(a1_R = 1_Ra = a\)</span> for all <span class="math inline">\(a \in R\)</span>. We <strong><em>assume that all of the rings that we encounter in this chapter have multiplicative identities</em></strong>. A ring with an identity element is sometimes referred to as a <em>ring with a one</em>.</p>
+</section>
+<section id="sec-Subrings" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="sec-Subrings"><span class="header-section-number">9.1.2</span> Subrings</h3>
+<p>The concept of a subring is the same, in principle, as the concept of a subgroup. A subset of a ring <span class="math inline">\(R\)</span> forms a subring of <span class="math inline">\(R\)</span> if and only if it is a ring in its own right. As with groups, we have tests for whether or not a subset of <span class="math inline">\(R\)</span> forms a subring and that is the subject of the following theorem.</p>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 9.2 </strong></span>Let <span class="math inline">\(R\)</span> be a ring and let <span class="math inline">\(S \subseteq R\)</span>. Then <span class="math inline">\(S\)</span> is a subring of <span class="math inline">\(R\)</span> if and only if the three conditions below are satisfied:</p>
+<ol type="i">
+<li><span class="math inline">\(S\)</span> has an identity element;</li>
+<li><span class="math inline">\(a, b \in S \, \imp \, a-b \in S\)</span>;</li>
+<li><span class="math inline">\(a, b \in S \, \imp \, ab \in S\)</span></li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(R\)</span> be a ring and let <span class="math inline">\(S\)</span> be a subset of <span class="math inline">\(R\)</span>.</p>
+<p><span class="math inline">\((\imp)\)</span> First we show that if <span class="math inline">\(S\)</span> is a subring of <span class="math inline">\(R\)</span> then the three conditions hold.</p>
+<ol type="i">
+<li><p>As <span class="math inline">\(S\)</span> is a subring then <span class="math inline">\(1_S \in S\)</span> by definition (all our rings have a one).</p></li>
+<li><p>Now let <span class="math inline">\(a, b \in S\)</span>. Since <span class="math inline">\(S\)</span> is a ring it must be closed under addition. Further there is an additive inverse for <span class="math inline">\(b\)</span> in <span class="math inline">\(S\)</span> (<strong>R4</strong>) and since additive inverses are unique in <span class="math inline">\(R\)</span> this inverse is the same as <span class="math inline">\(-b\)</span> in <span class="math inline">\(R\)</span>. Hence <span class="math inline">\(a-b = a+(-b) \in S\)</span>.</p></li>
+<li><p>Similarly, <span class="math inline">\(S\)</span> is closed under multiplication.</p></li>
+</ol>
+<p><span class="math inline">\((\limp)\)</span> Next we show that if <span class="math inline">\(S\)</span> satisfies the three enumerated conditions then it is a subring of <span class="math inline">\(R\)</span>, that is, <span class="math inline">\(S\)</span> is a ring in itself with the operations on <span class="math inline">\(S\)</span> being defined as the operations on <span class="math inline">\(R\)</span>.</p>
+<p>By i. <span class="math inline">\(S\)</span> is non-empty.</p>
+<p>Since <span class="math inline">\(S\)</span> is non-empty, let <span class="math inline">\(a \in S\)</span>. By ii., <span class="math inline">\(a-a \in S\)</span> and so <span class="math inline">\(0_R \in S\)</span>. We claim that <span class="math inline">\(0_R\)</span> is an additive identity for <span class="math inline">\(S\)</span>. For any <span class="math inline">\(s \in S\)</span>, we have <span class="math inline">\(0_R+s=s\)</span>, since <span class="math inline">\(s \in R\)</span> and since <span class="math inline">\(0_R\)</span> is the additive identity in <span class="math inline">\(R\)</span>. Thus <span class="math inline">\(0_R\)</span> is an additive identity for <span class="math inline">\(S\)</span>.</p>
+<p>Let <span class="math inline">\(a \in S\)</span>. Then, by ii. we have <span class="math inline">\(0_S-a \in S\)</span>. But <span class="math inline">\(0_S-a=0_S+(-a)\)</span>, where <span class="math inline">\(-a\)</span> is the additive inverse of <span class="math inline">\(a\)</span> in <span class="math inline">\(R\)</span>. So <span class="math inline">\(-a \in S\)</span> and <span class="math inline">\(-a\)</span> is an additive inverse for <span class="math inline">\(a\)</span> in <span class="math inline">\(S\)</span>.</p>
+<p>Let <span class="math inline">\(a, b \in S\)</span>. Then <span class="math inline">\(-b \in S\)</span> and <span class="math inline">\(-(-b)=b\)</span>, since if <span class="math inline">\(-b\)</span> is an additive inverse for <span class="math inline">\(b\)</span>, then <span class="math inline">\(b\)</span> is an additive inverse for <span class="math inline">\(-b\)</span>. Thus, <span class="math inline">\(a+b=a-(-b) \in S\)</span>, by ii., so <span class="math inline">\(S\)</span> is closed under addition.</p>
+<p>Let <span class="math inline">\(a, b \in S\)</span>. Then <span class="math inline">\(a+b \in S\)</span> as <span class="math inline">\(S\)</span> is closed under addition and, since <span class="math inline">\(a, b \in R\)</span>, we have <span class="math inline">\(a+b=b+a\)</span> by commutativity of addition in <span class="math inline">\(R\)</span>.</p>
+<p>Let <span class="math inline">\(a, b, c \in S\)</span>. Then, since <span class="math inline">\(a, b, c \in R\)</span>, we have that <span class="math inline">\(a+(b+c)=(a+b)+c\)</span> and closure ensures that these sums are in <span class="math inline">\(S\)</span>.</p>
+<p>Let <span class="math inline">\(a, b, c \in S\)</span>. Since <span class="math inline">\(a, b, c \in R\)</span> then <span class="math inline">\(a(bc)=(ab)c\)</span> in <span class="math inline">\(R\)</span> and since <span class="math inline">\(S\)</span> is closed under multiplication then <span class="math inline">\(a(bc)=(ab)c\)</span> in <span class="math inline">\(S\)</span>.</p>
+<p>By assumption <span class="math inline">\(S\)</span> has a multiplicative identity <span class="math inline">\(1_{S}\)</span>.</p>
+</div>
+<p>Note that this theorem ensures that in any ring <span class="math inline">\(R\)</span>, both <span class="math inline">\(\{0_R\}\)</span> and <span class="math inline">\(R\)</span> itself are subrings of <span class="math inline">\(R\)</span>.</p>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Danger
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(R\)</span> be a ring and <span class="math inline">\(S\)</span> be a subring of <span class="math inline">\(R\)</span>. Then it is not necessarily the case that <span class="math inline">\(1_{S} = 1_{R}\)</span>. For example Let <span class="math inline">\(R = \Z\)</span>. Then <span class="math inline">\(S = \{0\}\)</span> is a subring of <span class="math inline">\(R\)</span> however <span class="math inline">\(1_S = 0 \ne 1 = 1_{R}\)</span>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9.2 </strong></span>Let <span class="math inline">\(R\)</span> be a ring. The <em>centre</em> of <span class="math inline">\(R\)</span> is denoted and defined by <span class="math display">\[Z(R) = \{ a \in R \where ab=ba \, \forall \, b \in R \}.\]</span> Prove that <span class="math inline">\(Z(R)\)</span> is a subring of <span class="math inline">\(R\)</span>.</p>
+<div class="cell" data-gaplength="17" data-hash="09-Week9_cache/html/unnamed-chunk-5_fa1f07f8695e8b605baadf7ab3465fd5">
+<p><strong>Solution:</strong></p>
+<p>First observe that <span class="math inline">\(Z(R)\)</span> is non-empty since it contains <span class="math inline">\(1_{R}\)</span>. Note that <span class="math inline">\(1_R\)</span> is therefore also the identity element of <span class="math inline">\(Z(R)\)</span>.</p>
+<p>Let <span class="math inline">\(a,b \in Z(R)\)</span> and <span class="math inline">\(r \in R\)</span>. Then, <span class="math display">\[(a-b)r = ar - br = ra -rb = r(a-b)\]</span> and $<span class="math inline">\((abr) = a(br) = (ar)b = r(ab)\)</span>. Therefore <span class="math inline">\((a-b),ab \in Z(R)\)</span> as well. We conclude that <span class="math inline">\(Z(R)\)</span> is a subring of <span class="math inline">\(R\)</span>.</p>
+</div>
+</div>
+<p>It is important to be careful when considering the identity element in a subring given that there are two binary operations to take into account. Recall that the identity element in a ring is the <em>multiplicative</em> identity; the definition of a ring takes care of the additive identity <span class="math inline">\(0_R\)</span>. We know that <span class="math inline">\(S=(\{0_R\}, +, \times)\)</span> is a subring of <span class="math inline">\(R\)</span>, but does it have a multiplicative identity?</p>
+<p>Unlike groups, the identity in a subring does not have to be the same as the identity in the ring itself.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9.3 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="17" data-hash="09-Week9_cache/html/unnamed-chunk-6_2ccfe7d7bca54859ac64b57fc249b5b6">
+<p>Let <span class="math inline">\(R = \Z_{6}\)</span>. The identity element in <span class="math inline">\(1\)</span> since for all <span class="math inline">\(a \in \Z_{6}\)</span>, <span class="math inline">\(1a = a1 = 1\)</span>.</p>
+<p>Now take <span class="math inline">\(S = \{0,2,4\}\)</span>. Then <span class="math inline">\(S\)</span> is a subring of <span class="math inline">\(R\)</span> (this is an exercise). However, the identity element is <span class="math inline">\(4\)</span> since <span class="math display">\[\begin{eqnarray*}
+4 \times 0 &amp;=&amp; 0 \\
+4 \times 2 &amp; =&amp; 2 \\
+4 \times 4 &amp;=&amp; 4.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+</section>
+<section id="sec-RingHomomorphisms" class="level3" data-number="9.1.3">
+<h3 data-number="9.1.3" class="anchored" data-anchor-id="sec-RingHomomorphisms"><span class="header-section-number">9.1.3</span> Ring Homomorphisms</h3>
+<div id="def-RingHomomorphism" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.2 (Ring Homomorphism) </strong></span>Let <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> be rings and let <span class="math inline">\(\theta : R_1 \rightarrow R_2\)</span> be a mapping. Then <span class="math inline">\(\theta\)</span> is a <em>ring homomorphism</em> if, for all <span class="math inline">\(a, b \in R_1\)</span> <span class="math display">\[\theta (a+b) = \theta (a) + \theta (b)\]</span> and <span class="math display">\[\theta (ab) = \theta (a) \theta (b).\]</span></p>
+</div>
+<p>So, the definition is analogous to that for groups save that we have to consider both binary operations. Note that the first condition is simply the statement that <span class="math inline">\(\theta\)</span> is a homomorphism mapping from the abelian group <span class="math inline">\((R_1, +)\)</span> to the abelian group <span class="math inline">\((R_2, +)\)</span>. The second condition requires that <span class="math inline">\(\theta\)</span> relates the multiplicative structures in the same way.</p>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 9.3 </strong></span>Let <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> be rings and let <span class="math inline">\(\theta : R_1 \rightarrow R_2\)</span> be a ring homomorphism. Then,</p>
+<ol type="i">
+<li><span class="math inline">\(\theta (0_{R_1}) = 0_{R_2},\)</span></li>
+<li><span class="math inline">\(\theta (-x) = - \theta (x)\)</span> for all <span class="math inline">\(x \in R_1\)</span>.</li>
+</ol>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="13" data-hash="09-Week9_cache/html/unnamed-chunk-7_22774574b26681fa90bab8dce4aaa305">
+<span class="proof-title"><em>Proof</em>. </span>
+<ol type="i">
+<li>We have <span class="math display">\[\theta(0_{R_1}) = \theta(0_{R_1} + 0_{R_1}) = \theta(0_{R_1}) + \theta(0_{R_1}).\]</span> Subtracting <span class="math inline">\(\theta(0_{R_1})\)</span> from both sides, we have: <span class="math display">\[\theta_{0_{R_1}} = 0_{R_2}.\]</span></li>
+<li>We have <span class="math display">\[0_{R_2}=\theta(0_{R_1}) = \theta(x + (-x)) =\theta(x) + \theta(-x).\]</span> Using the fact that <span class="math inline">\((R_2, +)\)</span> is a group (and so inverses are unique) we conclude that <span class="math inline">\(\theta(-x) = -\theta(x)\)</span> as required.</li>
+</ol>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9.4 </strong></span>Consider the mapping <span class="math inline">\(\theta : \Z \rightarrow \Z_n\)</span> where <span class="math inline">\(\theta\)</span> is defined by <span class="math inline">\(\theta (a)\)</span> is the principal remainder on dividing <span class="math inline">\(a\)</span> by <span class="math inline">\(n\)</span> for all <span class="math inline">\(a \in \Z\)</span>. This is a ring homomorphism.</p>
+<div class="cell" data-gaplength="17" data-hash="09-Week9_cache/html/unnamed-chunk-8_317e7176d0035e1e0a6d4946f1b6c741">
+<p>Let <span class="math inline">\(a, b \in \Z\)</span>. Let <span class="math inline">\(0 \le r_1,r_2 \le n\)</span> and <span class="math inline">\(q_1, q_2 \in \Z\)</span> such that <span class="math inline">\(a = q_1 n + r_1\)</span> and <span class="math inline">\(a_2 = q_2 n + r_2\)</span>. Notice that <span class="math inline">\(r_1\)</span> and <span class="math inline">\(r_2\)</span> are the principal remainders of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (respectively) upon dividing by <span class="math inline">\(n\)</span>.</p>
+<p>Observe that <span class="math display">\[a+b  = (q_1 + q_2)n + (r_1 + r_2)\]</span> and <span class="math display">\[ab = (q_1q_2n + q_1 r_2 + q_2 r_1)n + r_1 r_2.\]</span></p>
+<p>We can find <span class="math inline">\(s,t \in \{0,1,\ldots, n-1\}\)</span> and <span class="math inline">\(u,v \in \Z\)</span> such that <span class="math inline">\(r_1 + r_2 = u n + s\)</span> and <span class="math inline">\(r_1 r_2 = vn + t\)</span>. Notice that the principal remainders of <span class="math inline">\(a+b\)</span> and <span class="math inline">\(ab\)</span> upon dividing by <span class="math inline">\(n\)</span> are <span class="math inline">\(s\)</span> and <span class="math inline">\(t\)</span> respectively. Furthermore, in <span class="math inline">\(\Z_n\)</span> we have <span class="math inline">\(r_1 + r_2 = s\)</span> and <span class="math inline">\(r_1r_2 = t\)</span>. Therefore, <span class="math display">\[\theta(a+b) = s = \theta(a) + \theta(b)\]</span> and <span class="math display">\[\theta(ab) = t = \theta(a) \theta(b).\]</span></p>
+</div>
+</div>
+<p>As we did for group homomorphisms, we can define the <em>kernel</em> of a ring homomorphism:</p>
+<div id="def-Kernel" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.3 (Kernel) </strong></span>Let <span class="math inline">\(R_1\)</span> and <span class="math inline">\(R_2\)</span> be rings and let <span class="math inline">\(\theta : R_1 \rightarrow R_2\)</span> be a ring homomorphism. The <em>kernel</em> of <span class="math inline">\(\theta\)</span> is the set denoted and defined by <span class="math display">\[\text{ker} \, (\theta) = \{ x \in R_1 \where \theta(x) = 0_{R_2} \}.\]</span></p>
+</div>
+<p>Note here that it is the set of elements of <span class="math inline">\(R_1\)</span> that map to the <em>additive identity</em> in <span class="math inline">\(R_2\)</span>. As with groups, an <em>isomorphism</em> is a bijective homomorphism. Where the ring isomorphism maps from a set to itself we refer to this as an <em>automorphism</em>.</p>
+</section>
+</section>
+<section id="sec-IntegralDomains" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="sec-IntegralDomains"><span class="header-section-number">9.2</span> Integral Domains</h2>
+<div id="def-DivisorofZero" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.4 (Divisor of Zero) </strong></span>Let <span class="math inline">\(R\)</span> be a ring with a one and let <span class="math inline">\(x \in R\)</span> be non-zero. Then <span class="math inline">\(x\)</span> is a <em>divisor of zero</em> in <span class="math inline">\(R\)</span> if there exists <span class="math inline">\(y \in R \backslash \{0\}\)</span> such that <span class="math inline">\(xy=0_R\)</span>.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9.5 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="23" data-hash="09-Week9_cache/html/unnamed-chunk-9_b1011d52880794ad5b135d607a5ba6be">
+<ul>
+<li><span class="math inline">\(\R\)</span> is a ring with no zero divisors.</li>
+<li><span class="math inline">\(R=\R_{2 \times 2}\)</span> is a ring with zero divisors. For example let <span class="math inline">\(x,y \in \R\backslash\{0\}\)</span>. Then <span class="math display">\[A = \begin{pmatrix}0 &amp; x \\ 0 &amp; 0\end{pmatrix},B =\begin{pmatrix}0 &amp; y \\ 0 &amp; 0\end{pmatrix}\]</span> are nonzero elements of <span class="math inline">\(\R_{2 \times 2}\)</span>. However <span class="math display">\[AB = 0_{R} = \begin{pmatrix}0 &amp; 0 \\ 0 &amp; 0\end{pmatrix}.\]</span></li>
+</ul>
+</div>
+</div>
+<p>We now make the following definition:</p>
+<div id="def-IntegralDomain" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.5 (Integral Domain) </strong></span>An <em>integral domain</em> is a nonzero commutative ring with a one in which there are no divisors of zero.</p>
+</div>
+<p>It follows from this definition that in an integral domain <span class="math inline">\(R\)</span> we have <span class="math display">\[xy = 0_R \imp x = 0_R \; \text{or} \; y=0_R.\]</span></p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9.6 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="7" data-hash="09-Week9_cache/html/unnamed-chunk-10_d4dceffe17605acbc39f24f0633ae430">
+<ul>
+<li><span class="math inline">\(\Z_{12}\)</span> is a ring by it is not an integral domain For instance <span class="math display">\[2 \times 6 = 0\]</span> but <span class="math inline">\(2 \ne 0 \ne 6\)</span>.</li>
+<li>Notice that <span class="math inline">\(\Z_{p}\)</span> is an integral domain for any prime <span class="math inline">\(p\)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="thm-9.4" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 9.4 </strong></span>In the ring <span class="math inline">\(\zn\)</span> the divisors of zero are precisely those non-zero elements that are not relatively prime to <span class="math inline">\(n\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="17" data-hash="09-Week9_cache/html/unnamed-chunk-11_010b85835ac5967cd605a8106671b4cc">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(r \in \Z_{n}\)</span> be a nonzero element and suppose that <span class="math inline">\(d = \gcd(m,n) \ne 1\)</span>. Let <span class="math inline">\(k,l \Z\)</span> be such that <span class="math inline">\(m = dk\)</span> and <span class="math inline">\(n = dl\)</span>. Thus, <span class="math inline">\(lm = ldk = nk\)</span>. It follows that <span class="math inline">\(lm \equiv 0 \pmod{n}\)</span>. Notice that <span class="math inline">\(0 &lt; l &lt;n\)</span> (since <span class="math inline">\(1&lt; d\)</span>) and so <span class="math inline">\(m\)</span> is a divisor of <span class="math inline">\(0\)</span> in <span class="math inline">\(\Z_n\)</span>.</p>
+<p>On the other hand, suppose that <span class="math inline">\(r \in \Z_n\)</span> is a zero divisor. By assumption <span class="math inline">\(r \ne 0\)</span> and there exist some <span class="math inline">\(s \ne 0\)</span> such that <span class="math inline">\(sr \equiv 0 \pmod{n}\)</span>. This means there is a <span class="math inline">\(q \in \Z\)</span> such that <span class="math inline">\(sr = qn\)</span>. If <span class="math inline">\(r\)</span> and <span class="math inline">\(n\)</span> are relatively prime, then <span class="math inline">\(n|s\)</span> since <span class="math inline">\(n|sr\)</span> by <a href="08-Week8.html#cor-8.3">Corollary&nbsp;<span>8.3</span></a>. It follows that <span class="math inline">\(s = 0\)</span> which is a contradiction. We conclude that <span class="math inline">\(n\)</span> and <span class="math inline">\(r\)</span> are not relatively prime.</p>
+</div>
+</div>
+<div id="cor-" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 9.1 </strong></span>If <span class="math inline">\(p\)</span> is prime then <span class="math inline">\(\Z_p\)</span> has no divisors of zero.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>This follows directly from <a href="#thm-9.4">Theorem&nbsp;<span>9.4</span></a>.</p>
+</div>
+</section>
+<section id="sec-DivisionRings" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="sec-DivisionRings"><span class="header-section-number">9.3</span> Division Rings</h2>
+<p>In a ring there is no requirement for any element to have a multiplicative inverse, so if a ring does have multiplicative inverses this makes the ring special. Recall from group theory that when we considered <span class="math inline">\(\zn\)</span> under multiplication we were unable to form a group unless we ejected all of the elements not relatively prime to <span class="math inline">\(n\)</span>. This is tantamount to discarding all of the elements that do not have a multiplicative inverse in the set</p>
+<div id="def-Unit" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.6 (Unit) </strong></span>Let <span class="math inline">\(R\)</span> be a ring. If <span class="math inline">\(a \in R\)</span> has a multiplicative inverse in <span class="math inline">\(R\)</span>, then <span class="math inline">\(a\)</span> is said to be a <em>unit</em> in <span class="math inline">\(R\)</span>.</p>
+</div>
+<p>We can collect together such units from a given ring, place them in a set and we obtain a group under multiplication.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9.7 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="11" data-hash="09-Week9_cache/html/unnamed-chunk-12_9d56ce90d21b89da14fa6e78c85ef159">
+<ul>
+<li>The units of <span class="math inline">\(\Z\)</span> are <span class="math inline">\(\{-1,1\}\)</span> — this forms a group isomorphic to <span class="math inline">\(\Z_{2}\)</span>.</li>
+<li>The units of <span class="math inline">\(\R_{2 \times 2}\)</span> is precisely the group <span class="math inline">\(GL(2,\R)\)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="def-DivisionRing" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.7 (Division Ring) </strong></span>A <em>division ring</em> is a (not necessarily commutative) ring in which every non-zero element is a unit.</p>
+</div>
+<p>Hence, for all <span class="math inline">\(a \in R, \, a \neq 0\)</span>, there exists <span class="math inline">\(a^{-1} \in R\)</span> such that <span class="math inline">\(aa^{-1}=a^{-1}a=1_R\)</span>.</p>
+<div class="{callout-note}">
+<p>Let <span class="math inline">\(R\)</span> be a division ring. Then <span class="math inline">\((R\backslash \{0_{R} \}, \times)\)</span> is a group.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9.8 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="37" data-hash="09-Week9_cache/html/unnamed-chunk-13_9796eec153003f9e87ac0b50c982f06d">
+<p>Let <span class="math inline">\(\Hbb \subseteq \C_{2 \times 2}\)</span> be the set <span class="math display">\[\Hbb = \left\{ \begin{pmatrix}z &amp; w \\ -\overline{w} &amp; \overline{z}\end{pmatrix} : z,w \in \C\right\}.\]</span></p>
+<p>We show that <span class="math inline">\(\Hbb\)</span> is a subring of <span class="math inline">\(\C\)</span>.</p>
+<p>Note that <span class="math inline">\(\Hbb\)</span> is non-empty, in particular it contains the identity matrix <span class="math inline">\(I_2\)</span> (take <span class="math inline">\(z =1\)</span> and <span class="math inline">\(w = 0\)</span>).</p>
+<p>Let <span class="math display">\[A = \begin{pmatrix} z_1 &amp; w_1 \\ -\overline{w}_1 &amp; \overline{z}_1 \end{pmatrix}, B = \begin{pmatrix} z_2 &amp; w_2 \\ -\overline{w}_2 &amp; \overline{z}_2 \end{pmatrix} \in \Hbb.\]</span> Then,</p>
+<p><span class="math display">\[\begin{eqnarray*}
+A-B &amp;=&amp; \begin{pmatrix} z_1 - z_2 &amp; w_1 - w_2 \\ -\overline{w}_1 + \overline{w}_2 &amp; \overline{z}_1 - \overline{z}_2 \end{pmatrix} \\
+&amp;=&amp; \begin{pmatrix} z_1 - z_2 &amp; w_1 - w_2 \\ -(\overline{w_1 - w_2}) &amp; \overline{z_1 - z_2} \end{pmatrix} \in \Hbb
+\end{eqnarray*}\]</span></p>
+<p>and</p>
+<p><span class="math display">\[\begin{eqnarray*}
+    AB &amp;=&amp; \begin{pmatrix}z_1 z_2 - w_1\overline{w}_2 &amp; z_1w_2  + w_1 \overline{z}_2 \\ -(\overline{w}_1 z_2 + \overline{z}_{1}\overline{w_2}) &amp; -\overline{w}_1w_2 + \overline{z}_1\overline{z}_2\end{pmatrix} \\
+    &amp;=&amp; \begin{pmatrix}z_1 z_2 - w_1\overline{w}_2 &amp; z_1w_2  + w_1 \overline{z}_2 \\ -(\overline{z_1w_2  + w_1 \overline{z}_2}) &amp; \overline{z_1z_2-w_1\overline{w}_2} \end{pmatrix} \in \Hbb.
+\end{eqnarray*}\]</span></p>
+<p>We now show that <span class="math inline">\(\Hbb\)</span> is a division ring. Let <span class="math display">\[A = \begin{pmatrix} z &amp; w \\ -\overline{w} &amp; \overline{z} \end{pmatrix} \in \Hbb\]</span> be a non-zero element. Note that <span class="math inline">\(A^{-1}\)</span> must be precisely the inverse of <span class="math inline">\(A \in \C_{2 \times 2}\)</span> since <span class="math inline">\(I_2\)</span> is the identity element of <span class="math inline">\(H\)</span>. Therefore, to show that <span class="math inline">\(H\)</span> is a division ring, it suffices to show that <span class="math inline">\(A^{-1} \in H\)</span>. First we determine if <span class="math inline">\(A\)</span> is invertible in <span class="math inline">\(\C_{2\times 2}\)</span>. We compute <span class="math display">\[\det{A} = z\overline{z} + w \overline{w} = |z|^2 + |w|^2.\]</span> Since <span class="math inline">\(A\)</span> is nonzero, then one of <span class="math inline">\(z\)</span> or <span class="math inline">\(w\)</span> is nonzero and so <span class="math inline">\(|z|^2 + |w|^2 \ne 0\)</span>. Therefore <span class="math inline">\(A\)</span> has a multiplicative inverse <span class="math inline">\(A^{-1} \in \C_{2\times 2}\)</span> given by</p>
+<p><span class="math display">\[A^{-1} = \frac{1}{\det{A}}\begin{pmatrix} \overline{z} &amp; -w \\ \overline{w} &amp; z \end{pmatrix}.\]</span></p>
+<p>Since <span class="math inline">\(\det(A) \in \R\)</span>, it follows that <span class="math inline">\(\left(\overline{\frac{1}{\det{A}}}\right) = \frac{1}{\det{A}}\)</span> and so <span class="math inline">\(A^{-1} \in \Hbb\)</span>.</p>
+<p>Every non-zero element of <span class="math inline">\(\Hbb\)</span> is a unit and so <span class="math inline">\(\Hbb\)</span> is a division ring.</p>
+</div>
+</div>
+<p>Where have we seen something similar to this in our study of groups? Recall that we were able to represent complex numbers as matrices in the following way:</p>
+<div class="cell" data-gaplength="11" data-hash="09-Week9_cache/html/unnamed-chunk-14_5a06c995d24c5c0524f04bb7870aa31c">
+<p>Let <span class="math display">\[M = \left\{\begin{pmatrix} a &amp; b \\ -b &amp; a \end{pmatrix}: a,b \in \R, a^2 + b^2 \ne 0\right\}.\]</span> We found that <span class="math inline">\((\C \backslash \{0\}, \times) \cong (M, \times)\)</span> with an isomorphism <span class="math inline">\(\theta: M \to \C\backslash\{0\}\)</span> by <span class="math display">\[\theta\left(\begin{pmatrix} a &amp; b \\ -b &amp; a \end{pmatrix}\right)= a + ib.\]</span></p>
+</div>
+<p>In a similar way we can represent quaternions as matrices. Quaternions were developed by the Irish mathematician <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Hamilton/">Hamilton</a> to solve problems in mechanics in three-dimensional space. They are an ‘extension’ of the complex numbers in the following way:</p>
+<div class="cell" data-gaplength="11" data-hash="09-Week9_cache/html/unnamed-chunk-15_adcc664edd687ceabf6cc9ae4daf6222">
+<p>Let <span class="math inline">\(i,j,k\)</span> satisfy the rules <span class="math inline">\(i^2 = j^2 = k^{2} = ijk = -1\)</span>, thus: <span class="math display">\[\begin{eqnarray}
+ij &amp;=&amp; k = -ji \\
+jk &amp;=&amp; i = -kj \\
+ki &amp;=&amp; j = -ik.
+\end{eqnarray}\]</span></p>
+<p>Set <span class="math inline">\(\widehat{\Hbb} := \{ a + bi + cj + dk : a,b,c,d, \in \R \}\)</span>. Then <span class="math inline">\(\widehat{\Hbb}\)</span> is a division ring.</p>
+</div>
+<p>The quaternions form a ring <span class="math inline">\(\widehat{\Hbb}\)</span> and the group <span class="math inline">\(Q_8\)</span> lives inside that ring. In a similar way to our representation of complex numbers as matrices with real entries, we can represent quaternions as matrices with complex entries:</p>
+<div class="cell" data-gaplength="41" data-hash="09-Week9_cache/html/unnamed-chunk-16_4ae7c189cfcdb5720f461f6109e61695">
+<p>The ring <span class="math inline">\(\widehat{\Hbb}\)</span> is isomorphic to the ring <span class="math display">\[\Hbb = \left\{ \begin{pmatrix} z &amp; w \\ - \overline{w} &amp; \overline{z} \end{pmatrix} : w,z \in \C  \right\}.\]</span> An isomorphism is the map <span class="math inline">\(\theta: \widehat{\Hbb} \to \Hbb\)</span> where <span class="math display">\[\theta(a + bi + cj + dk) = \begin{pmatrix} a + bi &amp; c + di \\ -(c-di) &amp; a-bi \end{pmatrix}.\]</span> Notice that</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\theta(1) &amp;=&amp; \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = - \theta(-1) \\
+\theta(i) &amp;=&amp; \begin{pmatrix} i &amp; 0 \\ 0 &amp; -i \end{pmatrix} = - \theta(-i) \\
+\theta(-j) &amp;=&amp; \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix} = - \theta(-j)\\
+\theta(k) &amp;=&amp; \begin{pmatrix} 0 &amp; i \\ -i &amp; 0 \end{pmatrix}  = -\theta(-k)
+\end{eqnarray*}\]</span></p>
+<p>Thus we have a representation of the quarternion group <span class="math inline">\(Q_8\)</span> as a subgroup of <span class="math inline">\(GL(2, \C)\)</span> (invertible 2-by-2 matrices over the complex numbers).</p>
+</div>
+<p>Then, as we have seen, the set of all such matrices forms a subring of the ring of all <span class="math inline">\(2 \times 2\)</span> matrices with entries from <span class="math inline">\(\C\)</span>. In fact, it forms a division ring.</p>
+</section>
+<section id="sec-Fields" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="sec-Fields"><span class="header-section-number">9.4</span> Fields</h2>
+<p>Consider the previous example. Note that, for example <span class="math display">\[\begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix}, \;  \begin{pmatrix}i&amp;0\\0&amp;-i\end{pmatrix} \; \in \mathbb{H}.\]</span> Now <span class="math display">\[\begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix}\begin{pmatrix}i&amp;0\\0&amp;-i\end{pmatrix} = \begin{pmatrix}0&amp;-i\\-i&amp;0\end{pmatrix},\]</span> But <span class="math display">\[\begin{pmatrix}i&amp;0\\0&amp;-i\end{pmatrix}\begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix} = \begin{pmatrix}0&amp;i\\i&amp;0\end{pmatrix}.\]</span></p>
+<p>So, <span class="math inline">\(\mathbb{H}\)</span> is not commutative under multiplication. We are, though, interested in cases where we do have commutativity; this leads to the following definition:</p>
+<div id="def-Field" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.8 (Field) </strong></span>A field is a commutative division ring.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9.9 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="5" data-hash="09-Week9_cache/html/unnamed-chunk-17_c46df351e62ece2ff2eecd1cbc682cd5">
+<p>The rings <span class="math inline">\(\Q, \R\)</span> and <span class="math inline">\(\C\)</span> are all fields; <span class="math inline">\(\Z\)</span> is not a fields (it is not a division ring).</p>
+</div>
+</div>
+<div class="{callout-note}">
+<p>Let <span class="math inline">\(F\)</span> be a field. Then <span class="math inline">\((F\backslash \{0_{R} \}, \times)\)</span> is an abelian group. Thus a ring <span class="math inline">\(R\)</span> is a field if <span class="math inline">\((R,+)\)</span> and <span class="math inline">\((R\backslash{0_{R}},\times)\)</span> are both abelian groups.</p>
+</div>
+<section id="sec-PropertiesofFields" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="sec-PropertiesofFields"><span class="header-section-number">9.4.1</span> Properties of Fields</h3>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 9.5 </strong></span>Every field is an integral domain.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="17" data-hash="09-Week9_cache/html/unnamed-chunk-18_ba3cbfd16ea0085d9462d7873b9d9f0b">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(F\)</span> be a field. To show that <span class="math inline">\(F\)</span> is a field it suffices to show that it has no zero divisors. Let <span class="math inline">\(x\in F \backslash \{0_{F}\}\)</span> and suppose there is a <span class="math inline">\(y \in F\)</span> such that that <span class="math inline">\(xy = 0_{F}\)</span>. Since <span class="math inline">\(F\)</span> is a field, and <span class="math inline">\(x\)</span> is nonzero <span class="math inline">\(x\)</span> has a multiplicative inverse <span class="math inline">\(x^{-1} \in F\)</span>. Then, <span class="math display">\[y  = 1_{F}y = (x^{-1}x)y = (x^{-1}) 0_{F} = 0_{F}.\]</span> Thus <span class="math inline">\(F\)</span> has no zero divisors: if a product <span class="math inline">\(xy = 0\)</span>, one of <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> must be zero.</p>
+</div>
+</div>
+<div id="def-Characteristic" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.9 (Characteristic) </strong></span>Let <span class="math inline">\(R\)</span> be an integral domain. The <em>characteristic</em> of <span class="math inline">\(R\)</span>, denoted <span class="math inline">\(\text{char}\,(R)\)</span>, is the period of <span class="math inline">\(1_R\)</span> in the group <span class="math inline">\((R, +)\)</span>. If <span class="math inline">\(1_R\)</span> has infinite period in the group <span class="math inline">\((R, +)\)</span> then we define <span class="math inline">\(\text{char}\,(R)=0\)</span>.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 9.10 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="11" data-hash="09-Week9_cache/html/unnamed-chunk-19_00924268f4a9b0ac955764c0985ff42d">
+<ul>
+<li><span class="math inline">\(\chr(\R) = 0\)</span>;</li>
+<li><span class="math inline">\(\chr(\zn) = n\)</span>;</li>
+<li><span class="math inline">\(\chr(\Q) = 0\)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 9.6 </strong></span>Let <span class="math inline">\(R\)</span> be an integral domain. Then <span class="math inline">\(\text{char}\,(R)\)</span> is either zero or a prime.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="17" data-hash="09-Week9_cache/html/unnamed-chunk-20_e15cd0104b14e0f190ef04153add7705">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Suppose <span class="math inline">\(\chr(R) = m \ne 0\)</span>. Let <span class="math inline">\(k,l \in \N\)</span> such that <span class="math inline">\(kl = m\)</span>. For a positive integer <span class="math inline">\(a\)</span> write <span class="math inline">\(a1_{R}\)</span> for the sum <span class="math inline">\(\sum_{i=1}^{a} 1_{R}\)</span>. Then <span class="math display">\[m1 = kl(1_{R}) = (k1_{r})(l1_{r}) = 0_{R}.\]</span></p>
+<p>Since <span class="math inline">\(R\)</span> is an integral domain, it must be that either <span class="math inline">\(k1_{R} = 0_{R}\)</span> or <span class="math inline">\(l1_{r} = 0_{R}\)</span>. Since <span class="math inline">\(m = \chr{R}\)</span> and <span class="math inline">\(1 \le k,l \le m\)</span>, we conclude that either <span class="math inline">\(k =m\)</span> or <span class="math inline">\(l =m\)</span>. Thus <span class="math inline">\(m\)</span> is divisible only by itself and <span class="math inline">\(1\)</span> — <span class="math inline">\(m\)</span> is prime.</p>
+</div>
+</div>
+<p>This leads to the conclusion that any field has a subfield that is isomorphic to either <span class="math inline">\(\Q\)</span> or <span class="math inline">\(\Z_p\)</span>. We find that any field with characteristic <span class="math inline">\(p\)</span> has a copy of <span class="math inline">\(\Z_p\)</span> ‘inside it’, whilst any field with characteristic 0 has a copy of <span class="math inline">\(\Q\)</span> ‘inside it’.</p>
+</section>
+<section id="sec-FieldExtensions" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="sec-FieldExtensions"><span class="header-section-number">9.4.2</span> Field Extensions</h3>
+<p>Consider the polynomial <span class="math inline">\(x^2-2\)</span> in <span class="math inline">\(\Q\)</span>. What happens if we try to factorise it?</p>
+<div class="cell" data-gaplength="5" data-hash="09-Week9_cache/html/unnamed-chunk-21_975202f69cbbc1106584a6ac981706c1">
+<p><span class="math inline">\(x^2 -2 = (x + \sqrt{2})(x- \sqrt{2})\)</span>. However, <span class="math inline">\(\sqrt{2} \not\in \Q\)</span> so <span class="math inline">\(x^2 -2\)</span> is not factorisable in <span class="math inline">\(\Q\)</span>. One potential way to resolve this is to extend <span class="math inline">\(\Q\)</span> to include all the irrational numbers.</p>
+</div>
+<p>This ‘field extension’ gives us the set of real numbers, <span class="math inline">\(\R\)</span>. In a similar way, consider the polynomial <span class="math inline">\(x^2+1\)</span> in <span class="math inline">\(\R\)</span>.</p>
+<div class="cell" data-gaplength="5" data-hash="09-Week9_cache/html/unnamed-chunk-22_7d19414dc3b51d37c07396791a60cae1">
+<p><span class="math inline">\(x^2 +1 = (x + i)(x- i)\)</span>. However, <span class="math inline">\(i \not\in \R\)</span> so <span class="math inline">\(x^2 +1\)</span> is not factorisable in <span class="math inline">\(\R\)</span>. One potential way to resolve this is to extend <span class="math inline">\(\R\)</span> to include all numbers of the form <span class="math inline">\(a+ib\)</span> where <span class="math inline">\(a,b \in \R\)</span>.</p>
+</div>
+<p>Returning to the first example, one obvious question to ask is whether the extension of <span class="math inline">\(\Q\)</span> to the whole of <span class="math inline">\(\R\)</span> is the ‘smallest’ possible extension that makes <span class="math inline">\(x^2 -2\)</span> factorisable. The answer is ‘no’.</p>
+<div class="cell" data-gaplength="11" data-hash="09-Week9_cache/html/unnamed-chunk-23_80160e0dfaf8e17e3b873cf2d9e3e56b">
+<p>Define a field <span class="math inline">\(\Q(\sqrt{2}) = \{a + b \sqrt{2} | a,b \in \Q\}\)</span>. Clearly <span class="math inline">\(\sqrt{2} \in \Q(\sqrt{2})\)</span> and so <span class="math inline">\(x^2 -2\)</span> can be factorised in <span class="math inline">\(\Q(\sqrt{2})\)</span>. Notationally we write <span class="math inline">\(\Q(\sqrt{2})| \Q\)</span> to indicate that this is an extension of <span class="math inline">\(\Q\)</span>.</p>
+<p>We can similarly extend <span class="math inline">\(\Q\)</span> in order to factorise say <span class="math inline">\(x^2 -6\)</span>.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Aside
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The field <span class="math inline">\(\Q(\sqrt{2})|\Q\)</span> is a vector space over <span class="math inline">\(\Q\)</span> with basis <span class="math inline">\((1, \sqrt{2})\)</span>.</p>
+</div>
+</div>
+</div>
+<p>Note that this extension is a field in its own right (see Problem Set 7) and sits inside <span class="math inline">\(\R\)</span>. In fact it is a subfield of <span class="math inline">\(\R\)</span>, but it is clearly not all of <span class="math inline">\(\R\)</span>.</p>
+<p>Such extensions of <span class="math inline">\(\Q\)</span> are known as <em>algebraic number fields</em>. We say that <span class="math inline">\(\sqrt{2}\)</span> is an algebraic element in <span class="math inline">\(\Q(\sqrt{2}) \where \Q\)</span> (and, indeed, in <span class="math inline">\(\R \where \Q)\)</span> as it is a root of the equation <span class="math inline">\(x^2=2\)</span>. In a similar way, <span class="math inline">\(i\)</span> is an algebraic element in <span class="math inline">\(\C \where \R\)</span> as it is a root of the equation <span class="math inline">\(x^2=-1\)</span>. On the other hand, <span class="math inline">\(e\)</span> is not an algebraic element in <span class="math inline">\(\R \where \Q\)</span> since there is no polynomial with rational coefficients that has <span class="math inline">\(e\)</span> as a root.</p>
+<p>We are now beginning to stray into the beginnings of Galois theory, a beautiful area of mathematics that explores the connection between group theory and field theory. This tells us why there are general formulae for solving quadratics, cubics and quartics, but not for polynomials of degree five or greater. It also gives us a characterisation of the ratios of lengths that can be constructed using only straightedge and compasses, thus leading to an elegant insight into the theory of constructible regular polygons. In fact it can be argued that the work of Galois, all completed before the age of 21 when he died, saw the birth of Abstract Algebra as a coherent mathematical discipline.</p>
+</section>
+</section>
+<section id="sheet9" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="sheet9"><span class="header-section-number">9.5</span> Problem Sheet 9</h2>
+<p><em>Covers Chapter 9.</em></p>
+<hr>
+<div class="cell" title="Question 9.1" data-hash="09-Week9_cache/html/unnamed-chunk-24_17d9c6229772cc6bdc0367bf32027f35">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 9.1
+</div>
+<div class="panel-body">
+<ol type="a">
+<li>An element <span class="math inline">\(a\)</span> of a ring <span class="math inline">\(R\)</span> is said to be if <span class="math inline">\(a^2 = a\)</span>. Show that a division ring contains exactly two idempotent elements.</li>
+<li>If every element in a ring <span class="math inline">\(R\)</span> is idempotent, show that any non-zero element <span class="math inline">\(x \in R\)</span> has period 2 in the group <span class="math inline">\((R, +)\)</span>.</li>
+<li>Show that any ring in which every element is idempotent is necessarily commutative.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 9.1" data-hash="09-Week9_cache/html/unnamed-chunk-25_683c127de4c22d536bf213ebf2a1accb">
+<button id="displayTextunnamed-chunk-25" onclick="javascript:toggle('unnamed-chunk-25');">
+Show Solution 9.1
+</button>
+<div id="toggleTextunnamed-chunk-25" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 9.1
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>Clearly, <span class="math inline">\(0^2_R = 0_R\)</span>.</p>
+<p>Now let <span class="math inline">\(a \in R, \; a \neq 0_R\)</span>. We know that <span class="math inline">\(a^{-1}\)</span> exists (division ring), so <span class="math display">\[\begin{eqnarray*}
+a^2 &amp;=&amp; a\\
+\Leftrightarrow \quad \;\;\;\; aa &amp;=&amp; a\\
+\Leftrightarrow \;\; aaa^{-1} &amp;=&amp; aa^{-1}\\
+\Leftrightarrow \qquad \;\; a &amp;=&amp; 1_R.
+\end{eqnarray*}\]</span> Hence, <span class="math inline">\(0_R\)</span> and <span class="math inline">\(1_R\)</span> are the only idempotent elements.</p></li>
+<li><p>We have <span class="math display">\[\begin{eqnarray*}
+2x &amp;=&amp; x + x\\
+&amp;=&amp; (x+x)^2 \qquad \text{idempotent}\\
+&amp;=&amp; x^2 + 2x + x^2\\
+&amp;=&amp; x + 2x + x \qquad \text{idempotent}\\
+&amp;=&amp; 4x\\
+&amp;=&amp; 2x + 2x
+\end{eqnarray*}\]</span> Hence, <span class="math inline">\(2x = 0\)</span> and so <span class="math inline">\(x + x = 0\)</span>. Thus, <span class="math inline">\(x\)</span> has period 2 in <span class="math inline">\((R, +)\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(x, y \in R\)</span>. Now <span class="math display">\[\begin{eqnarray*}
+x+y &amp;=&amp; (x+y)^2 \qquad \text{idempotent}\\
+&amp;=&amp; x^2 + xy + yx + y^2\\
+&amp;=&amp; x + xy + yx + y\qquad \text{idempotent}\\
+&amp;=&amp; x + y + (xy + yx) \qquad \text{commutativity of +}
+\end{eqnarray*}\]</span> Hence, <span class="math inline">\(xy + yx = 0\)</span> and so <span class="math inline">\(xy = -(yx)\)</span>. But in part (b) we showed that any element in <span class="math inline">\((R, +)\)</span> has period 2, which tells us that <span class="math inline">\(-(yx) = yx\)</span>. Therefore, <span class="math inline">\(xy = yx\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 9.2" data-hash="09-Week9_cache/html/unnamed-chunk-26_974424eecad991102cc6b6d3e2fe2fda">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 9.2
+</div>
+<div class="panel-body">
+<p>Let <span class="math display">\[S=\Bigg\{\left(\begin{array}{cc} x &amp; 0 \\ 0 &amp; 0\end{array}\right) : x\in\mathbb{R}\Bigg\}.\]</span></p>
+<p>Prove that <span class="math inline">\(S\)</span> is a subring of <span class="math inline">\(M_{2}(\mathbb{R})\)</span>.</p>
+<p>[Note that the <span class="math inline">\(S\)</span> and <span class="math inline">\(M_{2}(\mathbb{R})\)</span> each have identity elements but they are not the same]</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 9.2" data-hash="09-Week9_cache/html/unnamed-chunk-27_d3da106865a8e612aa7004117d7628c1">
+<button id="displayTextunnamed-chunk-27" onclick="javascript:toggle('unnamed-chunk-27');">
+Show Solution 9.2
+</button>
+<div id="toggleTextunnamed-chunk-27" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 9.2
+</div>
+<div class="panel-body">
+<p>The element <span class="math inline">\(\left(\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 0\end{array}\right)\)</span> acts as an identity element in <span class="math inline">\(S\)</span> as, for all <span class="math inline">\(\left(\begin{array}{cc} x &amp; 0 \\ 0 &amp; 0\end{array}\right)\in S\)</span> we have</p>
+<p><span class="math display">\[\left(\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 0\end{array}\right)\left(\begin{array}{cc} x &amp; 0 \\ 0 &amp; 0\end{array}\right)=\left(\begin{array}{cc} x &amp; 0 \\ 0 &amp; 0\end{array}\right)\left(\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 0\end{array}\right)=\left(\begin{array}{cc} x &amp; 0 \\ 0 &amp; 0\end{array}\right).\]</span></p>
+<p>Now let <span class="math inline">\(A=\left(\begin{array}{cc} x &amp; 0 \\ 0 &amp; 0\end{array}\right),B=\left(\begin{array}{cc} y &amp; 0 \\ 0 &amp; 0\end{array}\right)\in S\)</span>. Then <span class="math display">\[A-B=\left(\begin{array}{cc} x-y &amp; 0 \\ 0 &amp; 0\end{array}\right)\in S\]</span> and <span class="math display">\[AB=\left(\begin{array}{cc} xy &amp; 0 \\ 0 &amp; 0\end{array}\right)\in S.\]</span> Hence <span class="math inline">\(S\)</span> is a subring of <span class="math inline">\(M_{2}(\mathbb{R})\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 9.3" data-hash="09-Week9_cache/html/unnamed-chunk-28_b4dff062d34e45d1f6db3001e2cc8810">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 9.3
+</div>
+<div class="panel-body">
+<p>In the lectures we said that <span class="math inline">\(\Q (\sqrt 2)\)</span> is a subfield of <span class="math inline">\(\R\)</span>. Prove that <span class="math inline">\(\Q (\sqrt 2)\)</span> is a field.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 9.3" data-hash="09-Week9_cache/html/unnamed-chunk-29_8c4f38a75bf9024371363ce1c3436dd7">
+<button id="displayTextunnamed-chunk-29" onclick="javascript:toggle('unnamed-chunk-29');">
+Show Solution 9.3
+</button>
+<div id="toggleTextunnamed-chunk-29" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 9.3
+</div>
+<div class="panel-body">
+<p>Before tackling a problem like this it is always helpful to have a strategy. Recall that a field is a commutative division ring and that a division ring is a (not necessarily commutative) ring in which every non-zero element is a unit. So, the strategy is to show that <span class="math inline">\(\QR\)</span> is a ring (what’s the easy way?) and then demonstrate that it is commutative and that all non-zero elements have multiplicative inverses.</p>
+<p>To show that <span class="math inline">\(\QR\)</span> is a ring is straightforward if we note that <span class="math inline">\(\QR\)</span> is a subset of <span class="math inline">\(\R\)</span>; all we need to do is show that <span class="math inline">\(\QR\)</span> is a <em>subring</em> of <span class="math inline">\(\R\)</span>.</p>
+<ol type="i">
+<li><p>We have that <span class="math inline">\(1 = 1 + 0 \sqrt 2 \in \QR\)</span> and clearly <span class="math inline">\(1\)</span> acts as an identity element in <span class="math inline">\(\QR\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(x = a + b \sqrt 2,\; y = c + d \sqrt 2 \in \QR\)</span>, ; <span class="math inline">\(a, b, c, d \in \Q\)</span>. Then <span class="math display">\[\begin{eqnarray*}
+x - y &amp;=&amp; (a + b \sqrt 2) - (c + d \sqrt 2)\\
+&amp;=&amp; a - c + (b-d) \sqrt 2 \; \in \QR \qquad \text{as $a-c, \; b-d \; \in \Q.$}
+\end{eqnarray*}\]</span> Hence, <span class="math inline">\(\QR\)</span> is closed under subtraction.</p></li>
+<li><p>Let <span class="math inline">\(x = a + b \sqrt 2,\; y = c + d \sqrt 2 \in \QR\)</span>, ; <span class="math inline">\(a, b, c, d \in \Q\)</span>. Then <span class="math display">\[\begin{eqnarray*}
+      xy &amp;=&amp; (a + b \sqrt 2)(c + d \sqrt 2)\\
+      &amp;=&amp; (ac +2bd) + (ad + bc) \sqrt 2 \; \in \QR \qquad \text{as $ac+2bd, \; ad+bc \; \in \Q.$}
+      \end{eqnarray*}\]</span> Hence, <span class="math inline">\(\QR\)</span> is closed under multiplication.</p></li>
+</ol>
+<p>Thus, by i. to iii. above, <span class="math inline">\(\QR\)</span> is a subring of <span class="math inline">\(\R\)</span> and, hence, a ring.</p>
+<p>As mentioned, to now show that <span class="math inline">\(\QR\)</span> is a field, we need to demonstrate that it is commutative and that every non-zero element is a unit.</p>
+<p>Clearly commutativity follows from the fact that <span class="math inline">\(\QR\)</span> is a subset of <span class="math inline">\(\R\)</span>, and <span class="math inline">\(\R\)</span> is commutative.</p>
+<p>Checking that each non-zero element is a unit needs care — we require that all non-zero elements of <span class="math inline">\(\QR\)</span> have an inverse <em>in</em> <span class="math inline">\(\QR\)</span>.</p>
+<p>It is useful, for illustration purposes, to consider a specific, numerical example. Suppose that we consider <span class="math inline">\(1 + 2 \sqrt2 \in \QR\)</span>. Now consider the conjugate <span class="math inline">\(1 - 2 \sqrt 2 \in \QR\)</span>. Then <span class="math display">\[(1 + 2 \sqrt2)(1 - 2 \sqrt2) = 1^2 - (2 \sqrt2)^2 = 1 - 8 = -7.\]</span> Now, it follows that <span class="math inline">\((1 + 2 \sqrt2)(1 - 2 \sqrt2)(-\frac{1}{7}) = 1\)</span> and, hence, we have that <span class="math display">\[(1 + 2 \sqrt2)^{-1} = \left(-\frac{1}{7}\right)(1 - 2 \sqrt2) = \frac{1}{(1^2 - (2\sqrt2)^2)}(1 - 2 \sqrt2).\]</span> Checking:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+(1 + 2 \sqrt2)\left(-\frac{1}{7} + \frac{2 \sqrt 2}{7}\right) &amp;=&amp; -\frac{1}{7} + \frac{2}{7}\sqrt2 - \frac{2}{7}\sqrt2 + \frac{4 \sqrt2}{7}\sqrt2\\
+&amp;=&amp; -\frac{1}{7} + \frac{8}{7}\\
+&amp;=&amp; \frac{7}{7}\\
+&amp;=&amp; 1
+\end{eqnarray*}\]</span></p>
+<p>We now consider the general case. Let <span class="math inline">\(0 \neq x = a + b \sqrt2 \in \QR\)</span>. Consider the conjugate <span class="math inline">\(y = a - b\sqrt2 \in \QR\)</span>. Then <span class="math inline">\((a + b\sqrt2)(a - b\sqrt2) = a^2 - 2b^2 \in \Q\)</span>. So, in order to get the identity, <span class="math inline">\(1\)</span>, from <span class="math inline">\(x\)</span>, we simply need to multiply <span class="math inline">\(x\)</span> by <span class="math display">\[\frac{1}{a^2 - 2b^2}(a - b\sqrt2) \in \QR.\]</span> But, could <span class="math inline">\(a^2 - 2b^2 = 0\)</span>?</p>
+<p>It is easy to see that the only solution to the equation <span class="math inline">\(a^2 - 2b^2 = 0\)</span>, with <span class="math inline">\(a, b \in \Q\)</span> is <span class="math inline">\(a=b=0\)</span>. Hence, for all <span class="math inline">\(0 \neq x = a + b\sqrt2 \in \QR\)</span> then <span class="math inline">\(a^2 = 2b^2 \neq 0\)</span> and we have <span class="math display">\[x^{-1} = \frac{1}{a^2 - 2b^2}(a - b \sqrt2) \in \QR, \;\;\; \forall \, x \in \QR.\]</span> So, <span class="math inline">\(\QR\)</span> is a field.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./08-Week8.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups and Numbers</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

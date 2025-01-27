@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MAT-20025: Abstract Algebra - 4&nbsp; Cosets and Lagrange’s Theorem</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05-Week5.html" rel="next">
+<link href="./03-Week3.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+-->
+
+
+</head><body class="nav-sidebar docked"><div style="display:none">
+
+\(\newcommand{\D}{\displaystyle}\)
+\(\newcommand{\maps}{\rightarrow}\)
+\(\newcommand{\imp}{\Rightarrow}\)
+\(\newcommand{\limp}{\Leftarrow}\)
+\(\newcommand{\ifif}{\Leftrightarrow}\)
+\(\newcommand{\x}{\times}\)
+\(\newcommand{\where}{\; | \;}\)
+\(\newcommand{\sd}{\triangle}\)
+\(\newcommand{\id}{\operatorname{id}}\)
+
+
+
+\(\newcommand{\Hbb}{\mathbb{H}}\)
+\(\newcommand{\N}{\mathbb{N}}\)
+\(\newcommand{\Z}{\mathbb{Z}}\)
+\(\newcommand{\Q}{\mathbb{Q}}\)
+\(\newcommand{\R}{\mathbb{R}}\)
+\(\newcommand{\Sbb}{\mathbb{S}}\)
+\(\newcommand{\rn}{\mathbb{R}^n}\)
+\(\newcommand{\rwz}{\mathbb{R} \backslash \{0\}}\)
+\(\newcommand{\cwz}{\mathbb{C} \backslash \{0\}}\)
+\(\newcommand{\C}{\mathbb{C}}\)
+\(\newcommand{\cx}{C^{\times}}\)
+\(\newcommand{\E}{\mathbb{E}}\)
+\(\newcommand{\e}{\mathrm{e}}\)
+\(\newcommand{\Odd}{\mathbb{O}}\)
+\(\newcommand{\rnn}{\mathbb{R}_{n \times n}}\)
+\(\newcommand{\F}{\mathcal{F}}\)
+\(\newcommand{\setminus}{\backslash}\)
+
+
+\(\newcommand{\rez}{Re(z)}\)
+\(\newcommand{\imz}{Im(z)}\)
+
+
+
+\(\newcommand{\modu}{\, \operatorname{(mod} \,}\)
+\(\newcommand{\nequiv}{\not\equiv}\)
+\(\newcommand{\divides}{\, | \,}\)
+\(\newcommand{\ndivides}{\, \nmid \,}\)
+\(\newcommand{\nrel}{\not \hspace{-1mm}R}\)
+\(\newcommand{\greatcd}{\text{gcd} \,}\)
+\(\newcommand{\lowcm}{\text{lcm} \,}\)
+\(\newcommand{\euler}{a^{\phi(n)}}\)
+\(\newcommand{\QR}{\mathbb{Q}(\sqrt 2)}\)
+
+
+\(\renewcommand{\vec}[1]{\mathbf{#1}}\)
+\(\newcommand{\vecu}{\mathbf{u}}\)
+\(\newcommand{\vecv}{\mathbf{v}}\)
+\(\newcommand{\vecw}{\mathbf{w}}\)
+\(\newcommand{\vecx}{\mathbf{x}}\)
+\(\newcommand{\vecX}{\mathbf{X}}\)
+\(\newcommand{\vecy}{\mathbf{y}}\)
+\(\newcommand{\vecY}{\mathbf{Y}}\)
+\(\newcommand{\vecz}{\mathbf{z}}\)
+\(\newcommand{\veca}{\mathbf{a}}\)
+\(\newcommand{\vecb}{\mathbf{b}}\)
+\(\newcommand{\vecc}{\mathbf{c}}\)
+\(\newcommand{\vecd}{\mathbf{d}}\)
+\(\newcommand{\vece}{\mathbf{e}}\)
+\(\newcommand{\vecf}{\mathbf{f}}\)
+\(\newcommand{\vecg}{\mathbf{g}}\)
+\(\newcommand{\vecn}{\mathbf{n}}\)
+\(\newcommand{\vecp}{\mathbf{p}}\)
+\(\newcommand{\vecs}{\mathbf{s}}\)
+\(\newcommand{\vect}{\mathbf{t}}\)
+\(\newcommand{\veczero}{\mathbf{0}}\)
+\(\newcommand{\diag}{\operatorname{diag}\,}\)
+\(\newcommand{\spn}{\operatorname{span}\,}\)
+\(\newcommand{\gen}[1]{\left\langle #1 \right\rangle}\)
+\(\newcommand{\span}{\operatorname{span}\,}\)
+\(\newcommand{\dimn}{\operatorname{dim}\,}\)
+\(\newcommand{\row}{\operatorname{row}\,}\)
+\(\newcommand{\col}{\operatorname{col}\,}\)
+\(\newcommand{\nul}{\operatorname{nullity}\,}\)
+\(\newcommand{\rank}{\operatorname{rank}\,}\)
+\(\newcommand{\im}{\text{im}\,}\)
+\(\newcommand{\Tr}{\operatorname{trace}\,}\)
+\(\newcommand{\vecseq}{(\vecx_1, \ldots, \vecx_k)}\)
+
+\(\newcommand{\go}{(G, \circ)}\)
+\(\newcommand{\gx}{(G, \times)}\)
+\(\newcommand{\gstar}{(G, *)}\)
+\(\newcommand{\ho}{(H, \circ)}\)
+\(\newcommand{\hx}{(H, \times)}\)
+\(\newcommand{\hstar}{(H, *)}\)
+\(\newcommand{\gp}{G^{\prime}}\)
+\(\newcommand{\ghat}{\widehat{G}}\)
+\(\newcommand{\cyca}{\langle a \rangle}\)
+\(\newcommand{\krn}{\text{ker}\,}\)
+\(\newcommand{\aut}{\text{Aut}\,}\)
+\(\newcommand{\orb}{\operatorname{orb}\,}\)
+\(\newcommand{\stab}{\operatorname{stab}\,}\)
+\(\newcommand{\fix}{\operatorname{fix}\,}\)
+\(\newcommand{\lcm}{\operatorname{lcm}}\)
+\(\newcommand{\kbar}{\overline{K}}\)
+\(\newcommand{\zbar}{\overline{z}}\)
+\(\newcommand{\wbar}{\overline{w}}\)
+\(\newcommand{\ap}{a^{\prime}}\)
+\(\newcommand{\bp}{b^{\prime}}\)
+\(\newcommand{\ep}{e^{\prime}}\)
+\(\newcommand{\hp}{h^{\prime}}\)
+\(\newcommand{\xp}{x^{\prime}}\)
+\(\newcommand{\yp}{y^{\prime}}\)
+\(\newcommand{\ainv}{a^{-1}}\)
+\(\newcommand{\binv}{b^{-1}}\)
+\(\newcommand{\finv}{f^{-1}}\)
+\(\newcommand{\ginv}{g^{-1}}\)
+\(\newcommand{\hinv}{h^{-1}}\)
+\(\newcommand{\xinv}{x^{-1}}\)
+\(\newcommand{\yinv}{y^{-1}}\)
+\(\newcommand{\zn}{\Z_n}\)
+\(\newcommand{\zp}{\Z_p}\)
+\(\newcommand{\znx}{\Z_n^{\times}}\)
+\(\newcommand{\zpx}{\Z_p^{\times}}\)
+\(\newcommand{\norm}{\triangleleft \,}\)
+
+
+\(\newcommand{\chr}{\operatorname{char} \,}\)
+\(\newcommand{\ideal}{\unlhd}\)
+\(\newcommand{\zring}{\{0_R\}}\)
+
+
+
+\(\newcommand{\epr}{E^{\prime}}\)
+\(\newcommand{\vpr}{V^{\prime}}\)
+\(\newcommand{\turan}{Tur\'{a}n}\)
+\(\newcommand{\gcomp}{\overline G}\)
+\(\newcommand{\pruf}{Pr\"{u}fer}\)
+\(\newcommand{\chvat}{Chv\'{a}tal's}\)
+\(\newcommand{\konig}{K\"{o}nig}\)
+
+
+</div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cosets and Lagrange’s Theorem</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">MAT-20025: Abstract Algebra</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="./MAT-20025--Abstract-Algebra.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle sidebar-tool" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Groups and applications</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pre-requisites</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-Week2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Symmetry, Congruences, Matrices, and Roots of Unity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-Week3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Group Theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-Week4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cosets and Lagrange’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-Week5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Isomorphisms and Homomorphisms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-Week6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Permutation Groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-Week7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Structure of Finite Abelian Groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-Week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups and Numbers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Other algebraic structures</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-Week9.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rings and Fields</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p><a href="https://www.keele.ac.uk/scm/"><img src="KeeleUni-RGB_MonoBlue.png" width="180"></a></p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sheet4" id="toc-sheet4" class="nav-link active" data-scroll-target="#sheet4"><span class="toc-section-number">4.1</span>  Problem Sheet 4</a></li>
+  </ul>
+</nav>
+    <div class="quarto-margin-footer"><div class="margin-footer-item">
+<p><a href="https://www.keele.ac.uk/scm/"><img src="KeeleUni-1949-RGB_MonoWhite.png" width="180"></a></p>
+</div></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-CosetsandLagrangesTheorem" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cosets and Lagrange’s Theorem</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<p>The aim of this chapter is to prove <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Lagrange/">Lagrange</a>’s Theorem, perhaps the most important result in finite group theory. Lagrange’s Theorem states that the number of elements in a subgroup of a finite group <span class="math inline">\(\gx\)</span> must divide the order of <span class="math inline">\(G\)</span>. We begin with an important definition.</p>
+<div id="def-LeftCoset" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4.1 (Left Coset) </strong></span>Let <span class="math inline">\(\hx\)</span> be a subgroup of <span class="math inline">\(\gx\)</span>. For a fixed element <span class="math inline">\(g \in G\)</span>, the set <span class="math inline">\(gH = \{gh \, | \, h \in H \}\)</span> is a <em>left coset</em> of <span class="math inline">\(H\)</span> in <span class="math inline">\(\gx\)</span>. If <span class="math inline">\(H = \{h_1, h_2, \ldots , h_m\}\)</span> is finite, then <span class="math inline">\(gH = \{g \times h_1, g \times h_2, \ldots , g \times h_m\}\)</span>.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4.1 </strong></span>Let <span class="math inline">\(\go\)</span> be the group of symmetries of an equilateral triangle, <span class="math inline">\(D_3\)</span>. We reproduce the operation table for ease of reference. <span class="math display">\[
+\begin{array}{c|cccccc}
+\circ&amp;e&amp;r_1&amp;r_2&amp;s_1&amp;s_2&amp;s_3\\
+\hline
+e&amp;e&amp;r_1&amp;r_2&amp;s_1&amp;s_2&amp;s_3\\
+r_1&amp;r_1&amp;r_2&amp;e&amp;s_3&amp;s_1&amp;s_2\\
+r_2&amp;r_2&amp;e&amp;r_1&amp;s_2&amp;s_3&amp;s_1\\
+s_1&amp;s_1&amp;s_2&amp;s_3&amp;e&amp;r_1&amp;r_2\\
+s_2&amp;s_2&amp;s_3&amp;s_1&amp;r_2&amp;e&amp;r_1\\
+s_3&amp;s_3&amp;s_1&amp;s_2&amp;r_1&amp;r_2&amp;e
+\end{array}
+\]</span></p>
+<p>Now, if <span class="math inline">\(H = \{e, s_1\}\)</span>, then:</p>
+<ul>
+<li><p><span class="math inline">\(eH\)</span> is equal to</p>
+<div class="cell" data-gaplength="4" data-hash="04-Week4_cache/html/unnamed-chunk-3_e34f9461c5fc76ed69451aabbda2a1c9">
+<p><span class="math inline">\(\{e \circ e , e\circ s_1\} = \{e,s_1 \}\)</span></p>
+</div></li>
+<li><p><span class="math inline">\(r_1H\)</span> is equal to</p>
+<div class="cell" data-gaplength="4" data-hash="04-Week4_cache/html/unnamed-chunk-4_29769c750a0e8df9c9541aa3a459a49d">
+<p><span class="math inline">\(\{r_1 \circ e , r_1\circ s_1\} = \{r_1,s_3 \}\)</span></p>
+</div></li>
+<li><p><span class="math inline">\(r_2H\)</span> is equal to</p>
+<div class="cell" data-gaplength="4" data-hash="04-Week4_cache/html/unnamed-chunk-5_dca7a021b52c5f757f1b24dcc81b318b">
+<p><span class="math inline">\(\{r_2 \circ e , r_2\circ s_1\} = \{r_2,s_2\}\)</span></p>
+</div></li>
+<li><p><span class="math inline">\(s_1H\)</span> is equal to</p>
+<div class="cell" data-gaplength="4" data-hash="04-Week4_cache/html/unnamed-chunk-6_d1484e79d54c9b4e698f7582c4252715">
+<p><span class="math inline">\(\{s_1 \circ e , s_1\circ s_1\} = \{s_1,e \} = eH\)</span></p>
+</div></li>
+<li><p><span class="math inline">\(s_2H\)</span> is equal to</p>
+<div class="cell" data-gaplength="4" data-hash="04-Week4_cache/html/unnamed-chunk-7_f77c048830ab8165ab5454439e13c022">
+<p><span class="math inline">\(\{s_2 \circ e , s_2\circ s_1\} = \{s_2,r_2 \} = r_2H\)</span></p>
+</div></li>
+<li><p><span class="math inline">\(s_3H\)</span> is equal to</p>
+<div class="cell" data-gaplength="4" data-hash="04-Week4_cache/html/unnamed-chunk-8_a26a093c4f172fdec30d89f9f9ed41e4">
+<p><span class="math inline">\(\{s_3 \circ e , s_3\circ s_1\} = \{s_3,r_1 \} = r_1H\)</span></p>
+</div></li>
+</ul>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4.2 </strong></span>Consider the group <span class="math inline">\(\Z_{12}\)</span>. Draw the operation table. Find the distinct left cosets of the subgroup generated by 8</p>
+<p><strong>Solution:</strong></p>
+<p><span class="math display">\[
+\begin{array}{c|cccccccccccccccccccccccc}
+\oplus_{12}&amp; &amp;0&amp; &amp;1&amp; &amp;2&amp; &amp;3&amp; &amp;4&amp; &amp;5&amp; &amp;6&amp; &amp;7&amp; &amp;8&amp; &amp;9&amp; &amp;10&amp; &amp;11\\
+\hline\\
+0&amp; &amp;0&amp; &amp;1&amp; &amp;2&amp; &amp;3&amp; &amp;4&amp; &amp;5&amp; &amp;6&amp; &amp;7&amp; &amp;8&amp; &amp;9&amp; &amp;10&amp; &amp;11\\\\
+1&amp; &amp;1&amp; &amp;2&amp; &amp;3&amp; &amp;4&amp; &amp;5&amp; &amp;6&amp; &amp;7&amp; &amp;8&amp; &amp;9&amp; &amp;10&amp; &amp;11&amp; &amp;0\\\\
+2&amp; &amp;2&amp; &amp;3&amp; &amp;4&amp; &amp;5&amp; &amp;6&amp; &amp;7&amp; &amp;8&amp; &amp;9&amp; &amp;10&amp; &amp;11&amp; &amp;0&amp; &amp;1\\\\
+3&amp; &amp;3&amp; &amp;4&amp; &amp;5&amp; &amp;6&amp; &amp;7&amp; &amp;8&amp; &amp;9&amp; &amp;10&amp; &amp;11&amp; &amp;0&amp; &amp;1&amp; &amp;2\\\\
+4&amp; &amp;4&amp; &amp;5&amp; &amp;6&amp; &amp;7&amp; &amp;8&amp; &amp;9&amp; &amp;10&amp; &amp;11&amp; &amp;0&amp; &amp;1&amp; &amp;2&amp; &amp;3\\\\
+5&amp; &amp;5&amp; &amp;6&amp; &amp;7&amp; &amp;8&amp; &amp;9&amp; &amp;10&amp; &amp;11&amp; &amp;0&amp; &amp;1&amp; &amp;2&amp; &amp;3&amp; &amp;4\\\\
+6&amp; &amp;6&amp; &amp;7&amp; &amp;8&amp; &amp;9&amp; &amp;10&amp; &amp;11&amp; &amp;0&amp; &amp;1&amp; &amp;2&amp; &amp;3&amp; &amp;4&amp; &amp;5\\\\
+7&amp; &amp;7&amp; &amp;8&amp; &amp;9&amp; &amp;10&amp; &amp;11&amp; &amp;0&amp; &amp;1&amp; &amp;2&amp; &amp;3&amp; &amp;4&amp; &amp;5&amp; &amp;6\\\\
+8&amp; &amp;8&amp; &amp;9&amp; &amp;10&amp; &amp;11&amp; &amp;0&amp; &amp;1&amp; &amp;2&amp; &amp;3&amp; &amp;4&amp; &amp;5&amp; &amp;6&amp; &amp;7\\\\
+9&amp; &amp;9&amp; &amp;10&amp; &amp;11&amp; &amp;0&amp; &amp;1&amp; &amp;2&amp; &amp;3&amp; &amp;4&amp; &amp;5&amp; &amp;6&amp; &amp;7&amp; &amp;8\\\\
+10&amp; &amp;10&amp; &amp;11&amp; &amp;0&amp; &amp;1&amp; &amp;2&amp; &amp;3&amp; &amp;4&amp; &amp;5&amp; &amp;6&amp; &amp;7&amp; &amp;8&amp; &amp;9\\\\
+11&amp; &amp;11&amp; &amp;0&amp; &amp;1&amp; &amp;2&amp; &amp;3&amp; &amp;4&amp; &amp;5&amp; &amp;6&amp; &amp;7&amp; &amp;8&amp; &amp;9&amp; &amp;10
+\end{array}
+\]</span></p>
+<div class="cell" data-gaplength="15" data-hash="04-Week4_cache/html/unnamed-chunk-9_36a19e0832c49faf446c44bb0feacad1">
+<p>Now <span class="math inline">\(H = \gen{8} =\{0,4,8\}\)</span>. We compute the cosets:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+0H &amp;=&amp; \{0+0, 0+4, 0+8\} = \{0,4,8\} = 4H = 8H \\
+1H &amp;=&amp; \{1+0,1+4,1+8\} = \{1,5,9\} = 5H = 9H \\
+2H &amp;=&amp; \{2+0,2+4,2+8\} = \{2,6,10\} = 2H = 10H \\
+3H &amp;=&amp; = \{3+0,3+4,3+8\} = \{3,7,11\} = 3H = 7H = 11H.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell" data-gaplength="20" data-hash="04-Week4_cache/html/unnamed-chunk-10_daaa2303d3de1133660ac43ceb8b0d99">
+<ul>
+<li>In <span class="math inline">\(D_3\)</span>, the distinct left cosets of <span class="math inline">\(H = \gen{s_1}\)</span> are <span class="math display">\[\{e,s_1\}, \quad \{r_1,s_3\} \text{ and } \{r_2,s_2 \}.\]</span></li>
+<li>In <span class="math inline">\(\Z_{12}\)</span>, the distinct left cosets of <span class="math inline">\(H = \gen{8}\)</span> are <span class="math display">\[\{0,4,8\},\quad \{1,5,9\}, \quad \{2,6,10\}, \text{ and } \{3,7,11\}.\]</span></li>
+</ul>
+<p>In both cases, the distinct left cosets <em>partition</em> the group. That is, each element of the group belongs to a unique left coset of the subgroup. Another way of saying this is &gt;The left cosets are disjoint (have no elements in common) and the union of all the left cosets is the group.</p>
+<p>Notice also that all the left cosets have the same size as <span class="math inline">\(H\)</span>. Therefore, as the cosets partition the group the size of <span class="math inline">\(H\)</span> must be a divisor of the size of the group; <span class="math display">\[|D_3| = 3|H| \text{ and } |\Z_{12}| = 4 |H|.\]</span></p>
+</div>
+</div>
+</div>
+<div id="lem-Cosets" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 4.1 (Cosets) </strong></span>Let <span class="math inline">\(\hx\)</span> be a subgroup of a finite group <span class="math inline">\(\gx\)</span>. Then,</p>
+<ol type="a">
+<li><span class="math inline">\(\forall g \in G, \, g \in gH\)</span>,</li>
+<li><span class="math inline">\(\forall g \in G, \, |gH| = |H|\)</span>,</li>
+<li><span class="math inline">\(\forall g_1, g_2 \in G\)</span>, either <span class="math inline">\(g_1 H = g_2 H\)</span> or <span class="math inline">\(g_1 H \cap g_2 H = \emptyset\)</span>.</li>
+</ol>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="25" data-hash="04-Week4_cache/html/unnamed-chunk-11_fdce0cca6dd5b037d588214389bc3c82">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>We take each in turn.</p>
+<ol type="a">
+<li><p>Since <span class="math inline">\(e \in H\)</span>, then <span class="math inline">\(g = g \times e \in gH\)</span> and so <span class="math inline">\(g \in gH\)</span> for all <span class="math inline">\(g \in G\)</span>.</p></li>
+<li><p>Suppose <span class="math inline">\(H = \{h_1,h_2,\ldots, h_m\}\)</span>. Let <span class="math inline">\(g \in G\)</span>, then <span class="math inline">\(gH = \{gh_1, gh_2, \ldots, gh_m\}\)</span>. To show that <span class="math inline">\(|gH| = |H|\)</span> we need to show that <span class="math inline">\(gh_i \ne gh_j\)</span> whenever <span class="math inline">\(i \ne j\)</span>. Let <span class="math inline">\(i,j\)</span> be such that <span class="math inline">\(gh_i = gh_j\)</span>. Then by the Cancellation Laws, <span class="math inline">\(h_i = h_j\)</span>. Thus, <span class="math inline">\(|gH| = |H|\)</span>.</p></li>
+<li><p>We prove the contrapositive, namely, we show that if two left cosets have an element in common then they are equal. Suppose <span class="math inline">\(g_1,g_2 \in G\)</span> and <span class="math inline">\(g_1H_1 \cap g_2H_2 \ne \emptyset\)</span>. Let <span class="math inline">\(g \in g_1H_1 \cap g_2H_2\)</span>. Then there are <span class="math inline">\(h_1, h_2 \in H\)</span> such that <span class="math inline">\(g_1h_1 = g_2 h_2 = g\)</span>. It follows that <span class="math inline">\(g_1 = g_2 (h_2h_1^{-1}) \in g_2H\)</span>. Thus, for any <span class="math inline">\(h \in G\)</span>, <span class="math inline">\(g_1 h = g_2 (h_2h_1^{-1})h \in g_2H\)</span>. We deduce that <span class="math inline">\(g_1 H \subseteq g_2H\)</span>. However by b. <span class="math inline">\(|g_1H| = |g_2H|\)</span> and so <span class="math inline">\(g_1H = g_2H\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div id="thm-Lagrange" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4.1 (Lagrange) </strong></span>Let <span class="math inline">\(\hx\)</span> be a subgroup of a finite group <span class="math inline">\(\gx\)</span>. Then the number of elements in <span class="math inline">\(H\)</span> divides the number of elements in <span class="math inline">\(G\)</span>, that is <span class="math inline">\(|H|\)</span> divides <span class="math inline">\(|G|\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="15" data-hash="04-Week4_cache/html/unnamed-chunk-12_81668acf23850099ce2286b58b40550d">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(g_1,g_2,\ldots, g_m \in G\)</span> be such that <span class="math inline">\(g_1H,g_2H,\ldots, g_mH\)</span> are the distinct left cosets of <span class="math inline">\(H\)</span> in <span class="math inline">\(G\)</span>. We observe that by <a href="#lem-Cosets">Lemma&nbsp;<span>4.1</span></a> <span class="math display">\[G = g_1H \sqcup g_2H \sqcup \ldots \sqcup g_mH.\]</span> Using the facts that distinct cosets have trivial intersection (<a href="#lem-Cosets">Lemma&nbsp;<span>4.1</span></a> part c.), we have</p>
+<p><span class="math display">\[|G| = |g_1H| + |g_2H| + \ldots + |g_mH|.\]</span></p>
+<p>The conclusion now follows from the fact that all the left cosets of <span class="math inline">\(H\)</span> have the same size as <span class="math inline">\(H\)</span>:</p>
+<p><span class="math display">\[|G| = m \times |H|.\]</span></p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4.3 </strong></span>The group of symmetries of an equilateral triangle, <span class="math inline">\(D_3\)</span>. In the group of symmetries of an equilateral triangle, we have, by Lagrange’s Theorem, that the <em>possible</em> subgroup orders are:</p>
+<div class="cell" data-gaplength="15" data-hash="04-Week4_cache/html/unnamed-chunk-13_60801c5bd49b36647877daf3e11a5ff7">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Divisor of <span class="math inline">\(|D3|\)</span></th>
+<th style="text-align: center;">Subgroup</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\(\{e\}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\(\{e,s_i\}\)</span>, <span class="math inline">\(i=1,2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(\{e,r_1,r_2\}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><span class="math inline">\(D_3\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>When faced with a result such as Lagrange’s Theorem, most mathematicians start to think about the converse which, in this case, is if <span class="math inline">\(m\)</span> divides <span class="math inline">\(|G|\)</span> does <span class="math inline">\(G\)</span> necessarily have a subgroup of order <span class="math inline">\(m\)</span>? The answer to this question turns out to be ‘yes’ if <span class="math inline">\(G\)</span> is abelian, but ‘no’ for non-abelian groups. The smallest counter-example for non-abelian groups is the group of rotational symmetries of a regular tetrahedron, which is of order 12 but has no subgroup of order 6.</p>
+<div id="cor-" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 4.1 </strong></span>Let <span class="math inline">\(\gx\)</span> be a finite group of order <span class="math inline">\(n\)</span> and let <span class="math inline">\(g\)</span> be an element with period <span class="math inline">\(k\)</span>. Then</p>
+<ol type="i">
+<li><span class="math inline">\(k\)</span> divides <span class="math inline">\(n\)</span> (the period of an element divides the order of the group),</li>
+<li><span class="math inline">\(g^n = e\)</span>.</li>
+</ol>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="15" data-hash="04-Week4_cache/html/unnamed-chunk-14_764f23b1af88bebef87cf213a8209af0">
+<span class="proof-title"><em>Proof</em>. </span>
+<ol type="i">
+<li>By <a href="03-Week3.html#thm-3.2">Theorem&nbsp;<span>3.2</span></a>, <span class="math inline">\(\gen{g}\)</span> is a subgroup of <span class="math inline">\(G\)</span> and <span class="math inline">\(|\gen{g}| = k\)</span>. Therefore by <a href="#thm-Lagrange">Theorem&nbsp;<span>4.1</span></a>, <span class="math inline">\(k = |\gen{g}| \divides n = |G|\)</span> as required.</li>
+<li>Since <span class="math inline">\(k \divides n\)</span>, then there is an <span class="math inline">\(l \in \N\)</span> such that <span class="math inline">\(kl = n\)</span>. It follows that <span class="math display">\[g^{n} = g^{kl} = (g^{k})^{l} = e^{l} = e.\]</span></li>
+</ol>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 4.4 </strong></span>Find the possible order of elements of the group of symmetries of an equilateral triangle, <span class="math inline">\(D_3\)</span> and identify the elements of <span class="math inline">\(D_3\)</span> (if any) of that order.</p>
+<div class="cell" data-gaplength="15" data-hash="04-Week4_cache/html/unnamed-chunk-15_5be2bd0dcce2ab2272c1db3c53d5be0a">
+<p><strong>Solution:</strong></p>
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Possible order</th>
+<th style="text-align: center;">Element</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\(e\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\(s_i\)</span>, <span class="math inline">\(i=1,2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(r_1,r_2\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">none</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>An easy application of this corollary is that there is essentially only one type of group of prime order.</p>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4.2 </strong></span>Let <span class="math inline">\(\gx\)</span> be a finite group of order <span class="math inline">\(p\)</span>, where <span class="math inline">\(p\)</span> is prime. Then <span class="math inline">\(\gx\)</span> is cyclic.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="15" data-hash="04-Week4_cache/html/unnamed-chunk-16_61b21859fa935490e4056f66a4215e79">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(a \in G\)</span> be any non-identity element of <span class="math inline">\(\gx\)</span>. Then the period of <span class="math inline">\(a\)</span> is a divisor of <span class="math inline">\(p\)</span>. Now since <span class="math inline">\(a\)</span> is not the identity element of <span class="math inline">\(\gx\)</span>, it cannot gave order <span class="math inline">\(1\)</span> (since otherwise <span class="math inline">\(a^{1} = a = e\)</span>). It follows that <span class="math inline">\(a\)</span> has order <span class="math inline">\(p\)</span>. Thus, <span class="math inline">\(\gen{a} = G\)</span> since <span class="math inline">\(|\gen{a} = |G|\)</span>. We conclude that <span class="math inline">\(\gx\)</span> is cyclic.</p>
+</div>
+</div>
+<section id="sheet4" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="sheet4"><span class="header-section-number">4.1</span> Problem Sheet 4</h2>
+<p><em>For Week 6; covers Chapter 4.</em></p>
+<hr>
+<div class="cell" title="Question 4.1" data-hash="04-Week4_cache/html/unnamed-chunk-17_46c3323903f45c4f210b2b1c074b81af">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 4.1
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(G\)</span> be the symmetry group of a regular hexagon. The Cayley table is below.</p>
+<p><span class="math display">\[
+\begin{array}{|c||c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline \circ&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp; s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6\\
+\hline\hline
+e&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp; s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6\\
+r_1&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;e&amp;s_6&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5\\
+r_2&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;e&amp;r_1&amp;s_5&amp;s_6&amp;s_1&amp;s_2&amp;s_3&amp;s_4\\
+r_3&amp;r_3&amp;r_4&amp;r_5&amp;e&amp;r_1&amp;r_2&amp;s_4&amp;s_5&amp;s_6&amp;s_1&amp;s_2&amp;s_3\\
+r_4&amp;r_4&amp;r_5&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;s_1&amp;s_2\\
+r_5&amp;r_5&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp; s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;s_1\\
+s_1&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5\\
+s_2&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;s_1&amp;r_5&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4\\
+s_3&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;s_1&amp;s_2&amp;r_4&amp;r_5&amp;e&amp;r_1&amp;r_2&amp;r_3\\
+s_4&amp;s_4&amp;s_5&amp;s_6&amp;s_1&amp;s_2&amp;s_3&amp;r_3&amp;r_4&amp;r_5&amp;e&amp;r_1&amp;r_2\\
+s_5&amp;s_5&amp;s_6&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;e&amp;r_1\\
+s_6&amp;s_6&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;e\\\hline
+\end{array}\]</span></p>
+<p>For <em>the</em> subgroup of order 3, find its left cosets in <span class="math inline">\(G\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 4.1" data-hash="04-Week4_cache/html/unnamed-chunk-18_13523847ade89f6647abbdd28b25b0f1">
+<button id="displayTextunnamed-chunk-18" onclick="javascript:toggle('unnamed-chunk-18');">
+Show Solution 4.1
+</button>
+<div id="toggleTextunnamed-chunk-18" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 4.1
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(H\)</span> be our subgroup of order 3. So, <span class="math inline">\(H = \{e, r_2, r_4\}\)</span>. Then the left cosets of <span class="math inline">\(H\)</span> in <span class="math inline">\(G\)</span> are <span class="math inline">\(eH = \{e \circ e, e \circ r_2, e \circ r_4\} = \{e, r_2, r_4\}\)</span></p>
+<p><span class="math inline">\(r_1H = \{r_1 \circ e, r_1 \circ r_2, r_1 \circ r_4\} = \{r_1, r_3, r_5\}\)</span></p>
+<p><span class="math inline">\(r_2H = \{r_2 \circ e, r_2 \circ r_2, r_2 \circ r_4\} = \{r_2, r_4, e\}\)</span></p>
+<p><span class="math inline">\(r_3H = \{r_3 \circ e, r_3 \circ r_2, r_3 \circ r_4\} = \{r_3, r_5, r_1\}\)</span></p>
+<p><span class="math inline">\(r_4H = \{r_4 \circ e, r_4 \circ r_2, r_4 \circ r_4\} = \{r_4, e, r_2\}\)</span></p>
+<p><span class="math inline">\(r_5H = \{r_5 \circ e, r_5 \circ r_2, r_5 \circ r_4\} = \{r_5, r_1, r_3\}\)</span></p>
+<p><span class="math inline">\(s_1H = \{s_1 \circ e, s_1 \circ r_2, s_1 \circ r_4\} = \{s_1, s_3, s_5\}\)</span></p>
+<p><span class="math inline">\(s_2H = \{s_2 \circ e, s_2 \circ r_2, s_2 \circ r_4\} = \{s_2, s_4, s_6\}\)</span></p>
+<p><span class="math inline">\(s_3H = \{s_3 \circ e, s_3 \circ r_2, s_3 \circ r_4\} = \{s_3, s_5, s_1\}\)</span></p>
+<p><span class="math inline">\(s_4H = \{s_4 \circ e, s_4 \circ r_2, s_4 \circ r_4\} = \{s_4, s_6, s_2\}\)</span></p>
+<p><span class="math inline">\(s_5H = \{s_5 \circ e, s_5 \circ r_2, s_5 \circ r_4\} = \{s_5, s_1, s_3\}\)</span></p>
+<p><span class="math inline">\(s_6H = \{s_6 \circ e, s_6 \circ r_2, s_6 \circ r_4\} = \{s_6, s_2, s_4\}\)</span>.</p>
+<p>Note that</p>
+<p><span class="math inline">\(eH=r_2H=r_4H,\)</span></p>
+<p><span class="math inline">\(r_1H=r_3H=r_5H,\)</span></p>
+<p><span class="math inline">\(s_1H=s_3H=s_5H,\)</span></p>
+<p><span class="math inline">\(s_2H=s_4H=s_6H.\)</span></p>
+<p>So, there are just the four <em>distinct</em> left cosets which are: <span class="math display">\[\{e, r_2, r_4\}, \qquad \{r_1, r_3, r_5\}, \qquad \{s_1, s_3, s_5\}, \qquad \{s_2, s_4, s_6\}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 4.2" data-hash="04-Week4_cache/html/unnamed-chunk-19_4bfe6cfd6a711a71ab5beb622ecef55a">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 4.2
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(G\)</span> be the symmetry group of a regular octagon. Using the Cayley table below find all of the subgroups of orders 2 and 4. For each of those subgroups find the distinct left cosets.</p>
+<p><span class="math display">\[
+\begin{array}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline\circ&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp; r_6&amp;r_7&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp; s_7&amp; s_8\\
+\hline\hline
+e&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp; r_6&amp;r_7&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp; s_7&amp; s_8\\
+r_1&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;r_6&amp;r_7&amp;e&amp;s_8&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;s_7\\
+r_2&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;r_6&amp;r_7&amp;e&amp;r_1&amp;s_7&amp;s_8&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6\\
+r_3&amp;r_3&amp;r_4&amp;r_5&amp;r_6&amp;r_7&amp;e&amp;r_1&amp;r_2&amp;s_6&amp;s_7&amp;s_8&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5\\
+r_4&amp;r_4&amp;r_5&amp;r_6&amp;r_7&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;s_5&amp;s_6&amp;s_7&amp;s_8&amp;s_1&amp;s_2&amp;s_3&amp;s_4\\
+r_5&amp;r_5&amp;r_6&amp;r_7&amp; e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp; s_4&amp;s_5&amp;s_6&amp;s_7&amp;s_8&amp;s_1&amp;s_2&amp;s_3\\
+r_6&amp;r_6&amp;r_7&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;s_7&amp;s_8&amp;s_1&amp;s_2\\
+r_7&amp;r_7&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;r_6&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;s_7&amp;s_8&amp;s_1\\
+s_1&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;s_7&amp;s_8&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;r_6&amp;r_7\\
+s_2&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;s_7&amp;s_8&amp;s_1&amp;r_7&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;r_6\\
+s_3&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;s_7&amp;s_8&amp;s_1&amp;s_2&amp;r_6&amp;r_7&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5\\
+s_4&amp;s_4&amp;s_5&amp;s_6&amp;s_7&amp;s_8&amp;s_1&amp;s_2&amp;s_3&amp;r_5&amp;r_6&amp;r_7&amp;e&amp;r_1&amp;r_2&amp;r_3&amp;r_4\\
+s_5&amp;s_5&amp;s_6&amp;s_7&amp;s_8&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;r_4&amp;r_5&amp;r_6&amp;r_7&amp;e&amp;r_1&amp;r_2&amp;r_3\\
+s_6&amp;s_6&amp;s_7&amp;s_8&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;r_3&amp;r_4&amp;r_5&amp;r_6&amp;r_7&amp;e&amp;r_1&amp;r_2\\
+s_7&amp;s_7&amp;s_8&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;r_6&amp;r_7&amp;e&amp;r_1\\
+s_8&amp;s_8&amp;s_1&amp;s_2&amp;s_3&amp;s_4&amp;s_5&amp;s_6&amp;s_7&amp;r_1&amp;r_2&amp;r_3&amp;r_4&amp;r_5&amp;r_6&amp;r_7&amp;e\\
+\hline
+\end{array}\]</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 4.2" data-hash="04-Week4_cache/html/unnamed-chunk-20_38ec5e2ee45041f6dfc6a60f11b23052">
+<button id="displayTextunnamed-chunk-20" onclick="javascript:toggle('unnamed-chunk-20');">
+Show Solution 4.2
+</button>
+<div id="toggleTextunnamed-chunk-20" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 4.2
+</div>
+<div class="panel-body">
+<p>The subgroups of order 2 in <span class="math inline">\(D_8\)</span> are <span class="math inline">\(\{e, r_4\}\)</span> and <span class="math inline">\(\{e, s_i\}\)</span> for all <span class="math inline">\(i=1, 2, \ldots, 8\)</span> (there are eight lines of reflection).</p>
+<p>The subgroups of order 4 are <span class="math inline">\(\{e, r_2, r_4, r_6\}\)</span>, <span class="math inline">\(\{e, r_4, s_1, s_5\}\)</span>, <span class="math inline">\(\{e, r_4, s_2, s_6\}\)</span>, <span class="math inline">\(\{e, r_4, s_3, s_7\}\)</span>, <span class="math inline">\(\{e, r_4, s_4, s_8\}\)</span>. There is a pattern in those last four that we saw similarly in the subgroups of order 4 in <span class="math inline">\(D_6\)</span>.</p>
+<p>You need to remind yourselves of the method for forming left cosets. Let’s consider first one of the subgroups of order 2, namely <span class="math inline">\(H=\{e, r_4\}\)</span>. We form the left cosets by pre-multiplying the elements of <span class="math inline">\(H\)</span> by each element in the group. Since there are 16 group elements this gives 16 cosets, but we know that this process partitions the set into equal-sized, distinct left cosets which are all the same size as <span class="math inline">\(H\)</span>, so we should expect to end up with eight distinct left cosets.</p>
+<p><span class="math inline">\(eH = \{e \circ e, e \circ r_4\} = \{e, r_4\}\)</span></p>
+<p><span class="math inline">\(r_1H = \{r_1 \circ e, r_1 \circ r_4\} = \{r_1, r_5\}\)</span></p>
+<p><span class="math inline">\(r_2H = \{r_2 \circ e, r_2 \circ r_4\} = \{r_2, r_6\}\)</span></p>
+<p><span class="math inline">\(r_3H = \{r_3 \circ e, r_3, \circ r_4\} = \{r_3, r_7\}\)</span></p>
+<p><span class="math inline">\(r_4H = \{r_4 \circ e, r_4 \circ r_4\} = \{r_4, e \} = eH\)</span></p>
+<p><span class="math inline">\(r_5H = \{r_5 \circ e, r_5 \circ r_4\} = \{r_5, r_1 \} = r_1H\)</span></p>
+<p><span class="math inline">\(r_6H = \{r_6 \circ e, r_6 \circ r_4\} = \{r_6, r_2\} = r_2H\)</span></p>
+<p><span class="math inline">\(r_7H = \{r_7 \circ e, r_7 \circ r_4\} = \{r_7, r_3\} = r_3H\)</span></p>
+<p><span class="math inline">\(s_1H = \{s_1 \circ e, s_1 \circ r_4\} = \{s_1, s_5\}\)</span></p>
+<p><span class="math inline">\(s_2H = \{s_2 \circ e, s_2 \circ r_4\} = \{s_2, s_6\}\)</span></p>
+<p><span class="math inline">\(s_3H = \{s_3 \circ e, s_3 \circ r_4\} = \{s_3, s_7\}\)</span></p>
+<p><span class="math inline">\(s_4H = \{s_4 \circ e, s_4 \circ r_4\} = \{s_4, s_8\}\)</span></p>
+<p><span class="math inline">\(s_5H = \{s_5 \circ e, s_5 \circ r_4\} = \{s_5, s_1\} = s_1H\)</span></p>
+<p><span class="math inline">\(s_6H = \{s_6 \circ e, s_6 \circ r_4\} = \{s_6, s_2\} = s_2H\)</span></p>
+<p><span class="math inline">\(s_7H = \{s_7 \circ e, s_7 \circ r_4\} = \{s_7, s_3\} = s_3H\)</span></p>
+<p><span class="math inline">\(s_8H = \{s_8 \circ e, s_8 \circ r_4\} = \{s_8, s_4\} = s_4H\)</span></p>
+<p>Hence the distinct left cosets are <span class="math inline">\(\{e, r_4\}\)</span>, <span class="math inline">\(\{r_1, r_5\}\)</span>, <span class="math inline">\(\{r_2, r_6\}\)</span>, <span class="math inline">\(\{r_3, r_7\}\)</span>, <span class="math inline">\(\{s_1, s_5\}\)</span>, <span class="math inline">\(\{s_2, s_6\}\)</span>, <span class="math inline">\(\{s_3, s_7\}\)</span>, <span class="math inline">\(\{s_4, s_8\}\)</span>.</p>
+<p>The distinct left cosets for the other subgroups are as follows (make sure you know how to obtain them):</p>
+<p><span class="math inline">\(H = \{e, s_1\}: \ \{e, s_1 \}, \{r_1, s_8\}, \{r_2, s_7\}, \{r_3, s_6\}, \{r_4, s_5\}, \{r_5, s_4\}, \{r_6, s_3\}, \{r_7, s_2\}\)</span></p>
+<p><span class="math inline">\(H = \{e, s_2\}: \ \{e, s_2\}, \{r_1, s_1\}, \{r_2, s_8\}, \{r_3, s_7\}, \{r_4, s_6\}, \{r_5, s_5\}, \{r_6, s_4\}, \{r_7, s_3\}\)</span></p>
+<p><span class="math inline">\(H = \{e, s_3\}: \ \{e, s_3\}, \{r_1, s_2\}, \{r_2, s_1\}, \{r_3, s_8\}, \{r_4, s_7\}, \{r_5, s_6\}, \{r_6, s_5\}, \{r_7, s_4\}\)</span></p>
+<p><span class="math inline">\(H = \{e, s_4\}: \ \{e, s_4\}, \{r_1, s_3\}, \{r_2, s_2\}, \{r_3, s_1\}, \{r_4, s_8\}, \{r_5, s_7\}, \{r_6, s_6\}, \{r_7, s_5\}\)</span></p>
+<p><span class="math inline">\(H = \{e, s_5\}: \ \{e, s_5\}, \{r_1, s_4\}, \{r_2, s_3\}, \{r_3, s_2\}, \{r_4, s_1\}, \{r_5, s_8\}, \{r_6, s_7\}, \{r_7, s_6\}\)</span></p>
+<p><span class="math inline">\(H = \{e, s_6\}: \ \{e, s_6\}, \{r_1, s_5\}, \{r_2, s_4\}, \{r_3, s_3\}, \{r_4, s_2\}, \{r_5, s_1\}, \{r_6, s_8\}, \{r_7, s_7\}\)</span></p>
+<p><span class="math inline">\(H = \{e, s_7\}: \ \{e, s_7\}, \{r_1, s_6\}, \{r_2, s_5\}, \{r_3, s_4\}, \{r_4, s_3\}, \{r_5, s_2\}, \{r_6, s_1\}, \{r_7, s_8\}\)</span></p>
+<p><span class="math inline">\(H = \{e, s_8\}: \ \{e, s_8\}, \{r_1, s_7\}, \{r_2, s_6\}, \{r_3, s_5\}, \{r_4, s_4\}, \{r_5, s_3\}, \{r_6, s_2\}, \{r_7, s_1\}\)</span></p>
+<p><span class="math inline">\(H = \{e, r_4, s_1, s_5\}: \ \{e, r_4, s_1, s_5\}, \{r_1, r_5, s_8, s_4\}, \{r_2, r_6, s_7, s_3\}, \{r_3, r_7, s_6, s_2\}\)</span></p>
+<p><span class="math inline">\(H = \{e, r_4, s_2, s_6\}: \ \{e, r_4, s_2, s_6\}, \{r_1, r_5, s_1, s_5\}, \{r_2, r_6, s_8, s_4\}, \{r_3, r_7, s_7, s_3\}\)</span></p>
+<p><span class="math inline">\(H = \{e, r_4, s_3, s_7\}: \ \{e, r_4, s_3, s_7\}, \{r_1, r_5, s_2, s_6\}, \{r_2, r_6, s_1, s_5\}, \{r_3, r_7, s_8, s_4\}\)</span></p>
+<p><span class="math inline">\(H = \{e, r_4, s_4. s_8\}: \ \{e, r_4, s_4, s_8\}, \{r_1, r_5, s_3, s_7\}, \{r_2, r_6, s_2, s_6\}, \{r_3, r_7, s_1, s_5\}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03-Week3.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Group Theory</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05-Week5.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Isomorphisms and Homomorphisms</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

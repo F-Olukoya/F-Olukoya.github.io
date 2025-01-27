@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MAT-20025: Abstract Algebra - 7&nbsp; The Structure of Finite Abelian Groups</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./08-Week8.html" rel="next">
+<link href="./06-Week6.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+-->
+
+
+</head><body class="nav-sidebar docked"><div style="display:none">
+
+\(\newcommand{\D}{\displaystyle}\)
+\(\newcommand{\maps}{\rightarrow}\)
+\(\newcommand{\imp}{\Rightarrow}\)
+\(\newcommand{\limp}{\Leftarrow}\)
+\(\newcommand{\ifif}{\Leftrightarrow}\)
+\(\newcommand{\x}{\times}\)
+\(\newcommand{\where}{\; | \;}\)
+\(\newcommand{\sd}{\triangle}\)
+\(\newcommand{\id}{\operatorname{id}}\)
+
+
+
+\(\newcommand{\Hbb}{\mathbb{H}}\)
+\(\newcommand{\N}{\mathbb{N}}\)
+\(\newcommand{\Z}{\mathbb{Z}}\)
+\(\newcommand{\Q}{\mathbb{Q}}\)
+\(\newcommand{\R}{\mathbb{R}}\)
+\(\newcommand{\Sbb}{\mathbb{S}}\)
+\(\newcommand{\rn}{\mathbb{R}^n}\)
+\(\newcommand{\rwz}{\mathbb{R} \backslash \{0\}}\)
+\(\newcommand{\cwz}{\mathbb{C} \backslash \{0\}}\)
+\(\newcommand{\C}{\mathbb{C}}\)
+\(\newcommand{\cx}{C^{\times}}\)
+\(\newcommand{\E}{\mathbb{E}}\)
+\(\newcommand{\e}{\mathrm{e}}\)
+\(\newcommand{\Odd}{\mathbb{O}}\)
+\(\newcommand{\rnn}{\mathbb{R}_{n \times n}}\)
+\(\newcommand{\F}{\mathcal{F}}\)
+\(\newcommand{\setminus}{\backslash}\)
+
+
+\(\newcommand{\rez}{Re(z)}\)
+\(\newcommand{\imz}{Im(z)}\)
+
+
+
+\(\newcommand{\modu}{\, \operatorname{(mod} \,}\)
+\(\newcommand{\nequiv}{\not\equiv}\)
+\(\newcommand{\divides}{\, | \,}\)
+\(\newcommand{\ndivides}{\, \nmid \,}\)
+\(\newcommand{\nrel}{\not \hspace{-1mm}R}\)
+\(\newcommand{\greatcd}{\text{gcd} \,}\)
+\(\newcommand{\lowcm}{\text{lcm} \,}\)
+\(\newcommand{\euler}{a^{\phi(n)}}\)
+\(\newcommand{\QR}{\mathbb{Q}(\sqrt 2)}\)
+
+
+\(\renewcommand{\vec}[1]{\mathbf{#1}}\)
+\(\newcommand{\vecu}{\mathbf{u}}\)
+\(\newcommand{\vecv}{\mathbf{v}}\)
+\(\newcommand{\vecw}{\mathbf{w}}\)
+\(\newcommand{\vecx}{\mathbf{x}}\)
+\(\newcommand{\vecX}{\mathbf{X}}\)
+\(\newcommand{\vecy}{\mathbf{y}}\)
+\(\newcommand{\vecY}{\mathbf{Y}}\)
+\(\newcommand{\vecz}{\mathbf{z}}\)
+\(\newcommand{\veca}{\mathbf{a}}\)
+\(\newcommand{\vecb}{\mathbf{b}}\)
+\(\newcommand{\vecc}{\mathbf{c}}\)
+\(\newcommand{\vecd}{\mathbf{d}}\)
+\(\newcommand{\vece}{\mathbf{e}}\)
+\(\newcommand{\vecf}{\mathbf{f}}\)
+\(\newcommand{\vecg}{\mathbf{g}}\)
+\(\newcommand{\vecn}{\mathbf{n}}\)
+\(\newcommand{\vecp}{\mathbf{p}}\)
+\(\newcommand{\vecs}{\mathbf{s}}\)
+\(\newcommand{\vect}{\mathbf{t}}\)
+\(\newcommand{\veczero}{\mathbf{0}}\)
+\(\newcommand{\diag}{\operatorname{diag}\,}\)
+\(\newcommand{\spn}{\operatorname{span}\,}\)
+\(\newcommand{\gen}[1]{\left\langle #1 \right\rangle}\)
+\(\newcommand{\span}{\operatorname{span}\,}\)
+\(\newcommand{\dimn}{\operatorname{dim}\,}\)
+\(\newcommand{\row}{\operatorname{row}\,}\)
+\(\newcommand{\col}{\operatorname{col}\,}\)
+\(\newcommand{\nul}{\operatorname{nullity}\,}\)
+\(\newcommand{\rank}{\operatorname{rank}\,}\)
+\(\newcommand{\im}{\text{im}\,}\)
+\(\newcommand{\Tr}{\operatorname{trace}\,}\)
+\(\newcommand{\vecseq}{(\vecx_1, \ldots, \vecx_k)}\)
+
+\(\newcommand{\go}{(G, \circ)}\)
+\(\newcommand{\gx}{(G, \times)}\)
+\(\newcommand{\gstar}{(G, *)}\)
+\(\newcommand{\ho}{(H, \circ)}\)
+\(\newcommand{\hx}{(H, \times)}\)
+\(\newcommand{\hstar}{(H, *)}\)
+\(\newcommand{\gp}{G^{\prime}}\)
+\(\newcommand{\ghat}{\widehat{G}}\)
+\(\newcommand{\cyca}{\langle a \rangle}\)
+\(\newcommand{\krn}{\text{ker}\,}\)
+\(\newcommand{\aut}{\text{Aut}\,}\)
+\(\newcommand{\orb}{\operatorname{orb}\,}\)
+\(\newcommand{\stab}{\operatorname{stab}\,}\)
+\(\newcommand{\fix}{\operatorname{fix}\,}\)
+\(\newcommand{\lcm}{\operatorname{lcm}}\)
+\(\newcommand{\kbar}{\overline{K}}\)
+\(\newcommand{\zbar}{\overline{z}}\)
+\(\newcommand{\wbar}{\overline{w}}\)
+\(\newcommand{\ap}{a^{\prime}}\)
+\(\newcommand{\bp}{b^{\prime}}\)
+\(\newcommand{\ep}{e^{\prime}}\)
+\(\newcommand{\hp}{h^{\prime}}\)
+\(\newcommand{\xp}{x^{\prime}}\)
+\(\newcommand{\yp}{y^{\prime}}\)
+\(\newcommand{\ainv}{a^{-1}}\)
+\(\newcommand{\binv}{b^{-1}}\)
+\(\newcommand{\finv}{f^{-1}}\)
+\(\newcommand{\ginv}{g^{-1}}\)
+\(\newcommand{\hinv}{h^{-1}}\)
+\(\newcommand{\xinv}{x^{-1}}\)
+\(\newcommand{\yinv}{y^{-1}}\)
+\(\newcommand{\zn}{\Z_n}\)
+\(\newcommand{\zp}{\Z_p}\)
+\(\newcommand{\znx}{\Z_n^{\times}}\)
+\(\newcommand{\zpx}{\Z_p^{\times}}\)
+\(\newcommand{\norm}{\triangleleft \,}\)
+
+
+\(\newcommand{\chr}{\operatorname{char} \,}\)
+\(\newcommand{\ideal}{\unlhd}\)
+\(\newcommand{\zring}{\{0_R\}}\)
+
+
+
+\(\newcommand{\epr}{E^{\prime}}\)
+\(\newcommand{\vpr}{V^{\prime}}\)
+\(\newcommand{\turan}{Tur\'{a}n}\)
+\(\newcommand{\gcomp}{\overline G}\)
+\(\newcommand{\pruf}{Pr\"{u}fer}\)
+\(\newcommand{\chvat}{Chv\'{a}tal's}\)
+\(\newcommand{\konig}{K\"{o}nig}\)
+
+
+</div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Structure of Finite Abelian Groups</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">MAT-20025: Abstract Algebra</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="./MAT-20025--Abstract-Algebra.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle sidebar-tool" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Groups and applications</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pre-requisites</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-Week2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Symmetry, Congruences, Matrices, and Roots of Unity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-Week3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Group Theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-Week4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Cosets and Lagrange’s Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-Week5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Isomorphisms and Homomorphisms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-Week6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Permutation Groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-Week7.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Structure of Finite Abelian Groups</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-Week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups and Numbers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Other algebraic structures</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-Week9.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rings and Fields</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p><a href="https://www.keele.ac.uk/scm/"><img src="KeeleUni-RGB_MonoBlue.png" width="180"></a></p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-StructureofCyclicGroups" id="toc-sec-StructureofCyclicGroups" class="nav-link active" data-scroll-target="#sec-StructureofCyclicGroups"><span class="toc-section-number">7.1</span>  Structure of Cyclic Groups</a></li>
+  <li><a href="#sec-DirectProductsofGroups" id="toc-sec-DirectProductsofGroups" class="nav-link" data-scroll-target="#sec-DirectProductsofGroups"><span class="toc-section-number">7.2</span>  Direct Products of Groups</a>
+  <ul class="collapse">
+  <li><a href="#reminder" id="toc-reminder" class="nav-link" data-scroll-target="#reminder">Reminder</a></li>
+  </ul></li>
+  <li><a href="#sec-StructureofFiniteAbelianGroups" id="toc-sec-StructureofFiniteAbelianGroups" class="nav-link" data-scroll-target="#sec-StructureofFiniteAbelianGroups"><span class="toc-section-number">7.3</span>  Structure of Finite Abelian Groups</a></li>
+  <li><a href="#sheet7" id="toc-sheet7" class="nav-link" data-scroll-target="#sheet7"><span class="toc-section-number">7.4</span>  Problem Sheet 7</a></li>
+  </ul>
+</nav>
+    <div class="quarto-margin-footer"><div class="margin-footer-item">
+<p><a href="https://www.keele.ac.uk/scm/"><img src="KeeleUni-1949-RGB_MonoWhite.png" width="180"></a></p>
+</div></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-TheStructureofFiniteAbelianGroups" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The Structure of Finite Abelian Groups</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<p>In this chapter it will be our aim to give a complete description of finite abelian groups in the sense that, for any given <span class="math inline">\(n\)</span>, we will be able to describe all of the abelian groups of order <span class="math inline">\(n\)</span> up to isomorphism. In other words, we are aiming for a theorem that will give us complete structural information about all finite abelian groups. This is a staggeringly long way from the humble beginnings of a set, a binary operation, and four simple axioms!</p>
+<section id="sec-StructureofCyclicGroups" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-StructureofCyclicGroups"><span class="header-section-number">7.1</span> Structure of Cyclic Groups</h2>
+<p>We start by considering the structure of cyclic groups and, in particular, by proving that all cyclic groups are abelian. Recall that a group <span class="math inline">\(G\)</span> is cyclic if and only if it contains at least one element <span class="math inline">\(a\)</span> such that <span class="math inline">\(G=\langle a \rangle=\{a^i : i \in \Z\}\)</span>.</p>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.1 </strong></span>Every cyclic group is abelian.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="15" data-hash="07-Week7_cache/html/unnamed-chunk-3_df1d5684e6eeef839e025baebaa582df">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(G\)</span> be a cyclic group and <span class="math inline">\(a \in G\)</span> be a generator. Let <span class="math inline">\(x,y \in G\)</span>. There are <span class="math inline">\(i,j \in \Z\)</span> such that <span class="math inline">\(x = a^{i}\)</span> and <span class="math inline">\(y= a^{j}\)</span>. Therefore: <span class="math display">\[xy = a^{i}a^{j} = a^{i+j} = a^{j+i} = a^{j}a^{i} = yx.\]</span></p>
+<p>It follows that <span class="math inline">\(G\)</span> is abelian.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This says that if a group is cyclic, then it must be abelian. The converse is not necessarily true; an abelian group does not have to be cyclic.</p>
+</div>
+</div>
+<p>The following theorem tells us that there is, essentially, only one cyclic group of any given order. This is an extension of Theorem 5.1 which said that two cyclic groups of the same order are isomorphic.</p>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.2 </strong></span>Let <span class="math inline">\(G\)</span> be a cyclic group with generator <span class="math inline">\(a\)</span>. Then,</p>
+<ol type="i">
+<li>if <span class="math inline">\(G\)</span> is infinite, <span class="math inline">\(G \cong (\Z, +)\)</span>;</li>
+<li>if <span class="math inline">\(G\)</span> is finite and of order <span class="math inline">\(n\)</span>, then <span class="math inline">\(G \cong \Z_n\)</span>.</li>
+</ol>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="30" data-hash="07-Week7_cache/html/unnamed-chunk-4_63c5c39129587c289b80eac39476a9a2">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(a \in G\)</span> be a generator for <span class="math inline">\(G\)</span>.</p>
+<ol type="i">
+<li><p>Define a map <span class="math inline">\(\theta: G \to \Z\)</span> by <span class="math inline">\(\theta(a^{i}) = i\)</span>. We note firstly that <span class="math inline">\(\theta\)</span> is well-defined, since all the integer powers of <span class="math inline">\(a\)</span> are distinct as <span class="math inline">\(a\)</span> has infinite order. Clearly <span class="math inline">\(\theta\)</span> is bijective. It remains to see that <span class="math inline">\(\theta\)</span> is a homomorphism. Let <span class="math inline">\(i,j \in \Z\)</span>, then <span class="math display">\[\begin{eqnarray*}
+\theta(a^{i}a^{j}) &amp;=&amp; \theta(a^{i+j})\\
+                   &amp;=&amp; i+j\\
+                   &amp;=&amp; \theta(a^{i}) + \theta(a^{j}).
+      \end{eqnarray*}\]</span> It follows that <span class="math inline">\(\theta\)</span> is a bijective homomorphism and so <span class="math inline">\(\theta\)</span> is an isomorphism.</p></li>
+<li><p>We note that the order of <span class="math inline">\(a\)</span> is also <span class="math inline">\(n\)</span>. In particular, <span class="math inline">\(a^{0}, a^{1},\ldots, a^{n-1}\)</span> are the distinct elements of <span class="math inline">\(G\)</span>. Define a map <span class="math inline">\(\theta: G \to \Z_{n}\)</span> by <span class="math inline">\(\theta(a^{i}) = i\)</span> for all <span class="math inline">\(0 \le i \le n-1\)</span>. Then <span class="math inline">\(\theta\)</span> is a bijection. It remains to see that <span class="math inline">\(\theta\)</span> is a homomorphism: let <span class="math inline">\(a^{i},a^{j} \in G\)</span>, <span class="math inline">\(0 \le i,j \le n-1\)</span>, then <span class="math display">\[\begin{eqnarray*}
+\theta(a^{i}a^{j}) &amp;=&amp; \theta(a^{i \oplus_{n} j}) \\
+                    &amp;=&amp; i \oplus_n j \\
+                    &amp;=&amp; \theta(a^{i})\oplus_n \theta(a^{j}).
+\end{eqnarray*}\]</span> It follows that <span class="math inline">\(\theta\)</span> is a homomorphism and so an isomorphism.</p></li>
+</ol>
+</div>
+</div>
+<p>Recall that in Chapter 4 we proved, by a simple application of Lagrange’s Theorem, that every group of prime order is cyclic. We may now conclude that <em>every group of order a prime, <span class="math inline">\(p\)</span>, is isomorphic to <span class="math inline">\(\Z_p\)</span></em>. Thus we now have a complete classification for groups of prime order. We now need to extend this to cyclic groups of any given order. We begin with the following theorem.</p>
+<div id="thm-7.3" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.3 </strong></span>Any subgroup of a cyclic group is also cyclic.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplengtgh="20" data-hash="07-Week7_cache/html/unnamed-chunk-5_bc1123a632fcb0472c99007ee25e2e48">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(G\)</span> be a cyclic group with generator <span class="math inline">\(a\)</span>. Let <span class="math inline">\(H\)</span> be a subgroup of <span class="math inline">\(G\)</span>. If <span class="math inline">\(H\)</span> is the trivial subgroup <span class="math inline">\(\{e\}\)</span>, then clearly <span class="math inline">\(H\)</span> is cyclic generated by <span class="math inline">\(e\)</span>. Therefore we may assume that <span class="math inline">\(H\)</span> is not the trivial subgroup.</p>
+<p>Let <span class="math inline">\(i \in \Z\)</span>, <span class="math inline">\(i &gt;0\)</span> be minimal such that <span class="math inline">\(a^{i} \in H\)</span>. (We note that <span class="math inline">\(i\)</span> exists since <span class="math inline">\(H\)</span> is not trivial.) Let <span class="math inline">\(x \in H\)</span> be any other element. There is a <span class="math inline">\(j \in \Z\)</span> such that <span class="math inline">\(x = a^{j}\)</span>. There are <span class="math inline">\(q, r \in \Z\)</span> such that <span class="math inline">\(j = qi + r\)</span> where <span class="math inline">\(0 \le r &lt;i\)</span>. Notice <span class="math inline">\(a^{r} = a^{j}a^{-qi} \in H\)</span>, as <span class="math inline">\(H\)</span> is closed under products, <span class="math inline">\(a^{j} \in H\)</span> and <span class="math inline">\(a^{-qi} = (a^{-i})^{q} \in H\)</span>. However as <span class="math inline">\(r &lt;i\)</span>, it must follows that <span class="math inline">\(r = 0\)</span> (since <span class="math inline">\(i&gt;0\)</span> is minimal such that <span class="math inline">\(a^{i} \in H\)</span>). We conclude that <span class="math inline">\(a^{j}a^{-qi} =e\)</span> and so <span class="math inline">\(a^{j} = (a^{i})^{q}\)</span>.</p>
+<p>It follows that every element of <span class="math inline">\(H\)</span> is a power of <span class="math inline">\(a^{i}\)</span> and <span class="math inline">\(H\)</span> is cyclic and generated by <span class="math inline">\(a^{i}\)</span>.</p>
+</div>
+</div>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.4 </strong></span>Let <span class="math inline">\(G\)</span> be a cyclic group of order <span class="math inline">\(n\)</span> with generator <span class="math inline">\(a\)</span>, and let <span class="math inline">\(1 \leq m&lt;n\)</span>. Then <span class="math inline">\(\langle a^m \rangle = \langle a^d \rangle\)</span> where <span class="math inline">\(d\)</span> is the greatest common divisor of <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="15" data-hash="07-Week7_cache/html/unnamed-chunk-6_8f56c584989a9b6da2042e5c672a1c33">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>It is clear that <span class="math inline">\(\gen{a^{m}} \subseteq \gen{a^{d}}\)</span> since <span class="math inline">\(m =ld\)</span> for some <span class="math inline">\(l \in \Z\)</span> and so <span class="math inline">\(a^{m} = (a^{d})^{l}\)</span>.</p>
+<p>Since <span class="math inline">\(d = \gcd(m,n)\)</span> there are <span class="math inline">\(u,v \in \Z\)</span> such that <span class="math inline">\(d = um + vn\)</span>. It follows that <span class="math display">\[a^{d} = a^{um+vn} =  a^{um} a^{vn} = (a^{m})^{u}(a^{n})^{v} = a^{mu}.\]</span> Therefore <span class="math inline">\(a^{d} \in \gen{a^{m}}\)</span>.</p>
+<p>We conclude that <span class="math inline">\(\gen{a^{d}} = \gen{a^{m}}\)</span>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.1 </strong></span>Consider the cyclic subgroups of <span class="math inline">\(\Z_{12}\)</span>.</p>
+<div class="cell" data-gaplength="15" data-hash="07-Week7_cache/html/unnamed-chunk-7_b9901e82ae08ace95594fd0560c7ca41">
+<p>The distinct divisors of 12 are <span class="math inline">\(1,2,3,4,5,6,12\)</span>. So the subgroups of <span class="math inline">\(\Z_{12}\)</span> are</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\gen{1} &amp;=&amp; \Z_{12} = \gen{5} = \gen{7} = \gen{11} \\
+\gen{2} &amp;=&amp; \{0,2,4,6,8,10\} = \gen{10}  \\
+\gen{3} &amp;=&amp; \{0,3,6,9\} = \gen{9} \\
+\gen{4} &amp;=&amp; \{0,4,8\} = \gen{8} \\
+\gen{6} &amp;=&amp; \{0,6\} \\
+\gen{12} &amp;=&amp; \{0\}.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.2 </strong></span>What are the elements of <span class="math inline">\(\langle 28\rangle\)</span> in <span class="math inline">\(\Z_{38}\)</span>.</p>
+<div class="cell" data-gaplength="12" data-hash="07-Week7_cache/html/unnamed-chunk-8_8cc3662ddbbc7cf88012572ba7574ab4">
+<p>Notice that <span class="math inline">\(28 = 2^2 \times 7\)</span> and <span class="math inline">\(38 = 2 \times 19\)</span>. It follows that <span class="math inline">\(\gcd(38,28) = 2\)</span>. Therefore <span class="math inline">\(\gen{28} = \gen{2}\)</span>. It follows that the elements of <span class="math inline">\(\gen{28}\)</span> are</p>
+<p><span class="math display">\[\{0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36\}.\]</span></p>
+</div>
+</div>
+<div id="cor-" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 7.1 </strong></span>If <span class="math inline">\(a\)</span> is a generator of a cyclic group <span class="math inline">\(G\)</span> of order <span class="math inline">\(n\)</span>, then the other generators of <span class="math inline">\(G\)</span> are the elements of the form <span class="math inline">\(a^r\)</span> where <span class="math inline">\(r\)</span> is relatively prime to <span class="math inline">\(n\)</span>.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.3 </strong></span>&nbsp;</p>
+<ol type="a">
+<li><p>Write down all of the generators of <span class="math inline">\(\Z_{15}\)</span>.</p>
+<div class="cell" data-gaplength="7" data-hash="07-Week7_cache/html/unnamed-chunk-9_6ecbc9a39ebd84486455ecf5475c0da6">
+<p>The generators are the elements of <span class="math inline">\(\Z_{15}\)</span> co-prime to 15, these are 1, 2, 4, 7, 8, 11, 13 and 14.</p>
+</div></li>
+<li><p>Write down all of the generators of <span class="math inline">\(\Z_{24}\)</span>.</p>
+<div class="cell" data-gaplength="7" data-hash="07-Week7_cache/html/unnamed-chunk-10_f650565ecb5e0b79e9b85660d9f3f73d">
+<p>They are 1, 5, 7, 11, 13, 17, 19, 23.</p>
+</div></li>
+</ol>
+</div>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 7.1 </strong></span>Let <span class="math inline">\(a \in \zn\)</span>. Then the period of <span class="math inline">\(a\)</span> in <span class="math inline">\(\zn\)</span> can be found by dividing <span class="math inline">\(n\)</span> by the <span class="math inline">\(\gcd (a, n)\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(a \in \zn\)</span> and <span class="math inline">\(d = \greatcd (a, n)\)</span>.</p>
+<p>First observe that <span class="math inline">\(\gen{a} = \gen{d}\)</span> and so <span class="math inline">\(a\)</span> and <span class="math inline">\(d\)</span> have the same period in <span class="math inline">\(\Z_n\)</span> by <a href="03-Week3.html#thm-3.2">Theorem&nbsp;<span>3.2</span></a>. It therefore suffices to show that the period of <span class="math inline">\(d\)</span> in <span class="math inline">\(\Z_{d}\)</span> is <span class="math inline">\(\frac{n}{d}\)</span>.</p>
+<p>Clearly <span class="math inline">\(d \frac{n}{d} = n \equiv 0 \pmod{n}\)</span>. Therefore the period of <span class="math inline">\(d \in \Z_{n}\)</span> is at most <span class="math inline">\(\frac{n}{d}\)</span>. However for any <span class="math inline">\(q \in \Z\)</span> with <span class="math inline">\(0 \le q &lt; \frac{n}{d}\)</span>, <span class="math inline">\(qd &lt; n\)</span> and so <span class="math inline">\(qd \not\equiv 0 \pmod{n-1}\)</span>. We conclude that the period of <span class="math inline">\(d \in \Z_{n}\)</span> is precisely <span class="math inline">\(\frac{n}{d}\)</span>. Thus, the period of <span class="math inline">\(a \in \Z_{n}\)</span> is also <span class="math inline">\(\frac{n}{d}\)</span> as required.</p>
+</div>
+</section>
+<section id="sec-DirectProductsofGroups" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-DirectProductsofGroups"><span class="header-section-number">7.2</span> Direct Products of Groups</h2>
+<p>In this section we demonstrate how we can use familiar groups as building blocks to construct larger groups. Recall that the Cartesian product of two sets, <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span> say, is the set, denoted <span class="math inline">\(S \times T\)</span>, consisting of all possible ordered pairs of elements where the first element of the pair comes from <span class="math inline">\(S\)</span> and the second element comes from <span class="math inline">\(T\)</span>. We can extend this idea to any finite number of sets so, for example, we can take the product of three sets, <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>, say, and then <span class="math inline">\(A \times B \times C\)</span> will consist of ordered triples with the first element from <span class="math inline">\(A\)</span>, the second from <span class="math inline">\(B\)</span> and the third from <span class="math inline">\(C\)</span>. So, for example, <span class="math inline">\((3, 2, 4) \in \Z_5 \times \Z_6 \times \Z_7\)</span>.</p>
+<div id="def-CartesianProductofSets" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7.1 (Cartesian Product of Sets) </strong></span>Let <span class="math inline">\(S_1, S_2, \ldots, S_n\)</span> be sets. Then the <em>Cartesian product</em> of these sets is the set of all ordered <span class="math inline">\(n\)</span>-tuples <span class="math inline">\((a_1, a_2, \ldots, a_n)\)</span> where <span class="math inline">\(a_i \in S_i\)</span> for <span class="math inline">\(i=1, 2, \ldots, n\)</span>. We denote the Cartesian product <span class="math display">\[S_1 \times S_2 \times \ldots \times S_n.\]</span></p>
+</div>
+<p>We now let <span class="math inline">\(G_1, G_2, \ldots, G_n\)</span> be groups (not necessarily distinct, nor abelian). We can form the Cartesian product of the sets of elements of these groups and then form a group by defining ‘<em>multiplication component-wise</em>’. Consider, for example, <span class="math inline">\(\Z_2 \times \Z_2\)</span>. Its elements are <span class="math inline">\((0, 0), (0, 1), (1, 0), (1, 1)\)</span> and the binary operation is addition modulo 2 (this is what is meant by multiplication component-wise in this case). We can then construct the operation table as follows:</p>
+<div class="cell" data-gaplength="20" data-hash="07-Week7_cache/html/unnamed-chunk-11_36d4b0adf102e32bb3dcb16434c9010e">
+<p><span class="math display">\[
+\begin{array}{c|cccc}
+\oplus_2&amp;(0,0)&amp;(0,1)&amp;(1,0)&amp;(1,1)\\
+\hline
+(0,0)&amp;(0,0)&amp;(0,1)&amp;(1,0)&amp;(1,1)\\
+(0,1)&amp;(0,1)&amp;(0,0)&amp;(1,1)&amp;(1,0)\\
+(1,0)&amp;(1,0)&amp;(1,1)&amp;(0,0)&amp;(0,1)\\
+(1,1)&amp;(1,1)&amp;(1,0)&amp;(0,1)&amp;(0,0)
+\end{array}
+\]</span></p>
+<p>It is clear that <span class="math inline">\((\Z_2\times \Z_2, \oplus_2)\)</span> forms a group. It is an abelian group (this is clear from the multiplication table) but it is now cyclic — it has no element of order 4.</p>
+</div>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.5 </strong></span>Let <span class="math inline">\(G_1, G_2, \ldots, G_n\)</span> be groups. For <span class="math inline">\((a_1, a_2, \ldots, a_n)\)</span> and <span class="math inline">\((b_1, b_2, \ldots, b_n)\)</span> in <span class="math inline">\(G_1 \times G_2 \times \ldots \times G_n\)</span> we define <span class="math display">\[(a_1, a_2, \ldots, a_n)(b_1, b_2, \ldots, b_n) = (a_1b_1, a_2b_2, \ldots, a_nb_n).\]</span> Then <span class="math inline">\(G_1 \times G_2 \times \ldots \times G_n\)</span> forms a group, called the <em>direct product of the groups <span class="math inline">\(G_i\)</span></em> under this binary operation.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="35" data-hash="07-Week7_cache/html/unnamed-chunk-12_b45c16ee89e90a911121a21ad6320872">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>We verify the group axioms hold.</p>
+<ul>
+<li><p>Since <span class="math inline">\(G_1, G_2, \ldots G_n\)</span> are groups, the binary operation on <span class="math inline">\(G_1 \times G_2 \times \ldots \times G_n\)</span> is closed.</p></li>
+<li><p>Let <span class="math inline">\((a_1,a_2, \ldots, a_n), (b_1, b_2,\ldots, b_n), (c_1, c_2, \ldots, c_n) \in G_2 \times G_2 \times \ldots \times G_n\)</span>. Then <span class="math display">\[\begin{eqnarray*}
+&amp;&amp;\left((a_1,a_2, \ldots, a_n)(b_1, b_2,\ldots, b_n)\right)(c_1, c_2, \ldots, c_n) = \\ &amp;&amp;(a_1b_1,a_2b_2, \ldots, a_nb_n) (c_1, c_2, \ldots, c_n) = \\
+&amp;&amp; \left((a_1b_2)c_1, (a_2b_2)c_2, \ldots,(a_nb_n)c_n\right) = \\
+&amp;&amp; \left(a_1(b_2c_1), a_2(b_2c_2), \ldots,a_n(b_nc_n)\right) = \\
+&amp;&amp; (a_1,a_2, \ldots, a_n) \left(b_1c_1, b_2c_2, \ldots, b_nc_n\right)=\\
+&amp;&amp;  (a_1,a_2, \ldots, a_n) \left((b_1, b_2, \ldots, b_n)(c_1, c_2, \ldots, c_n)\right).
+\end{eqnarray*}\]</span> The binary operation is associative.</p></li>
+<li><p>Let <span class="math inline">\(e_i\)</span> be the identity element of <span class="math inline">\(G_i\)</span> for all <span class="math inline">\(1 \le i \le n\)</span>. Then <span class="math inline">\((e_1,e_2, \ldots, e_n)\)</span> is the identity element of <span class="math inline">\(G_1 \times G_2 \times \ldots \times G_n\)</span>.</p></li>
+<li><p>Let <span class="math inline">\((a_1,a_2,\ldots, a_n) \in G_1 \times G_2 \times \ldots \times G_n\)</span>, then <span class="math inline">\((a_1, a_2,\ldots, a_n)^{-1} = (a_1^{-1},a_2^{-1},\ldots,a_{n}^{-1}) \in G_1 \times G_2 \times \ldots \times G_n\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.4 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="23" data-hash="07-Week7_cache/html/unnamed-chunk-13_fc71dc544d4be1b044c14f523765ded9">
+<p>Let <span class="math inline">\(G_1 = \Z_2\)</span> and <span class="math inline">\(G_2 = D_3\)</span>. Then <span class="math inline">\(G_1 \times G_2 = \Z_2 \times D_3\)</span> has order <span class="math inline">\(12\)</span> and its elements are: <span class="math display">\[\begin{eqnarray*}
+&amp;&amp;(0,e),(0,r_1),(0,r_2),(0,s_1),(0,s_2),(0,s_3)\\
+&amp;&amp;(1,e),(1,r_1),(1,r_2),(1,s_1),(1,s_2),(1,s_3).
+\end{eqnarray*}\]</span></p>
+<p>We compute products component wise. For example: <span class="math display">\[\begin{eqnarray*}
+(1,r_1)(0,s_2) &amp;=&amp; (1 + 0, r_1 \circ s_2) = (1, s_1) \\
+(0,s_2)(1,r_1) &amp;=&amp; (0+1, s_2\circ r_1) = (1,s_3).
+\end{eqnarray*}\]</span> Notice that the group is not abelian (precisely because <span class="math inline">\(D_3\)</span> is not abelian.)</p>
+<p>Lastly, observe that <span class="math display">\[\{(x,e): x \in \Z_2\} = \{(0,e),(1,e)\}\]</span> is a subgroup of <span class="math inline">\(\Z_2 \times D_3\)</span> isomorphic to <span class="math inline">\(\Z_2\)</span>. Similarly, <span class="math display">\[\{(0, y): y \in D_3\} = \{(0,e),(0,r_1),(0,r_2),(0,s_1),(0,s_2),(0,s_3)\}\]</span> is a subgroup of <span class="math inline">\(\Z_2 \times D_3\)</span> isomorphic to <span class="math inline">\(D_3\)</span>.</p>
+</div>
+</div>
+<section id="reminder" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="reminder">Reminder</h3>
+<p>Let <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> be integers. Recall that the largest positive integer that divides both <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> is known as the <em>greatest common divisor</em> of <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> and is denoted <span class="math inline">\(\greatcd (m, n)\)</span>. For example, <span class="math inline">\(\greatcd (12, 15) = 3\)</span>. We shall be particularly interested in cases where the greatest common divisor of two integers is 1. In this case we refer to the integers as being <em>relatively prime</em>. It is important to note that even if two integers are relatively prime, neither of them needs to be prime; for example, <span class="math inline">\(\greatcd (8, 9)=1\)</span>, so 8 and 9 are relatively prime, though neither is a prime number. Recall, also, that the <em>lowest common multiple</em> of two integers <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> is the smallest positive integer that is divisible by both <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span>. This is denoted <span class="math inline">\(\lowcm (m, n)\)</span>. Now, let <span class="math inline">\(m, n \in \Z\)</span>. Then <span class="math inline">\(mn = \greatcd (m, n) \times \lowcm (m, n)\)</span>. <span class="math display">\[e.g. \qquad \greatcd (6, 9) = 3, \qquad \lowcm (6, 9) = 18 \qquad \text{and} \qquad 6 \times 9 = 3 \times 18 = 54.\]</span> So <span class="math inline">\(\lowcm (m, n) = mn\)</span> if and only if <span class="math inline">\(\greatcd (m, n) = 1\)</span> if and only if <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> are relatively prime.</p>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 7.2 </strong></span>Let <span class="math inline">\((a_1, a_2) \in G_1 \times G_2\)</span>. If <span class="math inline">\(a_i\)</span> is of finite period <span class="math inline">\(r_i\)</span> in <span class="math inline">\(G_i\)</span> then the period of <span class="math inline">\((a_1, a_2)\)</span> in <span class="math inline">\(G_1 \times G_2\)</span> is equal to the lowest common multiple of <span class="math inline">\(r_1\)</span> and <span class="math inline">\(r_2\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="17" data-hash="07-Week7_cache/html/unnamed-chunk-14_09ad69ac1fe4c973e1beee72aecb485f">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(l = \lcm(r_1,r_2)\)</span>. Then there are <span class="math inline">\(s_1, s_2 \in \N\)</span> such that <span class="math inline">\(r_1s_1 = l\)</span> and <span class="math inline">\(r_2 s_2 = l\)</span>. It follows that <span class="math display">\[(a_1,a_2)^{l} = \left(a_1^l, a_2^l\right) = \left(a_1^{r_1s_1}, a_2^{r_2s_2}\right) = (e_1, e_2)\]</span> where <span class="math inline">\(e_i\)</span> is the identity element of <span class="math inline">\(G_i\)</span> (<span class="math inline">\(i=1,2\)</span>).</p>
+<p>Now let <span class="math inline">\(m\)</span> be a positive integer such that <span class="math inline">\((a_1,a_2)^{m} = (e_1, e_2)\)</span>. Then <span class="math inline">\(a_1^{m} = e_1\)</span> and <span class="math inline">\(a_2^{m} = e_2\)</span>. It follows that <span class="math inline">\(r_1\)</span> and <span class="math inline">\(r_2\)</span> both divide <span class="math inline">\(m\)</span>. Consequently, <span class="math inline">\(l\)</span> divides <span class="math inline">\(m\)</span> as well. Therefore <span class="math inline">\(l\)</span> is the period of <span class="math inline">\((a_1, a_2)\)</span>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.5 </strong></span>In the following cases, find the period of the given element of the direct product group.</p>
+<ol type="a">
+<li><p><span class="math inline">\((3, 7)\)</span> in the group <span class="math inline">\(\Z_{12} \times \Z_{21}\)</span>.</p>
+<div class="cell" data-gaplength="5" data-hash="07-Week7_cache/html/unnamed-chunk-15_5084186e76ea2bb63d23da9369b8a66b">
+<p>The period of <span class="math inline">\(3\)</span> in <span class="math inline">\(\Z_{12}\)</span> is <span class="math inline">\(4\)</span> and the period of <span class="math inline">\(7\)</span> in <span class="math inline">\(\Z_{21}\)</span> is <span class="math inline">\(3\)</span>. It follows that <span class="math inline">\((3,7)\)</span> has period <span class="math inline">\(12\)</span> in <span class="math inline">\(\Z_{12} \times \Z_{21}\)</span>.</p>
+</div></li>
+<li><p><span class="math inline">\((8, 4, 10)\)</span> in the group <span class="math inline">\(\Z_{12} \times \Z_{60} \times \Z_{24}\)</span>.</p>
+<div class="cell" data-gaplength="11" data-hash="07-Week7_cache/html/unnamed-chunk-16_6518672bb3b48d26ad822bb21fff260d">
+<p>Observe that <span class="math inline">\(8\)</span> has period <span class="math inline">\(3 = \frac{12}{\gcd(8,12)}\)</span> in <span class="math inline">\(\Z_{12}\)</span>, <span class="math inline">\(4\)</span> has period <span class="math inline">\(15 = \frac{60}{\gcd(60,4)}\)</span> in <span class="math inline">\(\Z_{60}\)</span> and <span class="math inline">\(10\)</span> has period <span class="math inline">\(12 = \frac{24}{\gcd(24,10)}\)</span> in <span class="math inline">\(\Z_{24}\)</span>. Thus the period of <span class="math inline">\((8,4,10)\)</span> in <span class="math inline">\(\Z_{12} \times \Z_{60} \times \Z_{24}\)</span> is <span class="math inline">\(\lcm(3,15,12) = 60\)</span>.</p>
+</div></li>
+</ol>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.6 </strong></span>Find the period of <span class="math inline">\((3, 7, 12)\)</span> in the group <span class="math inline">\(\Z_{4} \times \Z_{10} \times \Z_{15}\)</span>.</p>
+<div class="cell" data-gaplength="17" data-hash="07-Week7_cache/html/unnamed-chunk-17_a92be5b56eaa77dac319a87ddbb2d413">
+<p><strong>Solution:</strong></p>
+<p>We first find the period of <span class="math inline">\(3\)</span>, <span class="math inline">\(7\)</span> and <span class="math inline">\(12\)</span> in <span class="math inline">\(\Z_4\)</span>, <span class="math inline">\(\Z_{10}\)</span> and <span class="math inline">\(\Z_{15}\)</span> respectively:</p>
+<p>The period of <span class="math inline">\(3\)</span> in <span class="math inline">\(\Z_{4}\)</span> is <span class="math inline">\(4\)</span> since <span class="math inline">\(\gcd(3,4) = 1\)</span>; <span class="math inline">\(7\)</span> has period <span class="math inline">\(10\)</span> in <span class="math inline">\(\Z_{10}\)</span> by a similar argument, lastly <span class="math inline">\(12\)</span> has period <span class="math inline">\(5 = \frac{15}{\gcd(15,12)}\)</span> in <span class="math inline">\(\Z_{15}\)</span>.</p>
+<p>The period of <span class="math inline">\((3,7,12)\)</span> in <span class="math inline">\(\Z_{4} \times \Z_{10} \times \Z_{15}\)</span> is the lowest common multiple of 4, 10 and 5 which is 20.</p>
+</div>
+</div>
+<p>We now turn our attention to the question of whether or not a direct product of groups is cyclic. Consider the direct product group <span class="math inline">\(\Z_2 \times \Z_4\)</span>. <span class="math display">\[
+\begin{array}{c|cccccccc}
+\oplus&amp;(0, 0)&amp;(0, 1)&amp;(0, 2)&amp;(0, 3)&amp;(1, 0)&amp;(1, 1)&amp;(1, 2)&amp;(1, 3)\\
+\hline\\
+(0, 0)&amp;(0, 0)&amp;(0, 1)&amp;(0, 2)&amp;(0, 3)&amp;(1, 0)&amp;(1, 1)&amp;(1, 2)&amp;(1, 3)\\\\
+(0, 1)&amp;(0, 1)&amp;(0, 2)&amp;(0, 3)&amp;(0, 0)&amp;(1, 1)&amp;(1, 2)&amp;(1, 3)&amp;(1, 0)\\\\
+(0, 2)&amp;(0, 2)&amp;(0, 3)&amp;(0, 0)&amp;(0, 1)&amp;(1, 2)&amp;(1, 3)&amp;(1, 0)&amp;(1, 1)\\\\
+(0, 3)&amp;(0, 3)&amp;(0, 0)&amp;(0, 1)&amp;(0, 2)&amp;(1, 3)&amp;(1, 0)&amp;(1, 1)&amp;(1, 2)\\\\
+(1, 0)&amp;(1, 0)&amp;(1, 1)&amp;(1, 2)&amp;(1, 3)&amp;(0, 0)&amp;(0, 1)&amp;(0, 2)&amp;(0, 3)\\\\
+(1, 1)&amp;(1, 1)&amp;(1, 2)&amp;(1, 3)&amp;(1, 0)&amp;(0, 1)&amp;(0, 2)&amp;(0, 3)&amp;(0, 0)\\\\
+(1, 2)&amp;(1, 2)&amp;(1, 3)&amp;(1, 0)&amp;(1, 1)&amp;(0, 2)&amp;(0, 3)&amp;(0, 0)&amp;(0, 1)\\\\
+(1, 3)&amp;(1, 3)&amp;(1, 0)&amp;(1, 1)&amp;(1, 2)&amp;(0, 3)&amp;(0, 0)&amp;(0, 1)&amp;(0, 2)
+\end{array}
+\]</span></p>
+<div class="cell" data-gaplength="17" data-hash="07-Week7_cache/html/unnamed-chunk-18_82f43dc5eb945db8bbf087bb1ece23f5">
+<p>Notice that although <span class="math inline">\(\Z_2\)</span> and <span class="math inline">\(\Z_4\)</span> are both cyclic, <span class="math inline">\(\Z_2 \times \Z_4\)</span> is not cyclic — it has no element of period <span class="math inline">\(8\)</span>. For <span class="math inline">\((a,b) \in \Z_2 \times \Z_4\)</span>, the period of <span class="math inline">\(a\)</span> in <span class="math inline">\(\Z_2\)</span> is either 1 or 2 while the period of <span class="math inline">\(b\)</span> (in <span class="math inline">\(\Z_4\)</span>) is one of 1, 2 or 4. Therefore the largest possible value of the lowest common multiple of the period of <span class="math inline">\(a\)</span> and the period of <span class="math inline">\(b\)</span> is <span class="math inline">\(4\)</span>. This means that the largest possible period of an element of <span class="math inline">\(\Z_2 \times \Z_4\)</span> is <span class="math inline">\(4\)</span>.</p>
+<p>Notice though that any element of <span class="math inline">\(\Z_2 \times \Z_4\)</span> can be written as a power of <span class="math inline">\((1,0)\)</span> times a power of <span class="math inline">\((0,1)\)</span>.</p>
+</div>
+<p>More generally it is the case that the direct product of <span class="math inline">\(n\)</span> cyclic groups, each of which is either <span class="math inline">\(\Z\)</span> or <span class="math inline">\(\Z_m\)</span> for some positive integer <span class="math inline">\(m\)</span>, is generated by the <span class="math inline">\(n\)</span>-tuples <span class="math display">\[(1, 0,0 \ldots, 0), (0, 1, 0, \ldots, 0), \ldots, (0, 0, 0, \ldots, 1).\]</span> Such a direct product might also be generated by fewer elements; for example, <span class="math inline">\(\Z_3 \times \Z_4 \times \Z_{35}\)</span> is generated by the single element <span class="math inline">\((1, 1, 1)\)</span>.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.7 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="11" data-hash="07-Week7_cache/html/unnamed-chunk-19_3a50e361555ac9e030d148422103b8ae">
+<p>Consider <span class="math inline">\(\Z_2 \times \Z_3\)</span>. This is a group of order <span class="math inline">\(6\)</span>. We know that there is only one abelian group of order <span class="math inline">\(6\)</span>, namely <span class="math inline">\(\Z_6\)</span> and so <span class="math inline">\(\Z_2 \times \Z_3\)</span> must be cyclic. How do we find an element of order <span class="math inline">\(6\)</span>in <span class="math inline">\(\Z_2 \times \Z_3\)</span>? Let <span class="math inline">\((a,b) \in \Z_2 \times \Z_3\)</span>. Let <span class="math inline">\(r\)</span> be the period of <span class="math inline">\(a \in \Z_2\)</span> and <span class="math inline">\(s\)</span> be the period of <span class="math inline">\(b \in \Z_3\)</span>. If <span class="math inline">\((a,b)\)</span> is a generator of <span class="math inline">\(\Z_2 \times \Z_3\)</span> then <span class="math inline">\(\lcm(r,s) = 6\)</span>. Thus if we can find an element <span class="math inline">\(a \in \Z_2\)</span> of period <span class="math inline">\(2\)</span> and an element <span class="math inline">\(b \in \Z_3\)</span> of period <span class="math inline">\(3\)</span>, then <span class="math inline">\((a,b)\)</span> will be a generator of <span class="math inline">\(\Z_2 \times \Z_3\)</span>. We can chose <span class="math inline">\(a = 1\)</span> and <span class="math inline">\(b =1\)</span>, the element <span class="math inline">\((1,1)\)</span> is therefore a generator of <span class="math inline">\(\Z_2 \times \Z_3\)</span>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.8 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="11" data-hash="07-Week7_cache/html/unnamed-chunk-20_027a1bd2cd1fc3f6a652d07c2ba52bee">
+<p>Consider the group <span class="math inline">\(\Z_3 \times \Z_3\)</span>. Let <span class="math inline">\((a,b) \in \Z_3 \times \Z_3\)</span>. Notice that the possible periods of <span class="math inline">\(a,b \in \Z_3\)</span> is <span class="math inline">\(1\)</span> or <span class="math inline">\(3\)</span>. It follows that the largest possible value of the lowest common multiple of the period of <span class="math inline">\(a\)</span> and the period of <span class="math inline">\(b\)</span> is <span class="math inline">\(3\)</span>. There is no element of order 9 in <span class="math inline">\(\Z_3 \times \Z_3\)</span> — it is not a cyclic group.</p>
+</div>
+</div>
+<p>The above examples are illustrations of the following general result.</p>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.6 </strong></span>The group <span class="math inline">\(\Z_m \times \zn\)</span> is cyclic (and, hence, isomorphic to <span class="math inline">\(\Z_{mn}\)</span>) if and only if <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> are relatively prime.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="17" data-hash="07-Week7_cache/html/unnamed-chunk-21_48e425f28528afb350da085afe6cf4ae">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Suppose <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> are co-prime. This means that the lcm of <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> is <span class="math inline">\(mn\)</span>. Consider the element <span class="math inline">\((1,1) \in \Z_{m} \times \Z_{n}\)</span>. The period of <span class="math inline">\(1 \in \Z_m\)</span> is <span class="math inline">\(m\)</span> and the period of <span class="math inline">\(1\)</span> in <span class="math inline">\(\Z_n\)</span> is <span class="math inline">\(n\)</span>, it follows that the period of <span class="math inline">\((1,1) \in \Z_m \times \Z_n\)</span> is <span class="math inline">\(mn = \lcm(m,n)\)</span>.</p>
+<p>Suppose <span class="math inline">\(\Z_m \times \Z_n\)</span> is cyclic. This means there is an element <span class="math inline">\((a,b) \in \Z_m \times \Z_n\)</span> with period <span class="math inline">\(mn\)</span>. Let <span class="math inline">\(l\)</span> be the period of <span class="math inline">\(a \in \Z_m\)</span> and <span class="math inline">\(p\)</span> be the period of <span class="math inline">\(b\)</span> in <span class="math inline">\(\Z_n\)</span>. Then <span class="math inline">\(\lcm(l,p) = mn\)</span>. Notice that <span class="math inline">\(l|m\)</span> and <span class="math inline">\(p|n\)</span> by <a href="04-Week4.html#thm-Lagrange">Theorem&nbsp;<span>4.1</span></a> therefore <span class="math inline">\(l | \lcm(m,n)\)</span> and <span class="math inline">\(p | \lcm(m,n)\)</span>. Therefore <span class="math inline">\(\lcm(l,p) \le \lcm(m,n)\)</span>. It follows that <span class="math inline">\(\lcm(m,n) = mn\)</span>. Now if <span class="math inline">\(\gcd(m,n) \ne 1\)</span>, then <span class="math inline">\(\lcm(m,n)&lt; mn\)</span>. We conclude that <span class="math inline">\(\gcd(m,n) =1\)</span> as required.</p>
+</div>
+</div>
+<p>This theorem can be extended, by similar arguments, to a product of more than two factors. We state this result as a corollary without proof.</p>
+<div id="cor-" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 7.2 </strong></span>The group <span class="math inline">\(\Z_{m_1} \times \Z_{m_2} \times \ldots \times \Z_{m_n}\)</span> is cyclic (and, hence, isomorphic to <span class="math inline">\(\Z_{m_1m_2 \ldots m_n}\)</span>) if and only if <span class="math inline">\(m_1, m_2, \ldots, m_n\)</span> are pairwise relatively prime.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.9 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="11" data-hash="07-Week7_cache/html/unnamed-chunk-22_9d3a8f0bbcbf3dcb1a79151fa7503d0c">
+<ul>
+<li>The group <span class="math inline">\(\Z_2 \times \Z_5 \times \Z_9\)</span> is cyclic and isomorphic to <span class="math inline">\(\Z_{90}\)</span>.</li>
+<li>The group <span class="math inline">\(\Z_2 \times \Z_4\)</span> is not cyclic — <span class="math inline">\(\gcd(2,4) = 2\)</span>.</li>
+<li>The group <span class="math inline">\(\Z_2 \times \Z_5 \times \Z_8\)</span> is not cyclic — <span class="math inline">\(\gcd(2,8) = 2\)</span>.</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-StructureofFiniteAbelianGroups" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-StructureofFiniteAbelianGroups"><span class="header-section-number">7.3</span> Structure of Finite Abelian Groups</h2>
+<p>We said at the outset of the module that, in our study of Abstract Algebra, we would be interested in structure rather than content. It bears repeating, as we embark on the final part of our introduction to group theory and encounter another major structural theorem, just how far we have travelled from a set, an associated binary operation, and four simple axioms. Everything that we have encountered along the way, the entire edifice of structural theory that we have assembled, has emanated from those rudimentary foundations (and we have barely scratched the surface of the theory of groups). In the final section of this chapter we examine the structure of finite abelian groups and we begin by stating, without proof, the theorem that gives us complete structural information about <em>all</em> finite abelian groups.</p>
+<div id="thm-TFTFAG" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.7 (Fundamental Theorem of Finite Abelian Groups) </strong></span>Every finite abelian group is isomorphic to a direct product of cyclic groups of the form <span class="math display">\[\Z_{p_1^{r_1}} \times \Z_{p_2^{r_2}} \times \ldots \times \Z_{p_n^{r_n}}\]</span> where the <span class="math inline">\(p_i\)</span> are primes, not necessarily distinct, and the <span class="math inline">\(r_i\)</span> are positive integers.</p>
+</div>
+<p>Note that the direct product is unique, except for the possible rearrangement of the factors. We can now classify (up to isomorphism) the abelian groups of any order according to the Fundamental Theorem.</p>
+<dl>
+<dt>Order 1:</dt>
+<dd>
+<div class="cell" data-gaplength="4" data-hash="07-Week7_cache/html/unnamed-chunk-23_4dda44eb55004ed05f4e2418ec1e4f3c">
+<p>There is only one group of order 1 (up to isomorphism), <span class="math inline">\(\Z_1\)</span>.</p>
+</div>
+</dd>
+<dt>Order 2:</dt>
+<dd>
+<div class="cell" data-gaplength="4" data-hash="07-Week7_cache/html/unnamed-chunk-24_ca9e7377ad2dc660f040d666807b620a">
+<p>There is only one group (up to isomorphism) of order <span class="math inline">\(2\)</span> (2 is prime) and it is <span class="math inline">\(\Z_2\)</span></p>
+</div>
+</dd>
+<dt>Order 3:</dt>
+<dd>
+<div class="cell" data-gaplength="4" data-hash="07-Week7_cache/html/unnamed-chunk-25_86a6e5e71422de30f57dcab7dc04f662">
+<p>As above only <span class="math inline">\(\Z_3\)</span>.</p>
+</div>
+</dd>
+<dt>Order 4:</dt>
+<dd>
+<div class="cell" data-gaplength="4" data-hash="07-Week7_cache/html/unnamed-chunk-26_6fd619e411441c22bf850da389c7f360">
+<p>There are two isomorphically distinct abelian groups of order <span class="math inline">\(4\)</span>, <span class="math inline">\(\Z_2 \times \Z_2\)</span> and <span class="math inline">\(\Z_4\)</span>.</p>
+</div>
+</dd>
+<dt>Order 5:</dt>
+<dd>
+<div class="cell" data-gaplength="4" data-hash="07-Week7_cache/html/unnamed-chunk-27_62a7f0cb92fc66be91eaa671d0ab5bc7">
+<p>Only <span class="math inline">\(\Z_5\)</span> as <span class="math inline">\(5\)</span> is prime.</p>
+</div>
+</dd>
+<dt>Order 6:</dt>
+<dd>
+<div class="cell" data-gaplength="4" data-hash="07-Week7_cache/html/unnamed-chunk-28_c9737361520872c50a4acc345d51cc12">
+<p>There is only one abelian group (up to isomorphism) <span class="math inline">\(6 = 2 \times 3\)</span> and <span class="math inline">\(\gcd(2,3) =1\)</span>. Therefore <span class="math inline">\(\Z_2 \times \Z_3 \cong \Z_6\)</span>.</p>
+</div>
+</dd>
+<dt>Order 7:</dt>
+<dd>
+<div class="cell" data-gaplength="4" data-hash="07-Week7_cache/html/unnamed-chunk-29_83bc5219d32755eee4b0d305aade5d51">
+<p><span class="math inline">\(\Z_7\)</span> as <span class="math inline">\(7\)</span> is prime.</p>
+</div>
+</dd>
+<dt>Order 8:</dt>
+<dd>
+<div class="cell" data-gaplength="4" data-hash="07-Week7_cache/html/unnamed-chunk-30_1d9f906b682279f0116ca83302d1e8d5">
+<p>There are 3 abelian groups of order 8 up to isomorphism. We decompose <span class="math inline">\(8 = 2^3 = 2 \times 4\)</span> this gives isomorphically distinct groups <span class="math display">\[\Z_8, \Z_{2} \times \Z_4 \text{ and } \Z_2 \times \Z_2 \times \Z_2.\]</span></p>
+</div>
+</dd>
+<dt>Order 9:</dt>
+<dd>
+<div class="cell" data-gaplength="4" data-hash="07-Week7_cache/html/unnamed-chunk-31_05c885bbf44d10549961138845dfcde1">
+<p>There are two isomorphically distinct abelian groups of order <span class="math inline">\(9\)</span>: <span class="math inline">\(\Z_9\)</span> and <span class="math inline">\(\Z_3 \times \Z_3\)</span>.</p>
+</div>
+</dd>
+<dt>Order 10:</dt>
+<dd>
+<div class="cell" data-gaplength="4" data-hash="07-Week7_cache/html/unnamed-chunk-32_0731ce5c58cbce6c675904046d760142">
+<p>Decompose <span class="math inline">\(10 = 2 \times 5\)</span>. Notice that <span class="math inline">\(\gcd(2,5) = 1\)</span>, therefore <span class="math inline">\(\Z_2 \times \Z_5 \cong \Z_10\)</span>. There is only one abelian group of order 10 — <span class="math inline">\(\Z_{10}\)</span>.</p>
+</div>
+</dd>
+<dt>Order 11:</dt>
+<dd>
+<div class="cell" data-gaplength="4" data-hash="07-Week7_cache/html/unnamed-chunk-33_b2ea4e01584ce0e9e1173457ce7953d4">
+<p>Only <span class="math inline">\(\Z_{11}\)</span> as 11 is prime.</p>
+</div>
+</dd>
+<dt>Order 12:</dt>
+<dd>
+We have <span class="math inline">\(\Z_{12}\)</span> and<span class="math inline">\(\Z_{2} \times \Z_{2} \times \Z_3\)</span>. We decompose <span class="math display">\[12 = 2^2 \times 3 = 2 \times 2 \times 3.\]</span> Observe that <span class="math inline">\(\gcd(3,4) =1\)</span> therefore <span class="math inline">\(\Z_3 \times \Z_4 \cong \Z_12\)</span>. Notice that <span class="math inline">\(\Z_2 \times \Z_3 \cong \Z_6\)</span> (since <span class="math inline">\(\gcd(2,3) = 1\)</span>) and so <span class="math inline">\(\Z_2 \times \Z_2 \times \Z_3 \cong \Z_2 \times \Z_6\)</span>. However, <span class="math inline">\(\Z_6 \times \Z_2\)</span> is not in the form of TFTFAG (<a href="#thm-TFTFAG">Theorem&nbsp;<span>7.7</span></a>).
+</dd>
+</dl>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.10 </strong></span>Classify, according to the Fundamental Theorem of Finite Abelian Groups, all of the abelian groups of order</p>
+<ol type="i">
+<li>54</li>
+<li><ol start="600" type="1">
+<li></li>
+</ol></li>
+</ol>
+<p>Indicate which of the groups of order 54 listed is cyclic, and which is isomorphic to <span class="math inline">\(\Z_6 \times \Z_9\)</span>.</p>
+<div class="cell" data-gaplength="47" data-hash="07-Week7_cache/html/unnamed-chunk-34_3cff093e6552cb8528071f833b08b357">
+<p><strong>Solution:</strong></p>
+<ol type="i">
+<li><p>We decompose <span class="math inline">\(54= 2\times 3^3\)</span>. This gives isomorphically distinct groups</p>
+<ul>
+<li><span class="math inline">\(\Z_2 \times \Z_{3^3}\)</span></li>
+<li><span class="math inline">\(\Z_2 \times \Z_3 \times \Z_{9}\)</span></li>
+<li><span class="math inline">\(\Z_2 \times \Z_3 \times \Z_3\)</span>.</li>
+</ul>
+<p>The group <span class="math inline">\(\Z_2 \times \Z_{27}\)</span> is cyclic since <span class="math inline">\(\gcd(2,27) =1\)</span>; the group <span class="math inline">\(\Z_2 \times \Z_3 \times \Z_{9}\)</span> is isomorphic to <span class="math inline">\(\Z_6 \times \Z_9\)</span> since <span class="math inline">\(\Z_2 \times \Z_3 \cong \Z_6\)</span>.</p></li>
+<li><p>We decompose <span class="math inline">\(600 = 2^3 \times 3 \times 5^2\)</span>. This gives isomorphically distinct groups</p>
+<ul>
+<li><span class="math inline">\(\Z_8 \times \Z_3 \times \Z_{25}\)</span></li>
+<li><span class="math inline">\(\Z_8 \times \Z_3 \times \Z_5 \times \Z_5\)</span></li>
+<li><span class="math inline">\(\Z_2 \times \Z_4 \times \Z_3 \times \Z_{25}\)</span></li>
+<li><span class="math inline">\(\Z_2 \times \Z_4 \Z_3 \times \Z_5 \times \Z_5\)</span></li>
+<li><span class="math inline">\(\Z_2 \times \Z_2 \times \Z_2 \times \Z_3 \times \Z_{25}\)</span></li>
+<li><span class="math inline">\(\Z_2 \times \Z_2 \times \Z_2 \times \Z_3 \times \Z_5 \times \Z_5\)</span>.</li>
+</ul>
+<p>Observe that <span class="math inline">\(\Z_8 \times \Z_3 \times \Z_{25}\)</span> is isomorphic to <span class="math inline">\(\Z_{600}\)</span> since 8, 3 and 25 are pairwise relatively prime.</p></li>
+</ol>
+</div>
+</div>
+<p>We are now in a position to prove that the converse of Lagrange’s Theorem is true for all abelian groups. We shall use the following lemma.</p>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 7.3 </strong></span>If <span class="math inline">\(d\)</span> divides <span class="math inline">\(n\)</span>, then <span class="math inline">\(\zn\)</span> contains a subgroup of order <span class="math inline">\(d\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="7" data-hash="07-Week7_cache/html/unnamed-chunk-35_d21cadad406c8a5a5564859561bbeb8b">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(c = \frac{n}{d}\)</span>. Then <span class="math inline">\(c |n\)</span> and so <span class="math inline">\(\frac{n}{\gcd(c,n)} = \frac{n}{c} = d\)</span>. It follows that the element <span class="math inline">\(c \in \Z_n\)</span> has period <span class="math inline">\(d\)</span> and so <span class="math inline">\(\gen{c}\)</span> is a subgroup of <span class="math inline">\(\Z_n\)</span> of order <span class="math inline">\(d\)</span>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.11 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="5" data-hash="07-Week7_cache/html/unnamed-chunk-36_210a1ec792d427ffc8e9b6d41510df10">
+<p>Consider <span class="math inline">\(\Z_{12}\)</span>. We note that <span class="math inline">\(3 | 12\)</span> and <span class="math inline">\(\gen{4}\)</span> is a subgroup of <span class="math inline">\(\Z_{12}\)</span> of order <span class="math inline">\(3\)</span>. Indeed <span class="math inline">\(\gen{4} = \{0,4,8\}\)</span>.</p>
+</div>
+</div>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.8 </strong></span>Let <span class="math inline">\(G\)</span> be a finite abelian group of order <span class="math inline">\(n\)</span> and let <span class="math inline">\(d\)</span> be any divisor of <span class="math inline">\(n\)</span>. Then <span class="math inline">\(G\)</span> has a subgroup of order <span class="math inline">\(d\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="27" data-hash="07-Week7_cache/html/unnamed-chunk-37_11037a7212374bbe1c4a43d6009b685a">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(p_1, p_2, \ldots, p_m\)</span> be primes and let <span class="math inline">\(r_1, r_2, \ldots, r_m\)</span> be positive integers so that <span class="math inline">\(p_1^{r_1}p_2^{r_2}\ldots p_{m}^{r_m} = n\)</span> and <span class="math inline">\(G \cong \Z_{p_1^{r_1}} \times \Z_{p_2^{r_2}} \times \ldots \times \Z_{p_m^{r_m}}\)</span>.</p>
+<p>Now since <span class="math inline">\(d\)</span> is a divisor of <span class="math inline">\(n\)</span>, there are positive integers <span class="math inline">\(s_1, s_2, \ldots, s_m\)</span>, where <span class="math inline">\(0 \le s_i \le r_i\)</span>, <span class="math inline">\(i =1,2 \dots, m\)</span>, such that <span class="math inline">\(d = p_1^{s_1}p_2^{s_2} \ldots p_{m}^{s_m}\)</span>.</p>
+<p>Now as <span class="math inline">\(p_i^{s_i}|p_i^{r_i}\)</span> for all <span class="math inline">\(1 \le i \le m\)</span>, <span class="math inline">\(\Z_{p_i^{r_i}}\)</span> has a subgroup <span class="math inline">\(H_i\)</span> of order <span class="math inline">\(p_i^{s_i}\)</span>. Notice that <span class="math inline">\(H_1 \times H_2 \times \ldots \times H_m\)</span> is a subgroup of <span class="math inline">\(\Z_{p_1^{r_1}} \times \Z_{p_2^{r_2}} \times \ldots \times \Z_{p_m^{r_m}}\)</span>. Moreover the order of <span class="math inline">\(H_1 \times H_2 \times \ldots \times H_m\)</span> is precisely <span class="math inline">\(p_1^{s_1}p_2^{s_2} \ldots p_{m}^{s_m} = d\)</span>. Therefore <span class="math inline">\(\Z_{p_1^{r_1}} \times \Z_{p_2^{r_2}} \times \ldots \times \Z_{p_m^{r_m}}\)</span> has a subgroup of order <span class="math inline">\(d\)</span> and so <span class="math inline">\(G\)</span> has a subgroup of order <span class="math inline">\(d\)</span>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.12 </strong></span>Consider <span class="math inline">\(\Z_9 \times \Z_4\)</span>.</p>
+<div class="cell" data-gaplength="17" data-hash="07-Week7_cache/html/unnamed-chunk-38_d12298688e21523fd1e8e0fc27e56c55">
+<p>Notice that <span class="math inline">\(\gcd(9,4) = 1\)</span> and so <span class="math inline">\(\Z_9 \times \Z_4\)</span> is isomorphic to <span class="math inline">\(\Z_{36}\)</span>. Indeed, <span class="math inline">\(\Z_9 \times \Z_{4}\)</span> is generated by <span class="math inline">\((1,1)\)</span>. If we want to find a subgroup of <span class="math inline">\(\Z_9\)</span> of order <span class="math inline">\(3\)</span>, then this corresponds to an element of order <span class="math inline">\(3\)</span> (subgroups of cyclic groups are cyclic). Notice that <span class="math inline">\((1,1)^{12} = (3,0)\)</span> has order 3. Indeed <span class="math inline">\(\gen{(3,0)} = \{(0,0),(3,0),(6,0)\}\)</span>.</p>
+<p>A subgroup of order <span class="math inline">\(6\)</span> corresponds to an element of order <span class="math inline">\(6\)</span>. Notice that <span class="math inline">\((1,1)^{6} = (6,2)\)</span> is an element of order <span class="math inline">\(6\)</span> (<span class="math inline">\(6\)</span> has order <span class="math inline">\(3\)</span> in <span class="math inline">\(\Z_9\)</span> and <span class="math inline">\(2\)</span> has order <span class="math inline">\(2\)</span> in <span class="math inline">\(\Z_4\)</span>; <span class="math inline">\(6 = \lcm(2,3)\)</span>). We observe that <span class="math display">\[\gen{(6,2)} = \{(0,0),(6,2),(3,0),(0,2),(6,0),(3,2)\} = \gen{(3,0)} \times \gen {(0,2)}.\]</span></p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.13 </strong></span>Find two isomorphically distinct subgroups of <span class="math inline">\(\Z_2 \times \Z_4 \times \Z_9\)</span> of order 12.</p>
+<ol type="a">
+<li><div class="cell" data-gaplength="11" data-hash="07-Week7_cache/html/unnamed-chunk-39_23f57d84ec4acb5318ad48d688bdd908">
+<p>Notice that <span class="math inline">\(\Z_4 \times \Z_9 \cong \Z_36\)</span>. Indeed <span class="math inline">\(\Z_4 \times \Z_9 = \gen{(1,1)}\)</span>. We can find a subgroup of order 12 of <span class="math inline">\(\Z_4 \times \Z_9\)</span> by finding an element of order 12 — <span class="math inline">\((1,1)^3 = (3,3)\)</span> for instance. To extend this to a subgroup of <span class="math inline">\(\Z_2 \times \Z_4 \times \Z_9\)</span> we simply take <span class="math inline">\((0,3,3)\)</span>. Thus <span class="math inline">\(\gen{(0,3,3)}\)</span> is a subgroup of <span class="math inline">\(\Z_2 \times \Z_4 \times \Z_9\)</span> of order 12.</p>
+</div></li>
+<li><div class="cell" data-gaplength="17" data-hash="07-Week7_cache/html/unnamed-chunk-40_b5e8d9f6f8e3e5ae5e6a7c80b59568a0">
+<p>How do we find another isomorphically distinct subgroup? Notice that abelian groups of order 12 (up to isomorphism) are <span class="math inline">\(\Z_3 \times \Z_4 \cong \Z_12\)</span> or <span class="math inline">\(\Z_2 \times \Z_2 \times \Z_3\)</span>. Thus to find a subgroup of order 12 isomorphically distinct from <span class="math inline">\(\Z_{12}\)</span>, we need to find a subgroup isomorphic to <span class="math inline">\(\Z_2 \times \Z_2 \times \Z_3\)</span>. We find the first <span class="math inline">\(\Z_2\)</span> factor from <span class="math inline">\((1,0,0)\)</span>, the second from <span class="math inline">\((0,2,0)\)</span> and the <span class="math inline">\(\Z_3\)</span> factor from <span class="math inline">\((0,0,3)\)</span>. The second subgroup of order 12 is generated by these three elements: <span class="math display">\[\begin{eqnarray*}
+&amp;&amp;\{(0,0,0), (1,0,0),(0,2,0),(0,0,3), \\
+  &amp;&amp; (1,2,0),(1,0,3), (0,2,3),(0,0,6),\\
+  &amp;&amp; (1,0,6),(0,2,6),(1,2,6),(1,2,3)\}
+\end{eqnarray*}\]</span></p>
+</div></li>
+</ol>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.14 </strong></span>Find a subgroup of <span class="math inline">\(\Z_{14} \times \Z_{28}\)</span> of order 98.</p>
+<div class="cell" data-gaplenght="11" data-hash="07-Week7_cache/html/unnamed-chunk-41_5d03a0402a956785e687b49b10782ef6">
+<p><strong>Solution</strong></p>
+<p>Notice that <span class="math inline">\(98 = 14 \times 7\)</span>. Thus to find a subgroup of order <span class="math inline">\(98\)</span>, we take <span class="math inline">\(\Z_14 \times H\)</span> where <span class="math inline">\(H\)</span> is a subgroup of <span class="math inline">\(\Z_{28}\)</span> of order <span class="math inline">\(7\)</span>. We note that such a subgroup <span class="math inline">\(H\)</span> exists since <span class="math inline">\(7\)</span> divides <span class="math inline">\(28\)</span> indeed we can take <span class="math inline">\(H = \gen{4}\)</span>. Thus <span class="math inline">\(\Z_{14} \times \gen{4}\)</span> is a subgroup of <span class="math inline">\(\Z_{14} \times \Z_{28}\)</span> of order 98.</p>
+</div>
+</div>
+<p>Theorem 7.8 says that the converse of Lagrange’s Theorem is true for all finite abelian groups. But what about non-abelian groups? We know that, in general, the converse of Lagrange’s Theorem is false, but can we say more than that, in the sense that given a group of a given order we know the orders of the subgroups that it <em>must</em> contain? It turns out that we can say more and that is the subject of the following theorem, due to the Norwegian mathematician <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Sylow/">Peter Sylow</a>. We state it without proof - for the proof you will have to take the third-year Group Theory module.</p>
+<div id="thm-SylowsFirstTheorem" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.9 (Sylow’s First Theorem) </strong></span>Let <span class="math inline">\(G\)</span> be a finite group of order <span class="math inline">\(p^{\alpha}m\)</span>, where <span class="math inline">\(p\)</span> is a prime not dividing <span class="math inline">\(m\)</span>. Then <span class="math inline">\(G\)</span> has a subgroup of order <span class="math inline">\(p^{\beta}\)</span> for each integer <span class="math inline">\(\beta\)</span> such that <span class="math inline">\(0 \leq \beta \leq \alpha\)</span>.</p>
+</div>
+<p>We can see that this theorem tells us, for groups of a particular order, which order subgroups must exist. This is the closest that we can get to the converse of Lagrange’s Theorem.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.15 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="17" data-hash="07-Week7_cache/html/unnamed-chunk-42_8170a61f55b89bd2e1abe33e3a2b2c49">
+<p>Let <span class="math inline">\(G\)</span> be a group of order <span class="math inline">\(80 = 2^4 \times 5\)</span>. By Sylow’s First Theorem, <span class="math inline">\(G\)</span> has subgroups of order 2<sup>0</sup>, 2, 2<sup>2</sup>, 2<sup>3</sup> and 2<sup>4</sup> and also a subgroups of order <span class="math inline">\(5\)</span>.</p>
+<p>Note that Sylow’s first theorem tells us nothing about the existence subgroups of order 20! We would have to dig further to determine if these exists or not.</p>
+</div>
+</div>
+</section>
+<section id="sheet7" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sheet7"><span class="header-section-number">7.4</span> Problem Sheet 7</h2>
+<p><em>For Week 10; covers Chapter 7.</em></p>
+<hr>
+<div class="cell" title="Question 7.1" data-hash="07-Week7_cache/html/unnamed-chunk-43_7d5c3a21e61f1e765be555d0f174106b">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 7.1
+</div>
+<div class="panel-body">
+<p>List the generators in each of the following cyclic groups:</p>
+<ol type="i">
+<li><span class="math inline">\(\Z_{10}\)</span>;</li>
+<li><span class="math inline">\(\Z_{24}\)</span>;</li>
+<li><span class="math inline">\(\Z_3 \times \Z_4\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 7.1" data-hash="07-Week7_cache/html/unnamed-chunk-44_3a55fd48372bd75491aea15d3a561065">
+<button id="displayTextunnamed-chunk-44" onclick="javascript:toggle('unnamed-chunk-44');">
+Show Solution 7.1
+</button>
+<div id="toggleTextunnamed-chunk-44" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 7.1
+</div>
+<div class="panel-body">
+<ol type="i">
+<li>The generators of <span class="math inline">\(\Z_{10}\)</span> are all numbers less than 10 that are relatively prime to 10, that is 1, 3, 7, 9.</li>
+<li>Similarly, the generators of <span class="math inline">\(\Z_{24}\)</span> are 1, 5, 7, 11, 13, 17, 19, 23.</li>
+<li>The group has order 12 so we need elements of period 12. It therefore follows from Lemma 5.1 that we need ordered pairs where the first element has period 3 in <span class="math inline">\(\Z_3\)</span> and the second element has period 4 in <span class="math inline">\(\Z_4\)</span>. Hence, the generators of <span class="math inline">\(\Z_3 \times \Z_4\)</span> are (1, 1), (2, 1), (1, 3) and (2, 3).</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 7.2" data-hash="07-Week7_cache/html/unnamed-chunk-45_210fe49d28946e12a5aa2108cebf2086">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 7.2
+</div>
+<div class="panel-body">
+<p>In each of the following cases find the period of the given element of the direct product group:</p>
+<ol type="i">
+<li>(1, 3) in <span class="math inline">\(\Z_4 \times \Z_9\)</span>;</li>
+<li>(4, 12) in <span class="math inline">\(\Z_{6} \times \Z_{15}\)</span>;</li>
+<li>(3, 4, 2) in <span class="math inline">\(\Z_4 \times \Z_5 \times \Z_9\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 7.2" data-hash="07-Week7_cache/html/unnamed-chunk-46_c4590f3a956948957a1bc74fe6f6241b">
+<button id="displayTextunnamed-chunk-46" onclick="javascript:toggle('unnamed-chunk-46');">
+Show Solution 7.2
+</button>
+<div id="toggleTextunnamed-chunk-46" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 7.2
+</div>
+<div class="panel-body">
+<p>Recall, again, Lemma 5.1. This says (if extended to more than two groups) that the period of <span class="math inline">\((a_1, a_2, \ldots, a_n) \in G_1 \times G_2 \times \ldots \times G_n\)</span> is the lowest common multiple of the periods of the individual <span class="math inline">\(a_i\)</span> in their respective groups.</p>
+<ol type="i">
+<li><p>It is easy to see that 1 has period 4 in <span class="math inline">\(\Z_4\)</span> and, since 3 divides 9 exactly 3 times, that 3 has period 3 in <span class="math inline">\(\Z_{9}\)</span>. Hence the period of (1, 3) in <span class="math inline">\(\Z_{4} \times \Z_{9} = \text{lcm} (4, 3) = 12\)</span>.</p></li>
+<li><p>We need to find the period of 4 in <span class="math inline">\(\Z_{6}\)</span> and the period of 12 in <span class="math inline">\(\Z_{15}\)</span>.</p>
+<p>Now, gcd(4, 6) = 2, so 4 has period <span class="math inline">\(\frac{6}{2} = 3\)</span> in <span class="math inline">\(\Z_{6}\)</span>. Further gcd(12, 15) = 3, so 12 has period <span class="math inline">\(\frac{15}{3}=5\)</span> in <span class="math inline">\(\Z_{15}\)</span>. Thus the period of (4, 12) in <span class="math inline">\(\Z_{6} \times \Z_{15}\)</span> = lcm(3, 5) = 15.</p></li>
+<li><p>We need to find the period of 3 in <span class="math inline">\(\Z_{4}\)</span>, the period of 4 in <span class="math inline">\(\Z_{5}\)</span>, and the period of 2 in <span class="math inline">\(\Z_{9}\)</span>.</p>
+<p>Note that in each case the element and the order of the group are relatively prime, so each of the given elements is a generator of its group. Hence the period of each of them must be the order of the group.</p>
+<p>So, the period of (3, 4, 2) in <span class="math inline">\(\Z_{4} \times \Z_{5} \times \Z_{9}\)</span> = lcm(4, 5, 9) = 180.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 7.3" data-hash="07-Week7_cache/html/unnamed-chunk-47_e43a01b6d6ec3da99b1a1ee0065c1467">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 7.3
+</div>
+<div class="panel-body">
+<ol type="i">
+<li>Classify, according to the Fundamental Theorem of Finite Abelian Groups all of the abelian groups of order 100. Which of the groups is cyclic? Which is isomorphic to <span class="math inline">\(\Z_5 \times \Z_{20}\)</span>?</li>
+<li>Classify, according to the Fundamental Theorem of Finite Abelian Groups all of the abelian groups of order 504. Which of the groups is cyclic? Which is isomorphic to <span class="math inline">\(\Z_2 \times \Z_{12} \times \Z_{21}\)</span>?</li>
+<li>How many isomorphically distinct abelian groups are there of order 104,544?</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 7.3" data-hash="07-Week7_cache/html/unnamed-chunk-48_28ea66e6c6215189aadd64a26a01b4e8">
+<button id="displayTextunnamed-chunk-48" onclick="javascript:toggle('unnamed-chunk-48');">
+Show Solution 7.3
+</button>
+<div id="toggleTextunnamed-chunk-48" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 7.3
+</div>
+<div class="panel-body">
+<ol type="i">
+<li><p><span class="math inline">\(100 = 2^2 \times 5^2\)</span>. Hence, the isomorphically distinct abelian groups are: <span class="math display">\[\begin{eqnarray*}
+\Z_4 \times \Z_{25}\\
+\Z_2 \times \Z_2 \times \Z_{25}\\
+\Z_4 \times \Z_5 \times \Z_5\\
+\Z_2 \times \Z_2 \times \Z_5 \times \Z_5
+\end{eqnarray*}\]</span> Of these, <span class="math inline">\(\Z_4 \times \Z_{25}\)</span> is cyclic as 4 and 25 are relatively prime.</p>
+<p><span class="math inline">\(\Z_4 \times \Z_5 \times \Z_5\)</span> is isomorphic to <span class="math inline">\(\Z_5 \times \Z_{20}\)</span> since 4 and 5 are relatively prime (so <span class="math inline">\(\Z_4 \times \Z_5 \cong \Z_{20}\)</span>).</p></li>
+<li><p><span class="math inline">\(504 = 2^3 \times 3^2 \times 7\)</span>. Hence, the isomorphically distinct abelian groups are: <span class="math display">\[\begin{eqnarray*}
+\Z_8 \times \Z_9 \times \Z_7\\
+\Z_2 \times \Z_4 \times \Z_9 \times \Z_7\\
+\Z_2 \times \Z_2 \times \Z_2 \times \Z_9 \times \Z_7\\
+\Z_8 \times \Z_3 \times \Z_3 \times \Z_7\\
+\Z_2 \times \Z_4 \times \Z_3 \times \Z_3 \times \Z_7\\
+\Z_2 \times \Z_2 \times \Z_2 \times \Z_3 \times \Z_3 \times \Z_7
+\end{eqnarray*}\]</span> Of these, <span class="math inline">\(\Z_8 \times \Z_9 \times \Z_7\)</span> is cyclic as 8, 9 and 7 are pairwise relatively prime.</p>
+<p><span class="math inline">\(\Z_2 \times \Z_4 \times \Z_3 \times \Z_3 \times \Z_7\)</span> is isomorphic to <span class="math inline">\(\Z_2 \times \Z_{12} \times \Z_{21}\)</span> since 3 and 4 are relatively prime (so <span class="math inline">\(\Z_3 \times \Z_4 \cong \Z_{12}\)</span>) and 3 and 7 are relatively prime (so <span class="math inline">\(\Z_3 \times \Z_7 \cong \Z_{21}\)</span>).</p></li>
+<li><p><span class="math inline">\(104,544 = 2^5 \times 3^3 \times 11^2\)</span>. Now, there are seven ways of expressing <span class="math inline">\(2^5\)</span> as a product of powers of 2 (which we require for the FT). That is, <span class="math inline">\(2^5 = 2 \times 2^4 = 2^2 \times 2^3 = 2 \times 2 \times 2^3 = 2 \times 2^2 \times 2^2 = 2 \times 2 \times 2 \times 2^2 = 2 \times 2 \times 2 \times 2 \times 2\)</span>. In addition there are three ways of expressing <span class="math inline">\(3^3\)</span> as products of powers of 3 (<span class="math inline">\(3^3 = 3 \times 3^2 = 3 \times 3 \times 3\)</span>) and two ways of expressing <span class="math inline">\(11^2\)</span> as a product of powers of 11 (<span class="math inline">\(11^2 = 11 \times 11\)</span>). Hence there are <span class="math inline">\(7 \times 3 \times 2 = 42\)</span> isomorphically distinct abelian groups of order 104,544.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 7.4" data-hash="07-Week7_cache/html/unnamed-chunk-49_9366218c65a5cb436250ad85ee5290cf">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 7.4
+</div>
+<div class="panel-body">
+<ol type="i">
+<li>Find a subgroup of <span class="math inline">\(\Z_{6} \times \Z_{15}\)</span> of order 9.</li>
+<li>Find a subgroup of <span class="math inline">\(\Z_{4} \times \Z_{18} \times \Z_{35}\)</span> of order 252.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 7.4" data-hash="07-Week7_cache/html/unnamed-chunk-50_59b9ee5369adac673d59f950fa0a5908">
+<button id="displayTextunnamed-chunk-50" onclick="javascript:toggle('unnamed-chunk-50');">
+Show Solution 7.4
+</button>
+<div id="toggleTextunnamed-chunk-50" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 7.4
+</div>
+<div class="panel-body">
+<ol type="i">
+<li>Note that <span class="math inline">\(9 = 3 \times 3\)</span> and that 3 divides both 6 and 15. So we need a subgroup of order 3 from <span class="math inline">\(\Z_6\)</span> and a subgroup of order 3 from <span class="math inline">\(\Z_{15}\)</span>. Clearly <span class="math inline">\(\langle 2 \rangle\)</span> satisfies the former and <span class="math inline">\(\langle 5 \rangle\)</span> satisfies the latter. So a subgroup of <span class="math inline">\(\Z_6 \times \Z_{15}\)</span> of order 9 is <span class="math display">\[\{ (x, y) \; | \; x \in \{0, 2, 4 \}, \; y \in \{0, 5, 10,\}\}.\]</span></li>
+<li>Note that <span class="math inline">\(252 = 4 \times 9 \times 7\)</span> So, using the argument above a subgroup of <span class="math inline">\(\Z_{4} \times \Z_{18} \times \Z_{35}\)</span> of order 252 is <span class="math display">\[\{ (x, y, z) \; | \; x \in \Z_4, \; y \in \{0, 2, 4, 6, 8, 10, 12, 14, 16\}, \; z \in \{0, 5, 10, 15, 20, 25, 30\} \}.\]</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 7.5" data-hash="07-Week7_cache/html/unnamed-chunk-51_1a3872ed11e7f30af1a965a7bf3e5186">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 7.5
+</div>
+<div class="panel-body">
+<p>Show, by exhibiting a counter-example, that the following converse of <a href="#thm-7.3">Theorem&nbsp;<span>7.3</span></a> is false.</p>
+<blockquote class="blockquote">
+<p>If a group <span class="math inline">\(G\)</span> is such that every proper subgroup is cyclic, then <span class="math inline">\(G\)</span> is cyclic.</p>
+</blockquote>
+Can you find infinitely many counter-examples?
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 7.5" data-hash="07-Week7_cache/html/unnamed-chunk-52_c7da7505e2ddd889f93265d61f8db6b0">
+<button id="displayTextunnamed-chunk-52" onclick="javascript:toggle('unnamed-chunk-52');">
+Show Solution 7.5
+</button>
+<div id="toggleTextunnamed-chunk-52" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 7.5
+</div>
+<div class="panel-body">
+<p>Note that <span class="math inline">\(D_3\)</span> is non-cyclic. It has order 6. Its proper subgroups are <span class="math inline">\(\{e, r_1, r_2 \}\)</span>, <span class="math inline">\(\{e, s_1 \}\)</span>, <span class="math inline">\(\{e, s_2 \}\)</span>, <span class="math inline">\(\{e, s_3 \}\)</span> and <span class="math inline">\(\{ e\}\)</span>. All of these are cyclic.</p>
+<p>In general, let <span class="math inline">\(p, q\)</span> be prime. Then <em>any</em> group of order <span class="math inline">\(pq\)</span> does not have non-cyclic subgroups since, by Lagrange’s Theorem, the proper subgroup orders can only be 1, <span class="math inline">\(p\)</span> or <span class="math inline">\(q\)</span> and we know that a group of prime order must be cyclic (obviously <span class="math inline">\(\{e\}\)</span> is cyclic).</p>
+<p>For infinitely many counter-examples, consider</p>
+<ol type="i">
+<li><p><span class="math inline">\(D_p\)</span> : this has order <span class="math inline">\(2p\)</span> and, of course, 2 and <span class="math inline">\(p\)</span> are prime. Apart from <span class="math inline">\(\{e\}\)</span>, the only subgroups are <span class="math inline">\(\{e, r_1, r_2, \ldots, r_{p-1}\}\)</span> and <span class="math inline">\(\{e, s_i \}\)</span>, where <span class="math inline">\(i = 1, 2, \ldots, p\)</span>.</p></li>
+<li><p><span class="math inline">\(\Z_p \times \Z_p\)</span> : this cannot be cyclic since <span class="math inline">\(p\)</span> and <span class="math inline">\(p\)</span> cannot be relatively prime (gcd<span class="math inline">\((p, p) = p\)</span>, not 1). However, by the Fundamental Theorem, the subgroups must be of order <span class="math inline">\(p\)</span>, a prime, and hence cyclic.</p>
+<p>Note that <span class="math inline">\(\Z_p \times \Z_q\)</span> does not work because <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> must be relatively prime, so the group itself is cyclic.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06-Week6.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Permutation Groups</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./08-Week8.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups and Numbers</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
