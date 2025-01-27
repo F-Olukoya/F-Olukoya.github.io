@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MAT-30045: Linear Algebra and Rings - 2&nbsp; Linear Mappings</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-Week3.html" rel="next">
+<link href="./01-intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+-->
+
+
+</head><body class="nav-sidebar docked"><div style="display:none">
+
+\(\newcommand{\D}{\displaystyle}\)
+\(\newcommand{\maps}{\rightarrow}\)
+\(\newcommand{\imp}{\Rightarrow}\)
+\(\newcommand{\limp}{\Leftarrow}\)
+\(\newcommand{\ifif}{\Leftrightarrow}\)
+\(\newcommand{\x}{\times}\)
+\(\newcommand{\where}{\; | \;}\)
+\(\newcommand{\sd}{\triangle}\)
+\(\newcommand{\id}{\operatorname{id}}\)
+
+
+
+\(\newcommand{\N}{\mathbb{N}}\)
+\(\newcommand{\Z}{\mathbb{Z}}\)
+\(\newcommand{\Q}{\mathbb{Q}}\)
+\(\newcommand{\R}{\mathbb{R}}\)
+\(\newcommand{\Sbb}{\mathbb{S}}\)
+\(\newcommand{\rn}{\mathbb{R}^n}\)
+\(\newcommand{\rwz}{\mathbb{R} \setminus \{0\}}\)
+\(\newcommand{\cwz}{\mathbb{C} \setminus \{0\}}\)
+\(\newcommand{\C}{\mathbb{C}}\)
+\(\newcommand{\cx}{C^{\times}}\)
+\(\newcommand{\E}{\mathbb{E}}\)
+\(\newcommand{\Odd}{\mathbb{O}}\)
+\(\newcommand{\rnn}{\mathbb{R}_{n \times n}}\)
+\(\newcommand{\F}{\mathcal{F}}\)
+
+
+\(\newcommand{\rez}{Re(z)}\)
+\(\newcommand{\imz}{Im(z)}\)
+
+
+
+\(\newcommand{\modu}{\, \operatorname{(mod} \,}\)
+\(\newcommand{\nequiv}{\not\equiv}\)
+\(\newcommand{\divides}{\, | \,}\)
+\(\newcommand{\ndivides}{\, \nmid \,}\)
+\(\newcommand{\nrel}{\not \hspace{-1mm}R}\)
+\(\newcommand{\greatcd}{\text{gcd} \,}\)
+\(\newcommand{\lowcm}{\text{lcm} \,}\)
+\(\newcommand{\euler}{a^{\phi(n)}}\)
+\(\newcommand{\QR}{\mathbb{Q}(\sqrt 2)}\)
+
+
+\(\renewcommand{\vec}[1]{\mathbf{#1}}\)
+\(\newcommand{\vecu}{\mathbf{u}}\)
+\(\newcommand{\vecv}{\mathbf{v}}\)
+\(\newcommand{\vecw}{\mathbf{w}}\)
+\(\newcommand{\vecx}{\mathbf{x}}\)
+\(\newcommand{\vecX}{\mathbf{X}}\)
+\(\newcommand{\vecy}{\mathbf{y}}\)
+\(\newcommand{\vecY}{\mathbf{Y}}\)
+\(\newcommand{\vecz}{\mathbf{z}}\)
+\(\newcommand{\veca}{\mathbf{a}}\)
+\(\newcommand{\vecb}{\mathbf{b}}\)
+\(\newcommand{\vecc}{\mathbf{c}}\)
+\(\newcommand{\vecd}{\mathbf{d}}\)
+\(\newcommand{\vece}{\mathbf{e}}\)
+\(\newcommand{\vecf}{\mathbf{f}}\)
+\(\newcommand{\vecg}{\mathbf{g}}\)
+\(\newcommand{\vecn}{\mathbf{n}}\)
+\(\newcommand{\vecp}{\mathbf{p}}\)
+\(\newcommand{\vecs}{\mathbf{s}}\)
+\(\newcommand{\vect}{\mathbf{t}}\)
+\(\newcommand{\veczero}{\mathbf{0}}\)
+\(\newcommand{\diag}{\operatorname{diag}\,}\)
+\(\newcommand{\spn}{\operatorname{span}\,}\)
+\(\newcommand{\span}{\operatorname{span}\,}\)
+\(\newcommand{\dimn}{\operatorname{dim}\,}\)
+\(\newcommand{\row}{\operatorname{row}\,}\)
+\(\newcommand{\col}{\operatorname{col}\,}\)
+\(\newcommand{\nul}{\operatorname{nullity}\,}\)
+\(\newcommand{\rank}{\operatorname{rank}\,}\)
+\(\newcommand{\im}{\text{im}\,}\)
+\(\newcommand{\Tr}{\operatorname{trace}\,}\)
+\(\newcommand{\vecseq}{(\vecx_1, \ldots, \vecx_k)}\)
+
+\(\newcommand{\go}{(G, \circ)}\)
+\(\newcommand{\gx}{(G, \times)}\)
+\(\newcommand{\gstar}{(G, *)}\)
+\(\newcommand{\ho}{(H, \circ)}\)
+\(\newcommand{\hx}{(H, \times)}\)
+\(\newcommand{\hstar}{(H, *)}\)
+\(\newcommand{\gp}{G^{\prime}}\)
+\(\newcommand{\ghat}{\widehat{G}}\)
+\(\newcommand{\cyca}{\langle a \rangle}\)
+\(\newcommand{\krn}{\text{ker}\,}\)
+\(\newcommand{\aut}{\text{Aut}\,}\)
+\(\newcommand{\orb}{\operatorname{orb}\,}\)
+\(\newcommand{\stab}{\operatorname{stab}\,}\)
+\(\newcommand{\fix}{\operatorname{fix}\,}\)
+\(\newcommand{\kbar}{\overline{K}}\)
+\(\newcommand{\zbar}{\overline{z}}\)
+\(\newcommand{\wbar}{\overline{w}}\)
+\(\newcommand{\ap}{a^{\prime}}\)
+\(\newcommand{\bp}{b^{\prime}}\)
+\(\newcommand{\ep}{e^{\prime}}\)
+\(\newcommand{\hp}{h^{\prime}}\)
+\(\newcommand{\xp}{x^{\prime}}\)
+\(\newcommand{\yp}{y^{\prime}}\)
+\(\newcommand{\ainv}{a^{-1}}\)
+\(\newcommand{\binv}{b^{-1}}\)
+\(\newcommand{\finv}{f^{-1}}\)
+\(\newcommand{\ginv}{g^{-1}}\)
+\(\newcommand{\hinv}{h^{-1}}\)
+\(\newcommand{\xinv}{x^{-1}}\)
+\(\newcommand{\yinv}{y^{-1}}\)
+\(\newcommand{\zn}{\Z_n}\)
+\(\newcommand{\zp}{\Z_p}\)
+\(\newcommand{\znx}{\Z_n^{\times}}\)
+\(\newcommand{\zpx}{\Z_p^{\times}}\)
+\(\newcommand{\norm}{\triangleleft \,}\)
+
+
+\(\newcommand{\chr}{\text{char} \,}\)
+\(\newcommand{\ideal}{\unlhd}\)
+\(\newcommand{\zring}{\{0_R\}}\)
+
+
+
+\(\newcommand{\epr}{E^{\prime}}\)
+\(\newcommand{\vpr}{V^{\prime}}\)
+\(\newcommand{\turan}{Tur\'{a}n}\)
+\(\newcommand{\gcomp}{\overline G}\)
+\(\newcommand{\pruf}{Pr\"{u}fer}\)
+\(\newcommand{\chvat}{Chv\'{a}tal's}\)
+\(\newcommand{\konig}{K\"{o}nig}\)
+
+</div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+
+
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Linear Mappings</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">MAT-30045: Linear Algebra and Rings</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="./MAT-30045--Linear-Algebra-and-Rings.pdf" title="Download PDF" class="sidebar-tool px-1"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle sidebar-tool" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Linear Algebra</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and Revision</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-Week2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Linear Mappings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Rings</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-Week3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ring Theory Fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-Week4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Special Types of Rings and Ideals</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
+<p><a href="https://www.keele.ac.uk/scm/"><img src="KeeleUni-RGB_MonoBlue.png" width="180"></a></p>
+</div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-Definitions" id="toc-sec-Definitions" class="nav-link active" data-scroll-target="#sec-Definitions"><span class="toc-section-number">2.1</span>  Definitions</a></li>
+  <li><a href="#sec-Image-and-Kernel" id="toc-sec-Image-and-Kernel" class="nav-link" data-scroll-target="#sec-Image-and-Kernel"><span class="toc-section-number">2.2</span>  Image and Kernel</a></li>
+  <li><a href="#sec-Matrices-from-Linear-Mappings" id="toc-sec-Matrices-from-Linear-Mappings" class="nav-link" data-scroll-target="#sec-Matrices-from-Linear-Mappings"><span class="toc-section-number">2.3</span>  Matrices from Linear Mappings</a></li>
+  <li><a href="#sec-Change-of-Basis" id="toc-sec-Change-of-Basis" class="nav-link" data-scroll-target="#sec-Change-of-Basis"><span class="toc-section-number">2.4</span>  Change of Basis</a></li>
+  <li><a href="#sec-Eigenvalues-and-Eigenvectors" id="toc-sec-Eigenvalues-and-Eigenvectors" class="nav-link" data-scroll-target="#sec-Eigenvalues-and-Eigenvectors"><span class="toc-section-number">2.5</span>  Eigenvalues and Eigenvectors</a></li>
+  <li><a href="#sec-Diagonalisation" id="toc-sec-Diagonalisation" class="nav-link" data-scroll-target="#sec-Diagonalisation"><span class="toc-section-number">2.6</span>  Diagonalisation</a></li>
+  <li><a href="#sec-Algebraic-and-Geometric-Multiplicities-of-Eigenvalues" id="toc-sec-Algebraic-and-Geometric-Multiplicities-of-Eigenvalues" class="nav-link" data-scroll-target="#sec-Algebraic-and-Geometric-Multiplicities-of-Eigenvalues"><span class="toc-section-number">2.7</span>  Algebraic and Geometric Multiplicities of Eigenvalues</a></li>
+  <li><a href="#sec-Vector-Space-Isomorphisms" id="toc-sec-Vector-Space-Isomorphisms" class="nav-link" data-scroll-target="#sec-Vector-Space-Isomorphisms"><span class="toc-section-number">2.8</span>  Vector Space Isomorphisms</a></li>
+  <li><a href="#sec-sheet2" id="toc-sec-sheet2" class="nav-link" data-scroll-target="#sec-sheet2"><span class="toc-section-number">2.9</span>  Problem Sheet 2</a></li>
+  </ul>
+</nav>
+    <div class="quarto-margin-footer"><div class="margin-footer-item">
+<p><a href="https://www.keele.ac.uk/scm/"><img src="KeeleUni-1949-RGB_MonoWhite.png" width="180"></a></p>
+</div></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-Linear-Mappings" class="quarto-section-identifier d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Linear Mappings</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<section id="sec-Definitions" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-Definitions"><span class="header-section-number">2.1</span> Definitions</h2>
+<div id="def-Linearmapping" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.1 (Linear mapping) </strong></span>Let <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> be vector spaces. A mapping <span class="math inline">\(T : V\maps W\)</span> is called a <em>linear mapping</em> if</p>
+<ol type="a">
+<li><span class="math inline">\(T(\vecx+\vecy)=T(\vecx)+T(\vecy)\)</span> for all <span class="math inline">\(\vecx,\vecy\in V\)</span>, and</li>
+<li><span class="math inline">\(T(\lambda\vecx)=\lambda{T}(\vecx)\)</span> for all <span class="math inline">\(\vecx\in V\)</span>, <span class="math inline">\(\lambda\in \F\)</span>.</li>
+</ol>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Both conditions above are essential for a map to be linear: satisfying one does not imply the other! That is a. does not imply b. and b. does not imply a..</p>
+<div class="cell" data-gaplength="12" data-hash="02-Week2_cache/html/unnamed-chunk-3_8d2f4b3baa505a659e13157496689d50">
+<p>For example, consider <span class="math inline">\(T: \C \to \C\)</span> (where <span class="math inline">\(\C\)</span> is viewed a space over itself) defined by <span class="math inline">\(T(a + ib) = a\)</span>.</p>
+<p>Then <span class="math display">\[T((a + ib) + (c+ id)) = T((a+c) + i(b+d)) = a+c = T(a+ib) + T(c+id).\]</span> So <span class="math inline">\(T\)</span> satisfies a.. However, <span class="math inline">\(T\)</span> does not satisfy b. for instance</p>
+<p><span class="math display">\[T(i(1+i)) = T(i-1) = -1 \ne i(1+i) = i.\]</span> Therefore <span class="math inline">\(T\)</span> is not a linear mapping on <span class="math inline">\(\C\)</span> as a vector space over itself.</p>
+<p>Notice that if we view <span class="math inline">\(\C\)</span> as a vector space over <span class="math inline">\(\R\)</span>, then <span class="math inline">\(T\)</span> is a linear map!</p>
+</div>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.1 </strong></span>&nbsp;</p>
+<div class="cell" data-gaplength="18" data-hash="02-Week2_cache/html/unnamed-chunk-4_e81212dd06cfc234bbe3154ee247f4da">
+<ol type="1">
+<li><p>Let <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> be any vector spaces and <span class="math inline">\(T: V \to W\)</span> be defined by <span class="math inline">\(\vecx \mapsto \vec{0}_{w}\)</span>. Then <span class="math inline">\(T\)</span> is a linear map.</p></li>
+<li><p>Fix a matrix <span class="math inline">\(A \in \F_{m \times n}\)</span> and define <span class="math inline">\(T: \F_{n\times 1} \to \F_{m \times 1}\)</span> by <span class="math inline">\(\vecx \mapsto A\vecx\)</span>. Then <span class="math inline">\(T\)</span> is a linear map.</p></li>
+<li><p>Let <span class="math inline">\(V\)</span> be the real vector space of all real-valued differentiable functions and define <span class="math inline">\(T: V \to \F(\R)\)</span> by <span class="math inline">\(f \maps to f'\)</span> where <span class="math inline">\(\F(\R)\)</span> is the vector space of all real valued functions in <span class="math inline">\(\R\)</span>. Then <span class="math inline">\(T\)</span> is a linear map. Note that elements of <span class="math inline">\(V\)</span> are functions for instance <span class="math inline">\(\cos, \sin, \exp\)</span>; indeed <span class="math inline">\(T(\cos) = -\sin\)</span>, <span class="math inline">\(T(\sin) = \cos\)</span> and <span class="math inline">\(T(\exp) = \exp\)</span>.</p></li>
+<li><p>Define <span class="math inline">\(T: \R_{n \times n} \to \R\)</span> by <span class="math inline">\(T(A) = \Tr(A)\)</span>. Then <span class="math inline">\(T\)</span> is a linear map.</p></li>
+</ol>
+</div>
+</div>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.1 </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping. Let <span class="math inline">\(\vecx,\vecx_1,\vecx_2, \ldots,\vecx_k\in V\)</span> and <span class="math inline">\(\lambda_1, \ldots,\lambda_k\in F\)</span>. Then</p>
+<ol type="i">
+<li><span class="math inline">\(T(\veczero_V)=\veczero_W\)</span>,</li>
+<li><span class="math inline">\(T(-\vecx) = -T(\vecx)\;\; \forall\, \vecx\in V\)</span>,</li>
+<li><span class="math inline">\(T(\lambda_1\vecx_1 + \ldots + \lambda_k\vecx_k) = \lambda_1T(\vecx_1)+ \ldots +\lambda_k T(\vecx_k)\)</span>.</li>
+</ol>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="17" data-hash="02-Week2_cache/html/unnamed-chunk-5_fca97ad25b20eb062e6c1d7f28dd2882">
+<span class="proof-title"><em>Proof</em>. </span>
+<ol type="i">
+<li><p>We have <span class="math inline">\(T(\vec{0}_{V}) = T(\vec{0}_{V} + \vec{0}_{V}) = T(\vec{0}_{V}) + T(\vec{0}_{V})\)</span>. Subtracting <span class="math inline">\(T(\vec{0}_{v})\)</span> from both sides, we have <span class="math inline">\(T(\vec{0}_{V}) = \vec{0}_{V}\)</span>.</p></li>
+<li><p>It was shown in Exploring Algebra and Analysis that <span class="math inline">\(-\vecx = (-1)\vecx\)</span> for any <span class="math inline">\(\vecx \in V\)</span>. Using this we have, <span class="math inline">\(T(- \vecx) = T((-1)\vecx) = -1 T(\vecx) = -T(\vecx)\)</span>.</p></li>
+<li><p>This is most easily shown by induction. For the base case, <span class="math inline">\(T(\lambda_1 \vecx_1) = \lambda_{1}T(\vec{x}_1)\)</span> follows from <a href="#def-Linearmapping">Definition&nbsp;<span>2.1</span></a>. Assume that <span class="math inline">\(T(\lambda_1\vecx_1 + \ldots + \lambda_k\vecx_k) = \lambda_1T(\vecx_1)+ \ldots +\lambda_k T(\vecx_k)\)</span> for <span class="math inline">\(\vecx,\vecx_1,\vecx_2, \ldots,\vecx_k\in V\)</span> and <span class="math inline">\(\lambda_1, \ldots,\lambda_k\in F\)</span>. For the inductive step let <span class="math inline">\(\vecx,\vecx_1,\vecx_2, \ldots,\vecx_{k+1}\in V\)</span> and <span class="math inline">\(\lambda_1, \ldots,\lambda_{k+1}\in F\)</span>. Then <span class="math display">\[\begin{eqnarray*}
+   T(\lambda_1\vecx_1 + \ldots + \lambda_{k}\vecx_{k} + \lambda_{k+1}\vecx_{k+1}) &amp;=&amp; T((\lambda_1\vecx_1 + \ldots + \lambda_{k}\vecx_{k}) +\lambda_{k+1}\vecx_{k+1}) \\
+   &amp;=&amp; T(\lambda_1\vecx_1 + \ldots + \lambda_{k}\vecx_{k}) + T(\lambda_{k+1}\vecx_{k+1}) \\
+   &amp;=&amp; T(\lambda_1\vecx_1 + \ldots + \lambda_{k}\vecx_{k}) + \lambda_{k+1}T(\vecx_{k+1}) \\
+   &amp;=&amp; \lambda_1T(\vecx_1)+ \ldots +\lambda_k T(\vecx_k) + \lambda_{k+1}T(\vecx_{k+1}).
+\end{eqnarray*}\]</span></p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="sec-Image-and-Kernel" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-Image-and-Kernel"><span class="header-section-number">2.2</span> Image and Kernel</h2>
+<div id="def-Image" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.2 (Image) </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping. The <em>image</em> of <span class="math inline">\(T\)</span> is the set <span class="math display">\[\im(T)=\{T(\vecx) \where \vecx\in V\} \subseteq W.\]</span></p>
+</div>
+<div id="def-Kernel" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.3 (Kernel) </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping. The <em>kernel</em> of <span class="math inline">\(T\)</span> is the set <span class="math display">\[\krn(T)=\{\vecx\in V \where T(\vecx)=\veczero_W\} \subseteq V.\]</span></p>
+</div>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.2 </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping. Then</p>
+<ol type="i">
+<li><span class="math inline">\(\im(T)\)</span> is a subspace of <span class="math inline">\(W\)</span>.</li>
+<li><span class="math inline">\(\krn(T)\)</span> is a subspace of <span class="math inline">\(V\)</span>.</li>
+</ol>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="20" data-hash="02-Week2_cache/html/unnamed-chunk-6_7b6f5c04e632d7a4884885c36e021353">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>We use <a href="01-intro.html#lem-CheckingLemma">Lemma&nbsp;<span>1.6</span></a> in both cases:</p>
+<ol type="i">
+<li><p>Since <span class="math inline">\(T(\vec{0}_{V}) = \vec{0}_{W}\)</span>, then <span class="math inline">\(\im(T)\)</span> is non-empty. Let <span class="math inline">\(\vecx, \vecy \in V\)</span>. Then <span class="math inline">\(T(\vecx) + T(\vecy) = T(\vecx + \vecy) \in \im(T)\)</span>. Let <span class="math inline">\(\lambda \in \F\)</span>. Then <span class="math inline">\(\lambda T(\vecx) = T(\lambda \vecx) \in \im(T)\)</span>. Therefore, <span class="math inline">\(\im(T)\)</span> is a subspace of <span class="math inline">\(V\)</span></p></li>
+<li><p>As above, <span class="math inline">\(T(\vec{0}_{V}) = \vec{0}_{W}\)</span>, and so <span class="math inline">\(\ker(T)\)</span> is non-empty. Let <span class="math inline">\(\vecx, \vecy \in \ker(T)\)</span> and <span class="math inline">\(\lambda \in \F\)</span>. Then <span class="math display">\[T(\vecx + \vecy) = T(\vecx) + T(\vecy) = \vec{0}_{W} + \vec{0}_{w} = \vec{0}_{W},\]</span> and, <span class="math display">\[T(\lambda\vecx) = \lambda T(\vecx) = \lambda \vec{0}_{W} =\vec{0}_{W}.\]</span> Therefore <span class="math inline">\(\ker(T)\)</span> is a subspace of <span class="math inline">\(V\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.2 </strong></span>Let <span class="math inline">\(T : \R^3\maps\R^3\)</span> be the linear mapping given by <span class="math display">\[T((x_{1},x_{2},x_{3}))=(x_{1}+x_{2}+2x_{3},\:2x_{1}+x_{2}+x_{3},\:3x_{1}-x_{2}-6x_{3}).\]</span> Find bases of <span class="math inline">\(\im(T)\)</span> and <span class="math inline">\(\krn(T)\)</span>.</p>
+<div class="cell" data-gaplength="30" data-hash="02-Week2_cache/html/unnamed-chunk-7_800947f96055846061daf7c6761255e2">
+<p>We have <span class="math display">\[\begin{eqnarray*}
+\im(T) &amp;=&amp; \left\{(x_{1}+x_{2}+2x_{3},\:2x_{1}+x_{2}+x_{3},\:3x_{1}-x_{2}-6x_{3}): x_1, x_2, x_3 \in \R \right\} \\
+&amp;=&amp;\left\{ x_1(1,2,3) + x_2(1,1,-1) + x_3(2,1,-6): x_1,x_2, x_3 \in \R \right\} \\
+&amp;=&amp; \spn((1,2,3),(1,1,-1),(2,1,-6)).
+\end{eqnarray*}\]</span> A basis for <span class="math inline">\(\spn((1,2,3),(1,1,-1),(2,1,-6))\)</span> are the non-zero rows of a row-echelon form of the matrix below <span class="math display">\[\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 1 &amp; 1 &amp; -1 \\ 2 &amp; 1 &amp; -6 \end{pmatrix}\]</span> Applying row operations, we obtain the row echelon form:</p>
+<p><span class="math display">\[\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 0 &amp; 1 &amp; 4 \\ 0 &amp; 0 &amp; 0\end{pmatrix}.\]</span> Therefore a basis for <span class="math inline">\(\im(T)\)</span> is given by the sequence <span class="math inline">\(((1,2,3),(0,1,4))\)</span>. Thus, <span class="math inline">\(\dimn(im(T)) = 2\)</span>.</p>
+<p>For the kernel we solve <span class="math inline">\(T(x_1, x_2,x_3) = (0,0,0)\)</span> for <span class="math inline">\(x_1,x_2, x_3\)</span>. That is, we want to find <span class="math inline">\((x_1,x_2, x_3) \in \R^{3}\)</span> which satisfy the system of linear equations <span class="math display">\[\begin{eqnarray*}
+x_1 + x_2 + 2x_3 &amp;=&amp; 0 \\
+2x_1 + x_2 + x_3 &amp;=&amp; 0 \\
+3x_1 -x_2 - 6x_3 &amp;=&amp; 0.
+\end{eqnarray*}\]</span> We form the augmented matrix <span class="math display">\[\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 2  &amp; 0 \\ 2 &amp; 1 &amp; 1  &amp; 0 \\ 3 &amp; -1 &amp; -6  &amp; 0 \end{array}\right).\]</span> Applying row operations: <span class="math display">\[\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 2 &amp;  0 \\ 0 &amp; 1 &amp; 3 &amp;  0 \\ 0 &amp; 0 &amp; 0 &amp;  0 \end{array}\right).\]</span></p>
+<p>Reading off the solutions we see that <span class="math inline">\(x_2 = -3x_3\)</span> and <span class="math inline">\(x_1 = x_3\)</span>. Therefore <span class="math display">\[\ker(T) = \{(x_3, -3x_3, x_3): x_3 \in \R\} = \spn((1,-3,1)).\]</span> Thus, <span class="math inline">\(\dimn(\ker(T)) = 1\)</span>.</p>
+<p>Notice that <span class="math inline">\(\dimn(\im(T)) + \dimn(\ker(T)) = 3 = \dim(\R^3)\)</span>.</p>
+</div>
+</div>
+<div id="lem-three" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.3 </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping. Then <span class="math inline">\(T\)</span> is injective if and only if <span class="math inline">\(\krn(T)=\{\veczero_{V}\}\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="12" data-hash="02-Week2_cache/html/unnamed-chunk-8_cea7f8c2b588f68e3755133081c9d926">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Suppose that <span class="math inline">\(T\)</span> is injective. Then for any <span class="math inline">\(\vec{v} \in V\)</span>, <span class="math inline">\(T(\vec{v}) = \vec{0}_{W}\)</span> if and only if <span class="math inline">\(\vec{v} = \vec{0}_{V}\)</span> since <span class="math inline">\(T(\veczero_{V}) = \veczero_{W}\)</span>. Hence <span class="math inline">\(\krn(T) = \{\veczero_{V}\}\)</span>.</p>
+<p>Suppose <span class="math inline">\(\krn(T) = \{\veczero_{V}\}\)</span>. Let <span class="math inline">\(\vecx, \vecy \in V\)</span> be such that <span class="math inline">\(T(\vecx) = T(\vecy)\)</span>. Then <span class="math inline">\(T(\vecx) - T(\vecy) = \veczero_{W}\)</span>. Using the fact that <span class="math inline">\(T\)</span> is a linear map this means that <span class="math display">\[T(\vecx - \vecy) = \veczero_{W}.\]</span> Therefore <span class="math inline">\(\vecx -\vecy \in \krn(T) = \{\veczero_{V}\}\)</span>. We conclude that <span class="math inline">\(\vecx-\vecy = \veczero_V\)</span> and so <span class="math inline">\(\vecx = \vecy\)</span>.</p>
+</div>
+</div>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.4 </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping and suppose that <span class="math inline">\(V\)</span> is finite dimensional. Then <span class="math inline">\(\im(T)\)</span> is also finite dimensional.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="20" data-hash="02-Week2_cache/html/unnamed-chunk-9_0fd54632efae3520db7e981be88d8746">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Since <span class="math inline">\(V\)</span> is finite dimensions, it has a finite basis <span class="math inline">\((\vecx_1, \vecx_2,\ldots,\vecx_n)\)</span>.</p>
+<p>It suffices to show that <span class="math inline">\(\im(T)\)</span> is spanned by <span class="math inline">\((T(\vecx_1), T(\vecx_2),\ldots, T(\vecx_n))\)</span> since this will imply that the size of any linearly independent subset of <span class="math inline">\(\im(T)\)</span> is at most <span class="math inline">\(n\)</span>.</p>
+<p>Let <span class="math inline">\(\vec{w} \in \im(T)\)</span>, there is some <span class="math inline">\(\vec{v} \in V\)</span> such that <span class="math inline">\(T(\vec{v}) = \vec{w}\)</span>. Since <span class="math inline">\(\vec{v} \in V\)</span>, we can find <span class="math inline">\(a_1,a_2, \ldots, a_n \in \F\)</span> such that <span class="math display">\[\vec{v} = a_1 \vecx_1+ a_2 \vecx_2 + \ldots + a_n \vecx_n.\]</span></p>
+<p>We therefore have: <span class="math display">\[\begin{eqnarray*}
+\vec{w} = T(\vec{v}) &amp;=&amp; T(a_1 \vecx_1+ a_2 \vecx_2 + \ldots + a_n \vecx_n) \\
+&amp;=&amp; a_1 T(\vecx_1)+ a_2 T(\vecx_2) + \ldots + a_n T(\vecx_n)
+\end{eqnarray*}\]</span> where the second equality follows from the linearity of <span class="math inline">\(T\)</span>. Therefore <span class="math inline">\(\vec{w}\)</span> is n element of <span class="math inline">\(\spn((T(\vecx_1), T(\vecx_2),\ldots, T(\vecx_n)))\)</span>.</p>
+</div>
+</div>
+<div id="def-RankNullity" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.4 (Rank, Nullity) </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping with <span class="math inline">\(V\)</span> finite dimensional. The quantity <span class="math inline">\(\dimn(\im(T))\)</span> is called the <em>rank</em> of <span class="math inline">\(T\)</span> and will be denoted <span class="math inline">\(\rank(T)\)</span>. The quantity <span class="math inline">\(\dimn(\krn(T))\)</span> is called the <em>nullity</em> of <span class="math inline">\(T\)</span> and will be denoted <span class="math inline">\(\nul(T)\)</span>.</p>
+</div>
+<div class="cell" data-gaplength="7" data-hash="02-Week2_cache/html/unnamed-chunk-10_6ab136705a03cdfdb59d1f7d2b82e00e">
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The kernel of <span class="math inline">\(T\)</span> is finite dimensional since it is a subspace of <span class="math inline">\(V\)</span> which is finite dimensional by assumption.</p>
+</div>
+</div>
+</div>
+<div id="thm-RankNullityTheorem" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2.1 (Rank-Nullity Theorem) </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping with <span class="math inline">\(V\)</span> finite dimensional. Then <span class="math display">\[\rank(T) + \nul(T) = \dimn(V).\]</span></p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="30" data-hash="02-Week2_cache/html/unnamed-chunk-11_b4b7c85632d915d17886c20fd4cc450a">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Since <span class="math inline">\(\krn(T)\)</span> is a finite dimensional subspace of <span class="math inline">\(V\)</span>, there is a basis <span class="math inline">\((\vecx_1, \vecx_2, \ldots,\vecx_{m})\)</span> for<span class="math inline">\(\krn(T)\)</span>. We can extend this basis to a basis <span class="math inline">\((\vecx_1, \vecx_2,\ldots, \vecx_{m}, \vecx_{m+1}, \ldots, \vec{x}_{m+n})\)</span> for <span class="math inline">\(V\)</span> by <a href="01-intro.html#thm-ExchangeLemma">Theorem&nbsp;<span>1.3</span></a>.</p>
+<p>We claim that <span class="math inline">\((T(\vecx_{m+1}), \ldots, T(\vec{x}_{m+n}))\)</span> is a basis for <span class="math inline">\(\im(T)\)</span>.</p>
+<p>We note that <span class="math inline">\(\spn(T(\vecx_{m+1}), \ldots, T(\vec{x}_{m+n}))\)</span> is equal <span class="math inline">\(\im(T)\)</span>.</p>
+<p>Clearly <span class="math inline">\(\spn(T(\vecx_{m+1}), \ldots, T(\vec{x}_{m+n})) \subseteq \im(T)\)</span>.</p>
+<p>Now let <span class="math inline">\(\vec{w} \in \im(T)\)</span>, we can find <span class="math inline">\(\vec{v} \in V\)</span> such that <span class="math inline">\(T(\vec{v}) = \vec{w}\)</span>. There are <span class="math inline">\(a_1, a_2, \ldots, a_{m+n} \in \F\)</span> such that <span class="math display">\[\vec{v} = a_1 \vecx_{1} + a_2 \vecx_2 + \ldots + a_m \vecx_{m} + a_{m+1}\vecx_{m+1} + \ldots + a_{m+n}\vecx_{m+n}.\]</span> We have: <span class="math display">\[\begin{eqnarray*}
+  \vec{w} = T(\vec{v}) &amp;=&amp; T(a_1 \vecx_{1} + a_2 \vecx_2 + \ldots + a_m \vecx_{m} + a_{m+1}\vecx_{m+1} + \ldots + a_{m+n}\vecx_{m+n}) \\
+&amp;=&amp;a_1 T \vecx_{1}) + a_2 T(\vecx_2) + \ldots + a_m T(\vecx_{m}) + a_{m+1}T(\vecx_{m+1}) + \ldots + a_{m+n}T(\vecx_{m+n}) \\
+&amp;=&amp; a_1 \vec{0}_{W} + a_2 \vec{0}_{W} + \ldots + a_m \vec{0}_{W} + a_{m+1}T(\vecx_{m+1}) + \ldots + a_{m+n}T(\vecx_{m+n}) \\
+&amp;=&amp; a_{m+1}T(\vecx_{m+1}) + \ldots + a_{m+n}T(\vecx_{m+n}).
+\end{eqnarray*}\]</span></p>
+<p>Hence <span class="math inline">\(\vec{w} \in \spn(T(\vecx_{m+1}), \ldots, T(\vecx_{m+n}))\)</span>. Since <span class="math inline">\(\vec{w} \in \im(T)\)</span> was arbitrarily chosen, we conclude that <span class="math inline">\(\im(T) \subseteq \spn(T(\vecx_{m+1}), \ldots, T(\vecx_{m+n}))\)</span>. Thus, <span class="math inline">\(\spn(T(\vecx_{m+1}), \ldots, T(\vec{x}_{m+n})) = \im(T)\)</span>.</p>
+<p>Now suppose that there are elements <span class="math inline">\(b_1, b_2, \ldots, b_n \in \F\)</span> such that <span class="math display">\[b_{1}T(\vecx_{m+1}) + \ldots + b_{n}T(\vecx_{m+n}) = \vec{0}_{W}.\]</span> Then, by linearity, we have</p>
+<p><span class="math display">\[T(b_{1}\vecx_{m+1} + \ldots + b_{n}\vecx_{m+n}) = \vec{0}_{W}.\]</span></p>
+<p>Therefore, <span class="math inline">\(b_{1}\vecx_{m+1} + \ldots + b_{n}\vecx_{m+n} \in \krn(T)\)</span>. This means that <span class="math inline">\(b_{1}\vecx_{m+1} + \ldots + b_{n}\vecx_{m+n}\)</span> can also be expressed as a linear combination of the sequence <span class="math inline">\((\vecx_1, \vecx_2, \ldots,\vecx_{m})\)</span>. However, since <span class="math inline">\((\vecx_1, \vecx_2,\ldots, \vecx_{m}, \vecx_{m+1}, \ldots, \vec{x}_{m+n})\)</span> this only happens precisely when <span class="math inline">\(b_1 = b_2 \ldots = b_n = \vec{0}\)</span>. This shows that the sequence <span class="math inline">\((T(\vecx_{m+1}), \ldots, T(\vec{x}_{m+n}))\)</span> is linearly independent.</p>
+<p>Therefore <span class="math inline">\((T(\vecx_{m+1}), \ldots, T(\vec{x}_{m+n}))\)</span> is a basis for <span class="math inline">\(\im(T)\)</span> and <span class="math inline">\(\dimn(\im(T)) = n\)</span>.</p>
+<p>Putting the above together, we have</p>
+<p><span class="math display">\[\dimn(V) = m+n = \dim(\ker(T)) + \dimn(\im(T))\]</span> as required.</p>
+</div>
+</div>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.5 </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping. Then <span class="math inline">\(T\)</span> is injective if and only if <span class="math inline">\(\nul(T)=0\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="2" data-hash="02-Week2_cache/html/unnamed-chunk-12_f5650e17e0f618d27abdf7cf7c28a808">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>This is a consequence of <a href="#lem-three">Lemma&nbsp;<span>2.3</span></a> since <span class="math inline">\(\nul(T)= \dimn(\ker(T))\)</span> and the dimension of subspace <span class="math inline">\(\{\vec{0}_{V}\}\)</span> is zero.</p>
+</div>
+</div>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.6 </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping with <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> finite dimensional. Then <span class="math inline">\(T\)</span> is surjective if and only if <span class="math inline">\(\rank(T)=\dimn(W)\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="3" data-hash="02-Week2_cache/html/unnamed-chunk-13_e02f337ce829a2344444b415a469abed">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>If <span class="math inline">\(\rank(T) = \dimn(W)\)</span>, then <span class="math inline">\(\dimn(\im(T)) = \dimn(W)\)</span>. Therefore <span class="math inline">\(\im(T) = W\)</span> since <span class="math inline">\(\im(T)\)</span> is a subspace of <span class="math inline">\(W\)</span> of the same dimension as <span class="math inline">\(W\)</span>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.3 </strong></span>Find the kernel of the linear mapping <span class="math inline">\(T : \R^2\maps\R^2\)</span> defined by <span class="math display">\[ T((a,b))=(2a-b,a+2b)\]</span> for all <span class="math inline">\((a,b)\in\R^2\)</span>. Deduce from the Rank-Nullity Theorem that <span class="math inline">\(T\)</span> is a bijection.</p>
+<div class="cell" data-gaplength="15" data-hash="02-Week2_cache/html/unnamed-chunk-14_69d9380a5378e83855c0a3bb546ef396">
+<p>If <span class="math inline">\(T\)</span> is bijective then it is injective and consequently must satisfy <span class="math inline">\(\krn(T)= \{(0,0)\}\)</span>. A good place to start is to verify this.</p>
+<p>Suppose <span class="math inline">\((a,b) \in \krn(T)\)</span>. Then <span class="math inline">\(T((a,b)) = (2a -b, a+2b) = (0,0)\)</span>. We deduce that <span class="math inline">\(a = b/2\)</span>, using this in the second coordinate, <span class="math inline">\(5/2b =0\)</span> and so <span class="math inline">\(b=a=0\)</span>. It follows that <span class="math inline">\(\krn(T) = \{(0,0)\}\)</span> and <span class="math inline">\(T\)</span> is injective.</p>
+<p>Now we use the Rank-Nullity Theorem (<a href="#thm-RankNullityTheorem">Theorem&nbsp;<span>2.1</span></a>): <span class="math display">\[2 = \dim(\R^2) = \rank(T)+ \nul(T) = \rank(T) + 0.\]</span> We conclude that <span class="math inline">\(\dim(\im(T)) = 2\)</span>. This means that <span class="math inline">\(\im(T) = \R^2\)</span> and so <span class="math inline">\(T\)</span> is surjective.</p>
+<p>We conclude that <span class="math inline">\(T\)</span> is a bijection.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.4 </strong></span>Find the kernel of the linear mapping <span class="math inline">\(T : P_2\maps \R^2\)</span> defined by <span class="math display">\[ T(p(x))=(p(0),p(1)) \]</span> for all <span class="math inline">\(p\in P_2\)</span>. Hence state the nullity and rank of <span class="math inline">\(T\)</span>.</p>
+<div class="cell" data-gaplength="15" data-hash="02-Week2_cache/html/unnamed-chunk-15_5bacfcdaea5b125adad43b756aeb6783">
+<p>Let <span class="math inline">\(g:=ax^2 +bx +c \in \krn(T)\)</span>. Then <span class="math inline">\(T(g) = (c,b+c) = (0,0)\)</span>. It follows that <span class="math inline">\(c=b=0\)</span>. Therefore <span class="math inline">\(\krn(T) = \{ax^2: a \in \R\}\)</span>.</p>
+<p>Thus <span class="math inline">\(\nul(T) = \dimn(\krn(T)) = 1\)</span> since <span class="math inline">\(\krn(T)\)</span> is spanned by the <span class="math inline">\(x^2\)</span>.</p>
+<p>Using the fact that <span class="math inline">\(\dimn(P_2) = 3\)</span>, by the Rank-Nullity Theorem, we have: <span class="math display">\[\rank(T) = \dimn(P_2) - \dimn(\krn(T)) = 3 -1 = 2.\]</span></p>
+<p>Notice that <span class="math inline">\(\im(T) =\R^2\)</span> and <span class="math inline">\(T\)</span> is surjective.</p>
+</div>
+</div>
+</section>
+<section id="sec-Matrices-from-Linear-Mappings" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-Matrices-from-Linear-Mappings"><span class="header-section-number">2.3</span> Matrices from Linear Mappings</h2>
+<p>Throughout this section, <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> will denote non-zero, finite dimensional vector spaces over the field <span class="math inline">\(\F\)</span>.</p>
+<p>In this section we are concerned with representing a given linear mapping <span class="math inline">\(T : V\longrightarrow W\)</span> by a matrix <span class="math inline">\(M_{T}\)</span> which in some sense corresponds to <span class="math inline">\(T\)</span>.</p>
+<div id="def-" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.5 </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping and let <span class="math inline">\(n=\dimn(V)\)</span> and <span class="math inline">\(m=\dimn(W)\)</span>. Let <span class="math inline">\(L_{V}=(\vece_1, \ldots, \vece_n)\)</span> be a basis of <span class="math inline">\(V\)</span> and let <span class="math inline">\(L_{W}=(\vecf_{1}, \ldots, \vecf_m)\)</span> be a basis of <span class="math inline">\(W\)</span>. We define the matrix of <span class="math inline">\(T\)</span> with respect to <span class="math inline">\(L_{V}\)</span> and <span class="math inline">\(L_{W}\)</span> to be the <span class="math inline">\(m\times n\)</span> matrix whose <span class="math inline">\(k^{th}\)</span> column is the coordinate vector of <span class="math inline">\(T(\vece_{k})\)</span> with respect to <span class="math inline">\(L_{W}\)</span>. We will denote this matrix by <span class="math inline">\(M(T;L_{V},L_{W})\)</span> or <span class="math inline">\(M_{T}\)</span> when there is no doubt about which bases of <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> we are using.</p>
+</div>
+<div id="lem-2.7" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.7 </strong></span>Let <span class="math inline">\(T : V\maps W\)</span>, <span class="math inline">\(L_{V}=(\vece_1, \ldots, \vece_n)\)</span> and <span class="math inline">\(L_{W}=(\vecf_1, \ldots, \vecf_m)\)</span> be as in the above definition. Let <span class="math inline">\(M_{T}=(a_{ik})\)</span> in our usual matrix notation (so that the <span class="math inline">\((i,k)^{th}\)</span> entry of the matrix <span class="math inline">\(M_{T}\)</span> is the scalar <span class="math inline">\(a_{ik}\)</span>). Then,</p>
+<ol type="a">
+<li><span class="math inline">\(M_{T}\)</span> is a <span class="math inline">\(m\times n\)</span> matrix i.e.&nbsp;a (<span class="math inline">\(\dimn(W))\times(\dimn(V)\)</span>) matrix.</li>
+<li>For each <span class="math inline">\(\vece_k\)</span> in <span class="math inline">\(L_{V}\)</span>, <span class="math inline">\(T(\vece_k)=\sum_{i=1}^{m} a_{ik}\vecf_i\)</span>.</li>
+<li>For every <span class="math inline">\(\vecx \in V\)</span>,</li>
+<li>If an <span class="math inline">\(m\times n\)</span> matrix <span class="math inline">\(N\)</span> is such that
+then <span class="math inline">\(N=M_{T}\)</span>.</li>
+</ol>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="40" data-hash="02-Week2_cache/html/unnamed-chunk-16_e6101c3f691c959de3064d1d4d4f4b79">
+<span class="proof-title"><em>Proof</em>. </span>
+<ol type="a">
+<li>This is a consequence of the definition. Since <span class="math inline">\(L_{V}\)</span> has <span class="math inline">\(n\)</span> elements, then <span class="math inline">\(M_{T}\)</span> has <span class="math inline">\(n\)</span>-columns, since <span class="math inline">\(L_{W}\)</span> has <span class="math inline">\(m\)</span> elements <span class="math inline">\(M_{T}\)</span> has <span class="math inline">\(m\)</span>-rows.</li>
+<li>By definition the <span class="math inline">\(k\)</span><sup>th</sup> column of <span class="math inline">\(M_{T}\)</span> is the coordinate vector of <span class="math inline">\(T(e_k)\)</span> with respect to <span class="math inline">\(L_{W}\)</span>, by definition then, <span class="math display">\[T(e_k) =  \sum_{i=1}^{m}a_{ik}\vec{f}_{i}.\]</span></li>
+<li>Let <span class="math inline">\(\vecx \in V\)</span>, and suppose <span class="math inline">\((x_1, x_2,\ldots, x_n)\)</span> is the coordinate vector of <span class="math inline">\(\vecx\)</span> with respect to <span class="math inline">\(L_{V}\)</span>. Thus,<span class="math display">\[\vecx = \sum_{i=1}^{n}x_i \vece_{i}.\]</span> Applying the map <span class="math inline">\(T\)</span>, we have: <span class="math display">\[T(\vecx) = T\left(\sum_{i=1}^{n}x_i \vece_{i}\right) = \sum_{i=1}^{n}x_iT(\vece_{i}).\]</span> Using the fact that <span class="math inline">\(T(\vece_{i}) = \sum_{k=1}^{m}a_{ki} \vecf_{k}\)</span>, we have <span class="math display">\[\begin{eqnarray*}
+T(\vecx) = \sum_{i=1}^{n}x_iT(\vece_{i}) &amp;=&amp; \sum_{i=1}^{n}x_i\sum_{k=1}^{m}a_{ki}\vecf_{k} \\
+&amp;=&amp; \sum_{i=1}^{n}\sum_{k=1}^{m}a_{ki}x_i\vecf_{k} \\
+&amp;=&amp; \sum_{k=1}^{m}\left(\sum_{i=1}^{n}a_{ki}x_i\right)\vecf_{k}.
+\end{eqnarray*}\]</span></li>
+</ol>
+<p>For <span class="math inline">\(1 \le k \le m\)</span> set <span class="math inline">\(y_{k} = \sum_{i=1}^{n}a_{ki}x_i\)</span> and observe that <span class="math inline">\((y_1, y_2, \ldots, y_m)\)</span> is the coordinate vector with respect to <span class="math inline">\(L_{W}\)</span> of <span class="math inline">\(T(\vecx)\)</span>.</p>
+<p>Now notice that <span class="math display">\[M_{T}\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix} = \begin{pmatrix}\sum_{i=1}^{n} a_{1i}x_{i}\\ \sum_{i=1}^{n} a_{2i}x_{i} \\ \vdots \\ \sum_{i=1}^{n} a_{mi}x_{i} \end{pmatrix} = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_m \end{pmatrix}\]</span> d.&nbsp;Let <span class="math inline">\(\vec{E}_i \in \F_{n \times 1}\)</span> be the coordinate vector of <span class="math inline">\(\vece_i\)</span> with respect to <span class="math inline">\(L_{V}\)</span> written as a column vector. Notice that <span class="math inline">\(\vec{E}_i\)</span> has entries <span class="math inline">\(0\)</span> everywhere and <span class="math inline">\(1\)</span> in row <span class="math inline">\(i\)</span>. It follows, writing <span class="math inline">\(N_{ij}\)</span> for the <span class="math inline">\(ij\)</span><sup>th</sup> entry of the matrix <span class="math inline">\(N\)</span>, that <span class="math display">\[N \vec{E}_{i}= \begin{pmatrix}N_{1i} \\ N_{2i} \\ \vdots \\ N_{mi} \end{pmatrix} = \begin{pmatrix} a_{1i} \\ a_{2i} \\ \vdots \\ a_{mi} \end{pmatrix}  = M_T \vec{E}_i.\]</span> It follows that <span class="math inline">\(N_{ij} =a_{ij}\)</span> for all <span class="math inline">\(1 \le i \le m\)</span> and <span class="math inline">\(1 \le j \le n\)</span>.</p>
+</div>
+</div>
+<div id="exm-5" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.5 </strong></span>Consider the linear mapping <span class="math inline">\(T : \R^{3}\maps\R^{2}\)</span> defined by <span class="math display">\[ T((x_{1},x_{2},x_{3}))=(x_{1}+2x_{2}+3x_{3},\:4x_{1}+5x_{2}+6x_{3}). \]</span> Find the matrix <span class="math inline">\(M_{T}\)</span> of the linear mapping <span class="math inline">\(T\)</span> with respect to the standard bases of <span class="math inline">\(\R^{3}\)</span> and <span class="math inline">\(\R^{2}\)</span>.</p>
+<div class="cell" data-gaplength="15" data-hash="02-Week2_cache/html/unnamed-chunk-17_d1f545a44ebfb236fe6c0bfb734375bf">
+<p>The standard basis for <span class="math inline">\(\R^3\)</span> is <span class="math display">\[L_{\R^3} = ((1,0,0),(0,1,0),(0,0,1)) = (\vece_1,\vece_2,\vece_2)\]</span> and for <span class="math inline">\(\R^2\)</span> the standard basis is <span class="math display">\[L_{\R^2}((1,0),(0,1)) = (\vecf_1,\vecf_2).\]</span></p>
+<p>For each <span class="math inline">\(i\)</span> between <span class="math inline">\(1\)</span> and <span class="math inline">\(3\)</span> we need to find the coordinate vector of <span class="math inline">\(T(\vece_i)\)</span> with respect to <span class="math inline">\(L_{\R^2}\)</span>. We have</p>
+<p><span class="math display">\[\begin{eqnarray*}
+T(\vece_1) &amp;=&amp; (1,4) = 1\vecf_1 + 4 \vecf_2 \\
+T(\vece_2) &amp;=&amp; (2,5) = 2\vecf_1 + 5\vecf_2 \\
+T(\vece_3) &amp;=&amp; (3,6) = 3 \vecf_1 + 6 \vecf_2
+\end{eqnarray*}\]</span></p>
+<p>So the matrix of <span class="math inline">\(T\)</span> with respect to <span class="math inline">\(L_{\R^3}\)</span> and <span class="math inline">\(L_{\R^2}\)</span> is:</p>
+<p><span class="math display">\[M_{T} = \begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{pmatrix}.\]</span></p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.6 </strong></span>Consider the linear mapping <span class="math inline">\(T : P_{2}\maps P_{2}\)</span> defined by <span class="math display">\[ T(p(x))=p(2x-1). \]</span> for all <span class="math inline">\(p\in P_{2}\)</span>.</p>
+<ol type="a">
+<li>Find <span class="math inline">\(M_{T}\)</span> with respect to the basis <span class="math inline">\((1,x,x^{2})\)</span> of <span class="math inline">\(P_{2}\)</span>.</li>
+<li>Use part a. to compute <span class="math inline">\(T(3+2x-x^{2})\)</span>. Verify your answer directly.</li>
+</ol>
+<div class="cell" data-gaplength="15" data-hash="02-Week2_cache/html/unnamed-chunk-18_3f21a05475febed274388b8a6a5265b8">
+<ol type="a">
+<li><p>We proceed as in <a href="#exm-5">Example&nbsp;<span>2.5</span></a>, we have: <span class="math display">\[\begin{eqnarray*}
+   T(1) &amp;=&amp; 1 = 1 + 0x + 0x^2 \\
+   T(x) &amp;=&amp; 2x -1 = (-1)1 + 2x + 0 x^2 \\
+   T(x^2) &amp;=&amp; 1 - 4x  + 4x^2.
+\end{eqnarray*}\]</span> Therefore the matrix of <span class="math inline">\(T\)</span> with respect to the standard basis of <span class="math inline">\(P_2\)</span> is: <span class="math display">\[M_{T} = \begin{pmatrix} 1 &amp; -1 &amp; 1  \\ 0 &amp; 2 &amp; -4 \\ 0 &amp;  0 &amp; 4 \end{pmatrix}.\]</span></p></li>
+<li><p>We use <span class="math inline">\(M_T\)</span> to carry out this computation. We first find the coordinate vector of <span class="math inline">\(3+ 2x -x^2\)</span> with respect to the standard basis of <span class="math inline">\(P_2\)</span>. This is <span class="math inline">\((3, 2, -1)\)</span>. Next we carry out the computation <span class="math display">\[ M_{T} \begin{pmatrix} 3 \\ 2 \\ -1 \end{pmatrix} = \begin{pmatrix} 0 \\ 8 \\ -4 \end{pmatrix}.\]</span> The element <span class="math inline">\((0, 8,-4)\)</span> now gives the coordinate vector of <span class="math inline">\(T(3+2x - x^2)\)</span>. It follows that <span class="math inline">\(T(3 + 2x -x^2) = 8x -4x^2\)</span>.</p>
+<p>We can verify this directly: <span class="math display">\[\begin{eqnarray*}
+T(3 + 2x - x^2) &amp;=&amp; 3 + 2(2x -1) - (2x-1)^2 \\
+                 &amp;=&amp; (3 -2 -1) + (4 +4)x -4x^2 \\
+                 &amp;=&amp; 0 + 8x -4x^2.
+\end{eqnarray*}\]</span></p></li>
+</ol>
+</div>
+</div>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.8 </strong></span>Let <span class="math inline">\(\dimn(V)=n\)</span> and <span class="math inline">\(\dimn(W)=m\)</span>. Let <span class="math inline">\(L_{V}\)</span> and <span class="math inline">\(L_{W}\)</span> be given bases of <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> and let <span class="math inline">\(A\)</span> be an arbitrary matrix in <span class="math inline">\(\F_{m\times n}\)</span>. Then there is precisely one linear mapping <span class="math inline">\(T : V\maps W\)</span> such that <span class="math inline">\(M(T;L_{V},L_{W})=A\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="10" data-hash="02-Week2_cache/html/unnamed-chunk-19_d8318730b3fa6cd6c3178fe3a3a6239f">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(L_{V} = (\vece_1, \vece_2, \ldots, \vece_n)\)</span> and <span class="math inline">\(L_{W} = (\vecf_1, \vecf_2, \ldots, \vecf_m)\)</span>. We define a linear map <span class="math inline">\(T: V \to W\)</span> by specifying its action on the basis elements of <span class="math inline">\(V\)</span>. For <span class="math inline">\(1 \le i \le n\)</span> set: <span class="math display">\[T(e_i) = \sum_{k=1}^{m}a_{ki}\vec{f}_{k}.\]</span> Clearly <span class="math inline">\(A = M_{T}\)</span>.</p>
+<p>If <span class="math inline">\(S: V \to W\)</span> is a linear map such that <span class="math inline">\(M_S = M_{T} = A\)</span>, then for <span class="math inline">\(1 \le i \le n\)</span> <span class="math display">\[ S(e_i) = \sum_{k=1}^{m}a_{ki}\vec{f}_{k} = T(e_i).\]</span></p>
+<p>It follows that <span class="math inline">\(S = T\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="sec-Change-of-Basis" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-Change-of-Basis"><span class="header-section-number">2.4</span> Change of Basis</h2>
+<p>Let <span class="math inline">\(V\)</span> be a finite dimensional vector space with <span class="math inline">\(\dimn(V)=n\)</span>. Let <span class="math inline">\(L_{1}=(\vece_1,\vece_2, \ldots,\vece_n)\)</span> be a basis of <span class="math inline">\(V\)</span>. Let <span class="math inline">\(L_{2}=(\vecf_1,\vecf_2, \ldots,\vecf_n)\)</span> be a sequence of vectors in <span class="math inline">\(V\)</span>. We might ask the important question “When is <span class="math inline">\(L_{2}\)</span> a basis of <span class="math inline">\(V\)</span>?” We <em>know</em> that <span class="math inline">\(L_1\)</span> is a basis of <span class="math inline">\(V\)</span>, so we can express each <span class="math inline">\(\vecf_j\)</span> as a linear combination of the <span class="math inline">\(\vece_i\)</span>. For example, <span class="math display">\[\vecf_1 = \lambda_{1,1} \vece_1 + \lambda_{1, 2}\vece_2 + \ldots + \lambda_{1, n}\vece_n.\]</span> In this way we get a linear mapping <span class="math inline">\(T: V \maps V\)</span>. The sequence <span class="math inline">\(L_2\)</span> forms a basis of <span class="math inline">\(V\)</span> if and only if we can express each <span class="math inline">\(\vece_i\)</span> as a linear combination of the <span class="math inline">\(\vecf_j\)</span> ( by the “two out of three” rule) and this happens if and only if there is a linear mapping <span class="math inline">\(S: V \maps V\)</span> going ‘the other way’. In particular, in this case <span class="math inline">\(ST = id\)</span> (this makes sense as <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span> are functions, so can be composed) and using the matrices for these maps we have <span class="math inline">\(M_SM_T = I_n\)</span>, that is, <span class="math inline">\(M_T\)</span> is invertible. So, <span class="math inline">\(L_2\)</span> forms a basis of <span class="math inline">\(V\)</span> if and only if <span class="math inline">\(M_T\)</span> is invertible.</p>
+<div id="def-" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.6 </strong></span>Let <span class="math inline">\(V\)</span> be a vector space with <span class="math inline">\(\dim(V)=n\)</span> and let <span class="math inline">\(L_{1}=(\vece_1, \ldots,\vece_n)\)</span> and <span class="math inline">\(L_{2}=(\vecf_1, \ldots,\vecf_n)\)</span> be two bases of <span class="math inline">\(V\)</span>. The <em>change of basis</em> matrix from <span class="math inline">\(L_{1}\)</span> to <span class="math inline">\(L_{2}\)</span> is the <span class="math inline">\(n\times n\)</span> matrix whose <span class="math inline">\(k^{th}\)</span> column is the coordinate vector of <span class="math inline">\(\vecf_k\)</span> with respect to <span class="math inline">\(L_{1}\)</span>. We denote this matrix by <span class="math inline">\(M(L_{1}\maps L_{2})\)</span>.</p>
+</div>
+<div id="lem-2.9" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.9 </strong></span>Let <span class="math inline">\(V\)</span> have bases <span class="math inline">\(L_{1}\)</span> and <span class="math inline">\(L_{2}\)</span> and let <span class="math inline">\(P=M(L_{1}\maps L_{2})\)</span>. Let an arbitrary vector <span class="math inline">\(\vecx\in V\)</span> have coordinate vectors <span class="math inline">\(X_{1}\)</span> and <span class="math inline">\(X_{2}\)</span> with respect to <span class="math inline">\(L_{1}\)</span> and <span class="math inline">\(L_{2}\)</span> respectively. Then <span class="math inline">\(X_{1}=PX_{2}\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="15" data-hash="02-Week2_cache/html/unnamed-chunk-20_ba3bbcd1adf5688114bb4206826d1baf">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Consider the map <span class="math inline">\(\id: V \to V\)</span> by <span class="math inline">\(\id(\vecx) = \vecx\)</span>. This is a linear map.</p>
+<p>Also observe that <span class="math inline">\(P\)</span> is precisely the matrix <span class="math inline">\(M(\id; L_{W}, L_{V})\)</span>.</p>
+<p>Let <span class="math inline">\(\vecx \in V\)</span> and let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> be the coordinate vectors of <span class="math inline">\(\vecx\)</span> with respect to <span class="math inline">\(L_1\)</span> and <span class="math inline">\(L_2\)</span>.</p>
+<p>By <a href="#lem-2.7">Lemma&nbsp;<span>2.7</span></a> part c.&nbsp;the coordinate vector <span class="math inline">\(X_1\)</span> is precisely <span class="math inline">\(M(\id; L_{W},L_{V})X_2 = P X_2\)</span> since <span class="math inline">\(\id(\vecx) = \vecx\)</span>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.7 </strong></span>Let <span class="math inline">\(B_{1}=(1,x,x^{2},x^{3})\)</span> be the standard basis of the space <span class="math inline">\(P_{3}\)</span> and let <span class="math inline">\(B_{2}\)</span> be the basis <span class="math inline">\((p_{1},p_{2},p_{3},p_{4})\)</span> where <span class="math display">\[ p_{1}=1,\:\:\:p_{2}=x-1,\:\:\:p_{3}=x^{2}-x+1,\:\:\:p_{4}=x^{3}-x^{2}+x-1. \]</span> Find the change of basis matrix <span class="math inline">\(M(B_{2}\maps B_{1})\)</span>. Use this matrix to express the polynomial <span class="math inline">\(1+x+x^{2}+x^{3}\)</span> as a linear combination of the vectors in the basis <span class="math inline">\(B_{2}\)</span>.</p>
+<div class="cell" data-gaplength="20" data-hash="02-Week2_cache/html/unnamed-chunk-21_6342443cb72c49eddd95260cf24d070d">
+<p>We express the vectors <span class="math inline">\(B_1\)</span> as a linear combination of those in <span class="math inline">\(B_2\)</span>:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+1 &amp;=&amp; p_1 + 0p_2 + 0 p_3 + 0p_4 \\
+x &amp;=&amp; p_1 + p_2 + 0p_3 + 0p_4 \\
+x^2 &amp;=&amp; 0p_1 + p_2 + p_3 + 0p_4 \\
+x^3 &amp;=&amp; 0p_1 + 0p_2 + p_3 + p_4.
+\end{eqnarray*}\]</span></p>
+<p>The matrix <span class="math inline">\(M(B_2 \to B_1)\)</span> is therefore equal to <span class="math display">\[\begin{pmatrix}
+1 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix}.\]</span></p>
+<p>To express <span class="math inline">\(1 + x + x^2 + x^3\)</span> as a linear combination of the vectors in basis <span class="math inline">\(B_2\)</span> we find its coordinate vectors in terms of <span class="math inline">\(B_1\)</span> and pre-multiply it by <span class="math inline">\(M(B_2 \to B_1)\)</span> <span class="math display">\[M(B_2 \to B_1) \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1\end{pmatrix} = \begin{pmatrix} 2 \\ 2 \\ 2 \\ 1 \end{pmatrix}.\]</span></p>
+<p>Therefore, <span class="math inline">\(2p_1 + 2p_2 + 2p_3 + p_4\)</span> is the expression for <span class="math inline">\(1 + x + x^2 + x^3\)</span> in the basis <span class="math inline">\(B_2\)</span>.</p>
+<p>We can verify this: <span class="math display">\[\begin{eqnarray*}
+2p_1 + 2p_2 + 2p_3 + p_4 &amp;=&amp; 2 + 2(x-1) + 2(x^2 -x +1) + (x^3 -x^2 +x -1) \\
+&amp;=&amp;(2 -2 +2 -1) + (2 -2 +1 )x + (2 -1)x^2 + x^3 \\
+&amp;=&amp; 1 + x + x^2 + x^3.
+\end{eqnarray*}\]</span></p>
+</div>
+</div>
+<div id="lem-2.10" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.10 </strong></span>Let <span class="math inline">\(T : V\maps W\)</span> be a linear mapping. Let <span class="math inline">\(L_{1}\)</span> and <span class="math inline">\(L_{2}\)</span> be two bases of <span class="math inline">\(V\)</span> and let <span class="math inline">\(K_{1}\)</span> and <span class="math inline">\(K_{2}\)</span> be two bases of <span class="math inline">\(W\)</span>. Set <span class="math inline">\(A=M(T;L_{1},K_{1})\)</span> and <span class="math inline">\(B=M(T;L_{2},K_{2})\)</span>. Then <span class="math display">\[ B=R^{-1}AP \]</span> where <span class="math inline">\(P=M(L_{1}\maps L_{2})\)</span> and <span class="math inline">\(R=M(K_{1}\maps K_{2})\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="15" data-hash="02-Week2_cache/html/unnamed-chunk-22_fbb8e9e2d827d85661c44f4960ba1899">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(\vecx \in V\)</span>. Let <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> be the coordinate vectors of <span class="math inline">\(\vecx\)</span> with respect to the basis <span class="math inline">\(L_1\)</span> and <span class="math inline">\(L_2\)</span>. Similarly let <span class="math inline">\(Y_1\)</span> and <span class="math inline">\(Y_2\)</span> be the coordinate vectors of <span class="math inline">\(\vecy = T(\vecx)\)</span> with respect to the coordinate vectors <span class="math inline">\(K_1\)</span> and <span class="math inline">\(K_2\)</span>.</p>
+<p>By <a href="#lem-2.7">Lemma&nbsp;<span>2.7</span></a>, <span class="math inline">\(Y_1^{t} = AX_1^{t}\)</span> and <span class="math inline">\(Y_2^{t} = BX_2^{t}\)</span>. By <a href="#lem-2.9">Lemma&nbsp;<span>2.9</span></a> <span class="math inline">\(Y_1^{t} = R Y_2^{t}\)</span> and <span class="math inline">\(X_1 = PX_2^{t}\)</span>. Putting all these together we have:</p>
+<p><span class="math display">\[Y_2^{t} = R Y_1^{t} = APX_2^{t}\]</span> Meaning that <span class="math inline">\(BX_2^{t} = Y_2^{t} = (R^{-1}AP) X_2^t\)</span>.</p>
+<p>By <a href="#lem-2.7">Lemma&nbsp;<span>2.7</span></a> part d.&nbsp;<span class="math inline">\(B= R^{-1}AP\)</span>.</p>
+</div>
+</div>
+<div id="cor-" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 2.1 </strong></span>Let <span class="math inline">\(T : V\maps V\)</span> be a linear mapping and let <span class="math inline">\(L_{1}\)</span> and <span class="math inline">\(L_{2}\)</span> be two bases of <span class="math inline">\(V\)</span>. Set <span class="math inline">\(A=M(T;L_{1})\)</span> and <span class="math inline">\(B=M(T;L_{2})\)</span>. Then <span class="math inline">\(B=P^{-1}AP\)</span> where <span class="math inline">\(P=M(L_{1}\maps L_{2})\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="2" data-hash="02-Week2_cache/html/unnamed-chunk-23_0d0b0d946d08565a705e026e030573cf">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>This is a consequence of <a href="#lem-2.10">Lemma&nbsp;<span>2.10</span></a> with <span class="math inline">\(V=W\)</span>.</p>
+</div>
+</div>
+<div id="cor-" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 2.2 </strong></span>Let <span class="math inline">\(T : V\maps V\)</span> be a linear mapping and let <span class="math inline">\(A\)</span> be the matrix of <span class="math inline">\(T\)</span> with respect to some particular basis of <span class="math inline">\(V\)</span>. Then the set of all matrices arising as the matrices of <span class="math inline">\(T\)</span> with respect to the different possible bases of <span class="math inline">\(V\)</span> is the set of matrices similar to <span class="math inline">\(A\)</span>.</p>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be <span class="math inline">\(n\times n\)</span> matrices. Then <span class="math inline">\(B\)</span> is <em>similar</em> to <span class="math inline">\(A\)</span> if and only if there is a nonsingular matrix <span class="math inline">\(P\)</span> such that <span class="math inline">\(B = P^{-1}AP\)</span>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.8 </strong></span>Let <span class="math inline">\(T : \R^2\maps\R^2\)</span> be the linear mapping defined by <span class="math display">\[ T((x,y))=(5x-4y,3x-2y). \]</span> Find the matrix of <span class="math inline">\(T\)</span> with respect to the standard basis of <span class="math inline">\(\R^2\)</span> and use this to find the matrix of <span class="math inline">\(T\)</span> with respect to the basis <span class="math inline">\(((1,1),(4,3))\)</span> of <span class="math inline">\(\R^2\)</span>.</p>
+<div class="cell" data-gaplength="15" data-hash="02-Week2_cache/html/unnamed-chunk-24_2c668afec2058639117b904ca33dfe53">
+<p>Let <span class="math inline">\(L_1 = ((1,0),(0,1))\)</span> be the standard basis for <span class="math inline">\(\R^2\)</span> and write <span class="math inline">\(L_2\)</span> for the basis <span class="math inline">\(((1,1),(4,3))\)</span>.</p>
+<p>We calculate <span class="math inline">\(M(T;L_1)\)</span> in the usual way:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+T((1,0)) &amp;=&amp; (5,3) =5(1,0) + 3(0,1)\\
+T((0,1)) &amp;=&amp; (-4,-2) = -4(1,0) -2(0,1).
+\end{eqnarray*}\]</span> Therefore <span class="math display">\[M(T;L_1) = \begin{pmatrix}
+        5 &amp; -4 \\
+        3 &amp; -2
+\end{pmatrix}.\]</span></p>
+<p>The matrix <span class="math inline">\(M(T;L_2)\)</span> is precisely <span class="math inline">\(P^{-1}M(T;L_1)P\)</span> where <span class="math inline">\(P\)</span> is the matrix <span class="math inline">\(M(L_1 \to L_2)\)</span>. We compute <span class="math inline">\(P\)</span> as follows. First we express the elements of <span class="math inline">\(L_2\)</span> inn terms of <span class="math inline">\(L_1\)</span>.</p>
+<p><span class="math display">\[\begin{eqnarray*}
+  (1,1) &amp;=&amp; 1(1,0) + 1(0,1) \\
+  (4,3) &amp;=&amp; 4(1,0) + 3(0,1).
+\end{eqnarray*}\]</span></p>
+<p>The matrix <span class="math inline">\(P\)</span> can now be computed as</p>
+<p><span class="math display">\[\begin{pmatrix}
+1 &amp; 4 \\
+1 &amp; 3
+\end{pmatrix}.\]</span></p>
+<p>We have: <span class="math display">\[M(T;L_2)= P^{-1}M(T;L_1)P = \begin{pmatrix}
+-3 &amp; 4 \\
+1 &amp; -1
+\end{pmatrix} \begin{pmatrix}
+        5 &amp; -4 \\
+        3 &amp; -2
+\end{pmatrix}\begin{pmatrix}
+1 &amp; 4 \\
+1 &amp; 3
+\end{pmatrix} = \begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 2
+\end{pmatrix}\]</span></p>
+</div>
+</div>
+</section>
+<section id="sec-Eigenvalues-and-Eigenvectors" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-Eigenvalues-and-Eigenvectors"><span class="header-section-number">2.5</span> Eigenvalues and Eigenvectors</h2>
+<p>In this section we connect knowledge of matrices with our new knowledge of the link between linear mappings and matrices. We saw in the last section that the matrices which arise as the matrix of a linear transformation with respect to different bases is just the set of all matrices similar to a given matrix of the transformation. Now recall the final result from Algebra:</p>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.11 </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be <span class="math inline">\(n\times n\)</span> matrices which are similar. Then:</p>
+<ol type="i">
+<li><span class="math inline">\(\det(A)=\det(B)\)</span>.</li>
+<li><span class="math inline">\(\chi_{A}(t)=\chi_{B}(t)\)</span>.</li>
+<li><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have the same eigenvalues.</li>
+<li><span class="math inline">\(A\)</span> is nonsingular if and only if <span class="math inline">\(B\)</span> is nonsingular.</li>
+</ol>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="12" data-hash="02-Week2_cache/html/unnamed-chunk-25_6376045974774f089fe6126d2a230aa0">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Notice that iii. is a consequence of ii. and iv. is a consequence of i.</p>
+<p>It remains to demonstrate i. and ii. Let <span class="math inline">\(P\)</span> be such that <span class="math inline">\(B = P^{-1}AP\)</span>, then</p>
+<ol type="i">
+<li><span class="math display">\[\begin{eqnarray*}\det(P^{-1}AP) &amp;=&amp; \det(P^{-1})\det(A)\det(P)\\ &amp;=&amp; \frac{1}{\det(P)} \det(A)\det(P) \\ &amp;=&amp; \det(A).\end{eqnarray*}\]</span></li>
+<li><span class="math display">\[\begin{eqnarray*}\lambda_{B}(t) &amp;=&amp; \det(B-xI)\\ &amp;=&amp; \det(P^{-1}AP - tI)\\ &amp;=&amp; \det(P^{-1}AP - P^{-1}tIP) \\ &amp;=&amp; \det(P^{-1}(A - tI)P) \\ &amp;=&amp; \det(P^{-1})\det(A - tI) \det(P) \\ &amp;=&amp; \det(A - tI) = \lambda_{A}(t).\end{eqnarray*}\]</span></li>
+</ol>
+</div>
+</div>
+<div id="def-" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.7 </strong></span>Let <span class="math inline">\(V\)</span> be a non-zero, finite dimensional vector space and let <span class="math inline">\(T : V\maps V\)</span> be a linear transformation. The characteristic polynomial <span class="math inline">\(\chi_{T}(t)\)</span> is the characteristic polynomial of each and every matrix representing <span class="math inline">\(T\)</span>.</p>
+</div>
+<div id="def-Eigenvalue-and-eigenvector" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.8 (Eigenvalue and eigenvector) </strong></span>Let <span class="math inline">\(T : V\maps V\)</span> be a linear transformation. We say that a scalar <span class="math inline">\(\lambda\in \F\)</span> is an <em>eigenvalue</em> of <span class="math inline">\(T\)</span> if there exists a non-zero vector <span class="math inline">\(\vecx\in V\)</span> such that <span class="math inline">\(T(\vecx)=\lambda\vecx\)</span>. When this is the case, we say that the vector <span class="math inline">\(\vecx\)</span> is an <em>eigenvector</em> of <span class="math inline">\(T\)</span> corresponding to the eigenvalue <span class="math inline">\(\lambda\)</span>.</p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.9 </strong></span>Find the eigenvalues and corresponding eigenvectors of the linear transformation <span class="math inline">\(T : \C^2\maps \C^2\)</span> defined by <span class="math display">\[ T((x,y))=(2x+y,\:2x+3y). \]</span></p>
+<div class="cell" data-gaplength="30" data-hash="02-Week2_cache/html/unnamed-chunk-26_83a6e5b299db0bcef15df08f83606a0b">
+<p>Let <span class="math inline">\(B=((1,0),(0,1))\)</span> be the standard basis for <span class="math inline">\(\C^2\)</span>. We compute <span class="math inline">\(M_T\)</span> the matrix of <span class="math inline">\(T\)</span> with respect to the basis <span class="math inline">\(B\)</span>: <span class="math display">\[T((1,0)) = (2,2), \quad T((0,1)) = (1,3),\]</span> Therefore, <span class="math display">\[M_{T} = \begin{pmatrix} 2 &amp; 1 \\ 2 &amp; 3 \end{pmatrix}.\]</span> Now, <span class="math display">\[\begin{eqnarray*}
+\chi_{T}(t) = \chi_{M_{T}}(t) = \vert tI -M \vert &amp;=&amp; \\  \begin{vmatrix} t-2 &amp; -1 \\ -2 &amp; t-3 \end{vmatrix} &amp;=&amp; (t-2)(t-3)-2 \\ &amp;=&amp; t^2 -5t +4 = (t-4)(t-1).
+\end{eqnarray*}\]</span></p>
+<p>Therefore the eigenvalues of <span class="math inline">\(T\)</span> are <span class="math inline">\(1\)</span> and <span class="math inline">\(4\)</span>.</p>
+<p>To find the eigenvectors corresponding to an eigenvalue <span class="math inline">\(\lambda\)</span>, we find all vectors <span class="math inline">\(\vecx\)</span> which are solutions to <span class="math inline">\((tI - M_{T})\vecx = \veczero\)</span>. We take each eigenvalue in turn.</p>
+<dl>
+<dt><span class="math inline">\(\lambda_{T}=1\)</span>:</dt>
+<dd>
+We solve <span class="math inline">\((I - M_{T})\vecx = \veczero\)</span> for <span class="math inline">\(X = \begin{pmatrix} x \\ y \end{pmatrix}\)</span> <span class="math display">\[(I-M)\vecx = \begin{pmatrix}-1 &amp; -1 \\ -2 &amp; -2\end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} ) \\ ) \end{pmatrix}.\]</span> The Augmented matrix is: <span class="math display">\[\left(\begin{array}{cc|c} -1 &amp; -1 &amp; 0 \\ -2 &amp; -2 &amp; 0 \end{array}\right)\]</span> The second row is a multiple of the first thus we have one equation <span class="math inline">\(x + y =0\)</span>. Therefore, the set of solutions is: <span class="math display">\[\left\{ \begin{pmatrix} -y \\ y \end{pmatrix} : y \in \C \right\} = \spn\left(\begin{pmatrix} 1 \\ -1 \end{pmatrix}\right).\]</span> It follows that the eigenvectors of <span class="math inline">\(T\)</span> corresponding to the eigenvalue <span class="math inline">\(1\)</span> are all non-zero vectors in <span class="math inline">\(\spn((1,-1))\)</span>.
+</dd>
+<dt><span class="math inline">\(\lambda_t=4\)</span>:</dt>
+<dd>
+We proceed as before. We solve <span class="math inline">\((4I - M_{T})\vecx = \veczero\)</span> for <span class="math inline">\(\vecx\)</span>. This time the augmented matrix is: <span class="math display">\[\left(\begin{array}{cc|c} 2 &amp; -1 &amp; 0 \\ -2 &amp; 1 &amp; 0 \end{array}\right).\]</span> Again the second row is a multiple of the first, thus we have one equation: <span class="math inline">\(2x - y =0\)</span>. The eigenvectors of <span class="math inline">\(M_{T}\)</span> corresponding to the eigenvalue <span class="math inline">\(4\)</span> are all non-zero vectors in <span class="math display">\[\spn\left(\begin{pmatrix} 1 \\ 2 \end{pmatrix}\right).\]</span> It follows that the eigenvectors of <span class="math inline">\(T\)</span> corresponding to eigenvalue <span class="math inline">\(4\)</span> are the non-zero vectors in <span class="math inline">\(\spn((1,2))\)</span>.
+</dd>
+</dl>
+</div>
+</div>
+<p>Now, let <span class="math inline">\(T:V \maps V\)</span> be a linear transformation, where <span class="math inline">\(V\)</span> is a finite dimensional vector space over some field <span class="math inline">\(\F\)</span>. Fix an eigenvalue, <span class="math inline">\(\lambda\)</span> of <span class="math inline">\(T\)</span> and let <span class="math display">\[E(\lambda, T) = \{ \vecv \in V \where T(\vecv) = \lambda\vecv \}.\]</span> (Note that <span class="math inline">\(\veczero \in E(\lambda, T)\)</span> even though it is not an eigenvector by the definition.) If <span class="math inline">\(\vecu, \vecv \in E(\lambda, T)\)</span> then <span class="math display">\[\begin{eqnarray*}
+T(\vecu + \vecv) &amp;=&amp; T(\vecu) + T(\vecv) \qquad \text{$T$ is linear}\\
+&amp;=&amp; \lambda\vecu + \lambda\vecv \qquad \vecu, \vecv \in E(\lambda, T)\\
+&amp;=&amp;\lambda(\vecu + \vecv).
+\end{eqnarray*}\]</span> So, <span class="math inline">\(\vecu + \vecv \in E(\lambda, T)\)</span> and hence <span class="math inline">\(E(\lambda, T)\)</span> is closed under addition. Similarly, if <span class="math inline">\(\vecv \in E(\lambda, T)\)</span> and <span class="math inline">\(\mu \in F\)</span>, then <span class="math display">\[\begin{eqnarray*}
+T(\mu \vecv) &amp;=&amp; \mu T(\vecv) \qquad \text{$T$ is linear}\\
+&amp;=&amp; \mu(\lambda\vecv) \qquad \vecv \in E(\lambda, T)\\
+&amp;=&amp; \lambda(\mu \vecv).
+\end{eqnarray*}\]</span> So, <span class="math inline">\(\mu\vecv \in E(\lambda, T)\)</span> and hence <span class="math inline">\(E(\lambda, T)\)</span> is closed under scalar multiplication. It then follows that <span class="math inline">\(E(\lambda, T)\)</span> is a subspace of <span class="math inline">\(V\)</span> and so the set of all eigenvectors of <span class="math inline">\(T\)</span> corresponding to <span class="math inline">\(\lambda\)</span>, together with the zero vector, forms a vector space.</p>
+<div id="def-Eigenspace" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.9 (Eigenspace) </strong></span>Let <span class="math inline">\(T: V\maps V\)</span> be a linear transformation and let <span class="math inline">\(\lambda\)</span> be an eigenvalue of <span class="math inline">\(T\)</span>. Then the set <span class="math display">\[ E(\lambda,T)=\{\vecx\in V \where T(\vecx)=\lambda\vecx\} \]</span> is called the <em>eigenspace</em> of <span class="math inline">\(T\)</span> corresponding to <span class="math inline">\(\lambda\)</span>.</p>
+</div>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.12 </strong></span>Let <span class="math inline">\(T: V\maps V\)</span> be a linear transformation and let <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\mu\)</span> be different eigenvalues of <span class="math inline">\(T\)</span>. Then <span class="math inline">\(E(\lambda,T)\cap E(\mu,T)=\{\veczero\}\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="12" data-hash="02-Week2_cache/html/unnamed-chunk-27_512977a451852d8e432ccf5cf23d10be">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Suppose <span class="math inline">\(\vecx \in E(\lambda,T) \cap E(\mu, T)\)</span>. Then <span class="math display">\[\lambda \vecx = T(\vecx) = \mu \vecx.\]</span> It follows that <span class="math inline">\((\lambda - \mu) \vecx = \veczero\)</span>. Since <span class="math inline">\(\lambda - \mu \ne 0\)</span> (as <span class="math inline">\(\lambda \ne \mu\)</span>), then <span class="math inline">\(\vecx\)</span> must be <span class="math inline">\(\veczero\)</span> as required.</p>
+</div>
+</div>
+<div id="cor-2.3" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 2.3 </strong></span>Let <span class="math inline">\(T:V\maps V\)</span> be a linear transformation and let <span class="math inline">\(\lambda_{1},\lambda_{2}, \ldots,\lambda_{n}\)</span> be different eigenvalues of <span class="math inline">\(T\)</span>. Let <span class="math inline">\(\vecx_1, \ldots,\vecx_n\)</span> be eigenvectors of <span class="math inline">\(T\)</span> corresponding to the eigenvalues <span class="math inline">\(\lambda_{1},...,\lambda_{n}\)</span> respectively. Then the sequence <span class="math inline">\((\vecx_1, \ldots,\vecx_n)\)</span> is linearly independent.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="24" data-hash="02-Week2_cache/html/unnamed-chunk-28_de4bcc700e489fca821d658f37026e2d">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>We prove this by induction.</p>
+<p>The base case occurs when <span class="math inline">\(n = 1\)</span>. The result trivially holds for this case since a single eigenvector is linearly independent (eigenvectors are non-zero).</p>
+<p>Assume that for <span class="math inline">\(\lambda_{1},\lambda_{2}, \ldots,\lambda_{n}\)</span> different eigenvalues of <span class="math inline">\(T\)</span> and <span class="math inline">\(\vecx_1, \ldots,\vecx_n\)</span> eigenvectors of <span class="math inline">\(T\)</span> corresponding to the eigenvalues <span class="math inline">\(\lambda_{1},\ldots,\lambda_{n}\)</span> respectively, the sequence <span class="math inline">\((\vecx_1, \ldots,\vecx_n)\)</span> is linearly independent.</p>
+<p>Now let <span class="math inline">\(\lambda_{1},\lambda_{2}, \ldots,\lambda_{n+1}\)</span> be different eigenvalues of <span class="math inline">\(T\)</span> and <span class="math inline">\(\vecx_1, \ldots,\vecx_{n+1}\)</span> eigenvectors of <span class="math inline">\(T\)</span> corresponding to the eigenvalues <span class="math inline">\(\lambda_{1},...,\lambda_{n+1}\)</span>.</p>
+<p>Suppose there are scalars <span class="math inline">\(a_1, a_2, \ldots, a_{n+1} \in \F\)</span> such that <span id="eq-2.0"><span class="math display">\[a_1 \vecx_1 + a_2 \vec x_2 + \ldots + a_{n+1} \vec x_{n+1} = \vec{0}. \tag{2.1}\]</span></span> Rearranging we have: <span id="eq-2.1"><span class="math display">\[a_1 \vecx_1 + a_2 \vec x_2 + \ldots + a_{n} \vec x_{n} = -a_{n+1} \vec x_{n+1}. \tag{2.2}\]</span></span></p>
+<p>Applying the map <span class="math inline">\(T\)</span>:</p>
+<p><span class="math display">\[T(a_1 \vecx_1 + a_2 \vecx_2 + \ldots + a_{n} \vecx_{n}) = T(-a_{n+1} \vecx_{n+1}).\]</span> Using linearity: <span class="math display">\[a_1 T(\vecx_1) + a_2 T(\vecx_2) + \ldots + a_{n}T(\vecx_{n}) = -a_{n+1} T(\vecx_{n+1}).\]</span> Noting that <span class="math inline">\(\vecx_i\)</span> is an eigenvector with eigenvalue <span class="math inline">\(\lambda_i\)</span>, we have <span id="eq-2.2"><span class="math display">\[a_1 \lambda_1 \vecx_1 + a_2 \lambda_2 \vec x_2 + \ldots + a_{n}\lambda_nT(\vec x_{n}) = -a_{n+1} \lambda_{n+1} \vec x_{n+1}. \tag{2.3}\]</span></span></p>
+<p>There are two possibilities either <span class="math inline">\(\lambda_{n+1} = 0\)</span> or <span class="math inline">\(\lambda_{n+1} \ne 0\)</span>.</p>
+<dl>
+<dt><span class="math inline">\(\lambda_{n+1} = 0\)</span>:</dt>
+<dd>
+In this case <span class="math inline">\(\lambda_i \ne 0\)</span> for any <span class="math inline">\(1 \le i \le n\)</span> (since the eigenvalues are distinct). In particular: <span class="math display">\[a_1 \lambda_1 \vecx_1 + a_2 \lambda_2 \vec x_2 + \ldots + a_{n}\lambda_nT(\vec x_{n}) = \vec{0}.\]</span> However, since <span class="math inline">\((\vecx_1, \vecx_2, \ldots, \vecx_n)\)</span> is linearly independent, <span class="math inline">\(a_i\lambda_i = 0\)</span> for all <span class="math inline">\(1 \le i \le n\)</span>. We conclude that <span class="math inline">\(a_i = 0\)</span> for all <span class="math inline">\(1 \le i \le n\)</span> since <span class="math inline">\(\lambda_i \ne 0\)</span>. <a href="#eq-2.0">Equation&nbsp;<span>2.1</span></a> now implies that <span class="math inline">\(a_{n+1} = 0\)</span> as well. We conclude that the sequence <span class="math inline">\((\vecx_1, \vecx_2,\ldots, \vecx_{n+1})\)</span> is linearly independent.
+</dd>
+<dt><span class="math inline">\(\lambda_{n+1} \ne 0\)</span>:</dt>
+<dd>
+Dividing <a href="#eq-2.2">Equation&nbsp;<span>2.3</span></a> by <span class="math inline">\(\lambda_{n+1}\)</span> and subtracting <a href="#eq-2.1">Equation&nbsp;<span>2.2</span></a> we have <span class="math display">\[a_1\left(\frac{\lambda_1}{\lambda_{n+1}} - 1\right) \vecx_1 + a_2\left(\frac{\lambda_2}{\lambda_{n+1}} - 1 \right) \vecx_2 + \ldots + a_n\left(\frac{\lambda_n}{\lambda_{n+1}} - 1 \right) \vecx_n = \veczero.\]</span> By The inductive assumption it must be the case that <span class="math inline">\(a_i\left(\frac{\lambda_i}{\lambda_{n+1}} - 1 \right) = 0\)</span> for all <span class="math inline">\(1 \le i \le n\)</span>. Now since <span class="math inline">\(\lambda_i \ne \lambda_{n+1}\)</span> for <span class="math inline">\(1 \le i \le n\)</span>, it follows that <span class="math inline">\(\frac{\lambda_i}{\lambda_{n+1}} \ne 1\)</span> and so <span class="math inline">\(\frac{\lambda_i}{\lambda_{n+1}} - 1 \ne 0\)</span>. Therefore <span class="math inline">\(a_i = 0\)</span> for all <span class="math inline">\(1 \le i \le n\)</span>. As in the previous case, we conclude that <span class="math inline">\(a_{n+1} = 0\)</span> as well and the sequence <span class="math inline">\((\vecx_1, \vecx_2,\ldots, \vecx_{n+1})\)</span> is linearly independent.
+</dd>
+</dl>
+</div>
+</div>
+</section>
+<section id="sec-Diagonalisation" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="sec-Diagonalisation"><span class="header-section-number">2.6</span> Diagonalisation</h2>
+<div id="lem-2.13" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.13 </strong></span>Let <span class="math inline">\(T : V\maps V\)</span> be a linear transformation of a finite dimensional vector space over <span class="math inline">\(\C\)</span> and let <span class="math inline">\(L=(\vece_1, \ldots,\vece_n)\)</span> be a basis of <span class="math inline">\(V\)</span>. Then the following statements are equivalent:</p>
+<ol type="1">
+<li><span class="math inline">\(M(T;L)=\diag(\alpha_{1},...,\alpha_{n})\)</span>;</li>
+<li><span class="math inline">\(\alpha_{1}, \ldots,\alpha_{n}\)</span> are eigenvalues of <span class="math inline">\(T\)</span> and for each <span class="math inline">\(k\)</span>, <span class="math inline">\(\vece_k\)</span> is an eigenvector of <span class="math inline">\(T\)</span> corresponding to the eigenvalue <span class="math inline">\(\alpha_{k}\)</span>.</li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The proof below is unexaminable.</p>
+<div class="cell" data-gaplength="15" data-hash="02-Week2_cache/html/unnamed-chunk-29_afa7a2e7fd7f2731b8fa8618c981b0b1">
+<p>Suppose <span class="math inline">\(M(T;L) = \diag(a_1,\ldots, a_n)\)</span>. Then as column <span class="math inline">\(i\)</span> of <span class="math inline">\(M(T;L)\)</span> is the coordinate vector of <span class="math inline">\(T(\vece_i)\)</span> written as a column, we have: <span class="math display">\[T(\vece_i) = 0\vece_1 + \ldots + 0 \vece_{i-1} + a_i \vece_i + 0 \vece_{i+1} + \ldots + 0 \vece_n = a_i \vece_i.\]</span> Therefore <span class="math inline">\(\vece_i\)</span> is an eigenvector of <span class="math inline">\(T\)</span> corresponding to the eigenvalue <span class="math inline">\(a_i\)</span>.</p>
+<p>On the other hand, suppose that <span class="math inline">\(\alpha_{1}, \ldots,\alpha_{n}\)</span> are eigenvalues of <span class="math inline">\(T\)</span> and for each <span class="math inline">\(k\)</span>, <span class="math inline">\(\vece_k\)</span> is an eigenvector of <span class="math inline">\(T\)</span> corresponding to the eigenvalue <span class="math inline">\(\alpha_{k}\)</span>. Then clearly the <span class="math inline">\(i\)</span><sup>th</sup> column of <span class="math inline">\(M(T;L)\)</span> is the has entry <span class="math inline">\(a_{i}\)</span> in position <span class="math inline">\(i\)</span> and zero’s everywhere else since <span class="math display">\[T(\vece_i) = a_i \vece_i = 0\vece_1 + \ldots + 0 \vece_{i-1} + a_i \vece_i + 0 \vece_{i+1} + \ldots + 0 \vece_n.\]</span></p>
+</div>
+</div>
+<div id="def-Diagonalisable" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.10 (Diagonalisable) </strong></span>A linear transformation <span class="math inline">\(T:V\maps V\)</span> is <em>diagonalisable</em> if there exists a basis <span class="math inline">\(L\)</span> of <span class="math inline">\(V\)</span> such that <span class="math inline">\(M(T;L)\)</span> is a diagonal matrix.</p>
+</div>
+<div id="thm-" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2.2 </strong></span>Suppose that the linear transformation <span class="math inline">\(T: V\maps V\)</span> has <span class="math inline">\(n\)</span> different eigenvalues <span class="math inline">\(\alpha_{1}, \ldots,\alpha_{n}\)</span>, where <span class="math inline">\(n=\dimn(V)\)</span>. For each <span class="math inline">\(k\)</span>, let <span class="math inline">\(\vece_k\)</span> be an eigenvector of <span class="math inline">\(T\)</span> corresponding to <span class="math inline">\(\alpha_{k}\)</span> and let <span class="math inline">\(L=(\vece_1, \ldots,\vece_n)\)</span>. Then <span class="math inline">\(L\)</span> is a basis of <span class="math inline">\(V\)</span> and <span class="math display">\[M(T;L)=\diag(\alpha_{1}, \ldots,\alpha_{n}).\]</span></p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="10" data-hash="02-Week2_cache/html/unnamed-chunk-30_c4e501317196b83ca352ed6b816bbb4c">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>By <a href="#cor-2.3">Corollary&nbsp;<span>2.3</span></a>, <span class="math inline">\(L\)</span> is linearly independent, therefore <span class="math inline">\(L\)</span> is a basis for <span class="math inline">\(V\)</span> since <span class="math inline">\(\dimn(V) = n\)</span>.</p>
+<p>By <a href="#lem-2.13">Lemma&nbsp;<span>2.13</span></a>, <span class="math inline">\(M(T;L)=\diag(\alpha_{1}, \ldots,\alpha_{n}).\)</span></p>
+</div>
+</div>
+</section>
+<section id="sec-Algebraic-and-Geometric-Multiplicities-of-Eigenvalues" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="sec-Algebraic-and-Geometric-Multiplicities-of-Eigenvalues"><span class="header-section-number">2.7</span> Algebraic and Geometric Multiplicities of Eigenvalues</h2>
+<div id="def-Algebraicandgeometricmultiplicity" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.11 (Algebraic and geometric multiplicity) </strong></span>Let <span class="math inline">\(T:V\longrightarrow V\)</span> be a linear mapping with <span class="math inline">\(V\)</span> finite dimensional and let <span class="math inline">\(\lambda\in \F\)</span> be an eigenvalue of <span class="math inline">\(T\)</span>. Then</p>
+<ol type="i">
+<li>The power to which <span class="math inline">\((t-\lambda)\)</span> appears in the characteristic polynomial <span class="math inline">\(\chi_{T}(t)\)</span> is called the <em>algebraic multiplicity</em> of <span class="math inline">\(\lambda\)</span> as an eigenvalue of <span class="math inline">\(T\)</span>.</li>
+<li>The quantity <span class="math inline">\(\dimn(E(\lambda,T))\)</span> is called the <em>geometric multiplicity</em> of <span class="math inline">\(\lambda\)</span> as an eigenvalue of <span class="math inline">\(T\)</span>.</li>
+</ol>
+</div>
+<div id="lem-2.14" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.14 </strong></span>Let <span class="math inline">\(T:V\longrightarrow V\)</span> be a linear mapping with <span class="math inline">\(V\)</span> nonzero and finite dimensional. Let <span class="math inline">\(\lambda\in F\)</span> be an eigenvalue of <span class="math inline">\(T\)</span>. Then <span class="math display">\[\text{(geometric multiplicity of $\lambda)\leq$ (algebraic multiplicity of $\lambda$).}\]</span></p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="20" data-hash="02-Week2_cache/html/unnamed-chunk-31_86e1f472c4ef695b8766e26c32ea7f99">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(\lambda\)</span> be an eigenvalue of <span class="math inline">\(T\)</span>, let <span class="math inline">\(s\)</span> be the algebraic multiplicity of <span class="math inline">\(T\)</span> and <span class="math inline">\(r\)</span> be its geometric multiplicity.</p>
+<p>Since <span class="math inline">\(\dimn(E(\lambda,T)) = r\)</span>, there is a basis <span class="math inline">\(l=(\vece_1, \ldots, \vece_r)\)</span> for <span class="math inline">\((\lambda,T)\)</span>. We can extend <span class="math inline">\(l\)</span> to a basis <span class="math inline">\(L =(\vece_1, \ldots, \vece_r,\ldots,\vece_{s+1} \vece_n)\)</span>.</p>
+<p>With respect to the basis <span class="math inline">\(L\)</span>, we have, <span class="math display">\[M(T;L) = \begin{pmatrix}
+            \lambda I_r &amp; B  \\
+              0 &amp;  C
+          \end{pmatrix}\]</span> Where <span class="math inline">\(I_r\)</span> is the <span class="math inline">\(r \times r\)</span> identity matrix, <span class="math inline">\(B\)</span> is an <span class="math inline">\(r \times (n-r)\)</span> matrix and <span class="math inline">\(C\)</span> is an <span class="math inline">\((n-r) \times (n-r)\)</span> matrix. Expanding the determinant of <span class="math inline">\((tI = M(T;L))\)</span>, we see that <span class="math display">\[\det(T) = \begin{vmatrix} tI_{r} - \lambda I_r &amp; -B \\ 0 &amp; tI_{(n-r)} - C \end{vmatrix} = (t-\lambda)^{r} \det(tI -C) =  (t-\lambda)^{r}\chi_{C}(t).\]</span> It follows that <span class="math inline">\(r \le s\)</span> since <span class="math inline">\(\det(C)\)</span> might have a power of <span class="math inline">\((t-\lambda)\)</span> as a factor.</p>
+</div>
+</div>
+<div id="thm-2.3" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2.3 </strong></span>Let <span class="math inline">\(T:V\longrightarrow V\)</span> be a linear mapping with <span class="math inline">\(V\)</span> finite dimensional and let <span class="math inline">\(\lambda\in F\)</span> be an eigenvalue of <span class="math inline">\(T\)</span>. Then <span class="math inline">\(T\)</span> is diagonalisable if and only if, for each eigenvalue <span class="math inline">\(\lambda\)</span> of <span class="math inline">\(T\)</span>, the algebraic and geometric multiplicities of <span class="math inline">\(\lambda\)</span> coincide.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><em>Omitted.</em></p>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.10 </strong></span>Consider the linear transformation of <span class="math inline">\(\C^{2}\)</span> defined by <span class="math display">\[
+T((x,y))=(x+y,\:4x+y).
+\]</span> Show that <span class="math inline">\(T\)</span> is diagonalisable.</p>
+<div class="cell" data-gaplength="20" data-hash="02-Week2_cache/html/unnamed-chunk-32_e5195e383ade283d6dfb5d85ac0e71c1">
+<p>With respect to the standard basis for <span class="math inline">\(\C^2\)</span>, <span class="math display">\[M_{T} = \begin{pmatrix} 1 &amp; 1 \\ 4 &amp; 1 \end{pmatrix}.\]</span> Thus <span class="math inline">\(\chi_{T} = (t-1)^2 -4 = (t+3)(t-1)\)</span>. The eigenvalues of <span class="math inline">\(T\)</span> are therefore <span class="math inline">\(-3\)</span> and <span class="math inline">\(1\)</span>.</p>
+<p>Notice that <span class="math inline">\(\dimn(E(\lambda,T))\)</span> is at least <span class="math inline">\(1\)</span> for any eigenvalue of <span class="math inline">\(T\)</span> (since eigenvectors by definition are non-zero). However by <a href="#lem-2.14">Lemma&nbsp;<span>2.14</span></a>, <span class="math inline">\(\dimn(E(\lambda,T)) \le 1\)</span> for any eigenvalue of <span class="math inline">\(T\)</span> since the algebraic multiplicity of each of the eigenvalues of <span class="math inline">\(T\)</span> is <span class="math inline">\(1\)</span> (from the expression of <span class="math inline">\(\chi_{T}\)</span>).</p>
+<p>It follows that the algebraic and geometric multiplicities of each eigenvalue of <span class="math inline">\(T\)</span> are equal and so <span class="math inline">\(T\)</span> is diagonalisable by <a href="#thm-2.3">Theorem&nbsp;<span>2.3</span></a>.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.11 </strong></span>Consider the linear transformation of <span class="math inline">\(\C^{2}\)</span> defined by <span class="math display">\[
+S((x,y))=(x+y,\:y).
+\]</span> Show that <span class="math inline">\(S\)</span> is not diagonalisable.</p>
+<div class="cell" data-gaplength="15" data-hash="02-Week2_cache/html/unnamed-chunk-33_1a1fb2038c002ba3418c0833a3de8e40">
+<p>With respect to the standard basis for <span class="math inline">\(\C^2\)</span> <span class="math display">\[ M_{S} = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}.\]</span> Thus <span class="math inline">\(\chi_{S} = (t-1)^2\)</span> and <span class="math inline">\(s\)</span> has a single eigenvalue namely <span class="math inline">\(1\)</span>.</p>
+<p>We find <span class="math inline">\(\dimn(E(1,S))\)</span>. First we find a spanning set for <span class="math inline">\(E(1,S)\)</span>, we have <span class="math display">\[\begin{eqnarray*}
+  E(1,S) &amp;=&amp; \{ (x,y) \in \C^2: T((x,y)) = (x,y) \} \\
+  &amp;=&amp; \{ (x,y) \in \C^2: (x+y,y) = (x,y) \} \\
+  &amp;=&amp; \{ (x,y) \in \C^2:  y=0 \} \\
+  &amp;=&amp; \spn((1,0)).
+\end{eqnarray*}\]</span></p>
+<p>It follows that <span class="math inline">\(\dimn(E(1,S)) = 1\)</span> and the algebraic multiplicity of the eigenvalue <span class="math inline">\(1\)</span> is strictly greater than its geometric multiplicity — <span class="math inline">\(S\)</span> is not diagonalisable by <a href="#thm-2.3">Theorem&nbsp;<span>2.3</span></a>.</p>
+</div>
+</div>
+</section>
+<section id="sec-Vector-Space-Isomorphisms" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="sec-Vector-Space-Isomorphisms"><span class="header-section-number">2.8</span> Vector Space Isomorphisms</h2>
+<div id="def-Isomorphism" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.12 (Isomorphism) </strong></span>Let <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> be vector spaces over <span class="math inline">\(\F\)</span> and let <span class="math inline">\(T : V\longrightarrow W\)</span> be a linear mapping. In the special case where <span class="math inline">\(T\)</span> is a bijection we say that <span class="math inline">\(T\)</span> is a <em>vector space isomorphism</em> and that the spaces <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> are <em>isomorphic</em>.</p>
+</div>
+<div id="lem-" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 2.15 </strong></span>Let <span class="math inline">\(V\)</span> be a finite dimensional vector space over <span class="math inline">\(\F\)</span> with <span class="math inline">\(\dimn V=n\)</span>. Then <span class="math inline">\(V\)</span> is isomorphic to <span class="math inline">\(\F^{n}\)</span>.</p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="20" data-hash="02-Week2_cache/html/unnamed-chunk-34_49cbf536ac29adf33f5905ac0fc95d3d">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>Let <span class="math inline">\(B:=(\vece_1,\vece_2, \ldots, \vece_n)\)</span> be a basis for <span class="math inline">\(V\)</span>. Let <span class="math inline">\(T: V \to \F^{n}\)</span> be defined by <span class="math display">\[T(a_1\vece_1 + a_2 \vece_2 + \ldots + a_n \vece_n) = (a_1,a_2,\ldots, a_n).\]</span></p>
+<p>The map <span class="math inline">\(T\)</span> is well-defined since, as <span class="math inline">\(B\)</span> is a basis, every element of <span class="math inline">\(V\)</span> can be expressed uniquely as a linear combination of elements of <span class="math inline">\(B\)</span>. Clearly <span class="math inline">\(T\)</span> is surjective and injective.</p>
+<p>That <span class="math inline">\(T\)</span> is linear is easily verified, in particular <span class="math inline">\(T\)</span> is the unique linear map which maps <span class="math inline">\(\vece_i\)</span> to the element <span class="math inline">\((0, \ldots,0,1,0\ldots, 0)\)</span> where <span class="math inline">\(1\)</span> occurs in position <span class="math inline">\(i\)</span>.</p>
+<p>Therefore <span class="math inline">\(T\)</span> is an isomorphism of vector spaces and <span class="math inline">\(V \cong \F^{n}\)</span>.</p>
+</div>
+</div>
+<div id="cor-" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 2.4 </strong></span>Let <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> be finite dimensional vector spaces over <span class="math inline">\(\F\)</span>. Then <span class="math display">\[
+V\cong W\Leftrightarrow\:\: \dimn V= \dimn W.
+\]</span></p>
+</div>
+<div class="proof">
+<div class="cell" data-gaplength="20" data-hash="02-Week2_cache/html/unnamed-chunk-35_3aa982e9644fb6410fae4c3d8a4e1084">
+<span class="proof-title"><em>Proof</em>. </span>
+<p>If <span class="math inline">\(V \cong W\)</span>, then there exist is a vector space isomorphism <span class="math inline">\(T: V \to W\)</span>. Applying the Rank-Nullity Theorem (<a href="#thm-RankNullityTheorem">Theorem&nbsp;<span>2.1</span></a>) <span class="math display">\[ \dimn(V) = \dimn(im(T)) + \dimn(\ker(T)) = \dimn(W) + 0 = \dim(W).\]</span></p>
+<p>If <span class="math inline">\(\dimn(V) = \dimn(W) = n\)</span>. Then <span class="math inline">\(V \cong \F^n \cong W\)</span> and so <span class="math inline">\(V \cong W\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="sec-sheet2" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="sec-sheet2"><span class="header-section-number">2.9</span> Problem Sheet 2</h2>
+<p>_ Questions 2.1 – 2.16 for Week 4; Questions 2.17 – 2.21 for Week 6._</p>
+<hr>
+<div class="cell" title="Question 2.1" data-hash="02-Week2_cache/html/unnamed-chunk-36_d1d572446de667f7ae26aff6ad6eefdb">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.1
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(S : V\longrightarrow W\)</span> and <span class="math inline">\(T : U\longrightarrow V\)</span> be mappings.</p>
+<ol type="a">
+<li>Prove that if <span class="math inline">\(S\circ T\)</span> is injective then <span class="math inline">\(T\)</span> is also injective.</li>
+<li>Prove that if <span class="math inline">\(S\circ T\)</span> is surjective then <span class="math inline">\(S\)</span> is also surjective.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.1" data-hash="02-Week2_cache/html/unnamed-chunk-37_0a9763ffb4068650b21ff4d34e436c27">
+<button id="displayTextunnamed-chunk-37" onclick="javascript:toggle('unnamed-chunk-37');">
+Show Solution 2.1
+</button>
+<div id="toggleTextunnamed-chunk-37" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.1
+</div>
+<div class="panel-body">
+<ol type="a">
+<li>Let <span class="math inline">\(x,y\in U\)</span>. Then <span class="math display">\[\begin{align*}
+T(x)=T(y) &amp; \Rightarrow S(T(x))=S(T(y)) \\
+&amp; \Rightarrow (S\circ T)(x)=(S\circ T)(y) \\
+&amp; \Rightarrow x=y
+\end{align*}\]</span> since <span class="math inline">\(S\circ T\)</span> is injective. Hence <span class="math inline">\(T\)</span> is injective.</li>
+<li>Let <span class="math inline">\(y\in W\)</span>. Then, since <span class="math inline">\(S\circ T\)</span> is surjective, <span class="math inline">\(y=(S\circ T)(x)\)</span> for some <span class="math inline">\(x\in U\)</span> i.e.&nbsp;<span class="math inline">\(y=S(T(x))\in{\rm{im}}(S)\)</span>. Hence <span class="math inline">\(S\)</span> is surjective.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.2" data-hash="02-Week2_cache/html/unnamed-chunk-38_dbc5c1e1820681c2f48f9c06d46431ac">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.2
+</div>
+<div class="panel-body">
+<p>For each of the following mappings <span class="math inline">\(T: U\longrightarrow V\)</span>, decide whether <span class="math inline">\(T\)</span> is linear.</p>
+<ol type="a">
+<li><span class="math inline">\(U=\mathbb{R}^{4}\)</span>, <span class="math inline">\(V=\mathbb{R}^{3}\)</span>, <span class="math inline">\(T((x_{1},x_{2},x_{3},x_{4}))=(x_{2}+x_{3},\:x_{1}-x_{2}^{2},\: x_{3}+x_{4})\)</span>,</li>
+<li><span class="math inline">\(U=\mathbb{R}^{3}\)</span>, <span class="math inline">\(V=\mathbb{R}^{2}\)</span>, <span class="math inline">\(T((x_{1},x_{2},x_{3}))=(x_{2}-x_{1},\:x_{3}+3x_{2})\)</span>,</li>
+<li><span class="math inline">\(U=P_{2}\)</span>, <span class="math inline">\(V=P_{5}\)</span>, <span class="math inline">\(T(p(x))=xp(x^{2})+p(1)\)</span>,</li>
+<li><span class="math inline">\(U=\mathbb{R}^{2}\)</span>, <span class="math inline">\(V=\mathbb{R}\)</span>, <span class="math inline">\(T((x,y))=xy\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.2" data-hash="02-Week2_cache/html/unnamed-chunk-39_f8b35af1ef06f5e67305235efbb1037a">
+<button id="displayTextunnamed-chunk-39" onclick="javascript:toggle('unnamed-chunk-39');">
+Show Solution 2.2
+</button>
+<div id="toggleTextunnamed-chunk-39" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.2
+</div>
+<div class="panel-body">
+<ol type="a">
+<li>This is not linear. For example, take <span class="math inline">\(\textbf{x}=(0,1,0,0)\in U\)</span> and <span class="math inline">\(\lambda=2\)</span>. Then <span class="math display">\[\begin{equation*}
+T(\lambda\textbf{x})=T((0,2,0,0))=(2,-4,0).
+\end{equation*}\]</span> However, <span class="math display">\[\begin{equation*}
+\lambda{T}(\textbf{x})=2T((0,1,0,0))=2(1,-1,0)=(2,-2,0).
+\end{equation*}\]</span> Hence we have <span class="math inline">\(T(\lambda\textbf{x})\neq \lambda{T}(\textbf{x})\)</span> and so <span class="math inline">\(T\)</span> is not linear.</li>
+<li>This is linear. Let <span class="math inline">\(\textbf{x}=(x_{1},x_{2},x_{3}),\textbf{y}=(y_{1},y_{2},y_{3})\in U\)</span> and <span class="math inline">\(\lambda\in\mathbb{R}\)</span>. Then <span class="math display">\[\begin{align*}
+T(\textbf{x}+\textbf{y}) &amp; = T((x_{1}+y_{1},\:x_{2}+y_{2},\:x_{3}+y_{3})) \\
+&amp; = (x_{2}+y_{2}-(x_{1}+y_{1}),\:x_{3}+y_{3}+3(x_{2}+y_{2})) \\
+&amp; = (x_{2}-x_{1}+y_{2}-y_{1},\:x_{3}+3x_{2}+y_{3}+3y_{2}) \\
+&amp; = (x_{1}-x_{1},\:x_{3}+3x_{2})+(y_{2}-y_{1},\:y_{3}+3y_{2}) \\
+&amp; = T(\textbf{x})+T(\textbf{y})
+\end{align*}\]</span> and <span class="math display">\[\begin{align*}
+T(\lambda\textbf{x}) &amp; = T(\lambda(x_{1},x_{2},x_{3})) \\
+&amp; = T(\lambda{x_{1}},\lambda{x_{2}},\lambda{x_{3}}) \\
+&amp; = (\lambda{x_{2}}-\lambda{x_{1}},\:\lambda{x_{3}}+3(\lambda{x_{2}})) \\
+&amp; = \lambda(x_{2}-x_{1},\:x_{3}+3x_{2}) \\
+&amp; = \lambda{T}(\textbf{x}).
+\end{align*}\]</span></li>
+<li>This is linear. Let <span class="math inline">\(p,q\in P_{2}\)</span> and <span class="math inline">\(\lambda\in\mathbb{R}\)</span>. Then <span class="math display">\[\begin{align*}
+T((p+q)(x)) &amp; = x(p+q)(x^{2})+(p+q)(1) \\
+&amp; = xp(x^{2})+xq(x^{2})+p(1)+q(1) \\
+&amp; = (xp(x^{2})+p(1))+(xq(x^{2})+q(1)) \\
+&amp; = T(p(x))+T(q(x))
+\end{align*}\]</span> and <span class="math display">\[\begin{align*}
+T((\lambda{p})(x)) &amp; = x(\lambda{p})(x^{2})+(\lambda{p})(1) \\
+&amp; = \lambda(xp(x^{2}))+\lambda(p(1)) \\
+&amp; = \lambda(xp(x^{2})+p(1)) \\
+&amp; = \lambda{T}(p(x)).
+\end{align*}\]</span></li>
+<li>This is not linear. For example, consider <span class="math inline">\(\textbf{x}=(1,1)\in U\)</span> and <span class="math inline">\(\lambda=2\)</span>. Then <span class="math display">\[\begin{equation*}
+T(\lambda{x})=T(2(1,1))=T((2,2))=2\times 2 =4.
+\end{equation*}\]</span> However <span class="math display">\[\begin{equation*}
+\lambda{T}(\textbf{x})=2T((1,1))=2(1\times 1)=2.
+\end{equation*}\]</span> Hence <span class="math inline">\(T(\lambda\textbf{x})\neq\lambda{T}(\textbf{x})\)</span> and so <span class="math inline">\(T\)</span> is not linear.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.3" data-hash="02-Week2_cache/html/unnamed-chunk-40_73419fb4c87fad14f51517f683580836">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.3
+</div>
+<div class="panel-body">
+<p>A linear mapping <span class="math inline">\(S : \mathbb{R}^{3}\longrightarrow\mathbb{R}^{4}\)</span> is such that <span class="math display">\[\begin{eqnarray*}
+S((1,0,0))&amp;=&amp;(2,-1,0,4), \\
+S((0,1,0))&amp;=&amp;(1,3,-4,7), \text{ and } \\
+S((0,0,1))&amp;=&amp;(0,0,5,2)
+\end{eqnarray*}\]</span></p>
+Find a general formula for <span class="math inline">\(S((x_{1},x_{2},x_{3}))\)</span>.
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.3" data-hash="02-Week2_cache/html/unnamed-chunk-41_e03da40a2764932bd0af0771a5ea6243">
+<button id="displayTextunnamed-chunk-41" onclick="javascript:toggle('unnamed-chunk-41');">
+Show Solution 2.3
+</button>
+<div id="toggleTextunnamed-chunk-41" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.3
+</div>
+<div class="panel-body">
+<p>Since <span class="math inline">\(S\)</span> is a linear mapping, <span class="math inline">\(S(\lambda\textbf{x})=\lambda{S(\textbf{x})}\)</span> for all <span class="math inline">\(\textbf{x}\in\mathbb{R}^{3}\)</span>, <span class="math inline">\(\lambda\in\mathbb{R}\)</span>. Hence <span class="math display">\[\begin{align*}
+S((x_{1},0,0)) &amp; = x_{1}S((1,0,0))= (2x_{1},-x_{1},0,4x_{1}) \\
+S((0,x_{2},0)) &amp; = x_{2}S((0,1,0))=(x_{2},3x_{2},-4x_{2},7x_{2}) \\
+S((0,0,x_{3})) &amp; = x_{3}S((0,0,1))=(0,0,5x_{3},2x_{3}).
+\end{align*}\]</span> Now, once again since <span class="math inline">\(S\)</span> is linear, <span class="math display">\[\begin{align*}
+S((x_{1},x_{2},x_{3})) &amp; = S((x_{1},0,0)+(0,x_{2},0)+(0,0,x_{3})) \\
+&amp; = S((x_{1},0,0))+S((0,x_{2},0))+S((0,0,x_{3})) \\
+&amp; =(2x_{1},-x_{1},0,4x_{1})+(x_{2},3x_{2},-4x_{2},7x_{2})+(0,0,5x_{3},2x_{3}) \\
+&amp; = (2x_{1}+x_{2},-x_{1}+3x_{2},-4x_{2}+5x_{3},4x_{1}+7x_{2}+2x_{3}).
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.4" data-hash="02-Week2_cache/html/unnamed-chunk-42_f79ee6abcd6f20486038e7a3eff15a06">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.4
+</div>
+<div class="panel-body">
+A linear mapping <span class="math inline">\(T : \mathbb{R}^{3}\longrightarrow\mathbb{R}^{3}\)</span> is such that <span class="math display">\[\begin{eqnarray*}
+T((1,1,1))&amp;=&amp;(1,-1,1) \\
+T((1,1,0))&amp;=&amp;(-2,1,-1), \text{ and } \\
+T((1,0,0))&amp;=&amp;(3,1,0).
+\end{eqnarray*}\]</span> Obtain a general formula for <span class="math inline">\(T((x_{1},x_{2},x_{3}))\)</span>.
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.4" data-hash="02-Week2_cache/html/unnamed-chunk-43_8ab9ee13c869e6b3ee845d08dc380354">
+<button id="displayTextunnamed-chunk-43" onclick="javascript:toggle('unnamed-chunk-43');">
+Show Solution 2.4
+</button>
+<div id="toggleTextunnamed-chunk-43" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.4
+</div>
+<div class="panel-body">
+<p>We have <span class="math display">\[\begin{align*}
+T((0,1,0)) &amp; = T((1,1,0)-(1,0,0)) \\
+&amp; = T((1,1,0))-T((1,0,0))\:\:\:\:\: (T\:\:{\rm{linear}}) \\
+&amp; = (-2,1,-1)-(3,1,0) \\
+&amp; = (-5,0,-1).
+\end{align*}\]</span> In addition, <span class="math display">\[\begin{align*}
+T((0,0,1)) &amp; = T((1,1,1)-(1,1,0)) \\
+&amp; = T((1,1,1))-T((1,1,0))\:\:\;\:\: (T\:\:{\rm{linear}}) \\
+&amp; = (1,-1,1)-(-2,1,-1) \\
+&amp; = (3,-2,2).
+\end{align*}\]</span> Hence <span class="math display">\[\begin{align*}
+T((x_{1},0,0)) &amp; = x_{1}T((1,0,0))\:\:\:\:\: (T\:\:{\rm{linear}}) \\
+&amp; = (3x_{1},x_{1},0).
+\end{align*}\]</span> <span class="math display">\[\begin{align*}
+T((0,x_{2},0)) &amp; = x_{2}T((0,1,0))\:\:\:\:\: (T\:\:{\rm{linear}}) \\
+&amp; = (-5x_{2},0,-x_{2}).
+\end{align*}\]</span> <span class="math display">\[\begin{align*}
+T((0,0,x_{3})) &amp; = x_{3}T((0,0,1))\:\:\:\:\: (T\:\:{\rm{linear}}) \\
+&amp; = (3x_{3},-2x_{3},2x_{3}).
+\end{align*}\]</span> Finally, <span class="math display">\[\begin{align*}
+T((x_{1},x_{2},x_{3})) &amp; = T((x_{1},0,0)+(0,x_{2},0)+(0,0,x_{3})) \\
+&amp; = T((x_{1},0,0))+T((0,x_{2},0))+T((0,0,x_{3}))\:\:\:\:\: (T\:\:{\rm{linear}}) \\
+&amp; = (3x_{1},x_{1},0)+(-5x_{2},0,-x_{2})+(3x_{3},-2x_{3},2x_{3}) \\
+&amp; = (3x_{1}-5x_{2}+3x_{3},x_{1}-2x_{3},-x_{2}+2x_{3}).
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.5" data-hash="02-Week2_cache/html/unnamed-chunk-44_117e91971597b689257a1b80e5efc071">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.5
+</div>
+<div class="panel-body">
+Let <span class="math inline">\(T : V\longrightarrow W\)</span> be a linear mapping. Prove that if the sequence <span class="math inline">\((\textbf{v}_{1},...,\textbf{v}_{k})\)</span> is linearly dependent in <span class="math inline">\(V\)</span> then <span class="math inline">\((T(\textbf{v}_{1}),...,T(\textbf{v}_{k}))\)</span> is linearly dependent in <span class="math inline">\(W\)</span>.
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.5" data-hash="02-Week2_cache/html/unnamed-chunk-45_c62c86873256f2f67aecbbcd2aaea955">
+<button id="displayTextunnamed-chunk-45" onclick="javascript:toggle('unnamed-chunk-45');">
+Show Solution 2.5
+</button>
+<div id="toggleTextunnamed-chunk-45" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.5
+</div>
+<div class="panel-body">
+<p>Since the sequence <span class="math inline">\((\textbf{v}_{1},...,\textbf{v}_{k})\)</span> is linearly dependent there exists scalars <span class="math inline">\(\lambda_{1},...,\lambda_{k}\in F\)</span> not all zero such that <span class="math display">\[\begin{equation*}
+\lambda_{1}\textbf{v}_{1}+...+\lambda_{k}\textbf{v}_{k}=\textbf{0}_{V}.
+\end{equation*}\]</span> Hence <span class="math display">\[\begin{equation*}
+T(\lambda_{1}\textbf{v}_{1}+...+\lambda_{k}\textbf{v}_{k})=T(\textbf{0}_{V}).
+\end{equation*}\]</span> Since <span class="math inline">\(T\)</span> is linear, this implies that <span class="math display">\[\begin{equation*}
+\lambda_{1}T(\textbf{v}_{1})+...+\lambda_{k}T(\textbf{v}_{k})=\textbf{0}_{W}.
+\end{equation*}\]</span> Hence we see that a non-trivial linear combination of the vectors <span class="math inline">\(T(\textbf{v}_{1}),...,T(\textbf{v}_{k})\)</span> is equal to the zero vector and so the sequence <span class="math inline">\((T(\textbf{v}_{1}),...,T(\textbf{v}_{k}))\)</span> is linearly dependent.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.6" data-hash="02-Week2_cache/html/unnamed-chunk-46_b220d52050b592ed28cf9672e4cea8f2">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.6
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(T : V\longrightarrow W\)</span> be a linear mapping. Show that if the sequence <span class="math inline">\((\textbf{v}_{1},...,\textbf{v}_{k})\)</span> is linearly independent in <span class="math inline">\(V\)</span> and <span class="math inline">\(\krn(T)\)</span> is trivial then the sequence <span class="math inline">\((T(\textbf{v}_{1}),...,T(\textbf{v}_{k}))\)</span> is linearly independent in <span class="math inline">\(W\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.6" data-hash="02-Week2_cache/html/unnamed-chunk-47_a33b3fa0fdf4ad224583fd5bd2142d34">
+<button id="displayTextunnamed-chunk-47" onclick="javascript:toggle('unnamed-chunk-47');">
+Show Solution 2.6
+</button>
+<div id="toggleTextunnamed-chunk-47" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.6
+</div>
+<div class="panel-body">
+<p>Suppose that <span class="math display">\[\begin{equation*}
+\lambda_{1}T(\textbf{v}_{1})+...+\lambda_{k}T(\textbf{v}_{k})=\textbf{0}_{W}\:\:\:\:\:\:\:\: (\lambda_{i}\in \F)
+\end{equation*}\]</span> Then, since <span class="math inline">\(T\)</span> is linear, <span class="math display">\[\begin{equation*}
+T(\lambda_{1}\textbf{v}_{1}+...+\lambda_{k}\textbf{v}_{k})=\textbf{0}_{W}.
+\end{equation*}\]</span> Hence <span class="math inline">\(\lambda_{1}\textbf{v}_{1}+...+\lambda_{k}\textbf{v}_{k}\in{\rm{ker}}(T)=\{\textbf{0}_{V}\}\)</span>.</p>
+<p>Thus, <span class="math display">\[\begin{equation*}
+\lambda_{1}\textbf{v}_{1}+...+\lambda_{k}\textbf{v}_{k}=\textbf{0}_{V}.
+\end{equation*}\]</span> Now since the sequence <span class="math inline">\((\textbf{v}_{1},...,\textbf{v}_{k})\)</span> is linearly independent we have <span class="math inline">\(\lambda_{1}=...=\lambda_{k}=0\)</span>.</p>
+<p>Hence the sequence <span class="math inline">\((T(\textbf{v}_{1}),...,T(\textbf{v}_{k}))\)</span> is linearly independent.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.7" data-hash="02-Week2_cache/html/CH2Q7_b893d4067f25d6e8f2d75dd955ecbdee">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.7
+</div>
+<div class="panel-body">
+<p>Find bases of the image and kernel of the linear mapping <span class="math inline">\(S : \mathbb{R}^{3}\longrightarrow\mathbb{R}^{3}\)</span> defined by <span class="math display">\[\begin{equation*}
+S((x,y,z))=(x+2y+z,\:x+2y+z,\:2x+4y+2z).
+\end{equation*}\]</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.7" data-hash="02-Week2_cache/html/unnamed-chunk-48_451bbdd6befe5113715c548d8475a799">
+<button id="displayTextunnamed-chunk-48" onclick="javascript:toggle('unnamed-chunk-48');">
+Show Solution 2.7
+</button>
+<div id="toggleTextunnamed-chunk-48" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.7
+</div>
+<div class="panel-body">
+<p><span class="math inline">\(\im(S)\)</span> is the set of all vectors of the form <span class="math display">\[\begin{equation*}
+(x+2y+z,\:x+2y+z,\:2x+4y+2z)=x(1,1,2)+y(2,2,4)+z(1,1,2)
+\end{equation*}\]</span> so <span class="math inline">\(\im(S)=\:\spn((1,1,2),\:(2,2,4),\:(1,1,2))\)</span>. Now <span class="math display">\[\begin{equation*}
+\left(\begin{array}{ccc} 1 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 4 \\ 1 &amp; 1 &amp; 2\end{array}\right)\sim\left(\begin{array}{ccc} 1 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0\end{array}\right).
+\end{equation*}\]</span> Hence a basis of <span class="math inline">\(\im(S)\)</span> is <span class="math inline">\(((1,1,2))\)</span> and <span class="math inline">\(\rank(S)=1\)</span>. It follows from the Rank-Nullity Theorem that <span class="math inline">\(\nul(S)=\dimn(\mathbb{R}^{3})-\rank(S)=3-1=2\)</span>..</p>
+<p>Now let <span class="math inline">\((x,y,z)\in\mathbb{R}^{3}\)</span>. Then <span class="math display">\[\begin{align*}
+(x,y,z)\in{\rm ker}(S)  &amp; \Leftrightarrow T((x,y,z))=(0,0,0) \\
+&amp; \Leftrightarrow x+2y+z=0,\:\:\: x+2y+z=0,\:\:\: 2x+4y+2z=0.
+\end{align*}\]</span> We have the augmented matrix <span class="math display">\[\begin{equation*}
+\left(\begin{array}{ccc|c} 1 &amp; 2 &amp; 1 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 0 \\ 2 &amp; 4 &amp; 2 &amp; 0\end{array}\right)\sim\left(\begin{array}{ccc|c} 1 &amp; 2 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right).
+\end{equation*}\]</span> Hence <span class="math inline">\(\krn(S)=\{(-2s-t,s,t) : s,t\in\mathbb{R}\}\)</span>. Let <span class="math inline">\((-2s-t,s,t)\in \krn(S)\)</span>. Then <span class="math display">\[\begin{equation*}
+(-2s-t,s,t)=s(-2,1,0)+t(-1,0,1).
+\end{equation*}\]</span> Hence a basis of <span class="math inline">\(\krn(S)\)</span> is <span class="math inline">\(((-2,1,0),\:(-1,0,1))\)</span> by the <span class="math inline">\(2\)</span> of <span class="math inline">\(3\)</span> properties proposition.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.8" data-hash="02-Week2_cache/html/unnamed-chunk-49_48ee1b0c628df9e2f374a917855d2902">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.8
+</div>
+<div class="panel-body">
+<p>Define <span class="math inline">\(T : \mathbb{R}_{n\times n}\longrightarrow \mathbb{R}_{n\times n}\)</span> by <span class="math inline">\(T(A)=A^{T}\)</span> for all <span class="math inline">\(A\in\mathbb{R}_{n\times n}\)</span>.</p>
+Show that <span class="math inline">\(T\)</span> is a linear mapping and find explicitly the kernel and image of <span class="math inline">\(T\)</span>. State also the rank and nullity of <span class="math inline">\(T\)</span>.
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.8" data-hash="02-Week2_cache/html/unnamed-chunk-50_d94baf5453a89d486bf73c0e44d4bc66">
+<button id="displayTextunnamed-chunk-50" onclick="javascript:toggle('unnamed-chunk-50');">
+Show Solution 2.8
+</button>
+<div id="toggleTextunnamed-chunk-50" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.8
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(A,B\in\mathbb{R}_{n\times n}\)</span> and <span class="math inline">\(\lambda\in\mathbb{R}\)</span>. Then <span class="math display">\[\begin{equation*}
+T(A+B)=(A+B)^{T}=A^{T}+B^{T}=T(A)+T(B)
+\end{equation*}\]</span> and <span class="math display">\[\begin{equation*}
+T(\lambda{A})=(\lambda{A})^{T}=\lambda{A^{T}}=\lambda{T(A)}.
+\end{equation*}\]</span> Hence <span class="math inline">\(T\)</span> is linear. Now <span class="math inline">\(T\)</span> is surjective since for all <span class="math inline">\(A\in\mathbb{R}_{n\times n}\)</span>, <span class="math display">\[\begin{equation*}
+A=(A^{T})^{T}=T(A^{T})
+\end{equation*}\]</span> and hence <span class="math inline">\(\im(T)=\mathbb{R}_{n\times n}\)</span> and <span class="math inline">\(\rank(T)=\dimn(\mathbb{R}_{n\times n})=n^{2}\)</span>.</p>
+<p>Also, <span class="math display">\[\begin{align*}
+A\in\krn(T) &amp; \Leftrightarrow T(A)=0 \\
+&amp; \Leftrightarrow A^{T}=0 \\
+&amp; \Leftrightarrow A=0.
+\end{align*}\]</span> Hence <span class="math inline">\(\krn(T)=\{\textbf{0}\}\)</span> and <span class="math inline">\(\nul(T)=0\)</span>.}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.9" data-hash="02-Week2_cache/html/unnamed-chunk-51_08142b22ee06ec89bf441f01e4b9c24a">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.9
+</div>
+<div class="panel-body">
+Show that the mapping <span class="math inline">\(T : P_{2}\longrightarrow P_{3}\)</span> defined by <span class="math inline">\(T(p(x))=xp(x)\)</span> for all <span class="math inline">\(p\in P_{2}\)</span> is linear. Find the rank and nullity of <span class="math inline">\(T\)</span>.
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.9" data-hash="02-Week2_cache/html/unnamed-chunk-52_dae34dfb06229e719235581e997340cf">
+<button id="displayTextunnamed-chunk-52" onclick="javascript:toggle('unnamed-chunk-52');">
+Show Solution 2.9
+</button>
+<div id="toggleTextunnamed-chunk-52" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.9
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(p,q\in P_{2}\)</span> and <span class="math inline">\(\lambda\in\mathbb{R}\)</span>. Then <span class="math display">\[\begin{equation*}
+T((p+q)(x))=x(p+q)(x)=x(p(x)+q(x))=xp(x)+xq(x)=T(p(x))+T(q(x))
+\end{equation*}\]</span> and <span class="math display">\[\begin{equation*}
+T((\lambda{p})(x))=x(\lambda{p})(x)=x\lambda{p}(x)=\lambda(xp(x))=\lambda{T}(p(x))
+\end{equation*}\]</span> Hence <span class="math inline">\(T\)</span> is linear.</p>
+<p><span class="math inline">\(\im(T)=\{ax+bx^{2}+cx^{3} : a,b,c\in\mathbb{R}\}\)</span>. Hence a basis for <span class="math inline">\(\im(T)\)</span> is <span class="math inline">\((x,x^{2},x^{3})\)</span> and so <span class="math inline">\(\rank(T)=3\)</span>. Now <span class="math display">\[\begin{align*}
+p(x)=a+bx+cx^{2}\in\krn(T) &amp; \Leftrightarrow T(p(x))=0 \\
+&amp; \Leftrightarrow ax+bx^{2}+cx^{3}=0 \\
+&amp; \Leftrightarrow a=b=c=0 \\
+&amp; \Leftrightarrow p(x)=0
+\end{align*}\]</span> Hence <span class="math inline">\(\krn(T)=\{\textbf{0}\}\)</span> and <span class="math inline">\(\nul(T)=0\)</span>.}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.10" data-hash="02-Week2_cache/html/unnamed-chunk-53_9c7722da31ad898447d30c827a58943c">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.10
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(W\)</span> denote the vector space of all symmetric <span class="math inline">\(2\times 2\)</span> real matrices. Find the nullity of the linear mapping <span class="math inline">\(T : W\longrightarrow P_{2}\)</span> defined by <span class="math display">\[\begin{equation*}
+T\Bigg(\left(\begin{array}{cc} a &amp; b\\ b &amp; c\end{array}\right)\Bigg)=(a-b)+(b-c)x+(c-a)x^{2}
+\end{equation*}\]</span> and use this to deduce the value of rank<span class="math inline">\((T)\)</span> from the Rank-Nullity Theorem. Use this information to find a basis of im<span class="math inline">\((T)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.10" data-hash="02-Week2_cache/html/unnamed-chunk-54_f462e2342a7336e6bb7ef8f58dd06233">
+<button id="displayTextunnamed-chunk-54" onclick="javascript:toggle('unnamed-chunk-54');">
+Show Solution 2.10
+</button>
+<div id="toggleTextunnamed-chunk-54" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.10
+</div>
+<div class="panel-body">
+<p>We have <span class="math display">\[\begin{align*}
+A=\left(\begin{array}{cc} a &amp; b \\ b &amp; c\end{array}\right)\in{\rm{ker}}(T) &amp; \Leftrightarrow T(A)=0 \\
+&amp; \Leftrightarrow (a-b)+(b-c)x+(c-a)x^{2}=0 \\
+&amp; \Leftrightarrow a-b=0,\:b-c=0,\:c-a=0 \\
+&amp; \Leftrightarrow a=b=c.
+%&amp; \Leftrightarrow A=\left(\begin{array}{cc} a &amp; a \\ a &amp; a\end{array}\right).
+\end{align*}\]</span> Hence <span class="math inline">\(\krn(T)=\Bigg\{\left(\begin{array}{cc} a &amp; a \\ a &amp; a\end{array}\right) : a\in\mathbb{R}\Bigg\}\)</span> and so a basis for <span class="math inline">\(\krn(T)\)</span> is <span class="math inline">\(\Bigg(\left(\begin{array}{cc} 1 &amp; 1 \\ 1 &amp; 1\end{array}\right)\Bigg)\)</span> and <span class="math inline">\(\nul(T)=1\)</span>.</p>
+<p>It follows from the Rank-Nullity Theorem that <span class="math inline">\(\rank(T)=\:\dimn W-\:\nul(T)=3-1=2\)</span>.</p>
+<p>Now <span class="math inline">\(\im(T)=\{a(1-x^{2})+b(-1+x)+c(-x+x^{2}) : a,b,c\in\mathbb{R}\}\)</span>. Hence <span class="math display">\[\im(T)=\:\spn(1-x^{2},\:-1+x,\:-x+x^{2}).\]</span> The sequence <span class="math inline">\((1-x^{2},\:-1+x,\:-x+x^{2})\)</span> has length <span class="math inline">\(3\)</span> and hence must be linearly dependent as rank<span class="math inline">\((T)=2\)</span>. It follows from the Minus Theorem that we should be able to throw away one of the vectors in this sequence and retain a spanning sequence for <span class="math inline">\(\im(T)\)</span>. We have <span class="math display">\[\begin{equation*}
+-x+x^{2}=-(1-x^{2})-(-1+x)
+\end{equation*}\]</span> Hence the sequence <span class="math inline">\((1-x^{2},\:-1+x)\)</span> still spans <span class="math inline">\(\im(T)\)</span> by the Minus Theorem and has length equal to <span class="math inline">\(\rank(T)\)</span> so by the ‘two of three’ properties proposition, <span class="math inline">\((1-x^{2},\:-1+x)\)</span> is a basis of <span class="math inline">\(\im(T)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.11" data-hash="02-Week2_cache/html/unnamed-chunk-55_b1d7472fdc7e38b28cc4347419492c17">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.11
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> be vector spaces of dimensions <span class="math inline">\(3\)</span> and <span class="math inline">\(4\)</span> respectively and let <span class="math inline">\(L_{V}=(\textbf{e}_{1},\textbf{e}_{2},\textbf{e}_{3})\)</span> and <span class="math inline">\(L_{W}=(\textbf{f}_{1},\textbf{f}_{2},\textbf{f}_{3},\textbf{f}_{4})\)</span> be bases of <span class="math inline">\(V\)</span> and <span class="math inline">\(W\)</span> respectively. Given that <span class="math display">\[\begin{equation*}
+M(T;L_{V},L_{W})=\left(\begin{array}{ccc} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \\ 10 &amp; 11 &amp; 12\end{array}\right)
+\end{equation*}\]</span></p>
+<ol type="a">
+<li>Write down <span class="math inline">\(T(\textbf{e}_{2})\)</span> as a linear combination of <span class="math inline">\(\textbf{f}_{1},\textbf{f}_{2},\textbf{f}_{3},\textbf{f}_{4}\)</span>.</li>
+<li>By evaluating one matrix product, obtain <span class="math inline">\(T(2\textbf{e}_{1}+\textbf{e}_{2}-\textbf{e}_{3})\)</span> as a linear combination of <span class="math inline">\(\textbf{f}_{1},\textbf{f}_{2},\textbf{f}_{3},\textbf{f}_{4}\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.11" data-hash="02-Week2_cache/html/unnamed-chunk-56_ccc917caaa0e0f5ac36d1255d5c23d8f">
+<button id="displayTextunnamed-chunk-56" onclick="javascript:toggle('unnamed-chunk-56');">
+Show Solution 2.11
+</button>
+<div id="toggleTextunnamed-chunk-56" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.11
+</div>
+<div class="panel-body">
+<ol type="a">
+<li>We have <span class="math display">\[\begin{equation*}
+T(\textbf{e}_{2})=2\textbf{f}_{1}+5\textbf{f}_{2}+8\textbf{f}_{3}+11\textbf{f}_{4}.
+\end{equation*}\]</span></li>
+<li>We evaluate <span class="math display">\[\begin{equation*}
+\left(\begin{array}{ccc} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9 \\ 10 &amp; 11 &amp; 12\end{array}\right)\left(\begin{array}{c} 2 \\ 1 \\ -1\end{array}\right)=\left(\begin{array}{c} 1 \\ 7 \\ 13 \\ 19\end{array}\right).
+\end{equation*}\]</span> Hence <span class="math inline">\(T((2,1,-1))=\textbf{f}_{1}+7\textbf{f}_{2}+13\textbf{f}_{3}+19\textbf{f}_{4}\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.12" data-hash="02-Week2_cache/html/unnamed-chunk-57_0821c183327c557d4be543ec5266ef59">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.12
+</div>
+<div class="panel-body">
+Let <span class="math inline">\(D : P_{3}\longrightarrow P_{2}\)</span> be the linear mapping defined by <span class="math inline">\(D(p(x))=p^{'}(x)\)</span> for all <span class="math inline">\(p\in P_{3}\)</span>. Let <span class="math inline">\(B=(1,x,x^{2},x^{3})\)</span> and <span class="math inline">\(C=(1,x,x^{2})\)</span> be the standard bases for <span class="math inline">\(P_{3}\)</span> and <span class="math inline">\(P_{2}\)</span> respectively. Find the matrix of <span class="math inline">\(D\)</span> with respect to <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>.
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.12" data-hash="02-Week2_cache/html/unnamed-chunk-58_9f16419e86db213d8e734bbf0a02a68a">
+<button id="displayTextunnamed-chunk-58" onclick="javascript:toggle('unnamed-chunk-58');">
+Show Solution 2.12
+</button>
+<div id="toggleTextunnamed-chunk-58" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.12
+</div>
+<div class="panel-body">
+<p>We have <span class="math display">\[\begin{align*}
+D(1) &amp; = 0 \\
+D(x) &amp; = 1 \\
+D(x^{2}) &amp; = 2x \\
+D(x^{3}) &amp; = 3x^{2}.
+\end{align*}\]</span> Hence the matrix of <span class="math inline">\(D\)</span> w.r.t. the bases <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> is <span class="math display">\[\begin{equation*}
+M_{D}=\left(\begin{array}{cccc} 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 3\end{array}\right).
+\end{equation*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.13" data-hash="02-Week2_cache/html/unnamed-chunk-59_a039866c97e95e1d325d59ed136030de">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.13
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(S : V\longrightarrow W\)</span> and <span class="math inline">\(T : U\longrightarrow V\)</span> be linear mappings and let <span class="math inline">\(L_{U},L_{V},L_{W}\)</span> be bases of <span class="math inline">\(U,V\)</span> and <span class="math inline">\(W\)</span> respectively. Show that <span class="math inline">\(M(ST;L_{U},L_{W})=M(S;L_{V},L_{W})M(T;L_{U},L_{V})\)</span>.</p>
+(Here, as usual, <span class="math inline">\(ST\)</span> means the composition <span class="math inline">\(S\circ T\)</span>.)
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.13" data-hash="02-Week2_cache/html/unnamed-chunk-60_2dbe7f55c609f939ca841097f4d8213d">
+<button id="displayTextunnamed-chunk-60" onclick="javascript:toggle('unnamed-chunk-60');">
+Show Solution 2.13
+</button>
+<div id="toggleTextunnamed-chunk-60" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.13
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(\textbf{x}\)</span> be an arbitrary vector in <span class="math inline">\(U\)</span>. Let the coordinate column vectors of <span class="math inline">\(\textbf{x}\)</span>, <span class="math inline">\(T(\textbf{x})\)</span> and <span class="math inline">\((ST)(\textbf{x})\)</span> (with respect to <span class="math inline">\(L_{U},L_{V}\)</span> and <span class="math inline">\(L_{W}\)</span> respectively) be <span class="math inline">\(X,Y\)</span> and <span class="math inline">\(Z\)</span>. Then <span class="math inline">\(Y=M_{T} X\)</span> and <span class="math inline">\(Z=M_{S}Y\)</span>. Hence <span class="math inline">\(Z=(M_{S}M_{T})X\)</span>. Since <span class="math inline">\(\textbf{x}\in U\)</span> was arbitrary, it follows that <span class="math inline">\(M_{ST}=M_{S}M_{T}\)</span> as required.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.14" data-hash="02-Week2_cache/html/unnamed-chunk-61_ab15075c1b5c7a019796adb8c1e4c334">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.14
+</div>
+<div class="panel-body">
+<p>Consider the bases <span class="math display">\[\begin{equation*}
+B_{1}=((1,0,0),(0,1,0),(0,0,1))
+\end{equation*}\]</span> and <span class="math display">\[\begin{equation*}
+B_{2}=((1,1,0),(0,1,1),(1,0,1))
+\end{equation*}\]</span> of <span class="math inline">\(\mathbb{R}^{3}\)</span>.</p>
+<ol type="a">
+<li>Find the change of basis matrices <span class="math inline">\(M(B_{1}\rightarrow B_{2})\)</span> and <span class="math inline">\(M(B_{2}\rightarrow B_{1})\)</span>.</li>
+<li>Use your answer to express <span class="math inline">\(\textbf{x}=(1,2,3)\)</span> as a linear combination of the vectors in <span class="math inline">\(B_{2}\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.14" data-hash="02-Week2_cache/html/unnamed-chunk-62_170f9c7c510ce13c2ef89da8bea43c90">
+<button id="displayTextunnamed-chunk-62" onclick="javascript:toggle('unnamed-chunk-62');">
+Show Solution 2.14
+</button>
+<div id="toggleTextunnamed-chunk-62" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.14
+</div>
+<div class="panel-body">
+<ol type="a">
+<li>To find the change of basis matrix <span class="math inline">\(M(B_{1}\rightarrow B_{2})\)</span> we must express each of the basis vectors in <span class="math inline">\(B_{2}\)</span> as linear combinations of the basis vectors in <span class="math inline">\(B_{1}\)</span>. We have <span class="math display">\[\begin{align*}
+(1,1,0) &amp; =1(1.0,0)+1(0,1,0) \\
+(0,1,1) &amp; = 1(0,1,0)+1(0,0,1) \\
+(1,0,1) &amp; = 1(1,0,0)+1(0,0,1)
+\end{align*}\]</span> Hence <span class="math display">\[\begin{equation*}
+M(B_{1}\rightarrow B_{2})=\left(\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 1\end{array}\right).
+\end{equation*}\]</span> Now via EROs on the augmented system <span class="math inline">\((P\:|\:I)\)</span> where <span class="math inline">\(P=M(B_{1}\longrightarrow B_{2})\)</span>, we see that <span class="math display">\[\begin{equation*}
+P^{-1}=M(B_{2}\rightarrow B_{1})=\left(\begin{array}{ccc} \frac{1}{2} &amp; \frac{1}{2} &amp; -\frac{1}{2} \\ -\frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2} \\ \frac{1}{2} &amp; -\frac{1}{2} &amp; \frac{1}{2}\end{array}\right).
+\end{equation*}\]</span></li>
+<li>Finally, to express <span class="math inline">\((1,2,3)\)</span> in terms of the basis <span class="math inline">\(B_{2}\)</span>, we calculate the product <span class="math display">\[\begin{equation*}
+\left(\begin{array}{ccc} \frac{1}{2} &amp; \frac{1}{2} &amp; -\frac{1}{2} \\ -\frac{1}{2} &amp; \frac{1}{2} &amp; \frac{1}{2} \\ \frac{1}{2} &amp; -\frac{1}{2} &amp; \frac{1}{2}\end{array}\right)\left(\begin{array}{c} 1 \\ 2 \\ 3\end{array}\right)=\left(\begin{array}{c} 0 \\ 2 \\ 1\end{array}\right)
+\end{equation*}\]</span> and so <span class="math display">\[\begin{equation*}
+(1,2,3)=2(0,1,1)+1(1,0,1).
+\end{equation*}\]</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.15" data-hash="02-Week2_cache/html/unnamed-chunk-63_9416a1b9d0f0cd71f338501ca9b0596f">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.15
+</div>
+<div class="panel-body">
+<p>Consider the standard basis <span class="math inline">\(B_{1}\)</span> of <span class="math inline">\(\mathbb{R}^{3}\)</span> and the basis <span class="math inline">\(B_{2}=(\textbf{w}_{1},\textbf{w}_{2},\textbf{w}_{3})\)</span> where <span class="math display">\[\begin{equation*}
+\textbf{w}_{1}=(2,1,1),\:\:\: \textbf{w}_{2}=(0,1,3),\:\:\: \textbf{w}_{3}=(0,0,2).
+\end{equation*}\]</span></p>
+<ol type="a">
+<li>Find the change of basis matrices <span class="math inline">\(M(B_{1}\rightarrow B_{2})\)</span> and <span class="math inline">\(M(B_{2}\rightarrow B_{1})\)</span>.</li>
+<li>Use an appropriate change of basis matrix to find the coordinate vector of <span class="math inline">\((x,y,z)\in\mathbb{R}^{3}\)</span> w.r.t. the basis <span class="math inline">\(B_{2}\)</span>. Verify your answer.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.15" data-hash="02-Week2_cache/html/unnamed-chunk-64_5d513214f0ca4136a25c21088243db8c">
+<button id="displayTextunnamed-chunk-64" onclick="javascript:toggle('unnamed-chunk-64');">
+Show Solution 2.15
+</button>
+<div id="toggleTextunnamed-chunk-64" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.15
+</div>
+<div class="panel-body">
+<ol type="a">
+<li>The change of basis matrix from <span class="math inline">\(B_{1}\)</span> to <span class="math inline">\(B_{2}\)</span> is <span class="math display">\[\begin{equation*}
+M(B_{1}\rightarrow B_{2})=\left(\begin{array}{ccc} 2 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 0 \\ 1 &amp; 3 &amp; 2\end{array}\right).
+\end{equation*}\]</span> Now let <span class="math inline">\(\textbf{e}_{1}=(1,0,0)\)</span>, <span class="math inline">\(\textbf{e}_{2}=(0,1,0)\)</span> and <span class="math inline">\(\textbf{e}_{3}=(0,0,1)\)</span> so that <span class="math inline">\(B_{1}=(\textbf{e}_{1},\textbf{e}_{2},\textbf{e}_{3})\)</span>. Then <span class="math display">\[\begin{align*}
+(0,0,1) &amp; = \frac{1}{2}\textbf{w}_{3} \\
+(0,1,0) &amp; = \textbf{w}_{2}-\frac{3}{2}\textbf{w}_{3} \\
+(1,0,0) &amp; = \frac{1}{2}(\textbf{w}_{1}-\textbf{e}_{2}-\textbf{e}_{3})=\frac{1}{2}\textbf{w}_{1}-\frac{1}{2}\textbf{w}_{2}+\frac{1}{2}\textbf{w}_{3}.
+\end{align*}\]</span> Hence <span class="math display">\[\begin{equation*}
+M(B_{2}\rightarrow B_{1})=\left(\begin{array}{ccc} \frac{1}{2} &amp; 0 &amp; 0 \\ -\frac{1}{2} &amp; 1 &amp; 0 \\ \frac{1}{2} &amp; -\frac{3}{2} &amp; \frac{1}{2}\end{array}\right).
+\end{equation*}\]</span> Obviously we could have used the fact that if <span class="math inline">\(P=M(B_{1}\rightarrow B_{2})\)</span> then <span class="math inline">\(M(B_{2}\rightarrow B_{1})=P^{-1}\)</span> as we did in Q1 and calculated <span class="math inline">\(P^{-1}\)</span> by applying EROs to the augmented matrix <span class="math inline">\((P\:|\:I)\)</span>.</li>
+<li>Now to find the coordinate column vector of <span class="math inline">\(\textbf{x}=(x,y,z)\)</span> w.r.t. <span class="math inline">\(B_{2}\)</span> we just need to calculate the product <span class="math display">\[\begin{equation*}
+\left(\begin{array}{ccc} \frac{1}{2} &amp; 0 &amp; 0 \\ -\frac{1}{2} &amp; 1 &amp; 0 \\ \frac{1}{2} &amp; -\frac{3}{2} &amp; \frac{1}{2}\end{array}\right)\left(\begin{array}{c} x \\ y \\ z\end{array}\right)=\left(\begin{array}{c} \frac{1}{2}x \\ -\frac{1}{2}x+y \\ \frac{1}{2}x-\frac{3}{2}y+\frac{1}{2}z\end{array}\right).
+\end{equation*}\]</span> To verify, <span class="math display">\[\begin{align*}
+&amp; \frac{1}{2}x(2,1,1)+(-\frac{1}{2}x+y)(0,1,3)+(\frac{1}{2}x-\frac{3}{2}y+\frac{1}{2}z)(0,0,2) \\
+&amp; = (x,\:\frac{1}{2}x+(-\frac{1}{2}x+y),\:\frac{1}{2}x+(-\frac{3}{2}x+3y)+(x-3y+z)) \\
+&amp; = (x,y,z).
+\end{align*}\]</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.16" data-hash="02-Week2_cache/html/unnamed-chunk-65_d7e09dddbee5497535cd34a7be6c9c7d">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.16
+</div>
+<div class="panel-body">
+<p>(A number crunch workout) Consider the bases <span class="math display">\[\begin{equation*}
+B_{1}=\Bigg(\left(\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 0\end{array}\right),\:\:\left(\begin{array}{cc} 0 &amp; 1 \\ 0 &amp; 0\end{array}\right),\:\:\left(\begin{array}{cc} 0 &amp; 0 \\ 1 &amp; 0\end{array}\right),\:\:\left(\begin{array}{cc} 0 &amp; 0 \\ 0 &amp; 1\end{array}\right)\Bigg)
+\end{equation*}\]</span> and <span class="math display">\[\begin{equation*}
+B_{2}=\Bigg(\left(\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; -1\end{array}\right),\:\:\left(\begin{array}{cc} 2 &amp; 1 \\ 1 &amp; 0\end{array}\right),\:\:\left(\begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1\end{array}\right),\:\:\left(\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1\end{array}\right)\Bigg)
+\end{equation*}\]</span> of <span class="math inline">\(\mathbb{R}_{2\times 2}\)</span>.</p>
+<ol type="a">
+<li>Find the change of basis matrix <span class="math inline">\(M(B_{2}\rightarrow B_{1})\)</span>.</li>
+<li>Use part a. to express the matrix <span class="math inline">\(A=\left(\begin{array}{cc} 4 &amp; 2 \\ 0 &amp; -1\end{array}\right)\)</span> as a linear combination of the matrices in <span class="math inline">\(B_{2}\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.16" data-hash="02-Week2_cache/html/unnamed-chunk-66_21b96c161f671e5c927665a21d75404f">
+<button id="displayTextunnamed-chunk-66" onclick="javascript:toggle('unnamed-chunk-66');">
+Show Solution 2.16
+</button>
+<div id="toggleTextunnamed-chunk-66" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.16
+</div>
+<div class="panel-body">
+<ol type="a">
+<li>We must first of all express each basis matrix in <span class="math inline">\(B_{1}\)</span> as a linear combination of the basis matrices in <span class="math inline">\(B_{2}\)</span>. For example, to express <span class="math inline">\(\left(\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 0\end{array}\right)\)</span> in terms of the matrices in <span class="math inline">\(B_{2}\)</span> we need <span class="math display">\[\begin{equation*}
+\left(\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 0\end{array}\right) = \alpha\left(\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; -1\end{array}\right)+\beta\left(\begin{array}{cc} 2 &amp; 1 \\ 1 &amp; 0\end{array}\right)+\gamma\left(\begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1\end{array}\right)+\delta\left(\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1\end{array}\right)
+\end{equation*}\]</span> leading to the system of equations <span class="math display">\[\begin{align*}
+\alpha+2\beta+\gamma+\delta &amp; = 1 \\
+2\alpha+\beta+\gamma &amp; = 0 \\
+\beta &amp; = 0 \\
+-\alpha+\gamma+\delta &amp; = 0.
+\end{align*}\]</span> This has the unique solution <span class="math inline">\(\alpha=\frac{1}{2}\)</span>, <span class="math inline">\(\beta=0\)</span>, <span class="math inline">\(\gamma=-1\)</span>, <span class="math inline">\(\delta=\frac{3}{2}\)</span>. Once we have expressed the other matrices in <span class="math inline">\(B_{1}\)</span> as lin combs of the matrices in <span class="math inline">\(B_{2}\)</span>, we see that the change of basis matrix is then <span class="math display">\[\begin{equation*}
+M(B_{2}\rightarrow B_{1})=\left(\begin{array}{cccc} \frac{1}{2} &amp; 0 &amp; -1 &amp; -\frac{1}{2} \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ -1 &amp; 1 &amp; 1 &amp; 1 \\ \frac{3}{2} &amp; -1 &amp; -2 &amp; -\frac{1}{2}\end{array}\right).
+\end{equation*}\]</span></li>
+<li>Now the coordinate vector of <span class="math inline">\(A=\left(\begin{array}{cc} 4 &amp; 2 \\ 0 &amp; -1\end{array}\right)\)</span> w.r.t. <span class="math inline">\(B_{1}\)</span> is <span class="math inline">\((4,2,0,-1)\)</span> and hence we can find the coordinate vector of <span class="math inline">\(A\)</span> w.r.t. <span class="math inline">\(B_{2}\)</span> by finding the matrix product <span class="math display">\[\begin{equation*}
+\left(\begin{array}{cccc} \frac{1}{2} &amp; 0 &amp; -1 &amp; -\frac{1}{2} \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ -1 &amp; 1 &amp; 1 &amp; 1 \\ \frac{3}{2} &amp; -1 &amp; -2 &amp; -\frac{1}{2}\end{array}\right)\left(\begin{array}{c} 4 \\ 2 \\ 0 \\ -1\end{array}\right)=\left(\begin{array}{c} \frac{5}{2} \\ 0 \\ -3 \\ \frac{9}{2}\end{array}\right).
+\end{equation*}\]</span> Hence <span class="math display">\[\begin{equation*}
+\left(\begin{array}{cc} 4 &amp; 2 \\ 0 &amp; -1\end{array}\right)=\frac{5}{2}\left(\begin{array}{cc} 1 &amp; 2 \\ 0 &amp; -1\end{array}\right)-3\left(\begin{array}{cc} 1 &amp; 1 \\ 0 &amp; 1\end{array}\right)+\frac{9}{2}\left(\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1\end{array}\right).
+\end{equation*}\]</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.17" data-hash="02-Week2_cache/html/unnamed-chunk-67_bea76ebf2f2302f6c7c00145fc66a565">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.17
+</div>
+<div class="panel-body">
+<p>Find the two eigenvalues of the linear mapping <span class="math inline">\(T : \mathbb{C}^{2}\longrightarrow \mathbb{C}^{2}\)</span> defined by <span class="math display">\[\begin{equation*}
+T((x,y))=(-x+3y,\:3x-y)  
+\end{equation*}\]</span> for all <span class="math inline">\((x,y)\in\mathbb{C}^{2}\)</span>. Find a basis of each corresponding eigenspace.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.17" data-hash="02-Week2_cache/html/unnamed-chunk-68_89b07a3c36b6a833a1981f94509a6a58">
+<button id="displayTextunnamed-chunk-68" onclick="javascript:toggle('unnamed-chunk-68');">
+Show Solution 2.17
+</button>
+<div id="toggleTextunnamed-chunk-68" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.17
+</div>
+<div class="panel-body">
+<p>We calculate the matrix <span class="math inline">\(M_{T}\)</span> of <span class="math inline">\(T\)</span> w.r.t the standard basis <span class="math inline">\(((1,0),\:(0,1))\)</span> of <span class="math inline">\(\mathbb{C}^{2}\)</span>. Hence <span class="math display">\[\begin{equation*}
+M_{T}=\left(\begin{array}{cc} -1 &amp; 3 \\ 3 &amp; -1\end{array}\right).
+\end{equation*}\]</span> Now we calculate the eigenvalues of <span class="math inline">\(M_{T}\)</span>. We have <span class="math display">\[\begin{align*}
+\det(\lambda{I}-M_{T}) &amp; =\left|\begin{array}{cc} \lambda+1 &amp; -3 \\ -3 &amp; \lambda+1\end{array}\right| \\
+&amp; = (\lambda+1)^{2}-9 \\
+&amp; = \lambda^{2}+2\lambda-8 \\
+&amp; = (\lambda+4)(\lambda-2)
+\end{align*}\]</span> Hence the eigenvalues of <span class="math inline">\(T\)</span> are the roots of this polynomial. Hence we have the two eigenvalues <span class="math inline">\(\lambda_{1}=-4\)</span> and <span class="math inline">\(\lambda_{2}=2\)</span>.</p>
+<p>We now find corresponding eigenvectors of <span class="math inline">\(M_{T}\)</span>:</p>
+<dl>
+<dt><span class="math inline">\(\lambda_{1}=-4\)</span>:</dt>
+<dd>
+We have the homogeneous system <span class="math inline">\((-4I-M_{T})X=0\)</span> where <span class="math inline">\(X={\rm col}(x,y)\)</span> with augmented matrix <span class="math display">\[\begin{equation*}
+\left(\begin{array}{cc|c} -3 &amp; -3 &amp; 0 \\ -3 &amp; -3 &amp; 0\end{array}\right)\sim \left(\begin{array}{cc|c} 1 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0\end{array}\right).
+\end{equation*}\]</span> Hence we require <span class="math inline">\(x+y=0\Rightarrow y=-x\)</span>. So the eigenspace <span class="math inline">\(E(-4,T)\)</span> consist of all vectors of the form <span class="math inline">\((t,-t)=t(1,-1)\)</span>. Hence <span class="math inline">\(E(-4,T)\)</span> is one-dimensional and a basis is <span class="math inline">\(((1,-1))\)</span>.
+</dd>
+<dt><span class="math inline">\(\lambda_{2}=2\)</span>:</dt>
+<dd>
+We have the homogeneous system <span class="math inline">\((2I-M_{T})X=0\)</span> where <span class="math inline">\(X={\rm col}(x,y)\)</span> with augmented matrix <span class="math display">\[\begin{equation*}
+\left(\begin{array}{cc|c} 3 &amp; -3 &amp; 0 \\ -3 &amp; 3 &amp; 0\end{array}\right)\sim \left(\begin{array}{cc|c} 1 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0\end{array}\right).
+\end{equation*}\]</span> Hence we require <span class="math inline">\(x-y=0\Rightarrow x=y\)</span>. So the eigenspace <span class="math inline">\(E(2,T)\)</span> consists of all vectors of the form <span class="math inline">\((t,t)=t(1,1)\)</span>. Hence <span class="math inline">\(E(2,T)\)</span> is one-dimensional and a basis is <span class="math inline">\(((1,1))\)</span>.
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.18" data-hash="02-Week2_cache/html/unnamed-chunk-69_687daa257485b8736f14191726959f56">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.18
+</div>
+<div class="panel-body">
+<p>Consider the linear mapping <span class="math inline">\(T : P_{2}\longrightarrow P_{2}\)</span> defined by <span class="math display">\[\begin{equation*}
+T(p(x))=p(3x+2)
+\end{equation*}\]</span> for all <span class="math inline">\(p\in P_{2}\)</span>.</p>
+<ol type="a">
+<li>Find the eigenvalues of <span class="math inline">\(T\)</span> and hence find bases of each corresponding eigenspace.</li>
+<li>State a basis of <span class="math inline">\(P_{2}\)</span> with respect to which the matrix of <span class="math inline">\(T\)</span> is a diagonal matrix. Verify this directly.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.18" data-hash="02-Week2_cache/html/unnamed-chunk-70_8a33a862d9cb5a857c8005b65794e624">
+<button id="displayTextunnamed-chunk-70" onclick="javascript:toggle('unnamed-chunk-70');">
+Show Solution 2.18
+</button>
+<div id="toggleTextunnamed-chunk-70" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.18
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>We find the matrix of <span class="math inline">\(T\)</span> w.r.t. the standard basis <span class="math inline">\((1,x,x^{2})\)</span> of <span class="math inline">\(P_{2}\)</span>. We have <span class="math display">\[\begin{align*}
+T(1) &amp; = 1 \\
+T(x) &amp; = 2+3x \\
+T(x^{2}) &amp; = (3x+2)^{2}=4+12x+9x^{2}.
+\end{align*}\]</span> Hence <span class="math display">\[M_{T}=\left(\begin{array}{ccc} 1 &amp; 2 &amp; 4 \\ 0 &amp; 3 &amp; 12 \\ 0 &amp; 0 &amp; 9\end{array}\right)\]</span> and so <span class="math inline">\(M_{T}\)</span> is upper triangular. It follows that the eigenvalues are <span class="math inline">\(\lambda_{1}=1\)</span>, <span class="math inline">\(\lambda_{2}=3\)</span> and <span class="math inline">\(\lambda_{3}=9\)</span>. (NO CALCULATION REQUIRED!)</p>
+<p>Now we consider the homogenous system <span class="math inline">\((\lambda{I}-M_{T})X=0\)</span> where <span class="math inline">\(X=\:\)</span>col<span class="math inline">\((x,y,z)\)</span>.</p>
+<dl>
+<dt><span class="math inline">\(\lambda_{1}=1\)</span>:</dt>
+<dd>
+The augmented matrix of the homogeneous system here is <span class="math display">\[\begin{equation*}
+\left(\begin{array}{ccc|c} 0 &amp; -2 &amp; -4 &amp; 0 \\ 0 &amp; -2 &amp; -12 &amp; 0 \\ 0 &amp; 0 &amp; -8 &amp; 0\end{array}\right)\sim\left(\begin{array}{ccc|c} 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0\end{array}\right).
+\end{equation*}\]</span> Hence the eigenvectors of <span class="math inline">\(M_{T}\)</span> corresponding to <span class="math inline">\(\lambda_{1}=1\)</span> all have the form <span class="math inline">\({\rm col}(t,0,0)=t\times {\rm col}(1,0,0)\)</span> for nonzero <span class="math inline">\(t\)</span> and hence the of the basis vector of the eigenspace <span class="math inline">\(E(1,T)\)</span> is <span class="math inline">\((1,0,0)\)</span>. On transferring back to <span class="math inline">\(T\)</span>, the eigenspace <span class="math inline">\(E(1,T)\)</span> is <span class="math inline">\(1\)</span>-dimensional with basis <span class="math inline">\((1)\)</span>.
+</dd>
+<dt><span class="math inline">\(\lambda_{2}=3\)</span>:</dt>
+<dd>
+The augmented matrix of the homogeneous system here is <span class="math display">\[\begin{equation*}
+\left(\begin{array}{ccc|c} 2 &amp; -2 &amp; -4 &amp; 0 \\ 0 &amp; 0 &amp; -12 &amp; 0 \\ 0 &amp; 0 &amp; -6 &amp; 0\end{array}\right)\sim\left(\begin{array}{ccc|c} 1 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right).
+\end{equation*}\]</span> Hence the eigenvectors of <span class="math inline">\(M_{T}\)</span> corresponding to <span class="math inline">\(\lambda_{2}=3\)</span> all have the form <span class="math inline">\({\rm col}(t,t,0)=t\times{\rm col}(1,1,0)\)</span> for nonzero <span class="math inline">\(t\)</span> and so the of the basis vector of the eigenspace <span class="math inline">\(E(3,T)\)</span> is <span class="math inline">\((1,1,0)\)</span>. On transferring back to <span class="math inline">\(T\)</span>, the eigenspace <span class="math inline">\(E(3,T)\)</span> is <span class="math inline">\(1\)</span>-dimensional with basis <span class="math inline">\((1+x)\)</span>.
+</dd>
+<dt><span class="math inline">\(\lambda_{3}=9\)</span>:</dt>
+<dd>
+The augmented matrix of the homogeneous system here is <span class="math display">\[\begin{equation*}
+\left(\begin{array}{ccc|c} 8 &amp; -2 &amp; -4 &amp; 0 \\ 0 &amp; 6 &amp; -12 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right)\sim\left(\begin{array}{ccc|c} 1 &amp; 0 &amp; -1 &amp; 0 \\ 0 &amp; 1 &amp; -2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0\end{array}\right).
+\end{equation*}\]</span> Hence the eigenvectors of <span class="math inline">\(M_{T}\)</span> corresponding to <span class="math inline">\(\lambda_{3}=9\)</span> all have the form <span class="math inline">\({\rm col}(t,2t,t)=t\times {\rm col}(1,2,1)\)</span> for nonzero <span class="math inline">\(t\)</span> and so the of the basis vector of the eigenspace <span class="math inline">\(E(9,T)\)</span> is <span class="math inline">\((1,2,1)\)</span>. On transferring back to <span class="math inline">\(T\)</span>, the eigenspace <span class="math inline">\(E(9,T)\)</span> is <span class="math inline">\(1\)</span>-dimensional with basis <span class="math inline">\((1+2x+x^{2})\)</span>.
+</dd>
+</dl></li>
+<li><p>The algebraic multiplicity of each eigenvalue is equal to its geometric multiplicity and so <span class="math inline">\(T\)</span> is diagonalisable. Take <span class="math inline">\(B=(1,\:1+x,\:1+2x+x^{2})\)</span>. Then <span class="math inline">\(B\)</span> is a basis of <span class="math inline">\(P_{2}\)</span> and <span class="math inline">\(M(T;B)={\rm diag}(1,3,9)\)</span>. This can be verified directly. We have <span class="math display">\[\begin{align*}
+T(1) &amp; =1 \\
+T(1+x) &amp; = 1+(3x+2)=3+3x=3(1+x) \\
+T(1+2x+x^{2}) &amp; = 1+2(3x+2)+(3x+2)^{2}=9+18x+9x^{2}\\&amp;=9(1+2x+x^{2}).
+\end{align*}\]</span> Hence <span class="math display">\[\begin{equation*}
+M(T;B)=\left(\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 3 &amp; 0 \\ 0 &amp; 0 &amp; 9\end{array}\right)={\rm diag}(1,3,9)
+\end{equation*}\]</span> as expected.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.19" data-hash="02-Week2_cache/html/unnamed-chunk-71_94aeacc5a4ec4b868aae7679c08d8ca4">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.19
+</div>
+<div class="panel-body">
+<p>Consider the linear transformation <span class="math inline">\(S\)</span> of <span class="math inline">\(\mathbb{C}^{2}\)</span> defined by <span class="math display">\[\begin{equation*}
+S((x,y))=(4x+2y,\:3x-y)
+\end{equation*}\]</span> for all <span class="math inline">\((x,y)\in\mathbb{C}^{2}\)</span>. Find the eigenvalues of <span class="math inline">\(S\)</span> and decide whether <span class="math inline">\(S\)</span> is diagonalisable.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.19" data-hash="02-Week2_cache/html/unnamed-chunk-72_14891c4fc02e93a5d9fb4b5dd71e0ce7">
+<button id="displayTextunnamed-chunk-72" onclick="javascript:toggle('unnamed-chunk-72');">
+Show Solution 2.19
+</button>
+<div id="toggleTextunnamed-chunk-72" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.19
+</div>
+<div class="panel-body">
+<p>The matrix of <span class="math inline">\(S\)</span> w.r.t. the standard basis <span class="math inline">\(((1,0),\:(0,1))\)</span> is <span class="math display">\[\begin{equation*}
+M_{S}=\left(\begin{array}{cc} 4 &amp; 2 \\ 3 &amp; -1\end{array}\right).
+\end{equation*}\]</span> Now we have <span class="math display">\[\begin{align*}
+\det(\lambda{I}-M_{S}) &amp; = \left|\begin{array}{cc} \lambda-4 &amp; -2 \\ -3 &amp; \lambda+1\end{array}\right| \\
+&amp; = (\lambda-4)(\lambda+1)-6 \\
+&amp; = \lambda^{2}-3\lambda-10 \\
+&amp; = (\lambda-5)(\lambda+2)
+\end{align*}\]</span> Hence the eigenvalues are the roots of this polynomial so we have the distinct eigenvalues <span class="math inline">\(\lambda_{1}=-2\)</span> and <span class="math inline">\(\lambda_{2}=5\)</span>, each with algebraic multiplicity <span class="math inline">\(1\)</span>.</p>
+<p>Now we find an eigenvector of <span class="math inline">\(M_{S}\)</span> corresponding to <span class="math inline">\(\lambda_{1}=-2\)</span>. We have the homogeneous system <span class="math inline">\((-2I-M_{S})X=0\)</span> where <span class="math inline">\(x=\:\)</span>col<span class="math inline">\((x,y)\)</span> with augmented matrix <span class="math display">\[\begin{equation*}
+\left(\begin{array}{cc|c} -6 &amp; -2 &amp; 0 \\ -3 &amp; -1 &amp; 0\end{array}\right)\sim\left(\begin{array}{cc|c} 3 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0\end{array}\right)
+\end{equation*}\]</span> Hence eigenvectors of <span class="math inline">\(M_{S}\)</span> corresponding to <span class="math inline">\(\lambda_{1}=-2\)</span> take the form <span class="math inline">\((t,-3t)\)</span> for some nonzero <span class="math inline">\(t\in\mathbb{C}\)</span>. It follows that a basis of <span class="math inline">\(E(-2,S)\)</span> is <span class="math inline">\(((1,-3))\)</span>.</p>
+<p>Next we find an eigenvector of <span class="math inline">\(M_{S}\)</span> corresponding to <span class="math inline">\(\lambda_{2}=5\)</span>. We have the homogeneous system <span class="math inline">\((5I-M_{S})X=0\)</span> where <span class="math inline">\(X=\:\)</span>col<span class="math inline">\((x,y)\)</span> with augmented matrix <span class="math display">\[\begin{equation*}
+\left(\begin{array}{cc|c} 1 &amp; -2 &amp; 0 \\ -3 &amp; 6 &amp; 0\end{array}\right)\sim\left(\begin{array}{cc|c} 1 &amp; -2 &amp; 0 \\ 0 &amp; 0 &amp; 0\end{array}\right)
+\end{equation*}\]</span> Hence eigenvectors of <span class="math inline">\(M_{S}\)</span> corresponding to <span class="math inline">\(\lambda_{2}=5\)</span> take the form <span class="math inline">\((2t,t)\)</span> for nonzero <span class="math inline">\(t\in\mathbb{C}\)</span>. It follows that a basis of <span class="math inline">\(E(5,S)\)</span> is <span class="math inline">\(((2,1))\)</span>. Hence the geometric multiplicity of each eigenvalue of <span class="math inline">\(S\)</span> is equal to its algebraic multiplicity and so <span class="math inline">\(S\)</span> is diagonalisable. Take the basis <span class="math inline">\(B=((1,-3),\:(2,1))\)</span> of <span class="math inline">\(\mathbb{C}^{2}\)</span>. Then the matrix of <span class="math inline">\(S\)</span> w.r.t this basis is diagonal. Precisely, <span class="math inline">\(M(S;B)={\rm diag}(-2,5)\)</span>.}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.20" data-hash="02-Week2_cache/html/unnamed-chunk-73_ab86e7a0713f5dae3c8573d180894d84">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.20
+</div>
+<div class="panel-body">
+<p>Consider the linear transformation <span class="math inline">\(T\)</span> of <span class="math inline">\(\mathbb{C}^{2}\)</span> defined by <span class="math display">\[\begin{equation*}
+T((x,y))=(10x-9y,\:4x-2y)
+\end{equation*}\]</span> for all <span class="math inline">\((x,y)\in\mathbb{C}^{2}\)</span>. Find the eigenvalues of <span class="math inline">\(T\)</span> and decide whether <span class="math inline">\(T\)</span> is diagonalisable.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.20" data-hash="02-Week2_cache/html/unnamed-chunk-74_4adbfe55d85f5f338e38426af153f465">
+<button id="displayTextunnamed-chunk-74" onclick="javascript:toggle('unnamed-chunk-74');">
+Show Solution 2.20
+</button>
+<div id="toggleTextunnamed-chunk-74" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.20
+</div>
+<div class="panel-body">
+<p>The matrix of <span class="math inline">\(T\)</span> w.r.t. the standard basis <span class="math inline">\(((1,0),\:(0,1))\)</span> of <span class="math inline">\(\mathbb{C}^{2}\)</span> is <span class="math display">\[\begin{equation*}
+M_{T}=\left(\begin{array}{cc} 10 &amp; -9 \\ 4 &amp; -2\end{array}\right)
+\end{equation*}\]</span> Now we have <span class="math display">\[\begin{align*}
+\det(\lambda{I}-M_{T}) &amp; = \left|\begin{array}{cc} \lambda-10 &amp; 9 \\ -4 &amp; \lambda+2\end{array}\right| \\
+&amp; = (\lambda-10)(\lambda+2)+36 \\
+&amp; = \lambda^{2}-8\lambda+16 \\
+&amp; = (\lambda-4)^{2}.
+\end{align*}\]</span> The eigenvalues of <span class="math inline">\(M_{T}\)</span> are the roots of this polynomial and so we have the repeated eigenvalues <span class="math inline">\(\lambda_{1}=\lambda_{2}=4\)</span>. The algebraic multiplicity of <span class="math inline">\(4\)</span> as an eigenvalue is <span class="math inline">\(2\)</span>.</p>
+<p>Now we find corresponding eigenvectors. We consider the homogeneous system <span class="math display">\[(4I-M_{T})X=0\]</span> where <span class="math inline">\(X=\:\)</span>col<span class="math inline">\((x,y)\)</span> with augmented matrix <span class="math display">\[\begin{equation*}
+\left(\begin{array}{cc|c} -6 &amp; 9 &amp; 0 \\ -4 &amp; 6 &amp; 0\end{array}\right)\sim\left(\begin{array}{cc|c} -2 &amp; 3 &amp; 0 \\ 0 &amp; 0 &amp; 0\end{array}\right).
+\end{equation*}\]</span> Hence eigenvectors of <span class="math inline">\(M_{T}\)</span> corresponding to the eigenvalue <span class="math inline">\(4\)</span> take the form <span class="math inline">\((3t,2t)\)</span> for nonzero <span class="math inline">\(t\in\mathbb{C}\)</span> and so a basis of <span class="math inline">\(E(4,T)\)</span> is <span class="math inline">\(((3,2))\)</span>. The geometric multiplicity of <span class="math inline">\(4\)</span> as an eigenvalue is therefore dim<span class="math inline">\((E(4,T))=1\)</span> which is not equal to the algebraic multiplicity of <span class="math inline">\(4\)</span> as an eigenvalue and so it follows that <span class="math inline">\(T\)</span> is not diagonalisable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Question 2.21" data-hash="02-Week2_cache/html/unnamed-chunk-75_a0a91e4df4993f11d22831e44c3b02ba">
+<div class="panel panel-default">
+<div class="panel-heading">
+Question 2.21
+</div>
+<div class="panel-body">
+Consider the linear transformation <span class="math inline">\(S\)</span> of <span class="math inline">\(\mathbb{C}^{3}\)</span> defined by <span class="math display">\[\begin{equation*}
+S((x,y,z))=(3x-2z,\:y,\:x).
+\end{equation*}\]</span> for all <span class="math inline">\((x,y,z)\in\mathbb{C}^{3}\)</span>. Given that <span class="math inline">\(\chi_{S}(t)=(t-1)^{2}(t-2)\)</span>, find bases of the relevant eigenspaces. Is <span class="math inline">\(S\)</span> diagonalisable?
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.21" data-hash="02-Week2_cache/html/unnamed-chunk-76_6db990e92787e280da948214667a0a55">
+<button id="displayTextunnamed-chunk-76" onclick="javascript:toggle('unnamed-chunk-76');">
+Show Solution 2.21
+</button>
+<div id="toggleTextunnamed-chunk-76" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution 2.21
+</div>
+<div class="panel-body">
+<p>We have the three eigenvalues <span class="math inline">\(\lambda_{1}=\lambda_{2}=1\)</span> and <span class="math inline">\(\lambda_{3}=2\)</span>. The important idea here is to find the geometric multiplicity of <span class="math inline">\(1\)</span> as an eigenvalue. We have <span class="math display">\[\begin{align*}
+(x,y,z)\in E(1,S) &amp; \Leftrightarrow S((x,y,z))=(x,y,z) \\
+&amp; \Leftrightarrow (3x-2z,\:y,\:x)=(x,y,z) \\
+&amp; \Leftrightarrow x=z.
+\end{align*}\]</span> Hence eigenvectors of <span class="math inline">\(S\)</span> corresponding to the eigenvalue <span class="math inline">\(1\)</span> take the form <span class="math inline">\((t,s,t)=t(1,0,1)+s(0,1,0)\)</span> for nonzero <span class="math inline">\(s,t\in\mathbb{C}\)</span>. It follows that a basis of <span class="math inline">\(E(1,S)\)</span> is <span class="math inline">\(((1,0,1),\:(0,1,0))\)</span> and so the geometric multiplicity of <span class="math inline">\(1\)</span> as an eigenvalue of <span class="math inline">\(S\)</span> is equal to its algebraic multiplicity. Hence <span class="math inline">\(S\)</span> is diagonalisable. Now <span class="math display">\[\begin{align*}
+(x,y,z)\in E(2,S) &amp; \Leftrightarrow S((x,y,z))=2(x,y,z) \\
+&amp; \Leftrightarrow (3x-2z,\:y,\:x)=(2x,\:2y,\:2z) \\
+&amp; \Leftrightarrow x=2z,\:y=0.
+\end{align*}\]</span> Hence eigenvectors of <span class="math inline">\(S\)</span> corresponding to the eigenvalue <span class="math inline">\(1\)</span> take the form <span class="math inline">\((2t,0,t)=t(2,0,1)\)</span> for nonzero <span class="math inline">\(t\in\mathbb{C}\)</span> and so <span class="math inline">\(((2,0,1))\)</span> is a basis of the eigenspace <span class="math inline">\(E(2,S)\)</span>. Take <span class="math inline">\(B=((1,0,1),\:(0,1,0),\:(2,0,1))\)</span>. Then <span class="math inline">\(B\)</span> is a basis of <span class="math inline">\(\mathbb{C}^{3}\)</span> and <span class="math inline">\(M(S;B)={\rm diag}(1,1,2)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and Revision</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-Week3.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ring Theory Fundamentals</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

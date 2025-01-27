@@ -1,0 +1,35 @@
+project:
+  type: website
+  resources:
+    - "/home/shayo/OneDrive/Website/Teaching/ComplexAnalysisNotes/CompleteNotes/site_libs/*"
+website:
+  back-to-top-navigation: true
+  title: "MX 4557 Complex Analysis"
+  page-footer:
+    center: "© Copyright 2024, Feyishayo Olukoya."
+    right: |
+      ![](front.jpg){width=15%}
+  favicon: front.jpg
+  open-graph: true
+  navbar:
+    logo: front.jpg
+    search: true
+    left:
+      - text: "Home"
+        file: index.qmd
+    right:
+      - icon: bug-fill
+        text: Feedback
+        href: https://forms.office.com/e/Jj8hiiExs3
+
+
+format:
+  html:
+    embed-resources: true
+    link-external-newwindow: true
+    lightbox: true
+    search: true
+    theme:
+      light: [minty]
+      dark: [darkly]
+
