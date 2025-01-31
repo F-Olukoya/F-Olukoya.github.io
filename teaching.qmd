@@ -40,6 +40,7 @@ As a lecturer at University of Keele, I was coordinator for the Group theory, Ab
 +   [Abstract Algebra](./Teaching/AbstractAlgebraNotes/index.html)
 +   [Linear Algebra and Rings](./Teaching/LinearAlgebraNotes/index.html)
 +   [Dynamical sytems](./Teaching/DynamicalSystemsNotes/index.html)
++   [Complex Analysis](./Teaching/_ComplexAnalysisNotes/_site/index.html)
 
 
 ## Previous Teaching

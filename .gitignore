@@ -2,4 +2,7 @@
 /_site/
 /.dotenv/
 /.Rproj.user/
+/.Rhistory/
 /Teaching/
+/_variables.yml/
+/_quarto.yml/
