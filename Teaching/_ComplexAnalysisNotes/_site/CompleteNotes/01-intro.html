@@ -742,6 +742,22 @@ Exercise 1.1
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.1">
+<button id="displayTextunnamed-chunk-14" onclick="javascript:toggle('unnamed-chunk-14');">
+Solution 1.1
+</button>
+<div id="toggleTextunnamed-chunk-14" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.1" class="panel-heading panel-heading1">
+Solution 1.1
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(z = (x,y) \in \C\)</span>. Identifying <span class="math inline">\(x\)</span> with <span class="math inline">\((x,0)\)</span> and <span class="math inline">\(y\)</span> with <span class="math inline">\((y,0)\)</span>. We calculate <span class="math display">\[iy = (0,1)\cdot(y,0) =(0 - 0,0 +y)=(0,y).\]</span> Consequently, <span class="math display">\[x + iy = (x,0) + (0,y) = (x,y) = z.\]</span></p>
+<p>To see that <span class="math inline">\(i^2 = -1\)</span>, we calculate <span class="math display">\[(0,1)(0,1) = (0-1,0+0)= (-1,0).\]</span> This yields the desired conclusion under the identification <span class="math inline">\(-1 = (-1,0)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.2">
 <div class="panel panel-default">
 <div id="sol1.2" class="panel-heading">
@@ -749,6 +765,31 @@ Exercise 1.2
 </div>
 <div class="panel-body">
 <p>How many real solutions <span class="math inline">\(x\)</span> does <span class="math inline">\(x^2+1=0\)</span> have? Show that the polynomial equation <span class="math inline">\(z^2+1=0\)</span> has exactly two solutions <span class="math inline">\(z\in\C.\)</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 1.2">
+<button id="displayTextunnamed-chunk-16" onclick="javascript:toggle('unnamed-chunk-16');">
+Solution 1.2
+</button>
+<div id="toggleTextunnamed-chunk-16" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.2" class="panel-heading panel-heading1">
+Solution 1.2
+</div>
+<div class="panel-body">
+<p>This equation has no reals solutions. To find all solutions in <span class="math inline">\(\C\)</span>, we first rearrange to get <span class="math inline">\(z^2 = -1\)</span>. This means that <span class="math inline">\(z\)</span> must be one of the square roots of <span class="math inline">\(-1\)</span>. There are at least two ways to find all possible values of <span class="math inline">\(z\)</span>.</p>
+<p>The first approach uses <a href="#prp-Ch1_Prop_Roots" class="quarto-xref">Proposition&nbsp;<span>1.7</span></a>.</p>
+<p>Expressing <span class="math inline">\(-1\)</span> in polar form, we have <span class="math inline">\(-1 = e^{i\pi}\)</span>.</p>
+<p>By <a href="#prp-Ch1_Prop_Roots" class="quarto-xref">Proposition&nbsp;<span>1.7</span></a> the square roots of <span class="math inline">\(-1\)</span>, are <span class="math display">\[ e^{\frac{i(\pi+ 2k\pi)}{2}}\]</span> for <span class="math inline">\(k = 0,1\)</span>. This gives exactly two solutions: <span class="math display">\[i = e^{\frac{i(\pi)}{2}}, \text{ and } -i = e^{\frac{i(\pi+ 2\pi)}{2}}.\]</span></p>
+<p>The other approach is as follows. Write <span class="math inline">\(z = x+iy\)</span>. Then, <span class="math display">\[z^2 = (x+iy)(x+iy) = (x^2-y^2) + i(2xy) = -1.\]</span> This gives us two equations <span class="math display">\[\begin{align}
+x^2 -y^2 &amp;= -1 \\
+2xy &amp;= 0.
+\end{align}\]</span> The second equation imples one of <span class="math inline">\(x\)</span> or <span class="math inline">\(y\)</span> is <span class="math inline">\(0\)</span>.</p>
+<p>If <span class="math inline">\(x\)</span> is <span class="math inline">\(0\)</span>, then <span class="math inline">\(-y^2 = -1\)</span> and so <span class="math inline">\(y= \pm 1\)</span>.</p>
+<p>If <span class="math inline">\(y\)</span> is <span class="math inline">\(0\)</span>, then <span class="math inline">\(x^2 = -1\)</span> and has no solutions (since <span class="math inline">\(x\)</span> is a real number).</p>
+<p>We conclude that <span class="math inline">\(x =0\)</span> and <span class="math inline">\(y = \pm 1\)</span>, which gives exactly two values for <span class="math inline">\(z\)</span>, <span class="math inline">\(i\)</span> and <span class="math inline">\(-i\)</span>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -762,6 +803,21 @@ Exercise 1.3
 </div>
 </div>
 </div>
+<div class="cell" title="Exercise 1.3">
+<button id="displayTextunnamed-chunk-18" onclick="javascript:toggle('unnamed-chunk-18');">
+Exercise 1.3
+</button>
+<div id="toggleTextunnamed-chunk-18" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.3" class="panel-heading panel-heading1">
+Exercise 1.3
+</div>
+<div class="panel-body">
+<p>Take <span class="math inline">\(z=1,\)</span> <span class="math inline">\(w=i.\)</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.4">
 <div class="panel panel-default">
 <div id="sol1.4" class="panel-heading">
@@ -772,6 +828,29 @@ Exercise 1.4
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.4">
+<button id="displayTextunnamed-chunk-20" onclick="javascript:toggle('unnamed-chunk-20');">
+Solution 1.4
+</button>
+<div id="toggleTextunnamed-chunk-20" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.4" class="panel-heading panel-heading1">
+Solution 1.4
+</div>
+<div class="panel-body">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-93-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.5">
 <div class="panel panel-default">
 <div id="sol1.5" class="panel-heading">
@@ -779,6 +858,21 @@ Exercise 1.5
 </div>
 <div class="panel-body">
 <p>Express the following complex numbers <span class="math inline">\(z\)</span> in the form <span class="math inline">\(x+iy\)</span> with <span class="math inline">\(x,y\in\R.\)</span> <span class="math display">\[(1+i)^{20},\ (5+3i)(1+2i),\ (1-i)(2+3i),\ (1-i)i(1+i),\ \frac{2+i}{1-i}\]</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 1.5">
+<button id="displayTextunnamed-chunk-22" onclick="javascript:toggle('unnamed-chunk-22');">
+Solution 1.5
+</button>
+<div id="toggleTextunnamed-chunk-22" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.5" class="panel-heading panel-heading1">
+Solution 1.5
+</div>
+<div class="panel-body">
+<p><span class="math display">\[ (2i)^{10} = -1024,\ -1+13i,\ 5 +i,\ 2i,\ \frac{1+3i}{2}\]</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -793,6 +887,21 @@ Exercise 1.6
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.6">
+<button id="displayTextunnamed-chunk-24" onclick="javascript:toggle('unnamed-chunk-24');">
+Solution 1.6
+</button>
+<div id="toggleTextunnamed-chunk-24" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.6" class="panel-heading panel-heading1">
+Solution 1.6
+</div>
+<div class="panel-body">
+<p><span class="math display">\[-i,\ \frac{1-i}{2},\frac{8 + 6i}{10}\]</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.7">
 <div class="panel panel-default">
 <div id="sol1.7" class="panel-heading">
@@ -801,6 +910,25 @@ Exercise 1.7
 <div class="panel-body">
 <p>Find the modulus and the conjugate of the following complex numbers. <span class="math display">\[2+i,\ i,\ 5-3i,\ \frac{1+i}{2+i}
 \]</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 1.7">
+<button id="displayTextunnamed-chunk-26" onclick="javascript:toggle('unnamed-chunk-26');">
+Solution 1.7
+</button>
+<div id="toggleTextunnamed-chunk-26" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.7" class="panel-heading panel-heading1">
+Solution 1.7
+</div>
+<div class="panel-body">
+<p><span class="math display">\[\begin{align}
+|2+i| &amp;= \sqrt{5}, &amp;  \ol {2+i} = 2-i \\
+|5-3i| &amp;= \sqrt{34}, &amp; \ol {5-3i} = 5+3i \\
+|\frac{1+i}{2+i}| &amp;= \sqrt{\frac{2}{5}} = \frac{\sqrt{10}}{5}, &amp; \ol {\frac{1+i}{2+i}} = \frac{1-i}{2-i}
+\end{align}\]</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -814,6 +942,62 @@ Exercise 1.8
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.8">
+<button id="displayTextunnamed-chunk-28" onclick="javascript:toggle('unnamed-chunk-28');">
+Solution 1.8
+</button>
+<div id="toggleTextunnamed-chunk-28" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.8" class="panel-heading panel-heading1">
+Solution 1.8
+</div>
+<div class="panel-body">
+<ul>
+<li><p>The set <span class="math inline">\(A\)</span> is the ‘upper half-plane’</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-111-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>The set <span class="math inline">\(B\)</span> is the “left half-plane” shifted to the right</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-112-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>The set <span class="math inline">\(C\)</span> is the straight line <span class="math inline">\(x = y\)</span> since <span class="math inline">\(\Re((1+i)z) = x-y\)</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-113-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>The intersection of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is pictured below</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-114-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.9">
 <div class="panel panel-default">
 <div id="sol1.9" class="panel-heading">
@@ -822,6 +1006,30 @@ Exercise 1.9
 <div class="panel-body">
 <p>Describe the set <span class="math inline">\(D=\{z\in\C \mid z\cdot\overline{z}=1\}\)</span> geometrically.</p>
 <p><em>Hint:</em> Write <span class="math inline">\(z=re^{i\th}\)</span> in polar form.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 1.9">
+<button id="displayTextunnamed-chunk-30" onclick="javascript:toggle('unnamed-chunk-30');">
+Solution 1.9
+</button>
+<div id="toggleTextunnamed-chunk-30" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.9" class="panel-heading panel-heading1">
+Solution 1.9
+</div>
+<div class="panel-body">
+<p>Note that <span class="math inline">\(z \cdot \ol z = |z|^2\)</span>. Hence points in <span class="math inline">\(D\)</span> satisfy the equation <span class="math inline">\(|z|^2 = 1\)</span>. This is the circle of radius one centred at the origin.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-123-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -839,6 +1047,76 @@ Exercise 1.10
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.10">
+<button id="displayTextunnamed-chunk-32" onclick="javascript:toggle('unnamed-chunk-32');">
+Solution 1.10
+</button>
+<div id="toggleTextunnamed-chunk-32" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.10" class="panel-heading panel-heading1">
+Solution 1.10
+</div>
+<div class="panel-body">
+<ul>
+<li><p><span class="math inline">\(|z|=1\)</span> is the unit circle.</p></li>
+<li><p><span class="math inline">\(|z|&lt;1\)</span> is the open disk of radius 1 with center the origin.</p></li>
+<li><p><span class="math inline">\(1&lt;|z|&lt;2\)</span> is the open annulus centered at the origin with radii <span class="math inline">\(1\)</span> and <span class="math inline">\(2.\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-129-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>The complement of the set defined by <span class="math inline">\(|1+z|&gt;1\)</span> is the set of all <span class="math inline">\(|1+z|\leqslant1,\)</span> the closed disk of radius <span class="math inline">\(1\)</span> centered at <span class="math inline">\(-1.\)</span> Hence <span class="math inline">\(\{z\in\C\mid |1+z|&gt;1\}\)</span> is the complement of this closed disk.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-130-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p><span class="math inline">\(|2-z|&lt;2\)</span> is the open disk of radius <span class="math inline">\(2\)</span> centered at <span class="math inline">\(2.\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-131-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p><span class="math inline">\(3&lt;|z+i|&lt;4\)</span> is an annulus centered at <span class="math inline">\(-i\)</span> with radii <span class="math inline">\(3\)</span> and <span class="math inline">\(4.\)</span></p></li>
+<li><p><span class="math inline">\(|z-1|&lt;|z+1|\)</span> is the set of points that are closer to <span class="math inline">\(1\)</span> than to <span class="math inline">\(-1.\)</span> This is the ‘right half-plane’ <span class="math inline">\(\{x+iy\mid x&gt;0\}.\)</span> In more detail, write <span class="math inline">\(z=x+iy.\)</span> Then the inequality is equivalent to <span class="math inline">\((x-1)^2+y^2&lt;(x+1)^2+y^2,\)</span> so to <span class="math inline">\(-2x&lt;2x.\)</span> This just means <span class="math inline">\(x&gt;0.\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-132-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p><span class="math inline">\(|z|=|z+1|\)</span> is the set of points equidistant from <span class="math inline">\(0\)</span> and <span class="math inline">\(-1.\)</span> Write <span class="math inline">\(z=x+iy.\)</span> Then the condition is equivalent to <span class="math inline">\(x^2+y^2=(x+1)^2+2(x+1)y+y^2,\)</span> so equivalent to <span class="math inline">\(2x+1+y(2x+1)=0.\)</span> This implies <span class="math inline">\(x=-1/2\)</span> and therefore <span class="math inline">\(\{z\in\C\mid |z|=|z+1|\}\)</span> is the straight line <span class="math inline">\(\{x+iy\mid x=-1/2\}.\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-133-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p><span class="math inline">\(|z-1|=|z+i|\)</span> is the set of points equidistant from <span class="math inline">\(1\)</span> and <span class="math inline">\(-i.\)</span> This is again a straight line, namely <span class="math inline">\(\{x-ix\mid x\in\R\}.\)</span> \end{itemize}</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.11">
 <div class="panel panel-default">
 <div id="sol1.11" class="panel-heading">
@@ -852,6 +1130,31 @@ C&amp;=\{-z \mid z\in S\}, &amp;D&amp;=\{z^2 \mid z\in S\}.
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.11">
+<button id="displayTextunnamed-chunk-34" onclick="javascript:toggle('unnamed-chunk-34');">
+Solution 1.11
+</button>
+<div id="toggleTextunnamed-chunk-34" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.11" class="panel-heading panel-heading1">
+Solution 1.11
+</div>
+<div class="panel-body">
+<p><span class="math inline">\(A\)</span> is the square with corners <span class="math inline">\(\{0, 2, 2+2i, 2i\}\)</span>. <span class="math inline">\(B\)</span> is the square with corners <span class="math inline">\(\{0, 1, 1-i, -i\}\)</span>. <span class="math inline">\(C\)</span> is the square with corners <span class="math inline">\(\{0, -i, -1-i, -1\}\)</span>.</p>
+<p><span class="math inline">\(D\)</span> is much harder to work out. It is shown in the picture. The edge joining <span class="math inline">\(0\)</span> to <span class="math inline">\(1\)</span> remains as it was. The edge joining <span class="math inline">\(1\)</span> to <span class="math inline">\(1+i\)</span> can be parametrised as <span class="math inline">\(\{1+it\mid 0\leqslant t\leqslant 1\}\)</span> and, on squaring, becomes the curve parametrised as <span class="math inline">\(\{(1-t^2, 2t)\mid 0\leqslant t\leqslant 1\}\)</span> and this is the right-hand curved edge. In the same way the line joining <span class="math inline">\(1+i\)</span> to <span class="math inline">\(i\)</span> becomes the left-hand curved edge. Finally, the line joining <span class="math inline">\(i\)</span> to <span class="math inline">\(0\)</span> becomes the line joining <span class="math inline">\(-1\)</span> to <span class="math inline">\(0.\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-143-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.12">
 <div class="panel panel-default">
 <div id="sol1.12" class="panel-heading">
@@ -862,6 +1165,25 @@ Exercise 1.12
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.12">
+<button id="displayTextunnamed-chunk-36" onclick="javascript:toggle('unnamed-chunk-36');">
+Solution 1.12
+</button>
+<div id="toggleTextunnamed-chunk-36" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.12" class="panel-heading panel-heading1">
+Solution 1.12
+</div>
+<div class="panel-body">
+<ul>
+<li>Since <span class="math inline">\(|2z|=2|z|&lt;2\iff |z|&lt;1\)</span> the set <span class="math inline">\(A\)</span> is the open disk of radius <span class="math inline">\(2\)</span> at the origin.</li>
+<li>As <span class="math inline">\(|z^2|&lt;|z|^2&lt;1\)</span> for <span class="math inline">\(z\in D\)</span> we have <span class="math inline">\(B\subset D.\)</span> Conversely, if <span class="math inline">\(w\in D,\)</span> we know there exists a square root <span class="math inline">\(z\)</span> with <span class="math inline">\(z^2=w.\)</span> As <span class="math inline">\(|z|=|z^2|^{1/2}&lt;|w|^{1/2}&lt;1\)</span> it follows that <span class="math inline">\(w\in B.\)</span> Hence <span class="math inline">\(B=D.\)</span></li>
+<li><span class="math inline">\(C\)</span> is the real interval <span class="math inline">\(\{x+i0\mid 0\leqslant x&lt;1\}=[0,1).\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.13">
 <div class="panel panel-default">
 <div id="sol1.13" class="panel-heading">
@@ -869,6 +1191,21 @@ Exercise 1.13
 </div>
 <div class="panel-body">
 <p>Show that <span class="math inline">\(i=e^{i\pi/2}\)</span> and <span class="math inline">\(-1=e^{i\pi}.\)</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 1.13">
+<button id="displayTextunnamed-chunk-38" onclick="javascript:toggle('unnamed-chunk-38');">
+Solution 1.13
+</button>
+<div id="toggleTextunnamed-chunk-38" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.13" class="panel-heading panel-heading1">
+Solution 1.13
+</div>
+<div class="panel-body">
+<p>We have <span class="math display">\[e^{i\pi/2} = \cos(\pi/2) + i \sin(\pi/2) = 0 + i = i\]</span> and <span class="math display">\[e^{i\pi} = \cos(\pi) + i \sin(\pi) = -1 + 0 = -1.\]</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -883,6 +1220,21 @@ Exercise 1.14
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.14">
+<button id="displayTextunnamed-chunk-40" onclick="javascript:toggle('unnamed-chunk-40');">
+Solution 1.14
+</button>
+<div id="toggleTextunnamed-chunk-40" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.14" class="panel-heading panel-heading1">
+Solution 1.14
+</div>
+<div class="panel-body">
+<p><span class="math display">\[\frac{\sqrt{2}}{2},\ -1,\ \frac{-1 + i\sqrt{3}}{2}\]</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.15">
 <div class="panel panel-default">
 <div id="sol1.15" class="panel-heading">
@@ -890,6 +1242,32 @@ Exercise 1.15
 </div>
 <div class="panel-body">
 <p>Write each of the following complex numbers in polar form <span class="math inline">\(re^{i\theta}\)</span> with <span class="math inline">\(r&gt;0\)</span> and <span class="math inline">\(-\pi&lt;\theta\leqslant\pi.\)</span> <span class="math display">\[i, \quad -1, \quad -i, \quad 1+i, \quad 1-i, \quad i-1, \quad \frac{1}{2}+i\frac{\sqrt{3}}{2}\]</span> Draw each of these numbers in the complex plane.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 1.15">
+<button id="displayTextunnamed-chunk-42" onclick="javascript:toggle('unnamed-chunk-42');">
+Solution 1.15
+</button>
+<div id="toggleTextunnamed-chunk-42" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.15" class="panel-heading panel-heading1">
+Solution 1.15
+</div>
+<div class="panel-body">
+<p><span class="math display">\[e^{i\pi/2},\quad e^{i\pi},\quad e^{-i\pi/2},\quad \sqrt{2}e^{i\pi/4},\quad
+\sqrt{2}e^{-i\pi/4},\quad \sqrt{2}e^{3i\pi/4},\quad e^{i\pi/3}.\]</span></p>
+<p>Be careful to take the angle in the correct range <span class="math inline">\(-\pi&lt;\theta\leqslant\pi.\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-intro_files/figure-html/unnamed-chunk-161-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -903,6 +1281,22 @@ Exercise 1.16
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.16">
+<button id="displayTextunnamed-chunk-44" onclick="javascript:toggle('unnamed-chunk-44');">
+Solution 1.16
+</button>
+<div id="toggleTextunnamed-chunk-44" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.16" class="panel-heading panel-heading1">
+Solution 1.16
+</div>
+<div class="panel-body">
+<p>We use polar coordinates. For the first expression, <span class="math display">\[i^{2021} = (e^{i\pi/2})^{2021}=  (e^{i\pi/2})^{2020}(e^{i\pi/2}) = (e^{i\pi/2})^{2020} i .\]</span> Now we express <span class="math inline">\((e^{i\pi/2})^{2020}\)</span> as <span class="math display">\[(e^{i\pi})^{1010} = (-1)^{1010} =1.\]</span> We conclude that <span class="math inline">\(i^{2021} = i\)</span>.</p>
+<p>For the second expression, we write <span class="math display">\[(i+1)^{20} = \left(\sqrt{2} e^{i\pi/4}\right)^{20} = 2^{10}e^{i5\pi} = -1024.\]</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.17">
 <div class="panel panel-default">
 <div id="sol1.17" class="panel-heading">
@@ -910,6 +1304,21 @@ Exercise 1.17
 </div>
 <div class="panel-body">
 <p>Solve the equation <span class="math inline">\((1 - i)^n - 2075 = 2021\)</span> and find <span class="math inline">\(n\in\N.\)</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 1.17">
+<button id="displayTextunnamed-chunk-46" onclick="javascript:toggle('unnamed-chunk-46');">
+Solution 1.17
+</button>
+<div id="toggleTextunnamed-chunk-46" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.17" class="panel-heading panel-heading1">
+Solution 1.17
+</div>
+<div class="panel-body">
+<p>Writing <span class="math inline">\(1-i=\sqrt{2}e^{-i\pi/4},\)</span> the equation is equivalent to <span class="math inline">\(2^{n/2}e^{-i n\pi/4}=4096.\)</span> Taking the modulus gives <span class="math inline">\(2^{n/2}=4096\)</span> so necessarily <span class="math inline">\(n=24\)</span> and indeed we have <span class="math inline">\((1-i)^{24}=4096.\)</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -929,6 +1338,27 @@ Exercise 1.18
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.18">
+<button id="displayTextunnamed-chunk-48" onclick="javascript:toggle('unnamed-chunk-48');">
+Solution 1.18
+</button>
+<div id="toggleTextunnamed-chunk-48" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.18" class="panel-heading panel-heading1">
+Solution 1.18
+</div>
+<div class="panel-body">
+<p>Expanding we have <span class="math display">\[\begin{align}
+\frac{e^{iz}+ e^{-iz}}{2} &amp;= \frac{\cos z + i \sin z + \cos z - i \sin z }{2} &amp;= \frac{2\cos z}{2} &amp;= \cos z \\
+\frac{e^{iz}- e^{-iz}}{2i} &amp;= \frac{\cos z + i \sin z - \cos z + i \sin z }{2i} &amp;= \frac{2i\sin z}{2i} &amp;= \sin z.
+\end{align}\]</span></p>
+<p>We solve <span class="math display">\[\sin z = \frac{e^{iz}- e^{-iz}}{2i} = 2\]</span> for <span class="math inline">\(z \in \C\)</span>. Rearranging, we have <span class="math display">\[e^{iz} - e^{-iz} = 4i.\]</span></p>
+<p>Multiplying through by <span class="math inline">\(e^{iz}\)</span> gives, <span class="math display">\[e^{2iz} -4ie^{iz} -1 = 0\]</span>. Setting <span class="math inline">\(t = e^{iz}\)</span> gives the quadratic euqation:<span class="math display">\[ t^2 -4i t -1 = 0\]</span>. Solving, we get <span class="math display">\[t = e^{i(x+iy)} = i(2 \pm \sqrt{3}).\]</span> Expanding out the term <span class="math inline">\(e^{i(x+iy)}\)</span>, gives <span class="math display">\[e^{-y}e^{ix} = i(2 \pm \sqrt 3).\]</span> We conclude that <span class="math inline">\(x = \pi/2 + 2k \pi\)</span> for <span class="math inline">\(k \in \Z\)</span> (since <span class="math inline">\(e^{ix} = i\)</span>) and <span class="math inline">\(y = -\ln(2 \pm \sqrt{3})\)</span> (since <span class="math inline">\(e^{-y} = 2 \pm \sqrt{3}\)</span>).</p>
+<p>Therefore <span class="math inline">\(z = (\pi/2 + 2k \pi) - \ln(2 \pm \sqrt{3})\)</span> for <span class="math inline">\(k \in \Z\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.19">
 <div class="panel panel-default">
 <div id="sol1.19" class="panel-heading">
@@ -945,6 +1375,38 @@ Exercise 1.19
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.19">
+<button id="displayTextunnamed-chunk-50" onclick="javascript:toggle('unnamed-chunk-50');">
+Solution 1.19
+</button>
+<div id="toggleTextunnamed-chunk-50" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.19" class="panel-heading panel-heading1">
+Solution 1.19
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>Let <span class="math inline">\(z=x+iy\)</span> and <span class="math inline">\(w=u+iv.\)</span> Then <span class="math display">\[\begin{align*}
+zw&amp;=(xu-yv)+i(xv+yu)\implies \ol{zw}=(xu-yv)-i(xv+yu)\\
+\ol{z}\cdot\ol{w}&amp;=(x-iy)(u-iv)=xu-yv+(-ivx-iyu).
+\end{align*}\]</span></p></li>
+<li><p>The base case <span class="math inline">\(n=1\)</span> is trivial. For the inductive step, we have <span class="math display">\[\begin{align*}
+\ol{z_1\cdots z_nz_{n+1}}&amp;=\ol{z_1\cdots z_n}\cdot\ol{z_{n+1}}&amp;&amp;\text{by (a)}\\
+&amp;=(\ol{z_1}\cdots\ol{z_n})\ol{z_{n+1}}&amp;&amp;\text{by induction.}
+\end{align*}\]</span></p></li>
+<li><p>follows from (b) by setting <span class="math inline">\(z_1=\cdots=z_n=z.\)</span></p></li>
+<li><p>We have <span class="math display">\[\begin{align*}
+\ol{p(z)}&amp;=\ol{a_nz^n+\ldots+a_1z+a_0}\\
+&amp;=\ol{a_nz^n}+\ldots+\ol{a_1z}+\ol{a_0}&amp;&amp;\text{since $\ol{\cdots}$ is additive}\\
+&amp;=\ol{a_n}\ol{z^n}+\ldots+\ol{a_1}\cdot\ol{z}+\ol{a_0}&amp;&amp;\text{by a.}\\
+&amp;=a_n\ol{z}^n+\ldots+a_1\ol{z}+a_0&amp;&amp;\text{by (c) and since $a_k\in\R$}\\
+&amp;=p(\ol{z}).
+\end{align*}\]</span> Finally, suppose <span class="math inline">\(p(\zeta)=0.\)</span> Then <span class="math inline">\(p(\ol{\zeta})=\ol{p(\zeta)}.\)</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.20">
 <div class="panel panel-default">
 <div id="sol1.20" class="panel-heading">
@@ -952,6 +1414,24 @@ Exercise 1.20
 </div>
 <div class="panel-body">
 <p>Show that <span class="math inline">\(|z|=|{-z}|\)</span> and <span class="math inline">\(|\ol z|=|z|.\)</span> Prove also that <span class="math inline">\(|\la z|=\la |z|\)</span> for all <span class="math inline">\(\la\geqslant 0.\)</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 1.20">
+<button id="displayTextunnamed-chunk-52" onclick="javascript:toggle('unnamed-chunk-52');">
+Solution 1.20
+</button>
+<div id="toggleTextunnamed-chunk-52" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.20" class="panel-heading panel-heading1">
+Solution 1.20
+</div>
+<div class="panel-body">
+<p>Write <span class="math inline">\(z = x+iy\)</span>, then for <span class="math inline">\(\lambda \ge 0\)</span>, <span class="math display">\[\begin{align*}
+|z| &amp;= \sqrt{x^2 + y^2} = \sqrt{(-x)^2 + (-y)^2} = |-z| \\
+\lambda |z| &amp;= \lambda \sqrt{x^2 + y^2} = \sqrt{\lambda^2(x^2 + y^2)} = \sqrt{(\lambda x)^2 + (\lambda y)^2} = |\lambda z|
+\end{align*}\]</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -965,6 +1445,21 @@ Exercise 1.21
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.21">
+<button id="displayTextunnamed-chunk-54" onclick="javascript:toggle('unnamed-chunk-54');">
+Solution 1.21
+</button>
+<div id="toggleTextunnamed-chunk-54" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.21" class="panel-heading panel-heading1">
+Solution 1.21
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(z=x+iy.\)</span> Then <span class="math display">\[z+\ol{z}=x+iy+x-iy=2x=2\Re(z)\]</span> and <span class="math display">\[z-\ol{z}=x+iy-(x-iy)=2iy=2i\Im(z).\]</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.22">
 <div class="panel panel-default">
 <div id="sol1.22" class="panel-heading">
@@ -972,6 +1467,24 @@ Exercise 1.22
 </div>
 <div class="panel-body">
 <p>Prove that <span class="math inline">\(\ol{e^z}=e^{\ol z}.\)</span> Deduce that <span class="math inline">\(|e^z|=e^{\Re(z)}.\)</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 1.22">
+<button id="displayTextunnamed-chunk-56" onclick="javascript:toggle('unnamed-chunk-56');">
+Solution 1.22
+</button>
+<div id="toggleTextunnamed-chunk-56" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.22" class="panel-heading panel-heading1">
+Solution 1.22
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(z = x+iy\)</span>, then <span class="math display">\[\begin{align*}
+\ol {e^z} &amp;= \ol {e^{x+iy}} = \ol{e^{x}(\cos (y) + i \sin (y))} \\
+&amp;= e^{x}(\cos (y) - i \sin (y)) = e^{x}(cos (-y) + i \sin (-y)) = e^{\ol z}.
+\end{align*}\]</span> For the second part, <span class="math display">\[|e^{z}| = \sqrt{e^{z}\cdot e^{\ol z}} = \sqrt{e^{z + \ol z}} = \sqrt{e^{2\Re(z)}} = e^{\Re(z)}.\]</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -985,6 +1498,25 @@ Exercise 1.23
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.23">
+<button id="displayTextunnamed-chunk-58" onclick="javascript:toggle('unnamed-chunk-58');">
+Solution 1.23
+</button>
+<div id="toggleTextunnamed-chunk-58" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.23" class="panel-heading panel-heading1">
+Solution 1.23
+</div>
+<div class="panel-body">
+<p>Write <span class="math inline">\(z = x+iy\)</span> and <span class="math inline">\(w = u+iv\)</span>, then</p>
+<p><span class="math display">\[\begin{align*}
+|z+w|^2 + |z-w|^2 &amp;= (x+u)^2 + (y+v)^2 + (x-u)^2 + (y-v)^2 \\
+&amp;= 2(x^2 + u^2) + 2 (y^2 + v^2) = 2|z|^2 + 2|w|^2.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.24">
 <div class="panel panel-default">
 <div id="sol1.24" class="panel-heading">
@@ -992,6 +1524,25 @@ Exercise 1.24
 </div>
 <div class="panel-body">
 <p>Show that <span class="math inline">\(|z+w|^2=|z|^2+2\Re(z\ol w)+|w|^2.\)</span> Use this to determine the conditions on <span class="math inline">\(z,w\)</span> for <span class="math inline">\(|z+w|=|z|+|w|\)</span> to hold.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 1.24">
+<button id="displayTextunnamed-chunk-60" onclick="javascript:toggle('unnamed-chunk-60');">
+Solution 1.24
+</button>
+<div id="toggleTextunnamed-chunk-60" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.0" class="panel-heading panel-heading1">
+Solution 1.24
+</div>
+<div class="panel-body">
+<p>Write <span class="math inline">\(z = x+iy\)</span> and <span class="math inline">\(w = u+iv\)</span>, then</p>
+<p><span class="math display">\[|z+w|^2 = (x+u)^2 + (y+v)^2 = (x^2 + y^2) + 2xu + 2yv + (y^2 + v^2).\]</span></p>
+<p>Noting that <span class="math inline">\(\Re(z\ol w) = xu + yv\)</span>, we have <span class="math display">\[|z+w|^2 = |z|^2 + 2\Re(z\ol w) + |w|^2\]</span> as required.</p>
+<p>For the second part write <span class="math inline">\(w = \lambda z\)</span> for some <span class="math inline">\(\lambda \in \C\)</span>. We show that <span class="math inline">\(\lambda\)</span> is a positive real number. Suppose <span class="math inline">\(|z + w| = |z| + |w|\)</span> then <span class="math display">\[|z + \lambda z| = |z| + |\lambda z|.\]</span> It follows, assuming <span class="math inline">\(z \ne 0\)</span> that <span class="math display">\[|1 + \lambda| = |1| + |\lambda|.\]</span> Using the preceding part <span class="math inline">\(2\Re(\lambda) = 2|\lambda|\)</span> and we conclude that <span class="math inline">\(|\lambda| = \Re(\lambda)\)</span> and so <span class="math inline">\(\lambda\)</span> is a positive real number.</p>
+<p>If <span class="math inline">\(z = 0\)</span>, then we may take <span class="math inline">\(\lambda  = 0\)</span>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1005,6 +1556,21 @@ Exercise 1.25
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 1.25">
+<button id="displayTextunnamed-chunk-62" onclick="javascript:toggle('unnamed-chunk-62');">
+Solution 1.25
+</button>
+<div id="toggleTextunnamed-chunk-62" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.25" class="panel-heading panel-heading1">
+Solution 1.25
+</div>
+<div class="panel-body">
+<p>Applying the triangle inequality to <span class="math inline">\(z\)</span> and <span class="math inline">\(w-z\)</span> gives <span class="math display">\[|w|=|z+(w-z)|\leqslant|z|+|w-z|,\]</span> which we rearrange to <span class="math display">\[|w| - |z| \leqslant |w-z|.\tag{A}\]</span> By exchanging the roles of <span class="math inline">\(z\)</span> and <span class="math inline">\(w\)</span> we get <span class="math display">\[|z| - |w| \leqslant |z-w|.\tag{B}\]</span> The two inequalities (A) and (B) are equivalent to the single inequality <span class="math inline">\(\bigl||z|-|w|\bigr|\leqslant |z-w|.\)</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 1.26">
 <div class="panel panel-default">
 <div id="sol1.26" class="panel-heading">
@@ -1012,6 +1578,21 @@ Exercise 1.26
 </div>
 <div class="panel-body">
 <p>Let <span class="math inline">\(K\)</span> be a field with <span class="math inline">\(\R\subset K \subset\C.\)</span> Prove that <span class="math inline">\(K=\R\)</span> or <span class="math inline">\(K=\C.\)</span></p>
+</div>
+</div>
+</div>
+<div class="cell">
+<button id="displayTextunnamed-chunk-64" onclick="javascript:toggle('unnamed-chunk-64');">
+Solution 1.26
+</button>
+<div id="toggleTextunnamed-chunk-64" style="display: ">
+<div class="panel panel-default">
+<div id="tsk1.26" class="panel-heading panel-heading1">
+Solution 1.26
+</div>
+<div class="panel-body">
+<p>Suppose that <span class="math inline">\(K\neq\R.\)</span> Then there exists <span class="math inline">\(z=x+iy\in K\)</span> with <span class="math inline">\(y\neq 0\)</span>. We know that <span class="math inline">\(x\in K\)</span> since <span class="math inline">\(x\)</span> is real. So, by the basic properties of a field, <span class="math inline">\(iy=z-x\in K.\)</span> Now <span class="math inline">\(y\)</span> is real (so in <span class="math inline">\(K\)</span>) and non-zero. So <span class="math inline">\(i=(iy)/y\in K.\)</span> That’s all we need, since we can now deduce that <span class="math inline">\(x+iy\in K\)</span> for all <span class="math inline">\(x,y\in\R.\)</span></p>
+</div>
 </div>
 </div>
 </div>
