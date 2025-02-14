@@ -692,7 +692,7 @@ Figure&nbsp;2.4: Unit grid and image grid of <span class="math inline">\(f(z)=z^
 <p>Consider <span class="math inline">\(f(z)=1/z.\)</span> Then <span id="eq-Ch2_Ex_Grid_2"><span class="math display">\[u=\frac{x}{x^2+y^2},\qquad v=\frac{-y}{x^2+y^2}. \tag{2.8}\]</span></span> Fixing <span class="math inline">\(x=\pm1,\pm2,\ldots,\)</span> we have <span class="math inline">\(\bigl(u-\frac{1}{2x}\bigr)^2+v^2=\frac{1}{4x^2}\)</span> (verify by substituting <a href="#eq-Ch2_Ex_Grid_2" class="quarto-xref">Equation&nbsp;<span>2.8</span></a> into this equation). This is a circle of radius <span class="math inline">\(\frac{1}{2x}\)</span> and with center <span class="math inline">\((u,v)=(\frac{1}{2x},0).\)</span> For <span class="math inline">\(x=0,\)</span> equations <a href="#eq-Ch2_Ex_Grid_2" class="quarto-xref">Equation&nbsp;<span>2.8</span></a> become <span class="math inline">\((u,v)=(0,-1/y)\)</span> which parameterizes the <span class="math inline">\(v\)</span>-axis. Similarly, for <span class="math inline">\(0\neq y\in\Z\)</span> we find <span class="math inline">\(u^2+\bigl(v+\frac{1}{2y}\bigr)^2=\frac{1}{4y^2}\)</span> and for <span class="math inline">\(y=0\)</span> we obtain a parametrization of the <span class="math inline">\(u\)</span>-axis. This is summarized in <a href="#fig-Ch2_Fig_Image_Grid_2" class="quarto-xref">Figure&nbsp;<span>2.5</span></a> (and on the title page).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-Ch2_Fig_Image_Grid_2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Unit grid and image grid of $f(z)=1/z.$ Notice that $z=0$ gets sent to a 'point at infinity' that is imagined to surround the complex plane." data-fig-align="center">
+<div id="fig-Ch2_Fig_Image_Grid_2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Unit grid and image grid of $f(z)=1/z.$ Notice that $z=0$ gets sent to a 'point at infinity' that is imagined to surround the complex plane.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Ch2_Fig_Image_Grid_2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="02-Week2_files/figure-html/fig-Ch2_Fig_Image_Grid_2-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="Unit grid and image grid of $f(z)=1/z.$ Notice that $z=0$ gets sent to a 'point at infinity' that is imagined to surround the complex plane.">
@@ -780,6 +780,22 @@ Exercise 2.1
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 2.1">
+<button id="displayTextunnamed-chunk-17" onclick="javascript:toggle('unnamed-chunk-17');">
+Hide Solution 2.1
+</button>
+<div id="toggleTextunnamed-chunk-17" style="display: block">
+<div class="panel panel-default">
+<div id="tsk2.1" class="panel-heading panel-heading1">
+Solution 2.1
+</div>
+<div class="panel-body">
+<p>If <span class="math inline">\(w\neq-1,\)</span> the equation <span class="math inline">\(w=\frac{1+z}{1-z}\)</span> can be rearranged as <span class="math display">\[z=\frac{w-1}{w+1}.\]</span></p>
+<p>Hence <span class="math inline">\(\C\setminus\{-1\}\)</span> is contained in the image of <span class="math inline">\(f.\)</span> Also, <span class="math inline">\(-1\)</span> is not in the image of <span class="math inline">\(f\)</span> since <span class="math inline">\(-1=\frac{1+z}{1-z}\)</span> would imply <span class="math inline">\(z-1=1+z,\)</span> so <span class="math inline">\(-1=1,\)</span> which is impossible.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 2.2">
 <div class="panel panel-default">
 <div id="sol2.2" class="panel-heading">
@@ -796,6 +812,67 @@ Exercise 2.2
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 2.2">
+<button id="displayTextunnamed-chunk-19" onclick="javascript:toggle('unnamed-chunk-19');">
+Hide Solution 2.2
+</button>
+<div id="toggleTextunnamed-chunk-19" style="display: block">
+<div class="panel panel-default">
+<div id="tsk2.2" class="panel-heading panel-heading1">
+Solution 2.2
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>is a straight line from the origin to <span class="math inline">\(1+i.\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-Week2_files/figure-html/unnamed-chunk-56-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>Thinking in polar coordinates, this the upper semicircle from <span class="math inline">\(+1\)</span> to <span class="math inline">\(-1.\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-Week2_files/figure-html/unnamed-chunk-57-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>We have <span class="math inline">\(z(t)=\cos(-t)+i\sin(-t)=\cos(s)+i\sin(s)\)</span> where <span class="math inline">\(s=-t\in[-\pi/2,0].\)</span> This is the quarter circle from <span class="math inline">\(+1\)</span> to <span class="math inline">\(-i.\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-Week2_files/figure-html/unnamed-chunk-58-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>By plotting the points for <span class="math inline">\(t=0,\pm1\)</span> and <span class="math inline">\(t\to\pm\iy,\)</span> we suspect that <span class="math inline">\(z(t)\)</span> lies entirely on the circle centered at <span class="math inline">\(1/2.\)</span> We verify this as follows. <span class="math display">\[\begin{align*}
+\left|z(t)-\frac12\right|&amp;=\left|\frac{1-it}{t^2+1}-\frac{1+t^2}{2+2t^2}\right|
+=\left|\frac{1+(it)^2-2it}{2+2t^2}\right|\\
+&amp;=\left|\frac{(1+it)^2}{2+2t^2}\right|
+=\frac{|1+it|^2}{|2+2t^2|}=\frac{1+t^2}{2+2t^2}=\frac12.
+\end{align*}\]</span> We know that <span class="math inline">\(z(0)=1,\)</span> <span class="math inline">\(\lim_{t\to\pm\iy} z(t)=0,\)</span> <span class="math inline">\(z(\pm1)=\frac{1\mp i}{2}\)</span> and that the image of <span class="math inline">\(z\)</span> is a connected subset. Moreover, <span class="math inline">\(z(t)\neq0\)</span> for all <span class="math inline">\(t.\)</span> It follows that the image of <span class="math inline">\(z(t)\)</span> is a circle of radius <span class="math inline">\(1/2\)</span> centered at <span class="math inline">\(1/2\)</span> with the origin removed. Note, however, that this parameterization of the circle has an unusual speed.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-Week2_files/figure-html/unnamed-chunk-59-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 2.3">
 <div class="panel panel-default">
 <div id="sol2.3" class="panel-heading">
@@ -806,6 +883,21 @@ Exercise 2.3
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 2.3" style="block">
+<button id="displayTextunnamed-chunk-21" onclick="javascript:toggle('unnamed-chunk-21');">
+Hide Solution 2.3
+</button>
+<div id="toggleTextunnamed-chunk-21" style="display: block">
+<div class="panel panel-default">
+<div id="tsk2.3" class="panel-heading panel-heading1">
+Solution 2.3
+</div>
+<div class="panel-body">
+<p>Recall that the principal branch is defined by <span class="math inline">\(\log(z)=\log(r)+i\th\)</span> if <span class="math inline">\(z=re^{i\th},\)</span> where <span class="math inline">\(r&gt;0,\)</span> <span class="math inline">\(\th\in(-\pi,\pi).\)</span> We obtain the values <span class="math display">\[\quad\log(2)+\frac{i\pi}{2},\quad\log(\sqrt{2})+\frac{i\pi}{4},\quad \log(3)-\frac{i\pi}{2}, \log(5).\]</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 2.4">
 <div class="panel panel-default">
 <div id="sol2.4" class="panel-heading">
@@ -813,6 +905,23 @@ Exercise 2.4
 </div>
 <div class="panel-body">
 <p>Describe the following complex functions geometrically. <span class="math display">\[f(z)=3z,  f(z)=iz,  f(z)=\frac{(1+i)}{\sqrt{2}}z\]</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.4">
+<button id="displayTextunnamed-chunk-23" onclick="javascript:toggle('unnamed-chunk-23');">
+Hide Solution 2.4
+</button>
+<div id="toggleTextunnamed-chunk-23" style="display: block">
+<div class="panel panel-default">
+<div id="tsk2.4" class="panel-heading panel-heading1">
+Solution 2.4
+</div>
+<div class="panel-body">
+<p><span class="math inline">\(f(z)=3z\)</span> scales every complex number (though of as a vector in <span class="math inline">\(\R^2\)</span>) by the factor <span class="math inline">\(3.\)</span></p>
+<p><span class="math inline">\(f(z)=iz\)</span> rotates counterclockwise by 90 degrees.</p>
+<p>As <span class="math inline">\(\frac{1+i}{\sqrt{2}}=e^{i\pi/4}\)</span>, the map <span class="math inline">\(f(z)=\frac{(1+i)}{\sqrt{2}}z\)</span> is a counterclockwise rotation by 45 degrees.</p>
+</div>
 </div>
 </div>
 </div>
@@ -827,6 +936,24 @@ Exercise 2.5
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 2.5">
+<button id="displayTextunnamed-chunk-25" onclick="javascript:toggle('unnamed-chunk-25');">
+Hide Solution 2.5
+</button>
+<div id="toggleTextunnamed-chunk-25" style="display: block">
+<div class="panel panel-default">
+<div id="tsk2.5" class="panel-heading panel-heading1">
+Solution 2.5
+</div>
+<div class="panel-body">
+<p>For <span class="math inline">\(f(z)=1/z,\)</span> <span class="math inline">\(D=\C\setminus\{0\}.\)</span></p>
+<p>For <span class="math inline">\(f(z)=\frac{1+z}{z-1},\)</span> <span class="math inline">\(D=\C\setminus\{1\}.\)</span></p>
+<p>For <span class="math inline">\(f(z)=\frac{z^2-4}{z^2+2z},\)</span> it seems at first that both <span class="math inline">\(z=0,-2\)</span> are problematic, but we can rewrite <span class="math inline">\(\frac{z^2-4}{z^2+2z}=\frac{z-2}{z}\)</span> since <span class="math inline">\(z^2-4=(z-2)(z+2).\)</span> We can therefore extend the definition of <span class="math inline">\(f\)</span> to the domain <span class="math inline">\(D=\C\setminus\{0\}.\)</span></p>
+<p>For <span class="math inline">\(f(z)=\frac{1}{\exp(z)},\)</span> <span class="math inline">\(D=\C\)</span> as <span class="math inline">\(\exp(z)\neq0\)</span> for all <span class="math inline">\(z.\)</span> This last fact holds since <span class="math inline">\(|\exp(z)|=e^x\neq0\)</span> for all <span class="math inline">\(z=x+iy.\)</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 2.6">
 <div class="panel panel-default">
 <div id="sol2.6" class="panel-heading">
@@ -834,6 +961,22 @@ Exercise 2.6
 </div>
 <div class="panel-body">
 <p>Determine the domain of definition for <span class="math inline">\(f(z)=\frac{1}{\sin(z)}.\)</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.6">
+<button id="displayTextunnamed-chunk-27" onclick="javascript:toggle('unnamed-chunk-27');">
+Hide Solution 2.6
+</button>
+<div id="toggleTextunnamed-chunk-27" style="display: block">
+<div class="panel panel-default">
+<div id="tsk2.6" class="panel-heading panel-heading1">
+Solution 2.6
+</div>
+<div class="panel-body">
+<p>We need to find the points at which <span class="math inline">\(\sin(z) = 0\)</span>. Using the equality <span class="math display">\[\sin(z)= \frac{e^{iz} - e^{-iz}}{2i},\]</span> we need to find the points <span class="math inline">\(z \in \C\)</span> where <span class="math inline">\(e^{iz} = e^{-iz}\)</span>, equivalently, where <span class="math inline">\(e^{2iz} = 1\)</span>. Writing <span class="math inline">\(z = x+iy\)</span>, we find that <span class="math inline">\(y = 0\)</span>, since <span class="math display">\[|e^{2iz}| = e^{-2y} = 1\]</span> and <span class="math inline">\(x = k\pi\)</span> since <span class="math inline">\(2x = 0 + 2k\pi\)</span>, <span class="math inline">\(k \in \Z\)</span>.</p>
+<p>The domain of <span class="math inline">\(1/\sin(z)\)</span> is therefore <span class="math inline">\(D = \C \setminus\{k\pi: i \in \Z\}\)</span>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -848,6 +991,24 @@ Exercise 2.7
 <li><span class="math inline">\(e^z=-1\)</span>,</li>
 <li><span class="math inline">\(\sin(z)=-i\)</span></li>
 </ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.7">
+<button id="displayTextunnamed-chunk-29" onclick="javascript:toggle('unnamed-chunk-29');">
+Hide Solution 2.7
+</button>
+<div id="toggleTextunnamed-chunk-29" style="display: block">
+<div class="panel panel-default">
+<div id="tsk2.7" class="panel-heading panel-heading1">
+Solution 2.7
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>As <span class="math inline">\(-1=e^{\pi i},\)</span> the equation <span class="math inline">\(e^z=-1\)</span> implies <span class="math inline">\(e^{z-\pi i}=1,\)</span> hence the set of solutions is <span class="math inline">\(\pi i+2\pi i\Z.\)</span></p></li>
+<li><p>Recall that <span class="math inline">\(\sin(z)=\frac{1}{2 i}(e^{iz}-e^{-iz}).\)</span> Writing <span class="math inline">\(q=e^{iz},\)</span> the equation <span class="math inline">\(\sin(z)=-i\)</span> becomes <span class="math inline">\(q-q^{-1}=2.\)</span> This leads to the quadratic equation <span class="math inline">\(q^2-2q-1\)</span> which has the roots <span class="math inline">\(q_\pm=1\pm\sqrt{2}.\)</span> Hence <span class="math inline">\(\sin(z)=-i\iff\)</span> <span class="math inline">\(e^{iz}=q_+\)</span> or <span class="math inline">\(e^{iz}=q_-.\)</span> The first equation is equivalent to <span class="math inline">\(iz\in\log(1+\sqrt{2})+2\pi i\Z\)</span> and by writing <span class="math inline">\(q_-=(\sqrt{2}-1)e^{\pi i}\)</span> we find that the second equation is equivalent to <span class="math inline">\(iz\in\log(\sqrt{2}-1)+\pi i+2\pi i\Z.\)</span> Summing up, the set of solutions is <span class="math display">\[\{-i\log(1+\sqrt{2})+2\pi k\mid k\in\Z\}\cup\{-i\log(\sqrt{2}-1)+\pi+2\pi k\mid k\in\Z\}.\]</span></p></li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -868,6 +1029,23 @@ c&amp;d
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 2.8">
+<button id="displayTextunnamed-chunk-31" onclick="javascript:toggle('unnamed-chunk-31');">
+Hide Solution 2.8
+</button>
+<div id="toggleTextunnamed-chunk-31" style="display: block">
+<div class="panel panel-default">
+<div id="tsk2.8" class="panel-heading panel-heading1">
+Solution 2.8
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(f(z) = \frac{az + b}{cz + d}\)</span> and <span class="math inline">\(g(z) =  \frac{\alpha z + \beta}{\gamma + \delta}\)</span> be Möbius transformations. Then, <span class="math display">\[(f \circ g)(z) =\frac{ag(z) + b}{c g(z) + d}\]</span>. Using the definition of <span class="math inline">\(g(z)\)</span>, this expands to <span class="math display">\[\frac{a\alpha z + a \beta + b \gamma z + b \delta}{\gamma z + \delta} \cdot \frac{\gamma z + \delta}{c \alpha z + c \beta + d\gamma z + d \delta}.\]</span> We consequently have, <span class="math display">\[f(g(z) = \frac{(a \alpha + b \gamma)z + (a \beta + b \delta)}{(c\alpha + d \gamma) z + (c \beta + d\delta)}.\]</span></p>
+<p>One can verify explicitly that <span class="math inline">\(((a \alpha + b \gamma)(c \beta + d\delta)) -((a \beta + b \delta)(c\alpha + d \delta)) \ne 0\)</span>, however, this is neatly tackled by the second part of the question, since the product of two invertible matrices is again an invertible matrix.</p>
+<p>Notice that, <span class="math display">\[AA' = \begin{pmatrix} a\alpha + b \gamma &amp; a \beta + b \delta \\ c \alpha + d \gamma &amp; c \beta + d \delta \end{pmatrix}\]</span> is precisley the matrix associated to <span class="math inline">\(f \circ g\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 2.9">
 <div class="panel panel-default">
 <div id="sol2.9" class="panel-heading">
@@ -875,6 +1053,29 @@ Exercise 2.9
 </div>
 <div class="panel-body">
 <p>Draw the image grid for <span class="math inline">\(\exp\colon\C\to\C^\t.\)</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 2.9">
+<button id="displayTextunnamed-chunk-33" onclick="javascript:toggle('unnamed-chunk-33');">
+Hide Solution 2.9
+</button>
+<div id="toggleTextunnamed-chunk-33" style="display: block">
+<div class="panel panel-default">
+<div id="tsk2.9" class="panel-heading panel-heading1">
+Solution 2.9
+</div>
+<div class="panel-body">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-Week2_files/figure-html/unnamed-chunk-92-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
