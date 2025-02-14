@@ -596,7 +596,7 @@ Figure&nbsp;7.1: Augustin Louis, Baron Cauchy. Lithograph by J. Boilly, 1821. <a
 <p>Pick a path homotopy <span class="math inline">\(\Ga\colon[0,1]\t[a,b]\to U.\)</span> By reparameterizing we may assume <span class="math inline">\([a,b]=[0,1].\)</span> Write <span class="math inline">\(R^{(0)}=[0,1]\t[0,1]\)</span> for the domain of <span class="math inline">\(\Ga\)</span> and let <span class="math inline">\(\6 R^{(0)}\)</span> be its piecewise linear boundary path, with the obvious counterclockwise parameterization (see <a href="#fig-Ch7_Fig_Bdry_Path" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-Ch7_Fig_Bdry_Path" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Path homotopy when $\ga_0,$ $\ga_1$ are loops.">
+<div id="fig-Ch7_Fig_Bdry_Path" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Path homotopy when $\ga_0,$ $\ga_1$ are loops." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Ch7_Fig_Bdry_Path-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-Week7_files/figure-html/fig-Ch7_Fig_Bdry_Path-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="Path homotopy when $\ga_0,$ $\ga_1$ are loops.">
@@ -612,7 +612,7 @@ Figure&nbsp;7.2: Path homotopy when <span class="math inline">\(\ga_0,\)</span> 
 <p>Subdivide <span class="math inline">\(R^{(0)}\)</span> into four congruent rectangles <span class="math inline">\(R^{(0)}_i\)</span> as in <a href="#fig-Ch7_Fig_SubDiv1" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>. Using the fact that the path integrals in opposite directions cancel, we find <span class="math display">\[\left|\int_{\Ga(\6 R^{(0)})} f(z)dz\right| = \left|\sum_{i=1}^4 \int_{\Ga(\6 R^{(0)}_i)} f(z)dz\right|\leqslant \sum_{i=1}^4 \left|\int_{\Ga(\6 R^{(0)}_i)} f(z)dz\right|.\]</span></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-Ch7_Fig_SubDiv1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Subdivision and cancellation of opposite paths">
+<div id="fig-Ch7_Fig_SubDiv1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Subdivision and cancellation of opposite paths" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Ch7_Fig_SubDiv1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-Week7_files/figure-html/fig-Ch7_Fig_SubDiv1-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Subdivision and cancellation of opposite paths">
@@ -628,7 +628,7 @@ Figure&nbsp;7.3: Subdivision and cancellation of opposite paths
 <p>Now repeat this process with <span class="math inline">\(R^{(1)}\)</span> to obtain <span class="math inline">\(R^{(2)}\)</span> and so forth. This yields a sequence of rectangles <span class="math inline">\(R^{(n)}\)</span> as in <a href="#fig-Ch7_Conv_Rectangles" class="quarto-xref">Figure&nbsp;<span>7.4</span></a> with sides of length <span class="math inline">\(2^{-n}\)</span> and <span id="eq-Ch7_Cauchy_Thm_1"><span class="math display">\[\left|\int_{\Ga(\6 R^{(0)})} f(z)dz\right|\leqslant4^n\left|\int_{\Ga(\6 R^{(n)})} f(z)dz\right|. \tag{7.2}\]</span></span></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-Ch7_Conv_Rectangles" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Convergent sequence of rectangles $\bigcap R^{(n)}={(s_0,t_0)}$">
+<div id="fig-Ch7_Conv_Rectangles" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Convergent sequence of rectangles $\bigcap R^{(n)}={(s_0,t_0)}$" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Ch7_Conv_Rectangles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-Week7_files/figure-html/fig-Ch7_Conv_Rectangles-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Convergent sequence of rectangles $\bigcap R^{(n)}={(s_0,t_0)}$">
@@ -661,7 +661,7 @@ Figure&nbsp;7.4: Convergent sequence of rectangles <span class="math inline">\(\
 <p>Let <span class="math inline">\(\Ga\)</span> be the homotopy between <span class="math inline">\(\ga_0\)</span> and <span class="math inline">\(\ga_1.\)</span> Let <span class="math inline">\(\eta(s)=\Ga_s(0).\)</span> <a href="#fig-Ch7_Path_Homotopy_Star" class="quarto-xref">Figure&nbsp;<span>7.5</span></a> describes the construction of a path homotopy between <span class="math inline">\(\eta\ast\ga_0\ast(-\eta)\)</span> and <span class="math inline">\(\ga_1.\)</span></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-Ch7_Path_Homotopy_Star" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Construction of path homotopy">
+<div id="fig-Ch7_Path_Homotopy_Star" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Construction of path homotopy" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Ch7_Path_Homotopy_Star-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="07-Week7_files/figure-html/fig-Ch7_Path_Homotopy_Star-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="Construction of path homotopy">
