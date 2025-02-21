@@ -554,7 +554,7 @@ window.Quarto = {
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-Ch4_Fig_Open_Disc" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The gray open disc is an open subset of $\C.$">
+<div id="fig-Ch4_Fig_Open_Disc" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The gray open disc is an open subset of $\C.$" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Ch4_Fig_Open_Disc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-Week3_files/figure-html/fig-Ch4_Fig_Open_Disc-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="The gray open disc is an open subset of $\C.$">
@@ -604,7 +604,7 @@ Figure&nbsp;3.1: The gray open disc is an open subset of <span class="math inlin
 <div class="cell" data-gaplength="20">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-Ch4_Fig_Convergence" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The $\varepsilon$-$\de$-definition of $\lim_{z\to\ze}f(z)=w.$">
+<div id="fig-Ch4_Fig_Convergence" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The $\varepsilon$-$\de$-definition of $\lim_{z\to\ze}f(z)=w.$" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Ch4_Fig_Convergence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-Week3_files/figure-html/fig-Ch4_Fig_Convergence-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="The $\varepsilon$-$\de$-definition of $\lim_{z\to\ze}f(z)=w.$">
@@ -615,6 +615,20 @@ Figure&nbsp;3.2: The <span class="math inline">\(\varepsilon\)</span>-<span clas
 </figure>
 </div>
 </div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Convention
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a some ambiguity in writing an expression of the form <span class="math inline">\(\lim_{n \to \infty} a_n = f(n)\)</span> as this could be interpreted either as a limit as a complex number <span class="math inline">\(z\)</span> tends to inifinity or as a limit over a sequence <span class="math inline">\(a_n\)</span>.</p>
+<p>In order to resolve this, unless explicitly stated otherwise, in this context, <span class="math inline">\(n\)</span> shall refer to a natural number and a limit <span class="math inline">\(\lim_{n \to \infty}\)</span> should be interpreted as a limit over a sequence indexed by the natural numbers.</p>
 </div>
 </div>
 <section id="questions-for-further-discussion" class="level2 unnumbered">
@@ -635,6 +649,42 @@ Exercise 3.1
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 3.1">
+<button id="displayTextunnamed-chunk-9" onclick="javascript:toggle('unnamed-chunk-9');">
+Hide Solution 3.1
+</button>
+<div id="toggleTextunnamed-chunk-9" style="display: block">
+<div class="panel panel-default">
+<div id="tsk3.1" class="panel-heading panel-heading1">
+Solution 3.1
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(\sum_{k=0}^{\infty} a_n\)</span> be a real series.</p>
+<dl>
+<dt>Ratio test</dt>
+<dd>
+<p>Let <span class="math inline">\(L =  \lim_{n\to \infty} \left | \frac{a_{n+1}}{a_n}\right |\)</span></p>
+<ul>
+<li>If <span class="math inline">\(L &gt;1\)</span>, the the series is divergent;</li>
+<li>If <span class="math inline">\(L &lt;1\)</span> then the series is (absolutely) convergent;</li>
+<li>If <span class="math inline">\(L=1\)</span> or does not exist, then the test is inconclusive.</li>
+</ul>
+</dd>
+<dt>Root test</dt>
+<dd>
+<p>Let <span class="math inline">\(C = \limsup_{n \to \infty} \sqrt[n]{|a_n|}\)</span></p>
+<ul>
+<li>if <span class="math inline">\(C&gt; 1\)</span>, then the series is divergent;</li>
+<li>if <span class="math inline">\(C&lt;1\)</span>, then the series is (absolutely) convergent;</li>
+<li>if <span class="math inline">\(C=1\)</span> and the limit approaches strictly from above then the series diverges;</li>
+<li>otherwise the test is inconclusive.</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 3.2">
 <div class="panel panel-default">
 <div id="sol3.2" class="panel-heading">
@@ -650,6 +700,27 @@ Exercise 3.2
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 3.2">
+<button id="displayTextunnamed-chunk-11" onclick="javascript:toggle('unnamed-chunk-11');">
+Hide Solution 3.2
+</button>
+<div id="toggleTextunnamed-chunk-11" style="display: block">
+<div class="panel panel-default">
+<div id="tsk3.2" class="panel-heading panel-heading1">
+Solution 3.2
+</div>
+<div class="panel-body">
+<p>The sequence <span class="math inline">\(n^{1/n}\)</span> is convergent with limit equal to <span class="math inline">\(1\)</span> and so the sequence <span class="math inline">\(n^{1/n}|z|\)</span> is convergent for all complex numbers <span class="math inline">\(z\)</span> with limit equal to <span class="math inline">\(z\)</span>.</p>
+<p>If <span class="math inline">\(|z|&gt;1,\)</span> then <span class="math inline">\(z^n\)</span> is unbounded, hence does not converge. If <span class="math inline">\(|z|&lt;1,\)</span> then <span class="math inline">\(\lim_{n\to\iy} z^n=0.\)</span></p>
+<p>Suppose <span class="math inline">\(|z|=1\)</span> and that <span class="math inline">\(\lim_{n\to\iy} z^n\)</span> exists. As <span class="math inline">\(z^n\)</span> is a Cauchy sequence, we have in particular that <span class="math inline">\(|z-1|=|z|^{n}|z-1| = |z^{n+1}-z^n|\to0\)</span> for <span class="math inline">\(n\to\iy.\)</span> Hence we must have <span class="math inline">\(z=1\)</span> and in this case the sequence indeed converges.</p>
+<p>As <span class="math inline">\(\frac{z^{n+1}/(n+1)}{z^n/n}=\frac{n}{n+1}z\to z\)</span> for <span class="math inline">\(n\to\iy,\)</span> the series <span class="math inline">\(\sum_{n=0}^\iy\frac{z^n}{n}\)</span> converges for all <span class="math inline">\(|z|&lt;1\)</span> by the ratio test. Hence <span class="math inline">\(\lim\frac{z^n}{n}=0\)</span> for all <span class="math inline">\(|z|&lt;1.\)</span> Alternatively, apply by l’Hôpital’s rule to the real limit <span class="math inline">\(\frac{x^n}{n},\)</span> where <span class="math inline">\(x=|z|.\)</span> If <span class="math inline">\(|z|=1,\)</span> then <span class="math inline">\(|z^n/n|=1/n\to0\)</span> as <span class="math inline">\(n\to\iy,\)</span> so <span class="math inline">\(\lim\frac{z^n}{n}=0\)</span> is this case also. If <span class="math inline">\(|z|&gt;1,\)</span> then <span class="math inline">\(\left|\frac{z^n}{n}\right|=|z|^n/n\)</span> is unbounded (for example, by l’Hôpital’s rule) and hence the sequence is divergent.</p>
+<p>As <span class="math inline">\(\frac{z^{n+1}/(n+1)!}{z^n/n!}=\frac{z}{n+1}\to0\)</span> for <span class="math inline">\(n\to\iy\)</span> the series <span class="math inline">\(\sum_{n=0}^\iy\frac{z^n}{n!}\)</span> converges for all <span class="math inline">\(z\)</span> by the ratio test. Hence <span class="math inline">\(\lim_{n\to\iy}\frac{z^n}{n!}=0\)</span> for all <span class="math inline">\(z\in\C.\)</span></p>
+<p>Notice that <span class="math inline">\(n^n &gt; n!\)</span> and so <span class="math inline">\(|z^{n}|/n! &gt; |z^{n}|/n^{n}\)</span> for all <span class="math inline">\(n\)</span>. Since <span class="math inline">\(z^{n}/n!\)</span> converges to <span class="math inline">\(0\)</span>, it follows that <span class="math inline">\(z^{n}/n^{n}\)</span> converges to <span class="math inline">\(0\)</span> for all <span class="math inline">\(z\)</span> as well.</p>
+<p>The final limit is divergent as the sequence <span class="math inline">\(n!|z|\)</span> is unbounded.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 3.3">
 <div class="panel panel-default">
 <div id="sol3.3" class="panel-heading">
@@ -657,6 +728,21 @@ Exercise 3.3
 </div>
 <div class="panel-body">
 <p>Show that every convergent sequence <span class="math inline">\((z_n)_{n\in\N}\)</span> of complex numbers is bounded.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 3.3">
+<button id="displayTextunnamed-chunk-13" onclick="javascript:toggle('unnamed-chunk-13');">
+Hide Solution 3.3
+</button>
+<div id="toggleTextunnamed-chunk-13" style="display: block">
+<div class="panel panel-default">
+<div id="tsk3.3" class="panel-heading panel-heading1">
+Solution 3.3
+</div>
+<div class="panel-body">
+<p>Take <span class="math inline">\(\varepsilon=1.\)</span> By assumption, there exists <span class="math inline">\(n_0\in\N\)</span> such that for all <span class="math inline">\(n\geqslant n_0\)</span> we have <span class="math inline">\(|z-z_n|&lt;\varepsilon=1.\)</span> Apply the reverse triangle inequality from Sheet 1 to obtain from this <span class="math display">\[|z_n|-|z|\leqslant\bigl|z_n-z\bigr|&lt;1.\]</span> Hence <span class="math inline">\(|z_n|\leqslant C=\max\{|z|+1,|z_0|,\ldots,|z_{n_0}|\}.\)</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -670,6 +756,21 @@ Exercise 3.4
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 3.4">
+<button id="displayTextunnamed-chunk-15" onclick="javascript:toggle('unnamed-chunk-15');">
+Hide Solution 3.4
+</button>
+<div id="toggleTextunnamed-chunk-15" style="display: block">
+<div class="panel panel-default">
+<div id="tsk3.4" class="panel-heading panel-heading1">
+Solution 3.4
+</div>
+<div class="panel-body">
+<p>By definition, the sequence of partial sums <span class="math inline">\(S_n=\sum_{k=0}^nz_k\)</span> convergent, hence a Cauchy sequence. In particular, taking <span class="math inline">\(m=n+1\)</span> in the definition of a Cauchy sequence, we have <span class="math inline">\(|z_n|=|S_{n+1}-S_n|\to0\)</span> as <span class="math inline">\(n\to\iy.\)</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 3.5">
 <div class="panel panel-default">
 <div id="sol3.5" class="panel-heading">
@@ -680,6 +781,22 @@ Exercise 3.5
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 3.5">
+<button id="displayTextunnamed-chunk-17" onclick="javascript:toggle('unnamed-chunk-17');">
+Hide Solution 3.5
+</button>
+<div id="toggleTextunnamed-chunk-17" style="display: block">
+<div class="panel panel-default">
+<div id="tsk3.5" class="panel-heading panel-heading1">
+Solution 3.5
+</div>
+<div class="panel-body">
+<p>Suppose the series <span class="math inline">\(\sum_{k=0}^\iy kz^k\)</span> converges for <span class="math inline">\(z.\)</span> Then by (a) and (b), <span class="math inline">\(k|z|^k\leqslant C\)</span> is bounded. Recall that <span class="math inline">\(\lim_{k\to\iy}\sqrt[k]{x}=1\)</span> for all <span class="math inline">\(x&gt;0\)</span> and that <span class="math inline">\(\lim_{k\to\iy}\sqrt[k]{k}=1.\)</span> Hence <span class="math display">\[|z|\leqslant\frac{\sqrt[k]{C}}{\sqrt[k]{k}}\longra 1\quad\text{as $k\to\iy.$}\]</span> It follows that the series can only possibly converge for <span class="math inline">\(|z|\leqslant1.\)</span> We can alternatively use the ratio test to see that convergence fails for <span class="math inline">\(|z|&gt;1.\)</span> If <span class="math inline">\(|z|=1,\)</span> then <span class="math inline">\(kz^k\)</span> is not a null sequence (the modulus is always <span class="math inline">\(1\)</span>), hence the series does not converge by (b). If <span class="math inline">\(|z|&lt;1,\)</span> the series converges by the ratio test: <span class="math display">\[\left|\frac{(k+1)z^{k+1}}{kz^k}\right|=\left(1+\frac1k\right)|z|\longra |z|&lt;1,\quad\text{as $k\to\iy.$}\]</span></p>
+<p>For the next part, suppose that the series <span class="math inline">\(\sum_{k=0}^\iy(kz)^k\)</span> converges for <span class="math inline">\(z.\)</span> Then by (a) and (b), <span class="math inline">\(|kz|^k\leqslant C\)</span> is bounded. Increasing <span class="math inline">\(C,\)</span> we may suppose that <span class="math inline">\(C\geqslant1\)</span> and then <span class="math inline">\(\sqrt[k]{C}\leqslant C.\)</span> Now <span class="math display">\[|z|\leqslant\frac{\sqrt[k]{C}}{k}\longra 0\quad\text{as $k\to\iy.$}\]</span> This implies <span class="math inline">\(z=0\)</span> and the series indeed converges in this case.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 3.6">
 <div class="panel panel-default">
 <div id="sol3.6" class="panel-heading">
@@ -687,6 +804,22 @@ Exercise 3.6
 </div>
 <div class="panel-body">
 <p>Let <span class="math inline">\(f\colon\C\to\C\)</span> be a complex function. Show that <span class="math display">\[\lim_{z\to\iy}f(z)=w\iff\lim_{z\to0}f\left(\frac{1}{z}\right)=w.\]</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 3.6">
+<button id="displayTextunnamed-chunk-19" onclick="javascript:toggle('unnamed-chunk-19');">
+Hide Solution 3.6
+</button>
+<div id="toggleTextunnamed-chunk-19" style="display: block">
+<div class="panel panel-default">
+<div id="tsk3.6" class="panel-heading panel-heading1">
+Solution 3.6
+</div>
+<div class="panel-body">
+<p>The left hand side means that for all <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(M&gt;0\)</span> such that <span class="math inline">\(|f(z)-w|&lt;\varepsilon\)</span> for all <span class="math inline">\(+\iy&gt;|z|&gt;M.\)</span> The right hand side means that for all <span class="math inline">\(\varepsilon&gt;0\)</span> there exists <span class="math inline">\(\de&gt;0\)</span> such that <span class="math inline">\(|f(1/u)-w|&lt;\varepsilon\)</span> for all <span class="math inline">\(0&lt;|u|&lt;\de.\)</span></p>
+<p>Upon setting <span class="math inline">\(z=1/u\)</span> the inequalities <span class="math inline">\(+\iy&gt;|z|&gt;M\)</span> and <span class="math inline">\(0&lt;|u|&lt;\de\)</span> are equivalent for <span class="math inline">\(M=1/\de.\)</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -705,7 +838,7 @@ F(a,b,c)=
 <p>is a bijection between the Riemann sphere and the extended complex plane. Find a formula for the inverse function.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-Ch3_Fig_Stereo" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Stereographic projection from the north pole">
+<div id="fig-Ch3_Fig_Stereo" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Stereographic projection from the north pole" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Ch3_Fig_Stereo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="03-Week3_files/figure-html/fig-Ch3_Fig_Stereo-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="Stereographic projection from the north pole">
@@ -716,6 +849,21 @@ Figure&nbsp;3.3: Stereographic projection from the north pole
 </figure>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 3.7">
+<button id="displayTextunnamed-chunk-21" onclick="javascript:toggle('unnamed-chunk-21');">
+Hide Solution 3.7
+</button>
+<div id="toggleTextunnamed-chunk-21" style="display: block">
+<div class="panel panel-default">
+<div id="tsk3.7" class="panel-heading panel-heading1">
+Solution 3.7
+</div>
+<div class="panel-body">
+<p>We use the sketch to find a putative inverse <span class="math inline">\(G\colon\C\cup\{\iy\}\to\mathbb{S}.\)</span> The line from <span class="math inline">\((0,0,1)\)</span> to <span class="math inline">\(z=x+iy\in\C\)</span> is parameterized as <span class="math display">\[ \ell(t)=(1-t)(0,0,1)+t(x,y,0)=(tx,tx,1-t),\qquad t\in[0,1].\]</span> To find the intersection points with <span class="math inline">\(\mathbb{S},\)</span> we need to solve <span class="math display">\[1=(tx)^2+(ty)^2+(1-t)^2=t^2(|z|^2+1)-2t+1\]</span> for <span class="math inline">\(t.\)</span> The solutions to this quadratic equation are <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=\frac{2}{1+|z|^2}.\)</span> Hence <span class="math display">\[G(z)=\ell\left(\frac{2}{1+|z|^2}\right)=\left(\frac{2x}{1+|z|^2},\frac{2y}{1+|z|^2},\frac{|z|^2-1}{1+|z|^2}\right)\]</span> for all <span class="math inline">\(z\in\C.\)</span> Moreover, according to the sketch we should define <span class="math inline">\(G(\iy)=(0,0,1).\)</span> The verifications <span class="math inline">\(F\circ G=\id_{\mathbb{S}}\)</span> and <span class="math inline">\(G\circ F=\id_{\C\cup\{\iy\}}\)</span> are left to the reader.</p>
 </div>
 </div>
 </div>

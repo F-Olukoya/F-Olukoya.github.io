@@ -588,6 +588,26 @@ window.Quarto = {
 <p><span id="eq-Ch5_Series_Function"><span class="math display">\[D(P,z_0)\coloneqq z_0+D(P)\longra\C,  z\longmapsto P(z-z_0)=\sum_{n=0}^\iy a_n(z-z_0)^n \tag{5.5}\]</span></span></p>
 <p>which differs from <span class="math inline">\(P(z)\)</span> only by a translation.</p>
 </div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notational clash
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a small clash in notation. Recall that for a complex number <span class="math inline">\(z\)</span> and a positive real number <span class="math inline">\(r\)</span>, we write <span class="math inline">\(D_{r}(z)\)</span> for the open disc of radius <span class="math inline">\(r\)</span> about <span class="math inline">\(z\)</span>, while for a formal power series <span class="math inline">\(P\)</span>, <span class="math inline">\(D(P)\)</span> represents its domain of convergence.</p>
+<p>You can tell these apart by whether or not there is a subscript and also by referring to the context.</p>
+<p>So for instance in interpreting a chain of the form: <span class="math display">\[D_{\rho}(z_0) \subset D(P,z_0) \subset \ol{D}_{\rho}(z_0)\]</span></p>
+<ul>
+<li>the first term refers to the open disc of radius <span class="math inline">\(\rho\)</span> about the <span class="math inline">\(z_0\)</span>,</li>
+<li>the second is the domain of the power series <span class="math inline">\(P\)</span> with centre <span class="math inline">\(z_0\)</span>, and,</li>
+<li>the last is the closed disc of radius <span class="math inline">\(\rho\)</span> about <span class="math inline">\(z_0\)</span>.</li>
+</ul>
+</div>
+</div>
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.3</strong></span> &nbsp;</p>
 <div class="cell" data-gaplength="10">
@@ -657,7 +677,7 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>Example 5.6</strong></span> &nbsp;</p>
 <div class="cell" data-gaplength="20">
 <p>The <em>exponential series</em> <span class="math display">\[\exp(z)=\sum_{n=0}^\iy \frac{z^n}{n!}\]</span></p>
-<p>has radius of convergence <span class="math inline">\(+\iy,\)</span> since <span class="math inline">\(\frac{z^n}{n!}\)</span> is bounded (even tends to zero), as factorials grow faster than powers. Alternatively, for each <span class="math inline">\(z\in\C\)</span> we have absolute convergence by the ratio test <span class="math display">\[\left|\frac{z^{n+1}/(n+1)!}{z^n/n!}\right|=\frac{|z|}{n+1}\longra0 \text{as}  n\to\iy.\]</span></p>
+<p>has radius of convergence <span class="math inline">\(+\iy,\)</span> since <span class="math inline">\(\frac{z^n}{n!}\)</span> is bounded (even tends to zero), as factorials grow faster than powers. Alternatively, for each <span class="math inline">\(z\in\C\)</span> we have absolute convergence by the ratio test <span class="math display">\[\left|\frac{z^{n+1}/(n+1)!}{z^n/n!}\right|=\frac{|z|}{n+1}\longra0 \text{ as }  n\to\iy.\]</span></p>
 <p>Therefore the power series defines a complex function <span class="math inline">\(\exp\colon\C\to\C.\)</span> Mathematically, this is a good definition for the exponential function. Using <a href="02-Week2.html#eq-Ch2_Eqn_Cosine_Sine" class="quarto-xref">Equation&nbsp;<span>2.3</span></a> we obtain from this the series expansions of the sine and the cosine:</p>
 <p><span class="math display">\[\cos(z)=\sum_{n=0}^\iy(-1)^n\frac{z^{2n}}{(2n)!},
 \qquad
