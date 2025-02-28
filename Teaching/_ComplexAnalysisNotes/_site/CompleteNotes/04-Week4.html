@@ -708,6 +708,27 @@ Exercise 4.1
 </div>
 </div>
 <div class="cell">
+<button id="displayTextunnamed-chunk-17" onclick="javascript:toggle('unnamed-chunk-17');">
+Hide Solution 4.1
+</button>
+<div id="toggleTextunnamed-chunk-17" style="display: block">
+<div class="panel panel-default">
+<div id="tsk4.1" class="panel-heading panel-heading1">
+Solution 4.1
+</div>
+<div class="panel-body">
+<p>By definition, <span class="math inline">\(f_1(z)=\frac{e^{iz}-e^{-iz}}{2i}.\)</span> Let <span class="math inline">\(z=x+iy.\)</span> Then <span class="math display">\[\begin{align*}
+u_1&amp;=\Re(f_1(z))=\frac{f_1(z)+\ol{f_1(z)}}{2}=\frac12\left(\frac{e^{iz}-e^{-iz}}{2i}-\frac{e^{-i\ol{z}}-e^{i\ol{z}}}{2i}\right)\\
+&amp;=\frac{e^{-y}e^{ix}-e^ye^{-ix}-e^{-y}e^{-ix}+e^ye^{ix}}{4i}\\
+&amp;=\frac{e^{ix}-e^{-ix}}{2i}\cdot\frac{e^y+e^{-y}}{2}=\sin(x)\cosh(y).
+\end{align*}\]</span> Similarly, <span class="math display">\[v_1=\cos(x)\sinh(y).\]</span> Next, <span class="math display">\[\begin{align*}
+f_2(z)=e^{z^2}=e^{x^2-y^2+2ixy}=\underset{=u_2}{\underbrace{\cos(x^2-y^2)}}+i\,\underset{=v_2}{\underbrace{\sin(2xy)}}.
+\end{align*}\]</span> The function <span class="math inline">\(f_3\)</span> is treated in the same way as <span class="math inline">\(f_1.\)</span> The result is <span class="math display">\[u_3=\cosh(x)\cos(y),\quad v_3=\sinh(x)\sin(y).\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
 <div class="panel panel-default">
 <div id="sol4.2" class="panel-heading">
 Exercise 4.2
@@ -721,12 +742,50 @@ f_4(z)&amp;=\frac{1}{2iz}, &amp;f_5(z)&amp;=|z|^2, &amp;f_6(z)&amp;=\frac{|z|^2}
 </div>
 </div>
 <div class="cell">
+<button id="displayTextunnamed-chunk-19" onclick="javascript:toggle('unnamed-chunk-19');">
+Hide Solution 4.2
+</button>
+<div id="toggleTextunnamed-chunk-19" style="display: block">
+<div class="panel panel-default">
+<div id="tsk4.2" class="panel-heading panel-heading1">
+Solution 4.2
+</div>
+<div class="panel-body">
+<p><span class="math inline">\(f_1, f_3\)</span> and <span class="math inline">\(f_6(z)=z\)</span> are complex differentiable at every <span class="math inline">\(z\in\C,\)</span> which implies real differentiability at these points.</p>
+<p><span class="math inline">\(f_4\)</span> is holomorphic on <span class="math inline">\(\C\setminus\{0\}.\)</span></p>
+<p><span class="math inline">\(f_2=u_2+iv_2\)</span> is not complex differentiable at any <span class="math inline">\(z\in\C\)</span> since the Cauchy–Riemann equations (<span class="math inline">\(\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\)</span> and <span class="math inline">\(\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}\)</span>) are violated at every <span class="math inline">\((x,y)\in\C.\)</span> Indeed, <span class="math inline">\(u_2=x,\)</span> <span class="math inline">\(v_2=-y\)</span> and <span class="math inline">\(\frac{\partial u_2}{\partial x}=1\neq -1=\frac{\partial v_2}{\partial y}.\)</span> Of course, <span class="math inline">\(f_2\)</span> is real differentiable on all of <span class="math inline">\(\R^2\)</span> since both component functions <span class="math inline">\(u_2(x,y)=x,\)</span> <span class="math inline">\(v_2(x,y)=-y\)</span> are evidently differentiable.</p>
+<p><span class="math inline">\(f_5=u_5+iv_5\)</span> is complex differentiable at the origin but not anywhere else. This follows by the Cauchy–Riemann equations, as <span class="math inline">\(u_5=x^2,\)</span> <span class="math inline">\(v_5=y^2\)</span> and</p>
+<p><span class="math display">\[\frac{\partial u_5}{\partial x}=2x,\quad
+\frac{\partial u_5}{\partial y}=0,\quad
+\frac{\partial v_5}{\partial x}=0,\quad
+\frac{\partial v_5}{\partial y}=2y.\]</span></p>
+<p><span class="math inline">\(f_5\)</span> is real differentiable on all of <span class="math inline">\(\R^2\)</span> since both component functions <span class="math inline">\(u_5(x,y)=x^2,\)</span> <span class="math inline">\(v_2(x,y)=y^2\)</span> are evidently differentiable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
 <div class="panel panel-default">
 <div id="sol4.3" class="panel-heading">
 Exercise 4.3
 </div>
 <div class="panel-body">
 <p>Let <span class="math inline">\(f\colon V\to W\)</span> be a bijection of open sets <span class="math inline">\(V, W\subset\C.\)</span> Assume that <span class="math inline">\(f\)</span> is complex differentiable at <span class="math inline">\(z_0\)</span> and that <span class="math inline">\(f^{-1}\)</span> is complex differentiable at <span class="math inline">\(w_0=f(z_0).\)</span> Show that <span class="math inline">\(f'(z_0)\neq0.\)</span> (The same result holds for real differentiable maps to show <span class="math inline">\(\det J_f(z_0)\neq0\)</span>.)</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<button id="displayTextunnamed-chunk-21" onclick="javascript:toggle('unnamed-chunk-21');">
+Hide Solution 4.3
+</button>
+<div id="toggleTextunnamed-chunk-21" style="display: block">
+<div class="panel panel-default">
+<div id="tsk4.3" class="panel-heading panel-heading1">
+Solution 4.3
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(g=f^{-1}\)</span> so that <span class="math inline">\(g(f(z))=z\)</span> for all <span class="math inline">\(z\in V.\)</span> By the chain rule, <span class="math inline">\(g\circ f\)</span> is complex differentiable at <span class="math inline">\(z_0\)</span> with derivative <span class="math display">\[g'(f(z_0))f'(z_0)=(gf)'(z_0)=1.\]</span> Hence <span class="math inline">\(f'(z_0)\neq0.\)</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -747,12 +806,70 @@ Exercise 4.4
 </div>
 </div>
 <div class="cell">
+<button id="displayTextunnamed-chunk-23" onclick="javascript:toggle('unnamed-chunk-23');">
+Hide Solution 4.4
+</button>
+<div id="toggleTextunnamed-chunk-23" style="display: block">
+<div class="panel panel-default">
+<div id="tsk4.4" class="panel-heading panel-heading1">
+Solution 4.4
+</div>
+<div class="panel-body">
+<p>Since <span class="math inline">\(f\)</span> is holomorphic, the Cauchy–Riemann equations <span class="math display">\[\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\qquad \frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}\tag{$\star$}\]</span> hold at every <span class="math inline">\(z\in U.\)</span> For a., compute</p>
+<p><span class="math display">\[\begin{align*}
+  |f'(z)|^2&amp;=\left| \frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x} \right|^2&amp;&amp;\text{by Prop.~4.5}\\
+  &amp;=\left| \frac{\partial u}{\partial x}\right|^2+\left| \frac{\partial v}{\partial x}\right|^2\\
+  &amp;=\left| \frac{\partial v}{\partial y}\right|^2+\left| \frac{-\partial u}{\partial y}\right|^2 &amp;&amp;\text{by ($\star$)}\\
+  &amp;=\left| \frac{\partial u}{\partial y}\right|^2+\left| \frac{\partial v}{\partial y}\right|^2.
+\end{align*}\]</span></p>
+<p>For b., we take the partial derivative <span class="math inline">\(\frac{\6}{\6 x}\)</span> of the first equation in (<span class="math inline">\(\star\)</span>) to get <span class="math display">\[\begin{align*}
+  \frac{\6^2 u}{\6 x^2}&amp;=\frac{\6^2 v}{\6 x\6 y}\\
+  &amp;=\frac{\6}{\6 y}\frac{\6 v}{\6 x}&amp;&amp;\text{symmetry of 2nd derivatives}\\
+  &amp;=-\frac{\6}{\6 y}\frac{\6u}{\6 y}&amp;&amp;\text{by second equation in ($\star$)}\\
+  &amp;=-\frac{\6^2 u}{\6 y^2}.
+\end{align*}\]</span> Similarly, take the partial derivative <span class="math inline">\(\frac{\6}{\6 x}\)</span> of the second equation in (<span class="math inline">\(\star\)</span>) to get <span class="math display">\[\frac{\6^2 v}{\6 x^2}=-\frac{\6^2 u}{\6 x\6 y}=-\frac{\6^2 u}{\6 y\6 x}=-\frac{\6^2 v}{\6 y^2}.\]</span></p>
+<p>Note that the symmetry of the 2<sup>nd</sup> derivatives is a consequence of continuity of the second order derivatives.</p>
+<p>For c., let <span class="math inline">\(f(z)=z^n.\)</span> Then <span class="math inline">\(u=\Re(z^n)=\frac{z^n+\ol{z}^n}{2}=r^n\cos(n\th)\)</span> solves Laplace’s equation by part (b). Also, <span class="math inline">\(r=|z|=1\)</span> implies <span class="math inline">\(u(x,y)=\cos(n\th),\)</span> as required.</p>
+<p>For d., No, the converse fails. Take for example <span class="math inline">\(f(z)=\ol{z}.\)</span> Then <span class="math inline">\(f=u+iv\)</span> <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> satisfy Laplace’s equation but <span class="math inline">\(f\)</span> is not holomorphic.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
 <div class="panel panel-default">
 <div id="sol4.5" class="panel-heading">
 Exercise 4.5
 </div>
 <div class="panel-body">
 <p>Find subdomains where <span class="math inline">\(\sin,\cos,\sinh,\cosh,\tan,\tanh\)</span> are injective. Compute the derivative of an inverse using the chain rule. Deduce an explicit formula for the derivative of an inverse.</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<button id="displayTextunnamed-chunk-25" onclick="javascript:toggle('unnamed-chunk-25');">
+Hide Solution 4.5
+</button>
+<div id="toggleTextunnamed-chunk-25" style="display: block">
+<div class="panel panel-default">
+<div id="tsk4.5" class="panel-heading panel-heading1">
+Solution 4.5
+</div>
+<div class="panel-body">
+<p><span class="math inline">\(\sin z = \sin w\)</span> implies <span class="math inline">\(e^{iz} - e^{-iz} = e^{iw} - e^{-iw} = a\)</span>.</p>
+<p>Set <span class="math inline">\(t = e^{iz}\)</span>, and <span class="math inline">\(s= e^{iw}\)</span> we find that <span class="math inline">\(t\)</span> and <span class="math inline">\(s\)</span> are roots of the polynomial: <span class="math display">\[x^2 - xa -1 = 0.\]</span> This polynomial has two roots, <span class="math inline">\(x = \{r, \frac{1}{r}\}\)</span>.</p>
+<p>We conclude that either <span class="math inline">\(s =t\)</span> or <span class="math inline">\(s t =1\)</span>.</p>
+<p>If <span class="math inline">\(s = t\)</span>, then <span class="math inline">\(e^{-y}e^{ix} = e^{-v}e^{iu}\)</span>. We conclude that <span class="math inline">\(y = v\)</span> and <span class="math inline">\(x-u = 2k\pi\)</span>.</p>
+<p>If <span class="math inline">\(st = 1\)</span> then, <span class="math inline">\(e^{-y}e^{ix} = e^{v}e^{-iu}\)</span>. We conclude that <span class="math inline">\(v = -y\)</span> and <span class="math inline">\(x + u = (2k+1)\pi\)</span>. Where in both cases <span class="math inline">\(k \in \Z\)</span>. In particular, <span class="math inline">\(\sin z\)</span> is injective on the domain <span class="math inline">\(\{x + iy : x \in (0, \pi) \}\)</span>.</p>
+<p>In a similar way <span class="math inline">\(\cos(z)\)</span> is also injective on the domain <span class="math inline">\(\{x + iy : x \in (0, \pi) \}\)</span></p>
+<p>We can then deduce that <span class="math inline">\(\sinh(z)\)</span> and <span class="math inline">\(\cosh(z)\)</span> are injective on the domain <span class="math inline">\(\{x + iy : y \in (0, \pi)\}\)</span>.</p>
+<p>For <span class="math inline">\(\tanh\)</span>: <span class="math inline">\(\tanh z = \tanh w\)</span> implies <span class="math inline">\(e^{2(z-w)} = 1\)</span>. Writing <span class="math inline">\(z = x + iy\)</span> and <span class="math inline">\(w = u+iv\)</span>, we have <span class="math inline">\(2(x-u) = 0\)</span> and <span class="math inline">\(2(y-v) = 0 + 2k \pi\)</span>. We conclude that <span class="math inline">\(\tanh\)</span> is injective on the interval <span class="math inline">\(\{x + iy: y \in (0, \pi)\}\backslash\{i (\pi/2 + k \pi): k \in \Z \}\)</span>.</p>
+<p>We can then deduce that <span class="math inline">\(\tan(z) = \tanh(iz)\)</span> is injective on <span class="math inline">\(\{x + iy: x \in (0, \pi)\}\backslash\{(\pi/2 + k \pi): k \in \Z \}\)</span>.</p>
+<p>Using the chain rule, and the identities <span class="math inline">\(\cos^2 + \sin^2 =1\)</span>, <span class="math inline">\(\cosh^2 - \sinh^2 = 1\)</span>, we have</p>
+<p><span class="math display">\[\arcsin'(z) = \frac{1}{\cos(\arcsin(z))} = \frac{1}{\sqrt{1 -z^2}}\]</span></p>
+<p><span class="math display">\[\arccos'(z) = \frac{-1}{\sin(\arccos(z))} = \frac{-1}{\sqrt{1 -z^2}}\]</span></p>
+<p><span class="math display">\[\arcsinh'(z) = \frac{1}{\cosh(\arcsinh(z))} = \frac{1}{\sqrt{1+ z^2}}\]</span></p>
+<p><span class="math display">\[\arccosh'(z) = \frac{1}{\sinh(\arccosh(z))} = \frac{1}{\sqrt{z^2-1}}\]</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -770,12 +887,43 @@ Exercise 4.6
 </div>
 </div>
 <div class="cell">
+<button id="displayTextunnamed-chunk-27" onclick="javascript:toggle('unnamed-chunk-27');">
+Hide Solution 4.6
+</button>
+<div id="toggleTextunnamed-chunk-27" style="display: block">
+<div class="panel panel-default">
+<div id="tsk4.6" class="panel-heading panel-heading1">
+Solution 4.6
+</div>
+<div class="panel-body">
+<p>Since we already know that the set of all functions <span class="math inline">\(U\to\C\)</span> is a ring, it suffices to show that <span class="math inline">\(\cO(U)\)</span> is a subring. As constant functions are entire, <span class="math inline">\(\pm1\in\cO(U).\)</span> If <span class="math inline">\(f,\)</span> <span class="math inline">\(g\)</span> are holomorphic <span class="math inline">\(U,\)</span> then by the lecture notes <span class="math inline">\(f+g\)</span> and <span class="math inline">\(fg\)</span> are holomorphic on <span class="math inline">\(U\)</span> as well. Finally, <span class="math inline">\(-f=-1\cdot f\)</span> is holomorphic on <span class="math inline">\(U.\)</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
 <div class="panel panel-default">
 <div id="sol4.7" class="panel-heading">
 Exercise 4.7
 </div>
 <div class="panel-body">
 <p>Let <span class="math inline">\(f\colon\C\to\C\)</span> be an entire function with image <span class="math inline">\(f(\C)\subset\R.\)</span> Prove that <span class="math inline">\(f\)</span> is constant.</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<button id="displayTextunnamed-chunk-29" onclick="javascript:toggle('unnamed-chunk-29');">
+Hide Solution 4.7
+</button>
+<div id="toggleTextunnamed-chunk-29" style="display: block">
+<div class="panel panel-default">
+<div id="tsk4.7" class="panel-heading panel-heading1">
+Solution 4.7
+</div>
+<div class="panel-body">
+<p>Writing <span class="math inline">\(f=u+iv,\)</span> we have have <span class="math inline">\(v=0.\)</span> Hence by the Cauchy–Riemann equations it follows that <span class="math inline">\(\6 u/\6x=0\)</span> and <span class="math inline">\(\6 u/\6y=0.\)</span> This implies that <span class="math inline">\(u\)</span> is constant: for every fixed <span class="math inline">\(y_0\in\R\)</span> the real-valued differentiable function <span class="math inline">\(\R\to\R,\)</span> <span class="math inline">\(x\mapsto u(x,y_0)\)</span> has an everywhere vanishing derivative and is therefore a constant <span class="math inline">\(u(x,y_0)=c(y_0),\)</span> <span class="math inline">\(\forall x\in\R,\)</span> with the constant <span class="math inline">\(c(y_0)\)</span> possibly depending on <span class="math inline">\(y_0\in\R.\)</span> For every fixed <span class="math inline">\(x_0\in\R\)</span> we similarly have that <span class="math inline">\(u(x_0,y)=d(x_0)\)</span> is a constant of <span class="math inline">\(y.\)</span> Fix <span class="math inline">\((x_0,y_0)\in\C.\)</span> Then <span class="math display">\[u(x,y)=d(x)=u(x,y_0)=c(y_0)=u(x_0,y_0)\]</span></p>
+<p>for all <span class="math inline">\((x,y)\in\C,\)</span> so <span class="math inline">\(u(x,y)\)</span> is constant.</p>
+</div>
 </div>
 </div>
 </div>
@@ -793,6 +941,25 @@ Exercise 4.8
 <li><p>Find all entire solutions <span class="math inline">\(f(z)\)</span> of <span class="math inline">\(f''(z)=f(z).\)</span></p>
 <p><em>Hint:</em> Consider <span class="math inline">\(g=f+f',\)</span> <span class="math inline">\(h=f-f'\)</span></p></li>
 </ol>
+</div>
+</div>
+</div>
+<div class="cell">
+<button id="displayTextunnamed-chunk-31" onclick="javascript:toggle('unnamed-chunk-31');">
+Hide Solution 4.8
+</button>
+<div id="toggleTextunnamed-chunk-31" style="display: block">
+<div class="panel panel-default">
+<div id="tsk4.8" class="panel-heading panel-heading1">
+Solution 4.8
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>Let <span class="math inline">\(f=u+iv\)</span> and fix <span class="math inline">\(z_0\in U.\)</span> We will prove that <span class="math inline">\(f(z)=f(z_0)\)</span> for all <span class="math inline">\(z\in U.\)</span> Pick a continuously differentiable map <span class="math inline">\(\ga\colon[0,1]\to U\)</span> with <span class="math inline">\(\ga(0)=z_0,\)</span> <span class="math inline">\(\ga(1)=z.\)</span> By Proposition 4.5 (the Cauchy–Riemann equations), <span class="math inline">\(u, v\)</span> are real differentiable on <span class="math inline">\(U\)</span> with vanishing derivatives. Hence <span class="math inline">\(u\circ\ga\)</span> and <span class="math inline">\(v\circ\ga\)</span> are real functions <span class="math inline">\([0,1]\to\R\)</span> with vanishing derivatives which we know are constant from calculus. Hence <span class="math display">\[f(z_0)=u(\ga(0))+iv(\ga(0))=u(\ga(1))+iv(\ga(1))=f(z).\]</span></p></li>
+<li><p>Let <span class="math inline">\(g(z)=f(z)e^{-Cz}.\)</span> Then <span class="math inline">\(g'(z)=f'(z)e^{-Cz}+f(z)(-Ce^{-Cz})=0.\)</span> Hence <span class="math inline">\(f(z)e^{-Cz}=g(z)=D\)</span> is constant.</p></li>
+<li><p>Since <span class="math inline">\(g'=g,\)</span> <span class="math inline">\(h'=-h\)</span> we know from (b) that <span class="math inline">\(g(z)=Ce^z,\)</span> <span class="math inline">\(h(z)=De^{-z}.\)</span> Hence <span class="math inline">\(f(z)=\frac12(g(z)+h(z))=\frac{Ce^z+De^{-z}}{2}\)</span> is the general solution. Taking <span class="math inline">\((C,D)\in\{(1,1),(1,-1)\}\)</span> gives <span class="math inline">\(\cosh(z),\)</span> <span class="math inline">\(\sinh(z)\)</span> and we could alternatively say that the general solution is <span class="math inline">\(A\cosh(z)+B\sinh(z).\)</span></p></li>
+</ol>
+</div>
 </div>
 </div>
 </div>
