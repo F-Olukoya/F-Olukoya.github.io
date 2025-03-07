@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,8 +59,8 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-abc9ccca9b21307a48545afe7a1f13d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -572,7 +572,7 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>Example 7.1</strong></span> &nbsp;</p>
 <div class="cell" data-gaplength="5">
 <p>A set <span class="math inline">\(D\)</span> is <strong>star-shaped</strong> if there exists a <strong>focal point</strong> <span class="math inline">\(z_0\in D\)</span> such that for each <span class="math inline">\(z\in D\)</span> the straight line segment <span class="math inline">\(tz+(1-t)z_0,\)</span> <span class="math inline">\(t\in[0,1],\)</span> is contained in <span class="math inline">\(D.\)</span> Disks, the complex plane, and rectangles are star-shaped. Every loop <span class="math inline">\(\ga\)</span> in a star-shaped domain is null-homotopic. If the focal point agrees with the base of the loop, the path homotopy is</p>
-<p><span id="eq-Ch7_Focal_Homotopy"><span class="math display">\[\Ga_s(t) = (1-t)\ga(t) + tz_0. \tag{7.1}\]</span></span></p>
+<p><span id="eq-Ch7_Focal_Homotopy"><span class="math display">\[\Ga_s(t) = (1-s)\ga(t) + sz_0. \tag{7.1}\]</span></span></p>
 <p>In general, the path homotopy is more complicated to write down. We omit it, since we will not need this fact below.</p>
 </div>
 </div>
@@ -641,13 +641,24 @@ Figure&nbsp;7.4: Convergent sequence of rectangles <span class="math inline">\(\
 </div>
 </div>
 <p>As the side lengths tend to zero, the midpoints <span class="math inline">\((s^{(n)},t^{(n)})\)</span> of the rectangles <span class="math inline">\(R^{(n)}\)</span> are a Cauchy sequence, so converge to some limit <span class="math inline">\((s_0,t_0).\)</span> Let <span class="math inline">\(z_0=\Ga_{s_0}(t_0).\)</span> Since <span class="math inline">\(f\)</span> is complex differentiable at <span class="math inline">\(z_0,\)</span> we may write <span id="eq-Ch7_Cauchy_Thm_2"><span class="math display">\[f(z)=f(z_0) + (z-z_0)f'(z_0) + (z-z_0)\rho(z),\qquad\lim_{z\to z_0}\rho(z)=0. \tag{7.3}\]</span></span> By <a href="06-Week6.html#exm-Ch6_Ex_az_b" class="quarto-xref">Example&nbsp;<span>6.4</span></a>,<span id="eq-Ch7_Cauchy_Thm_3"><span class="math display">\[\int_{\Ga(\6 R^{(n)})}\left(f(z_0) + (z-z_0)f'(z_0)\right)dz=0. \tag{7.4}\]</span></span></p>
-<p>As <span class="math inline">\(\Ga\)</span> is piecewise C<sup>1</sup>, its derivative is bounded in norm by some <span class="math inline">\(C&gt;0.\)</span> Let <span class="math inline">\(\ep&gt;0.\)</span> Pick <span class="math inline">\(n_0\in\N\)</span> such that for all <span class="math inline">\(n\geqslant n_0\)</span> and <span class="math inline">\(z\in R^{(n)}\)</span> we have <span class="math inline">\(|\rho(z)|&lt;\ep.\)</span> As the side lengths of <span class="math inline">\(R^{(n)}\)</span> are <span class="math inline">\(2^{-n}\)</span> and <span class="math inline">\(z_0\in R^{(n)},\)</span> we have <span class="math inline">\(|z-z_0|\leqslant\sqrt{2}2^{-n}\)</span> for all <span class="math inline">\(z\in\6 R^{(n)}.\)</span> Combining this with <a href="#eq-Ch7_Cauchy_Thm_2" class="quarto-xref">Equation&nbsp;<span>7.3</span></a> and <a href="#eq-Ch7_Cauchy_Thm_3" class="quarto-xref">Equation&nbsp;<span>7.4</span></a>, we can estimate</p>
+<p>As <span class="math inline">\(\Ga\)</span> is piecewise C<sup>1</sup>, its derivative is bounded in norm by some <span class="math inline">\(C&gt;0.\)</span></p>
+<p>We may also estimate <span class="math inline">\(\Gamma\)</span> in a neighbourhood of <span class="math inline">\((s_0, t_0)\)</span> as <span class="math display">\[\begin{eqnarray*}
+\Gamma(s,t) &amp;=&amp; \Gamma(s_0,t_0) + \left((s,t) - (s_0,t_0)\right)\Gamma'(s_0,t_0) + \left((s,t) - (s_0,t_0)\right)\phi(s,t), \\
+&amp;&amp; \lim_{(s,t)\to (s_0,t_0)}\phi(s,t) = 0.
+\end{eqnarray*}\]</span></p>
+<p>Let <span class="math inline">\(\ep&gt;0.\)</span> Pick <span class="math inline">\(n_0\in\N\)</span> such that for all <span class="math inline">\(n\geqslant n_0\)</span>, <span class="math inline">\(z\in \Ga(R^{(n)})\)</span>, <span class="math inline">\((s,t) \in R^{(n)}\)</span>, we have <span class="math inline">\(|\rho(z)|,|\phi(s,t)|&lt;\ep.\)</span> As the side lengths of <span class="math inline">\(R^{(n)}\)</span> are <span class="math inline">\(2^{-n}\)</span> and <span class="math inline">\(z_0\in \Ga(R^{(n)})\)</span>, for all <span class="math inline">\(z\in\Gamma(\6 R^{(n)})\)</span>, we have <span class="math display">\[\begin{eqnarray*}
+|z-z_0| &amp;=&amp; |\Gamma(s,t) - \Gamma(s_0,t_0)| \\
+&amp;\leqslant&amp; |(s,t) - (s_0,t_0)||\Gamma'(s_0,t_0)| + |(s,t) - (s_0,t_0)||\phi(s,t)|\\
+&amp;\leqslant&amp; 2^{-n}\sqrt{2} C + 2^{-n}\sqrt{2}\epsilon \\
+&amp;\leqslant&amp;\sqrt{2}2^{-n}(C + \epsilon)
+\end{eqnarray*}\]</span> where <span class="math inline">\((s,t) \in \6(R^{(n)}\)</span> is any point in <span class="math inline">\(\Gamma^{-1}(z)\)</span></p>
+<p>Combining this with <a href="#eq-Ch7_Cauchy_Thm_2" class="quarto-xref">Equation&nbsp;<span>7.3</span></a> and <a href="#eq-Ch7_Cauchy_Thm_3" class="quarto-xref">Equation&nbsp;<span>7.4</span></a>, we can estimate</p>
 <p><span class="math display">\[\begin{align*}
 \left|\int_{\Ga(\6 R^{(n)})} f(z)dz\right|&amp;= \left|\int_{\Ga(\6 R^{(n)})}(z-z_0)\rho(z)dz\right|\\
-&amp;\leqslant L(\Ga(\6 R^{(n)}))\sqrt{2}2^{-n}\ep = 4C\cdot 2^{-n}\sqrt{2}2^{-n}\ep
+&amp;\leqslant L(\Ga(\6 R^{(n)}))\sqrt{2}2^{-n}(C+\ep)\ep = 4C\cdot 2^{-n}\sqrt{2}2^{-n}(C+\ep)\ep
 \end{align*}\]</span></p>
 <p>The last inequality follows by <a href="06-Week6.html#eq-Ch6_Integral_Estimate" class="quarto-xref">Equation&nbsp;<span>6.7</span></a>.</p>
-<p>Hence <span class="math display">\[\left|\int_\ga f(z)dz\right|=\left|\int_{\Ga(\6 R^{(0)})} f(z)dz\right|\overset{}{\leqslant}4C\sqrt{2}\ep.\]</span> The final inequality follows from <a href="#eq-Ch7_Cauchy_Thm_1" class="quarto-xref">Equation&nbsp;<span>7.2</span></a>.</p>
+<p>Hence <span class="math display">\[\left|\int_\ga f(z)dz\right|=\left|\int_{\Ga(\6 R^{(0)})} f(z)dz\right|\overset{}{\leqslant}4C(C+\ep)\sqrt{2}\ep.\]</span> The final inequality follows from <a href="#eq-Ch7_Cauchy_Thm_1" class="quarto-xref">Equation&nbsp;<span>7.2</span></a>.</p>
 <p>As <span class="math inline">\(\ep&gt;0\)</span> is arbitrary, the left hand side must be zero.</p>
 </div>
 </div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,8 +59,8 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-abc9ccca9b21307a48545afe7a1f13d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -755,6 +755,25 @@ Exercise 5.1
 </div>
 </div>
 <div class="cell">
+<button id="displayTextunnamed-chunk-18" onclick="javascript:toggle('unnamed-chunk-18');">
+Hide Solution 5.1
+</button>
+<div id="toggleTextunnamed-chunk-18" style="display: block">
+<div class="panel panel-default">
+<div id="tsk5.1" class="panel-heading panel-heading1">
+Solution 5.1
+</div>
+<div class="panel-body">
+<ol type="i">
+<li><p>We can apply the to determine the convergence of a series of complex numbers <span class="math inline">\(\sum_{n=0}^\iy a_n\)</span> provided <span class="math inline">\(a_n\neq0\)</span> for <span class="math inline">\(n\)</span> sufficiently large. Let <span class="math inline">\(q=\limsup\left|\frac{a_{n+1}}{a_n}\right|.\)</span> If <span class="math inline">\(q&lt;1,\)</span> then <span class="math inline">\(\sum_{n=0}^\iy a_n\)</span> converges absolutely. If <span class="math inline">\(q&gt;1,\)</span> then <span class="math inline">\(\sum_{n=0}^\iy a_n\)</span> diverges. Apply this to <span class="math inline">\(a_n=\frac{z^n}{n^3}\)</span>: <span class="math display">\[\left|\frac{z^{n+1}/(n+1)^3}{z^n/n^3}\right|=|z|\left(\frac{n}{n+1}\right)^3\longra|z|\quad\text{as $n\longra\iy.$}\]</span> Hence, <span class="math inline">\(q=|z|\)</span> and (i) converges for <span class="math inline">\(|z|&lt;1\)</span> and diverges for <span class="math inline">\(|z|&gt;1,\)</span> so <span class="math inline">\(\rho=1.\)</span></p></li>
+<li><p>By definition, the radius of convergence <span class="math inline">\(\rho\)</span> is the supremum of all real numbers <span class="math inline">\(r\geqslant0\)</span> such that the sequence <span class="math inline">\((a_n r^n)_{n\in\N}\)</span> is bounded. Here <span class="math inline">\(a_n=1\)</span> if <span class="math inline">\(3\)</span> divides <span class="math inline">\(n\)</span> and <span class="math inline">\(a_n=0\)</span> otherwise. This is equivalent to the boundedness of the sequence <span class="math inline">\((r^{3n})_{n\in\N}\)</span> which holds precisely for <span class="math inline">\(r\leqslant1.\)</span> Thus <span class="math inline">\(\rho=1.\)</span></p></li>
+<li><p>Recall the <em>root test</em> to determine the convergence of a series of complex numbers <span class="math inline">\(\sum_{n=0}^\iy a_n.\)</span> Let <span class="math inline">\(q=\limsup\sqrt[n]{|a_n|}.\)</span> If <span class="math inline">\(q&lt;1,\)</span> then <span class="math inline">\(\sum_{n=0}^\iy a_n\)</span> converges absolutely. If <span class="math inline">\(q&gt;1,\)</span> then <span class="math inline">\(\sum_{n=0}^\iy a_n\)</span> diverges. Apply this to <span class="math inline">\(a_n=\frac{z^n}{n^n}\)</span>: <span class="math display">\[\sqrt[n]{|a_n|}=|z|/n\longra0\quad\text{as $n\longra\iy.$}\]</span> Hence iii. converges for all <span class="math inline">\(z\in\C,\)</span> and so <span class="math inline">\(\rho=+\iy.\)</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
 <div class="panel panel-default">
 <div id="sol5.2" class="panel-heading">
 Exercise 5.2
@@ -766,6 +785,24 @@ Exercise 5.2
 <li><span class="math inline">\(\sin(z)\cos(z)\)</span>,</li>
 <li><span class="math inline">\(1/\cos(z)\)</span></li>
 </ol>
+</div>
+</div>
+</div>
+<div class="cell">
+<button id="displayTextunnamed-chunk-20" onclick="javascript:toggle('unnamed-chunk-20');">
+Hide Solution 5.2
+</button>
+<div id="toggleTextunnamed-chunk-20" style="display: block">
+<div class="panel panel-default">
+<div id="tsk5.2" class="panel-heading panel-heading1">
+Solution 5.2
+</div>
+<div class="panel-body">
+<p>Using the definition of the product of formal power series, <span class="math display">\[\begin{align*}
+e^z\sin(z)&amp;=z+z^2+\frac{z^3}{3}+O(z^4)\\
+\sin(z)\cos(z)&amp;=z-\frac{2z^3}{3}+O(z^4).
+\end{align*}\]</span> To verify <span class="math display">\[1/\cos(z)=1+\frac{z^2}{2}+O(z^4)\]</span> we begin with <span class="math display">\[\cos(z)=1-z^2/2+O(z^4)\]</span> and then using the geometric series, <span class="math display">\[1/\cos(z)=\frac{1}{1-z^2/2}+O(z^4)=1+z^2/2+O(z^4).\]</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -784,12 +821,52 @@ Exercise 5.3
 </div>
 </div>
 <div class="cell">
+<button id="displayTextunnamed-chunk-22" onclick="javascript:toggle('unnamed-chunk-22');">
+Hide Solution 5.3
+</button>
+<div id="toggleTextunnamed-chunk-22" style="display: block">
+<div class="panel panel-default">
+<div id="tsk5.3" class="panel-heading panel-heading1">
+Solution 5.3
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>Let <span class="math inline">\(z\in D_{\min(\rho_P,\rho_Q)}(0)=D_{\rho_P}(0)\cap D_{\rho_Q}(0).\)</span> Then the series of complex numbers <span class="math inline">\(\sum_{n=0}^\iy a_nz^n\)</span> and <span class="math inline">\(\sum_{n=0}^\iy b_nz^n\)</span> converge, hence the series <span class="math inline">\(\sum_{n=0}^\iy (a_n+b_n)z^n\)</span> converges as well. It follows that <span class="math inline">\(D_{\min(\rho_P,\rho_Q)}(0)\subset D(P+Q,0)\)</span> is in the domain of <span class="math inline">\(P+Q,\)</span> hence <span class="math inline">\(\min(\rho_P,\rho_Q)\leqslant\rho.\)</span></p></li>
+<li><p>Recall that the Cauchy product of series of non-negative numbers converges: If <span class="math inline">\(a_n,b_n\geqslant0\)</span> and <span class="math inline">\(\sum_{n=0}^\iy a_n,\)</span> <span class="math inline">\(\sum_{n=0}^\iy b_n\)</span> converge, then <span class="math inline">\(\sum_{n=0}^\iy\left(\sum_{i+j=n}a_ib_j\right)\)</span> converges. To see this, let <span class="math inline">\(A_N=\sum_{n=0}^N a_n,\)</span> <span class="math inline">\(B_N=\sum_{n=0}^N b_n\)</span> be the partial sums. Then the partial sums of the Cauchy product <span class="math display">\[\sum_{n=0}^N\sum_{i+j=n}a_ib_j\leqslant A_NB_N\]</span> are a bounded sequence (since <span class="math inline">\(A_NB_N\)</span> converges) that is increasing, hence convergent by the monotone convergence theorem of calculus.</p>
+<p>Given this preliminary, the same argument as for a. proves <span class="math inline">\(\min(\rho_P,\rho_Q)\leqslant\rho.\)</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
 <div class="panel panel-default">
 <div id="sol5.4" class="panel-heading">
 Exercise 5.4
 </div>
 <div class="panel-body">
 <p>Find a solution to the non-linear differential equation <span class="math display">\[f'(z)+f(z)^2=0,\qquad f(0)=1\]</span> on a disk centered at <span class="math inline">\(z_0=0\)</span> by making the ansatz <span class="math inline">\(f(z)=\sum_{n=0}^\iy a_nz^n,\)</span> inductively determining the coefficients <span class="math inline">\(a_n,\)</span> and finding the radius of convergence.</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<button id="displayTextunnamed-chunk-24" onclick="javascript:toggle('unnamed-chunk-24');">
+Hide Solution 5.4
+</button>
+<div id="toggleTextunnamed-chunk-24" style="display: block">
+<div class="panel panel-default">
+<div id="tsk5.4" class="panel-heading panel-heading1">
+Solution 5.4
+</div>
+<div class="panel-body">
+<p>We substitute the power series into the differential equation. By <a href="#thm-Ch5_Power_Series_Holomorphic" class="quarto-xref">Theorem&nbsp;<span>5.2</span></a>, we have <span class="math display">\[f'(z)=\sum_{n=0}^\iy (n+1)a_{n+1} z^n\]</span> and for the product of power series (see <a href="#eq-Ch5_Eqn_Series_Times" class="quarto-xref">Equation&nbsp;<span>5.3</span></a>) we have <span class="math display">\[f(z)^2=\sum_{n=0}^\iy\left(\sum_{i=0}^n a_ia_{n-i}\right)z^n.\]</span> Hence <span class="math display">\[\sum_{n=0}^\iy\left[(n+1)a_{n+1} + \sum_{i=0}^n a_ia_{n-i}\right]z^n=0.\]</span> The identity theorem (<a href="#cor-identitytheorem" class="quarto-xref">Corollary&nbsp;<span>5.2</span></a>) now implies <span class="math display">\[a_{n+1}=\frac{-1}{n+1}\sum_{i=0}^n a_ia_{n-i},\qquad\forall n\geqslant0.\]</span> By assumption, <span class="math inline">\(a_0=f(0)=1.\)</span> We solve by recursion, <span class="math display">\[\begin{align*}
+a_0&amp;=1\\
+a_1&amp;=-a_0^2=-1\\
+a_2&amp;=\frac{-1}{2}(a_0a_1+a_1a_0)=1\\
+a_3&amp;=\frac{-1}{3}(a_0a_2+a_1^2+a_2a_0)=-1\\
+\vdots
+\end{align*}\]</span> This leads us to the conjecture <span class="math inline">\(a_n=(-1)^n\)</span> for all <span class="math inline">\(n\in\N.\)</span> This holds in the base case <span class="math inline">\(n=0\)</span> and, assuming this result for all integers up to <span class="math inline">\(n,\)</span> we have <span class="math display">\[a_{n+1}=\frac{-1}{n+1}\sum_{i=0}^n(-1)^i(-1)^{n-i}=\frac{-1}{n+1}\sum_{i=0}^n(-1)^n=(-1)^{n+1},\]</span> which proves the inductive step. In summary, <span class="math display">\[f(z)=\sum_{n=0}^\iy (-1)^nz^n,\]</span> which we recognize as a geometric series with <span class="math inline">\(f(z)=1/(1+z),\)</span> whose radius of convergence we know is <span class="math inline">\(\rho=1.\)</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -804,12 +881,43 @@ Exercise 5.5
 </div>
 </div>
 <div class="cell">
+<button id="displayTextunnamed-chunk-26" onclick="javascript:toggle('unnamed-chunk-26');">
+Hide Solution 5.5
+</button>
+<div id="toggleTextunnamed-chunk-26" style="display: block">
+<div class="panel panel-default">
+<div id="tsk5.5" class="panel-heading panel-heading1">
+Solution 5.5
+</div>
+<div class="panel-body">
+<p>For all <span class="math inline">\(z\in D_\rho(0)\cap\R\)</span> we have by assumption the middle equality in <span class="math display">\[\sum_{n=0}^\iy a_n z^n=P(z)=\frac{P(z)+\ol{P(z)}}{2}=\sum_{n=0}^\iy \frac{a_n+\ol{a_n}}{2}z^n.\]</span> Pick <span class="math inline">\(n_0\in\N\)</span> with <span class="math inline">\(1/n_0&lt;\rho.\)</span> We can apply the identity theorem (<a href="#cor-identitytheorem" class="quarto-xref">Corollary&nbsp;<span>5.2</span></a>) with <span class="math inline">\(w_n=1/(n+n_0),\)</span> <span class="math inline">\(P\)</span> as above, and <span class="math display">\[ Q=\sum_{n=0}^\iy\frac{a_n+\ol{a_n}}{2}z^n\]</span> to conclude that <span class="math inline">\(a_n=\frac{a_n+\ol{a_n}}{2}\)</span> for all <span class="math inline">\(n.\)</span> In other words, <span class="math inline">\(a_n\in\R.\)</span></p>
+<p>We may then deduce that <span class="math display">\[\ol{P(z)}=\ol{\sum_{n=0}^\iy a_nz^n}\overset{(\S)}{=}\sum_{n=0}^\iy \ol{a_nz^n}=\sum_{n=0}^\iy a_n\ol{z}^n=P(\ol{z}).\]</span> Here <span class="math inline">\((\S)\)</span> is easy to check from the definition of convergence of partial sums, as <span class="math display">\[\ol{\sum_{n=0}^N a_nz^n}=\sum_{n=0}^N\ol{a_nz^n}\]</span> holds for finite sums.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
 <div class="panel panel-default">
 <div id="sol5.6" class="panel-heading">
 Exercise 5.6
 </div>
 <div class="panel-body">
 <p>Prove that the ring of formal power series <span class="math inline">\(\C\llbracket T\rrbracket\)</span> is an <em>integral domain</em>. In other words, show that <span class="math inline">\(PQ=0\implies P=0\)</span> or <span class="math inline">\(Q=0.\)</span></p>
+</div>
+</div>
+</div>
+<div class="cell">
+<button id="displayTextunnamed-chunk-28" onclick="javascript:toggle('unnamed-chunk-28');">
+Hide Solution 5.6
+</button>
+<div id="toggleTextunnamed-chunk-28" style="display: block">
+<div class="panel panel-default">
+<div id="tsk5.6" class="panel-heading panel-heading1">
+Solution 5.6
+</div>
+<div class="panel-body">
+<p>Suppose that <span class="math inline">\(Q\neq0\)</span> and <span class="math inline">\(PQ=0.\)</span> We must show that <span class="math inline">\(P=0.\)</span> Write <span class="math inline">\(Q=z^n R\)</span> where <span class="math inline">\(R\)</span> has non-vanishing constant term. According to Proposition 5.4(b), <span class="math inline">\(R\)</span> is invertible, that is, we can find <span class="math inline">\(S\in\C\llbracket T\rrbracket\)</span> such that <span class="math display">\[RS=1,\qquad SR=1.\]</span> Then <span class="math display">\[0=PQS=Pz^nRS=Pz^n.\]</span> This implies <span class="math inline">\(P=0\)</span> (the coefficients of <span class="math inline">\(P\)</span> and <span class="math inline">\(Pz^n\)</span> are just shifted by <span class="math inline">\(n\)</span>).</p>
+</div>
 </div>
 </div>
 </div>
@@ -834,6 +942,32 @@ Exercise 5.7
 </div>
 </div>
 <div class="cell">
+<button id="displayTextunnamed-chunk-30" onclick="javascript:toggle('unnamed-chunk-30');">
+Hide Solution 5.7
+</button>
+<div id="toggleTextunnamed-chunk-30" style="display: block">
+<div class="panel panel-default">
+<div id="tsk5.7" class="panel-heading panel-heading1">
+Solution 5.7
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>For <span class="math inline">\(\al\in\C\setminus\N\)</span> we have <span class="math display">\[\left|\frac{\binom{\al}{k+1}z^{k+1}}{\binom{\al}{k}z^k}\right|=\left|z\frac{\al-k}{k+1}\right|\longra|z|\quad\text{as}\quad k\to\iy.\]</span> Therefore, the ratio test implies <span class="math inline">\(\rho=1\)</span> when <span class="math inline">\(\al\notin\N.\)</span> When <span class="math inline">\(\al\in\N\)</span> only finitely many binomial coefficients <span class="math inline">\(\binom{\al}{k}\)</span> are non-zero, so <span class="math inline">\(B_\al\)</span> is a polynomial and <span class="math inline">\(\rho=+\iy\)</span> and indeed by the binomial theorem we have <span class="math display">\[B_\al(z)=(z+1)^\al,\qquad\forall\al\in\N.\]</span></p></li>
+<li><p>As <span class="math inline">\(\binom{\al}{k}=0\)</span> if <span class="math inline">\(k&gt;\al,\)</span> this is just the binomial theorem: <span class="math display">\[\sum_{k=0}^\al \binom{\al}{k}z^k=(z+1)^\al.\]</span></p></li>
+<li><p>We can deduce from b. that (<span class="math inline">\(\star\)</span>) holds for all <span class="math inline">\(\al,\be\in\N,\)</span> since by the definition of the product of formal power series, we have <span class="math display">\[\begin{align*}
+\sum_{n=0}^\iy \left(\sum_{k=0}^n\binom{\al}{k}\binom{\be}{n-k}\right)z^n&amp;=
+\sum_{k=0}^\iy\binom{\al}{k}z^k
+\cdot
+\sum_{\ell=0}^\iy\binom{\be}{\ell}z^\ell\\&amp;=
+(1+z)^\al(1+z)^\be=(1+z)^{\al+\be}\\&amp;=\sum_{n=0}^\iy\binom{\al+\be}{n}z^n.
+\end{align*}\]</span> Fix <span class="math inline">\(\be\in\N.\)</span> Then both sides of (<span class="math inline">\(\star\)</span>) are polynomials in <span class="math inline">\(\al,\)</span> which agree on <span class="math inline">\(\N.\)</span> Since a non-zero polynomial has only finitely many roots, this implies that both sides of (<span class="math inline">\(\star\)</span>) agree for all <span class="math inline">\(\al\in\C.\)</span> Now fix <span class="math inline">\(\al\in\C.\)</span> Then both sides of (<span class="math inline">\(\star\)</span>) are polynomials in <span class="math inline">\(\be,\)</span> which have just shown agree for all <span class="math inline">\(\be\in\N.\)</span> As before, this implies that (<span class="math inline">\(\star\)</span>) holds for all <span class="math inline">\(\be\in\C.\)</span> This proves the general case.</p></li>
+<li><p>From c.&nbsp;and the definition of the product of power series, we have <span class="math display">\[B_\al(z)B_\be(z)=B_{\al+\be}(z).\]</span> By induction, <span class="math display">\[B_\al(z)^k=B_{k\al}(z)=B_1(z)=z+1.\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
 <div class="panel panel-default">
 <div id="sol5.8" class="panel-heading">
 Exercise 5.8
@@ -845,10 +979,36 @@ Exercise 5.8
 <li><span class="math inline">\(a^za^w=a^{z+w}\)</span> for all <span class="math inline">\(a&gt;0,\)</span> <span class="math inline">\(z,w\in\C\)</span></li>
 <li><span class="math inline">\(|a^z|=a^{\Re(z)}\)</span> for all <span class="math inline">\(a&gt;0,\)</span> <span class="math inline">\(z\in\C\)</span></li>
 </ol>
-<p>The is defined as <span class="math display">\[\ze(z)=\sum_{n=1}^\iy\frac{1}{n^z}\qquad\text{for $\Re(z)&gt;1.$}\tag{$\star$}\]</span></p>
+<p>The <em>Riemann <span class="math inline">\(\ze\)</span>-function</em> is defined as <span class="math display">\[\ze(z)=\sum_{n=1}^\iy\frac{1}{n^z}\qquad\text{for $\Re(z)&gt;1.$}\tag{$\star$}\]</span></p>
 <ol start="4" type="a">
 <li>Prove that the series (<span class="math inline">\(\star\)</span>) converges absolutely for all <span class="math inline">\(z\in\C\)</span> with <span class="math inline">\(\Re(z)&gt;1\)</span> and uniformly on every subset <span class="math inline">\(S_\de=\{z\in\C\mid\Re(z)&gt;1+\de\}\)</span> with <span class="math inline">\(\de&gt;0.\)</span></li>
 </ol>
+</div>
+</div>
+</div>
+<div class="cell">
+<button id="displayTextunnamed-chunk-32" onclick="javascript:toggle('unnamed-chunk-32');">
+Hide Solution 5.8
+</button>
+<div id="toggleTextunnamed-chunk-32" style="display: block">
+<div class="panel panel-default">
+<div id="tsk5.8" class="panel-heading panel-heading1">
+Solution 5.8
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>We have:</p>
+<p><span class="math display">\[\begin{align*}
+a^zb^z&amp;=\exp(\log(a)z)\exp(\log(b)z)\\
+&amp;=\exp([\log(a)+\log(b)]z)\\
+&amp;=\exp(\log(ab)z)=(ab)^z
+\end{align*}\]</span></p></li>
+<li><p><span class="math display">\[a^za^w=\exp(\log(a)z)\exp(\log(a)w)=\exp(\log(a)(z+w))=a^{z+w}\]</span></p></li>
+<li><p>Notice first that <span class="math inline">\(|\exp(z)|^2=\exp(z)\ol{\exp(z)}=\exp(z)\exp(\ol{z})=\exp(z+\ol{z})=\exp(2\Re z).\)</span> Hence <span class="math inline">\(|\exp(z)|=\exp(2\Re z)^{1/2}=\exp(\Re z).\)</span> Using this, <span class="math display">\[|a^z|=|\exp(\log(a)z)|=\exp(\Re(\log(a)z))=\exp(\log(a)\Re(z))=a^{\Re z}.\]</span></p></li>
+<li><p>The series of absolute values <span class="math inline">\(\sum_{n=1}^\iy|1/n^z|=\sum_{n=1}^\iy 1/n^x\)</span> converges for <span class="math inline">\(x&gt;1+\de\)</span> by the comparison test: We have <span class="math inline">\(1/n^x\leqslant1/n^{1+\de}\)</span> and the series <span class="math display">\[\sum_{n=1}^\iy \frac{1}{n^{1+\de}} \leqslant\int_1^\iy\frac{dt}{t^{1+\de}}=\lim_{R\to\iy}\int_1^R\frac{dt}{t^{1+\de}}=\lim_{R\to\iy} \left(1-\frac{1}{R^\de}\right)=1
+\tag{$\dagger$}\]</span> converges by the integral comparison test. It follows that (<span class="math inline">\(\star\)</span>) converges uniformly. Moreover, for fixed <span class="math inline">\(\de&gt;0\)</span> the series (<span class="math inline">\(\dagger\)</span>) that we compare with is independent of <span class="math inline">\(z\in S_\de.\)</span> Thus the comparison test for series of functions applies and implies uniform convergence on each <span class="math inline">\(S_\de,\)</span> <span class="math inline">\(\de&gt;0.\)</span></p></li>
+</ol>
+</div>
 </div>
 </div>
 </div>
