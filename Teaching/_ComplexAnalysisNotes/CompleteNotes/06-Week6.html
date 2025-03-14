@@ -587,7 +587,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="06-Week6_files/figure-html/unnamed-chunk-34-1.jpeg" class="img-fluid figure-img" style="width:90.0%" alt="A piecewise C^1^ curve"></p>
+<p><img src="06-Week6_files/figure-html/unnamed-chunk-32-1.jpeg" class="img-fluid figure-img" style="width:90.0%" alt="A piecewise C^1^ curve"></p>
 <figcaption>A piecewise C<sup>1</sup> curve</figcaption>
 </figure>
 </div>
@@ -716,7 +716,7 @@ F(\ga(t_k)) - F(\ga(t_{k-1}))
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="06-Week6_files/figure-html/unnamed-chunk-52-1.jpeg" class="img-fluid figure-img" style="width:70.0%" alt="Seemingly complicated path integrals are easy to evaluate using the complex FTC. For the depicted contour, $\int_\ga e^zdz=e^2-1.$"></p>
+<p><img src="06-Week6_files/figure-html/unnamed-chunk-50-1.jpeg" class="img-fluid figure-img" style="width:70.0%" alt="Seemingly complicated path integrals are easy to evaluate using the complex FTC. For the depicted contour, $\int_\ga e^zdz=e^2-1.$"></p>
 <figcaption>Seemingly complicated path integrals are easy to evaluate using the complex FTC. For the depicted contour, <span class="math inline">\(\int_\ga e^zdz=e^2-1.\)</span></figcaption>
 </figure>
 </div>
@@ -751,10 +751,25 @@ Exercise 6.1
 </div>
 </div>
 </div>
-<div class="cell" title="Exercise 6.1">
+<div class="cell" title="Solution 6.1">
+<button id="displayTextunnamed-chunk-17" onclick="javascript:toggle('unnamed-chunk-17');">
+Solution 6.1
+</button>
+<div id="toggleTextunnamed-chunk-17" style="display: ">
+<div class="panel panel-default">
+<div id="tsk6.1" class="panel-heading panel-heading1">
+Solution 6.1
+</div>
+<div class="panel-body">
+<p>The punctured plane is an open subset of <span class="math inline">\(\C\)</span> on which <span class="math inline">\(1/z\)</span> is continuous. If <span class="math inline">\(1/z\)</span> has a holomorphic primitive <span class="math inline">\(F\)</span> on <span class="math inline">\(\C^\t\)</span>, then for any closed curve <span class="math inline">\(\ga\)</span> <span class="math inline">\(\int_{\ga} 1/z dz = 0\)</span>. However, by <a href="#exm-Ch6_Ex_zn" class="quarto-xref">Example&nbsp;<span>6.3</span></a> there is a closed curve <span class="math inline">\(\gamma\)</span> for which <span class="math inline">\(\int_{\ga} z^{-1} = 2 \pi i \ne 0\)</span>. This gives the desired contradiction.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Exercise 6.2">
 <div class="panel panel-default">
 <div id="sol6.2" class="panel-heading">
-Exercise 6.1
+Exercise 6.2
 </div>
 <div class="panel-body">
 <p>For the curves <span class="math inline">\(\ga_k,\)</span> <span class="math inline">\(k=1,2,3,4,\)</span> as in the following sketch</p>
@@ -762,7 +777,7 @@ Exercise 6.1
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="06-Week6_files/figure-html/unnamed-chunk-47-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+<p><img src="06-Week6_files/figure-html/unnamed-chunk-46-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
@@ -775,10 +790,47 @@ Exercise 6.1
 </div>
 </div>
 </div>
-<div class="cell" title="Exercise 6.2">
+<div class="cell" title="Solution 6.2">
+<button id="displayTextunnamed-chunk-19" onclick="javascript:toggle('unnamed-chunk-19');">
+Solution 6.2
+</button>
+<div id="toggleTextunnamed-chunk-19" style="display: ">
+<div class="panel panel-default">
+<div id="tsk6.2" class="panel-heading panel-heading1">
+Solution 6.2
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>The parameterisations are <span class="math display">\[\begin{align*}
+\ga_1\colon[0,1]&amp;\longra\C,&amp;\ga_1(t)&amp;=t(-2+i),\\
+\ga_2\colon[0,3]&amp;\longra\C,&amp;\ga_2(t)&amp;=
+\begin{cases}
+ti+(1-t)(1-i) \text{ if $t\in[0,1],$}\\
+(t-1)(-1-i)+(2-t)i \text{ if $t\in[1,2],$}\\
+(t-2)(1-i)-(3-t)(1+i)  \text{ if $t\in[2,3],$}\\
+\end{cases}\\
+\ga_3\colon[0,2]&amp;\longra\C, &amp;\ga_3(t)&amp;=te^{-4\pi it},\\
+\ga_4\colon[-\pi,0]&amp;\longra\C, &amp;\ga_4(t)&amp;=e^{-it}.
+\end{align*}\]</span></p></li>
+<li><p>By the Pythagorean theorem, <span class="math inline">\(L(\ga_1)=\sqrt{2^2+1^2}=\sqrt{5}.\)</span> Similarly, <span class="math inline">\(L(\ga_2)=2+2\sqrt{5}.\)</span> Compute <span class="math display">\[\begin{align*}
+L(\ga_3)&amp;=\int_0^2 |\ga_3'(t)|dt=\int_0^2 \sqrt{1+16\pi^2t^2}dt\\&amp;=\left[\frac{4 \pi  \sqrt{16 \pi ^2 t^2+1} t+\sinh ^{-1}(4 \pi  t)}{8 \pi }\right]_0^2\\
+&amp;=\sqrt{1+64 \pi ^2}+\frac{\sinh ^{-1}(8 \pi )}{8 \pi }
+\end{align*}\]</span> Finally, <span class="math inline">\(L(\ga_4)=\pi,\)</span> since a circle has circumference <span class="math inline">\(2\pi r.\)</span></p></li>
+<li><p>Since <span class="math inline">\(f(z)=z^2\)</span> has the primitive <span class="math inline">\(F(z)=z^3/3,\)</span> we can apply the complex FTC (Proposition~6.12) to evaluate the curve integrals by inserting the endpoints into the primitive: <span class="math display">\[\begin{align*}
+\int_{\ga_1}z^2dz&amp;=F(-2+i)-F(0)=-\frac23+\frac{11}{3}i\\
+\int_{\ga_2}z^2dz&amp;=F(1-i)-F(1-i)=0\\
+\int_{\ga_3}z^2dz&amp;=F(2)-F(0)=8/3\\
+\int_{\ga_4}z^2dz&amp;=F(1)-F(-1)=2/3\\
+\end{align*}\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Exercise 6.3">
 <div class="panel panel-default">
 <div id="sol6.3" class="panel-heading">
-Exercise 6.2
+Exercise 6.3
 </div>
 <div class="panel-body">
 <p>Define <span class="math inline">\(\ga_\ep\colon [-\pi+\ep,\pi-\ep]\to\C,\)</span> <span class="math inline">\(\ga_\ep(t)=e^{it}\)</span> for <span class="math inline">\(0&lt;\ep&lt;\pi.\)</span> Compute <span class="math display">\[\lim_{\ep\to0}\int_{\ga_\ep}z^{1/2}dz,\]</span> where the square root <span class="math inline">\(z^{1/2}=\exp(\log(z)/2)\)</span> is defined as on Sheet 5 using the principal branch of the logarithm.</p>
@@ -786,10 +838,26 @@ Exercise 6.2
 </div>
 </div>
 </div>
-<div class="cell" title="Exercise 6.3">
+<div class="cell" title="Solution 6.3">
+<button id="displayTextunnamed-chunk-21" onclick="javascript:toggle('unnamed-chunk-21');">
+Solution 6.3
+</button>
+<div id="toggleTextunnamed-chunk-21" style="display: ">
+<div class="panel panel-default">
+<div id="tsk6.3" class="panel-heading panel-heading1">
+Solution 6.3
+</div>
+<div class="panel-body">
+<p>Using the principal branch of the logarithm means that <span class="math display">\[z=re^{i\th}, \th\in(-\pi,\pi)\implies\sqrt{z}=\sqrt{r}e^{i\th/2}.\]</span></p>
+<p>Applying this to <span class="math inline">\(z=e^{it},\)</span> we have <span class="math display">\[\int_{\ga_\ep}z^{1/2}dz=\int_{-\pi+\ep}^{\pi-\ep}e^{it/2}ie^{it}dt=\left[\frac23e^{\frac32 it}\right]^{\pi-\ep}_{-\pi+\ep}\xrightarrow{\ep\to0}\frac{-4i}{3}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Exercise 6.4">
 <div class="panel panel-default">
 <div id="sol6.4" class="panel-heading">
-Exercise 6.3
+Exercise 6.4
 </div>
 <div class="panel-body">
 <p>Let <span class="math inline">\(\ga\)</span> be the straight line from <span class="math inline">\(z=1\)</span> to <span class="math inline">\(z=i.\)</span> Let <span class="math inline">\(f(z)=1/z^4.\)</span> Determine the maximum of <span class="math inline">\(|f(z)|\)</span> over all <span class="math inline">\(z\in\Im(\ga).\)</span> Use this to estimate <span class="math display">\[\left|\int_\ga f(z)dz\right|\leqslant 4\sqrt{2}.\]</span></p>
@@ -797,27 +865,97 @@ Exercise 6.3
 </div>
 </div>
 </div>
-<div class="cell" title="Exercise 6.4">
+<div class="cell" title="Solution 6.4">
+<button id="displayTextunnamed-chunk-23" onclick="javascript:toggle('unnamed-chunk-23');">
+Solution 6.4
+</button>
+<div id="toggleTextunnamed-chunk-23" style="display: ">
 <div class="panel panel-default">
-<div id="sol6.5" class="panel-heading">
-Exercise 6.4
+<div id="tsk6.4" class="panel-heading panel-heading1">
+Solution 6.4
 </div>
 <div class="panel-body">
-<p>Let <span class="math inline">\(f(z)\colon\partial D_r(0)\to\C\)</span> be a continuous function. Show that <span class="math display">\[\overline{\int_{\partial D_r(z_0)}f(z)dz}=-r^2\int_{\partial D_r(z_0)}\overline{f(z)}(z-z_0)^{-2}dz.\]</span></p>
+<p>Parameterise the curve as <span class="math inline">\(\ga\colon[0,1]\to\C,\)</span> <span class="math inline">\(\ga(t)=(1-t)+ti.\)</span> Then <span class="math display">\[|f(\ga(t))|=\frac{1}{|\ga(t)|^4}=\frac{1}{((1-t)^2+t^2)^2}\]</span> which attains its maximum <span class="math inline">\(4\)</span> at <span class="math inline">\(t=1/2\)</span> (for example, set the <span class="math inline">\(t\)</span>-derivative equal to zero). Since <span class="math inline">\(L(\ga)=\sqrt{2},\)</span> we conclude from Proposition 6.9(d) that <span class="math display">\[\left|\int_\ga f(z)dz\right|\leqslant 4\sqrt{2}.\]</span></p>
+<p>To compute the integral directly, notice that <span class="math inline">\(f(z)\)</span> has the primitive <span class="math inline">\(F(z)=-\frac13 z^{-3},\)</span> so the complex FTC gives <span class="math display">\[\int_\ga f(z)dz=F(i)-F(1)=\frac{1-i}{3}.\]</span></p>
+<p>Since <span class="math inline">\(\left|\frac{1-i}{3}\right|=\frac{\sqrt{2}}{3},\)</span> we see that our estimate was 12 times too large.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="cell" title="Exercise 6.5">
 <div class="panel panel-default">
-<div id="sol6.6" class="panel-heading">
+<div id="sol6.5" class="panel-heading">
 Exercise 6.5
 </div>
 <div class="panel-body">
-<p>Let <span class="math inline">\(D_1, D_2\subset\C\)</span> be closed subsets and <span class="math inline">\(f\colon D_1\cup D_2\to\C\)</span> be continuous. Suppose that <span class="math inline">\(\int_{\ga_1} f(z)dz=0\)</span> for every closed curve <span class="math inline">\(\ga_1\)</span> in <span class="math inline">\(D_1\)</span> and that <span class="math inline">\(\int_{\ga_2} f(z)dz=0\)</span> for every closed curve <span class="math inline">\(\ga_2\)</span> in <span class="math inline">\(D_2.\)</span> Show that if <span class="math inline">\(D_1\cap D_2\)</span> is path-connected, then <span class="math inline">\(\int_\ga f(z)dz=0\)</span> for every closed curved <span class="math inline">\(\ga\colon[a,b]\to D_1\cup D_2.\)</span></p>
-<p><em>Hint:</em> Subdivide <span class="math inline">\([a,b]\)</span> into subintervals <span class="math inline">\([t_{k-1},t_k]\)</span> which map under <span class="math inline">\(\ga\)</span> entirely to <span class="math inline">\(D_1\)</span> or entirely to <span class="math inline">\(D_2.\)</span></p>
+<p>Let <span class="math inline">\(f(z)\colon\partial D_r(z_0)\to\C\)</span> be a continuous function. Show that <span class="math display">\[\overline{\int_{\partial D_r(z_0)}f(z)dz}=-r^2\int_{\partial D_r(z_0)}\overline{f(z)}(z-z_0)^{-2}dz.\]</span></p>
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 6.5">
+<button id="displayTextunnamed-chunk-25" onclick="javascript:toggle('unnamed-chunk-25');">
+Solution 6.5
+</button>
+<div id="toggleTextunnamed-chunk-25" style="display: ">
+<div class="panel panel-default">
+<div id="tsk6.5" class="panel-heading panel-heading1">
+Solution 6.5
+</div>
+<div class="panel-body">
+<p>By using the definition of the curve integral and using properties of complex conjugation, we find <span class="math display">\[\begin{align*}
+\overline{\int_{\partial D_r(z_0)}f(z)dz}&amp;=\overline{\int_0^{2\pi} f(z_0+re^{it})ire^{it}dt}\\
+&amp;=-\int_0^{2\pi}\overline{f(z_0+re^{it})}ire^{-it}dt\\
+&amp;=-r^2\int_0^{2\pi}\overline{f(z_0+re^{it})}(re^{it})^{-2}ire^{it}dt\\
+&amp;=-r^2\int_{\partial D_r(z_0)}\overline{f(z)}(z-z_0)^{-2}dz.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- ```{task, title="Exercise 6.6"} -->
+<!-- Let $D_1, D_2\subset\C$ be closed subsets and $f\colon D_1\cup D_2\to\C$ be continuous. Suppose that $\int_{\ga_1} f(z)dz=0$ for every closed curve $\ga_1$ in $D_1$ and that $\int_{\ga_2} f(z)dz=0$ for every closed curve $\ga_2$ in $D_2.$ Show that if $D_1\cap D_2$ is path-connected, then $\int_\ga f(z)dz=0$ for every closed curved $\ga\colon[a,b]\to D_1\cup D_2.$ -->
+<!-- *Hint:* Subdivide $[a,b]$ into subintervals $[t_{k-1},t_k]$ which map under $\ga$ entirely to $D_1$ or entirely to $D_2.$ -->
+<!-- ``` -->
+<!-- ```{solution, title="Solution 6.6"} -->
+<!-- The claim is trivial unless $\ga$ leaves both $D_1$ and $D_2.$ -->
+<!-- Without loss, suppose $z_0=\ga(a)=\ga(b)\in D_1\cap D_2.$ We claim that there is a subdivision$$a=t_0<t_1<\cdots<t_n=b\tag{$\star$}$$ -->
+<!-- +   $\ga|_{[t_0,t_1]}$ is a curve in $D_1,$ -->
+<!-- +   $\ga|_{[t_1,t_2]}$ is a curve in $D_2,$ -->
+<!-- +   etc. -->
+<!-- To prove this, define the closed subsets $C_1=\ga^{-1}(D_1),$ $C_2=\ga^{-1}(D_2)$ with $C_1\cup C_2=[a,b].$ Recall from topology that every subspace is a disjoint union of its connected components and that that every closed connected subspace of the real line is a closed interval. Therefore, we can decompose both closed subsets into disjoint closed intervals as in -->
+<!-- $$\begin{aligned} -->
+<!--        C_1&= {\amalg}_{i \ge 0} [c_i,c_i'],\\ -->
+<!--        C_2&= \amalg_{i \ge 0} [d_i,d_i']. -->
+<!-- \end{aligned}$$ -->
+<!-- where  $c_i \le  c_i' < c_{i+1}$ and $d_i \le  d_i' < d_{i+1}$ for all $i \ge 0$. Since $\gamma$ is closed and leaves both $D_1$ and $D_2$, it must in fact be the case that $c_i < c_i'$ and $d_i < d_i'$ for all $i$. -->
+<!-- $$\begin{aligned} -->
+<!--        C_1&=[c_0,c_0']\amalg[c_1,c_1']\amalg\cdots\amalg[c_m,c_m'],&&c_0<c_0'<\cdots<c_m<c_m',\\ -->
+<!--        C_2&=[d_0,d_0']\amalg[d_1,d_1']\amalg\cdots\amalg[d_p,d_p'], &&d_0<d_0'<\cdots<d_p<d_p'. -->
+<!-- \end{aligned}\tag{$\dagger$}$$ -->
+<!-- Since $a\in C_1,$ we have $c_0=a.$ We claim that $c_0'\in C_2.$ Since $(c_0',c_1)$ is disjoint from $C_1,$ we have $(c_0',c_1)\subset C_2,$ hence $[c_0',c_1]\subset C_2$ since $C_2$ is a closed set, thus proving in particular that $c_0'\in C_2.$ If we now define $t_1=c_0',$ then $\ga|_{[t_0,t_1]}$ is a curve in $C_1$ and $\ga(t_1)\in D_1\cap D_2.$ Repeating this argument for $\ga|_{[t_1,b]},$ $\ga(t_1)\in D_2$ shows that $t_2=d_k',$ where $d_k'$ is minimal with $t_1<d_k'.$ Now proceed inductively in this way to obtain the subdivision ($\star$). -->
+<!-- Pick curves $\de_k$ in $D_1\cap D_2$ from $z_0$ to $\ga(t_k)$ for $1<k<n,$ where we notice that $\ga(t_k)\in D_1\cap D_2.$ Define $\de_0,$ $\de_n$ to be the constant curves $\ga(a)=\ga(b).$ Then $\de_k\ast\ga|_{[t_{k-1},t_k]}\ast(-\de_{k-1})$ is a closed curve in $D_1$ or in $D_2.$ Hence by assumption,$$\int_{\de_k}f(z)dz + \int_{\ga_k}f(z)dz - \int_{\de_{k-1}}f(z)dz=0.$$ -->
+<!-- Summing this equation over $k=1,\ldots,n$ leads to the telescopic sum -->
+<!-- $$\underset{=0}{\underbrace{\int_{\de_n}f(z)dz}} +  \underset{=\int_\ga f(z)dz}{\underbrace{\sum_{k=1}^n\int_{\ga_k}f(z)dz}} -  \underset{=0}{\underbrace{\int_{\de_0}f(z)dz}}=0.$$ -->
+<!-- ``{tikz,engine.opts = list(template = 'tikztemplate.tex')} -->
+<!-- #| fig-align: center -->
+<!-- #| fig-cap: Subdivision of the curve $\ga$ leads to closed curves that are entirely in $D_1$ or in $D_2,$ where we use random curves $\de_k$ in $D_1\cap D_2$ that connect to fixed reference point $z_0.$ -->
+<!-- #| fig-alt: Subdivision of the curve $\ga$ leads to closed curves that are entirely in $D_1$ or in $D_2,$ where we use random curves $\de_k$ in $D_1\cap D_2$ that connect to fixed reference point $z_0.$ -->
+<!-- #| out-width: 90% -->
+<!-- #| echo: FALSE -->
+<!-- #| cache: TRUE -->
+<!-- \begin{tikzpicture}[scale = 1.5] -->
+<!--                \draw (0,0) circle (2cm); -->
+<!--                \draw (2,0) circle (2cm); -->
+<!--                \draw(-1.1,2) node{$D_1$}; -->
+<!--                \draw(3.1,2) node{$D_2$}; -->
+<!--                \draw[very thick] (-1,0) node[left]{$\ga(t_0)=\ga(t_4)$} -- (1,1) node[above]{$\ga(t_1)$} -- (3,1)  -- (1.5,-1) node[below]{$\ga(t_2)$} -- (-1.25,-1.25)  -- (1,0) node[above left]{$\ga(t_3)$} -- (-1,0); -->
+<!--                \filldraw (1.5,0.5) circle (1.5pt) node[right]{$z_0$}; -->
+<!--                \draw(1.5,0.5) -- node{$\de_1$} (1,1); -->
+<!--                \draw(1.5,0.5) -- node{$\de_2$} (1.5,-1); -->
+<!--                \draw(1.5,0.5) --node{$\de_3$} (1,0); -->
+<!--            \end{tikzpicture} -->
+<!-- `` -->
+<!-- ``` -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
