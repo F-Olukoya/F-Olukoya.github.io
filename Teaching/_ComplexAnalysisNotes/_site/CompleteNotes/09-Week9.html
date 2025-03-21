@@ -581,12 +581,12 @@ P_+(z)&amp;=\sum_{n=0}^\iy a_nz^n,
 </div>
 </div>
 </div>
-<p>Using the inversion<span id="eq-Ch9_Eqn_Inversion"><span class="math display">\[i\colon\C^\t\longra\C^\t,  z\longmapsto w=z^{-1}, \tag{9.3}\]</span></span></p>
+<p>Using the inversion<span id="eq-Ch9_Eqn_Inversion"><span class="math display">\[\iota\colon\C^\t\longra\C^\t,  z\longmapsto w=z^{-1}, \tag{9.3}\]</span></span></p>
 <p>we can rewrite <a href="#eq-Ch9_Series_Function" class="quarto-xref">Equation&nbsp;<span>9.2</span></a> as <span class="math inline">\(P(z)=P_+(z)+P_-(w).\)</span> Therefore we can treat the principal part as a power series as well, but on a second complex <span class="math inline">\(w\)</span>-plane corresponding to the original complex <span class="math inline">\(z\)</span>-plane via <a href="#eq-Ch9_Eqn_Inversion" class="quarto-xref">Equation&nbsp;<span>9.3</span></a>.</p>
 <div id="lem-" class="theorem lemma">
 <p><span class="theorem-title"><strong>Lemma 9.1</strong></span> Let <span class="math inline">\(0\leqslant r\leqslant+\iy.\)</span> Then</p>
-<p><span id="eq-Ch9_Inversion"><span class="math display">\[i^{-1}(D_r(0))=\C^\t\setminus\ol{D}_{1/r}(0),\qquad
-i^{-1}(\ol D_r(0))=\C^\t\setminus D_{1/r}(0), \tag{9.4}\]</span></span></p>
+<p><span id="eq-Ch9_Inversion"><span class="math display">\[\iota^{-1}(D_r(0))=\C^\t\setminus\ol{D}_{1/r}(0),\qquad
+\iota^{-1}(\ol D_r(0))=\C^\t\setminus D_{1/r}(0), \tag{9.4}\]</span></span></p>
 <p>using the conventions <span class="math inline">\(1/0=+\iy\)</span> and <span class="math inline">\(1/+\iy=0.\)</span></p>
 </div>
 <div id="prp-Ch9_Prop_Laurent_Radii" class="theorem proposition">
@@ -600,8 +600,8 @@ i^{-1}(\ol D_r(0))=\C^\t\setminus D_{1/r}(0), \tag{9.4}\]</span></span></p>
 <div class="cell" data-gaplength="15">
 <p>For simplicity, put <span class="math inline">\(z_0=0.\)</span> According to <a href="05-Week5.html#thm-Ch5_thm_Radius_of_Convergence" class="quarto-xref">Theorem&nbsp;<span>5.1</span></a> the power series <span class="math inline">\(P_+, P_-\)</span> have radii of convergence <span class="math inline">\(\rho_\pm\geqslant0\)</span> and disklike domains</p>
 <p><span id="eq-Ch9_First_Incl"><span class="math display">\[D_{\rho_\pm}(0)\subset D(P_\pm)\subset \ol D_{\rho_\pm}(0). \tag{9.6}\]</span></span></p>
-<p>As <span class="math inline">\(P(z)=P_+(z)+P_-(w)\)</span> with <span class="math inline">\(i(z)=w,\)</span> we can rewrite <a href="#def-Ch9_Def_Domain_Bilateral" class="quarto-xref">Definition&nbsp;<span>9.2</span></a> in terms of the preimage operation <span class="math inline">\(i^{-1}(\textvisiblespace)\)</span> as <span class="math display">\[D(P)=D(P_+)\cap i^{-1}\bigl(D(P_-)\bigr).\]</span></p>
-<p>Applying <span class="math inline">\(i^{-1}\)</span> to <a href="#eq-Ch9_First_Incl" class="quarto-xref">Equation&nbsp;<span>9.6</span></a> for <span class="math inline">\(P_-\)</span> and using <a href="#eq-Ch9_Inversion" class="quarto-xref">Equation&nbsp;<span>9.4</span></a> gives <span class="math display">\[\C^\t\setminus\ol D_{1/\rho_-}(0)\subset i^{-1}(D(P_-))\subset \C^\t\setminus D_{1/\rho_-}(0).\]</span></p>
+<p>As <span class="math inline">\(P(z)=P_+(z)+P_-(w)\)</span> with <span class="math inline">\(\iota(z)=w,\)</span> we can rewrite <a href="#def-Ch9_Def_Domain_Bilateral" class="quarto-xref">Definition&nbsp;<span>9.2</span></a> in terms of the preimage operation <span class="math inline">\(\iota^{-1}(\textvisiblespace)\)</span> as <span class="math display">\[D(P)=D(P_+)\cap \iota^{-1}\bigl(D(P_-)\bigr).\]</span></p>
+<p>Applying <span class="math inline">\(\iota^{-1}\)</span> to <a href="#eq-Ch9_First_Incl" class="quarto-xref">Equation&nbsp;<span>9.6</span></a> for <span class="math inline">\(P_-\)</span> and using <a href="#eq-Ch9_Inversion" class="quarto-xref">Equation&nbsp;<span>9.4</span></a> gives <span class="math display">\[\C^\t\setminus\ol D_{1/\rho_-}(0)\subset \iota^{-1}(D(P_-))\subset \C^\t\setminus D_{1/\rho_-}(0).\]</span></p>
 <p>Combining this with <a href="#eq-Ch9_First_Incl" class="quarto-xref">Equation&nbsp;<span>9.6</span></a> for <span class="math inline">\(P_+\)</span> implies <span class="math display">\[\underset{A_{r,R}(0)=}{\underbrace{\bigl(\C^\t\setminus\ol D_{1/\rho_-}(0)\bigr)\cap D_{\rho_+}(0)}}\subset D(P)\subset\underset{\subset\ol A_{r,R}(0)}{\underbrace{\bigl(\C^\t\setminus D_{1/\rho_-}(0)\bigr)\cap\ol D_{\rho_+}(0)}}\]</span></p>
 <p>where we have set <span class="math inline">\(r=1/\rho_-,\)</span> <span class="math inline">\(R=\rho_+\)</span> (see <a href="#fig-Ch9_Annulus_of_Convergence" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>).</p>
 <div class="cell" data-layout-align="center">

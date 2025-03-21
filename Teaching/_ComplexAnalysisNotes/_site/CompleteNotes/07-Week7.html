@@ -717,6 +717,26 @@ Exercise 7.1
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 7.1">
+<button id="displayTextunnamed-chunk-10" onclick="javascript:toggle('unnamed-chunk-10');">
+Hide Solution 7.1
+</button>
+<div id="toggleTextunnamed-chunk-10" style="display: block">
+<div class="panel panel-default">
+<div id="tsk7.1" class="panel-heading panel-heading1">
+Solution 7.1
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>The straight-line homotopy <span class="math inline">\(\Ga_s(t)=s\ga_1(t) + (1-s)\ga_0(t)\)</span> is a path-homotopy, since using <span class="math inline">\(\ga_0(\pm1)=\ga_1(\pm1)\)</span> we find that <span class="math display">\[\Ga_s(\pm1)=s\ga_1(\pm1)+(1-s)\ga_0(\pm1)=\ga_0(\pm1)\]</span></p>
+<p>is constant in <span class="math inline">\(s\in[0,1].\)</span></p></li>
+<li><p>Recall that <span class="math inline">\(\ga_0\colon[0,2\pi]\to\C,\)</span> <span class="math inline">\(\ga_0(t)=r_0e^{it}\)</span> and <span class="math inline">\(\ga_1\colon[0,2\pi]\to\C,\)</span> <span class="math inline">\(\ga_1(t)=r_1e^{it}.\)</span> We will again use a straight-line homotopy <span class="math inline">\(\Ga_s(t)=s\ga_1(t) + (1-s)\ga_0(t).\)</span> To show that <span class="math inline">\(\Ga\)</span> is a homotopy in the closed annulus, we must prove that <span class="math inline">\(r_1\leqslant |\Ga_s(t)|\leqslant r_2\)</span> for all <span class="math inline">\(s,t.\)</span> This holds since <span class="math display">\[|\Ga_s(t)|=|(tr_1+(1-t)r_0)e^{it}|=tr_1+(1-t)r_0\]</span></p>
+<p>is the straight-line from <span class="math inline">\(r_0\)</span> to <span class="math inline">\(r_1,\)</span> hence has image in <span class="math inline">\([r_0,r_1].\)</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 7.2">
 <div class="panel panel-default">
 <div id="sol7.2" class="panel-heading">
@@ -724,6 +744,28 @@ Exercise 7.2
 </div>
 <div class="panel-body">
 <p>Let <span class="math inline">\(\al+i\be\in\C.\)</span> Determine <span class="math display">\[\int_a^b e^{(\al+i\be)t} dt\]</span> to compute <span class="math display">\[\int_a^b e^{\al t}\cos(\be t)dt.\]</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 7.2">
+<button id="displayTextunnamed-chunk-12" onclick="javascript:toggle('unnamed-chunk-12');">
+Hide Solution 7.2
+</button>
+<div id="toggleTextunnamed-chunk-12" style="display: block">
+<div class="panel panel-default">
+<div id="tsk7.2" class="panel-heading panel-heading1">
+Solution 7.2
+</div>
+<div class="panel-body">
+<p>By the FTC, <span class="math inline">\(\int_a^b e^{(\al+i\be)t} dt=\left[\frac{(e^{\al+i\be)t}}{\al+i\be}\right]_a^b.\)</span></p>
+<p>As a preparation, notice that for <span class="math inline">\(z=x+iy\)</span> we have <span class="math display">\[\Re(e^z)=\frac{e^z+e^{\ol z}}{2}=\frac{e^xe^{iy}+e^xe^{-iy}}{2}=e^x\cos(y).\]</span></p>
+<p>Similarly, <span class="math inline">\(\Im(e^z)=e^x\sin(y).\)</span> We apply this to <span class="math inline">\(z=(\al+i\be)t\)</span> and compute <span class="math display">\[\begin{align*}
+\int_a^b e^{\al t}\cos(\be t)dt&amp;=\int_a^b \Re e^{(\al+i\be)t}dt\\
+&amp;=\Re\int_a^b e^{(\al+i\be)t}dt\\
+&amp;=\Re\left[\frac{(e^{\al+i\be)t}}{\al+i\be}\right]_a^b\\
+&amp;=\left[e^{\al t}\frac{\al\cos(\be t)+\be\sin(\be t)}{\al^2+\be^2}\right]_a^b.
+\end{align*}\]</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -743,6 +785,36 @@ Exercise 7.3
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 7.3">
+<button id="displayTextunnamed-chunk-14" onclick="javascript:toggle('unnamed-chunk-14');">
+Hide Solution 7.3
+</button>
+<div id="toggleTextunnamed-chunk-14" style="display: block">
+<div class="panel panel-default">
+<div id="tsk7.3" class="panel-heading panel-heading1">
+Solution 7.3
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>Every point <span class="math inline">\(z\in\C^-\)</span> can be connected to <span class="math inline">\(1\)</span> by a straight line <span class="math inline">\(\ga\colon[0,1]\to\C,\)</span> <span class="math inline">\(\ga(s)=s+(1-s)z,\)</span> which runs entirely in <span class="math inline">\(\C^-\)</span> since <span class="math inline">\(\ga(s)\in(-\iy,0]\)</span> would imply <span class="math inline">\(z=\frac{\ga(s)-s}{1-s}\in(-\iy,0],\)</span> contradicting <span class="math inline">\(z\in\C^-.\)</span></p>
+<p>To connect two points <span class="math inline">\(z, w\in\C^-,\)</span> first connect <span class="math inline">\(z\)</span> to <span class="math inline">\(1\)</span> and then <span class="math inline">\(1\)</span> to <span class="math inline">\(w.\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="07-Week7_files/figure-html/unnamed-chunk-53-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>Define <span class="math display">\[\Ga_s(t)=s + (1-s)\ga(t)\]</span> by straight line interpolation (this method works for every star-shaped set; here <span class="math inline">\(1\)</span> is a focal point). Of course, <span class="math inline">\(\Ga\)</span> is continuous, being an algebraic expression in continuous functions. We have already proven in (a) that the straight line from <span class="math inline">\(\ga(t)\)</span> to <span class="math inline">\(1\)</span> is contained in <span class="math inline">\(\C^-.\)</span> Therefore the image of <span class="math inline">\(\Ga\)</span> is contained in <span class="math inline">\(\C^-.\)</span> Clearly, <span class="math inline">\(\Ga_0(t)=\ga(t)\)</span> and <span class="math inline">\(\Ga_1(t)=1.\)</span></p></li>
+<li><p>Same method as for a. and b. but with <span class="math inline">\(1\)</span> replaced by the origin.</p></li>
+<li><p>Let <span class="math inline">\(\ga=\partial D_1(0)\)</span> be the contour <span class="math inline">\(\ga(t)=e^{it},\)</span> <span class="math inline">\(t\in[0,2\pi].\)</span> From <a href="06-Week6.html#exm-Ch6_Ex_zn" class="quarto-xref">Example&nbsp;<span>6.3</span></a> we know that <span class="math display">\[\int_{\ga}\frac{dz}{z}=2\pi i.\]</span> If <span class="math inline">\(\C^\t\)</span> were simply-connected, then since <span class="math inline">\(f(z)=1/z\)</span> is holomorphic on <span class="math inline">\(\C^\t,\)</span> Cauchy’s Theorem would imply <span class="math inline">\(\int_\ga f(z)dz=0,\)</span> a contradiction.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 7.4">
 <div class="panel panel-default">
 <div id="sol7.4" class="panel-heading">
@@ -753,8 +825,33 @@ Exercise 7.4
 <ol type="a">
 <li>Using the geometric series, find the power series expansion <span class="math display">\[\frac{1}{z-1/b}=\sum_{n=0}^\iy a_n(z-b)^n\]</span> with center <span class="math inline">\(z_0=b\)</span> and determine the radius of convergence <span class="math inline">\(\rho.\)</span></li>
 <li>Use a. to show that for all <span class="math inline">\(0&lt;r&lt;\rho\)</span> <span class="math display">\[\int_{\partial D_r(b)}\frac{dz}{(z-b)(z-1/b)}=\frac{2\pi i}{b-1/b}.\]</span></li>
-<li>Use c.&nbsp;to compute <span class="math display">\[\int_0^{2\pi}\frac{dt}{1-2b\cos(t)+b^2}.\]</span></li>
+<li>Use b. to compute <span class="math display">\[\int_0^{2\pi}\frac{dt}{1-2b\cos(t)+b^2}.\]</span></li>
 </ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 7.4">
+<button id="displayTextunnamed-chunk-16" onclick="javascript:toggle('unnamed-chunk-16');">
+Hide Solution 7.4
+</button>
+<div id="toggleTextunnamed-chunk-16" style="display: block">
+<div class="panel panel-default">
+<div id="tsk7.4" class="panel-heading panel-heading1">
+Solution 7.4
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>For <span class="math inline">\(q=\frac{z-b}{b-1/b}\)</span> we have <span class="math display">\[\begin{align*}
+\frac{1}{z-1/b}&amp;=\frac{\frac{-1}{1/b-b}}{1-\frac{z-b}{1/b-b}}=-\sum_{n=0}^\iy \frac{(z-b)^n}{(1/b-b)^{n+1}}
+\end{align*}\]</span> which converges for <span class="math inline">\(|q|&lt;1\)</span> and diverges for <span class="math inline">\(q\geqslant 1.\)</span> Equivalently, it converges for <span class="math inline">\(|z-b|&lt;|b-1/b|\)</span> and diverges for <span class="math inline">\(|z-b|\geqslant|b-1/b|.\)</span> Hence <span class="math inline">\(\rho=|b-1/b|.\)</span></p></li>
+<li><p>We know that power series converge uniformly (<a href="05-Week5.html#thm-Ch5_thm_Radius_of_Convergence" class="quarto-xref">Theorem&nbsp;<span>5.1</span></a>) and that we may exchange integrals with uniform limits (<a href="06-Week6.html#cor-Ch6_Uniform_Conv_Integral" class="quarto-xref">Corollary&nbsp;<span>6.1</span></a>).</p>
+<p>Since <span class="math inline">\(1/(z-b)\)</span> is bounded on an annulus <span class="math inline">\(A_{\ep,\rho-\ep}(b),\)</span> the uniformly convergent series multiplied by <span class="math inline">\(1/(z-b)\)</span> still converges uniformly on <span class="math inline">\(A_{\ep,\rho-\ep}(b)\)</span> for any <span class="math inline">\(0&lt;\ep&lt;\rho/2.\)</span> Since the curve <span class="math inline">\(\partial D_r(b)\)</span> lies in this annulus, <span class="math display">\[\begin{align*}
+\int_{\partial D_r(b)}\frac{dz}{(z-b)(z-1/b)}&amp;=-\sum_{n=0}^\iy \int_{\partial D_r(b)}\frac{(z-b)^{n-1}}{(1/b-b)^{n+1}}dz\\
+&amp;=-\frac{2\pi i}{1/b-b}
+\end{align*}\]</span> The last equality follows by <a href="06-Week6.html#exm-Ch6_Ex_zn" class="quarto-xref">Example&nbsp;<span>6.3</span></a>.</p></li>
+<li><p>Since <span class="math inline">\(\frac{1}{(z-b)(z-1/b)}\)</span> is holomorphic on <span class="math inline">\(\C\setminus\{b,1/b\}\)</span> and the curves <span class="math inline">\(\partial D_1(0)\)</span> and <span class="math inline">\(\partial D_r(b)\)</span> are homotopic, we can apply Cauchy’s Theorem to get <span class="math display">\[\int_{\partial D_r(b)}\frac{dz}{(z-b)(z-1/b)}=\int_{\partial D_1(0)}\frac{dz}{(z-b)(z-1/b)}.\]</span> Using the parameterization <span class="math inline">\(\ga\colon[0,2\pi]\to\C,\)</span> <span class="math inline">\(\ga(t)=e^{it},\)</span> the right integral is <span class="math display">\[\int_0^{2\pi} \frac{ie^{it}}{(e^{it}-b)(e^{it}-1/b)}dt=\int_0^{2\pi}\frac{ib}{1-2b\cos(t)+b^2}dt.\]</span> Combined with b., we obtain <span class="math display">\[\int_0^{2\pi}\frac{dt}{1-2b\cos(t)+b^2}=\frac{2\pi}{b^2-1}.\]</span></p></li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -765,6 +862,30 @@ Exercise 7.5
 </div>
 <div class="panel-body">
 <p>Let <span class="math inline">\(\ga\colon[0,1]\to D\)</span> be a curve in <span class="math inline">\(D\subset\C\)</span> and let <span class="math inline">\(-\ga\colon[0,1]\to D,\)</span> <span class="math inline">\((-\ga)(t)=\ga(1-t)\)</span> be the opposite curve. Prove that <span class="math inline">\(\ga\ast(-\ga)\)</span> is path-homotopic to a constant loop.</p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 7.5">
+<button id="displayTextunnamed-chunk-18" onclick="javascript:toggle('unnamed-chunk-18');">
+Hide Solution 7.5
+</button>
+<div id="toggleTextunnamed-chunk-18" style="display: block">
+<div class="panel panel-default">
+<div id="tsk7.5" class="panel-heading panel-heading1">
+Solution 7.5
+</div>
+<div class="panel-body">
+<p>Define <span class="math display">\[\Ga_s(t)=
+    \begin{cases}
+        \ga(2t) &amp;\text{if $t\in[0,\frac{1-s}{2}],$}\\
+        \ga\left(1-s\right) &amp;\text{if $t\in[\frac{1-s}{2},\frac{1+s}{2}],$}\\
+        (-\ga)\left(2(t-\frac{1}{2})\right)&amp;\text{if $t\in[\frac{1+s}{2},1].$}\\
+    \end{cases}\]</span> Notice that <span class="math inline">\((-\ga)\left(2\left(\frac{1+s-1}{2}  \right)\right)=\ga\left(2\left(\frac{1-s}{2}\right)\right),\)</span> so the functions agree on the overlap and <span class="math inline">\(\Ga_s(t)\)</span> is well-defined. The restriction of <span class="math inline">\(\Ga\)</span> to each of the closed sets <span class="math display">\[\begin{align*}
+&amp;\left\{(s,t)\in[0,1]\t[0,1]\middle|\ 0\leqslant t\leqslant\frac{1-s}{2}\right\},\\
+&amp;\left\{(s,t)\in[0,1]\t[0,1]\middle|\ \frac{1-s}{2}\leqslant t\leqslant \frac{1+s}{2}\right\},\\
+&amp;\left\{(s,t)\in[0,1]\t[0,1]\middle|\ \frac{1+s}{2}\leqslant t\leqslant 1\right\}
+\end{align*}\]</span> is evidently continuous. It follows that <span class="math inline">\(\Ga\)</span> is continuous. Moreover, <span class="math inline">\(\Ga_0=\ga\ast(-\ga)\)</span> and <span class="math inline">\(\Ga_1=\ga(0).\)</span></p>
+</div>
 </div>
 </div>
 </div>
