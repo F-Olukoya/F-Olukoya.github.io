@@ -606,7 +606,7 @@ P_+(z)&amp;=\sum_{n=0}^\iy a_nz^n,
 <p>where we have set <span class="math inline">\(r=1/\rho_-,\)</span> <span class="math inline">\(R=\rho_+\)</span> (see <a href="#fig-Ch9_Annulus_of_Convergence" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-Ch9_Annulus_of_Convergence" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Annulus of convergence for a bilateral series. The series $P_+(z)$ converges on the red disk in the $z$-plane and the series $P_-(w)$ on the blue disk in the $w$-plane, corresponding to the complement of a disk on the $z$-plane. $P(z)=P_+(z)+P_-(w)$ converges on the overlap, an annulus in the $z$-plane." data-fig-align="center">
+<div id="fig-Ch9_Annulus_of_Convergence" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Annulus of convergence for a bilateral series. The series $P_+(z)$ converges on the red disk in the $z$-plane and the series $P_-(w)$ on the blue disk in the $w$-plane, corresponding to the complement of a disk on the $z$-plane. $P(z)=P_+(z)+P_-(w)$ converges on the overlap, an annulus in the $z$-plane.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Ch9_Annulus_of_Convergence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="09-Week9_files/figure-html/fig-Ch9_Annulus_of_Convergence-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="Annulus of convergence for a bilateral series. The series $P_+(z)$ converges on the red disk in the $z$-plane and the series $P_-(w)$ on the blue disk in the $w$-plane, corresponding to the complement of a disk on the $z$-plane. $P(z)=P_+(z)+P_-(w)$ converges on the overlap, an annulus in the $z$-plane.">
@@ -638,7 +638,7 @@ Figure&nbsp;9.1: Annulus of convergence for a bilateral series. The series <span
 <p>Let <span class="math inline">\(z\in A_{r,R}(z_0).\)</span> Let <span class="math inline">\(\ga\)</span> be the contour shown in <a href="#fig-Ch9_Laurent_Contour" class="quarto-xref">Figure&nbsp;<span>9.2</span></a> that runs around and connects the two boundary components of the annulus. Pick <span class="math inline">\(s&gt;0\)</span> such that <span class="math inline">\(D_s(z)\subset A_{r,R}(z_0).\)</span> Then <span class="math inline">\(\ga\)</span> is freely homotopic to <span class="math inline">\(\6 D_s(z).\)</span></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-Ch9_Laurent_Contour" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Contour of integration for Laurent expansion" data-fig-align="center">
+<div id="fig-Ch9_Laurent_Contour" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Contour of integration for Laurent expansion">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Ch9_Laurent_Contour-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="09-Week9_files/figure-html/fig-Ch9_Laurent_Contour-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Contour of integration for Laurent expansion">
@@ -717,6 +717,30 @@ Exercise 9.1
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 9.1">
+<button id="displayTextunnamed-chunk-10" onclick="javascript:toggle('unnamed-chunk-10');">
+Hide Solution 9.1
+</button>
+<div id="toggleTextunnamed-chunk-10" style="display: block">
+<div class="panel panel-default">
+<div id="tsk9.1" class="panel-heading panel-heading1">
+Solution 9.1
+</div>
+<div class="panel-body">
+<ol type="i">
+<li><p>The singularities <span class="math inline">\(z=\pm i\)</span> are isolated. Since <span class="math inline">\(\frac{z+i}{z^2+1}=\frac{1}{z-i},\)</span> the singularity at <span class="math inline">\(z=+i\)</span> is removable, the holomorphic extension being <span class="math inline">\(\frac{1}{z-i},\)</span> while the singularity at <span class="math inline">\(z=-i\)</span> is a pole of order one with residue <span class="math inline">\(\Res_{-i}(f)=1.\)</span></p></li>
+<li><p>The function has an isolated singularity at <span class="math inline">\(z=0.\)</span> The power series expansion of the cosine gives <span class="math display">\[1-\cos(z)=\sum_{n=1}^\iy\frac{(-1)^{n+1}}{(2n)!}z^{2n}=\frac{z^2}{2}-\frac{z^4}{24}+\cdots.\tag{$\star$}\]</span> Hence <span class="math display">\[\frac{1-\cos(z)}{z^2}=\sum_{n=1}^\iy\frac{(-1)^{n+1}}{(2n)!}z^{2n-2}=\frac{1}{2}-\frac{z^2}{24}+\cdots\]</span> is holomorphic. Therefore, the singularity is removable. The power series is a holomorphic extension. Alternatively, we can extend <span class="math inline">\(f(z)=\frac{1-\cos(z)}{z^2}\)</span> on <span class="math inline">\(\C^\t\)</span> holomorphically to <span class="math inline">\(\C\)</span> by defining <span class="math inline">\(f(0)=1/2.\)</span></p></li>
+<li><p>The function <span class="math inline">\(f(z)=\frac{1}{\cos(z)-1}\)</span> has a singularity whenever <span class="math inline">\(\cos(z)=1,\)</span> which is equivalent to <span class="math inline">\(z\in 2\pi\Z.\)</span> Each of these singularities is isolated (take a punctured open ball around <span class="math inline">\(z\)</span> of radius <span class="math inline">\(r&lt;2\pi\)</span>). Consider the singularity at the origin. <span class="math display">\[\begin{align*}
+\frac{1}{1-\cos(z)}&amp;=z^{-2}\frac{1}{\frac{1}{2}-\frac{z^2}{24}+\cdots} &amp;&amp;\text{by ($\star$)}\\
+&amp;=z^{-2}\left[2+4\left(\frac{z^2}{24}+\cdots\right)+\cdots\right] &amp;&amp; \text{as $\frac{1}{1/2-q}=2+4q+\cdots$}\\
+&amp;=z^{-2}\left[2+\frac{z^2}{6}+\cdots\right].
+\end{align*}\]</span> The second factor in square brackets is a holomorphic function near the origin. Hence the singularity at <span class="math inline">\(z=0\)</span> is a pole of order <span class="math inline">\(2\)</span> with <span class="math inline">\(\Res_{z=0} f(z)=0.\)</span> Since <span class="math inline">\(f(z+2\pi)=f(z),\)</span> the same holds for the other singularities <span class="math inline">\(z=2\pi k,\)</span> <span class="math inline">\(k\in\Z.\)</span></p></li>
+<li><p>This function has an isolated singularity at <span class="math inline">\(z=0,\)</span> which is an essential singularity: By substituting <span class="math inline">\(1/z\)</span> into the power series expansion of the exponential function, we find <span class="math display">\[e^{1/z}=\sum_{n=0}^\iy\frac{z^{-n}}{n!}=1+\frac{1}{z}+\frac{1}{2z^2}+\frac{1}{6z^3}+\cdots,\]</span> which has infinitely many negative terms. The residue is <span class="math inline">\(\Res_{z=0}\bigl(e^{1/z}\bigr)=1.\)</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 9.2">
 <div class="panel panel-default">
 <div id="sol9.2" class="panel-heading">
@@ -728,6 +752,25 @@ Exercise 9.2
 <li><p><span class="math inline">\(\sum_{n=-\iy}^\iy z^n\)</span>,</p></li>
 <li><p><span class="math inline">\(\sum_{n=-\iy}^\iy \frac{|n|^{|n|}}{|n|!}z^n.\)</span></p></li>
 </ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 9.2">
+<button id="displayTextunnamed-chunk-12" onclick="javascript:toggle('unnamed-chunk-12');">
+Hide Solution 9.2
+</button>
+<div id="toggleTextunnamed-chunk-12" style="display: block">
+<div class="panel panel-default">
+<div id="tsk9.2" class="panel-heading panel-heading1">
+Solution 9.2
+</div>
+<div class="panel-body">
+<ol type="i">
+<li><p>The power series <span class="math inline">\(P_+=\sum_{n=0}^\iy\frac{z^n}{n!}\)</span> and <span class="math inline">\(P_-=\sum_{n=1}^\iy\frac{z^n}{n!}\)</span> both have the same radius of convergence <span class="math inline">\(\rho_\pm=+\iy.\)</span> Hence by Proposition 9.5 the bilateral series has radii of convergence <span class="math inline">\(r=1/\rho_-=0,\)</span> <span class="math inline">\(R=\rho_+=+\iy.\)</span> In other words, the bilateral series converges on the punctured plane <span class="math inline">\(D(P)=\C^\t.\)</span></p></li>
+<li><p>The series <span class="math inline">\(P_+=\sum_{n=0}^\iy z^n\)</span> and <span class="math inline">\(P_-=\sum_{n=1}^\iy z^n\)</span> converge precisely for <span class="math inline">\(|z|&lt;1.\)</span> Hence <span class="math inline">\(P_+(z)\)</span> and <span class="math inline">\(P_-(1/z)\)</span> converge simultaneously only if <span class="math inline">\(|z|&lt;1\)</span> and <span class="math inline">\(|1/z|&lt;1,\)</span> so the intersection <span class="math inline">\(D(P)\)</span> is an empty set.</p></li>
+<li><p>Compute the radius of convergence of <span class="math inline">\(P_+=\sum_{n=0}^\iy \frac{n^n}{n!}z^n\)</span> by the ratio test: <span class="math display">\[\frac{\frac{(n+1)^{n+1}}{(n+1)!}|z|^{n+1}}{\frac{n^n}{n!}|z|^n}=\left(1+\frac{1}{n}\right)^n|z|\longra e|z|\qquad\text{as $n\to\iy$.}\]</span> (Recall here from calculus that <span class="math inline">\(\lim_{n\to\iy}\left(1+\frac{1}{n}\right)^n=e.\)</span>) This implies <span class="math inline">\(\rho_+=e.\)</span> Similarly, <span class="math inline">\(P_-=\sum_{n=1}^\iy \frac{n^n}{n!}z^n\)</span> has <span class="math inline">\(\rho_-=e.\)</span> Hence by Proposition 9.5 we have <span class="math inline">\(r=1/e\)</span> and <span class="math inline">\(R=e\)</span> for the radii of convergence. In other words, the bilateral series converges on the annulus <span class="math inline">\(A_{1/e,e}(0)\)</span> contained in the domain <span class="math inline">\(D(P),\)</span> which in particular is non-empty.</p></li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -746,6 +789,25 @@ Exercise 9.3
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 9.3">
+<button id="displayTextunnamed-chunk-14" onclick="javascript:toggle('unnamed-chunk-14');">
+Hide Solution 9.3
+</button>
+<div id="toggleTextunnamed-chunk-14" style="display: block">
+<div class="panel panel-default">
+<div id="tsk9.3" class="panel-heading panel-heading1">
+Solution 9.3
+</div>
+<div class="panel-body">
+<ol type="i">
+<li><p>On <span class="math inline">\(D_1(0)\)</span> we have <span class="math inline">\(\frac{1}{1-z}=\sum_{n=0}^\iy z^n,\)</span> hence <span class="math display">\[f(z)=\sum_{n=-1}^\iy z^n\qquad\text{on the punctured disk $0&lt;|z|&lt;1.$}\]</span></p></li>
+<li><p>We similarly express <span class="math inline">\(1/z\)</span> in powers of <span class="math inline">\(z-1,\)</span> namely <span class="math display">\[\frac{1}{z}=\frac{1}{1-(1-z)}=\sum_{n=0}^\iy(-1)^n(z-1)^n.\]</span> Hence <span class="math display">\[f(z)=\sum_{n=-1}^\iy(-1)^n(z-1)^n\qquad\text{on the punctured disk $0&lt;|z-1|&lt;1.$}\]</span></p></li>
+<li><p>Use the geometric series to write <span class="math display">\[\frac{1}{1-z}=\frac{-1}{z}\frac{1}{1-1/z}=-\sum_{n=0}^\iy z^{-n-1}.\]</span> Hence <span class="math display">\[f(z)=-\sum_{n=0}^\iy z^{-n-2}\qquad\text{on the annulus $A_{1,+\iy}(0).$}\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 9.4">
 <div class="panel panel-default">
 <div id="sol9.4" class="panel-heading">
@@ -754,6 +816,23 @@ Exercise 9.4
 <div class="panel-body">
 <p>Let <span class="math inline">\(P=\sum_{n=-\iy}^\iy a_n T^n,\)</span> <span class="math inline">\(Q=\sum_{n=-\iy}^\iy b_n T^n\)</span> be formal bilateral series. Suppose that both domains <span class="math inline">\(D(P,z_0),\)</span> <span class="math inline">\(D(Q,z_0)\)</span> contain a non-empty annulus <span class="math inline">\(A_{r,R}(z_0).\)</span> Assume that for some radius <span class="math inline">\(s\)</span> with <span class="math inline">\(r&lt;s&lt;R\)</span> we have <span class="math display">\[P(z)=Q(z),\qquad\text{for all $|z-z_0|=s.$}\]</span></p>
 <p>Prove the <em>identity theorem</em>, namely that <span class="math inline">\(a_n=b_n\)</span> for all <span class="math inline">\(n\in\Z.\)</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 9.4">
+<button id="displayTextunnamed-chunk-16" onclick="javascript:toggle('unnamed-chunk-16');">
+Hide Solution 9.4
+</button>
+<div id="toggleTextunnamed-chunk-16" style="display: block">
+<div class="panel panel-default">
+<div id="tsk9.4" class="panel-heading panel-heading1">
+Solution 9.4
+</div>
+<div class="panel-body">
+<p>Pick <span class="math inline">\(S\)</span> with <span class="math inline">\(r&lt;s&lt;S&lt;R.\)</span> Applying Theorem 9.6 to <span class="math inline">\(\ol A_{s,S}(z_0)\)</span> gives <span class="math display">\[a_n=\frac{1}{2\pi i}\int_{\partial D_s(z_0)}\frac{P(\ze)}{(\ze-z_0)^{n+1}}d\ze\]</span></p>
+<p>and <span class="math display">\[b_n=\frac{1}{2\pi i}\int_{\partial D_s(z_0)}\frac{Q(\ze)}{(\ze-z_0)^{n+1}}d\ze.\]</span></p>
+<p>By assumption, <span class="math inline">\(P(\ze)=Q(\ze)\)</span> for all <span class="math inline">\(\ze\in\partial D_s(z_0).\)</span> Hence <span class="math inline">\(a_n=b_n\)</span> for all <span class="math inline">\(n.\)</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -768,6 +847,27 @@ Exercise 9.5
 <li>If <span class="math inline">\(f(z_0)\neq0\)</span> and <span class="math inline">\(g\)</span> has a pole of order one at <span class="math inline">\(z_0,\)</span> prove that <span class="math inline">\(fg\)</span> has a pole of order one at <span class="math inline">\(z_0\)</span> with <span class="math display">\[\Res_{z_0}(fg)=f(z_0)\Res_{z_0}(g).\]</span></li>
 <li>If <span class="math inline">\(f(z_0)=0\)</span> and <span class="math inline">\(f'(z_0)\neq 0,\)</span> prove that <span class="math inline">\(1/f(z)\)</span> has a pole of order one at <span class="math inline">\(z_0\)</span> with <span class="math inline">\(\Res_{z_0}(1/f)=1/f'(z_0).\)</span></li>
 </ol>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 9.5">
+<button id="displayTextunnamed-chunk-18" onclick="javascript:toggle('unnamed-chunk-18');">
+Hide Solution 9.5
+</button>
+<div id="toggleTextunnamed-chunk-18" style="display: block">
+<div class="panel panel-default">
+<div id="tsk9.5" class="panel-heading panel-heading1">
+Solution 9.5
+</div>
+<div class="panel-body">
+<ol type="i">
+<li><p>By assumption, <span class="math display">\[\begin{align*}
+f(z)&amp;=a_0+a_1(z-z_0)+a_2(z-z_0)^2+\cdots\\
+g(z)&amp;=\frac{b_{-1}}{z-z_0}+b_0+b_1(z-z_0)+\cdots
+\end{align*}\]</span> with <span class="math inline">\(a_0\neq0\)</span> and <span class="math inline">\(b_{-1}=\Res_{z_0}(g)\neq0.\)</span> Therefore, <span class="math display">\[f(z)g(z)=\frac{a_0b_{-1}}{z-z_0}+(a_0b_0+a_1b_{-1})+(a_1b_0+a_2b_{-1})(z-z_0)+\cdots.\]</span> We read off <span class="math inline">\(\Res_{z_0}(fg)=a_0b_{-1}=f(z_0)\Res_{z_0}(g)\neq0.\)</span></p></li>
+<li><p>As <span class="math inline">\(U\)</span> is open, there is a disk <span class="math inline">\(D_r(z_0)\subset U.\)</span> By Theorem 8.2, we can expand <span class="math inline">\(f(z)=a_0+a_1(z-z_0)+a_2(z-z_0)^2+\cdots\)</span> as a power series on <span class="math inline">\(D_r(z_0)\)</span> with <span class="math inline">\(a_0=f(z_0)=0\)</span> and <span class="math inline">\(a_1=f'(z_0)\neq0.\)</span> The series <span class="math inline">\(h(z)=\sum_{n=0}^\iy a_{n+1}(z-z_0)^n\)</span> has the same radius of convergence and therefore defines a holomorphic function on <span class="math inline">\(D_r(z_0).\)</span> By construction,<span class="math display">\[f(z)=(z-z_0)h(z),\qquad h(z_0)=a_1=f'(z_0)\neq0,\]</span> so <span class="math display">\[\frac{1}{f(z)}=\frac{1}{z-z_0}\frac{1}{h(z)}.\]</span> Since <span class="math inline">\(h(z_0)\neq0,\)</span> <span class="math inline">\(1/h(z)\)</span> is holomorphic near <span class="math inline">\(z_0\)</span> and we can apply Part (i) to <span class="math inline">\(1/(z-z_0)\)</span> and <span class="math inline">\(1/h(z)\)</span> to conclude that <span class="math inline">\(\frac{1}{f(z)}\)</span> has a pole of order one with <span class="math display">\[\Res_{z_0}\left(\frac{1}{f(z)}\right)=\Res_{z_0}\left(\frac{1}{z-z_0}\right)\frac{1}{h(z_0)}=\frac{1}{a_1}=\frac{1}{f'(z_0)}.\]</span></p></li>
+</ol>
+</div>
 </div>
 </div>
 </div>

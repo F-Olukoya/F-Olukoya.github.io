@@ -157,7 +157,7 @@ div.csl-indent {
 
 <meta property="og:title" content="10&nbsp; Residue theorem – MX4557 Complex Analysis">
 <meta property="og:description" content="Complex Analysis">
-<meta property="og:image" content="10-Week10_files/figure-html/unnamed-chunk-45-1.jpeg">
+<meta property="og:image" content="10-Week10_files/figure-html/unnamed-chunk-39-1.jpeg">
 <meta property="og:site_name" content="MX4557 Complex Analysis">
 </head><body class="nav-sidebar docked"><div style="display:none">
 
@@ -612,7 +612,7 @@ O(z^m)+O(z^n)&amp;=O\bigl(z^{\min(m,n)}\bigr),\\
 <p><span class="proof-title"><em>Proof</em>. </span></p>
 <div class="cell" data-gaplength="15">
 <ol type="a">
-<li><p>Over <span class="math inline">\([t_{k-1},t_k]\)</span> we have <span class="math inline">\(\ga'(t)=r'(t)e^{i\th(t)}+r(t)\th'(t)e^{i\th(t)}.\)</span> Using<span id="eq-Ch10_Eqn_Diff_Winding_No"><span class="math display">\[\frac{\ga'(t)}{\ga(t)-z_0}=\frac{r'(t)}{r(t)}+i\th'(t) \tag{10.1}\]</span></span> we compute <span class="math display">\[2\pi i W_{z_0}(\ga)=\sum_{k=1}^n\int_{t_{k-1}}^{t_k}\frac{\ga'(t)}{\ga(t)}dt\]</span> by <a href="#eq-Ch10_Eqn_Diff_Winding_No" class="quarto-xref">Equation&nbsp;<span>10.1</span></a> we have <span class="math display">\[\sum_{k=1}^n\int_{t_{k-1}}^{t_k}\frac{\ga'(t)}{\ga(t)}dt = \sum_{k=1}^n\left(\int_{t_{k-1}}^{t_k}\frac{d}{dt}\log r(t)dt + i\int_{t_{k-1}}^{t_k}\th'(t)dt\right)\]</span> using FTC, the right hand side becomes <span class="math display">\[\sum_{k=1}^n \Bigl(\log r(t_k)- \log r(t_{k-1})+i\th(t_k)-i\th(t_{k-1})\Bigr)\]</span> observing that these are telescoping sums, we conclude that <span class="math display">\[2\pi i W_{z_0}(\ga)= i\bigl(\th(t_n)-\th(t_0)\bigr)=i\bigl(\th(b)-\th(a)\bigr)\]</span>and the claimed formula follows. From <span class="math inline">\(\ga(a)=\ga(b)\)</span> we have <span class="math inline">\(e^{i\th(a)}=e^{i\th(b)},\)</span> so <a href="01-intro.html#prp-Ch1_Prop_Polar" class="quarto-xref">Proposition&nbsp;<span>1.5</span></a> implies <span class="math inline">\(\th(b)-\th(a)=2\pi k\)</span> for some <span class="math inline">\(k\in\Z.\)</span></p></li>
+<li><p>Over <span class="math inline">\([t_{k-1},t_k]\)</span> we have <span class="math inline">\(\ga'(t)=r'(t)e^{i\th(t)}+r(t)\th'(t)e^{i\th(t)}.\)</span> Using<span id="eq-Ch10_Eqn_Diff_Winding_No"><span class="math display">\[\frac{\ga'(t)}{\ga(t)-z_0}=\frac{r'(t)}{r(t)}+i\th'(t) \tag{10.1}\]</span></span> we compute <span class="math display">\[2\pi i W_{z_0}(\ga)=\sum_{k=1}^n\int_{t_{k-1}}^{t_k}\frac{\ga'(t)}{\ga(t) - z_0}dt\]</span> by <a href="#eq-Ch10_Eqn_Diff_Winding_No" class="quarto-xref">Equation&nbsp;<span>10.1</span></a> we have <span class="math display">\[\sum_{k=1}^n\int_{t_{k-1}}^{t_k}\frac{\ga'(t)}{\ga(t) - z_0}dt = \sum_{k=1}^n\left(\int_{t_{k-1}}^{t_k}\frac{d}{dt}\log r(t)dt + i\int_{t_{k-1}}^{t_k}\th'(t)dt\right)\]</span> using FTC, the right hand side becomes <span class="math display">\[\sum_{k=1}^n \Bigl(\log r(t_k)- \log r(t_{k-1})+i\th(t_k)-i\th(t_{k-1})\Bigr)\]</span> observing that these are telescoping sums, we conclude that <span class="math display">\[2\pi i W_{z_0}(\ga)= i\bigl(\th(t_n)-\th(t_0)\bigr)=i\bigl(\th(b)-\th(a)\bigr)\]</span>and the claimed formula follows. From <span class="math inline">\(\ga(a)=\ga(b)\)</span> we have <span class="math inline">\(e^{i\th(a)}=e^{i\th(b)},\)</span> so <a href="01-intro.html#prp-Ch1_Prop_Polar" class="quarto-xref">Proposition&nbsp;<span>1.5</span></a> implies <span class="math inline">\(\th(b)-\th(a)=2\pi k\)</span> for some <span class="math inline">\(k\in\Z.\)</span></p></li>
 <li><p>By <a href="07-Week7.html#thm-Ch7_Thm_Loop_Cauchy" class="quarto-xref">Theorem&nbsp;<span>7.2</span></a> applied to <span class="math inline">\(U=\C\setminus\{z_0\}\)</span> and <span class="math inline">\(f(z)=1/(z-z_0),\)</span> the implication ‘<span class="math inline">\(\Longleftarrow\)</span>’ holds.</p>
 <p>Conversely, assume <span class="math inline">\(W_{z_0}(\ga_0)=W_{z_0}(\ga_1).\)</span> Write <span class="math inline">\(\ga_k(t)=z_0+r_k(t)e^{i\th_k(t)}\)</span> for <span class="math inline">\(k=0,1.\)</span> As <span class="math inline">\(\ga_k(a)=\ga_k(b),\)</span> we have <span class="math inline">\(r_k(a)=r_k(b)\)</span> and <span class="math inline">\(\th_k(a)=\th_k(b)-2\pi i n_k\)</span> for some <span class="math inline">\(n_k\in\Z.\)</span> By assumption, <span class="math inline">\(\frac{\th_0(b)-\th_0(a)}{2\pi}=\frac{\th_1(b)-\th_1(a)}{2\pi},\)</span> hence <span class="math inline">\(n_0=n_1.\)</span> Define the homotopy by <span class="math display">\[\Ga_s(t)=z_0+[(1-s)r_0(t)+sr_1(t)]\exp(i(1-s)\th_0(t)+is\th_1(t)).\]</span></p>
 <p>Clearly, <span class="math inline">\(\Ga_k=\ga_k\)</span> for <span class="math inline">\(k=0,1.\)</span> The only thing to check is that <span class="math inline">\(\Ga_s\)</span> is a closed curve for each <span class="math inline">\(s\in[0,1],\)</span> that is, to show <span class="math inline">\(\Ga_s(b)=\Ga_s(a).\)</span> As <span class="math inline">\(r_k(a)=r_k(b),\)</span> this is equivalent to <span class="math display">\[\exp\bigl(i(1-s)(\th_1(b)-\th_1(a))+is(\th_0(b)-\th_0(a))\bigr)=1.\]</span></p>
@@ -688,7 +688,7 @@ Exercise 10.4
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="10-Week10_files/figure-html/unnamed-chunk-45-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="10-Week10_files/figure-html/unnamed-chunk-39-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 </div>
@@ -709,7 +709,7 @@ Exercise 10.5
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="10-Week10_files/figure-html/unnamed-chunk-50-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="10-Week10_files/figure-html/unnamed-chunk-44-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 </div>
