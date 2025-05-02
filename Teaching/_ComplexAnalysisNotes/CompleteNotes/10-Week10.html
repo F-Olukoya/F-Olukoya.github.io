@@ -157,7 +157,7 @@ div.csl-indent {
 
 <meta property="og:title" content="10&nbsp; Residue theorem – MX4557 Complex Analysis">
 <meta property="og:description" content="Complex Analysis">
-<meta property="og:image" content="10-Week10_files/figure-html/unnamed-chunk-39-1.jpeg">
+<meta property="og:image" content="10-Week10_files/figure-html/unnamed-chunk-32-1.jpeg">
 <meta property="og:site_name" content="MX4557 Complex Analysis">
 </head><body class="nav-sidebar docked"><div style="display:none">
 
@@ -655,6 +655,57 @@ Exercise 10.1
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 10.1">
+<button id="displayTextunnamed-chunk-11" onclick="javascript:toggle('unnamed-chunk-11');">
+Solution 10.1
+</button>
+<div id="toggleTextunnamed-chunk-11" style="display: ">
+<div class="panel panel-default">
+<div id="tsk10.1" class="panel-heading panel-heading1">
+Solution 10.1
+</div>
+<div class="panel-body">
+<ol type="a">
+<li><p>As in Example 10.6, we can use the definition to compute <span class="math display">\[\begin{align*}
+W_{z_0}(\ga)=\frac{1}{2\pi i}\int_\ga\frac{dz}{z-z_0}=\frac{1}{2\pi i}\int_0^{2\pi}\frac{ie^{it}}{e^{it}}=1
+\end{align*}\]</span> for <span class="math inline">\(z_0=0.\)</span> Next, since <span class="math inline">\(\frac{1}{z-2}\)</span> is holomorphic on <span class="math inline">\(\C\setminus\{2\},\)</span> Cauchy’s theorem (Theorem 7.4) gives <span class="math inline">\(\int_{\partial D_1(0)}\frac{dz}{z-2}=0.\)</span> Alternatively, <span class="math inline">\(\ln(z-2)\)</span> defines a primitive on <span class="math inline">\(\ol D_1(0)\)</span> and we find <span class="math inline">\(\int_{\partial D_1(0)}\frac{dz}{z-2}=0\)</span> from the complex FTC (Proposition 6.13).</p></li>
+<li><p>The contour and the points <span class="math inline">\(z_0\)</span> look as follows.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="10-Week10_files/figure-html/unnamed-chunk-32-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can see that <span class="math inline">\(\ga\)</span> encircles <span class="math inline">\(z_0=0\)</span> twice in a mathematically positive way and that <span class="math inline">\(\ga\)</span> does not encircle <span class="math inline">\(z_0=20.\)</span> Hence <span class="math display">\[W_{0}(\ga)=2, \qquad W_{20}(\ga)=0.\]</span></p>
+<p>More formally, we apply Proposition 10.7 to calculate these winding numbers. Using the notation there, we have already written <span class="math inline">\(\ga(t)\)</span> in the form <span class="math inline">\(z_0+r(t)e^{i\th_k(t)}\)</span> over the intervals <span class="math inline">\([t_{k-1},t_k]\)</span> where <span class="math inline">\(2\pi=t_0&lt;6\pi=t_1&lt;10\pi=t_2,\)</span> <span class="math inline">\(n=2.\)</span> Namely, <span class="math inline">\(z_0=0\)</span> and <span class="math display">\[r(t)=\begin{cases}
+t &amp; \text{for $t\in[2\pi, 6\pi],$}\\
+12\pi-t &amp; \text{for $t\in[6\pi,10\pi]$}
+\end{cases},
+\th(t)=\begin{cases}
+t &amp; \text{for $t\in[2\pi, 6\pi],$}\\
+6\pi &amp; \text{for $t\in[6\pi,10\pi]$}
+\end{cases}\]</span></p>
+<p>Using formula Proposition 10.7(a), we get <span class="math display">\[W_{0}(\ga)=\frac{\th(10\pi)-\th(2\pi)}{2\pi}=2.\]</span></p>
+<p>For (ii), note that <span class="math inline">\(f(z)=\frac{1}{z-20}\)</span> is holomorphic on <span class="math inline">\(D_{20}(0)\)</span> and that <span class="math inline">\(\ga\)</span> is a contour in <span class="math inline">\(D_{20}(0).\)</span> Hence Cauchy’s theorem (Theorem 7.4) implies <span class="math inline">\(W_{20}(\ga)=0.\)</span></p></li>
+<li><p>The curves looks as follows:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="10-Week10_files/figure-html/unnamed-chunk-33-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As in (b), we apply Proposition 10.7 to calculate <span class="math inline">\(W_0(\ga)=\frac{\th(2\pi)-\th(0)}{2\pi}=2,\)</span> where <span class="math inline">\(\th(t)=2t.\)</span> Moreover, <span class="math inline">\(W_4(\ga)=0\)</span> by Cauchy’s theorem (Theorem 7.4). We can see from the figure that <span class="math inline">\(z_0=2\)</span> gets encircled by <span class="math inline">\(\ga\)</span> once in a mathematically positive way, so <span class="math inline">\(W_2(\ga)=1,\)</span> but this is more difficult to see from the formula.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 10.2">
 <div class="panel panel-default">
 <div id="sol10.2" class="panel-heading">
@@ -667,6 +718,25 @@ Exercise 10.2
 </div>
 </div>
 </div>
+<div class="cell" title="Solution 10.2">
+<button id="displayTextunnamed-chunk-13" onclick="javascript:toggle('unnamed-chunk-13');">
+Solution 10.2
+</button>
+<div id="toggleTextunnamed-chunk-13" style="display: ">
+<div class="panel panel-default">
+<div id="tsk10.2" class="panel-heading panel-heading1">
+Solution 10.2
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(f(z)=\frac{(z+2)^2}{z(z-1)^2}.\)</span> Then <span class="math inline">\(f\)</span> has isolated singularities at <span class="math inline">\(z_0=0\)</span> (pole of order one) and <span class="math inline">\(z_0=1\)</span> (pole of order two). Using Proposition 10.2(c), we find <span class="math display">\[\begin{align*}
+\Res_0(f)&amp;=\lim_{z\to0}\frac{(z+2)^2}{(z-1)^2}=4,\\
+    \Res_1(f)&amp;=\lim_{z\to1}\frac{d}{dz}\left(\frac{(z+2)^2}{z}\right)=\lim_{z\to1}\left(\frac{2(z+2)}{z}-\frac{(z+2)^2}{z^2}\right)=-3.
+\end{align*}\]</span> According to Example 10.6, we have <span class="math inline">\(W_0(\ga)=1\)</span> for all <span class="math inline">\(r&gt;1\)</span> while <span class="math inline">\(W_1(\ga)=1\)</span> if <span class="math inline">\(r&gt;1\)</span> and <span class="math inline">\(W_1(\ga)=0\)</span> if <span class="math inline">\(r&lt;1\)</span> for the winding numbers, where <span class="math inline">\(\ga\)</span> denotes the boundary contour of the disk <span class="math inline">\(D_r(0).\)</span> If <span class="math inline">\(r&lt;1,\)</span> the only singularity contained in <span class="math inline">\(D_r(z_0)\)</span> is <span class="math inline">\(z_0=0,\)</span> so the residue theorem yields <span class="math display">\[\int_{\partial D_r(0)}\frac{(z+2)^2}{z(z-1)^2}dz=2\pi i W_0(\ga)\Res_0(f)=8\pi i.\]</span></p>
+<p>This can also be obtained from the Cauchy integral formula (Theorem~8.1). If <span class="math inline">\(r&gt;1,\)</span> both singularities are contained in <span class="math inline">\(D_r(z_0)\)</span> and the residue theorem gives <span class="math display">\[\int_{\partial D_r(0)}\frac{(z+2)^2}{z(z-1)^2}dz=2\pi i\bigl[W_0(\ga)\Res_0(f)+W_1(\ga)\Res_1(f)\bigr]=2\pi i.\]</span></p>
+</div>
+</div>
+</div>
+</div>
 <div class="cell" title="Exercise 10.3">
 <div class="panel panel-default">
 <div id="sol10.3" class="panel-heading">
@@ -674,6 +744,23 @@ Exercise 10.3
 </div>
 <div class="panel-body">
 <p>Apply the residue theorem to the contour <span class="math inline">\(\partial D_1(0)\)</span> and a suitable holomorphic function <span class="math inline">\(f(z)\)</span> to compute the integral<span class="math display">\[\int_0^{2\pi}\frac{dx}{2+\cos(x)}.\]</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 10.3">
+<button id="displayTextunnamed-chunk-15" onclick="javascript:toggle('unnamed-chunk-15');">
+Solution 10.3
+</button>
+<div id="toggleTextunnamed-chunk-15" style="display: ">
+<div class="panel panel-default">
+<div id="tsk10.3" class="panel-heading panel-heading1">
+Solution 10.3
+</div>
+<div class="panel-body">
+<p>Put <span class="math inline">\(z=e^{ix}.\)</span> For the cosine, <span class="math inline">\(\cos(x)=\frac{z+z^{-1}}{2}\)</span> and by definition of the contour integral (with <span class="math inline">\(dz=izdx\)</span>), we get <span class="math display">\[\begin{align*}
+\int_0^{2\pi}\frac{dx}{2+\cos(x)}&amp;=\int_0^{2\pi}\frac{dx}{2+\frac{z+z^{-1}}{2}}=\int_0^{2\pi}\frac{2zdx}{z^2+4z+1}\\&amp;=-2i\int_{\partial D_1(0)}\frac{dz}{z^2+4z+1}.
+\end{align*}\]</span> Factoring <span class="math inline">\(z^2+4z+1=(z+2+\sqrt{3})(z+2-\sqrt{3})\)</span> shows that <span class="math inline">\(f(z)=\frac{1}{z^2+4z+1}\)</span> has poles of order one at <span class="math inline">\(z_\pm=-2\pm\sqrt{3}.\)</span> Only <span class="math inline">\(z_+\)</span> is contained in <span class="math inline">\(D_1(0)\)</span> and has residue <span class="math inline">\(\Res_{z_+}(f)=\lim_{z\to z_+}\frac{z-z_+}{(z-z_+)(z-z_-)}=\frac{1}{z_+-z_-}=\frac{1}{2\sqrt{3}}.\)</span> Hence the residue theorem gives (by Example 10.6, we have <span class="math inline">\(W_0(\partial D_1(0))=1\)</span>) <span class="math display">\[-2i\int_{\partial D_1(0)}\frac{dz}{z^2+4z+1}=-2i\cdot 2\pi i\frac{1}{2\sqrt{3}}=\frac{2\pi}{\sqrt{3}}.\]</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -688,12 +775,43 @@ Exercise 10.4
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="10-Week10_files/figure-html/unnamed-chunk-39-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="10-Week10_files/figure-html/unnamed-chunk-46-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><em>Hint:</em> Recall that <span class="math inline">\(\int_0^{\iy}e^{-x^2}dx=\sqrt{\pi}/2.\)</span></p>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 10.4">
+<button id="displayTextunnamed-chunk-17" onclick="javascript:toggle('unnamed-chunk-17');">
+Solution 10.4
+</button>
+<div id="toggleTextunnamed-chunk-17" style="display: ">
+<div class="panel panel-default">
+<div id="tsk10.4" class="panel-heading panel-heading1">
+Solution 10.4
+</div>
+<div class="panel-body">
+<p>The function <span class="math inline">\(f(z)\)</span> is holomorphic on the slit plane, so Cauchy’s theorem (Theorem 7.4) implies <span class="math inline">\(\int_{\ga_{r,R}}f(z)dz=0.\)</span> Let <span class="math inline">\(\eta_\rho\colon[0,\pi/2]\to\C,\)</span> <span class="math inline">\(\eta_\rho(t)=\rho e^{it},\)</span> be the quarter-circle contour of radius <span class="math inline">\(\rho&gt;0.\)</span> The contour integral splits into four parts, <span class="math display">\[\begin{align*}
+0=\int_{\ga_{r,R}}f(z)dz=\int_{r}^R f(x)dx + \int_{R}^r if(ix)dx - \int_{\eta_r}f(z)dz + \int_{\eta_R}f(z)dz.\tag{$\star$}
+\end{align*}\]</span> We are trying to compute <span class="math inline">\(\Re\int_{r}^R f(x)dx.\)</span> The last two integrals tend to zero as <span class="math inline">\(r\to0\)</span> and <span class="math inline">\(R\to+\iy.\)</span> To see this, consider <span class="math display">\[\begin{align*}
+\left|\int_{\eta_\rho} f(z)dz\right|&amp;=\left|\int_0^{\pi/2}f(\rho e^{it})i\rho e^{it}dt\right|\\
+&amp;\leqslant\int_0^{\pi/2} \bigl|f(\rho e^{it})i\rho e^{it}\bigr|dt &amp;&amp;\text{by Proposition~6.2}\\
+&amp;=\int_0^{\pi/2} \sqrt\rho e^{\Re(\rho e^{it})} dt &amp;&amp;\text{as $|e^w|=e^{\Re w}$}\\
+&amp;= \sqrt\rho\int_0^{\pi/2} e^{-\rho\sin(t)} dt.
+\end{align*}\]</span> Put <span class="math inline">\(\rho=R.\)</span> For <span class="math inline">\(t\in[0,\pi/2]\)</span> we can estimate <span class="math inline">\(\sin(t)\geqslant t/2,\)</span> so <span class="math display">\[\begin{align*}
+\left|\int_{\eta_R} f(z)dz\right|&amp;\leqslant \sqrt{R}\int_0^{\pi/2}e^{-R t/2}dt=\sqrt{R}\left[\frac{-2}{R}e^{-Rt/2}\right]_0^{\pi/2}\\&amp;=\frac{-2}{\sqrt{R}}(e^{-R\pi/4}-1)\xrightarrow{R\to+\iy}0.
+\end{align*}\]</span> Put <span class="math inline">\(\rho=r.\)</span> For <span class="math inline">\(t\in[0,\pi/2]\)</span> we can estimate <span class="math inline">\(\sin(t)\geqslant 0,\)</span> so <span class="math display">\[\begin{align*}
+\left|\int_{\eta_r} f(z)dz\right|&amp;\leqslant\sqrt{r}\frac{\pi}{2}\xrightarrow{r\to0}0.
+\end{align*}\]</span> It follows that the last two integrals in (<span class="math inline">\(\star\)</span>) indeed tend to zero. Hence <span class="math display">\[\begin{align*}
+\Re \int_0^{+\iy} f(x)dx&amp;\overset{(\star)}{=}\Re \int_0^{+\iy} if(ix)dx\\
+&amp;=\Re\sqrt{i}\int_0^{+\iy}\frac{e^{-x}}{\sqrt{x}}dx\\
+&amp;=\Re\frac{1+i}{\sqrt{2}}\int_0^{+\iy}2e^{-u^2}du\\
+&amp;=\sqrt{2}\int_0^{+\iy}e^{-u^2}du=\sqrt{\pi/2},
+\end{align*}\]</span> using the change of variables <span class="math inline">\(u=\sqrt{x},\)</span> <span class="math inline">\(2du=\frac{dx}{\sqrt{x}}.\)</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -709,10 +827,31 @@ Exercise 10.5
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="10-Week10_files/figure-html/unnamed-chunk-44-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+<p><img src="10-Week10_files/figure-html/unnamed-chunk-52-1.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
 </figure>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell" title="Solution 10.5">
+<button id="displayTextunnamed-chunk-19" onclick="javascript:toggle('unnamed-chunk-19');">
+Solution 10.5
+</button>
+<div id="toggleTextunnamed-chunk-19" style="display: ">
+<div class="panel panel-default">
+<div id="tsk10.5" class="panel-heading panel-heading1">
+Solution 10.5
+</div>
+<div class="panel-body">
+<p>Let <span class="math inline">\(\ze=e^{i\pi/6}\)</span> and <span class="math inline">\(p(z)=1+z^6.\)</span> Then <span class="math inline">\(p(z)\)</span> has roots <span class="math inline">\(\ze^{1+2k}\)</span> for <span class="math inline">\(k=0,\ldots,5,\)</span> which are therefore the singularities of <span class="math inline">\(f(z),\)</span> poles of order one. We can factor <span class="math display">\[p(z)=\prod_{\ell=0}^5(z-\ze^{1+2\ell}),\]</span></p>
+<p>so by the Leibniz product rule <span class="math display">\[6z^5=p'(z)=\sum_{k=0}^5\prod_{\ell=0,\ell\neq k}^5(z-\ze^{1+2\ell}).\]</span></p>
+<p>Hence <span class="math display">\[6\ze^{5+10k}=p'(\ze^{1+2k})=\prod_{\ell=0,\ell\neq k}^5(z-\ze^{1+2\ell})=\frac{p(z)}{z-\ze^{1+2k}}.\]</span></p>
+<p>We use this to calculate the residues (note <span class="math inline">\(10k\equiv -2k\pmod{12}\)</span> and <span class="math inline">\(\ze^6=-1\)</span>) <span class="math display">\[\Res_{\ze^{1+2k}}(f)=\lim_{z\to\ze^{1+2k}}\frac{z-\ze^{1+2k}}{p(z)}=\frac{1}{6\ze^{5+10k}}=\frac{-\ze^{1+2k}}{6}.\]</span></p>
+<p>The only residues inside the contour when <span class="math inline">\(R&gt;1\)</span> are <span class="math inline">\(\ze, \ze^3, \ze^5.\)</span> By the residue theorem, <span class="math display">\[\int_{\ga_R} f(z)dz=2\pi i\left(\frac{-\ze}{6}+\frac{-\ze^3}{6}+\frac{-\ze^5}{6}\right)=2\pi/3.\]</span></p>
+<p>The contour integral decomposes into <span class="math inline">\(\int_{-R}^R\frac{dx}{1+x^6}\)</span> and the integral <span class="math inline">\(\int_\eta f(z)dz\)</span> over the upper semi-circle <span class="math inline">\(\eta\colon[0,\pi]\to\C,\)</span> <span class="math inline">\(\eta(t)=Re^{it},\)</span> or radius <span class="math inline">\(R.\)</span> On this contour, <span class="math inline">\(|f(z)|\leqslant\frac{1}{R^6-1},\)</span> so by the standard estimate (6.13), <span class="math display">\[\left|\int_\eta f(z)dz\right|\leqslant\frac{\pi R}{R^6-1}\xrightarrow{R\to+\iy}0.\]</span></p>
+<p>Hence <span class="math display">\[2\pi/3=\int_{\ga_R} f(z)dz = \int_{-R}^R\frac{dx}{1+x^6} + \int_\eta f(z)dz\xrightarrow{R\to+\iy} \int_{-\iy}^\iy\frac{dx}{1+x^6}+0.\]</span></p>
 </div>
 </div>
 </div>
